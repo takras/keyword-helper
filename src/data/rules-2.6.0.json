@@ -1,0 +1,245 @@
+{
+  "version": "2.6.0",
+  "validFrom": "2024-07-24T00:00:00Z",
+  "downloadUrl": "https://cdn.svc.asmodee.net/production-amgcom/uploads/2024/07/SWQ_Rulebook_2.6.0-1.pdf",
+  "documentUrl": "https://www.atomicmassgames.com/swlegiondocs/",
+  "changelog": [],
+  "icons": {
+    "critical": "critical.png",
+    "hit": "hit.png",
+    "hit_surge": "hit-surge.png",
+    "defense": "defense.png",
+    "defense_surge": "defense-surge.png",
+    "rank_commander": "rank-commander.png",
+    "rank_operative": "rank-operative.png",
+    "rank_corps": "rank-corps.png",
+    "rank_special": "rank-special-forces.png",
+    "rank_support": "rank-support.png",
+    "rank_heavy": "rank-heavy",
+    "upgrade_heavy": "",
+    "upgrade_personnel": "",
+    "upgrade_force": "",
+    "upgrade_command": "",
+    "upgrade_hardpoint": "",
+    "upgrade_gear": "",
+    "upgrade_grenades": "",
+    "upgrade_programming": "",
+    "upgrade_comms": "",
+    "upgrade_pilot": "",
+    "upgrade_training": "",
+    "upgrade_generator": "",
+    "upgrade_armament": "",
+    "upgrade_crew": "",
+    "upgrade_ordnance": "",
+    "upgrade_squadleader": ""
+  },
+  "index": [
+    {
+      "id": "a",
+      "catalog": "alphabet",
+      "name": "A"
+    },
+    {
+      "id": "b",
+      "catalog": "alphabet",
+      "name": "B"
+    },
+    {
+      "id": "c",
+      "catalog": "alphabet",
+      "name": "C"
+    },
+    {
+      "id": "l",
+      "catalog": "alphabet",
+      "name": "L"
+    },
+    {
+      "id": "weapons",
+      "catalog": "weapons",
+      "name": "Weapon Keyword"
+    },
+    {
+      "id": "units",
+      "catalog": "units",
+      "name": "Unit Keyword"
+    }
+  ],
+  "keywords": [
+    {
+      "keyword": "actions",
+      "name": "Action",
+      "parents": ["a"],
+      "activation": "action",
+      "summary": "",
+      "related_keywords": ["aim", "attack"],
+      "descriptions": [
+        {
+          "type": "text",
+          "content": "During the Perform Actions step, a unit may perform up to 2 of the actions below. A unit may only perform each action once per activation, except for the Move action."
+        },
+        {
+          "type": "keyword_list",
+          "content": ["aim", "attack"]
+        },
+        {
+          "type": "example",
+          "content": [
+            { "type": "header", "content": "Example header" },
+            { "type": "text", "content": "Example text" }
+          ]
+        },
+        { "type": "text", "content": "Foobar" },
+        { "type": "illustration", "content": "", "align": "left" },
+        { "type": "illustration", "content": "", "align": "right" },
+        { "type": "illustration", "content": "", "align": "center" }
+      ]
+    },
+    {
+      "keyword": "aim",
+      "name": "Aim",
+      "activation": "action",
+      "parents": ["a"],
+      "summary": "A unit that performs an aim action gains an aim token which it can use to reroll dice during attacks.",
+      "related_keywords": ["actions", "attack", "dice", "lethal"],
+      "descriptions": [
+        {
+          "type": "illustration",
+          "content": "aimtoken.png",
+          "align": "right"
+        },
+        {
+          "type": "text",
+          "content": "The attacking player can resolve any abilities or spend any aim tokens that allow the attacking unit to reroll attack dice. A unit may spend any number of aim tokens while it is attacking to reroll up to two different attack dice for each aim token spent."
+        },
+        {
+          "type": "text",
+          "content": "If a unit has multiple aim tokens, that unit can choose to spend each aim token after determining the results of any previous rerolls granted by aim tokens."
+        },
+        {
+          "type": "text",
+          "content": "A unit may reroll the same die multiple times by spending multiple aim tokens, but each die may only be rerolled once per aim token."
+        }
+      ]
+    },
+    {
+      "keyword": "armor",
+      "name": "Armor X",
+      "activation": "",
+      "parents": ["a", "units"],
+      "tag": "Unit Keyword",
+      "related_keywords": ["attack", "cancel", "impact", "weak_points"],
+      "summary": "",
+      "descriptions": [
+        {
+          "type": "text",
+          "content": "During the Modify Attack Dice step of the attack sequence, if the defending unit has the Armor X keyword, the defending player may cancel up to X hit {hit} results, removing those dice from the attack pool."
+        }
+      ]
+    },
+    {
+      "keyword": "attack",
+      "name": "Attack",
+      "activation": "action",
+      "parents": ["a"],
+      "summary": "",
+      "related_keywords": [
+        "aim",
+        "actions",
+        "attack",
+        "dice",
+        "lethal",
+        "cover",
+        "dodge",
+        "firing_arcs",
+        "melee",
+        "melee_weapon",
+        "range",
+        "ranged_weapon",
+        "surge",
+        "suppression",
+        "leader",
+        "weapons",
+        "wounds",
+        "line_of_sight"
+      ],
+      "descriptions": [
+        {
+          "type": "text",
+          "content": "Attacks are usually made by units as part of an attack action but can be made as part of another rule. A unit may make multiple attacks a turn but can only perform one attack action per turn, regardless of whether the attack action is a free action."
+        },
+        {
+          "type": "example",
+          "content": [
+            {
+              "type": "header",
+              "content": "Attack timing"
+            },
+            {
+              "type": "structured_list",
+              "content": [
+                "Declare Defender",
+                "Form Attack Pools",
+                [
+                  "Determine Eligible Miniatures",
+                  "Choose Weapons and Gather Dice"
+                ],
+                "Declare Additional Defender",
+                "Roll Attack Dice",
+                ["Roll Dice", "Reroll Dice", "Convert Attack Surge"],
+                "Apply Dodge and Cover",
+                [
+                  "Determine Number of Obscured Miniatures",
+                  "Determine Cover",
+                  "Roll Cover Pool",
+                  "Apply Cover",
+                  "Apply Dodge"
+                ],
+                "Modify Attack Dice",
+                "Roll Defense Dice",
+                ["Roll Dice", "Reroll Dice", "Convert Defense Surges"],
+                "Modify Defense Dice",
+                "Compare Results",
+                "Assign Suppresion Token to Defender",
+                "Choose Additional Attack Pool"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "reference",
+          "referenced_keyword": "line_of_sight"
+        }
+      ]
+    },
+    {
+      "keyword": "lethal",
+      "name": "Lethal X",
+      "activation": "",
+      "parents": ["l", "weapons"],
+      "tag": "Weapon Keyword",
+      "related_keywords": ["attack", "aim"],
+      "descriptions": [
+        {
+          "type": "text",
+          "content": "When a unit performs an attack with a weapon that has the Lethal X keyword in the attack pool, it can spend up to X Aim tokens during the Modify Attack Dice step. If it does, the attack pool gains Pierce 1 for each aim token spent. The attacking unit may not reroll dice with any aim tokens spent this way."
+        }
+      ]
+    },
+    {
+      "keyword": "line_of_sight",
+      "name": "Line of Sight",
+      "activation": "",
+      "parents": ["l"],
+      "tag": "LOS",
+      "related_keywords": ["attack", "base", "miniature", "terrain"],
+      "summary": "Line of Sight (LOS) is used to see if one miniature can 'see' another miniature.",
+      "descriptions": [
+        {
+          "type": "text",
+          "content": "When a unit performs an attack with a weapon that has the Lethal X keyword in the attack pool, it can spend up to X Aim tokens during the Modify Attack Dice step. If it does, the attack pool gains Pierce 1 for each aim token spent. The attacking unit may not reroll dice with any aim tokens spent this way."
+        }
+      ]
+    }
+  ]
+}
