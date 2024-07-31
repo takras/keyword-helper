@@ -17,6 +17,16 @@
   height: 90vh;
   border-radius: 8px;
   overflow-y: scroll;
+
+}
+
+.header2,
+.header4 {
+  font-family: var(--font-family);
+  width: 100%;
+  border-bottom: 2px solid var(--button-border-color);
+  font-variant: small-caps;
+  font-size: xx-large;
 }
 
 .modalButtonRow {
@@ -145,8 +155,9 @@
   width: 100%;
   text-align: left;
 
-  &> h4 {
+  &> .header4 {
     margin: 0;
+    border-bottom-color: var(--example-header);
   }
 }
 

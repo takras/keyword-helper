@@ -105,7 +105,11 @@ export default function Helper() {
             />
           );
         case "header":
-          return <h4 key={description.type}>{description.content}</h4>;
+          return (
+            <h4 className={styles.header4} key={description.type}>
+              {description.content}
+            </h4>
+          );
         case "illustration":
           return <Illustration image={description} />;
         case "keyword_list":
@@ -278,7 +282,7 @@ export default function Helper() {
         </div>
         {selectedKeyword && (
           <>
-            <h2>
+            <h2 className={styles.header2}>
               {selectedKeyword.name}{" "}
               {selectedKeyword.tag && `(${selectedKeyword.tag})`}
             </h2>

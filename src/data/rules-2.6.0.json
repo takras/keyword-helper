@@ -21,6 +21,11 @@
       "name": "C"
     },
     {
+      "id": "d",
+      "catalog": "alphabet",
+      "name": "D"
+    },
+    {
       "id": "l",
       "catalog": "alphabet",
       "name": "L"
@@ -250,6 +255,33 @@
         {
           "type": "text",
           "content": "The unit performs an action listed on its Unit Card or one of its Upgrade Cards. Card actions have this symbol {action}. A unit may perform more than one card action, as long as they are different. A card action with {action}{action} requires two actions to perform."
+        }
+      ]
+    },
+    {
+      "keyword": "dodge",
+      "name": "Dodge",
+      "activation": "",
+      "parents": ["d"],
+      "summary": "The unit gains a dodge token, which allows it to cancel incoming results when defending.",
+      "related_keywords": ["actions", "attack", "dice", "cover"],
+      "descriptions": [
+        {
+          "type": "illustration",
+          "content": "/images/tokens/dodge.png",
+          "align": "right"
+        },
+        {
+          "type": "text",
+          "content": "A unit that performs a dodge action gains a dodge token. Units may spend dodge tokens to cancel a results during attacks."
+        },
+        {
+          "type": "header",
+          "content": "Apply Dodge and Cover"
+        },
+        {
+          "type": "text",
+          "content": "<strong>Apply Dodge:</strong> If the defending unit has one or more dodge tokens, the defending player may spend any number of them. For each dodge token spent, cancel one a result in the attack pool. Units may spend dodge tokens even if there are no a results in the attack pool."
         }
       ]
     }
