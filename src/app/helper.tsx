@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
-import { useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import {
   RulesDocument,
   Keyword,
@@ -105,11 +105,7 @@ export default function Helper() {
             />
           );
         case "header":
-          return (
-            <h4 key={description.type} className={styles.exampleHeader}>
-              {description.content}
-            </h4>
-          );
+          return <h4 key={description.type}>{description.content}</h4>;
         case "illustration":
           return <Illustration image={description} />;
         case "keyword_list":
@@ -138,14 +134,13 @@ export default function Helper() {
   };
 
   const Illustration = ({ image }: { image: Illustration }) => {
-    console.log(image);
     return (
       <img
         alt={image.altText}
         src={`/images/${image.content}`}
         className={classNames(
           styles.illustrationImage,
-          styles[`align_${image.align}`]
+          styles[`align_${image.align ? image.align : "center"}`]
         )}
       />
     );
@@ -237,9 +232,24 @@ export default function Helper() {
   }: {
     descriptions: DescriptionType;
   }) => {
+    const [isActive, setIsActive] = useState(false);
+    const toggleActive = () => setIsActive((current) => !current);
     return (
       <div className={styles.exampleContainer}>
-        <RenderContent descriptions={descriptions} />
+        <button onClick={() => toggleActive()} className={styles.exampleHeader}>
+          <RenderContent
+            descriptions={descriptions.filter(
+              (description) => description.type === "header"
+            )}
+          />
+        </button>
+        <div className={isActive ? styles.helperActive : styles.helperInactive}>
+          <RenderContent
+            descriptions={descriptions.filter(
+              (description) => description.type !== "header"
+            )}
+          />
+        </div>
       </div>
     );
   };

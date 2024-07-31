@@ -11,6 +11,10 @@
   --button-color: #15407F;
   --button-border-color: #15407F;
   --button-background-color: #fff;
+
+  --font-family: 'Aire Exterior', sans-serif;
+
+  --flex-gap: 10px;
 }
 
 @media (prefers-color-scheme: dark) {

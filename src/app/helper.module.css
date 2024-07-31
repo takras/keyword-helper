@@ -16,11 +16,13 @@
   width: 90vw;
   height: 90vh;
   border-radius: 8px;
+  overflow-y: scroll;
 }
 
 .modalButtonRow {
   display: flex;
   justify-content: space-between;
+
 }
 
 .catalogButton {
@@ -41,6 +43,17 @@
     var(--button-border-color));
 }
 
+.helperActive {
+  display: flex;
+  flex-direction: column;
+  gap: var(--flex-gap);
+  font-style: italic;
+}
+
+.helperInactive {
+  display: none;
+}
+
 .active {
   background: linear-gradient(
     to top,
@@ -51,7 +64,6 @@
   border-bottom: none;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
-  
 }
 
 .keywordsContainer {
@@ -59,7 +71,7 @@
   flex-wrap: wrap;
   justify-content: center;
   flex-direction: row;
-  gap: 10px;
+  gap: var(--flex-gap);
   border-left: 2px solid var(--button-border-color);
   border-right: 2px solid var(--button-border-color);
   border-bottom-left-radius: var(--border-radius);
@@ -83,6 +95,13 @@
   background-color: #fff;
 }
 
+.modalBackButton,
+.closeModalButton {
+  color: white;
+  background-color: rgb(202, 202, 202);
+  border-bottom: 1px solid var(--button-border-color);
+}
+
 .relatedButton {
   box-shadow: none;
   font-size: large;
@@ -94,27 +113,41 @@
 }
 
 .relatedContainer {
-  border-top: 2px solid black;
-
+  padding-top: 20px;
 }
 
 .relatedHeader {
+  font-family: var(--font-family);
+  font-size: 2rem;
+  font-weight: 100;
+  font-variant: small-caps;
   margin-top: 0;
   margin-bottom: 5px;
+  border-bottom: 2px solid var(--button-border-color);
 }
 
 .relatedButtons {
   display: flex;
-  gap: 10px;
+  gap: var(--flex-gap);
 }
 
 .exampleHeader {
   margin: 0;
+  cursor: pointer;
   color: var(--example-header);
   font-size: 2.0rem;
   border-bottom: 1px solid var(--example-header);
-  font-family: 'Aire Exterior', sans-serif;
+  font-family: var(--font-family);
   font-variant: small-caps;
+  border: none;
+  background: none;
+  padding: 0;
+  width: 100%;
+  text-align: left;
+
+  &> h4 {
+    margin: 0;
+  }
 }
 
 .exampleList {
@@ -124,18 +157,30 @@
 
 .listItem {
   &::marker {
-    font-family: 'Aire Exterior', sans-serif;
+    font-family: var(--font-family);
     font-size: 1.5rem;
   }
 }
 
 .illustrationImage {
-  max-width: 95%;
-  min-width: 50%;
+  max-width: min(95%, 800px);
+  min-width: max(10%, 200px);
+}
+
+.alignleft {
+
+}
+
+.aligncenter {
+  text-align: center;
+}
+
+.alignright {
+  text-align: right;
 }
 
 .inlineKeyword {
-  font-family: 'Aire Exterior', sans-serif;
+  font-family: var(--font-family);
   font-size: larger;
   font-weight: 700;
 }
