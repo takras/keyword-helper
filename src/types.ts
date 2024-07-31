@@ -1,10 +1,11 @@
+import { IconList } from "./utils";
+
 export interface RulesDocument {
   version: string;
   validFrom: Date | string;
   downloadUrl: string;
   documentUrl: string;
   changelog: any[];
-  icons: Icons;
   index: CatalogEntry[];
   keywords: Keyword[];
 }
@@ -64,13 +65,20 @@ export interface Description {
 }
 
 export type DescriptionType = Array<
-  Illustration | StructuredList | Text | KeywordList | RulesExample | Reference
+  | Illustration
+  | StructuredList
+  | Text
+  | KeywordList
+  | RulesExample
+  | Reference
+  | Header
 >;
 
 export type Illustration = {
   type: "illustration";
   content: string;
   align: "left" | "center" | "right";
+  altText: string;
 };
 
 export type StructuredList = {
@@ -88,6 +96,11 @@ type Reference = {
   keyword: string;
 };
 
+type Header = {
+  type: "header";
+  content: string;
+};
+
 export type KeywordList = {
   type: "keyword_list";
   content: string[];
@@ -95,10 +108,7 @@ export type KeywordList = {
 
 export type RulesExample = {
   type: "example";
-  content: Array<ExamplesType | Text | StructuredList>;
+  content: DescriptionType;
 };
 
-type ExamplesType = {
-  type: "header";
-  content: string;
-};
+export type IconListType = typeof IconList;

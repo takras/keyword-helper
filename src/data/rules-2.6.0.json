@@ -4,35 +4,6 @@
   "downloadUrl": "https://cdn.svc.asmodee.net/production-amgcom/uploads/2024/07/SWQ_Rulebook_2.6.0-1.pdf",
   "documentUrl": "https://www.atomicmassgames.com/swlegiondocs/",
   "changelog": [],
-  "icons": {
-    "critical": "critical.png",
-    "hit": "hit.png",
-    "hit_surge": "hit-surge.png",
-    "defense": "defense.png",
-    "defense_surge": "defense-surge.png",
-    "rank_commander": "rank-commander.png",
-    "rank_operative": "rank-operative.png",
-    "rank_corps": "rank-corps.png",
-    "rank_special": "rank-special-forces.png",
-    "rank_support": "rank-support.png",
-    "rank_heavy": "rank-heavy",
-    "upgrade_heavy": "",
-    "upgrade_personnel": "",
-    "upgrade_force": "",
-    "upgrade_command": "",
-    "upgrade_hardpoint": "",
-    "upgrade_gear": "",
-    "upgrade_grenades": "",
-    "upgrade_programming": "",
-    "upgrade_comms": "",
-    "upgrade_pilot": "",
-    "upgrade_training": "",
-    "upgrade_generator": "",
-    "upgrade_armament": "",
-    "upgrade_crew": "",
-    "upgrade_ordnance": "",
-    "upgrade_squadleader": ""
-  },
   "index": [
     {
       "id": "a",
@@ -80,19 +51,35 @@
         },
         {
           "type": "keyword_list",
-          "content": ["aim", "attack"]
+          "content": ["aim", "attack", "card-action"]
         },
         {
           "type": "example",
           "content": [
-            { "type": "header", "content": "Example header" },
-            { "type": "text", "content": "Example text" }
+            {
+              "type": "header",
+              "content": "Example: Card Actions and Free Actions"
+            },
+            {
+              "type": "text",
+              "content": "Luke Skywalker has the {action} {keyword:Jump 1} card action on his Unit Card. During his activation, he may spend 1 of his actions to perform the Jump action."
+            },
+            {
+              "type": "illustration",
+              "content": "examples/lukejump1.png",
+              "altText": "Luke Skywalker unit card with the keyword Jump 1 highlighted."
+            },
+            {
+              "type": "text",
+              "content": "Luke Skywalker also has the Force Reflexes Upgrade Card equipped. Once per activation as a free action, he may exhaust the card to gain a dodge token. This is in addition to the two actions he is allowed per activation, but he may only perform the Force Reflexes free action when he would normally be allowed to perform an action. A unit may perform any number of different free actions during its activation."
+            },
+            {
+              "type": "illustration",
+              "content": "examples/lukeforcereflexes.png",
+              "altText": "Luke Skywalker unit card with Force Reflexes card tucked under."
+            }
           ]
-        },
-        { "type": "text", "content": "Foobar" },
-        { "type": "illustration", "content": "", "align": "left" },
-        { "type": "illustration", "content": "", "align": "right" },
-        { "type": "illustration", "content": "", "align": "center" }
+        }
       ]
     },
     {
@@ -142,7 +129,7 @@
       "name": "Attack",
       "activation": "action",
       "parents": ["a"],
-      "summary": "",
+      "summary": "The unit attacks with its weapons.",
       "related_keywords": [
         "aim",
         "actions",
@@ -238,6 +225,30 @@
         {
           "type": "text",
           "content": "When a unit performs an attack with a weapon that has the Lethal X keyword in the attack pool, it can spend up to X Aim tokens during the Modify Attack Dice step. If it does, the attack pool gains Pierce 1 for each aim token spent. The attacking unit may not reroll dice with any aim tokens spent this way."
+        }
+      ]
+    },
+
+    {
+      "keyword": "card-action",
+      "name": "Card Action",
+      "activation": "action",
+      "parents": ["c"],
+      "summary": "{action} The unit performs an action listed on its Unit Card or one of its Upgrade Cards. Card actions have this symbol {action}. A unit may perform more than one card action, as long as they are different. A card action with {action}{action} requires two actions to perform.",
+      "related_keywords": [
+        "actions",
+        "abilities",
+        "activating units",
+        "exhaust",
+        "action-free",
+        "card-action-free",
+        "keywords",
+        "card-upgrade"
+      ],
+      "descriptions": [
+        {
+          "type": "text",
+          "content": "The unit performs an action listed on its Unit Card or one of its Upgrade Cards. Card actions have this symbol {action}. A unit may perform more than one card action, as long as they are different. A card action with {action}{action} requires two actions to perform."
         }
       ]
     }

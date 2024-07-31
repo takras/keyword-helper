@@ -1,0 +1,155 @@
+.main {
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  width: 100vw;
+}
+
+.title {
+  text-align: center;
+  font-size: xxx-large;
+  font-family: system-ui;
+}
+
+.modal {
+  width: 90vw;
+  height: 90vh;
+  border-radius: 8px;
+}
+
+.modalButtonRow {
+  display: flex;
+  justify-content: space-between;
+}
+
+.catalogButton {
+  width: 100%;
+  border-radius: var(--border-radius);
+  text-align: center;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 2em;
+  padding: 10px;
+  border-bottom: 5px solid var(--button-border-color);
+  box-shadow: 0px 10px 10px rgb(0 0 0 / 0.1);
+  color: var(--button-color);
+  background: linear-gradient(
+    to right,
+    var(--button-border-color),
+    var(--button-background-color), 
+    var(--button-border-color));
+}
+
+.active {
+  background: linear-gradient(
+    to top,
+    var(--button-background-color),
+    var(--button-background-color), 
+    var(--button-border-color));
+  box-shadow: none;
+  border-bottom: none;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  
+}
+
+.keywordsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: row;
+  gap: 10px;
+  border-left: 2px solid var(--button-border-color);
+  border-right: 2px solid var(--button-border-color);
+  border-bottom-left-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+  border-bottom: 5px solid var(--button-border-color);
+}
+
+.keywordButton,
+.modalBackButton,
+.relatedButton,
+.closeModalButton {
+  border-radius: var(--border-radius);
+  text-align: center;
+  cursor: pointer;
+  padding: 5px;
+  box-shadow: 0px 5px 10px rgb(0 0 0 / 0.1);
+  font-size: 1.5em;
+  border: 1px solid #26416d;
+  border-bottom: 5px solid var(--button-border-color);
+  color: #26416d;
+  background-color: #fff;
+}
+
+.relatedButton {
+  box-shadow: none;
+  font-size: large;
+  border-bottom: 1px solid var(--button-border-color);
+}
+
+.keywordButton {
+  border-radius: var(--border-radius);
+}
+
+.relatedContainer {
+  border-top: 2px solid black;
+
+}
+
+.relatedHeader {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.relatedButtons {
+  display: flex;
+  gap: 10px;
+}
+
+.exampleHeader {
+  margin: 0;
+  color: var(--example-header);
+  font-size: 2.0rem;
+  border-bottom: 1px solid var(--example-header);
+  font-family: 'Aire Exterior', sans-serif;
+  font-variant: small-caps;
+}
+
+.exampleList {
+  margin: 0;
+  margin-inline: -20px;
+}
+
+.listItem {
+  &::marker {
+    font-family: 'Aire Exterior', sans-serif;
+    font-size: 1.5rem;
+  }
+}
+
+.illustrationImage {
+  max-width: 95%;
+  min-width: 50%;
+}
+
+.inlineKeyword {
+  font-family: 'Aire Exterior', sans-serif;
+  font-size: larger;
+  font-weight: 700;
+}
+
+.exampleContainer {
+  padding: 20px 20px 20px 20px;
+  border-radius: 10px;
+  background-color: var(--example-background);
+  color: var(--example-color);
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+}
+
+.inlineIcon {
+  width: 1rem;
+  margin-bottom: -2px;
+}
