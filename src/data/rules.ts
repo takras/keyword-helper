@@ -350,6 +350,7 @@ export const rules: RulesDocument = {
         },
         {
           type: "example",
+          initiallyExpanded: true,
           content: [
             {
               type: "header",
@@ -968,7 +969,6 @@ export const rules: RulesDocument = {
           content:
             "When determining LOS between two miniatures, if an unobstructed straight imaginary line can be drawn from any part of one miniature’s silhouette to any part of the other miniature’s silhouette, those miniatures have LOS to each other.",
         },
-        { type: "reference", referenced_keyword: "silhouettes" },
         { type: "header", content: "Blocking LOS" },
         {
           type: "text",

@@ -16,11 +16,15 @@
 }
 
 .modal {
-  width: 95vw;
-  height: 95vh;
-  border-radius: 8px;
+  width: 100vw;
+  height: 100vh;
   overflow-y: scroll;
   background-color: var(--background-color);
+  border: none;
+}
+
+.keywordContainer {
+  margin-top: 50px;
 }
 
 .aboutContainer {
@@ -71,6 +75,13 @@
 
 }
 
+.modalTopMenu {
+  display: block;
+  position: fixed;
+  width: 90vw;
+  z-index: 2;
+}
+
 .catalogButton {
   width: 100%;
   border-radius: var(--border-radius);
@@ -79,6 +90,9 @@
   margin-top: 10px;
   font-size: 2em;
   padding: 10px;
+  border-top: 2px solid var(--button-border-color);
+  border-right: 2px solid var(--button-border-color);
+  border-left: 2px solid var(--button-border-color);
   border-bottom: 5px solid var(--button-border-color);
   box-shadow: 0px 10px 10px rgb(0 0 0 / 0.1);
   color: var(--button-color);

@@ -120,6 +120,7 @@ export default function Helper() {
             <ExampleContent
               key={getKey(description.type)}
               descriptions={description.content}
+              isInitiallyExpanded={description.initiallyExpanded}
             />
           );
         case "header":
@@ -328,10 +329,12 @@ export default function Helper() {
 
   const ExampleContent = ({
     descriptions,
+    isInitiallyExpanded,
   }: {
     descriptions: DescriptionType;
+    isInitiallyExpanded?: boolean;
   }) => {
-    const [isActive, setIsActive] = useState(false);
+    const [isActive, setIsActive] = useState(isInitiallyExpanded === true);
     const toggleActive = () => setIsActive((current) => !current);
     return (
       <div className={styles.exampleModule}>
@@ -365,40 +368,47 @@ export default function Helper() {
     const previousKeyword = selectedKeywords[selectedKeywords.length - 2];
     return (
       <dialog data-modal className={styles.modal}>
-        <div className={styles.modalButtonRow}>
-          {previousKeyword && (
+        <div className={styles.modalTopMenu}>
+          <div className={styles.modalButtonRow}>
+            {previousKeyword && (
+              <button
+                onClick={() => goToPreviousKeyword(previousKeyword)}
+                className={styles.modalBackButton}
+              >
+                <img
+                  src="/images/arrow-left.png"
+                  alt="Arrow pointing left"
+                  width="20"
+                ></img>
+                {previousKeyword.name}
+              </button>
+            )}
+            {!previousKeyword && <div />}
             <button
-              onClick={() => goToPreviousKeyword(previousKeyword)}
-              className={styles.modalBackButton}
+              onClick={() => {
+                modal.close();
+                setSelectedKeywords([]);
+              }}
+              className={styles.closeModalButton}
             >
               <img
-                src="/images/arrow-left.png"
-                alt="Arrow pointing left"
+                src="/images/cross-x.png"
+                alt="A black cross"
                 width="20"
               ></img>
-              {previousKeyword.name}
             </button>
-          )}
-          {!previousKeyword && <div />}
-          <button
-            onClick={() => {
-              modal.close();
-              setSelectedKeywords([]);
-            }}
-            className={styles.closeModalButton}
-          >
-            <img src="/images/cross-x.png" alt="A black cross" width="20"></img>
-          </button>
+          </div>
         </div>
+
         {selectedKeyword && (
-          <>
+          <div className={styles.keywordContainer}>
             <h2 className={styles.header2}>
               {selectedKeyword.name}{" "}
               {selectedKeyword.tag && `(${selectedKeyword.tag})`}
             </h2>
             <RenderContent descriptions={selectedKeyword.descriptions} />
             <RelatedKeywords related={selectedKeyword.related_keywords} />
-          </>
+          </div>
         )}
       </dialog>
     );

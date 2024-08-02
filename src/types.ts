@@ -184,6 +184,7 @@ export type KeywordList = {
 export type RulesExample = {
   type: "example";
   content: DescriptionType;
+  initiallyExpanded?: true;
 };
 
 export type IconListType = typeof IconList;
