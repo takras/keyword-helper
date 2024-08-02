@@ -59,6 +59,7 @@ export type AvailableKeywords =
   | "silhouettes"
   | "standby"
   | "speeder"
+  | "suffering_wounds"
   | "suppression"
   | "surge"
   | "terrain"
