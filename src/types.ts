@@ -1,10 +1,83 @@
 import { IconList } from "./utils";
 
+export type AvailableKeywords =
+  | "abilities"
+  | "actions"
+  | "activating_units"
+  | "aim"
+  | "apply_dodge_cover"
+  | "armor"
+  | "at_range"
+  | "attack"
+  | "backup"
+  | "base"
+  | "cancel"
+  | "card_action"
+  | "command_cards"
+  | "declare_defender"
+  | "dice"
+  | "cover"
+  | "compulsory_move"
+  | "climb"
+  | "clone_trooper"
+  | "command_phase"
+  | "difficult_terrain"
+  | "displacement"
+  | "dodge"
+  | "exhaust"
+  | "form_attack_pools"
+  | "free_action"
+  | "free_card_action"
+  | "firing_arcs"
+  | "ground_vehicles"
+  | "impassable_terrain"
+  | "impact"
+  | "issue_order"
+  | "keywords"
+  | "leader"
+  | "lethal"
+  | "line_of_sight"
+  | "melee"
+  | "melee_weapon"
+  | "miniature"
+  | "move"
+  | "notch"
+  | "objects"
+  | "open_terrain"
+  | "order_pool"
+  | "pass"
+  | "pierce"
+  | "pivot"
+  | "promote"
+  | "range"
+  | "ranged_weapon"
+  | "reconfigure"
+  | "recharge"
+  | "recover"
+  | "reverse"
+  | "roll_attack_dice"
+  | "silhouettes"
+  | "standby"
+  | "speeder"
+  | "suppression"
+  | "surge"
+  | "terrain"
+  | "tokens"
+  | "troopers"
+  | "unit"
+  | "upgrade_card"
+  | "vehicles"
+  | "weak_points"
+  | "weapons"
+  | "withdraw"
+  | "wounds";
+
 export interface RulesDocument {
   version: string;
-  validFrom: Date | string;
+  validFrom: string;
   downloadUrl: string;
   documentUrl: string;
+  discussionUrl: string;
   changelog: any[];
   index: CatalogEntry[];
   keywords: Keyword[];
@@ -42,17 +115,17 @@ export interface Icons {
 
 export interface CatalogEntry {
   id: string;
-  catalog: "alphabet" | "weapons" | "units";
+  catalog: "alphabet" | "weapons" | "units" | "phases";
   name: string;
 }
 
 export interface Keyword {
-  keyword: string;
+  keyword: AvailableKeywords;
   name: string;
   parents: string[];
   activation?: string;
   summary?: string;
-  related_keywords: string[];
+  related_keywords: AvailableKeywords[];
   descriptions: DescriptionType;
   tag?: string;
 }
@@ -61,7 +134,7 @@ export interface Description {
   type: DescriptionType;
   content?: Description[] | Description | string | string[];
   align?: string;
-  referenced_keyword?: string;
+  referenced_keyword?: AvailableKeywords;
 }
 
 export type DescriptionType = Array<
@@ -79,10 +152,11 @@ export type Illustration = {
   content: string;
   align: "left" | "center" | "right";
   altText: string;
+  width?: string;
 };
 
 export type StructuredList = {
-  type: "structured_list";
+  type: "structured_list" | "structured_list_numbered";
   content: Array<string[] | string>;
 };
 
@@ -93,7 +167,7 @@ export type Text = {
 
 type Reference = {
   type: "reference";
-  keyword: string;
+  referenced_keyword: AvailableKeywords;
 };
 
 type Header = {
@@ -103,7 +177,7 @@ type Header = {
 
 export type KeywordList = {
   type: "keyword_list";
-  content: string[];
+  content: AvailableKeywords[];
 };
 
 export type RulesExample = {

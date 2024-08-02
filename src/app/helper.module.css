@@ -4,27 +4,63 @@
   align-items: center;
   height: 100%;
   width: 100vw;
+  overflow-y: scroll;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .title {
   text-align: center;
-  font-size: xxx-large;
-  font-family: system-ui;
+  font-size: 4rem;
+  font-family: var(--font-family);
 }
 
 .modal {
-  width: 90vw;
-  height: 90vh;
+  width: 95vw;
+  height: 95vh;
   border-radius: 8px;
   overflow-y: scroll;
+  background-color: var(--background-color);
+}
 
+.aboutContainer {
+  padding: 20px;
+  border-radius: var(--border-radius);
+  border: var(--border-thin);
+  margin-bottom: var(--flex-gap);
+}
+
+.aboutButtonRow {
+  display: flex;
+  gap: var(--flex-gap);
+  justify-content: center;
+  flex-direction: row;
+}
+
+.versionInfo {
+  padding-top: 10px;
+  display: block;
+}
+
+.version,
+.date {
+  letter-spacing: 0.1rem;
+  font-family: var(--font-family);
+}
+
+.paragraph {
+  padding-bottom: var(--flex-gap);
+  display: block;
 }
 
 .header2,
+.header3,
 .header4 {
   font-family: var(--font-family);
   width: 100%;
   border-bottom: 2px solid var(--button-border-color);
+  margin-top: 20px;
+  margin-bottom: 20px;
   font-variant: small-caps;
   font-size: xx-large;
 }
@@ -53,7 +89,45 @@
     var(--button-border-color));
 }
 
+.searchContainer {
+  border-radius: var(--border-radius);
+  text-align: center;
+  cursor: pointer;
+  padding: 10px;
+  border: var(--border-thin);
+  box-shadow: 0px 10px 10px rgb(0 0 0 / 0.1);
+  color: var(--button-color);
+
+  .button {
+    vertical-align: top;
+    width: 3rem;
+  }
+}
+
+.searchInputContainer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+}
+
+.searchInput {
+  border-radius: var(--border-radius);
+  font-size: 2rem;
+  margin-bottom: var(--flex-gap);
+  margin-right: 10px;
+  max-width: 200px;
+}
+
+.searchResult {
+  display: flex;
+  gap: var(--flex-gap);
+  justify-content: center;
+  flex-wrap: wrap; 
+}
+
 .helperActive {
+  padding-top: var(--flex-gap);
   display: flex;
   flex-direction: column;
   gap: var(--flex-gap);
@@ -89,6 +163,7 @@
   border-bottom: 5px solid var(--button-border-color);
 }
 
+.button,
 .keywordButton,
 .modalBackButton,
 .relatedButton,
@@ -110,6 +185,9 @@
   color: white;
   background-color: rgb(202, 202, 202);
   border-bottom: 1px solid var(--button-border-color);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .relatedButton {
@@ -139,6 +217,31 @@
 .relatedButtons {
   display: flex;
   gap: var(--flex-gap);
+  flex-wrap: wrap;
+}
+
+.referenceHeader {
+  margin-bottom: 0;  
+}
+
+.referenceSummary {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.referenceLink {
+  font-family: var(--font-family);
+  font-size: x-large;
+  display: flex;
+  gap: var(--flex-gap);
+  align-items: center;
+}
+
+.referenceButton {
+  font-family: var(--font-family);
+  font-size: inherit;
+  border-radius: var(--border-radius);
+  cursor: pointer;
 }
 
 .exampleHeader {
@@ -161,9 +264,21 @@
   }
 }
 
-.exampleList {
+.exampleList,
+.exampleListNumbered {
   margin: 0;
   margin-inline: -20px;
+  font-style: normal;
+  padding-bottom: 20px;
+  max-width: 90%;
+}
+
+.exampleListNumbered {
+  list-style-type: decimal;
+}
+
+.exampleList {
+  list-style-type: disc;
 }
 
 .listItem {
@@ -175,19 +290,20 @@
 
 .illustrationImage {
   max-width: min(95%, 800px);
-  min-width: max(10%, 200px);
 }
 
-.alignleft {
-
+.imageLeft {
+  float: left;
 }
 
-.aligncenter {
-  text-align: center;
+.imageCenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.alignright {
-  text-align: right;
+.imageRight {
+  float: right;
 }
 
 .inlineKeyword {
@@ -198,14 +314,35 @@
 
 .exampleContainer {
   padding: 20px 20px 20px 20px;
-  border-radius: 10px;
   background-color: var(--example-background);
   color: var(--example-color);
   font-size: 1.2rem;
   line-height: 1.8rem;
+  margin-top: 20px;
+
+  .inlineIcon {
+    filter: invert(1);
+  }
+}
+
+.exampleModule {
+  --notchSize: 20px;
+  
+  clip-path: 
+    polygon(
+      0% var(--notchSize), 
+      0 0, 
+      calc(100% - var(--notchSize)) 0%, 
+      100% var(--notchSize), 
+      100% calc(100% - var(--notchSize)), 
+      100% 100%,
+      var(--notchSize) 100%, 
+      0% calc(100% - var(--notchSize))
+    );
 }
 
 .inlineIcon {
-  width: 1rem;
+  max-width: 2rem;
   margin-bottom: -2px;
+  height: 1rem;
 }
