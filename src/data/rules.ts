@@ -821,16 +821,22 @@ export const rules: RulesDocument = {
       ],
     },
     {
-      keyword: "courage",
-      name: "Courage",
-      related_keywords: ["panic", "suppression", "activating_units", "rally"],
-      parents: ["c"],
+      keyword: "courage_null",
+      name: "Null Courage Value",
+      related_keywords: [
+        "panic",
+        "suppression",
+        "activating_units",
+        "rally",
+        "recover",
+        "courage",
+      ],
+      parents: ["n", "c"],
       descriptions: [
-        { type: "header", content: "Null Courage Value" },
         {
           type: "text",
           content:
-            "Some units have a null courage value, or “-.” These units can never gain or be assigned suppression tokens and cannot be suppressed or panicked. If a unit gains a null courage value through a special rule, it loses any suppression tokens it has, if any.",
+            "Some units have a null courage value, or “-”. These units can never gain or be assigned suppression tokens and cannot be suppressed or panicked. If a unit gains a null courage value through a special rule, it loses any suppression tokens it has, if any.",
         },
         {
           type: "text",
@@ -1436,14 +1442,19 @@ export const rules: RulesDocument = {
     },
 
     {
-      keyword: "panic",
-      name: "Panic",
-      parents: ["p"],
-      related_keywords: ["suppression", "activating_units", "courage"],
+      keyword: "panic_commander",
+      name: "Commanders and Checking for Panic",
+      parents: ["p", "c"],
+      related_keywords: [
+        "suppression",
+        "activating_units",
+        "courage",
+        "recover",
+        "rally",
+      ],
       descriptions: [
-        { type: "header", content: "Commanders and Checking for Panic" },
         {
-          type: "header",
+          type: "text",
           content:
             "When a unit checks to see if it is panicked, instead of using its own courage value, it may use the courage value of a friendly {rank_commander} unit at {range_3}. For example, a unit with 3 suppression tokens and courage value 1 would not be panicked if it chooses to use the courage value of a friendly {rank_commander} at {range_3} that has a courage value of 2 or greater.",
         },
@@ -1462,20 +1473,21 @@ export const rules: RulesDocument = {
         "dice",
         "actions",
         "activating_units",
+        "recover",
       ],
       descriptions: [
         {
-          type: "header",
+          type: "text",
           content:
             "Each time a unit activates, it has a chance to rally and remove suppression tokens. To rally a unit, its controlling player rolls one white defense die for each suppression token the unit has. Then its controlling player removes one suppression token for each {block} or {block_surge} result rolled.",
         },
         {
-          type: "header",
+          type: "text",
           content:
             "After rallying, if a unit begins its Perform Actions step while suppressed, it performs one fewer action during its Perform Actions step.",
         },
         {
-          type: "header",
+          type: "text",
           content:
             "If a unit begins its Perform Actions step while panicked, it cannot perform any actions or free actions. Then, if a unit did not perform any actions or free actions due to panic, at the end of the unit’s activation, it removes suppression tokens equal to its courage value.",
         },
@@ -1486,12 +1498,17 @@ export const rules: RulesDocument = {
             {
               type: "text",
               content:
-                "On Ryan’s turn, he chooses to activate a Rebel Trooper unit with 2 suppression tokens. After resolving any effects at the start of the Rebel Trooper unit’s activation, he performs the unit’s Rally step and rolls 2 white defense dice, 1 for each suppression token. Unfortunately, he rolls 2 blanks and does not remove any suppression tokens from the unit. Because the Rebel Troopers have a courage value of 1 and have a number of suppression tokens equal to or greater than their courage value, they are still suppressed and must perform 1 fewer action during the Perform Actions step of their activation.",
+                "On Ryan’s turn, he chooses to activate a Rebel Trooper unit with 2 suppression tokens. After resolving any effects at the start of the Rebel Trooper unit’s activation, he performs the unit’s Rally step and rolls 2 white defense dice, 1 for each suppression token. Unfortunately, he rolls 2 blanks and does not remove any suppression tokens from the unit.",
             },
             {
-              type: "header",
+              type: "text",
               content:
-                "to or greater than double their courage value, they are still panicked as well as suppressed. Therefore, they perform no actions or free actions, and at the end of their activation, they remove suppression tokens equal to their courage value.",
+                "Because the Rebel Troopers have a courage value of 1 and have a number of suppression tokens equal to or greater than their courage value, they are still suppressed and must perform 1 fewer action during the Perform Actions step of their activation.",
+            },
+            {
+              type: "text",
+              content:
+                "Additionally, because the Rebel Troopers have suppression equal to or greater than double their courage value, they are still panicked as well as suppressed. Therefore, they perform no actions or free actions, and at the end of their activation, they remove suppression tokens equal to their courage value.",
             },
           ],
         },
@@ -1524,6 +1541,14 @@ export const rules: RulesDocument = {
           type: "text",
           content:
             "When a unit recovers, it readies all of its exhausted cards. When a card is readied, turn it 90° to the left so it is in its original orientation. The card is no longer exhausted.",
+        },
+        {
+          type: "reference",
+          referenced_keyword: "panic_commander",
+        },
+        {
+          type: "reference",
+          referenced_keyword: "courage_null",
         },
       ],
     },
