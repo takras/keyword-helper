@@ -146,6 +146,7 @@
   flex-direction: column;
   gap: var(--flex-gap);
   font-style: italic;
+  height: fit-content;
 }
 
 .helperInactive {
@@ -275,6 +276,28 @@
   &> .header4 {
     margin: 0;
     border-bottom-color: var(--example-header);
+  }
+}
+
+.exampleHeaderInactive,
+.exampleHeaderActive {
+  &::after {
+    color: white;
+    font-weight: bold;
+    float: right;
+    margin-top: -30px;
+  }
+}
+
+.exampleHeaderActive {
+  &::after {
+    content: '-';
+  }
+}
+
+.exampleHeaderInactive {
+  &::after {
+    content: '+';
   }
 }
 

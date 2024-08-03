@@ -154,6 +154,25 @@ export const rules: RulesDocument = {
   ],
   keywords: [
     {
+      keyword: "abilities_provide_move",
+      name: "Abilities That Provide Moves",
+      related_keywords: ["move", "command_cards"],
+      parents: ["a"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "Some abilities provide standard moves, often of certain speeds. A move provided by an ability is not a move action unless specifically stated.",
+        },
+        {
+          type: "illustration",
+          align: "center",
+          altText: "No Time for Sorrows Command Card",
+          content: "examples/command-provide-move.png",
+        },
+      ],
+    },
+    {
       keyword: "actions",
       name: "Action",
       parents: ["a"],
@@ -210,6 +229,53 @@ export const rules: RulesDocument = {
               content:
                 "Luke Skywalker also has the Force Reflexes Upgrade Card equipped. Once per activation as a free action, he may exhaust the card to gain a dodge token. This is in addition to the two actions he is allowed per activation, but he may only perform the Force Reflexes free action when he would normally be allowed to perform an action. A unit may perform any number of different free actions during its activation.",
             },
+          ],
+        },
+      ],
+    },
+    {
+      keyword: "activating_units",
+      name: "Activating a Unit",
+      parents: ["a"],
+      related_keywords: ["rally", "actions", "order_pool"],
+      summary:
+        "When a unit is chosen to activate, it first attempts to rally, and then the unit may perform actions.",
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "When a unit is chosen to activate, it first attempts to rally, and then the unit may perform actions. After the unit has completed its actions, flip the unit’s faceup order token facedown or assign it the drawn order token facedown.",
+        },
+        {
+          type: "example",
+          initiallyExpanded: true,
+          content: [
+            { type: "header", content: "Part of a Unit's Activation" },
+            {
+              type: "structured_list_numbered",
+              content: [
+                "Resolve Any Abilities or Effects at the Start of a Unit's Activation",
+                "Rallying",
+                "Perform Actions",
+                "Resolve Any Abilities or Effects at the End of a Unit's Activation",
+                "Assign Order Token",
+              ],
+            },
+          ],
+        },
+        { type: "reference", referenced_keyword: "cohesion" },
+        { type: "reference", referenced_keyword: "rally" },
+        {
+          type: "keyword_list",
+          content: [
+            "aim",
+            "attack",
+            "card_action",
+            "dodge",
+            "free_card_action",
+            "move",
+            "recover",
+            "standby",
           ],
         },
       ],
@@ -755,6 +821,44 @@ export const rules: RulesDocument = {
       ],
     },
     {
+      keyword: "courage",
+      name: "Courage",
+      related_keywords: ["panic", "suppression", "activating_units", "rally"],
+      parents: ["c"],
+      descriptions: [
+        { type: "header", content: "Null Courage Value" },
+        {
+          type: "text",
+          content:
+            "Some units have a null courage value, or “-.” These units can never gain or be assigned suppression tokens and cannot be suppressed or panicked. If a unit gains a null courage value through a special rule, it loses any suppression tokens it has, if any.",
+        },
+        {
+          type: "text",
+          content:
+            "If a {rank_commander} unit has a null courage value, then friendly units at {range_3} may choose to use that {rank_commander} unit’s courage value and, therefore, never panic, regardless of the number of suppression tokens they might have.",
+        },
+      ],
+    },
+    {
+      keyword: "deploy",
+      name: "Deploy",
+      parents: ["d"],
+      related_keywords: ["activating_units", "actions"],
+      descriptions: [
+        { type: "header", content: "Deploying Units" },
+        {
+          type: "text",
+          content:
+            "When an undeployed unit performs a move, it deploys. When a unit deploys in this way, measure the start of the move with both prongs of one end of the movement tool touching the portion of the edge of the battlefield within friendly territory.",
+        },
+        {
+          type: "text",
+          content:
+            "When a unit deploys, the unit leader measures the vertical distance changed during that move starting from the portion of the edge of the battlefield the movement tool is touching. When an undeployed unit activates, it must deploy and may not perform any action that is not a move until it deploys. Only undeployed units can deploy.",
+        },
+      ],
+    },
+    {
       keyword: "dodge",
       name: "Dodge",
       activation: "",
@@ -937,6 +1041,24 @@ export const rules: RulesDocument = {
       ],
     },
     {
+      keyword: "leaving_battlefield",
+      name: "Leaving the Battlefield",
+      parents: ["l"],
+      related_keywords: [
+        "activating_units",
+        "move",
+        "miniature",
+        "battlefield",
+      ],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "Units may not voluntarily end a movement with any of its miniature’s bases partially or fully outside the battlefield. A miniature may leave the battlefield temporarily if it ends its movement with its base fully inside the battlefield, such as when a unit with a notched base moves along the movement tool. If this is not possible, the miniature stops its movement when it contacts the edge of the battlefield, then it loses any remaining actions and may not perform any free actions.",
+        },
+      ],
+    },
+    {
       keyword: "line_of_sight",
       name: "Line of Sight",
       activation: "",
@@ -1053,8 +1175,189 @@ export const rules: RulesDocument = {
         {
           type: "text",
           content:
-            "When a unit performs an attack with a weapon that has the Lethal X keyword in the attack pool, it can spend up to X Aim tokens during the Modify Attack Dice step. If it does, the attack pool gains Pierce 1 for each aim token spent. The attacking unit may not reroll dice with any aim tokens spent this way.",
+            "When a unit performs a move action, it performs a standard move or climb. Miniatures have one of two types of bases— notched or unnotched. What kind of base a miniature has determines how that unit performs moves. Creature troopers, emplacement troopers, and vehicles all have notched bases.",
         },
+        { type: "reference", referenced_keyword: "leaving_battlefield" },
+        { type: "header", content: "Standard Move" },
+        {
+          type: "text",
+          content:
+            "To perform a standard move, take a movement tool of lower or equal speed of the moving unit and place it flat on the battlefield so that one end wholly touches the base of the unit’s unit leader. Then, the player may adjust the joint of the movement tool as they wish.",
+        },
+        {
+          type: "text",
+          content:
+            "After the movement tool has been adjusted, pick up the unit leader miniature and place it on the battlefield in contact with any portion of the movement tool. A unit may choose to use a movement tool of a lower speed when performing a move unless otherwise specified.",
+        },
+        {
+          type: "text",
+          content:
+            "After placing the unit leader miniature, pick up any other miniatures in the unit and place them in cohesion. If for any reason a miniature cannot be placed in cohesion at the end of a move, place it as close as possible to the unit leader.",
+        },
+        {
+          type: "example",
+          content: [
+            { type: "header", content: "Example: Performing Standard Moves" },
+            {
+              type: "text",
+              content:
+                "Marco is activating an undeployed unit of B1 Battle Droids. He declares a move action to deploy them by performing a standard move. As the Battle Droids are speed-2, he may choose either the speed-1 or speed-2 movement tool. Marco chooses the speed-2 movement tool and places it flat on the battlefield so that both prongs of one end of the movement tool touch the edge of the battlefield within friendly territory.",
+            },
+            {
+              type: "text",
+              content:
+                "Then, he may adjust the movement tool at its joint as he wishes. After he is content with the placement and position of the movement tool, Marco picks up the Battle Droid’s unit leader and places it back down on the battlefield in contact with any portion of the movement tool. Then he picks up the rest of the miniatures in the Battle Droid unit and places them so that they are all at {range_half} of their unit leader.",
+            },
+            {
+              type: "illustration",
+              content: "examples/movement-deployment.png",
+              align: "center",
+              altText:
+                "B1 figures on the battlefield a Movement 2 from the edge",
+            },
+            {
+              type: "text",
+              content:
+                "With their first action complete, Marco declares the second action of the B1 Battle Droids will be another move action. Because the Battle Droids are now deployed, he places the movement tool on the battlefield so that one end wholly touches the unit leader’s base. He then adjusts the movement tool and places his unit leader in contact with it. Finally, he picks up the rest of the miniatures in the Battle Droid unit and places them so that they are all at 7 of their unit leader.",
+            },
+            {
+              type: "illustration",
+              content: "examples/movement-tool.png",
+              align: "center",
+              altText:
+                "B1 figures with a movement tool next to leader miniature",
+            },
+            {
+              type: "illustration",
+              content: "examples/movement-cohesion.png",
+              align: "center",
+              altText:
+                "B1 figures after movement, checking cohesion using half-range tool.",
+            },
+          ],
+        },
+        { type: "reference", referenced_keyword: "move_through_miniatures" },
+        { type: "reference", referenced_keyword: "abilities_provide_move" },
+      ],
+    },
+    {
+      keyword: "move_through_miniatures",
+      name: "Moving Through Miniatures",
+      parents: ["m"],
+      related_keywords: ["move", "miniature", "notch"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "Miniatures can move through and overlap other miniatures during a move, but they cannot end a move overlapping other miniatures.",
+        },
+      ],
+    },
+    {
+      keyword: "non_standard_move",
+      name: "Non-Standard Moves",
+      parents: [],
+      related_keywords: ["climb", "pivot", "reverse", "strafe"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "All of the following are not standard moves: climb, pivot, reverse, and strafe. These moves each have a separate rules entry describing how they are performed.",
+        },
+      ],
+    },
+
+    {
+      keyword: "notch",
+      name: "Notched Base Movement",
+      parents: ["n"],
+      related_keywords: ["vehicles", "ground_vehicles", "move", "miniature"],
+      summary:
+        "Units on notched bases follow all the Standard Move rules for movement, with some exceptions.",
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "Units on notched bases follow all the above rules for movement. Additionally, a unit on a notched base must execute the following steps to perform a standard move:",
+        },
+        {
+          type: "structured_list_numbered",
+          content: [
+            "The player may rotate the unit leader’s base up to 90° to the left or right, keeping the center of the base in the same place.",
+            "The player takes a movement tool less than or equal to the unit’s speed characteristic and places it flat on the battlefield so that one end is wholly inside the front notch of the unit leader’s base.",
+            "The player may adjust the movement tool at its joint as they wish.",
+            "The player decides to perform either a full move and step 6 or a partial move and step 5. Unlike normal bases, notched bases cannot be placed anywhere along the movement tool and instead move along the tool with different requirements based on this decision.",
+            "To execute a partial move, pick up the unit leader miniature and move it along the movement tool, taking care to keep the movement tool lined up with the front and rear notches on the base. The player may choose to stop this movement anywhere along the path created by the movement tool, moving the movement tool out of the way and placing the miniature on the battlefield. The miniature must be placed in such a way so that the line of the front and back notches on its base are parallel to the section of the movement tool the miniature reached at the farthest part of its move.",
+            "To execute a full move, pick up the unit leader miniature and move it along the movement tool, taking care to keep the movement tool lined up with the front and rear notches on the base. The player places the miniature so that the other end of the movement tool is inserted in the back notch of the miniature’s base.",
+            "When a miniature performs a full or partial move, if the base of the miniature is impeded by an object while moving along the movement tool, it must stop its movement prematurely unless it can legally move through, over, or on top of the obstructing object. Move the movement tool out of the way and place the miniature on the battlefield accordingly.",
+            "After placing the unit leader miniature, pick up any other miniatures in the unit and place them in cohesion. Miniatures with notched bases must be placed in the exact same directional orientation as their unit leader’s base. If for any reason a miniature cannot be placed in cohesion at the end of a move, place it as close to the unit leader as possible.",
+          ],
+        },
+        { type: "reference", referenced_keyword: "non_standard_move" },
+        {
+          type: "example",
+          content: [
+            { type: "header", content: "Example: Moving With Notched Bases" },
+            {
+              type: "illustration",
+              align: "center",
+              altText:
+                "A Speeder Bike notched base with movement tool into its notch.",
+              content: "examples/movement-notched.png",
+            },
+            {
+              type: "text",
+              content:
+                "Simone chooses to perform a standard move with her Swoop Bike Riders. Since the Swoop Bike Riders have the Speeder X keyword, she cannot rotate the unit leader’s base. She then chooses to use the speed-3 movement tool since the Swoop Bike Riders are speed-3. She places the movement tool in the front notch of the Swoop Bike Riders unit leader’s base. ",
+            },
+            {
+              type: "text",
+              content:
+                "Next, she adjusts the movement tool as she wishes, then decides if she wants to perform a full or partial move. She decides to perform a full move and picks up the miniature and moves it along the movement tool, making sure to keep the tool lined up with the front and rear notches on the miniature’s base. She then places the miniature so that the rear notch is on the opposite end of the movement tool.",
+            },
+            {
+              type: "illustration",
+              align: "center",
+              altText:
+                "A Speeder Bike notched base with movement tool into its back notch.",
+              content: "examples/movement-notched-2.png",
+            },
+            {
+              type: "illustration",
+              align: "center",
+              altText:
+                "A Speeder Bike notched base with movement tool under its base.",
+              content: "examples/movement-partial.png",
+            },
+            {
+              type: "text",
+              content:
+                "If Simone wishes to perform a partial move instead, she simply stops the miniature’s movement along the movement tool at the desired point and places it on the battlefield in such a way so that the front and rear notches on its base are parallel to the section of the movement tool the miniature reached at the farthest part of its move.",
+            },
+            {
+              type: "illustration",
+              align: "center",
+              altText:
+                "A Speeder Bike notched base with movement tool under its base, stopping at a terrain piece.",
+              content: "examples/movement-notched-premature.png",
+            },
+            {
+              type: "text",
+              content:
+                "If terrain impedes a full or partial movement, the miniature must stop prematurely. Because the tower is stopping the Swoop Bike Riders movement, it ends its movement even though it has not traveled the full distance of the movement tool.",
+            },
+          ],
+        },
+        {
+          type: "header",
+          content: "Miniatures Physically Interfering With Movement",
+        },
+        {
+          type: "text",
+          content:
+            "While moving a miniature, treat the non-base portion of all miniatures as if they do not exist. A miniature’s movement cannot be impeded by the non-base parts of itself or another miniature.",
+        },
+        { type: "reference", referenced_keyword: "move_through_miniatures" },
       ],
     },
 
@@ -1129,6 +1432,69 @@ export const rules: RulesDocument = {
         },
         { type: "reference", referenced_keyword: "melee" },
         { type: "reference", referenced_keyword: "silhouettes" },
+      ],
+    },
+
+    {
+      keyword: "panic",
+      name: "Panic",
+      parents: ["p"],
+      related_keywords: ["suppression", "activating_units", "courage"],
+      descriptions: [
+        { type: "header", content: "Commanders and Checking for Panic" },
+        {
+          type: "header",
+          content:
+            "When a unit checks to see if it is panicked, instead of using its own courage value, it may use the courage value of a friendly {rank_commander} unit at {range_3}. For example, a unit with 3 suppression tokens and courage value 1 would not be panicked if it chooses to use the courage value of a friendly {rank_commander} at {range_3} that has a courage value of 2 or greater.",
+        },
+      ],
+    },
+
+    {
+      keyword: "rally",
+      name: "Rallying",
+      summary:
+        "Each time a unit activates, it has a chance to rally and remove suppression tokens.",
+      parents: ["r"],
+      related_keywords: [
+        "suppression",
+        "panic",
+        "dice",
+        "actions",
+        "activating_units",
+      ],
+      descriptions: [
+        {
+          type: "header",
+          content:
+            "Each time a unit activates, it has a chance to rally and remove suppression tokens. To rally a unit, its controlling player rolls one white defense die for each suppression token the unit has. Then its controlling player removes one suppression token for each {block} or {block_surge} result rolled.",
+        },
+        {
+          type: "header",
+          content:
+            "After rallying, if a unit begins its Perform Actions step while suppressed, it performs one fewer action during its Perform Actions step.",
+        },
+        {
+          type: "header",
+          content:
+            "If a unit begins its Perform Actions step while panicked, it cannot perform any actions or free actions. Then, if a unit did not perform any actions or free actions due to panic, at the end of the unit’s activation, it removes suppression tokens equal to its courage value.",
+        },
+        {
+          type: "example",
+          content: [
+            { type: "header", content: "Example: Suppressed and Panicked" },
+            {
+              type: "text",
+              content:
+                "On Ryan’s turn, he chooses to activate a Rebel Trooper unit with 2 suppression tokens. After resolving any effects at the start of the Rebel Trooper unit’s activation, he performs the unit’s Rally step and rolls 2 white defense dice, 1 for each suppression token. Unfortunately, he rolls 2 blanks and does not remove any suppression tokens from the unit. Because the Rebel Troopers have a courage value of 1 and have a number of suppression tokens equal to or greater than their courage value, they are still suppressed and must perform 1 fewer action during the Perform Actions step of their activation.",
+            },
+            {
+              type: "header",
+              content:
+                "to or greater than double their courage value, they are still panicked as well as suppressed. Therefore, they perform no actions or free actions, and at the end of their activation, they remove suppression tokens equal to their courage value.",
+            },
+          ],
+        },
       ],
     },
 

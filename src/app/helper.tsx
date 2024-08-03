@@ -341,7 +341,12 @@ export default function Helper() {
         <div className={styles.exampleContainer} key={getKey("header")}>
           <button
             onClick={() => toggleActive()}
-            className={styles.exampleHeader}
+            className={classNames(
+              styles.exampleHeader,
+              isActive
+                ? styles.exampleHeaderActive
+                : styles.exampleHeaderInactive
+            )}
           >
             <RenderContent
               descriptions={descriptions.filter(
