@@ -116,7 +116,7 @@ export const rules: RulesDocument = {
       name: "U",
     },
     {
-      id: "V",
+      id: "v",
       catalog: "alphabet",
       name: "V",
     },
@@ -613,6 +613,50 @@ export const rules: RulesDocument = {
     },
 
     {
+      keyword: "clone_trooper",
+      name: "Clone Trooper",
+      parents: ["c"],
+      related_keywords: ["troopers", "miniature", "unit"],
+      descriptions: [
+        {
+          type: "structured_list",
+          content: [
+            "While attacking or defending, a clone trooper unit may spend one aim, dodge, or surge token belonging to another friendly clone trooper unit at {range_2} and in LOS as if the attacking or defending unit had that token.",
+          ],
+        },
+      ],
+    },
+    {
+      keyword: "creature_trooper",
+      name: "Creature Trooper",
+      parents: ["c"],
+      related_keywords: [
+        "troopers",
+        "barricades",
+        "miniature",
+        "unit",
+        "notched_bases",
+        "reverse",
+        "pivot",
+        "engaged",
+        "cover",
+        "withdraw",
+      ],
+      descriptions: [
+        {
+          type: "structured_list",
+          content: [
+            "Creature troopers have notched bases.",
+            "Creature troopers can reverse.",
+            "Creature troopers can pivot, even while they are engaged.",
+            "Creature troopers do not receive cover from barricades.",
+            "Creature troopers can attack and withdraw during the same activation.",
+          ],
+        },
+      ],
+    },
+
+    {
       keyword: "card_action",
       name: "Card Action",
       activation: "action",
@@ -865,6 +909,29 @@ export const rules: RulesDocument = {
       ],
     },
     {
+      keyword: "droid_trooper",
+      name: "Droid Trooper",
+      parents: ["d"],
+      related_keywords: [
+        "troopers",
+        "barricades",
+        "miniature",
+        "unit",
+        "cover",
+        "suppression",
+        "poison",
+      ],
+      descriptions: [
+        {
+          type: "structured_list",
+          content: [
+            "Droid troopers cannot be suppressed, though they can still be panicked.",
+            "Droid troopers cannot gain or resolve poison tokens.",
+          ],
+        },
+      ],
+    },
+    {
       keyword: "dodge",
       name: "Dodge",
       activation: "",
@@ -941,6 +1008,93 @@ export const rules: RulesDocument = {
                 "Sarah has declared an attack action with her unit of Battle Droids. The first step of the attack sequence is to declare a defender. Measuring from the Battle Droids’ unit leader, Sarah chooses an enemy unit that is in range of at least one of the Battle Droid’s weapons and that has at least 1 miniature in LOS. In this case, since the Battle Droids’ weapons are {range_1}–{range_3}, Sarah must choose an enemy unit at {range_3} of the Battle Droids’ unit leader that is also in LOS. Since the Battle Droid unit leader has LOS to both Obi-Wan Kenobi and the Clone Troopers, and both are in range of at least 1 of the Battle Droids’ weapons, Sarah can choose either as the defending unit.",
             },
           ],
+        },
+      ],
+    },
+    {
+      keyword: "emplacement_trooper",
+      name: "Emplacement Trooper",
+      parents: ["e"],
+      related_keywords: [
+        "troopers",
+        "notched_bases",
+        "reverse",
+        "pivot",
+        "engaged",
+      ],
+      descriptions: [
+        {
+          type: "structured_list",
+          content: [
+            "Emplacement troopers have notched bases.",
+            "Emplacement troopers can reverse.",
+            "Emplacement troopers can pivot, even while they are engaged.",
+          ],
+        },
+      ],
+    },
+    {
+      keyword: "end_phase",
+      name: "End Phase",
+      parents: ["e"],
+      related_keywords: [
+        "abilities",
+        "order_pool",
+        "victory_points",
+        "command_cards",
+        "tokens",
+        "promote",
+        "objective_cards",
+      ],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "During the End Phase, players prepare for the next round by scoring VPs, discarding Command Cards, removing certain types of tokens, updating the order pool, resolving any effects, and advancing the round counter.",
+        },
+        {
+          type: "example",
+          initiallyExpanded: true,
+          content: [
+            { type: "header", content: "Parts of the End Phase" },
+            {
+              type: "structured_list_numbered",
+              content: [
+                "Resolve Any Abilities or Effects that happen at the Start of the End Phase",
+                "Score VPs",
+                "Discard Command Cards",
+                "Remove Tokens",
+                "Update Order Pool and Promote",
+                "Resolve Any Abilities or Effects at End of End Phase",
+                "Advance Round Counter",
+              ],
+            },
+          ],
+        },
+        { type: "header", content: "Score Victory Points" },
+        {
+          type: "text",
+          content:
+            "Players score VPs as described on the Objective Card. Then players score VPs as described on the Secondary Objective Card.",
+        },
+        { type: "header", content: "Discard Command Cards" },
+        {
+          type: "text",
+          content:
+            "Each player discards their revealed Command Cards from this round into their discard pile. These cards cannot be used again this game.",
+        },
+        { type: "header", content: "Remove Tokens" },
+        {
+          type: "text",
+          content:
+            "Players remove all aim, dodge, surge, and standby tokens from their units. Then, they remove one suppression token from each of their units, if able. Finally, each player removes all advantage tokens from their pass pool.",
+        },
+        { type: "reference", referenced_keyword: "promote" },
+        { type: "header", content: "Advance Round Counter" },
+        {
+          type: "text",
+          content:
+            "Set the round counter to the next highest number. The current round is over, and a new round begins. After the fifth game round, the game ends.",
         },
       ],
     },
@@ -1028,6 +1182,42 @@ export const rules: RulesDocument = {
           type: "text",
           content:
             "<strong>Free Card Action {action_free}:</strong> The unit performs an action listed on its Unit Card, one of its Upgrade Cards, a Command Card, or a Battle Card. Free card actions do not cost the unit any actions to perform. Free card actions have this symbol {action_free}. A unit may perform more than one free card action, as long as they are different. A unit may only perform free actions during its Perform Actions step and may only perform each instance of a free action once per activation. Free actions do not allow a unit to perform a non-move action more than once during its activation.",
+        },
+      ],
+    },
+
+    {
+      keyword: "ground_vehicles",
+      name: "Ground Vehicles",
+      parents: ["g"],
+      related_keywords: [
+        "unit",
+        "notched_bases",
+        "reverse",
+        "pivot",
+        "terrain",
+        "cover",
+        "line_of_sight",
+        "damage_token",
+        "resiliency",
+        "silhouettes",
+        "melee",
+        "engaged",
+        "vehicles",
+      ],
+      descriptions: [
+        {
+          type: "structured_list",
+          content: [
+            "Ground vehicles have notched bases.",
+            "Ground vehicles can pivot and reverse.",
+            "Ground vehicles can end a move with some part of their base partially overlapping terrain.",
+            "A ground vehicle may not end a move or be placed in a position where the miniature would be physically unstable or fall over, or cause the angle of the miniature’s base to be greater than 45°.",
+            "Ground vehicles can be in melee but cannot be engaged.",
+            "Ground vehicles block LOS as if they were a piece of area terrain consisting of the volume of their silhouette.",
+            "When determining the number of obscured miniatures and determining cover during an attack sequence, treat ground vehicles as a piece of area terrain consisting of the volume of their silhouette that provides heavy cover.",
+            "When a ground vehicle is defending against a ranged attack, during the Apply Dodge and Cover step, it cannot be obscured and cannot have cover as a result of being obscured.",
+          ],
         },
       ],
     },
@@ -1277,7 +1467,17 @@ export const rules: RulesDocument = {
       keyword: "notch",
       name: "Notched Base Movement",
       parents: ["n"],
-      related_keywords: ["vehicles", "ground_vehicles", "move", "miniature"],
+      related_keywords: [
+        "vehicles",
+        "ground_vehicles",
+        "move",
+        "miniature",
+        "reverse",
+        "pivot",
+        "notched_bases",
+        "repulsor_vehicle",
+        "emplacement_trooper",
+      ],
       summary:
         "Units on notched bases follow all the Standard Move rules for movement, with some exceptions.",
       descriptions: [
@@ -1364,6 +1564,40 @@ export const rules: RulesDocument = {
             "While moving a miniature, treat the non-base portion of all miniatures as if they do not exist. A miniature’s movement cannot be impeded by the non-base parts of itself or another miniature.",
         },
         { type: "callout", callout_keyword: "move_through_miniatures" },
+      ],
+    },
+
+    {
+      keyword: "notched_bases",
+      name: "Notched Bases",
+      parents: ["n"],
+      related_keywords: ["miniature", "vehicles", "reverse", "pivot", "notch"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "Some miniatures in Star Wars: Legion have notched bases. Units on notched bases follow all of the rules detailed in this section.",
+        },
+        {
+          type: "illustration",
+          content: "examples/notched-base.png",
+          altText: "A Republic AT-RT with a notched base",
+          align: "center",
+        },
+        { type: "header", content: "Moving With Notched Bases" },
+        {
+          type: "text",
+          content:
+            "Miniatures with notched bases have a number of additional movement options available to them:",
+        },
+        { type: "reference", referenced_keyword: "pivot" },
+        { type: "reference", referenced_keyword: "reverse" },
+        { type: "header", content: "Attacking With Notched Bases" },
+        {
+          type: "text",
+          content:
+            "Miniatures with notched bases have four different arcs represented by lines sculpted on their bases: front, two sides, and rear. These arcs are referenced by certain rules, such as the <strong>Fixed</strong> and <strong>Weak Point</strong> keywords.",
+        },
       ],
     },
 
@@ -1462,6 +1696,113 @@ export const rules: RulesDocument = {
     },
 
     {
+      keyword: "pivot",
+      name: "Pivot",
+      parents: ["p"],
+      related_keywords: [
+        "notch",
+        "notched_bases",
+        "vehicles",
+        "ground_vehicles",
+        "repulsor_vehicle",
+        "emplacement_trooper",
+      ],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "Some miniatures that have notched bases can pivot. If a unit can pivot, it is noted in the rules for its unit type.",
+        },
+        {
+          type: "text",
+          content:
+            "When a unit that can pivot performs a move action, it may choose to pivot instead of performing another movement.",
+        },
+        {
+          type: "text",
+          content:
+            "To pivot, rotate the unit leader’s base up to 90° to the left or right, keeping the center of the base in the same place. If a unit contains multiple miniatures, each miniature in the unit must pivot so that the directional orientation of its base is the same as the unit leader’s.",
+        },
+      ],
+    },
+
+    {
+      keyword: "promote",
+      name: "Promote",
+      parents: ["p"],
+      related_keywords: [
+        "miniature",
+        "unit",
+        "commander",
+        "field_commander",
+        "order_pool",
+      ],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "If all of a player’s {rank_commander} units are defeated, and they do not control a unit with the Field Commander keyword with a commander token, starting with the player with priority, players must promote a trooper unit to change its rank and become {rank_commander} p unit. ",
+        },
+        {
+          type: "text",
+          content:
+            "The unit’s original order token is discarded and is replaced by a {rank_commander} order token. The unit counts as a {rank_commander} unit for all trooper unit. If a player has no trooper units to promote and does not control a unit with the Field Commander keyword with a commander token, then they no longer have a {rank_commander} unit and cannot play Command Cards.",
+        },
+        {
+          type: "example",
+          content: [
+            { type: "header", content: "Example: Promote" },
+            {
+              type: "text",
+              content:
+                "Earlier in the round, the last {rank_commander} unit in Josh’s army was defeated. At the Update Order Pool and Promote step of the End Phase, he must choose a trooper unit to become a {rank_commander}. The unit’s original order token is discarded, and he replaces it with a {rank_commander} order token. The promoted unit counts as a {rank_commander} for all rules purposes. If Josh doesn’t have any trooper units to promote, then he no longer has a {rank_commander} and cannot play Command Cards for the rest of the game.",
+            },
+          ],
+        },
+      ],
+    },
+
+    {
+      keyword: "recover",
+      name: "Recover",
+      activation: "",
+      parents: ["r"],
+      tag: "",
+      related_keywords: [
+        "actions",
+        "exhaust",
+        "recharge",
+        "reconfigure",
+        "suppression",
+        "upgrade_card",
+        "commander",
+        "courage",
+      ],
+      summary:
+        "The unit removes any number of suppression tokens and readies any exhausted Upgrade Cards.",
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "A unit that performs a recover action removes any number of suppression tokens from the unit and readies any number of the unit’s exhausted Upgrade Cards.",
+        },
+        {
+          type: "text",
+          content:
+            "When a unit recovers, it readies all of its exhausted cards. When a card is readied, turn it 90° to the left so it is in its original orientation. The card is no longer exhausted.",
+        },
+        {
+          type: "callout",
+          callout_keyword: "panic_commander",
+        },
+        {
+          type: "callout",
+          callout_keyword: "courage_null",
+        },
+      ],
+    },
+
+    {
       keyword: "rally",
       name: "Rallying",
       summary:
@@ -1516,41 +1857,37 @@ export const rules: RulesDocument = {
     },
 
     {
-      keyword: "recover",
-      name: "Recover",
-      activation: "",
+      keyword: "repulsor_vehicle",
+      name: "Repulsor Vehicles",
       parents: ["r"],
-      tag: "",
       related_keywords: [
-        "actions",
-        "exhaust",
-        "recharge",
-        "reconfigure",
-        "suppression",
-        "upgrade_card",
-        "commander",
-        "courage",
+        "unit",
+        "notched_bases",
+        "pivot",
+        "terrain",
+        "cover",
+        "line_of_sight",
+        "damage_token",
+        "resiliency",
+        "silhouettes",
+        "melee",
+        "engaged",
+        "vehicles",
       ],
-      summary:
-        "The unit removes any number of suppression tokens and readies any exhausted Upgrade Cards.",
       descriptions: [
         {
-          type: "text",
-          content:
-            "A unit that performs a recover action removes any number of suppression tokens from the unit and readies any number of the unit’s exhausted Upgrade Cards.",
-        },
-        {
-          type: "text",
-          content:
-            "When a unit recovers, it readies all of its exhausted cards. When a card is readied, turn it 90° to the left so it is in its original orientation. The card is no longer exhausted.",
-        },
-        {
-          type: "callout",
-          callout_keyword: "panic_commander",
-        },
-        {
-          type: "callout",
-          callout_keyword: "courage_null",
+          type: "structured_list",
+          content: [
+            "Repulsor vehicles have notched bases.",
+            "Repulsor vehicles can pivot.",
+            "Repulsor vehicles cannot perform the standby action or gain or spend standby tokens.",
+            "Repulsor vehicles can end a move with part of their base partially overlapping terrain.",
+            "Repulsor vehicles may move onto or through impassable terrain and may place the movement tool overlapping impassable terrain when doing so.",
+            "A repulsor vehicle may not end a move or be placed in a position where the miniature would be physically unstable or fall over, or cause the angle of the miniature’s base to be greater than 45°.",
+            "Repulsor vehicles can be in melee but cannot be engaged.",
+            "Repulsor vehicles do not block LOS, do not obscure miniatures, and do not provide cover.",
+            "When a repulsor vehicle is defending against a ranged attack, during the Apply Dodge and Cover step, it cannot be obscured and cannot have cover as a result of being obscured.",
+          ],
         },
       ],
     },
@@ -1601,6 +1938,137 @@ export const rules: RulesDocument = {
                 "Next, she converts attack surges. Since the Snowtroopers have {hit_surge}:{hit} on the surge chart on their Unit Card, Simone changes the 2 {hit_surge} results to {hit} results. If the Snowtroopers did not have {hit_surge}:{hit}, she would have turned the {hit_surge} results to blank results instead. The final dice results for the attack are therefore 1 {hit_critical}, 3 {hit}, and 1 blank result.",
             },
           ],
+        },
+      ],
+    },
+
+    {
+      keyword: "resiliency",
+      name: "Resiliency",
+      parents: ["r"],
+      related_keywords: [
+        "vehicles",
+        "ground_vehicles",
+        "repulsor_vehicle",
+        "damage_token",
+        "tokens",
+      ],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "Vehicles do not have a courage value. Instead most, but not all, have a resilience value. A vehicle that does not have a resilience value has a “-” on their Unit Card where the resilience value should be.",
+        },
+        {
+          type: "illustration",
+          content: "tokens/damage.png",
+          align: "right",
+          altText: "An oblong hexagon shape with an orange cog inside.",
+          width: "80",
+        },
+        {
+          type: "text",
+          content:
+            "When a vehicle with a resilience value has a number of wounds equal to or more than its resilience value, after the effect causing this is resolved, the vehicle gains a vehicle damage token.",
+        },
+        {
+          type: "text",
+          content:
+            "When a player activates a vehicle unit with a vehicle damage token, roll a white defense die. On a blank result that vehicle performs one fewer action during its activation.",
+        },
+        {
+          type: "text",
+          content:
+            "A vehicle can only have one vehicle damage token at a time and can only gain a vehicle damage token in this way once per game.",
+        },
+        {
+          type: "example",
+          content: [
+            { type: "header", content: "Example: Vehicle Damage" },
+            {
+              type: "text",
+              content:
+                "Nicholas’ AAT Tank has already suffered 3 wounds and suffers 3 more from an attack. After the attack is resolved, Nicholas’ AAT Tank gains a vehicle damage token.",
+            },
+            {
+              type: "text",
+              content:
+                "Because a vehicle can only ever gain a vehicle damage token when it has damage equal to its resilience once per game, if Nicholas removes the vehicle damage token from his AAT Tank and it suffers further wounds, he does not gain another vehicle damage token.",
+            },
+          ],
+        },
+      ],
+    },
+
+    {
+      keyword: "reverse",
+      name: "Reverse",
+      parents: ["r"],
+      related_keywords: [
+        "notch",
+        "notched_bases",
+        "vehicles",
+        "ground_vehicles",
+        "repulsor_vehicle",
+        "emplacement_trooper",
+      ],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "Some miniatures on notched bases can reverse. Only certain unit types may reverse.",
+        },
+        {
+          type: "text",
+          content:
+            "When a unit performs a move action, it may choose to reverse instead of making another movement. When performing a reverse, follow the normal rules for moving with a notched base with the following exceptions:",
+        },
+        {
+          type: "structured_list",
+          content: [
+            "When performing a partial reverse, instead of placing the movement tool wholly in the front notch of the unit leader’s base at the start of a move, place the movement tool wholly in the rear notch.",
+            "When performing a full reverse, instead of placing the movement tool in the front notch of the unit leader’s base, place it in the rear notch. Then place the front notch of the unit leader’s base on the other end of the movement tool.",
+            "While reversing, a unit reduces its speed by 1 to a minimum of 1.",
+          ],
+        },
+      ],
+    },
+
+    {
+      keyword: "suffering_wounds",
+      name: "Suffering Wounds and Defeating Miniatures",
+      parents: ["w", "s"],
+      related_keywords: ["attack", "miniature", "line_of_sight"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "When a player’s unit suffers wounds, that player chooses a miniature from that unit and assigns wound tokens to it until either all wounds have been suffered or the miniature is defeated.",
+        },
+        {
+          type: "text",
+          content:
+            "A miniature is defeated when it has a number of wound tokens assigned to it equal to its wound threshold. If there are unassigned wounds remaining after a miniature has been defeated, the player chooses another miniature from the same unit and repeats the process until either all wounds have been assigned or all miniatures in the unit have been defeated. When a unit suffers wounds from a ranged attack, if the attacker has LOS to only some of the miniatures in the defending unit, the defending unit cannot suffer wounds greater than the total wound threshold of miniatures that are in LOS.",
+        },
+        {
+          type: "text",
+          content:
+            "A unit leader cannot be assigned wounds unless it is the only miniature in the unit.",
+        },
+        {
+          type: "text",
+          content:
+            "A miniature or unit with at least one wound token is wounded. When assigning wound tokens, the wounded miniature with the most wound tokens must be chosen before any others when assigning wounds and must be assigned wounds until it is defeated. If more than one miniature has the same number of wound tokens assigned, choose one of those miniatures to assign wounds to.",
+        },
+        {
+          type: "text",
+          content:
+            "When a miniature is defeated, remove it from the battlefield. If a unit leader is defeated and there are still undefeated miniatures in the unit, the unit’s controlling player must immediately choose another miniature in that unit to become the unit leader, replacing that miniature with the unit leader miniature.",
+        },
+        {
+          type: "text",
+          content:
+            "When all of the miniatures in a unit are defeated, the unit is defeated. Remove all order tokens for that unit from the battlefield.",
         },
       ],
     },
@@ -1724,6 +2192,104 @@ export const rules: RulesDocument = {
     },
 
     {
+      keyword: "troopers",
+      name: "Trooper",
+      parents: ["t"],
+      related_keywords: [
+        "clone_trooper",
+        "creature_trooper",
+        "droid_trooper",
+        "emplacement_trooper",
+        "woookie_trooper",
+      ],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "Trooper is the most common unit type in <i>Star Wars</i>: Legion. Trooper units may have the following subtypes, each with their own additional rules:",
+        },
+        {
+          type: "structured_list",
+          content: [
+            "Clone Trooper",
+            "Creature Trooper",
+            "Droid Trooper",
+            "Emplacement Trooper",
+            "Wookie Trooper",
+          ],
+        },
+        {
+          type: "text",
+          content:
+            "Rules that affect a trooper unit affect all its subtypes. Subtypes must follow all the rules of normal troopers unless otherwise stated.",
+        },
+        { type: "reference", referenced_keyword: "clone_trooper" },
+        { type: "reference", referenced_keyword: "creature_trooper" },
+        { type: "reference", referenced_keyword: "droid_trooper" },
+        { type: "reference", referenced_keyword: "emplacement_trooper" },
+        { type: "reference", referenced_keyword: "woookie_trooper" },
+      ],
+    },
+
+    {
+      keyword: "unit",
+      name: "Unit Types",
+      parents: ["u", "unit_types"],
+      related_keywords: [
+        "clone_trooper",
+        "creature_trooper",
+        "troopers",
+        "droid_trooper",
+        "emplacement_trooper",
+        "woookie_trooper",
+        "vehicles",
+        "resiliency",
+        "repulsor_vehicle",
+        "ground_vehicles",
+      ],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "Each unit in <i>Star Wars</i>: Legion has a unit type indicated on their Unit Card. All units are either troopers or vehicles, and each type has a number of subtypes with their own special rules.",
+        },
+        { type: "reference", referenced_keyword: "troopers" },
+        { type: "reference", referenced_keyword: "vehicles" },
+      ],
+    },
+
+    {
+      keyword: "vehicles",
+      name: "Vehicles",
+      parents: ["v"],
+      related_keywords: [
+        "ground_vehicles",
+        "repulsor_vehicle",
+        "resiliency",
+        "damage_token",
+      ],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "There are many types of vehicles in <i>Star Wars</i>: Legion, from lumbering tanks to soaring airspeeders and everything in between. Every vehicle unit in <i>Star Wars</i>: Legion also has one of the subtypes listed below with their own special rules:",
+        },
+        {
+          type: "structured_list",
+          content: ["Ground Vehicle", "Repulsor Vehicle"],
+        },
+        {
+          type: "text",
+          content:
+            "Rules that affect a vehicle unit affect all its subtypes unless otherwise stated. Regardless of subtype, all vehicles have the resiliency rules listed below.",
+        },
+        { type: "reference", referenced_keyword: "resiliency" },
+        { type: "reference", referenced_keyword: "ground_vehicles" },
+        { type: "reference", referenced_keyword: "repulsor_vehicle" },
+      ],
+    },
+
+    {
       keyword: "weapons",
       name: "Weapons",
       activation: "",
@@ -1773,40 +2339,16 @@ export const rules: RulesDocument = {
       ],
     },
     {
-      keyword: "suffering_wounds",
-      name: "Suffering Wounds and Defeating Miniatures",
-      parents: ["w", "s"],
-      related_keywords: ["attack", "miniature", "line_of_sight"],
+      keyword: "woookie_trooper",
+      name: "Wookie Trooper",
+      parents: ["w"],
+      related_keywords: ["troopers"],
       descriptions: [
         {
-          type: "text",
-          content:
-            "When a player’s unit suffers wounds, that player chooses a miniature from that unit and assigns wound tokens to it until either all wounds have been suffered or the miniature is defeated.",
-        },
-        {
-          type: "text",
-          content:
-            "A miniature is defeated when it has a number of wound tokens assigned to it equal to its wound threshold. If there are unassigned wounds remaining after a miniature has been defeated, the player chooses another miniature from the same unit and repeats the process until either all wounds have been assigned or all miniatures in the unit have been defeated. When a unit suffers wounds from a ranged attack, if the attacker has LOS to only some of the miniatures in the defending unit, the defending unit cannot suffer wounds greater than the total wound threshold of miniatures that are in LOS.",
-        },
-        {
-          type: "text",
-          content:
-            "A unit leader cannot be assigned wounds unless it is the only miniature in the unit.",
-        },
-        {
-          type: "text",
-          content:
-            "A miniature or unit with at least one wound token is wounded. When assigning wound tokens, the wounded miniature with the most wound tokens must be chosen before any others when assigning wounds and must be assigned wounds until it is defeated. If more than one miniature has the same number of wound tokens assigned, choose one of those miniatures to assign wounds to.",
-        },
-        {
-          type: "text",
-          content:
-            "When a miniature is defeated, remove it from the battlefield. If a unit leader is defeated and there are still undefeated miniatures in the unit, the unit’s controlling player must immediately choose another miniature in that unit to become the unit leader, replacing that miniature with the unit leader miniature.",
-        },
-        {
-          type: "text",
-          content:
-            "When all of the miniatures in a unit are defeated, the unit is defeated. Remove all order tokens for that unit from the battlefield.",
+          type: "structured_list",
+          content: [
+            "Wookiee troopers have no additional special rules, other than being referenced by their unit type for certain rules and abilities.",
+          ],
         },
       ],
     },
