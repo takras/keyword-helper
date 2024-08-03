@@ -29,6 +29,7 @@ export default function Helper() {
   useEffect(() => {
     if (modal && selectedKeywords.length > 0) {
       modal.showModal();
+      modal.scrollTop = 0;
     }
   }, [modal, selectedKeywords]);
 
@@ -158,6 +159,13 @@ export default function Helper() {
               isNumbered={description.type === "structured_list_numbered"}
             />
           );
+        case "callout":
+          return (
+            <CalloutComponent
+              key={getKey(description.type)}
+              reference={description.callout_keyword}
+            />
+          );
         case "text":
         default:
           return interpolateString(
@@ -167,6 +175,21 @@ export default function Helper() {
           );
       }
     });
+  };
+
+  const CalloutComponent = ({ reference }: { reference: string }) => {
+    const enriched = getEnrichedKeyword(reference);
+    if (!enriched?.descriptions) {
+      return null;
+    }
+    return (
+      <div className={styles.calloutContainer}>
+        <h3 className={classNames(styles.header3, styles.calloutHeader)}>
+          {enriched?.name}
+        </h3>
+        <RenderContent descriptions={enriched?.descriptions} />
+      </div>
+    );
   };
 
   const reference = ({ reference }: { reference: string }) => {

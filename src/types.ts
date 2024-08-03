@@ -19,6 +19,7 @@ export type AvailableKeywords =
   | "declare_defender"
   | "deploy"
   | "dice"
+  | "commander"
   | "cover"
   | "cohesion"
   | "courage"
@@ -153,6 +154,7 @@ export interface Description {
 
 export type DescriptionType = Array<
   | Illustration
+  | Callout
   | StructuredList
   | Text
   | KeywordList
@@ -182,6 +184,11 @@ export type Text = {
 type Reference = {
   type: "reference";
   referenced_keyword: AvailableKeywords;
+};
+
+type Callout = {
+  type: "callout";
+  callout_keyword: AvailableKeywords;
 };
 
 type Header = {

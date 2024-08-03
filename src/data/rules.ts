@@ -1242,8 +1242,8 @@ export const rules: RulesDocument = {
             },
           ],
         },
-        { type: "reference", referenced_keyword: "move_through_miniatures" },
-        { type: "reference", referenced_keyword: "abilities_provide_move" },
+        { type: "callout", callout_keyword: "move_through_miniatures" },
+        { type: "callout", callout_keyword: "abilities_provide_move" },
       ],
     },
     {
@@ -1363,7 +1363,7 @@ export const rules: RulesDocument = {
           content:
             "While moving a miniature, treat the non-base portion of all miniatures as if they do not exist. A miniature’s movement cannot be impeded by the non-base parts of itself or another miniature.",
         },
-        { type: "reference", referenced_keyword: "move_through_miniatures" },
+        { type: "callout", callout_keyword: "move_through_miniatures" },
       ],
     },
 
@@ -1528,6 +1528,8 @@ export const rules: RulesDocument = {
         "reconfigure",
         "suppression",
         "upgrade_card",
+        "commander",
+        "courage",
       ],
       summary:
         "The unit removes any number of suppression tokens and readies any exhausted Upgrade Cards.",
@@ -1543,12 +1545,12 @@ export const rules: RulesDocument = {
             "When a unit recovers, it readies all of its exhausted cards. When a card is readied, turn it 90° to the left so it is in its original orientation. The card is no longer exhausted.",
         },
         {
-          type: "reference",
-          referenced_keyword: "panic_commander",
+          type: "callout",
+          callout_keyword: "panic_commander",
         },
         {
-          type: "reference",
-          referenced_keyword: "courage_null",
+          type: "callout",
+          callout_keyword: "courage_null",
         },
       ],
     },
