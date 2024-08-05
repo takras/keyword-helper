@@ -16,7 +16,7 @@ export const interpolateString = (
       }
       return b;
     })
-    .replace(/(\{keyword:).+\}/g, (a: string) => {
+    .replace(/(\{keyword:).+?\}/g, (a: string) => {
       const word = a.split(":")[1].split("}")[0];
       return `<span className=${styles.inlineKeyword}>${word}</span>`;
     });
@@ -34,6 +34,7 @@ export const IconList = {
   hit_critical: "black/hit-critical.png",
   block: "black/block.png",
   block_surge: "black/block-surge.png",
+  faction_ewoks: "black/faction_ewoks.png",
   range_melee: "black/range-melee.png",
   range_half: "black/range-half.png",
   range_infinite: "black/range-infnite.png",

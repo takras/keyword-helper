@@ -154,6 +154,13 @@ export const rules: RulesDocument = {
   ],
   keywords: [
     {
+      keyword: "about",
+      parents: [],
+      name: "About Legion Helper",
+      related_keywords: [],
+      descriptions: [],
+    },
+    {
       keyword: "abilities_provide_move",
       name: "Abilities That Provide Moves",
       related_keywords: ["move", "command_cards"],
@@ -281,6 +288,62 @@ export const rules: RulesDocument = {
       ],
     },
     {
+      keyword: "ai_action",
+      name: "AI: Action",
+      activation: "",
+      parents: ["a", "units"],
+      tag: "Unit Keyword",
+      range: "range_3",
+      related_keywords: ["move", "aim", "dodge", "actions", "attack"],
+      summary: "",
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "At the start of a unit with the AI keyword’s Perform Actions step, if it is on the battlefield, does not have a faceup order token, and is not at {range_3} of a friendly {rank_commander} unit, it must perform one of the specified actions as its first action that activation. Free actions do not satisfy the requirements of the AI keyword. If a unit cannot perform any of its listed actions as its first action, it is free to perform other actions as normal.",
+        },
+      ],
+    },
+    {
+      keyword: "aid",
+      name: "Aid: Affiliation",
+      activation: "",
+      parents: ["a", "units"],
+      tag: "Unit Keyword",
+      range: "range_2",
+      related_keywords: [
+        "aim",
+        "dodge",
+        "surge",
+        "line_of_sight",
+        "suppression",
+      ],
+      summary: "",
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "When a unit with the Aid keyword would gain an aim, dodge, or surge token, another friendly unit of the affiliation or type listed at {range_2} and in line of sight may gain that token instead. If it does, the unit with the Aid keyword gains one suppression token.",
+        },
+      ],
+    },
+    {
+      keyword: "allies_of_convenience",
+      name: "Allies of Convenience",
+      activation: "",
+      parents: ["a", "units"],
+      tag: "Unit Keyword",
+      related_keywords: ["issue_order", "mercenary", "army_building"],
+      summary: "",
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "Units with the Allies of Convenience keyword may issue orders to friendly Mercenary units regardless of affiliation. Additionally, when building an army, players may include one extra Mercenary unit in their army regardless of rank if there is at least one unit with the Allies of Convenience keyword, though they cannot take more units of a particular rank than normally allowed.",
+        },
+      ],
+    },
+    {
       keyword: "aim",
       name: "Aim",
       activation: "action",
@@ -366,6 +429,22 @@ export const rules: RulesDocument = {
     },
     {
       keyword: "armor",
+      name: "Armor",
+      activation: "",
+      parents: ["a", "units"],
+      tag: "Unit Keyword",
+      related_keywords: ["attack", "cancel", "impact", "weak_points"],
+      summary: "",
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "During the Modify Attack Dice step of the attack sequence, if the defending unit has the Armor X keyword, the defending player may cancel all {hit} results, removing those dice from the attack pool.",
+        },
+      ],
+    },
+    {
+      keyword: "armor_x",
       name: "Armor X",
       activation: "",
       parents: ["a", "units"],
@@ -376,7 +455,55 @@ export const rules: RulesDocument = {
         {
           type: "text",
           content:
-            "During the Modify Attack Dice step of the attack sequence, if the defending unit has the Armor X keyword, the defending player may cancel up to X hit {hit} results, removing those dice from the attack pool.",
+            "During the Modify Attack Dice step of the attack sequence, if the defending unit has the Armor X keyword, the defending player may cancel up to X {hit} results, removing those dice from the attack pool.",
+        },
+      ],
+    },
+    {
+      keyword: "arsenal_x",
+      name: "Arsenal X",
+      activation: "",
+      parents: ["a", "units"],
+      tag: "Unit Keyword",
+      related_keywords: ["attack", "miniature", "weapons"],
+      summary: "",
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "When choosing weapons during the Form Attack Pool step, each miniature in the unit that has the Arsenal X keyword can contribute X weapons to attack pools. Each weapon or combination of weapons may form a new attack pool, but each weapon may only be added to one attack pool.",
+        },
+      ],
+    },
+    {
+      keyword: "associate",
+      name: "Associate: Unit Name",
+      activation: "",
+      parents: ["a", "units"],
+      tag: "Unit Keyword",
+      related_keywords: ["army_building"],
+      summary: "",
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "During Army Building, a unit with the Associate keyword does not count its rank towards the maximum rank requirements for that rank if a unit with the specified unit name is included in the same army.",
+        },
+      ],
+    },
+    {
+      keyword: "ataru_mastery",
+      name: "Ataru Mastery",
+      activation: "",
+      parents: ["a", "units"],
+      tag: "Unit Keyword",
+      related_keywords: ["attack", "actions", "dodge", "aim"],
+      summary: "",
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "A unit with the Ataru Mastery keyword can perform up to two attack actions during its activation. When it attacks, it gains one dodge token after the attack is resolved. When it defends, it gains one aim token after the attack is resolved.",
         },
       ],
     },
@@ -583,6 +710,22 @@ export const rules: RulesDocument = {
       ],
     },
     {
+      keyword: "attack_run",
+      name: "Attack Run",
+      activation: "",
+      parents: ["a", "units"],
+      tag: "Unit Keyword",
+      related_keywords: ["activating_units", "move"],
+      summary: "",
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "At the start of its activation, a unit with the Attack Run keyword may increase or decrease its maximum speed by 1 until the end of that activation.",
+        },
+      ],
+    },
+    {
       keyword: "backup",
       name: "Backup",
       activation: "",
@@ -611,6 +754,144 @@ export const rules: RulesDocument = {
         },
       ],
     },
+    {
+      keyword: "barrage",
+      name: "Barrage",
+      activation: "",
+      parents: ["b", "units"],
+      tag: "Unit Keyword",
+      related_keywords: ["attack", "arsenal_x"],
+      summary: "",
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "If a unit has the Barrage keyword, it may make two attack actions instead of one if it does not use the Arsenal keyword during its activation.",
+        },
+      ],
+    },
+
+    {
+      keyword: "block",
+      name: "Block",
+      activation: "",
+      parents: ["b", "units"],
+      tag: "Unit Keyword",
+      related_keywords: ["attack", "dodge", "apply_dodge_cover", "dodge"],
+      summary: "",
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "When a unit with the Block keyword is defending, if it spends any dodge tokens during the Apply Dodge and Cover step, it gains {block_surge}:{block}.",
+        },
+      ],
+    },
+    {
+      keyword: "bolster_x",
+      name: "Bolster X",
+      activation: "",
+      parents: ["b", "units"],
+      tag: "Unit Keyword",
+      related_keywords: ["actions", "surge"],
+      range: "range_2",
+      summary: "",
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "As a card action, a unit with the Bolster X keyword can choose up to X friendly units at {range_2} to each gain one surge token.",
+        },
+      ],
+    },
+    {
+      keyword: "bounty",
+      name: "Bounty",
+      activation: "",
+      parents: ["b", "units"],
+      tag: "Unit Keyword",
+      related_keywords: ["setup", "unit"],
+      summary: "",
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "During Setup, a unit with the Bounty keyword chooses an enemy {rank_operative} or {rank_commander} unit. The chosen unit gains a bounty token. After a friendly unit with the Bounty keyword defeats an enemy unit that has one or more bounty tokens with an attack or effect, the friendly unit’s controlling player scores 1 VP.",
+        },
+      ],
+    },
+    {
+      keyword: "cache",
+      name: "Cache",
+      activation: "",
+      parents: ["c", "units"],
+      tag: "Unit Keyword",
+      related_keywords: ["setup", "upgrade_card", "tokens"],
+      summary: "",
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "During Setup, a unit with an equipped Upgrade Card that has the Cache keyword places the listed token(s) on the card with the Cache keyword. The unit may spend those tokens.",
+        },
+      ],
+    },
+    {
+      keyword: "calculate_odds",
+      name: "Calculate Odds",
+      activation: "",
+      parents: ["c", "units"],
+      tag: "Unit Keyword",
+      related_keywords: [
+        "actions",
+        "card_action",
+        "aim",
+        "dodge",
+        "suppression",
+      ],
+      summary: "",
+      range: "range_2",
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "As a card action, a unit with the Calculate Odds keyword can choose a friendly trooper unit at {range_2} and in LOS to gain one aim token, one dodge token, and one suppression token.",
+        },
+      ],
+    },
+
+    {
+      keyword: "charge",
+      name: "Charge",
+      activation: "",
+      parents: ["c", "units"],
+      tag: "Unit Keyword",
+      related_keywords: ["move", "melee", "base", "attack"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "After a unit that has the Charge keyword performs a move action that brings it into base contact with an enemy miniature to start a melee, it may perform a free attack action against that unit using only melee weapons.",
+        },
+      ],
+    },
+
+    {
+      keyword: "climb_vehicle",
+      name: "Climbing Vehicle",
+      activation: "",
+      parents: ["c", "units"],
+      tag: "Unit Keyword",
+      related_keywords: ["move", "climb", "troopers"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "A unit with the Climbing Vehicle keyword is treated as a trooper unit for the purposes of climbing.",
+        },
+        { type: "reference", referenced_keyword: "climb" },
+      ],
+    },
 
     {
       keyword: "clone_trooper",
@@ -626,6 +907,29 @@ export const rules: RulesDocument = {
         },
       ],
     },
+
+    {
+      keyword: "complete_the_mission",
+      name: "Complete the Mission",
+      activation: "",
+      parents: ["c", "units"],
+      tag: "Unit Keyword",
+      related_keywords: ["setup", "tokens", "critical_x"],
+      range: "range_1",
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "During Setup, for each friendly unit with the Complete the Mission keyword, place a friendly priority mission token on the battlefield within contested territory.",
+        },
+        {
+          type: "text",
+          content:
+            "While a unit with the Complete the Mission keyword is at {range_1} of one or more friendly priority mission tokens, that unit gains {block_surge}:{block}. When a unit with the Complete the Mission keyword attacks an enemy unit at {range_1} of one or more friendly priority mission tokens, the attacking unit’s attack pool gains the {keyword:Critical 2} keyword.",
+        },
+      ],
+    },
+
     {
       keyword: "creature_trooper",
       name: "Creature Trooper",
@@ -652,6 +956,20 @@ export const rules: RulesDocument = {
             "Creature troopers do not receive cover from barricades.",
             "Creature troopers can attack and withdraw during the same activation.",
           ],
+        },
+      ],
+    },
+
+    {
+      keyword: "critical_x",
+      name: "Critical X",
+      parents: ["c", "weapons"],
+      related_keywords: ["surge", "attack"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "When a unit converts attack surges for an attack pool with the Critical X keyword, during the Convert Surges step it may convert up to X attack surge {hit_surge} results to critical {hit_critical} results.",
         },
       ],
     },
@@ -865,6 +1183,47 @@ export const rules: RulesDocument = {
       ],
     },
     {
+      keyword: "compel",
+      name: "Compel",
+      activation: "",
+      parents: ["c", "units"],
+      tag: "Unit Keyword",
+      related_keywords: ["rally", "suppression", "move"],
+      range: "range_2",
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "After another trooper unit at {range_2} of a friendly unit with the Compel keyword performs its Rally step and is suppressed but not panicked, at the beginning of its Perform Action step, it may gain one suppression token to perform a free move action.",
+        },
+      ],
+    },
+    {
+      keyword: "contingencies_x",
+      name: "Contingencies X",
+      activation: "",
+      parents: ["c", "units"],
+      tag: "Unit Keyword",
+      related_keywords: ["command_cards", "effects"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "When building a command hand before the game begins, for each unit with the Contingencies X keyword in a player’s army, that player sets aside up to X additional Command Cards facedown as Contingency Cards, where X is equal to the combined Contingencies X value on all their units. These set-aside cards may have any number of pips but must follow all other rules for constructing a command hand. Set-aside Contingency Cards are not considered to be in a player’s command hand and are kept secret from an opponent. A player may look at their set-aside Contingency Cards at any time.",
+        },
+        {
+          type: "text",
+          content:
+            "After a player reveals a Command Card, before any other effects are resolved, that player may discard that card to reveal one of their set-aside Contingency Cards with an equal number of pips instead. The revealed Contingency Card is then treated as that player’s selected and revealed Command Card for that turn. If both players have set-aside Contingency Cards, the blue player must decide first whether or not to reveal a Contingency Card.",
+        },
+        {
+          type: "text",
+          content:
+            "If all a player’s units with the Contingencies X keyword are defeated, a player cannot reveal or use their Contingency Cards.",
+        },
+      ],
+    },
+    {
       keyword: "courage_null",
       name: "Null Courage Value",
       related_keywords: [
@@ -890,6 +1249,250 @@ export const rules: RulesDocument = {
       ],
     },
     {
+      keyword: "coordinate",
+      name: "Coordinate: Type/Name",
+      activation: "",
+      parents: ["c", "units"],
+      tag: "Unit Keyword",
+      related_keywords: ["issue_order", "order_pool"],
+      range: "range_1",
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "After a unit with the Coordinate keyword is issued an order, it may issue an order to a friendly unit at {range_1} that has the unit name or unit type specified. A unit that has one or more unit names or unit types listed can only choose one of these listed unit names or unit types to issue an order to using the Coordinate keyword. If a unit already has the Coordinate keyword and gains another instance of the keyword, the unit may choose which targets to issue an order to from the two instances of the keyword; it does not issue two orders.",
+        },
+      ],
+    },
+    {
+      keyword: "counterpart",
+      name: "Counterpart",
+      activation: "",
+      parents: ["c", "units"],
+      tag: "Unit Keyword",
+      related_keywords: ["miniature", "upgrade_card", "wounds", "abilities"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "Some units are faithful companions or subservient minions and are almost never seen apart from another unit. A unit like this has the Counterpart keyword and the miniature that represents this unit is always added to another unit. That miniature has a Counterpart Card and their miniature is a counterpart miniature. The combined unit has the rank, unit type, defense die, courage value, surge conversion chart, and speed as shown on the Unit Card.",
+        },
+        {
+          type: "structured_list",
+          content: [
+            "Sometimes, a Counterpart Card has a different unit type only for the purposes of equipping Upgrade Cards.",
+            "A unit leader in a combined unit can be assigned wounds when it is the only non-counterpart miniature in the unit.",
+            "When a wound token would be assigned to a non- counterpart miniature in a combined unit, that unit’s controlling player may assign that wound token to an undefeated counterpart miniature in that unit instead. That wound token must be assigned to a counterpart miniature if it would cause the last non-counterpart miniature in the unit to be defeated.",
+            "Upgrade Cards without weapons equipped to a counterpart miniature are usable by the rest of the unit, unless the counterpart miniature is defeated.",
+            "Upgrade Cards with weapons are usable only by the miniature which has them equipped.",
+            "The non-counterpart miniatures in the unit use the wound threshold on their Unit or Upgrade Card, the counterpart miniature uses the wound threshold on the Counterpart Card.",
+            "The combined unit has the keywords on both the Unit Card and the Counterpart Card.",
+            "Miniatures in a combined unit may only use weapons that are on their respective cards. If a combined unit gains a weapon from a Command Card, only the non-counterpart miniature may use it.",
+            "If the counterpart miniature is defeated, the unit loses any keywords, abilities, or effects on the Counterpart Card.",
+          ],
+        },
+      ],
+    },
+    {
+      keyword: "cover_x",
+      name: "Cover X",
+      activation: "",
+      parents: ["c", "units"],
+      tag: "Unit Keyword",
+      related_keywords: ["attack", "ranged_weapon", "apply_dodge_cover"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "If a unit has the Cover X keyword and is defending against an attack with at least one ranged weapon, during the Apply Dodge and Cover step, it improves the numerical value of its cover by a number equal to X.",
+        },
+      ],
+    },
+    {
+      keyword: "covert_ops",
+      name: "Covert Ops",
+      activation: "",
+      parents: ["c", "units"],
+      tag: "Unit Keyword",
+      related_keywords: ["setup", "infiltrate"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "During Setup, a unit with the Covert Ops keyword may change its rank to {rank_operative} for all rules purposes for the rest of the game. If it does, it gains the Infiltrate keyword that game. A unit cannot change its rank to {rank_operative} if there are no other {rank_commander} units in that player’s army.",
+        },
+      ],
+    },
+    {
+      keyword: "cunning",
+      name: "Cunning",
+      activation: "",
+      parents: ["c", "units"],
+      tag: "Unit Keyword",
+      related_keywords: ["command_phase", "command_cards"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "During the Command Phase, if a player reveals a {rank_commander} or {rank_operative} specific Command Card that belongs to a unit with the Cunning keyword and there would be a tie for priority, treat that Command Card as having one fewer pip. If both players reveal a specific {rank_commander} or {rank_operative} Command Card that belongs to a unit with the Cunning keyword, there is still a tie for priority.",
+        },
+      ],
+    },
+
+    {
+      keyword: "danger_sense",
+      name: "Danger Sense",
+      activation: "",
+      parents: ["d", "units"],
+      tag: "Unit Keyword",
+      related_keywords: ["suppression", "attack"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "When a unit with the Danger Sense X keyword would remove any number of its suppression tokens, it may choose to not remove up to X tokens, including zero.",
+        },
+        {
+          type: "text",
+          content:
+            "While a unit with the Danger Sense X keyword is defending against an attack, it rolls one extra defense die during the Roll Defense Dice step for every suppression token it has, up to X additional dice.",
+        },
+      ],
+    },
+    {
+      keyword: "dauntless",
+      name: "Dauntless",
+      activation: "",
+      parents: ["d", "units"],
+      tag: "Unit Keyword",
+      related_keywords: ["rally", "move", "suppression", "compel"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "After a unit with the Dauntless keyword performs its Rally step and is suppressed but not panicked, at the beginning of its Perform Action step, it may gain one suppression token to perform a free move action.",
+        },
+        {
+          type: "text",
+          content:
+            "A unit with the Dauntless keyword may not be affected by the {keyword:Compel} keyword.",
+        },
+      ],
+    },
+    {
+      keyword: "death_from_above",
+      name: "Death From Above",
+      activation: "",
+      parents: ["d", "units"],
+      tag: "Unit Keyword",
+      related_keywords: ["attack", "cover", "apply_dodge_cover", "terrain"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "When a unit with the Death From Above keyword attacks, the defending unit cannot use cover to cancel hit a results during the Apply Cover step if the attacking unit's unit leader is overlapping a piece of non-area terrain of greater height than any terrain the defending unit's unit leader is overlapping.",
+        },
+      ],
+    },
+    {
+      keyword: "defend_x",
+      name: "Defend X",
+      activation: "",
+      parents: ["d", "units"],
+      tag: "Unit Keyword",
+      related_keywords: ["issue_order", "dodge"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "After a unit with the Defend X keyword is issued an order, it gains X dodge tokens.",
+        },
+      ],
+    },
+    {
+      keyword: "deflect",
+      name: "Deflect",
+      activation: "",
+      parents: ["d", "units"],
+      tag: "Unit Keyword",
+      related_keywords: [
+        "ranged_weapon",
+        "attack",
+        "guardian",
+        "wounds",
+        "high_velocity",
+      ],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "While a unit with the Deflect keyword is defending against a ranged attack or using the {keyword:Guardian X} keyword, its surge conversion chart gains {block_surge}:{block}. Additionally, during the Convert Defense Surges step before converting {block_surge} results, the attacker suffers one wound if there is at least one {block_surge} result in the defense roll.",
+        },
+        {
+          type: "text",
+          content:
+            "If the Deflect keyword causes the attacking unit to be defeated, the attack continues, and the defender can still suffer wounds.",
+        },
+        {
+          type: "text",
+          content:
+            "While defending or using the {keyword:Guardian X} keyword against an attack in which weapons with the {keyword:High Velocity} weapon keyword are the only weapons in an attack pool, the Deflect keyword has no effect.",
+        },
+      ],
+    },
+    {
+      keyword: "demoralize_x",
+      name: "Demoralize X",
+      activation: "",
+      parents: ["d", "units"],
+      tag: "Unit Keyword",
+      range: "range_2",
+      related_keywords: ["rally"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "After a unit with the Demoralize X keyword performs its Rally step, add up to X total suppression tokens to enemy units at {range_2}.",
+        },
+      ],
+    },
+    {
+      keyword: "detachment",
+      name: "Detachment: Name/Type",
+      activation: "",
+      parents: ["d", "units"],
+      tag: "Unit Keyword",
+      related_keywords: [
+        "army_building",
+        "deploy",
+        "infiltrate",
+        "prepared_positions",
+      ],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "During Army Building, a unit with the Detachment keyword doesn’t count against the maximum number of units of its rank that can be included. A unit with the Detachment keyword can be included in a player’s army only if another unit that has the unit name or unit type specified and does not have the Detachment keyword is also included in that army.",
+        },
+        {
+          type: "text",
+          content:
+            "Each unit with the Detachment keyword needs its own matching specified unit. Additionally, during the Deploy in Prepared Positions step, a unit with the Detachment keyword gains the {keyword:Infiltrate} or {keyword:Prepared Position} keyword for the remainder of the game if its matching specified unit has that keyword.",
+        },
+        {
+          type: "example",
+          content: [
+            { type: "header", content: "Example: Detachment" },
+            {
+              type: "text",
+              content:
+                "For example, a player wishes to add a DF-90 Mortar Trooper to their army. Because the DF-90 Mortar Trooper has the Detachment: Shoretroopers keyword, the player must first add a unit of Shoretroopers to their army before adding the DF-90 Mortar Trooper. The player does so, and the army now contains a Shoretroopers unit and a DF-90 Mortar Trooper unit. The player then wishes to add a second DF-90 Mortar Trooper unit to their army, and therefore must first select a second unit of Shoretroopers to include in their army.",
+            },
+          ],
+        },
+      ],
+    },
+    {
       keyword: "deploy",
       name: "Deploy",
       parents: ["d"],
@@ -905,6 +1508,114 @@ export const rules: RulesDocument = {
           type: "text",
           content:
             "When a unit deploys, the unit leader measures the vertical distance changed during that move starting from the portion of the edge of the battlefield the movement tool is touching. When an undeployed unit activates, it must deploy and may not perform any action that is not a move until it deploys. Only undeployed units can deploy.",
+        },
+      ],
+    },
+    {
+      keyword: "direct",
+      name: "Direct Name/Type",
+      activation: "",
+      parents: ["d", "units"],
+      tag: "Unit Keyword",
+      range: "range_2",
+      related_keywords: ["issue_order", "command_phase"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "Each Command Phase, during the Issue Orders step, a unit with the Direct keyword may issue an order to a friendly unit at {range_2} that has the unit name or unit type specified.",
+        },
+      ],
+    },
+    {
+      keyword: "disciplined_x",
+      name: "Disciplined X",
+      activation: "",
+      parents: ["d", "units"],
+      tag: "Unit Keyword",
+      related_keywords: ["issue_order", "suppression"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "After a unit with the Disciplined X keyword is issued an order, it may remove up to X suppression tokens.",
+        },
+      ],
+    },
+    {
+      keyword: "disengage",
+      name: "Disengage",
+      activation: "",
+      parents: ["d", "units"],
+      tag: "Unit Keyword",
+      related_keywords: ["engaged", "melee", "move"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "While a trooper unit with the Disengage keyword is engaged with a single enemy unit, it can still perform moves as normal.",
+        },
+      ],
+    },
+    {
+      keyword: "distract",
+      name: "Disengage",
+      range: "range_2",
+      activation: "",
+      parents: ["d", "units"],
+      tag: "Unit Keyword",
+      related_keywords: [
+        "free_card_action",
+        "line_of_sight",
+        "attack",
+        "inconspicious",
+      ],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "As a free card action, a unit with the Distract keyword can choose an enemy trooper unit at {range_2} and in LOS. Until the end of the round, when the chosen enemy unit performs an attack, it must attack the unit that used the Distract action, if able.",
+        },
+        {
+          type: "text",
+          content:
+            "While the chosen enemy unit is attacking the unit with the Distract keyword, each miniature in the enemy unit must choose an eligible weapon to contribute to an attack pool. The enemy unit may only declare additional defenders and form additional dice pools if, after first forming a dice pool with eligible weapons, there are still weapons usable by miniatures in the unit that were not eligible to be added to the first attack pool.",
+        },
+        {
+          type: "text",
+          content:
+            "When a unit uses the Distract keyword, if it had the {keyword:Inconspicuous} keyword, it loses it until the end of the round.",
+        },
+      ],
+    },
+    {
+      keyword: "divine_influence",
+      name: "Divine Influence",
+      range: "range_1",
+      activation: "",
+      parents: ["d", "units"],
+      tag: "Unit Keyword",
+      related_keywords: ["guardian"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "While they are at {range_1} of a friendly C-3PO, friendly {faction_ewoks} trooper units gain {keyword:Guardian 2}: C-3PO. While using {keyword:Guardian}, they may cancel {hit_critical} results as if they were {hit} results.",
+        },
+      ],
+    },
+    {
+      keyword: "djem_so_mastery",
+      name: "Djem So Mastery",
+      activation: "",
+      parents: ["d", "units"],
+      tag: "Unit Keyword",
+      related_keywords: ["melee", "attack"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "When a unit with the Djem So Mastery keyword is defending against a melee attack, during the Compare Results step, the attacking unit suffers a wound if the attack roll contains one or more blank results.",
         },
       ],
     },
@@ -952,6 +1663,7 @@ export const rules: RulesDocument = {
           content: "tokens/dodge.png",
           align: "right",
           altText: "A green 8-sided token.",
+          width: "80",
         },
         {
           type: "text",
@@ -1012,6 +1724,34 @@ export const rules: RulesDocument = {
       ],
     },
     {
+      keyword: "duelist",
+      name: "Duelist",
+      activation: "",
+      parents: ["d", "units"],
+      tag: "Unit Keyword",
+      related_keywords: [
+        "melee",
+        "attack",
+        "aim",
+        "dodge",
+        "pierce",
+        "apply_dodge_cover",
+        "immune",
+      ],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "When a unit with the Duelist keyword performs a melee attack, if it spends one or more aim tokens during the Reroll Attack Dice step, the attack pool gains the {keyword:Pierce 1} weapon keyword. While a unit with the Duelist keyword defends against a melee attack, if it spends at least one dodge token during the Apply Dodge and Cover step, it gains the {keyword:Immune: Pierce} keyword.",
+        },
+        {
+          type: "text",
+          content:
+            "The unit with the Duelist keyword gets these effects in addition to the normal effects of spending aim or dodge tokens.",
+        },
+      ],
+    },
+    {
       keyword: "emplacement_trooper",
       name: "Emplacement Trooper",
       parents: ["e"],
@@ -1029,6 +1769,58 @@ export const rules: RulesDocument = {
             "Emplacement troopers have notched bases.",
             "Emplacement troopers can reverse.",
             "Emplacement troopers can pivot, even while they are engaged.",
+          ],
+        },
+      ],
+    },
+    {
+      keyword: "enrage_x",
+      name: "Enrage X",
+      activation: "",
+      parents: ["e", "units"],
+      tag: "Unit Keyword",
+      related_keywords: ["wounds", "charge", "courage", "suppression"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "When a unit with the Enrage X keyword has wound tokens greater than or equal to X, that unit gains the {keyword:Charge} keyword and treats its courage value as “-” and loses any suppression tokens it may have. If a unit with the Enrage X keyword has wound tokens greater than or equal to X but removes wound tokens through an effect so that it has fewer than X, it no longer benefits from the Enrage X keyword until it has wound tokens greater than or equal to X again.",
+        },
+      ],
+    },
+    {
+      keyword: "entourage",
+      name: "Entourage: Unit Name",
+      activation: "",
+      parents: ["e", "units"],
+      tag: "Unit Keyword",
+      related_keywords: ["army_building", "command_phase", "issue_order"],
+      range: "range_2",
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "During Army Building, if a player includes a unit with the Entourage keyword, one unit specified by the Entourage keyword does not count its rank towards the maximum rank requirements for that rank. This can allow a player to bring more units of a specific rank than rank requirements allow.",
+        },
+        {
+          type: "text",
+          content:
+            "In the Command Phase, during the Issue Orders step, a unit with the Entourage keyword may issue an order to a friendly unit at {range_2} that has the name specified by the Entourage keyword.",
+        },
+        {
+          type: "text",
+          content:
+            "Additionally, the unit specified by the Entourage keyword ignores the {rank_corps} rank requirement to provide backup to the unit with the Entourage keyword.",
+        },
+        {
+          type: "example",
+          content: [
+            { type: "header", content: "Example: Entourage" },
+            {
+              type: "text",
+              content:
+                "For example, Director Orson Krennic has Entourage: Death Troopers. If an army includes Director Orson Krennic, 1 unit of Death Troopers in the same army does not count towards the maximum number of special forces ranks allowed in the army, allowing a player to bring up to three other special forces units in addition to the Death Troopers. In the Command Phase, Director Orson Krennic may issue an order to a Death Trooper unit at {range_2}.",
+            },
           ],
         },
       ],
@@ -1099,6 +1891,128 @@ export const rules: RulesDocument = {
       ],
     },
     {
+      keyword: "equip",
+      name: "Equip",
+      activation: "",
+      parents: ["e", "units"],
+      tag: "Unit Keyword",
+      related_keywords: ["army_building"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "During Army Building, if a player includes a unit with the Equip keyword, that unit must equip the upgrades listed after the keyword.",
+        },
+      ],
+    },
+    {
+      keyword: "exemplar",
+      name: "Exemplar",
+      activation: "",
+      parents: ["e", "units"],
+      tag: "Unit Keyword",
+      related_keywords: ["attack", "line_of_sight", "aim", "dodge", "surge"],
+      range: "range_2",
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "While attacking or defending, if a friendly unit is at {range_2} and in LOS of one or more friendly units that have the Exemplar keyword and that share the same faction or affiliation as that attacking or defending unit, that attacking or defending unit may spend one aim, dodge, or surge token belonging to one of those units with Exemplar as if that attacking or defending unit had the token.",
+        },
+      ],
+    },
+    {
+      keyword: "expert_climber",
+      name: "Expert Climber",
+      activation: "",
+      parents: ["e", "units"],
+      tag: "Unit Keyword",
+      related_keywords: ["climb"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "When a unit with the Expert Climber keyword performs a climb, it may move a vertical distance up to height 2.",
+        },
+      ],
+    },
+    {
+      keyword: "field_commander",
+      name: "Field Commander",
+      activation: "",
+      parents: ["f", "units"],
+      tag: "Unit Keyword",
+      related_keywords: [
+        "army_building",
+        "setup",
+        "command_cards",
+        "panic",
+        "courage",
+      ],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "During Army Building, an army that includes a unit with the Field Commander keyword may ignore the minimum {rank_commander} rank requirement. If a player’s army contains no {rank_commander} units during Setup but does contain a unit with the Field Commander keyword, that unit gains a commander token. When a player reveals a non-{rank_commander} or {rank_operative} specific Command Card, they may nominate a friendly unit with the Field Commander keyword to be commander and issue orders. A unit with the Field Commander keyword is not a {rank_commander} and only counts as one for the purposes of issuing orders with a Command Card during the Command Phase.",
+        },
+        {
+          type: "text",
+          content:
+            "Additionally, if a friendly unit is at {range_3} of the unit with the commander token and both units share the same faction or affiliation, that friendly unit may treat their courage value as 2 when checking for panic.",
+        },
+      ],
+    },
+    {
+      keyword: "fire_support",
+      name: "Fire Support",
+      activation: "",
+      parents: ["f", "units"],
+      tag: "Unit Keyword",
+      related_keywords: ["issue_order", "standby"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "After a unit with the Fire Support keyword is issued an order, it gains a standby token.",
+        },
+      ],
+    },
+    {
+      keyword: "flawed",
+      name: "Flawed",
+      activation: "",
+      parents: ["f", "units"],
+      tag: "Unit Keyword",
+      related_keywords: ["setup", "command_cards"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "A unit with the Flawed keyword has a corresponding Flaw Card that must be added to an opponent’s command hand during Setup. The unit the Flaw Card belongs to is indicated in the             top right corner of the Flaw Card. An opponent may play a Flaw Card from their command hand when permitted by the rules on the Flaw Card. If both players have a Flaw Card in their command hand, at the start of each phase the player with priority must decide first whether to play a Flaw Card or not. If neither player has priority, then the blue player decides first. Any played Flaw Cards are discarded at the start of the End Phase and their effects end.",
+        },
+        {
+          type: "text",
+          content:
+            "Flaw Cards are not Command Cards and are not affected by rules that affect Command Cards.",
+        },
+      ],
+    },
+    {
+      keyword: "flexible_response_x",
+      name: "Flexible Response X",
+      activation: "",
+      parents: ["f", "units"],
+      tag: "Unit Keyword",
+      related_keywords: ["upgrade_card", "army_building"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "During Army Building, a unit with the Flexible Response keyword must equip X {upgrade_heavy} upgrades.",
+        },
+      ],
+    },
+    {
       keyword: "form_attack_pools",
       parents: ["f"],
       name: "Form Attack Pools",
@@ -1122,7 +2036,7 @@ export const rules: RulesDocument = {
           content: [
             "A miniature must meet any requirements to choose a weapon.",
             "A miniature may only add a weapon to an attack pool once throughout the entire attack sequence.",
-            "Weapons provided by a {upgrade_squad_leader}, {upgrade_heavy}, or {upgrade_personnel}upgrade or Command Card can only be used by the miniature indicated on the card.",
+            "Weapons provided by a {upgrade_squad_leader}, {upgrade_heavy}, or {upgrade_personnel} upgrade or Command Card can only be used by the miniature indicated on the card.",
             "A weapon cannot be chosen if the defending unit is at a range less than the weapon’s minimum range or greater than the weapon’s maximum range, as measured from the attacking unit leader to the closest miniature in the defending unit.",
             "A ranged weapon cannot be chosen if the defending unit is in melee with the attacking unit.",
             "An attack pool cannot contain both melee and ranged weapons.",
@@ -1187,6 +2101,38 @@ export const rules: RulesDocument = {
     },
 
     {
+      keyword: "full_pivot",
+      name: "Full Pivot",
+      activation: "",
+      parents: ["f", "units"],
+      tag: "Unit Keyword",
+      related_keywords: ["pivot"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "When a unit with the Full Pivot keyword performs a pivot, it may pivot up to 360°.",
+        },
+      ],
+    },
+
+    {
+      keyword: "generator_x",
+      name: "Generator X",
+      activation: "",
+      parents: ["g", "units"],
+      tag: "Unit Keyword",
+      related_keywords: ["pivot", "shield", "end_phase"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "During the End Phase, a unit with the Generator X keyword may flip up to X inactive shield tokens to their active side.",
+        },
+      ],
+    },
+
+    {
       keyword: "ground_vehicles",
       name: "Ground Vehicles",
       parents: ["g"],
@@ -1218,6 +2164,514 @@ export const rules: RulesDocument = {
             "When determining the number of obscured miniatures and determining cover during an attack sequence, treat ground vehicles as a piece of area terrain consisting of the volume of their silhouette that provides heavy cover.",
             "When a ground vehicle is defending against a ranged attack, during the Apply Dodge and Cover step, it cannot be obscured and cannot have cover as a result of being obscured.",
           ],
+        },
+      ],
+    },
+    {
+      keyword: "guardian",
+      name: "Guardian X",
+      activation: "",
+      parents: ["g", "units"],
+      tag: "Unit Keyword",
+      related_keywords: [
+        "line_of_sight",
+        "ranged_weapon",
+        "attack",
+        "wounds",
+        "suppression",
+        "courage",
+        "pierce",
+        "backup",
+        "surge",
+      ],
+      range: "range_1",
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "While a friendly trooper unit at {range_1} and in LOS of a unit that has the Guardian X keyword is defending against a ranged attack, it may cancel up to X hit {hit} results during the Modify Attack Dice step of the attack sequence. For each hit {hit} result canceled in this way, the unit with the Guardian X keyword rolls a defense die matching the one on its Unit Card. After converting any defense surge {block_surge} results according to its surge chart or by using surge tokens, the unit with the Guardian X keyword suffers one wound for each blank result. A defending unit that has the Guardian X keyword used on it gains a suppression token as normal.",
+        },
+        {
+          type: "text",
+          content:
+            "A unit cannot use Guardian X if the defending unit also has the Guardian X keyword. If multiple friendly units can use the Guardian X keyword during an attack, the player who controls those units declares which unit is using the Guardian X keyword and resolves their ability before choosing whether to declare that another unit is using the Guardian X keyword.",
+        },
+        {
+          type: "text",
+          content:
+            "A unit cannot use Guardian X if it has a number of suppression tokens equal to or greater than its courage.",
+        },
+        {
+          type: "text",
+          content:
+            "The {keyword:Pierce X} keyword can be used to cancel block {block} results on defense dice rolled by a unit using Guardian X; treat canceled block {block} results as blank results. After using {keyword:Pierce X} in this way, any unused {keyword:Pierce X} value can still be used to cancel block {block} results rolled by the defending unit.",
+        },
+        {
+          type: "text",
+          content:
+            "Additionally, a unit with the Guardian X keyword cannot benefit from backup and ignores the {rank_corps} rank requirement to provide backup.",
+        },
+      ],
+    },
+    {
+      keyword: "guidance",
+      name: "Guidance",
+      activation: "",
+      parents: ["g", "units"],
+      tag: "Unit Keyword",
+      related_keywords: ["free_action", "actions"],
+      range: "range_2",
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "When a unit uses the Guidance card action, choose another friendly unit of the specified unit type at {range_2}. The chosen unit performs a free non-attack action.",
+        },
+      ],
+    },
+    {
+      keyword: "gunslinger",
+      name: "Gunslinger",
+      activation: "",
+      parents: ["g", "units"],
+      tag: "Unit Keyword",
+      related_keywords: ["attack", "ranged_weapon"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "When a unit with the Gunslinger keyword reaches the Declare Additional Defender step, it may declare an additional defender and create an attack pool consisting solely of a ranged weapon that has already been contributed to another attack pool. The Gunslinger keyword can only be used once per attack sequence.",
+        },
+      ],
+    },
+    {
+      keyword: "heavy_weapon_team",
+      name: "Heavy Weapon Team",
+      activation: "",
+      parents: ["h", "units"],
+      tag: "Unit Keyword",
+      related_keywords: ["upgrade_card"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "A unit with the Heavy Weapon Team keyword must equip a {upgrade_heavy}Upgrade Card. The miniature added to the unit with this Upgrade Card becomes the unit leader.",
+        },
+      ],
+    },
+    {
+      keyword: "hover_x",
+      name: "Hover: Ground/Air X",
+      activation: "",
+      parents: ["h", "units"],
+      tag: "Unit Keyword",
+      related_keywords: [
+        "standby",
+        "ground_vehicles",
+        "line_of_sight",
+        "repulsor_vehicle",
+        "terrain",
+        "move",
+      ],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "A unit with the Hover: Ground or Hover: Air X keyword can perform standby actions during the Perform Actions step and can gain and spend standby tokens. A unit with the Hover: Ground or Hover: Air X keyword can reverse.",
+        },
+        {
+          type: "text",
+          content:
+            "A unit with the Hover: Ground keyword is treated as a ground vehicle by other units for all LOS purposes. For all other game effects, the unit is still treated as a repulsor vehicle.",
+        },
+        {
+          type: "text",
+          content:
+            "A unit with the Hover: Air X keyword ignores terrain of height X or lower while moving and may end a movement overlapping such terrain.",
+        },
+        { type: "reference", referenced_keyword: "strafe" },
+      ],
+    },
+    {
+      keyword: "hunted",
+      name: "Hunted",
+      activation: "",
+      parents: ["h", "units"],
+      tag: "Unit Keyword",
+      related_keywords: ["setup", "bounty"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "During Setup, if one or more enemy units have the Bounty keyword, each unit with the Hunted keyword gains a bounty token.",
+        },
+      ],
+    },
+    {
+      keyword: "im_part_of_the_squad_too",
+      name: "I'm Part of the Squad Too",
+      activation: "",
+      parents: ["i", "units"],
+      tag: "Unit Keyword",
+      related_keywords: ["objective"],
+      range: "range_1",
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "A unit with the I’m Part of the Squad Too keyword is contesting an objective token if its unit leader is at {range_1} of that token instead of {range_half}.",
+        },
+      ],
+    },
+    {
+      keyword: "immune",
+      name: "Immune: Keyword",
+      activation: "",
+      parents: ["i", "units"],
+      tag: "Unit Keyword",
+      related_keywords: [
+        "pierce",
+        "blast",
+        "enemy_effects",
+        "melee",
+        "pierce",
+        "range_1_weapons",
+        "melee_pierce",
+      ],
+      descriptions: [
+        {
+          type: "reference",
+          referenced_keyword: "immune_blast",
+        },
+        {
+          type: "reference",
+          referenced_keyword: "immune_enemy_effects",
+        },
+        {
+          type: "reference",
+          referenced_keyword: "immune_melee",
+        },
+        {
+          type: "reference",
+          referenced_keyword: "immune_melee_pierce",
+        },
+        {
+          type: "reference",
+          referenced_keyword: "immune_pierce",
+        },
+        {
+          type: "reference",
+          referenced_keyword: "immune_range_1_weapons",
+        },
+      ],
+    },
+    {
+      keyword: "immune_blast",
+      name: "Immune: Blast",
+      activation: "",
+      parents: ["units"],
+      tag: "Unit Keyword",
+      related_keywords: ["immune", "blast"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "While a unit with the Immune: Blast keyword is defending, the effects of the Blast keyword are ignored.",
+        },
+      ],
+    },
+    {
+      keyword: "immune_enemy_effects",
+      name: "Immune: Enemy Effects",
+      activation: "",
+      parents: ["units"],
+      tag: "Unit Keyword",
+      related_keywords: ["immune", "enemy_effects"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "A unit with the Immune: Enemy Effects keyword ignores all enemy card effects and cannot be targeted by any enemy card effects.",
+        },
+      ],
+    },
+    {
+      keyword: "immune_melee",
+      name: "Immune: Melee",
+      activation: "",
+      parents: ["units"],
+      tag: "Unit Keyword",
+      related_keywords: ["immune", "melee"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "Enemy units cannot be placed in base contact with a unit that has the Immune: Melee keyword.",
+        },
+      ],
+    },
+    {
+      keyword: "immune_melee_pierce",
+      name: "Immune: Melee Pierce",
+      activation: "",
+      parents: ["units"],
+      tag: "Unit Keyword",
+      related_keywords: ["immune", "melee", "pierce"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "While a unit with the Immune: Melee Pierce keyword is defending against a melee attack, the attacker cannot use the {keyword:Pierce X} weapon keyword to cancel {block} results on defense dice during the Modify Defense Dice step.",
+        },
+        {
+          type: "text",
+          content:
+            "While a unit with Immune: Melee Pierce is using the {keyword:Guardian X} keyword during a melee attack, the attacking unit cannot use the {keyword:Pierce X} keyword to cancel {block} results on defense dice rolled by that unit for the Guardian X keyword.",
+        },
+      ],
+    },
+    {
+      keyword: "immune_pierce",
+      name: "Immune: Pierce",
+      activation: "",
+      parents: ["units"],
+      tag: "Unit Keyword",
+      related_keywords: ["immune", "pierce"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "While a unit with the Immune: Pierce keyword is defending, the attacker cannot use the {keyword:Pierce X} weapon keyword to cancel d results on defense dice during the Modify Defense Dice step.",
+        },
+        {
+          type: "text",
+          content:
+            "While a unit with Immune: Pierce is using the {keyword:Guardian X} keyword, the attacking unit cannot use the {keyword:Pierce X} keyword to cancel {block} results on defense dice rolled by that unit for the {keyword:Guardian X} keyword.",
+        },
+      ],
+    },
+    {
+      keyword: "immune_range_1_weapons",
+      name: "Immune: Range 1 Weapons",
+      activation: "",
+      parents: ["units"],
+      tag: "Unit Keyword",
+      related_keywords: ["immune", "weapons"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "An attack pool that is assigned to a unit with the Immune: Range 1 Weapons keyword cannot contain weapons with a maximum range of {range_1}.",
+        },
+      ],
+    },
+    {
+      keyword: "impervious",
+      name: "Impervious",
+      activation: "",
+      parents: ["i", "units"],
+      tag: "Unit Keyword",
+      related_keywords: ["attack", "pierce"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "While a unit with the Impervious keyword is defending, it rolls a number of extra defense dice during the Roll Defense Dice step equal to the total {keyword:Pierce X} value of weapons in the attack pool.",
+        },
+        {
+          type: "text",
+          content:
+            "If a unit with Impervious also has the {keyword:Immune: Pierce} keyword, then it does not roll extra defense dice for the Impervious keyword when defending against an attack with the {keyword:Pierce X} keyword.",
+        },
+      ],
+    },
+    {
+      keyword: "incognito",
+      name: "Incognito",
+      activation: "",
+      parents: ["i", "units"],
+      tag: "Unit Keyword",
+      range: "range_1",
+      related_keywords: ["attack", "objective", "backup"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "A unit with the Incognito keyword cannot be attacked by enemy units that are beyond {range_1} of it, cannot contest objectives, and cannot provide backup.",
+        },
+        {
+          type: "text",
+          content:
+            "If a unit with the Incognito keyword ever performs an attack or defends against an attack, it loses all special rules of the Incognito keyword for the remainder of the game. Additionally, at the beginning of a unit with the Incognito keyword’s activation, it may choose to lose the special rules of the Incognito keyword for the remainder of the game.",
+        },
+      ],
+    },
+    {
+      keyword: "inconspicious",
+      name: "Inconspicious",
+      activation: "",
+      parents: ["i", "units"],
+      tag: "Unit Keyword",
+      range: "range_1",
+      related_keywords: ["attack", "suppression", "rally"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "While a unit with the Inconspicuous keyword has at least one suppression token, when an enemy unit performs an attack, it must target another unit, if able. When a unit with the Inconspicuous keyword rallies, it may choose to not remove any number of suppression tokens, including zero.",
+        },
+      ],
+    },
+    {
+      keyword: "independent",
+      name: "Independent: Token X/Action",
+      activation: "",
+      parents: ["i", "units"],
+      tag: "Unit Keyword",
+      related_keywords: ["tokens", "free_action"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "At the start of the Activation Phase, if a unit with the Independent keyword does not have an order token, that unit may gain X of the listed token(s) or perform the listed action as a free action.",
+        },
+      ],
+    },
+    {
+      keyword: "indomitable",
+      name: "Indomitable",
+      activation: "",
+      parents: ["i", "units"],
+      tag: "Unit Keyword",
+      related_keywords: ["rally"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "When a unit that has the Indomitable keyword performs its Rally step, it rolls red defense dice instead of white defense dice.",
+        },
+      ],
+    },
+    {
+      keyword: "infiltrate",
+      name: "Infiltrate",
+      activation: "",
+      parents: ["i", "units"],
+      tag: "Unit Keyword",
+      related_keywords: ["deploy"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "At the start of an undeployed unit with the Infiltrate keyword’s activation, it may deploy by placing the unit leader of that unit within friendly territory. Then the remaining miniatures in that unit are placed in cohesion with their unit leader and within friendly territory. Miniatures cannot overlap impassable terrain when they are placed using Infiltrate.",
+        },
+      ],
+    },
+    {
+      keyword: "inspire_x",
+      name: "Inspire X",
+      activation: "",
+      parents: ["i", "units"],
+      tag: "Unit Keyword",
+      related_keywords: ["actions"],
+      range: "range_2",
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "At the end of a unit with the Inspire X keyword’s activation, remove up to X total suppression tokens from other friendly units at {range_2}.",
+        },
+      ],
+    },
+    {
+      keyword: "interrogate",
+      name: "Interrogate",
+      activation: "",
+      parents: ["i", "units"],
+      tag: "Unit Keyword",
+      related_keywords: ["command_phase", "command_cards"],
+      range: "range_1",
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "During the Command Phase, if a player reveals a Command Card that belongs to a unit at {range_1} of one or more enemy units with the Interrogate keyword and there would be a tie for priority, treat that Command Card as having one more pip.",
+        },
+      ],
+    },
+    {
+      keyword: "jarkai_mastery",
+      name: "Jar'Kai Mastery",
+      activation: "",
+      parents: ["j", "units"],
+      tag: "Unit Keyword",
+      related_keywords: ["melee", "attack", "dodge"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "While performing a melee attack, after converting attack surges during the Convert Attack Surges step, a unit with the Jar'Kai Mastery keyword may spend any number of dodge tokens. For each dodge token spent in this way, change a blank result to a hit {hit} result, a hit {hit} result to a critical {hit_critical} result, or spend two dodge tokens to change a blank result to a critical {hit_critical} result.",
+        },
+      ],
+    },
+    {
+      keyword: "jedi_hunter",
+      name: "Jedi Hunter",
+      activation: "",
+      parents: ["j", "units"],
+      tag: "Unit Keyword",
+      related_keywords: ["keywords", "upgrade_card", "attack"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "When a unit with the Jedi Hunter keyword attacks a unit with a {upgrade_force} upgrade icon on its upgrade bar, it gains {hit_surge}:{hit_critical}.",
+        },
+      ],
+    },
+    {
+      keyword: "jump_x",
+      name: "Jump X",
+      activation: "",
+      parents: ["j", "units"],
+      tag: "Unit Keyword",
+      related_keywords: ["move", "terrain"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "A unit that has the Jump X keyword can perform the Jump X card action any time it could perform a move action. The unit performs a move action as normal and can ignore or end its movement on top of terrain that is height X or lower. While performing a move with the Jump X action, a unit ignores the effects of difficult terrain and other miniatures with a height equal to or lower than X. When making a move with the Jump X action, a unit may place the movement template overlapping impassable terrain but may not end its move overlapping it. When a unit performs the Jump X action, measure height from that unit’s starting position.",
+        },
+      ],
+    },
+    {
+      keyword: "juyo_mastery",
+      name: "Juyo Mastery",
+      activation: "",
+      parents: ["j", "units"],
+      tag: "Unit Keyword",
+      related_keywords: ["wounds", "move"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "While a unit with the Juyo Mastery keyword has one or more wound tokens, it can perform one additional action during its activation. A unit with Juyo Mastery may only perform two move actions during its activation, including free actions.",
+        },
+      ],
+    },
+    {
+      keyword: "latent_power",
+      name: "Latent Power",
+      activation: "",
+      parents: ["l", "units"],
+      tag: "Unit Keyword",
+      range: "range_1",
+      related_keywords: ["suppression"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "At the end of a unit with the Latent Power keyword’s activation, it may gain 1 suppression token to roll 1 red defense die. If it does, on {block_surge} e result, choose an enemy unit at {range_1} of this miniature. The chosen unit gains 2 suppression tokens and 2 immobilize tokens. On a blank result, remove 1 wound or 1 poison token from a friendly non-droid trooper unit at {range_1} of this miniature.",
         },
       ],
     },
@@ -1337,6 +2791,47 @@ export const rules: RulesDocument = {
                 "The Battle Droids do not have LOS to Obi-Wan Kenobi, because the building blocks an unobstructed straight imaginary line from their unit leader’s silhouette to any part of his silhouette.",
             },
           ],
+        },
+      ],
+    },
+    {
+      keyword: "loadout",
+      name: "Loadout",
+      activation: "",
+      parents: ["l", "units"],
+      tag: "Unit Keyword",
+      related_keywords: ["army_building", "upgrade_card", "counterpart"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "During Army Building, when a player includes a unit with the Loadout keyword in their army, for each Upgrade Card equipped to that unit, they may choose another eligible Upgrade Card of the same type with an equal or lesser point cost and set it aside. During Setup, a unit with the Loadout keyword may swap any number of its equipped Upgrade Cards with the matching set-aside Upgrade Cards one for one.",
+        },
+        {
+          type: "text",
+          content:
+            "When swapping Upgrade Cards, a unit cannot have two or more upgrades with the same name equipped at the same time. If two or more units with the Loadout keyword are in the same army, keep their respective set-aside Upgrade Cards separate. Each unit can swap Upgrade Cards only with their own set- aside cards; they cannot share set-aside Upgrade Cards.",
+        },
+        {
+          type: "text",
+          content:
+            "A Counterpart Card that is added to a unit with the Loadout keyword also benefits from the Loadout ability.",
+        },
+      ],
+    },
+
+    {
+      keyword: "low_profile",
+      name: "Low Profile",
+      activation: "",
+      parents: ["l", "units"],
+      tag: "Unit Keyword",
+      related_keywords: ["cover"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "While defending against a ranged attack, if a unit with the Low Profile keyword would roll one or more defense dice during the Roll Cover Pool step, it rolls one fewer defense die and instead adds an additional {block} result to the cover pool after rolling.",
         },
       ],
     },
@@ -2187,6 +3682,43 @@ export const rules: RulesDocument = {
                 "Melissa’s Battle Droid unit performs the standby action and gains a standby token. Later in the round, the enemy Clone Trooper unit activates and performs an action. Because the Clone Trooper unit is at {range_2} of the Battle Droids and in LOS, after the action is complete the Battle Droids may spend their standby token to perform a free move or attack action after the Clone Trooper’s action is resolved.",
             },
           ],
+        },
+      ],
+    },
+
+    {
+      keyword: "strafe",
+      name: "Strafe",
+      activation: "",
+      parents: ["s", "units"],
+      tag: "Unit Keyword",
+      related_keywords: [
+        "hover_x",
+        "notch",
+        "move",
+        "battlefield",
+        "miniature",
+      ],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "If the unit with the {keyword:Hover: Ground/Air X} keyword has a base with side notches, the unit may perform a strafe move as part of a move action instead of moving normally.",
+        },
+        {
+          type: "text",
+          content:
+            "A unit reduces its maximum speed by 1 to a minimum of 1 while performing a strafe.",
+        },
+        {
+          type: "text",
+          content:
+            "As with other movements with notched bases, a strafe can be a full strafe or a partial strafe, and can be interrupted if an object prevents the strafing miniature from fully progressing across the movement tool.",
+        },
+        {
+          type: "text",
+          content:
+            "To perform a full strafe, place the end of a movement tool into one of the side notches on the unit’s base. Keeping the movement tool in place on the battlefield, move the miniature along the movement tool until the opposite side notch is wholly in the opposite end of the movement tool. While performing a strafe, a miniature’s base must not overlap terrain that it cannot move through.",
         },
       ],
     },

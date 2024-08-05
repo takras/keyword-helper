@@ -9,6 +9,17 @@
   padding-right: 10px;
 }
 
+.headline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  margin-left: 20px;
+  max-height: 80px;
+}
+
 .title {
   text-align: center;
   font-size: 4rem;
@@ -27,7 +38,9 @@
   margin-top: 50px;
 }
 
-.aboutContainer {
+.aboutContainer,
+.about {
+  background-color: var(--button-background-color);
   padding: 20px;
   border-radius: var(--border-radius);
   border: var(--border-thin);
@@ -211,6 +224,12 @@
   border-bottom: 5px solid var(--button-border-color);
   color: #26416d;
   background-color: #fff;
+}
+
+.buttonRange {
+  margin-left: 5px;
+  vertical-align: text-bottom;
+  opacity: 0.5;
 }
 
 .modalBackButton,

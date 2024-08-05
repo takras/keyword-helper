@@ -4,6 +4,9 @@ import styles from "./layout.module.css";
 export const metadata: Metadata = {
   title: "Legion Helper",
   description: "Keyword helper for Star Wars: Legion",
+  icons: {
+    icon: "/images/favicon.png",
+  },
 };
 
 export default function RootLayout({

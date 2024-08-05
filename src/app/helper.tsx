@@ -105,6 +105,11 @@ export default function Helper() {
         key={getKey(keyword.keyword)}
       >
         {keyword.name}
+        {keyword.range && (
+          <span className={styles.buttonRange}>
+            {interpolateString(`[{${keyword.range}}]`, getKey(keyword.range))}
+          </span>
+        )}
       </button>
     );
   };
@@ -428,7 +433,9 @@ export default function Helper() {
           </div>
         </div>
 
-        {selectedKeyword && (
+        {selectedKeyword?.keyword === "about" && <About />}
+
+        {selectedKeyword && selectedKeyword?.keyword !== "about" && (
           <div className={styles.keywordContainer}>
             <h2 className={styles.header2}>
               {selectedKeyword.name}{" "}
@@ -449,6 +456,9 @@ export default function Helper() {
   const searchContent = () => {
     const search = new RegExp(filter.toLowerCase());
     const result = rulesDocument.keywords.filter((keyword) => {
+      if (keyword.descriptions.length === 0) {
+        return false;
+      }
       const keywordResult = rules.keywords.filter((key) =>
         search.test(keyword.name.toLowerCase())
       );
@@ -512,50 +522,98 @@ export default function Helper() {
     );
   };
 
+  const About = () => {
+    return (
+      <div className={styles.about}>
+        <p>
+          Legion Helper is intended to make it quick to find keywords and
+          concepts from the Star Wars: Legion rulebook and reference, for quick
+          and easy access during play.
+        </p>
+        <p>
+          It is heavily inspired by{" "}
+          <a
+            className={styles.externalLink}
+            href="https://legionquickguide.com/"
+            target="_blank"
+          >
+            Legion Quick Guide by The Fifth Trooper
+          </a>
+          {""}, but made due to necessity with lack of updates from new versions
+          of the official rules. It is made from ground up with easy foundation
+          for changes in the rules.
+        </p>
+        <p>
+          This is a fan page by <a href="mailto:takras@takras.net">Takras</a>{" "}
+          and not affiliated with{" "}
+          <a
+            href="https://www.atomicmassgames.com/"
+            target="_blank"
+            className={styles.externalLink}
+          >
+            Atomic Mass Games
+          </a>{" "}
+          nor with{" "}
+          <a
+            href="https://thefifthtrooper.com/"
+            target="_blank"
+            className={styles.externalLink}
+          >
+            The Fifth Trooper.
+          </a>
+        </p>
+        <h3>How to use</h3>
+        <p>
+          This site has catalogued all keywords and concepts from the rules
+          reference, and made them searchable and easily accessible.
+        </p>
+        <p>
+          You can either search (2 characters or more) which is the fastest way,
+          or look up using the alphabetized list of keywords and concepts.
+        </p>
+        <p>Some buttons also have a Range-icon such as:</p>
+        <button className={styles.button}>
+          Compel [{""}
+          <img
+            src="/images/black/range-2.png"
+            alt="A cross-haired circle with a number 2 in it"
+            className={styles.inlineIcon}
+          ></img>
+          {""}]
+        </button>
+        <p>
+          This is a shorthand reference to the range-effectiveness as described
+          by the ability keyword, showing its &quot;at&quot;-range.
+        </p>
+      </div>
+    );
+  };
+
   return (
     <main className={styles.main}>
       {modalComponent()}
-      <h1 className={styles.title}>Legion Helper</h1>
+      <div className={styles.headline}>
+        <h1 className={styles.title}>Legion Helper</h1>
+        <img
+          src="/images/legionhelper.svg"
+          alt="A drawing of a B1 Battle droid."
+          className={styles.logo}
+        />
+      </div>
       <div className={styles.aboutContainer}>
-        <div className={styles.about}>
-          <p>
-            Legion Helper is intended to make it quick to find keywords and
-            concepts from the Star Wars: Legion rulebook and reference, for
-            quick and easy access during play.
-          </p>
-          <p>
-            It is heavily inspired by{" "}
-            <a
-              className={styles.externalLink}
-              href="https://legionquickguide.com/"
-              target="_blank"
-            >
-              Legion Quick Guide by The Fifth Trooper
-            </a>
-            {""}, but made due to necessity with lack of updates from new
-            versions of the official rules. It is made from ground up with easy
-            foundation for changes in the rules.
-          </p>
-          <p>
-            This is a fan page by Takras and not affiliated with{" "}
-            <a
-              href="https://www.atomicmassgames.com/"
-              target="_blank"
-              className={styles.externalLink}
-            >
-              Atomic Mass Games
-            </a>{" "}
-            nor with{" "}
-            <a
-              href="https://thefifthtrooper.com/"
-              target="_blank"
-              className={styles.externalLink}
-            >
-              The Fifth Trooper.
-            </a>
-          </p>
-        </div>
         <div className={styles.aboutButtonRow}>
+          <button
+            className={styles.button}
+            onClick={() =>
+              selectKeyword(
+                rulesDocument.keywords.find(
+                  (keyword) => keyword.keyword === "about"
+                )!
+              )
+            }
+          >
+            About Legion Helper
+          </button>
           <button
             className={styles.button}
             onClick={() => window.open(rulesDocument.documentUrl, "_blank")}
