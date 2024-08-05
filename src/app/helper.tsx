@@ -9,6 +9,7 @@ import {
   StructuredList,
   Illustration,
 } from "@/types";
+import Script from "next/script";
 //import rules from "@/data/rules-2.6.0.json";
 import { rules } from "@/data/rules";
 import styles from "./helper.module.css";
@@ -539,9 +540,13 @@ export default function Helper() {
           >
             Legion Quick Guide by The Fifth Trooper
           </a>
-          {""}, but made due to necessity with lack of updates from new versions
-          of the official rules. It is made from ground up with easy foundation
-          for changes in the rules.
+          {""}, and I liked the easy access of the keywords, but felt it missed
+          quite a few functions. And with the Legion HQ list builder going down
+          and no updates on the quicklist, it seemed prudent to come up with an
+          alternate solution. I&apos;ve spent hours upon hours on making this
+          site from scratch and converting the rules to a searchable format.
+          Everything is either taken from the rulebook or written myself. I hope
+          it will help your gaming experience.
         </p>
         <p>
           This is a fan page by <a href="mailto:takras@takras.net">Takras</a>{" "}
@@ -625,6 +630,17 @@ export default function Helper() {
             onClick={() => window.open(rulesDocument.discussionUrl, "_blank")}
           >
             Official Rules Forum
+          </button>
+
+          <button
+            className={styles.button}
+            onClick={() =>
+              window.open(
+                "https://www.paypal.com/donate/?hosted_button_id=PCSQHJMWUZSWN"
+              )
+            }
+          >
+            Donate
           </button>
         </div>
         <div className={styles.versionInfo}>
