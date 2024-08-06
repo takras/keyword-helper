@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
-import { ChangeEvent, useEffect, useState } from "react";
+import { ChangeEvent, useCallback, useEffect, useState } from "react";
 import {
   RulesDocument,
   Keyword,
@@ -10,16 +10,13 @@ import {
   Illustration,
 } from "@/types";
 import Script from "next/script";
-//import rules from "@/data/rules-2.6.0.json";
 import { rules } from "@/data/rules";
 import styles from "./helper.module.css";
 import { interpolateString } from "@/utils";
 import classNames from "classnames";
 
 export default function Helper() {
-  const [rulesDocument, setRulesDocument] = useState<RulesDocument>(
-    rules as RulesDocument
-  );
+  const [rulesDocument] = useState<RulesDocument>(rules);
   const modal = document.querySelector("[data-modal]") as HTMLDialogElement;
   const [expandedCatalogs, setExpandedCatalogs] = useState<string[]>([]);
   const [selectedKeywords, setSelectedKeywords] = useState<Keyword[]>([]);
@@ -28,7 +25,10 @@ export default function Helper() {
   let counter = 0;
 
   useEffect(() => {
-    if (modal && selectedKeywords.length > 0) {
+    if (!modal) {
+      return;
+    }
+    if (selectedKeywords.length > 0) {
       modal.showModal();
       modal.scrollTop = 0;
     }
@@ -632,15 +632,7 @@ export default function Helper() {
             Official Rules Forum
           </button>
         </div>
-        <div className={styles.versionInfo}>
-          Current version of the rules reference updated:{" "}
-          <span className={styles.version}>{rulesDocument.version}</span> valid
-          from{" "}
-          <span className={styles.date}>
-            {new Date(rulesDocument.validFrom).toLocaleDateString()}.
-          </span>
-        </div>
-        <div id="donate-button-container">
+        <div id="donate-button-container" className={styles.donate}>
           <div id="donate-button"></div>
         </div>
         <Script id="PayPal">{`PayPal.Donation.Button({
@@ -652,6 +644,14 @@ alt:'Donate with PayPal button',
 title:'PayPal - The safer, easier way to pay online!',
 }
 }).render('#donate-button');`}</Script>
+      </div>
+      <div className={styles.versionInfo}>
+        Current version of the rules reference updated:{" "}
+        <span className={styles.version}>{rulesDocument.version}</span> valid
+        from{" "}
+        <span className={styles.date}>
+          {new Date(rulesDocument.validFrom).toLocaleDateString()}.
+        </span>
       </div>
 
       <div className={styles.content}>

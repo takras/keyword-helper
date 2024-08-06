@@ -428,6 +428,77 @@ export const rules: RulesDocument = {
       ],
     },
     {
+      keyword: "area_terrain",
+      name: "Area Terrain",
+      parents: ["a", "concepts"],
+      related_keywords: [
+        "terrain_cover",
+        "terrain_height",
+        "terrain_height",
+        "terrain",
+        "terrain_movement",
+        "obstacle_terrain",
+      ],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "Some terrain features consist of an area of terrain containing multiple terrain elements inside a boundary or footprint, like a forest, craters, ruined buildings, or piles of rubble. The individual elements and their locations inside the area terrain are not relevant, only the boundary.",
+        },
+        {
+          type: "text",
+          content:
+            "When determining the size of area terrain, imagine a silhouette beginning at the bottom of the area terrain and extending upwards to the tallest point of the terrain. The volume of this silhouette is all part of the area terrain. It is up to the players to determine the height, the boundaries, special rules, and the type of cover that area terrain provides.",
+        },
+        {
+          type: "illustration",
+          content: "examples/area-terrain.png",
+          align: "center",
+          altText: "A fallen AT-ST terrain piece",
+        },
+      ],
+    },
+    {
+      keyword: "area_weapon",
+      name: "Area Weapon",
+      related_keywords: ["range"],
+      range: "range_1",
+      parents: ["a", "weapons"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "A weapon with a yellow range icon {range_1} is an area weapon. When using an area weapon, perform a separate attack against each unit, friendly and enemy, that is in LOS and at the range indicated by the number on the range icon, even if that unit is engaged. Attacks made by area weapons are always ranged attacks.",
+        },
+        {
+          type: "text",
+          content:
+            "Area weapons can never be in an attack pool made by a unit and must always be the only weapon in an attack pool.",
+        },
+      ],
+    },
+    {
+      keyword: "arm_x",
+      name: "Arm X",
+      related_keywords: ["range"],
+      range: "range_1",
+      tag: "Weapon Keyword",
+      parents: ["a", "weapons"],
+      descriptions: [
+        {
+          type: "header",
+          content: "Arm X: Charge Token Type",
+        },
+        {
+          type: "text",
+          content:
+            "A unit that is equipped with a card that has the Arm X: Charge Token Type keyword can perform the Arm X action. When a unit performs the Arm X action, the unit places X charge tokens of the specified type and matching its controlling player’s color within {range_1} and LOS of its unit leader.",
+        },
+
+        { type: "reference", referenced_keyword: "charge_token" },
+      ],
+    },
+    {
       keyword: "armor",
       name: "Armor",
       activation: "",
@@ -488,6 +559,58 @@ export const rules: RulesDocument = {
           type: "text",
           content:
             "During Army Building, a unit with the Associate keyword does not count its rank towards the maximum rank requirements for that rank if a unit with the specified unit name is included in the same army.",
+        },
+      ],
+    },
+    {
+      keyword: "at_range",
+      name: "At, Within, and Beyond",
+      activation: "",
+      parents: ["a", "w", "concepts"],
+      summary:
+        "Some abilities require two objects to be at, within, or beyond a certain distance from each other.",
+      related_keywords: ["actions"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "Some abilities require two objects to be at, within, or beyond a certain distance from each other.",
+        },
+        {
+          type: "text",
+          content:
+            "An object is at a range of another object if any portion of it is inside that range as measured by the range tool. For a unit to be at a specified range, only one miniature in the unit must be at the given range. An object is always at any range of itself.",
+        },
+        {
+          type: "text",
+          content:
+            "An object is within a range of another object if it is entirely inside that range as measured by the range tool. For a unit to be within a range, all miniatures in the unit must be within the given range. A unit that is within a certain range is also at that range.",
+        },
+        {
+          type: "text",
+          content:
+            "An object is beyond a range of another object if it is entirely outside that range as measured by the range tool. For a unit to be beyond a range, all miniatures in the unit must be beyond the given range.",
+        },
+        { type: "callout", callout_keyword: "undeployed_units" },
+        {
+          type: "example",
+          content: [
+            {
+              type: "header",
+              content: "Example: At, Within, and Beyond",
+            },
+            {
+              type: "illustration",
+              content: "examples/at-within-beyond.png",
+              align: "center",
+              altText: "Photo with the measurement tool flat on the ground.",
+            },
+            {
+              type: "text",
+              content:
+                "The Clone Trooper unit is at {range_1} of Obi-Wan Kenobi because it has at least 1 miniature whose base is at least partially inside the first segment of the range tool. The AT-RT is within {range_1} of Obi- Wan Kenobi because its base is entirely inside the first segment of the range tool. The B1 Battle Droids are beyond {range_1} of Obi-Wan Kenobi because all of their miniatures' bases are entirely outside the first segment of the range tool.",
+            },
+          ],
         },
       ],
     },
@@ -770,6 +893,81 @@ export const rules: RulesDocument = {
         },
       ],
     },
+    {
+      keyword: "barricades",
+      name: "Barricades",
+      parents: ["b", "concepts"],
+      related_keywords: [
+        "terrain_cover",
+        "terrain_height",
+        "terrain_height",
+        "terrain",
+        "terrain_movement",
+      ],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "Barricades are a specific type of scatter terrain found in some Star Wars: Legion Core Sets and in their own expansion pack. Barricades are open terrain and provide trooper units that are not creature troopers with heavy cover.",
+        },
+        {
+          type: "text",
+          content:
+            "Barricades cannot be placed overlapping objective or advantage tokens and cannot have objective or advantage tokens placed on them. A trooper miniature can never partially overlap a barricade at any time.",
+        },
+        {
+          type: "illustration",
+          content: "examples/barricades.png",
+          align: "center",
+          altText: "Three barricades on the battlefield",
+        },
+      ],
+    },
+    {
+      keyword: "beam_x",
+      name: "Beam X",
+      related_keywords: [
+        "range",
+        "attack",
+        "line_of_sight",
+        "ranged_weapon",
+        "gunslinger",
+      ],
+      tag: "Weapon Keyword",
+      range: "range_1",
+      parents: ["b", "weapons"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "During the Declare Additional Defender step, if a weapon with the Beam X keyword is in a unit’s attack pool, that unit may declare up to X additional attacks forming attack pools using only the weapon with the Beam X keyword, even though the weapon has already been added to an attack pool. These additional attacks do not generate further attacks.",
+        },
+        {
+          type: "text",
+          content:
+            "Each additional attack must be against a different defending unit that is at {range_1} of the last defending unit declared. These additional attacks must be in LOS of the attacking unit but may be beyond the maximum range of the weapon with the Beam X keyword.",
+        },
+        {
+          type: "text",
+          content:
+            "Units may not use the Beam X and {keyword:Gunslinger} keywords during the same attack.",
+        },
+      ],
+    },
+    {
+      keyword: "blast",
+      name: "Blast",
+      related_keywords: ["apply_dodge_cover", "cover"],
+      parents: ["b", "weapons"],
+      tag: "Weapon Keyword",
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "During the Apply Cover step, a defending unit cannot use light or heavy cover to cancel hit {hit} results produced by an attack pool that contains dice added by a weapon with the Blast keyword.",
+        },
+      ],
+    },
 
     {
       keyword: "block",
@@ -875,6 +1073,28 @@ export const rules: RulesDocument = {
         },
       ],
     },
+    {
+      keyword: "charge_token",
+      name: "Charge Token",
+      activation: "",
+      parents: ["c", "weapons"],
+      tag: "",
+      related_keywords: ["tokens", "arm_x", "detonate_x"],
+      descriptions: [
+        {
+          type: "illustration",
+          align: "right",
+          altText: "Charge token, front and back",
+          content: "tokens/charge.png",
+          width: "100",
+        },
+        {
+          type: "text",
+          content:
+            "Charge tokens cannot overlap any objective, advantage, or other charge tokens and must be placed on a flat surface completely flush with that surface.",
+        },
+      ],
+    },
 
     {
       keyword: "climb_vehicle",
@@ -904,6 +1124,20 @@ export const rules: RulesDocument = {
           content: [
             "While attacking or defending, a clone trooper unit may spend one aim, dodge, or surge token belonging to another friendly clone trooper unit at {range_2} and in LOS as if the attacking or defending unit had that token.",
           ],
+        },
+      ],
+    },
+    {
+      keyword: "compulsory_move",
+      name: "Compulsory Move",
+      activation: "",
+      parents: ["c"],
+      related_keywords: ["speeder", "move"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "A compulsory move is a free move action. To perform a compulsory move, the unit performs a full move at its maximum speed. If it cannot do so, or if a full move would cause any part of the unit leader’s base to be outside the battlefield, it can perform a partial move instead, ending its movement as far along the movement template as possible.",
         },
       ],
     },
@@ -964,6 +1198,7 @@ export const rules: RulesDocument = {
       keyword: "critical_x",
       name: "Critical X",
       parents: ["c", "weapons"],
+      tag: "Weapon Keyword",
       related_keywords: ["surge", "attack"],
       descriptions: [
         {
@@ -1309,6 +1544,36 @@ export const rules: RulesDocument = {
       ],
     },
     {
+      keyword: "cover",
+      name: "Cover",
+      activation: "",
+      parents: ["c", "concepts"],
+      related_keywords: [
+        "apply_dodge_cover",
+        "barricades",
+        "terrain",
+        "terrain_cover",
+      ],
+      descriptions: [
+        {
+          type: "illustration",
+          altText: "Four miniatures standing next to Barricades",
+          content: "examples/cover.png",
+          align: "center",
+        },
+        {
+          type: "text",
+          content:
+            "Cover helps miniatures defend themselves from attacks. Cover is divided into three categories: light, heavy, and no cover, and is determined during the attack sequence. Some rules refer to cover having a numerical value that is improved or reduced— light cover has a value of 1, heavy cover has a value of 2, and no cover has a value of 0. The numerical value of cover cannot be increased above 2 for any reason. Resolve effects that improve cover before effects that reduce cover.",
+        },
+        {
+          type: "text",
+          content:
+            "For more information on determining cover, see {keyword:Apply Dodge and Cover}",
+        },
+      ],
+    },
+    {
       keyword: "covert_ops",
       name: "Covert Ops",
       activation: "",
@@ -1320,6 +1585,20 @@ export const rules: RulesDocument = {
           type: "text",
           content:
             "During Setup, a unit with the Covert Ops keyword may change its rank to {rank_operative} for all rules purposes for the rest of the game. If it does, it gains the Infiltrate keyword that game. A unit cannot change its rank to {rank_operative} if there are no other {rank_commander} units in that player’s army.",
+        },
+      ],
+    },
+    {
+      keyword: "cumbersome",
+      name: "Cumbersome",
+      parents: ["c", "weapons"],
+      tag: "Weapon Keyword",
+      related_keywords: ["move", "attack", "pivot"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "A unit that has a weapon with the Cumbersome keyword cannot perform a move prior to performing an attack using that weapon during the same activation unless the move is a pivot.",
         },
       ],
     },
@@ -1490,6 +1769,33 @@ export const rules: RulesDocument = {
             },
           ],
         },
+      ],
+    },
+    {
+      keyword: "detonate_x",
+      name: "Detonate X (Charge Type)",
+      parents: ["d", "weapons"],
+      tag: "Weapon Keyword",
+      related_keywords: [
+        "move",
+        "attack",
+        "actions",
+        "standby",
+        "line_of_sight",
+        "charge_token",
+      ],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "After a unit controlled by any player attacks, moves, or performs an action, each unit that has a weapon with the Detonate X keyword may detonate up to X friendly charge tokens of the specified type. If a token would detonate, that token detonates before any other abilities or effects that occur after a unit moves or performs an action, with the exception of spending a standby token which can be spent by a unit before the token detonates. If both players have units that could detonate charge tokens, the player that does not control the unit that just performed the attack, move, or action may use their unit’s Detonate X keyword first.",
+        },
+        {
+          type: "text",
+          content:
+            "When a token detonates, perform a separate attack against each unit, friendly and enemy, that has LOS to the token and is in range of the area weapon, using the surge conversion chart and weapon keywords on the card for the token being detonated. The detonating token is considered the attacking unit when making attacks, meaning that it cannot spend aim tokens or modify attack dice, regardless of any abilities on the unit that placed the token. After a token detonates, remove it from the battlefield.",
+        },
+        { type: "reference", referenced_keyword: "charge_token" },
       ],
     },
     {
@@ -1978,6 +2284,60 @@ export const rules: RulesDocument = {
       ],
     },
     {
+      keyword: "fitting_on_terrain",
+      name: "Fitting on Terrain",
+      parents: ["f", "concepts"],
+      related_keywords: [
+        "terrain_cover",
+        "terrain_height",
+        "terrain_height",
+        "terrain",
+        "terrain_movement",
+        "obstacle_terrain",
+      ],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "When a trooper miniature’s base is overlapping a piece of obstacle terrain, it must be completely overlapping that terrain. Trooper miniatures cannot end a movement or be placed in a way that would cause their base to only partially overlap a piece of obstacle terrain and may not have any part of part of its base hanging off the terrain. Trooper miniatures cannot be deployed in a way where any part of their base is only partially overlapping a piece of obstacle terrain.",
+        },
+        {
+          type: "example",
+          content: [
+            {
+              type: "header",
+              content: "Example: Fitting on Terrain",
+            },
+            {
+              type: "illustration",
+              content: "examples/fitting-on-terrain.png",
+              align: "center",
+              altText: "Miniatures placed on terrain illegally and legally",
+            },
+            {
+              type: "text",
+              content:
+                "When placing miniatures on obstacle terrain, a miniature’s base must completely overlap the terrain. Because the 2 Clone Troopers are hanging off the balcony and only partially overlapping the piece of obstacle terrain, they cannot be placed there and must be placed in such a way that their bases completely overlap the obstacle terrain like the other 2 Clone Troopers.",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      keyword: "fixed",
+      name: "Fixed: Front/Rear",
+      parents: ["f", "weapons"],
+      tag: "Weapon Keyword",
+      related_keywords: ["attack", "miniature"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "To add a weapon that has the Fixed: Front or Fixed: Rear keyword to an attack pool, the defending unit must have at least one of its miniature’s bases partially inside the specified firing arc of the attacking miniature.",
+        },
+      ],
+    },
+    {
       keyword: "flawed",
       name: "Flawed",
       activation: "",
@@ -2133,6 +2493,20 @@ export const rules: RulesDocument = {
     },
 
     {
+      keyword: "golden_rule_terrain",
+      name: "Golden Rule of Terrain",
+      activation: "",
+      parents: ["g", "units"],
+      related_keywords: ["terrain", "setup"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "Ultimately, the type of terrain and the rules used are up to the players and should be discussed before the game begins.",
+        },
+      ],
+    },
+    {
       keyword: "ground_vehicles",
       name: "Ground Vehicles",
       parents: ["g"],
@@ -2260,6 +2634,20 @@ export const rules: RulesDocument = {
       ],
     },
     {
+      keyword: "high_velocity",
+      name: "High Velocity",
+      tag: "Weapon Keyword",
+      parents: ["h", "weapons"],
+      related_keywords: ["attack", "dodge", "apply_dodge_cover"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "While defending against an attack in which weapons with the High Velocity weapon keyword are the only weapons in an attack pool, the defending unit cannot spend dodge tokens during the Apply Dodge and Cover step.",
+        },
+      ],
+    },
+    {
       keyword: "hover_x",
       name: "Hover: Ground/Air X",
       activation: "",
@@ -2342,6 +2730,10 @@ export const rules: RulesDocument = {
         {
           type: "reference",
           referenced_keyword: "immune_blast",
+        },
+        {
+          type: "reference",
+          referenced_keyword: "immune_deflect",
         },
         {
           type: "reference",
@@ -2462,6 +2854,67 @@ export const rules: RulesDocument = {
           type: "text",
           content:
             "An attack pool that is assigned to a unit with the Immune: Range 1 Weapons keyword cannot contain weapons with a maximum range of {range_1}.",
+        },
+      ],
+    },
+    {
+      keyword: "immobilize_x",
+      name: "Immobilize X",
+      parents: ["i", "weapons"],
+      tag: "Weapon Keyword",
+      related_keywords: ["wounds", "move"],
+      descriptions: [
+        {
+          type: "illustration",
+          align: "right",
+          altText: "Immobilize token",
+          content: "tokens/immobilize.png",
+          width: "80",
+        },
+        {
+          type: "text",
+          content:
+            "A unit that suffers one or more wounds after defending against an attack that includes a weapon with the Immobilize X weapon keyword gains X immobilize tokens.",
+        },
+        {
+          type: "text",
+          content:
+            "A unit’s maximum speed is reduced by 1 for each immobilize token it has. A unit whose maximum speed is 0 and has at least one immobilize token cannot perform moves of any kind. At the end of a unit’s activation, it removes any immobilize tokens that it has.",
+        },
+        {
+          type: "text",
+          content:
+            "When a unit performs a move, apply any effects that increase the unit’s maximum speed before applying any effects that reduce its maximum speed.",
+        },
+      ],
+    },
+    {
+      keyword: "immune_deflect",
+      name: "Immune: Deflect",
+      activation: "",
+      parents: ["weapons"],
+      tag: "Weapon Keyword",
+      related_keywords: ["immune", "weapons"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "During an attack, if the attack pool contains weapons with the Immune: Deflect keyword, the attacking unit cannot suffer wounds from the Deflect keyword.",
+        },
+      ],
+    },
+    {
+      keyword: "impact",
+      name: "Impact X",
+      activation: "",
+      parents: ["weapons", "i"],
+      tag: "Weapon Keyword",
+      related_keywords: ["armor"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "During the Modify Attack Dice step, if the defending unit has the {keyword:Armor} or {keyword:Armor X} keyword, a unit whose attack pool includes a weapon that has the Impact X keyword can modify up to X hit {hit} results to critical {hit_critical} results for that attack.",
         },
       ],
     },
@@ -2600,6 +3053,38 @@ export const rules: RulesDocument = {
       ],
     },
     {
+      keyword: "ion_x",
+      name: "Ion X",
+      activation: "",
+      parents: ["weapons", "i"],
+      tag: "Weapon Keyword",
+      related_keywords: ["vehicles", "droid_trooper", "shield"],
+      descriptions: [
+        {
+          type: "illustration",
+          align: "right",
+          altText: "Ion token",
+          content: "tokens/ion.png",
+          width: "80",
+        },
+        {
+          type: "text",
+          content:
+            "A vehicle or droid trooper unit that suffers wounds after defending against an attack that included a weapon with the Ion X keyword gains X ion tokens.",
+        },
+        {
+          type: "text",
+          content:
+            "At the start of a unit’s activation, roll one white defense die for every ion token that unit has. If any blank results are rolled, that unit performs one fewer action during its activation. At the end of a unit’s activation, it removes any ion tokens that it has.",
+        },
+        {
+          type: "text",
+          content:
+            "If an attack pool includes the Ion X keyword, at the start of the Modify Attack Dice step of the attack sequence, before any other effects, the defending unit must flip active shield tokens, if able, for each hit {hit} or critical {hit_critical} result in the attack roll, up to X.",
+        },
+      ],
+    },
+    {
       keyword: "jarkai_mastery",
       name: "Jar'Kai Mastery",
       activation: "",
@@ -2666,7 +3151,7 @@ export const rules: RulesDocument = {
       parents: ["l", "units"],
       tag: "Unit Keyword",
       range: "range_1",
-      related_keywords: ["suppression"],
+      related_keywords: ["suppression", "immobilize_x"],
       descriptions: [
         {
           type: "text",
@@ -2819,6 +3304,21 @@ export const rules: RulesDocument = {
         },
       ],
     },
+    {
+      keyword: "long_shot",
+      name: "Long Shot",
+      activation: "",
+      parents: ["l", "weapons"],
+      tag: "Weapon Keyword",
+      related_keywords: ["attack", "aim", "range"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "When a unit with a weapon with the Long Shot keyword performs an attack, before choosing an enemy unit to attack during the Declare Defenders step, it may spend an aim token to increase the maximum range of that weapon by one until the end of that attack sequence. The attacking unit may not reroll dice with any aim tokens spent in this way. Only one aim token may be spent in this way per attack sequence.",
+        },
+      ],
+    },
 
     {
       keyword: "low_profile",
@@ -2832,6 +3332,123 @@ export const rules: RulesDocument = {
           type: "text",
           content:
             "While defending against a ranged attack, if a unit with the Low Profile keyword would roll one or more defense dice during the Roll Cover Pool step, it rolls one fewer defense die and instead adds an additional {block} result to the cover pool after rolling.",
+        },
+      ],
+    },
+
+    {
+      keyword: "makashi_mastery",
+      name: "Makashi Mastery",
+      activation: "",
+      parents: ["m", "units"],
+      tag: "Unit Keyword",
+      related_keywords: ["melee", "pierce"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "While a unit with the Makashi Mastery keyword performs a melee attack, during the Choose Weapons and Gather Dice step, it can reduce the {keyword:Pierce X} value of a weapon in the attack pool by 1. If it does, the defender cannot use the {keyword:Immune: Pierce} and/or {keyword:Impervious} keywords during this attack.",
+        },
+      ],
+    },
+
+    {
+      keyword: "marksman",
+      name: "Marksman",
+      activation: "",
+      parents: ["m", "units"],
+      tag: "Unit Keyword",
+      related_keywords: ["attack", "aim"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "After converting attack surges during the Convert Attack Surges step, a unit with the Marksman keyword may spend any number of aim tokens. For each aim token spent in this way, instead of rerolling dice, change a blank result to a hit {hit} result, a hit {hit} result to a critical {hit_critical} result, or spend two aim tokens to change a blank result to a critical {hit_critical} result.",
+        },
+      ],
+    },
+
+    {
+      keyword: "master_of_the_force",
+      name: "Master of the Force",
+      activation: "",
+      parents: ["m", "units"],
+      tag: "Unit Keyword",
+      related_keywords: ["upgrade_card", "ready", "exhaust"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "At the end of its activation, a unit that has the Master of the Force X keyword may ready up to X of its exhausted Force {upgrade_force} Upgrade Cards.",
+        },
+      ],
+    },
+
+    {
+      keyword: "master_storyteller",
+      name: "Master Storyteller",
+      activation: "",
+      range: "range_2",
+      parents: ["m", "units"],
+      tag: "Unit Keyword",
+      related_keywords: ["surge", "card_action"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "When a unit performs the Master Storyteller card action, it chooses up to X friendly {faction_ewoks} units at {range_2}, where X is the current round number. Each chosen unit gains 2 surge tokens.",
+        },
+      ],
+    },
+
+    {
+      keyword: "mercenary",
+      name: "Mercenary: Faction",
+      activation: "",
+      parents: ["m", "units"],
+      tag: "Unit Keyword",
+      related_keywords: ["army_building"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "A unit with the Mercenary keyword is a Mercenary unit. The faction(s) specified by the Mercenary keyword can include that unit in an army as a Mercenary unit.",
+        },
+      ],
+    },
+    {
+      keyword: "nimble",
+      name: "Nimble",
+      activation: "",
+      parents: ["n", "units"],
+      tag: "Unit Keyword",
+      related_keywords: ["dodge", "attack"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "After a unit that has the Nimble keyword defends against an attack, if it spent at least one dodge token during any point of the attack sequence, it gains one dodge token.",
+        },
+      ],
+    },
+
+    {
+      keyword: "measuring_range",
+      name: "Measuring Range",
+      activation: "",
+      parents: ["m", "concepts"],
+      related_keywords: ["battlefield"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "When measuring range between two objects, only take the horizontal distance into account—never the vertical distance. A measurement tool should always be flat on the battlefield; if this isn’t possible (due to terrain, for example), hold the measuring tool above the battlefield and check positions based on the measurement tool.",
+        },
+        {
+          type: "illustration",
+          content: "examples/measuring-range.png",
+          align: "center",
+          altText: "Photo with the measurement tool flat on the ground.",
         },
       ],
     },
@@ -3171,8 +3788,132 @@ export const rules: RulesDocument = {
     },
 
     {
+      keyword: "observe_x",
+      name: "Observe X",
+      activation: "",
+      parents: ["o", "units"],
+      tag: "Unit Keyword",
+      range: "range_3",
+      related_keywords: ["tokens", "dice"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "As a card action or free card action, a unit with the Observe X keyword can choose an enemy unit at {range_3} and in LOS. The chosen enemy unit gains X observation tokens. Observation tokens are removed during the Remove Tokens step of the End Phase.",
+        },
+        {
+          type: "text",
+          content:
+            "During an attack, a friendly attacking unit can spend any number of observation tokens that belong to the defending unit during the Reroll Attack Dice step. The attacking unit rerolls one attack die for each observation token spent. Observation tokens are spent one at a time, and the same die can be rerolled multiple times by spending subsequent observation tokens or aim tokens. The attacking unit may spend aim tokens and observation tokens in any order.",
+        },
+      ],
+    },
+    {
+      keyword: "obstacle_terrain",
+      name: "Obstacle Terrain",
+      parents: ["o", "concepts"],
+      related_keywords: [
+        "terrain_cover",
+        "terrain_height",
+        "terrain_height",
+        "terrain",
+        "terrain_movement",
+        "obstacle_terrain",
+      ],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "Obstacle terrain represents large or tall terrain features such as buildings, cliffs, or high walls. When a trooper miniature wants to move through or onto an obstacle terrain feature, it may have to perform a climb based on the obstacle terrain’s height.",
+        },
+      ],
+    },
+    {
+      keyword: "open_terrain",
+      name: "Open Terrain",
+      parents: ["o", "concepts"],
+      related_keywords: [
+        "terrain_cover",
+        "terrain_height",
+        "terrain_height",
+        "terrain",
+        "terrain_movement",
+        "obstacle_terrain",
+      ],
+      descriptions: [
+        {
+          type: "reference",
+          referenced_keyword: "terrain_movement",
+        },
+      ],
+    },
+
+    {
+      keyword: "outmaneuver",
+      name: "Outmaneuver",
+      activation: "",
+      parents: ["o", "units"],
+      tag: "Unit Keyword",
+      related_keywords: ["dodge", "apply_dodge_cover"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "During the Apply Dodge and Cover step, a unit with the Outmaneuver keyword can spend dodge tokens to cancel critical {hit_critical} results.",
+        },
+      ],
+    },
+    {
+      keyword: "override",
+      name: "Override",
+      activation: "",
+      parents: ["o", "units"],
+      tag: "Unit Keyword",
+      range: "range_5",
+      related_keywords: ["suppression", "ai_action"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "When a friendly unit begins its activation while at {range_5} of a unit that has the Override keyword, the unit with the Override keyword may gain one suppression token. If it does, the activating unit ignores the AI keyword during its activation.",
+        },
+      ],
+    },
+    {
+      keyword: "overrun",
+      name: "Overrun X",
+      parents: ["o", "weapons"],
+      tag: "Weapon Keyword",
+      related_keywords: ["weapons", "move"],
+      descriptions: [
+        {
+          type: "illustration",
+          content: "black/overrun.png",
+          align: "right",
+          altText: "An arrow pointing inwards to center of a circle.",
+          width: "80",
+        },
+        {
+          type: "text",
+          content:
+            "A weapon with a red overrun range icon {overrun} is an overrun weapon and can only be used during overrun attacks. Overrun attacks are not ranged or melee attacks. A unit may make X overrun attacks during its activation. A unit with an overrun weapon can perform an overrun attack after it performs a standard move in which the movement tool or one of its miniatures’ bases overlapped an enemy miniature’s base.",
+        },
+        {
+          type: "text",
+          content:
+            "After completing the move, the unit with the overrun weapon performs an attack against the unit it moved through, ignoring range when making this attack. It can only form one attack pool when making this attack, and only weapons with the Overrun X keyword can be in this attack pool. The overrun weapon is only added to the attack pool once, even if there are multiple miniatures in the unit.",
+        },
+        {
+          type: "text",
+          content:
+            "If a unit can perform multiple overrun attacks during its activation, it must perform a separate move through an enemy unit for each overrun attack.",
+        },
+      ],
+    },
+
+    {
       keyword: "panic_commander",
-      name: "Commanders and Checking for Panic",
+      name: "Panic Check",
       parents: ["p", "c"],
       related_keywords: [
         "suppression",
@@ -3186,6 +3927,44 @@ export const rules: RulesDocument = {
           type: "text",
           content:
             "When a unit checks to see if it is panicked, instead of using its own courage value, it may use the courage value of a friendly {rank_commander} unit at {range_3}. For example, a unit with 3 suppression tokens and courage value 1 would not be panicked if it chooses to use the courage value of a friendly {rank_commander} at {range_3} that has a courage value of 2 or greater.",
+        },
+      ],
+    },
+    {
+      keyword: "pierce",
+      name: "Pierce X",
+      parents: ["p", "weapons"],
+      tag: "Weapon Keyword",
+      related_keywords: ["weapons", "attack", "guardian"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "If an attacking unit attacks with a weapon with the Pierce X keyword it may cancel up to X {block} results during the Modify Defense Dice step.",
+        },
+        {
+          type: "text",
+          content:
+            "The Pierce X keyword can be used to cancel {block} results on defense dice rolled by a unit using the {keyword:Guardian X} keyword. When doing so, treat canceled {block} results as blank results. After using the Pierce X keyword in this way, any unused Pierce X value can still be used to cancel {block} results rolled by the defending unit.",
+        },
+        {
+          type: "example",
+          content: [
+            {
+              type: "header",
+              content: "Example: Pierce X",
+            },
+            {
+              type: "text",
+              content:
+                "For example, a unit with Pierce 3 attacks an enemy unit, and another enemy unit uses {keyword:Guardian 2} to cancel 2 hit {hit} results. After converting defense surge {block_surge} results, the unit using {keyword:Guardian} has rolled 2 block {block} results. The attacking unit uses Pierce to cancel the 2 block {block} results and the unit using {keyword:Guardian} suffers 2 wounds.",
+            },
+            {
+              type: "text",
+              content:
+                "Now the defending unit rolls defense dice and the attacking unit may cancel 1 more block {block} result rolled by the defending unit since only 2 of its original Pierce 3 have been used so far.",
+            },
+          ],
         },
       ],
     },
@@ -3222,6 +4001,104 @@ export const rules: RulesDocument = {
     },
 
     {
+      keyword: "plodding",
+      name: "Plodding",
+      parents: ["p"],
+      related_keywords: ["move"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "During its activation, a unit with the Plodding keyword can only perform one move action.",
+        },
+      ],
+    },
+    {
+      keyword: "poison",
+      name: "Poison X",
+      activation: "",
+      parents: ["weapons", "p"],
+      tag: "Weapon Keyword",
+      related_keywords: ["wounds", "tokens", "troopers", "droid_trooper"],
+      descriptions: [
+        {
+          type: "illustration",
+          align: "right",
+          altText: "Poison token",
+          content: "tokens/poison.png",
+          width: "80",
+        },
+        {
+          type: "text",
+          content:
+            "A non-droid trooper unit that suffers wounds caused by an attack pool that included a weapon with the Poison X keyword gains X poison tokens.",
+        },
+        {
+          type: "text",
+          content:
+            "At the end of a unit’s activation, it suffers one wound for each poison token it has, then removes all of its poison tokens.",
+        },
+      ],
+    },
+
+    {
+      keyword: "precise_x",
+      name: "Precise X",
+      parents: ["p"],
+      related_keywords: ["aim"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "When an attacking unit that has the Precise X keyword spends an aim token during the Reroll Attack Dice step, it can reroll up to X additional attack dice per aim token spent.",
+        },
+      ],
+    },
+
+    {
+      keyword: "primitive",
+      name: "Primitive",
+      parents: ["p", "weapons"],
+      tag: "Weapon Keyword",
+      related_keywords: ["armor"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "During the Modify Attack Dice step, after resolving any instances of the Impact X keyword, if the defending unit has the Armor or Armor X keyword, a unit whose attack pool includes a weapon that has the Primitive keyword must modify all critical {hit_critical} results to {hit} a results for that attack.",
+        },
+      ],
+    },
+
+    {
+      keyword: "prepared_positions",
+      name: "Prepared Positions",
+      parents: ["p"],
+      related_keywords: ["deploy", "setup", "dodge"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "During the Deploy in Prepared Positions step of setup, a unit with the Prepared Position keyword may deploy by placing the unit leader of that unit within friendly territory. Then the remaining miniatures in that unit are placed in cohesion with their unit leader and within friendly territory. That unit then gains 1 dodge token. Miniatures cannot overlap impassable terrain when they are placed using Prepared Position.",
+        },
+      ],
+    },
+
+    {
+      keyword: "programmed",
+      name: "Programmed",
+      parents: ["p"],
+      related_keywords: ["army_building", "upgrade_card"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "A unit with the Programmed keyword must equip at least one {upgrade_programming} Upgrade Card during Army Building.",
+        },
+      ],
+    },
+
+    {
       keyword: "promote",
       name: "Promote",
       parents: ["p"],
@@ -3253,6 +4130,108 @@ export const rules: RulesDocument = {
                 "Earlier in the round, the last {rank_commander} unit in Josh’s army was defeated. At the Update Order Pool and Promote step of the End Phase, he must choose a trooper unit to become a {rank_commander}. The unit’s original order token is discarded, and he replaces it with a {rank_commander} order token. The promoted unit counts as a {rank_commander} for all rules purposes. If Josh doesn’t have any trooper units to promote, then he no longer has a {rank_commander} and cannot play Command Cards for the rest of the game.",
             },
           ],
+        },
+      ],
+    },
+
+    {
+      keyword: "pulling_the_strings",
+      name: "Pulling the Strings",
+      parents: ["p"],
+      range: "range_2",
+      related_keywords: ["free_action", "attack"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "When a unit uses the Pulling the Strings card action, choose another friendly trooper unit at {range_2}. The chosen unit may perform a free attack action or a free move action.",
+        },
+      ],
+    },
+
+    {
+      keyword: "quick_thinking",
+      name: "Quick Thinking",
+      parents: ["q"],
+      related_keywords: ["dodge", "card_action"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "When a unit performs the Quick Thinking card action, it gains one aim and one dodge token.",
+        },
+      ],
+    },
+    {
+      keyword: "ram_x",
+      name: "Ram",
+      parents: ["r", "weapons"],
+      tag: "Weapon Keyword",
+      related_keywords: ["notched_bases", "attack", "move"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "While a unit performs an attack using an attack pool that includes a weapon with the Ram X keyword, during the Modify Attack Dice step, it may change X results to {hit_critical} results if it meets either of the following conditions:",
+        },
+        {
+          type: "structured_list",
+          content: [
+            "The unit leader has a notched base and the unit performed at least one full standard move at its maximum speed during the same activation as an attack using Ram X.",
+            "The unit leader has a small base and the unit performed at least one move during the same activation as an attack using Ram X.",
+          ],
+        },
+      ],
+    },
+    {
+      keyword: "ready",
+      name: "Ready X",
+      parents: ["r"],
+      related_keywords: ["standby", "aim"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "After a unit with the Ready X keyword performs a standby action, it gains X aim tokens.",
+        },
+      ],
+    },
+    {
+      keyword: "recharge",
+      name: "Recharge X",
+      parents: ["r"],
+      related_keywords: ["shield"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "When a unit with the Recharge X keyword recovers, it may flip up to X inactive shield tokens from their inactive side to their active side.",
+        },
+      ],
+    },
+    {
+      keyword: "reinforcements",
+      name: "Recharge X",
+      parents: ["r"],
+      related_keywords: ["move"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "At the start of the End Phase of the first round of a game, a Unit with the Reinforcements keyword may perform a free speed-1 move.",
+        },
+      ],
+    },
+    {
+      keyword: "regenerate",
+      name: "Regenerate X",
+      parents: ["r"],
+      related_keywords: ["wounds"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "At the end of a unit’s activation, if it has the Regenerate X keyword, it rolls one white defense die for each wound token it has, up to X. For each {block} or {block_surge} result, it removes one wound token.",
         },
       ],
     },
@@ -3352,6 +4331,46 @@ export const rules: RulesDocument = {
     },
 
     {
+      keyword: "reliable_x",
+      name: "Reliable X",
+      parents: ["r"],
+      related_keywords: ["surge", "activation_phase"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "At the start of the Activation Phase, a unit with the Reliable X keyword gains X surge tokens.",
+        },
+      ],
+    },
+    {
+      keyword: "relentless",
+      name: "Relentless",
+      parents: ["r"],
+      related_keywords: ["attack", "free_action"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "After a unit that has the Relentless keyword performs a move action, it may perform a free attack action.",
+        },
+      ],
+    },
+    {
+      keyword: "reposition",
+      name: "Reposition",
+      parents: ["r"],
+      related_keywords: ["move", "pivot"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "When a unit with the Reposition keyword performs a standard move, it may perform a pivot either before or after performing that standard move.",
+        },
+      ],
+    },
+
+    {
       keyword: "repulsor_vehicle",
       name: "Repulsor Vehicles",
       parents: ["r"],
@@ -3383,6 +4402,26 @@ export const rules: RulesDocument = {
             "Repulsor vehicles do not block LOS, do not obscure miniatures, and do not provide cover.",
             "When a repulsor vehicle is defending against a ranged attack, during the Apply Dodge and Cover step, it cannot be obscured and cannot have cover as a result of being obscured.",
           ],
+        },
+      ],
+    },
+
+    {
+      keyword: "retinue",
+      name: "Retinue",
+      parents: ["r"],
+      range: "range_2",
+      related_keywords: ["aim", "dodge", "backup"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "At the start of the Activation Phase, if a unit with the Retinue keyword is at {range_2} of another friendly unit or type of unit specified by the Retinue keyword, it gains either one aim or one dodge token.",
+        },
+        {
+          type: "text",
+          content:
+            "Additionally, a unit with the Retinue keyword ignores the {rank_corps} rank requirement to provide backup to the specified unit.",
         },
       ],
     },
@@ -3528,6 +4567,459 @@ export const rules: RulesDocument = {
         },
       ],
     },
+    {
+      keyword: "ruthless",
+      name: "Ruthless",
+      parents: ["r"],
+      range: "range_2",
+      related_keywords: ["wounds", "free_action"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "When another friendly m trooper unit at {range_2} and in LOS that has a faceup order token activates, it may suffer 1 wound to perform 1 free action.",
+        },
+      ],
+    },
+    {
+      keyword: "scale",
+      name: "Scale",
+      parents: ["s"],
+      related_keywords: ["climb", "move"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "When a unit with the Scale keyword performs a climb, it may move a vertical distance up to height 2.",
+        },
+        {
+          type: "text",
+          content:
+            "When a unit that has the Scale keyword performs a move, it does not reduce its maximum speed for moving out of, into, or through difficult terrain.",
+        },
+      ],
+    },
+    {
+      keyword: "scatter",
+      name: "Scatter",
+      parents: ["s", "weapons"],
+      tag: "Weapon Keyword",
+      related_keywords: ["troopers", "attack", "miniature", "cohesion"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "After a unit performs an attack against a trooper unit on small bases using an attack pool that includes a weapon with the Scatter keyword, it may place any non-unit leader miniatures in the defending unit, following all the rules of cohesion, as if the defending unit leader had just performed a standard move.",
+        },
+      ],
+    },
+    {
+      keyword: "scatter_terrain",
+      name: "Scatter Terrain",
+      parents: ["s", "concepts"],
+      related_keywords: [
+        "terrain_cover",
+        "terrain_height",
+        "terrain_height",
+        "terrain",
+      ],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "Scatter terrain represents small terrain features such as crates, planters, or lamp posts. It is up to the players to determine the height, special rules, and the type of cover that scatter terrain provides.",
+        },
+      ],
+    },
+    {
+      keyword: "scout_x",
+      name: "Scout X",
+      parents: ["s"],
+      related_keywords: ["move", "terrain"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "When an undeployed unit with the Scout X keyword activates, at the start of its Perform Actions step, it may deploy by performing a free speed-X move action, ignoring difficult terrain. A unit can perform this move regardless of its maximum speed.",
+        },
+        {
+          type: "text",
+          content:
+            "The Scout X keyword is cumulative but cannot exceed 3. If a unit would ever have Scout X exceeding Scout 3, it has Scout 3 instead.",
+        },
+      ],
+    },
+    {
+      keyword: "scouting_party",
+      name: "Scouting Party",
+      parents: ["s"],
+      related_keywords: ["troopers", "faction", "setup", "scout_x"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "During Setup, the controlling player of a unit with the Scouting Party keyword may choose up to X friendly trooper units that share the same faction or affiliation with that unit and do not have the Scout keyword. Each chosen unit gains the Scout X keyword this game, where X is the Scout X value of the unit with the Scouting Party keyword.",
+        },
+      ],
+    },
+    {
+      keyword: "secret_mission",
+      name: "Secret Mission",
+      parents: ["s"],
+      related_keywords: ["tokens", "victory_points"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "Once per game, at the beginning of the Command Phase, if a unit with the Secret Mission keyword is within enemy territory, it gains a secret mission token.",
+        },
+        {
+          type: "text",
+          content:
+            "When scoring VP, if a player controls a unit with one or more secret mission tokens and that unit is within enemy territory, that unit’s controlling player scores 1 VP. Then, remove those secret mission tokens from the game.",
+        },
+      ],
+    },
+    {
+      keyword: "self_destruct",
+      name: "Self-Destruct X",
+      parents: ["s", "weapons"],
+      tag: "Weapon Keyword",
+      range: "range_1",
+      related_keywords: [
+        "melee",
+        "ranged_weapon",
+        "wounds",
+        "free_action",
+        "transport",
+      ],
+      descriptions: [
+        {
+          type: "illustration",
+          content: "black/self-destruct.png",
+          align: "right",
+          altText: "A crosshair in a circle.",
+          width: "80",
+        },
+        {
+          type: "text",
+          content:
+            "A weapon with a red {self_destruct} icon is a Self-Destruct weapon and can only be used during Self-Destruct attacks. Self-Destruct attacks are ranged attacks even though Self-Destruct weapons are not ranged weapons. A unit can perform a Self-Destruct attack as a free action during its activation if it has at least X wound tokens. Perform an attack using a unit’s Self-Destruct weapon against each unit at {range_1} and in LOS, even if they are engaged. Self-Destruct attacks may not be made by a unit that is embarked on a transport.",
+        },
+        {
+          type: "text",
+          content:
+            "After performing all attacks, the unit performing the Self-Destruct attack is defeated and removed from play.",
+        },
+      ],
+    },
+    {
+      keyword: "self_preservation",
+      name: "Self-Preservation",
+      parents: ["s"],
+      related_keywords: ["panic", "courage"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "When checking to see if a unit with the Self-Preservation keyword panics, that unit cannot use the courage value of units that are not of the same affiliation.",
+        },
+      ],
+    },
+    {
+      keyword: "sentinel",
+      name: "Sentinel",
+      parents: ["s"],
+      range: "range_3",
+      related_keywords: ["standby"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "A unit with the Sentinel keyword can spend a standby token after an enemy unit performs an attack, move, or action at {range_3}, rather than at {range_2}.",
+        },
+      ],
+    },
+    {
+      keyword: "sharpshooter_x",
+      name: "Sharpshooter",
+      parents: ["s"],
+      related_keywords: ["cover"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "During the Determine Cover step, a unit with the Sharpshooter X keyword subtracts X from the numerical value of the defender’s cover.",
+        },
+        {
+          type: "example",
+          initiallyExpanded: true,
+          content: [
+            { type: "header", content: "Example: Sharpshooter" },
+            {
+              type: "text",
+              content:
+                "For example, a unit with heavy cover and a suppression token that is attacked by a unit with Sharpshooter 1 has light cover.",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      keyword: "shield",
+      name: "Shielded X",
+      parents: ["s"],
+      related_keywords: ["ranged_weapon", "attack"],
+      descriptions: [
+        {
+          type: "illustration",
+          content: "tokens/shield.png",
+          width: "200",
+          align: "right",
+          altText: "Shield token, front and back",
+        },
+        {
+          type: "text",
+          content:
+            "A unit with the Shielded X keyword has X shield tokens. Shield tokens belong to the unit and are not assigned to individual miniatures. If a unit gains the Shielded X keyword, it gains X shield tokens. Similarly, if a unit loses the Shielded X keyword it loses X shield tokens.",
+        },
+        {
+          type: "text",
+          content:
+            "Shield tokens are double-sided, with an active side and an inactive side, and always enter play with their active side faceup placed on the battlefield next to the unit that has those shield tokens. When a unit flips an active shield token, that shield token is flipped to its inactive side and is now inactive. When a unit flips an inactive shield token, that shield token is flipped to its active side and is now active.",
+        },
+        {
+          type: "text",
+          content:
+            "While defending against a ranged attack, during the Modify Attack Dice step, a defending unit may flip any number of its active shield tokens to their inactive side to cancel one hit {hit} or critical {hit_critical} result for each shield token flipped in this way.",
+        },
+      ],
+    },
+    {
+      keyword: "smoke_x",
+      name: "Smoke X",
+      parents: ["s"],
+      range: "range_1",
+      related_keywords: ["actions", "smoke_tokens"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "A unit that has the Smoke X keyword can perform the Smoke X action. To perform this action, the unit places X smoke tokens within {range_1} and in LOS of its unit leader.",
+        },
+        {
+          type: "text",
+          content:
+            "Smoke tokens cannot overlap any objective, advantage, charge, or other smoke tokens and must be placed on a flat surface.",
+        },
+      ],
+    },
+    {
+      keyword: "smoke_tokens",
+      name: "Smoke Tokens",
+      parents: ["s"],
+      range: "range_1",
+      related_keywords: ["tokens", "smoke_x"],
+      descriptions: [
+        {
+          type: "illustration",
+          content: "tokens/smoke.png",
+          width: "80",
+          align: "right",
+          altText: "Smoke token",
+        },
+        {
+          type: "text",
+          content:
+            "Trooper units whose unit leader is at {range_1} of a smoke token improve the numerical value of their cover by 1 during the Determine Cover step. While a trooper unit is attacking, if the attacking unit leader is at {range_1} of a smoke token, the defending unit improves the numerical value of their cover by 1. Effects that improve a unit’s cover are cumulative. A unit cannot be affected by the same Smoke token more than once. Smoke tokens are removed during the Remove Tokens step of the End Phase.",
+        },
+        {
+          type: "text",
+          content:
+            "Smoke tokens cannot overlap any objective, advantage, charge, or other smoke tokens and must be placed on a flat surface.",
+        },
+        {
+          type: "example",
+          initiallyExpanded: true,
+          content: [
+            { type: "header", content: "Example: Smoke Tokens" },
+            {
+              type: "text",
+              content:
+                "For example, a trooper unit whose unit leader is at {range_1} of 2 smoke tokens would improve the numerical value of its cover by 2.",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      keyword: "special_issue",
+      name: "Special Issue: Battle Force",
+      parents: ["s"],
+      related_keywords: ["army_building"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "A unit with the Special Issue keyword can only be included in an army using the specified Battle Force.",
+        },
+      ],
+    },
+    {
+      keyword: "soresu_mastery",
+      name: "Soresu Mastery",
+      parents: ["s"],
+      related_keywords: ["ranged_weapon", "guardian", "dodge"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "When a unit with Soresu Mastery is defending against a ranged attack, it may reroll all of its defense dice during the Reroll Defense Dice step. Additionally, when a unit with Soresu Mastery is using the {keyword:Guardian X} keyword, it may spend one dodge token before converting any {block_surge} results. If it does, it rerolls all of its defense dice before converting {block_surge} results. Each die cannot be rerolled more than once using Soresu Mastery.",
+        },
+      ],
+    },
+    {
+      keyword: "speeder",
+      name: "Speeder X",
+      parents: ["s"],
+      related_keywords: [
+        "move",
+        "terrain",
+        "notched_bases",
+        "pivot",
+        "compulsory_move",
+      ],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "While it is performing a move, a unit that has the Speeder X keyword can move over or end its movement on terrain equal to or less than height X. Additionally, when a unit on notched bases performs a move, it skips step 1 of notched base movement, rotating the unit leader’s base.",
+        },
+        {
+          type: "text",
+          content:
+            "A unit with the Speeder X keyword must perform a free compulsory move action at the start or end of its Perform Actions step.",
+        },
+        {
+          type: "text",
+          content:
+            "If a unit with the Speeder X keyword performs more than one non-compulsory move action during its activation, it may not claim asset tokens that activation. Additionally, a unit with the Speeder X keyword that has claimed an asset token can perform only one non-compulsory move action during its activation.",
+        },
+        {
+          type: "reference",
+          referenced_keyword: "compulsory_move",
+        },
+      ],
+    },
+    {
+      keyword: "spotter",
+      name: "Spotter X",
+      parents: ["s", "units"],
+      range: "range_2",
+      related_keywords: ["aim"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "As a card action, a unit with the Spotter X keyword can choose up to X friendly units at {range_2}. Each chosen unit gains an aim token.",
+        },
+      ],
+    },
+    {
+      keyword: "spray",
+      name: "Spray",
+      parents: ["s", "weapons"],
+      tag: "Weapon Keyword",
+      related_keywords: ["attack", "miniature", "line_of_sight"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "When a miniature adds a weapon that has the Spray keyword to the attack pool, that weapon contributes its dice a number of times equal to the number of miniatures in the defending unit that are in LOS of the miniature using that weapon.",
+        },
+        {
+          type: "example",
+          initiallyExpanded: true,
+          content: [
+            {
+              type: "header",
+              content: "Example: Spray",
+            },
+            {
+              type: "text",
+              content:
+                "For example, if an AT-RT with a flamethrower attacks a unit of 3 Death Troopers, since the flamethrower has the Spray keyword and an attack value of 2 black die, the flamethrower contributes 6 black attack dice to the attack pool.",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      keyword: "spur",
+      name: "Spur",
+      parents: ["s", "units"],
+      range: "range_2",
+      related_keywords: ["move", "suppression"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "When a unit with the Spur keyword performs a move, its controlling player may assign it one suppression token to increase its maximum speed by 1 for that move, to a maximum of 3. When a unit performs a move, apply any effects that increase the unit’s maximum speed before applying any effects that reduce that unit’s maximum speed.",
+        },
+        {
+          type: "example",
+          initiallyExpanded: true,
+          content: [
+            { type: "header", content: "Example: Smoke Tokens" },
+            {
+              type: "text",
+              content:
+                "For example, a unit that normally has a maximum speed of 1, but has 1 immobilize token, can use the Spur keyword to perform a move with a total maximum speed of 1. However, a unit that normally has a maximum speed of 1, but has 2 immobilize tokens, cannot use the Spur keyword to perform a move because its maximum speed would still be 0.",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      keyword: "stationary",
+      name: "Stationary",
+      parents: ["s", "units"],
+      related_keywords: ["move", "pivot", "prepared_positions", "deploy"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "A unit with the Stationary keyword cannot perform moves unless the move is a pivot. A unit with the Prepared Position and Stationary keywords must deploy during the Deploy in Prepared Positions step of setup.",
+        },
+      ],
+    },
+    {
+      keyword: "steady",
+      name: "Steady",
+      parents: ["s", "units"],
+      related_keywords: ["move", "ranged_weapon", "attack"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "After a unit that has the Steady keyword performs a move action, it may perform a free attack action. During this attack action it may only add ranged weapons to attack pools.",
+        },
+      ],
+    },
+    {
+      keyword: "strategize_x",
+      name: "Strategize X",
+      parents: ["s", "units"],
+      range: "range_2",
+      related_keywords: ["suppression", "dodge"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "When a unit uses the Strategize X action, it gains one suppression token, then chooses X friendly units at 2. Each chosen unit gains one aim and one dodge token.",
+        },
+      ],
+    },
 
     {
       keyword: "suffering_wounds",
@@ -3568,6 +5060,54 @@ export const rules: RulesDocument = {
           type: "text",
           content:
             "When all of the miniatures in a unit are defeated, the unit is defeated. Remove all order tokens for that unit from the battlefield.",
+        },
+      ],
+    },
+    {
+      keyword: "suppressive",
+      name: "Suppressive",
+      parents: ["s", "weapons"],
+      tag: "Weapon Keyword",
+      related_keywords: ["attack", "suppression"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "After defending against an attack pool that includes a weapon with the Suppressive keyword, the defending unit gains one suppression token during the Assign Suppression Token to Defender step.",
+        },
+        { type: "callout", callout_keyword: "suppression" },
+      ],
+    },
+    {
+      keyword: "suppression",
+      name: "Suppression",
+      parents: ["s"],
+      related_keywords: [
+        "suppressive",
+        "courage",
+        "panic",
+        "apply_dodge_cover",
+        "troopers",
+      ],
+      descriptions: [
+        {
+          type: "illustration",
+          content: "tokens/suppression.png",
+          align: "center",
+          altText: "Two triangle-shaped tokens, one with a number 3 in it.",
+          width: "280",
+        },
+        {
+          type: "illustration",
+          content: "examples/suppression.png",
+          align: "center",
+          altText: "Luke Skywalker unit card, with courage value highlighted",
+          width: "280",
+        },
+        {
+          type: "text",
+          content:
+            "Trooper units have a courage value on their Unit Card. When a unit has a number of suppression tokens equal to or greater than its courage value, it is suppressed. If a unit has a number of suppression tokens that is equal to or greater than double its courage value, it is panicked. A suppressed unit performs one less action each activation, while a panicked unit suffers additional effects.",
         },
       ],
     },
@@ -3728,6 +5268,279 @@ export const rules: RulesDocument = {
     },
 
     {
+      keyword: "tactical_x",
+      name: "Tactical X",
+      parents: ["t", "units"],
+      related_keywords: ["aim", "move"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "The Tactical X keyword allows a unit to gain a number of aim tokens equal to X each time it performs a standard move as part of an action or free action.",
+        },
+      ],
+    },
+    {
+      keyword: "take_cover_x",
+      name: "Take Cover X",
+      parents: ["t", "units"],
+      range: "range_2",
+      related_keywords: ["dodge", "card_action"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "As a card action, a unit with the Take Cover X keyword can choose up to X friendly units at {range_2}. Each chosen unit gains one dodge token.",
+        },
+      ],
+    },
+    {
+      keyword: "terrain",
+      name: "Terrain",
+      parents: ["t", "concepts"],
+      related_keywords: [
+        "barricades",
+        "dodge",
+        "scatter_terrain",
+        "terrain_cover",
+        "terrain_height",
+        "terrain_height",
+      ],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "The scenery and features that make up the battlefield are terrain. Terrain serves more of a purpose than simply being aesthetically pleasing—the terrain over which armies fight can have as dramatic an impact on the course of battle as the abilities of the armies themselves. Players should always discuss terrain before the game starts. There are three types of terrain: scatter terrain, area terrain, and obstacle terrain.",
+        },
+        { type: "reference", referenced_keyword: "scatter_terrain" },
+        { type: "callout", callout_keyword: "barricades" },
+        { type: "reference", referenced_keyword: "area_terrain" },
+        { type: "reference", referenced_keyword: "obstacle_terrain" },
+        { type: "reference", referenced_keyword: "terrain_movement" },
+        {
+          type: "example",
+          content: [
+            {
+              type: "header",
+              content: "Example: Different Types of Terrain",
+            },
+            {
+              type: "text",
+              content:
+                "The Clone Trooper unit is preparing to move. The battlefield and barricades are open terrain and do not restrict the Clone Trooper unit’s movement. The building is impassable terrain, and the Clone Troopers may not move through it unless they have a special rule that allows them to do so.",
+            },
+          ],
+        },
+        { type: "reference", referenced_keyword: "fitting_on_terrain" },
+        { type: "reference", referenced_keyword: "terrain_cover" },
+        { type: "reference", referenced_keyword: "terrain_height" },
+        { type: "callout", callout_keyword: "golden_rule_terrain" },
+      ],
+    },
+    {
+      keyword: "terrain_cover",
+      name: "Terrain Providing Cover",
+      parents: ["t", "concepts"],
+      related_keywords: [
+        "barricades",
+        "dodge",
+        "scatter_terrain",
+        "terrain_height",
+        "line_of_sight",
+        "battlefield",
+      ],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "The main purpose of terrain is to block line of sight between miniatures and provide them with cover. Terrain provides either light, heavy, or no cover. What kind of cover, if any, a piece of terrain provides is ultimately for players to decide. Before the game begins, players should agree on what kind of cover each piece of terrain on the battlefield provides.",
+        },
+      ],
+    },
+    {
+      keyword: "terrain_height",
+      name: "Terrain Height",
+      parents: ["t", "concepts"],
+      related_keywords: [
+        "barricades",
+        "dodge",
+        "scatter_terrain",
+        "terrain_cover",
+        "line_of_sight",
+        "battlefield",
+      ],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "Each piece of terrain has a height characteristic. To measure this, take the range tool and put one end on the battlefield, orienting the range tool vertically. Then add segments until the end of the range tool is taller than the piece of terrain. The segment of the range tool that the top of the terrain is inside is equal to that object’s height.",
+        },
+        {
+          type: "text",
+          content:
+            "Some terrain might have various pieces at multiple heights. When determining the height of the terrain for the purposes of performing a movement or a climb, measure the height of the part of the terrain the miniatures are moving or climbing to, subtracting the height of any terrain the miniatures may be on.",
+        },
+        {
+          type: "example",
+          content: [
+            {
+              type: "header",
+              content: "Example: Measuring Height",
+            },
+            {
+              type: "illustration",
+              content: "examples/measure-height.png",
+              align: "center",
+              altText:
+                "An example photo illustrating when a standby would trigger",
+            },
+            {
+              type: "text",
+              content:
+                "Sarah wants to measure the height of this building to determine how it will impede the movement of her Clone Troopers. To do so, she takes the range tool and places one end on the battlefield, holding the range tool upright. Because the roof of the building is entirely inside the first segment of the range tool, the building is considered height 1.",
+            },
+            {
+              type: "text",
+              content:
+                "Later in the game, Sarah measures the height of another building. Because this building has multiple levels, it consists of different heights. The first roof is completely inside the first segment of the range tool, so that part of the building is height 1. However, the second roof of the building is inside the second segment of the range tool, so that part of the building is height 2.",
+            },
+            {
+              type: "illustration",
+              content: "examples/measure-height-2.png",
+              align: "center",
+              altText:
+                "An example photo illustrating when a standby would trigger",
+            },
+            {
+              type: "text",
+              content:
+                "To determine how the building affects the movement of her Clone Troopers, Sarah only considers the part of the building her Clone Troopers wish to move to—they may perform a climb onto the height 1 part of the building but are unable to move onto the height 2 part from the battlefield. If they begin their movement while on the height 1 part of the building, then they may climb onto the height 2 part of the building.",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      keyword: "teamwork",
+      name: "Teamwork: Unit Name",
+      parents: ["t", "units"],
+      range: "range_2",
+      related_keywords: ["aim", "dodge"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "When a unit with the Teamwork keyword is at {range_2} of a friendly unit that has the unit name specified by the Teamwork keyword, if either unit gains an aim token or a dodge token, the other unit gains a token of the same type.",
+        },
+      ],
+    },
+    {
+      keyword: "terrain_movement",
+      name: "Terrain Restricting Movement",
+      parents: ["t", "concepts"],
+      related_keywords: [
+        "terrain_cover",
+        "terrain_height",
+        "terrain_height",
+        "terrain",
+        "terrain_movement",
+        "obstacle_terrain",
+      ],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "In addition to being scatter, area, or obstacle terrain, a terrain feature is also open, difficult, or impassable.",
+        },
+        {
+          type: "text",
+          content:
+            "Open terrain represents parts of the battlefield that are relatively easy to traverse and free from obstacles or obstructions. Open fields, lamp posts, planters, tall grass, or sandy desert are all open terrain. Open terrain does not restrict movement.",
+        },
+        {
+          type: "text",
+          content:
+            "Difficult terrain restricts but does not completely prevent movement. Craters, ruins, woods, piles of rubble, and swamps are all examples of difficult terrain. Difficult terrain reduces the maximum speed of a unit moving through or into it by 1 to a minimum of 1.",
+        },
+        {
+          type: "text",
+          content:
+            "Impassable terrain completely prevents movement. Miniatures cannot move through or end a movement on impassable terrain unless they have a special rule which allows them to do so.",
+        },
+        {
+          type: "text",
+          content:
+            "Some larger and more complex pieces of terrain are made up of various parts that each restrict movement differently. For example, the walls of a piece of obstacle terrain may be impassable, but a miniature may be able to move through a door or window that is open terrain. Players should discuss the parts of terrain and agree on how they are to be played before the game begins.",
+        },
+        {
+          type: "text",
+          content:
+            "In addition to being scatter, area, or obstacle terrain, a terrain feature is also open, difficult, or impassable.",
+        },
+      ],
+    },
+    {
+      keyword: "target_x",
+      name: "Target X",
+      parents: ["t", "units"],
+      related_keywords: ["aim", "issue_order"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "After a unit with the Target X keyword is issued an order, it gains X aim tokens.",
+        },
+      ],
+    },
+    {
+      keyword: "tempted",
+      name: "Tempted",
+      parents: ["t", "units"],
+      range: "range_3",
+      related_keywords: ["attack", "free_action", "move", "terrain"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "If a friendly unit is defeated by an enemy attack and the attacking unit is at {range_3} of a unit with the Tempted keyword, after the attack is resolved, that unit with the Tempted keyword may perform a free attack action or a speed-2 move ignoring difficult terrain. A unit may use the Tempted keyword only once each round.",
+        },
+      ],
+    },
+    {
+      keyword: "tow_cable",
+      name: "Tow Cable",
+      parents: ["t", "weapons"],
+      tag: "Weapon Keyword",
+      related_keywords: ["attack", "pivot", "wounds"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "After a vehicle is wounded by an attack pool that included a weapon with the Tow Cable keyword, the player who performed the attack performs a pivot with the vehicle that was wounded.",
+        },
+      ],
+    },
+    {
+      keyword: "transport",
+      name: "Transport",
+      parents: ["t", "units"],
+      related_keywords: [
+        "setup",
+        "deploy",
+        "issue_order",
+        "command_phase",
+        "move",
+      ],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "During Setup, a unit with the Transport keyword may choose a friendly {rank_corps} or {rank_specialist} unit to transport. During the Issue Orders step of the Command Phase of round 1, a unit with the Transport keyword may issue an order to the chosen unit. If the chosen unit is undeployed when the unit with the Transport keyword deploys, after the effect is resolved, the chosen unit deploys by performing a speed-1 move. Measure the start of this move with both prongs of one side of the movement tool touching the base of the unit with the Transport keyword. When the chosen unit deploys in this way, the unit leader of that unit measures the vertical distance changed during that move starting from the unit with the Transport keyword.",
+        },
+      ],
+    },
+
+    {
       keyword: "troopers",
       name: "Trooper",
       parents: ["t"],
@@ -3766,7 +5579,58 @@ export const rules: RulesDocument = {
         { type: "reference", referenced_keyword: "woookie_trooper" },
       ],
     },
-
+    {
+      keyword: "uncanny_luck_x",
+      name: "Uncanny Luck X",
+      parents: ["u", "units"],
+      related_keywords: ["attack", "dice"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "While a unit with the Uncanny Luck X keyword is defending against an attack, it may reroll up to X of its defense dice during the Reroll Defense Dice step. Any dice rerolled with the Uncanny Luck X keyword must be rerolled at the same time, and each die cannot be rerolled more than once.",
+        },
+      ],
+    },
+    {
+      keyword: "unconcerned",
+      name: "Unconcerned",
+      parents: ["u", "units"],
+      related_keywords: ["cover", "repair"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "A unit with the Unconcerned keyword cannot benefit from cover, and miniatures in the unit cannot be repaired or restored.",
+        },
+      ],
+    },
+    {
+      keyword: "undeployed_units",
+      name: "Undeployed Units",
+      parents: ["u", "concepts"],
+      related_keywords: ["deploy", "line_of_sight", "battlefield"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "If a unit is not on the battlefield because it has not yet deployed this game, it is undeployed. An undeployed unit is within any distance and in LOS of each friendly undeployed unit and is beyond any distance and not in LOS of each enemy unit and each unit on the battlefield.",
+        },
+      ],
+    },
+    {
+      keyword: "unhindered",
+      name: "Unhindered",
+      parents: ["u", "units"],
+      related_keywords: ["move", "terrain"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "When a unit that has the Unhindered keyword performs a move, it does not reduce its maximum speed for moving out of, into, or through difficult terrain.",
+        },
+      ],
+    },
     {
       keyword: "unit",
       name: "Unit Types",
@@ -3791,6 +5655,19 @@ export const rules: RulesDocument = {
         },
         { type: "reference", referenced_keyword: "troopers" },
         { type: "reference", referenced_keyword: "vehicles" },
+      ],
+    },
+    {
+      keyword: "unstoppable",
+      name: "Unstoppable",
+      parents: ["u", "units"],
+      related_keywords: ["activation_phase", "order_pool"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "A unit with the Unstoppable keyword is eligible to activate during the Activation Phase while it has one or fewer facedown order tokens. This unit may never have more than one faceup order token. While this unit is not defeated, when creating its order pool, its controlling player adds an additional order token corresponding to this unit’s rank to their order pool.",
+        },
       ],
     },
 
@@ -3824,7 +5701,20 @@ export const rules: RulesDocument = {
         { type: "reference", referenced_keyword: "repulsor_vehicle" },
       ],
     },
-
+    {
+      keyword: "versatile",
+      name: "Versatile",
+      parents: ["v", "weapons"],
+      tag: "Weapon Keyword",
+      related_keywords: ["attack", "ranged_weapon", "engaged", "melee"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "Some ranged weapons have the Versatile keyword. Units can perform ranged attacks using a weapon with the Versatile keyword even while engaged. A weapon with the Versatile keyword that is both a ranged weapon and a melee weapon can be used to perform either a ranged attack or a melee attack.",
+        },
+      ],
+    },
     {
       keyword: "weapons",
       name: "Weapons",
@@ -3875,8 +5765,75 @@ export const rules: RulesDocument = {
       ],
     },
     {
+      keyword: "weak_points",
+      name: "Weak Point X",
+      parents: ["w", "units"],
+      related_keywords: ["attack", "impact"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "While a unit with the Weak Point X: Front/Rear/Sides keyword is defending, if the attacking unit’s unit leader is at least partially inside the specified firing arc of the defending unit, the attack pool gains the Impact X keyword where X is equal to the value of Weak Point X.",
+        },
+        {
+          type: "text",
+          content:
+            "While a unit with the Weak Point X keyword is defending against a ranged attack made by an area weapon, treat the charge or advantage token as the attacking unit leader.",
+        },
+      ],
+    },
+    {
+      keyword: "weighed_down",
+      name: "Weighed Down",
+      parents: ["w", "units"],
+      related_keywords: ["jump_x"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "While a unit with the Weighed Down keyword is holding 1 or more objective tokens, it cannot use the {keyword:Jump} keyword.",
+        },
+      ],
+    },
+    {
+      keyword: "we_are_not_regs",
+      name: "We're Not Regs",
+      parents: ["w", "units"],
+      related_keywords: ["clone_trooper", "backup"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "A unit with the We’re Not Regs keyword may not spend green tokens on other Clone Trooper units, and other Clone Trooper units may not spend this unit’s green tokens. Additionally, this unit cannot benefit from backup.",
+        },
+      ],
+    },
+    {
+      keyword: "wheel_mode",
+      name: "Wheel Mode",
+      parents: ["w", "units"],
+      related_keywords: ["activating_units", "move", "cover", "miniature"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "At the start of its activation, a unit with the Wheel Mode keyword can increase its maximum speed to 3 until the end of that activation. If it does, until the end of the round, it gains the Cover 2 keyword and cannot attack or flip active shield tokens.",
+        },
+        {
+          type: "text",
+          content:
+            "To indicate that a unit of Droidekas is using the Wheel Mode keyword, a player may replace their standing Droideka miniatures with ball-form Droideka miniatures, or simply mark the unit with a Wheel Mode token.",
+        },
+        {
+          type: "text",
+          content:
+            "Players should use the ball-form Droideka miniatures only when the unit uses the Wheel Mode keyword and only for the duration of that round. At the end of the round, any ball- form Droideka miniatures should be replaced with standing Droideka miniatures.",
+        },
+      ],
+    },
+    {
       keyword: "woookie_trooper",
-      name: "Wookie Trooper",
+      name: "Wookiee Trooper",
       parents: ["w"],
       related_keywords: ["troopers"],
       descriptions: [

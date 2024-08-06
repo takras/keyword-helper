@@ -49,6 +49,7 @@ export const IconList = {
   rank_specialist: "black/rank-specialist.png",
   rank_support: "black/rank-support.png",
   rank_heavy: "black/rank-heavy.png",
+  self_destruct: "black/self-destruct.png",
   upgrade_heavy: "black/upgrade-heavy.png",
   upgrade_personnel: "black/upgrade-personnel.png",
   upgrade_command: "black/upgrade-command.png",
@@ -65,4 +66,5 @@ export const IconList = {
   upgrade_crew: "black/upgrade-crew.png",
   upgrade_ordnance: "black/upgrade-ordnance.png",
   upgrade_squad_leader: "black/upgrade-squad-leader.png",
+  overrun: "black/overrun.png",
 };

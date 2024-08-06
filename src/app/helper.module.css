@@ -35,7 +35,7 @@
 }
 
 .keywordContainer {
-  margin-top: 50px;
+  padding-top: 20px;
 }
 
 .aboutContainer,
@@ -106,11 +106,21 @@
   border-bottom: 2px solid var(--example-color);
 }
 
+.donate {
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
 .modalTopMenu {
   display: block;
-  position: fixed;
-  width: 90vw;
+  width: 96vw;
   z-index: 2;
+  margin-left: -15px;
+  margin-top: -16px;
+  padding-bottom: 5px;
+  position: fixed;
+  background-color: var(--background-color);
 }
 
 .catalogButton {
@@ -137,7 +147,6 @@
 .searchContainer {
   border-radius: var(--border-radius);
   text-align: center;
-  cursor: pointer;
   padding: 10px;
   border: var(--border-thin);
   box-shadow: 0px 10px 10px rgb(0 0 0 / 0.1);
