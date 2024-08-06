@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@next/third-parties": "^14.2.5",
     "classnames": "^2.5.1",
     "html-react-parser": "^5.1.12",
     "json-schema-to-ts": "^3.0.1",
