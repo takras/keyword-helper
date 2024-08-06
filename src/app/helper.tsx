@@ -610,18 +610,20 @@ export default function Helper() {
         />
       </div>
       <div className={styles.aboutContainer}>
-        <button
-          className={styles.button}
-          onClick={() =>
-            selectKeyword(
-              rulesDocument.keywords.find(
-                (keyword) => keyword.keyword === "coming_from_pre_2024"
-              )!
-            )
-          }
-        >
-          Biggest changes from version prior to 2024s 2.6.0 version.
-        </button>
+        <div className={styles.changelogButton}>
+          <button
+            className={styles.button}
+            onClick={() =>
+              selectKeyword(
+                rulesDocument.keywords.find(
+                  (keyword) => keyword.keyword === "coming_from_pre_2024"
+                )!
+              )
+            }
+          >
+            Biggest changes from version prior to 2024s 2.6.0 version.
+          </button>
+        </div>
         <div className={styles.aboutButtonRow}>
           <button
             className={styles.button}
@@ -648,10 +650,11 @@ export default function Helper() {
             Official Rules Forum
           </button>
         </div>
-        <div id="donate-button-container" className={styles.donate}>
-          <div id="donate-button"></div>
-        </div>
-        <Script id="PayPal">{`PayPal.Donation.Button({
+        <div className={styles.infoContainer}>
+          <div id="donate-button-container" className={styles.donate}>
+            <div id="donate-button"></div>
+          </div>
+          <Script id="PayPal">{`PayPal.Donation.Button({
 env:'production',
 hosted_button_id:'PCSQHJMWUZSWN',
 image: {
@@ -660,14 +663,31 @@ alt:'Donate with PayPal button',
 title:'PayPal - The safer, easier way to pay online!',
 }
 }).render('#donate-button');`}</Script>
-      </div>
-      <div className={styles.versionInfo}>
-        Current version of the rules reference updated:{" "}
-        <span className={styles.version}>{rulesDocument.version}</span> valid
-        from{" "}
-        <span className={styles.date}>
-          {new Date(rulesDocument.validFrom).toLocaleDateString()}.
-        </span>
+
+          <a
+            href="https://twitter.com/intent/tweet?screen_name=takras&ref_src=twsrc%5Etfw"
+            className="twitter-mention-button"
+            data-size="large"
+            data-show-count="false"
+          >
+            Give feedback to @takras
+          </a>
+          <script async src="https://platform.twitter.com/widgets.js"></script>
+          <div className={styles.versionInfo}>
+            Current version of the rules reference updated:{" "}
+            <span className={styles.version}>{rulesDocument.version}</span>{" "}
+            valid from{" "}
+            <span className={styles.date}>
+              {new Date(rulesDocument.validFrom).toLocaleDateString()}.
+            </span>
+          </div>
+          <div className={styles.versionInfo}>
+            Current version of Legion Helper:{" "}
+            <span className={styles.version}>
+              {rulesDocument.helperVersion}.
+            </span>
+          </div>
+        </div>
       </div>
 
       <div className={styles.content}>

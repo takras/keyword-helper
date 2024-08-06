@@ -101,6 +101,17 @@
   }
 }
 
+.changelogButton {
+  display: flex;
+  justify-content: center;
+}
+
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .calloutHeader {
   margin-top: 0;
   border-bottom: 2px solid var(--example-color);
