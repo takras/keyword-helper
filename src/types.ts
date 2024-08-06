@@ -2,6 +2,7 @@ import { IconList } from "./utils";
 
 export type AvailableKeywords =
   | "about"
+  | "coming_from_pre_2024"
   | "abilities"
   | "abilities_provide_move"
   | "actions"
@@ -164,6 +165,7 @@ export type AvailableKeywords =
   | "melee_pierce"
   | "miniature"
   | "move"
+  | "move_into_melee"
   | "move_through_miniatures"
   | "nimble"
   | "non_standard_move"
@@ -177,6 +179,7 @@ export type AvailableKeywords =
   | "order_pool"
   | "open_terrain"
   | "outmaneuver"
+  | "overlapping_objects"
   | "override"
   | "overrun"
   | "panic"
@@ -288,11 +291,12 @@ type Range =
 
 export interface RulesDocument {
   version: string;
+  helperVersion: string;
   validFrom: string;
   downloadUrl: string;
   documentUrl: string;
   discussionUrl: string;
-  changelog: any[];
+  changelog: CatalogEntry[];
   index: CatalogEntry[];
   keywords: Keyword[];
 }
@@ -329,7 +333,13 @@ export interface Icons {
 
 export interface CatalogEntry {
   id: string;
-  catalog: "alphabet" | "weapons" | "units" | "phases" | "concepts";
+  catalog:
+    | "alphabet"
+    | "weapons"
+    | "units"
+    | "phases"
+    | "concepts"
+    | "changelog";
   name: string;
 }
 
@@ -384,6 +394,7 @@ export type Text = {
 type Reference = {
   type: "reference";
   referenced_keyword: AvailableKeywords;
+  showOnlySummary?: boolean;
 };
 
 type Callout = {

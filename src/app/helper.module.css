@@ -35,7 +35,7 @@
 }
 
 .keywordContainer {
-  padding-top: 20px;
+  padding-top: 40px;
 }
 
 .aboutContainer,
@@ -301,7 +301,8 @@
 .referenceButton {
   font-family: var(--font-family);
   font-size: inherit;
-  border-radius: var(--border-radius);
+  border: none;
+  background-color: unset;
   cursor: pointer;
 }
 

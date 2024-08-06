@@ -153,6 +153,7 @@ export default function Helper() {
         case "reference":
           return reference({
             reference: description.referenced_keyword,
+            summaryOnly: description.showOnlySummary,
           });
         case "structured_list_numbered":
         case "structured_list":
@@ -198,7 +199,13 @@ export default function Helper() {
     );
   };
 
-  const reference = ({ reference }: { reference: string }) => {
+  const reference = ({
+    reference,
+    summaryOnly,
+  }: {
+    reference: string;
+    summaryOnly?: boolean;
+  }) => {
     const enriched = getEnrichedKeyword(reference);
     if (!enriched) {
       return null;
@@ -219,7 +226,7 @@ export default function Helper() {
       ...filteredDescriptions,
     ];
 
-    if (filteredDescriptions.length > 0) {
+    if (filteredDescriptions.length > 0 && !summaryOnly) {
       return (
         <RenderContent key={getKey(reference)} descriptions={withHeader} />
       );
@@ -227,10 +234,7 @@ export default function Helper() {
 
     return (
       <div className={styles.referenceContainer} key={getKey(reference)}>
-        <h3 className={classNames(styles.header3, styles.referenceHeader)}>
-          {enriched?.name}
-        </h3>
-        {enriched.summary && (
+        {!summaryOnly && enriched.summary && (
           <div className={styles.referenceSummary}>
             {interpolateString(enriched?.summary, enriched.name)}
           </div>
@@ -606,6 +610,18 @@ export default function Helper() {
         />
       </div>
       <div className={styles.aboutContainer}>
+        <button
+          className={styles.button}
+          onClick={() =>
+            selectKeyword(
+              rulesDocument.keywords.find(
+                (keyword) => keyword.keyword === "coming_from_pre_2024"
+              )!
+            )
+          }
+        >
+          Biggest changes from version prior to 2024s 2.6.0 version.
+        </button>
         <div className={styles.aboutButtonRow}>
           <button
             className={styles.button}
