@@ -259,6 +259,7 @@
 
 .keywordButton {
   border-radius: var(--border-radius);
+  min-width: 200px;
 }
 
 .relatedContainer {
