@@ -631,17 +631,6 @@ export default function Helper() {
           >
             Official Rules Forum
           </button>
-
-          <button
-            className={styles.button}
-            onClick={() =>
-              window.open(
-                "https://www.paypal.com/donate/?hosted_button_id=PCSQHJMWUZSWN"
-              )
-            }
-          >
-            Donate
-          </button>
         </div>
         <div className={styles.versionInfo}>
           Current version of the rules reference updated:{" "}
@@ -651,6 +640,18 @@ export default function Helper() {
             {new Date(rulesDocument.validFrom).toLocaleDateString()}.
           </span>
         </div>
+        <div id="donate-button-container">
+          <div id="donate-button"></div>
+        </div>
+        <Script id="PayPal">{`PayPal.Donation.Button({
+env:'production',
+hosted_button_id:'PCSQHJMWUZSWN',
+image: {
+src:'https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif',
+alt:'Donate with PayPal button',
+title:'PayPal - The safer, easier way to pay online!',
+}
+}).render('#donate-button');`}</Script>
       </div>
 
       <div className={styles.content}>
