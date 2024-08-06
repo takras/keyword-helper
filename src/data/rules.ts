@@ -3531,10 +3531,14 @@ export const rules: RulesDocument = {
 
     {
       keyword: "suffering_wounds",
-      name: "Suffering Wounds and Defeating Miniatures",
-      parents: ["w", "s"],
+      name: "Wounds",
+      parents: ["w"],
       related_keywords: ["attack", "miniature", "line_of_sight"],
       descriptions: [
+        {
+          type: "header",
+          content: "Suffering Wounds and Defeating Miniatures",
+        },
         {
           type: "text",
           content:

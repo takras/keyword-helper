@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { GoogleTagManager } from "@next/third-parties/google";
 
 import styles from "./layout.module.css";
@@ -18,6 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={styles.html}>
+      <Script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" />
       <body className={styles.body}>{children}</body>
       <GoogleTagManager gtmId="G-148T6XV7YW" />
     </html>
