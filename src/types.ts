@@ -1,6 +1,7 @@
 import { IconList } from "./utils";
 
 export type AvailableKeywords =
+  | "search_result_blank"
   | "about"
   | "coming_from_pre_2024"
   | "abilities"

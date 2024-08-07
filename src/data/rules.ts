@@ -1,5 +1,4 @@
-import dynamic from "next/dynamic";
-import { Keyword, RulesDocument } from "@/types";
+import { RulesDocument } from "@/types";
 import { index } from "./catalog";
 import { KeywordsA } from "./keyword_a";
 import { KeywordsB } from "./keyword_b";

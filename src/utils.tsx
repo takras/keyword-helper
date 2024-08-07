@@ -1,5 +1,7 @@
 import HTMLReactParser from "html-react-parser/lib/index";
 import styles from "../src/app/helper.module.css";
+import { rules } from "./data/rules";
+import { Keyword } from "./types";
 
 const getIconPath = (fileName: string) => {
   return `<img className="${styles.inlineIcon}" alt="${fileName}" src="/images/${fileName}">`;
@@ -24,6 +26,22 @@ export const interpolateString = (
   return HTMLReactParser(
     `<span key="${key}" className=${className}>${interpolated}</span>`
   );
+};
+
+export const sortKeyword = (keywordA: Keyword, keywordB: Keyword) => {
+  const a = keywordA.name.toUpperCase();
+  const b = keywordB.name.toUpperCase();
+  return a < b ? -1 : a > b ? 1 : 0;
+};
+
+export const getEnrichedKeyword = (keyword: string) => {
+  return rules.keywords.find((key) => key.keyword === keyword);
+};
+
+let counter = 0;
+export const getKey = (key: string) => {
+  counter += 1;
+  return `${key}_${counter}`;
 };
 
 export const IconList = {
