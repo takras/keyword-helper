@@ -4,6 +4,7 @@ const nextConfig = {
   output: "export",
   reactStrictMode: true,
   images: { unoptimized: true },
+  crossOrigin: "anonymous",
 };
 
 export default nextConfig;
