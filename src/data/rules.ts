@@ -3282,6 +3282,13 @@ export const rules: RulesDocument = {
       related_keywords: ["attack", "objective", "backup"],
       descriptions: [
         {
+          type: "illustration",
+          align: "right",
+          altText: "Round token with picture of a unit inside.",
+          content: "tokens/incognito.png",
+          width: "120",
+        },
+        {
           type: "text",
           content:
             "A unit with the Incognito keyword cannot be attacked by enemy units that are beyond {range_1} of it, cannot contest objectives, and cannot provide backup.",
@@ -4331,6 +4338,13 @@ export const rules: RulesDocument = {
         "rally",
       ],
       descriptions: [
+        {
+          type: "illustration",
+          altText: "Oblong 6-sided token with an arrowhead inside",
+          width: "80",
+          align: "right",
+          content: "tokens/panic.png",
+        },
         {
           type: "text",
           content:
@@ -5440,6 +5454,13 @@ export const rules: RulesDocument = {
           content: "Suffering Wounds and Defeating Miniatures",
         },
         {
+          type: "illustration",
+          altText: "Jagged red tokens, number 3 or blank inside.",
+          width: "120",
+          align: "right",
+          content: "tokens/wound.png",
+        },
+        {
           type: "text",
           content:
             "When a player’s unit suffers wounds, that player chooses a miniature from that unit and assigns wound tokens to it until either all wounds have been suffered or the miniature is defeated.",
@@ -6222,6 +6243,13 @@ export const rules: RulesDocument = {
       parents: ["w", "units"],
       related_keywords: ["activating_units", "move", "cover", "miniature"],
       descriptions: [
+        {
+          type: "illustration",
+          altText: "A round token with orange wheel inside",
+          align: "right",
+          content: "tokens/wheel-mode.png",
+          width: "80",
+        },
         {
           type: "text",
           content:

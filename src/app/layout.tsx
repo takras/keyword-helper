@@ -20,8 +20,12 @@ export default function RootLayout({
   return (
     <html lang="en" className={styles.html}>
       <Script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" />
+      <Script
+        type="text/javascript"
+        src="//cdn.cookie-script.com/s/dfceac6281af9a6e5880f80b02354b5b.js"
+      />
       <body className={styles.body}>{children}</body>
-      <GoogleTagManager gtmId="G-148T6XV7YW" />
+      <GoogleTagManager gtmId="GTM-W7J477VD" />
     </html>
   );
 }

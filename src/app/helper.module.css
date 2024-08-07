@@ -35,7 +35,10 @@
 }
 
 .keywordContainer {
-  padding-top: 40px;
+  padding: 40px 20px 20px 20px;
+  background-color: white;
+  border: var(--border-thin);
+  border-radius: var(--border-radius);
 }
 
 .aboutContainer,
@@ -125,13 +128,14 @@
 
 .modalTopMenu {
   display: block;
-  width: 96vw;
+  width: 97vw;
   z-index: 2;
-  margin-left: -15px;
+  margin-left: -16px;
   margin-top: -16px;
   padding-bottom: 5px;
   position: fixed;
   background-color: var(--background-color);
+  border-bottom: var(--border-thin);
 }
 
 .catalogButton {
@@ -238,6 +242,7 @@
   text-align: center;
   cursor: pointer;
   padding: 5px;
+  margin-right: 10px;
   box-shadow: 0px 5px 10px rgb(0 0 0 / 0.1);
   font-size: 1.5em;
   border: 1px solid #26416d;
