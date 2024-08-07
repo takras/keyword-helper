@@ -126,6 +126,11 @@
   justify-content: center;
 }
 
+.imageLinks {
+  max-width: 400px;
+  width: -webkit-fill-available;
+}
+
 .modalTopMenu {
   display: block;
   width: 97vw;

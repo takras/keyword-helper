@@ -534,6 +534,83 @@ export const rules: RulesDocument = {
       ],
     },
     {
+      keyword: "activation_phase",
+      name: "Activation Phase",
+      parents: ["a", "concepts", "cohesion"],
+      related_keywords: [
+        "order_pool",
+        "pass",
+        "rally",
+        "actions",
+        "effects",
+        "abilities",
+        "cohesion",
+      ],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "During the Activation Phase, players activate their units and may perform actions with them.",
+        },
+        {
+          type: "text",
+          content:
+            "Starting with the player who has priority, players take turns activating their units one at a time.",
+        },
+        {
+          type: "example",
+          initiallyExpanded: true,
+          content: [
+            {
+              type: "header",
+              content: "Parts of the Activation Phase",
+            },
+            {
+              type: "structured_list_numbered",
+              content: [
+                "Resolve Abilities or Effects at Start of Activation Phase",
+                "Choose a Unit to Activate or Pass",
+                "Activate Unit",
+                [
+                  "Resolve Any Abilities or Effects at the Start of a Unit's Activation",
+                  "Rallying",
+                  "Perform Actions",
+                  "Resolve Any Abilities or Effects at the End of a Unit's Activation",
+                ],
+                "Place Order Token",
+                "Resolve Abilities or Effects at End of Activation Phase",
+              ],
+            },
+          ],
+        },
+        { type: "header", content: "Choose a Unit to Activate or Pass" },
+        {
+          type: "text",
+          content:
+            "The active player chooses to either activate a friendly unit with a faceup order token or to draw an order token randomly from the order pool and activate a unit matching that order token’s rank that does not have an order token. Alternatively, a player may be able to pass. When a player passes, they do not activate a unit and their turn ends.",
+        },
+        {
+          type: "text",
+          content:
+            "If a player draws an order token with a rank that does not have any corresponding undefeated friendly units that do not have an order token, remove that token from the game. Then that player may pass. If they do not pass and still have units to activate, they must choose to either activate a friendly unit with a faceup order token or to draw another order token randomly from the order pool.",
+        },
+        {
+          type: "text",
+          content:
+            "If a player did not pass on their previous turn this round, they may spend an advantage token in their pass pool. If they do, they pass.",
+        },
+        {
+          type: "text",
+          content:
+            "If a player does not have any units they can activate, they pass.",
+        },
+        { type: "callout", callout_keyword: "pass" },
+        { type: "reference", referenced_keyword: "activating_units" },
+        { type: "reference", referenced_keyword: "cohesion" },
+        { type: "reference", referenced_keyword: "rally" },
+      ],
+    },
+    {
       keyword: "activating_units",
       name: "Activating a Unit",
       parents: ["a"],
@@ -1167,6 +1244,75 @@ export const rules: RulesDocument = {
           type: "text",
           content:
             "When a unit that is benefiting from backup is attacked by a ranged attack and the attacking unit’s unit leader is beyond {range_2} of it, it may cancel up to two {hit} results during the Modify Attack Dice step of the attack sequence.",
+        },
+      ],
+    },
+    {
+      keyword: "bane_tokens",
+      name: "Bane Tokens",
+      activation: "",
+      parents: ["b"],
+      range: "range_1",
+      related_keywords: ["charge", "deploy", "battlefield"],
+      summary: "",
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "Cad Bane has a set of three unique Bane tokens that he can place on the battlefield. Bane tokens are double-sided, with a uniform back and three different images on the front, each linked to a unique effect.",
+        },
+        {
+          type: "text",
+          content:
+            "Bane tokens must be placed facedown on the battlefield and cannot overlap objective or advantage tokens. Bane tokens are enemy effects. Each player may only have one copy of each different Bane token on the battlefield at the same time.",
+        },
+        {
+          type: "text",
+          content:
+            "When an enemy miniature moves, deploys, or is placed at {range_1} of an enemy Bane token, if that miniature has LOS to the token, it is revealed. Miniatures can move through but not overlap Bane tokens. When a Bane token is revealed, it has one of the following effects:",
+        },
+        {
+          type: "text",
+          content:
+            "<strong>Here I Am:</strong> If Cad Bane is not on the battlefield and is not defeated, his Here I Am token is replaced by his miniature. Then, Cad Bane issues himself an order.",
+        },
+        {
+          type: "illustration",
+          content: "tokens/cad-here-i-am.png",
+          width: "80",
+          altText: "Bane token showing Cad Bane face",
+          align: "center",
+        },
+        {
+          type: "structured_list",
+          content: [
+            "If Cad Bane is on the battlefield, his Here I Am token is replaced by his miniature. Any tokens assigned to Cad Bane remain assigned to him.",
+            "If Cad Bane is defeated, the token is removed.",
+            "At the start of each round, starting with the blue player, a player may reveal a friendly Here I Am token and resolve it.",
+          ],
+        },
+        {
+          type: "text",
+          content: "<strong>Smoke and Mirrors:</strong> The token is removed.",
+        },
+        {
+          type: "illustration",
+          content: "tokens/cad-smoke.png",
+          width: "80",
+          altText: "Bane token showing blank inside.",
+          align: "center",
+        },
+        {
+          type: "text",
+          content:
+            "<strong>Kablamo!:</strong> The token detonates using the weapon profile on Cad Bane’s I Make the Rules Now Command Card, then the token is removed.",
+        },
+        {
+          type: "illustration",
+          content: "tokens/cad-kablamo.png",
+          width: "80",
+          altText: "Bane token showing eplosion.",
+          align: "center",
         },
       ],
     },
@@ -1938,6 +2084,22 @@ export const rules: RulesDocument = {
         },
       ],
     },
+    {
+      keyword: "cycle",
+      name: "Cycle",
+      activation: "",
+      parents: ["c", "units"],
+      tag: "Upgrade Keyword",
+      related_keywords: ["upgrade_card", "activating_units", "exhaust"],
+      summary: "",
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "At the end of a unit’s activation, ready each of its exhausted Upgrade Cards with the Cycle keyword that was not used during that activation. Only using the weapon, keywords, or other card text on the card counts as using that Upgrade Card.",
+        },
+      ],
+    },
 
     {
       keyword: "danger_sense",
@@ -2228,6 +2390,26 @@ export const rules: RulesDocument = {
           type: "text",
           content:
             "While they are at {range_1} of a friendly C-3PO, friendly {faction_ewoks} trooper units gain {keyword:Guardian 2}: C-3PO. While using {keyword:Guardian}, they may cancel {hit_critical} results as if they were {hit} results.",
+        },
+      ],
+    },
+    {
+      keyword: "divulge",
+      name: "Divulge",
+      activation: "",
+      parents: ["d"],
+      tag: "Command Card Keyword",
+      related_keywords: ["command_phase"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "Some Command Cards have the Divulge keyword. Command Cards that contain the Divulge keyword are divided by a horizontal line, which serves to visually separate the Divulge keyword effect from the normal Command Card effect. Some Divulge cards have multiple options, in this case the player must pick one. These cards can be revealed at the start of the phase or step indicated by the Divulge keyword. If a card is revealed in this manner, resolve the text that follows the Divulge keyword.",
+        },
+        {
+          type: "text",
+          content:
+            "A card that is revealed in this way is not played and is returned to that player’s command hand at the end of the step in which it was divulged. Players can divulge as many Command Cards as they wish. If both players have Command Cards that are divulged at the same time, the blue player can reveal their Command Card first. If this opportunity is declined, that card can no longer be divulged.",
         },
       ],
     },
@@ -2837,6 +3019,38 @@ export const rules: RulesDocument = {
           type: "text",
           content:
             "Ultimately, the type of terrain and the rules used are up to the players and should be discussed before the game begins.",
+        },
+      ],
+    },
+    {
+      keyword: "graffiti_tokens",
+      name: "Graffiti Tokens",
+      activation: "",
+      parents: ["g"],
+      range: "range_2",
+      related_keywords: ["tokens", "card_action", "rally"],
+      descriptions: [
+        {
+          type: "illustration",
+          content: "tokens/graffiti.png",
+          align: "right",
+          altText: "Colorful round tokens.",
+          width: "120",
+        },
+        {
+          type: "text",
+          content:
+            "A graffiti token represents a striking image or symbol painted onto the terrain of the battlefield. Graffiti tokens affect a unit’s morale. Graffiti tokens have two sides. Players should place the graffiti token flat on a surface so that the side that corresponds to their player color is faceup.",
+        },
+        {
+          type: "text",
+          content:
+            "During the Rally step of a unit’s activation, it may roll one additional die if it has LOS to and is at {range_2} of a graffiti token placed by a friendly miniature. It must roll one fewer die, to a minimum of 1, if it has LOS and is at {range_2} of a graffiti token placed by an enemy miniature.",
+        },
+        {
+          type: "text",
+          content:
+            "Graffiti tokens remain in play until the end of the game. Units may move through and end a movement overlapping graffiti tokens.",
         },
       ],
     },
@@ -3517,6 +3731,31 @@ export const rules: RulesDocument = {
       ],
     },
     {
+      keyword: "leader",
+      name: "Leader",
+      activation: "",
+      parents: ["l"],
+      tag: "Upgrade Keyword",
+      related_keywords: ["unit", "miniature", "suffering_wounds"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "A miniature with the Leader keyword is treated as a unit’s unit leader for all rules purposes.",
+        },
+        {
+          type: "text",
+          content:
+            "If a miniature with the Leader keyword and a wound threshold of 2 is defeated while in a unit with a wound threshold of 1, replace one of the remaining miniatures in that unit as normal, then assign the miniature with the Leader keyword one wound token.",
+        },
+        {
+          type: "text",
+          content:
+            "Only one Upgrade Card with the Leader keyword can be equipped to each unit.",
+        },
+      ],
+    },
+    {
       keyword: "leaving_battlefield",
       name: "Leaving the Battlefield",
       parents: ["l"],
@@ -3741,6 +3980,20 @@ export const rules: RulesDocument = {
         },
       ],
     },
+    {
+      keyword: "melee",
+      name: "Melee",
+      activation: "",
+      parents: ["m"],
+      related_keywords: ["move", "move_into_melee", "base"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "Melee is close ranged, hand-to-hand combat between two or more units. When two miniatures controlled by opposing players are in base contact, those units are in melee.",
+        },
+      ],
+    },
 
     {
       keyword: "mercenary",
@@ -3790,6 +4043,123 @@ export const rules: RulesDocument = {
           content: "examples/measuring-range.png",
           align: "center",
           altText: "Photo with the measurement tool flat on the ground.",
+        },
+      ],
+    },
+    {
+      keyword: "measurement",
+      name: "Measurement",
+      parents: ["m", "concepts"],
+      related_keywords: [
+        "move",
+        "range",
+        "terrain_height",
+        "cohesion",
+        "weapons",
+      ],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "<i>Star Wars</i>: Legion uses two kinds of measuring tools: movement tools and range tools. Any distance can be measured at any time, but players may use only one movement tool and one range tool at a time.",
+        },
+        {
+          type: "text",
+          content:
+            "There are three movement tools, from shortest to longest: the speed-1 tool, the speed-2 tool, and the speed-3 tool.",
+        },
+        {
+          type: "header",
+          content: "Movement Tools",
+        },
+
+        {
+          type: "illustration",
+          content: "examples/movement-tools.png",
+          align: "center",
+          altText: "Three variants of the Movement Tools.",
+        },
+        {
+          type: "header",
+          content: "Range Rules Segments",
+        },
+        {
+          type: "illustration",
+          content: "examples/range-rulers.png",
+          align: "center",
+          altText: "Four segments of the Range Rules.",
+        },
+        {
+          type: "header",
+          content: "Half-Range Tool",
+        },
+        {
+          type: "illustration",
+          content: "examples/half-range-tool.png",
+          align: "center",
+          altText: "The Half-Range Tool",
+        },
+        {
+          type: "text",
+          content:
+            "<a href='https://www.printables.com/model/947836-star-wars-legion-half-12-and-15-deployment-range-t'>Download 3D Printable Half-Range tool.</a>",
+        },
+        {
+          type: "text",
+          content:
+            "A range tool can be made up of any number of connected 6-inch segments as well as up to one 3-inch half-range tool.",
+        },
+        {
+          type: "structured_list",
+          content: [
+            "{range_melee}: Melee",
+            "{range_half}: Half-Range",
+            "{range_1}: Range 1",
+            "{range_2}: Range 2",
+            "{range_3}: Range 3",
+            "{range_4}: Range 4",
+            "{range_5}: Range 5",
+            "{range_infinite}: Beyond range 5",
+          ],
+        },
+        { type: "callout", callout_keyword: "area_weapon" },
+        {
+          type: "text",
+          content:
+            "Sometimes, more than one number is shown—in this case, the first number represents the minimum range, and the second number represents the maximum range. If only a single number is shown, then that is the maximum range for that effect.",
+        },
+        {
+          type: "illustration",
+          content: "examples/weaponrange-1-3.png",
+          align: "center",
+          altText: "A blue square with beyond icon and number range 1 to 3.",
+          width: "80",
+        },
+        {
+          type: "text",
+          content:
+            "Range is always measured as the shortest distance possible between two objects. To measure range between two objects, take the range tool and place it flat on the battlefield so that one end is touching the object being measured from. Then add segments until the total length of the range tool is longer than the distance between the two objects. The segment of the range tool that object is inside is equal to the range between the two objects. When measuring to or from miniatures, always measure from the miniature’s base, ignoring the miniature itself.",
+        },
+        {
+          type: "illustration",
+          content: "examples/weaponrange-melee.png",
+          align: "center",
+          altText: "A red square with melee icon.",
+          width: "80",
+        },
+        {
+          type: "text",
+          content:
+            "Melee range is not measured with the range tool; instead, two miniatures are in melee range with one another if they are in base contact.",
+        },
+        {
+          type: "reference",
+          showOnlySummary: true,
+          referenced_keyword: "move_into_melee",
+        },
+        {
+          type: "reference",
+          referenced_keyword: "measuring_range",
         },
       ],
     },
@@ -3968,6 +4338,19 @@ export const rules: RulesDocument = {
         },
       ],
     },
+    {
+      keyword: "noncombatant",
+      name: "Noncombatant",
+      parents: ["n"],
+      related_keywords: ["weapons", "suffering_wounds", "miniature"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "A miniature with the Noncombatant keyword cannot add any weapons to attack pools, and any wounds must be assigned to non-unit leader miniatures without the Noncombatant keyword, if able. If a miniature with the Noncombatant keyword already has one or more wound tokens, it must be assigned wounds before miniatures that do not have wound tokens. If the unit leader miniature in a unit with the Noncombatant keyword is defeated, a Noncombatant miniature cannot be replaced by a new unit leader miniature unless there are no other miniatures without the Noncombatant keyword.",
+        },
+      ],
+    },
 
     {
       keyword: "notch",
@@ -4077,7 +4460,15 @@ export const rules: RulesDocument = {
       keyword: "notched_bases",
       name: "Notched Bases",
       parents: ["n"],
-      related_keywords: ["miniature", "vehicles", "reverse", "pivot", "notch"],
+      related_keywords: [
+        "miniature",
+        "vehicles",
+        "reverse",
+        "pivot",
+        "notch",
+        "panic_commander",
+        "setup",
+      ],
       descriptions: [
         {
           type: "text",
@@ -4103,6 +4494,110 @@ export const rules: RulesDocument = {
           type: "text",
           content:
             "Miniatures with notched bases have four different arcs represented by lines sculpted on their bases: front, two sides, and rear. These arcs are referenced by certain rules, such as the <strong>Fixed</strong> and <strong>Weak Point</strong> keywords.",
+        },
+      ],
+    },
+
+    {
+      keyword: "objective",
+      name: "Objective Tokens",
+      activation: "",
+      parents: ["o", "concepts"],
+      related_keywords: ["tokens", "cover", "line_of_sight"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "Units in Star Wars: Legion use objective tokens to score victory points. Objective Cards and Secondary Objective Cards specify which objective tokens are used and how to score victory points with them. Miniatures can move through objective tokens.",
+        },
+        {
+          type: "header",
+          content: "Types of Objective Tokens",
+        },
+        {
+          type: "text",
+          content: "There are two types of objective tokens:",
+        },
+        {
+          type: "structured_list_numbered",
+          content: [
+            "<strong>Asset Tokens:</strong> Assets are valuable objects that can be carried around.",
+            "<strong>Point-of-Interest Tokens:</strong> Also referred to as POIs. POIs represent critical locations, vantage points, or particularly interesting areas that armies attempt to secure throughout a battle.",
+          ],
+        },
+        {
+          type: "structured_list",
+          content: [
+            "When determining the number of obscured miniatures and determining cover during an attack sequence, treat POIs as a piece of area terrain consisting of the volume of their silhouette that provides heavy cover. The silhouette for a POI is a cylinder as wide as the token and {range_half} tall. For all other rules purposes, POIs do not block LOS.",
+            "Miniatures, advantage tokens, and other objective tokens cannot overlap or be overlapped by POIs.",
+            "POIs can be represented by a miniature on a 2-inch base instead of using a token. A POI represented by a miniature still counts as a token and does not count as a miniature for all rules purposes.",
+          ],
+        },
+        {
+          type: "illustration",
+          content: "tokens/poi-3d.png",
+          altText: "",
+          align: "center",
+          width: "200",
+        },
+        {
+          type: "text",
+          content:
+            "<a href='https://www.printables.com/model/948921-star-wars-legion-poi-tokens'>Download 3D Printable POI tokens</a>",
+        },
+        {
+          type: "header",
+          content: "Contesting Objective Tokens",
+        },
+        {
+          type: "text",
+          content:
+            "A unit is contesting an objective token if its unit leader is at {range_half} of the objective token and the unit is not panicked.",
+        },
+        {
+          type: "header",
+          content: "Claiming Asset Objective Tokens",
+        },
+        {
+          type: "text",
+          content:
+            "Battle Cards describe which units are eligible to claim asset tokens in that mission by granting them a Claim free action. An eligible unit can claim an unclaimed asset token it is contesting by performing that free action. When a unit claims an asset objective token, remove that token from the battlefield and place it on that unit’s Unit Card. That unit is now holding that asset token. When a unit drops an asset token it is holding, the opponent of that unit’s controlling player places that token on the battlefield at {range_half} of that unit’s unit leader. While an asset objective token is on the battlefield, it is unclaimed.",
+        },
+        {
+          type: "text",
+          content:
+            "When a unit panics, it drops all asset tokens it is holding. When a unit is defeated, it drops all asset tokens it is holding before removing its unit leader miniature from the battlefield.",
+        },
+        {
+          type: "header",
+          content: "Securing Objective Tokens",
+        },
+        {
+          type: "text",
+          content:
+            "Some objective tokens can be secured. If an objective token can be secured, the player with the most units contesting that objective token is securing it.",
+        },
+        {
+          type: "header",
+          content: "Placing Objectives",
+        },
+        {
+          type: "text",
+          content:
+            "Objective tokens must meet the following conditions when they are placed:",
+        },
+        {
+          type: "structured_list",
+          content: [
+            "Objective tokens cannot be placed overlapping impassable terrain.",
+            "Objective tokens cannot be placed partially overlapping a non-area terrain feature.",
+            "Objective tokens cannot be placed overlapping obstacle terrain that is height 2 or greater.",
+          ],
+        },
+        {
+          type: "text",
+          content:
+            "During Setup, if an objective token should be placed at a position where the above conditions are not met, players must adjust terrain placement in a mutually agreeable manner so that the conditions are met. After Setup, if an objective token must be placed and there is not a position in range where the above conditions are met, that token is placed in the closest position that meets the above conditions instead.",
         },
       ],
     },
@@ -4349,6 +4844,54 @@ export const rules: RulesDocument = {
           type: "text",
           content:
             "When a unit checks to see if it is panicked, instead of using its own courage value, it may use the courage value of a friendly {rank_commander} unit at {range_3}. For example, a unit with 3 suppression tokens and courage value 1 would not be panicked if it chooses to use the courage value of a friendly {rank_commander} at {range_3} that has a courage value of 2 or greater.",
+        },
+      ],
+    },
+    {
+      keyword: "pass",
+      name: "Pass Pool",
+      parents: ["p"],
+      related_keywords: ["order_pool", "activation_phase"],
+      descriptions: [
+        {
+          type: "illustration",
+          altText: "Circular with dots in the middle.",
+          width: "120",
+          align: "right",
+          content: "tokens/advantage.png",
+        },
+        {
+          type: "text",
+          content:
+            "After creating the order pool, each player counts the number of undefeated units they control. The player with fewer undefeated units adds a number of advantage tokens to their pass pool equal to 1 fewer than the difference in those counts. Once players have created their pass pools, if any, the Command Phase is over, and the Activation Phase begins.",
+        },
+        {
+          type: "example",
+          initiallyExpanded: true,
+          content: [
+            {
+              type: "header",
+              content: "Example: Create the Pass Pool",
+            },
+            {
+              type: "text",
+              content:
+                "Nick has 8 undefeated units and Ben has 12. The difference between the counts is 4. 1 fewer than that is 3, so Nick adds 3 advantage tokens to his pass pool.",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      keyword: "permanent",
+      name: "Permanent",
+      parents: ["n"],
+      related_keywords: ["command_cards"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "Some Command Cards have the Permanent keyword. Unlike ordinary Command Cards, these cards are not discarded from play during the End Phase and their effects persist as long as they are in play.",
         },
       ],
     },
@@ -4632,6 +5175,24 @@ export const rules: RulesDocument = {
       ],
     },
     {
+      keyword: "reconfigure",
+      name: "Reconfigure",
+      parents: ["r"],
+      related_keywords: ["upgrade_card", "recover", "exhaust"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "When a unit equipped with an Upgrade Card with the Reconfigure keyword recovers or performs a recover action, the player that controls that unit may flip that Upgrade Card to a different side in addition to any other effects of that recover.",
+        },
+        {
+          type: "text",
+          content:
+            "f an Upgrade Card has the exhaust icon, using the Reconfigure ability does not cause that Upgrade Card to be exhausted.",
+        },
+      ],
+    },
+    {
       keyword: "reinforcements",
       name: "Recharge X",
       parents: ["r"],
@@ -4779,6 +5340,35 @@ export const rules: RulesDocument = {
       ],
     },
     {
+      keyword: "repair",
+      name: "Repair X",
+      parents: ["r"],
+      related_keywords: ["card_action", "ion_x", "wounds", "damage_token"],
+      range: "range_1",
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "When a unit uses the Repair X: Capacity Y card action, choose a friendly droid trooper or vehicle unit at {range_1} and LOS and place one wound token on the card that has the Repair X: Capacity Y keyword. Remove a total of up to X wound, ion, and/or vehicle damage tokens from the chosen unit or restore up to X miniatures to that unit. This ability cannot be used if the card that has the Repair X: Capacity Y keyword has a number of wound tokens on it equal to or exceeding Y.",
+        },
+        {
+          type: "text",
+          content:
+            "Wound tokens on cards are not considered to be on units and do not count toward a unit’s wound threshold, nor can they be removed by abilities that remove wound tokens from units.",
+        },
+        {
+          type: "text",
+          content:
+            "If a unit has multiple Repair X: Capacity Y abilities, treat each keyword as a separate ability.",
+        },
+        {
+          type: "text",
+          content:
+            "Additionally, each action is considered unique, and a unit that has access to more than one can use each ability once during its activation. This applies even if the unit has access to two identical abilities from different sources.",
+        },
+      ],
+    },
+    {
       keyword: "reposition",
       name: "Reposition",
       parents: ["r"],
@@ -4824,6 +5414,19 @@ export const rules: RulesDocument = {
             "Repulsor vehicles do not block LOS, do not obscure miniatures, and do not provide cover.",
             "When a repulsor vehicle is defending against a ranged attack, during the Apply Dodge and Cover step, it cannot be obscured and cannot have cover as a result of being obscured.",
           ],
+        },
+      ],
+    },
+    {
+      keyword: "restore",
+      name: "Restore",
+      parents: ["r"],
+      related_keywords: ["repair", "treat_x"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "Some abilities, such as the {keyword:Treat} and {keyword:Repair} keywords or certain card effects, allow a player to restore miniatures to friendly units. To restore a miniature to a unit, that unit must have had one or more miniatures defeated that round. Choose a miniature that was defeated during the current round and place that miniature on the battlefield in cohesion with its unit leader. Then, give that miniature a number of wound tokens equal to one less than the wound threshold indicated on its Unit Card.",
         },
       ],
     },
@@ -5214,6 +5817,60 @@ export const rules: RulesDocument = {
           type: "text",
           content:
             "While defending against a ranged attack, during the Modify Attack Dice step, a defending unit may flip any number of its active shield tokens to their inactive side to cancel one hit {hit} or critical {hit_critical} result for each shield token flipped in this way.",
+        },
+      ],
+    },
+    {
+      keyword: "sidearm",
+      name: "Sidearm",
+      parents: ["s"],
+      related_keywords: ["weapons", "upgrade_card", "melee", "ranged_weapon"],
+      tag: "Upgrade Keyword",
+      descriptions: [
+        {
+          type: "header",
+          content: "Sidearm: Melee/Ranged",
+        },
+        {
+          type: "text",
+          content:
+            "If an upgrade has the Sidearm: Melee keyword, the miniature added by that upgrade or with that upgrade cannot add any melee weapons to attack pools other than any melee weapons on the Upgrade Card with the Sidearm: Melee keyword.",
+        },
+        {
+          type: "text",
+          content:
+            "If an upgrade has the Sidearm: Ranged keyword, the miniature added by that upgrade cannot add any ranged weapons to attack pools other than any ranged weapons on the Upgrade Card with the Sidearm: Ranged keyword.",
+        },
+        {
+          type: "example",
+          initiallyExpanded: true,
+          content: [
+            {
+              type: "text",
+              content:
+                "For example, the Electrostaff Guard Upgrade Card provides a melee weapon and has the Sidearm: Melee keyword. The miniature added by that upgrade can only use the weapon on the Electrostaff Guard upgrade during a melee attack. That miniature may still use any available ranged weapon, such as the ranged weapon on the Imperial Royal Guard Unit Card, during a ranged attack.",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      keyword: "small",
+      name: "Small",
+      parents: ["s"],
+      related_keywords: [
+        "ranged_weapon",
+        "attack",
+        "area_weapon",
+        "line_of_sight",
+        "cover",
+      ],
+      tag: "Upgrade Keyword",
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "While a unit is defending against a non-area ranged attack, miniatures with the Small keyword are ignored for the purposes of determining LOS, cover, and range. The miniature with the Small keyword is treated as though it were not a part of the defending unit.",
         },
       ],
     },
@@ -5968,6 +6625,36 @@ export const rules: RulesDocument = {
         },
       ],
     },
+    {
+      keyword: "treat_x",
+      name: "Treat X",
+      parents: ["t", "units"],
+      range: "range_1",
+      tag: "Upgrade Keyword",
+      related_keywords: ["troopers", "line_of_sight", "wounds", "poison"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "When a unit uses the Treat X: Capacity Y card action, choose a friendly non-droid trooper unit at {range_1} and LOS and place one wound token on the card that has the Treat X: Capacity Y keyword. Remove a total of up to X wound and/or poison tokens from the chosen unit or restore up to X miniatures to that unit. This ability cannot be used if the card that has the Treat X: Capacity Y keyword has a number of wound tokens on it equal to or exceeding Y.",
+        },
+        {
+          type: "text",
+          content:
+            "Wound tokens on cards are not considered to be on units and do not count toward a unit’s wound threshold, nor can they be removed by abilities that remove wound tokens from units.",
+        },
+        {
+          type: "text",
+          content:
+            "If a unit has multiple Treat X: Capacity Y abilities, treat each keyword as a separate ability.",
+        },
+        {
+          type: "text",
+          content:
+            "Additionally, each action is considered to be unique, and a unit that has access to more than one can use each ability once during its activation. This applies even if the unit has access to two identical abilities from different sources.",
+        },
+      ],
+    },
 
     {
       keyword: "troopers",
@@ -6264,6 +6951,27 @@ export const rules: RulesDocument = {
           type: "text",
           content:
             "Players should use the ball-form Droideka miniatures only when the unit uses the Wheel Mode keyword and only for the duration of that round. At the end of the round, any ball- form Droideka miniatures should be replaced with standing Droideka miniatures.",
+        },
+      ],
+    },
+    {
+      keyword: "winning",
+      name: "Winning the Game",
+      parents: ["w", "concepts"],
+      related_keywords: ["victory_points"],
+      descriptions: [
+        {
+          type: "text",
+          content:
+            "Each game of <i>Star Wars</i>: Legion ends when one of the following conditions has been met:",
+        },
+        {
+          type: "structured_list",
+          content: [
+            "If, at the end of the End Phase of any round, a player has 12 or more Victory Points (VPs) and has more VPs than each opponent, they win the game.",
+            "If, at any time, only one player has undefeated units, they immediately win the game.",
+            "At the end of the fifth round, the player with the most VPs is the winner. If both players have the same number of VPs, each player totals the point value of defeated units in their army. Whichever player has the lowest point value of defeated units in their army wins the game. If the game is still tied, the game ends in a draw.",
+          ],
         },
       ],
     },

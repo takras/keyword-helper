@@ -37,7 +37,7 @@ export const IconList = {
   faction_ewoks: "black/faction_ewoks.png",
   range_melee: "black/range-melee.png",
   range_half: "black/range-half.png",
-  range_infinite: "black/range-infnite.png",
+  range_infinite: "black/range-infinite.png",
   range_1: "black/range-1.png",
   range_2: "black/range-2.png",
   range_3: "black/range-3.png",

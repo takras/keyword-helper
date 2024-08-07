@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
-import { ChangeEvent, useCallback, useEffect, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import {
   RulesDocument,
   Keyword,
@@ -593,6 +593,39 @@ export default function Helper() {
         <p>
           This is a shorthand reference to the range-effectiveness as described
           by the ability keyword, showing its &quot;at&quot;-range.
+        </p>
+        <h3>Printable tokens</h3>
+        <p>
+          I have designed some tokens that were introduced in the 2024 version
+          that are free to 3D print. They are freely available on Printables:
+        </p>
+        <p>
+          <a href="https://www.printables.com/model/948921-star-wars-legion-poi-tokens">
+            <img
+              className={styles.imageLinks}
+              src="/images/tokens/0-5range.png"
+              alt=""
+            />
+            <br />
+            <img
+              className={styles.imageLinks}
+              src="/images/tokens/1-5range.png"
+              alt=""
+            />
+            <br />
+            Point of Interest (POI) Tokens.
+          </a>
+        </p>
+        <p>
+          <a href="https://www.printables.com/model/947836-star-wars-legion-half-12-and-15-deployment-range-t">
+            <img
+              className={styles.imageLinks}
+              src="/images/tokens/poi-3d.png"
+              alt=""
+            />
+            <br />
+            0.5-range and 1.5-range for use with territory markin.{" "}
+          </a>
         </p>
       </div>
     );
