@@ -12,6 +12,10 @@ const image = "/images/legionhelper.svg";
 export const metadata: Metadata = {
   title,
   description,
+  metadataBase: new URL("https://legion.takras.net"),
+  alternates: {
+    canonical: "/",
+  },
   icons: {
     icon: "/images/favicon.png",
   },
