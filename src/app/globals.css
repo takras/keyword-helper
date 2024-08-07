@@ -1,15 +1,15 @@
 @import url('https://fonts.cdnfonts.com/css/aire-exterior');
 
 :root {
-  --border-radius: 8px;
+  --border-radius: 1px;
   --background-color: #E8E6E6;
 
   --example-background: #535554;
   --example-color: #fff;
   --example-header: #F1A021;
 
-  --button-color: #15407F;
-  --button-border-color: #15407F;
+  --button-color: #000;
+  --button-border-color: #a78c5c;
   --button-background-color: #fff;
 
   --font-family: 'Aire Exterior', sans-serif;
@@ -17,6 +17,7 @@
   --border-thin: 1px solid var(--button-border-color);
 
   --flex-gap: 10px;
+  --max-width: 700px;
 
   --box-shadow: 0px 10px 10px rgb(0 0 0 / 0.1);
 }

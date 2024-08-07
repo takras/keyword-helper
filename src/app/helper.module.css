@@ -107,6 +107,7 @@
 .changelogButton {
   display: flex;
   justify-content: center;
+  margin-bottom: var(--flex-gap);
 }
 
 .infoContainer {
@@ -151,26 +152,31 @@
   margin-top: 10px;
   font-size: 2em;
   padding: 10px;
-  border-top: 2px solid var(--button-border-color);
-  border-right: 2px solid var(--button-border-color);
-  border-left: 2px solid var(--button-border-color);
-  border-bottom: 5px solid var(--button-border-color);
+  max-width: 700px;
+  border: 2px solid var(--button-border-color);
   box-shadow: var(--box-shadow);
   color: var(--button-color);
   background: linear-gradient(
     to right,
     var(--button-border-color),
+    var(--button-border-color),
+    var(--button-border-color),
     var(--button-background-color), 
+    var(--button-border-color),
+    var(--button-border-color),
     var(--button-border-color));
 }
 
 .searchContainer {
   border-radius: var(--border-radius);
   text-align: center;
-  padding: 10px;
+  padding-top: 20px;
+  padding-bottom: 10px;
   border: var(--border-thin);
   box-shadow: 0px 10px 10px rgb(0 0 0 / 0.1);
   color: var(--button-color);
+  width: 100%;
+  max-width: var(--max-width);
 
   .button {
     vertical-align: top;
@@ -231,11 +237,20 @@
   justify-content: center;
   flex-direction: row;
   gap: var(--flex-gap);
+  width: 100%;
+  max-width: calc(var(--max-width) - 4px);
+  padding-bottom: var(--flex-gap);
   border-left: 2px solid var(--button-border-color);
   border-right: 2px solid var(--button-border-color);
+  border-bottom: 2px solid var(--button-border-color);
   border-bottom-left-radius: var(--border-radius);
   border-bottom-right-radius: var(--border-radius);
-  border-bottom: 5px solid var(--button-border-color);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .button,
@@ -251,7 +266,7 @@
   box-shadow: 0px 5px 10px rgb(0 0 0 / 0.1);
   font-size: 1.5em;
   border: 1px solid #26416d;
-  border-bottom: 5px solid var(--button-border-color);
+  border-bottom: 2px solid var(--button-border-color);
   color: #26416d;
   background-color: #fff;
 }
@@ -280,7 +295,13 @@
 
 .keywordButton {
   border-radius: var(--border-radius);
-  min-width: 200px;
+  min-width: 300px;
+  max-width: 300px;
+
+  @media only screen and (max-width: 670px) {
+    width: 100%;
+    max-width: 100%;
+  }
 }
 
 .relatedContainer {

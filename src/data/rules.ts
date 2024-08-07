@@ -2348,7 +2348,7 @@ export const rules: RulesDocument = {
     },
     {
       keyword: "distract",
-      name: "Disengage",
+      name: "Distract",
       range: "range_2",
       activation: "",
       parents: ["d", "units"],
