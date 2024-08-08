@@ -75,7 +75,6 @@ export const KeywordsG: Keyword[] = [
       "terrain",
       "cover",
       "line_of_sight",
-      "damage_token",
       "resiliency",
       "silhouettes",
       "melee",
