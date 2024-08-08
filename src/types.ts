@@ -10,6 +10,7 @@ export const AVAILABLE_KEYWORDS = [
   "actions",
   "activating_units",
   "activation_phase",
+  "agile_x",
   "aid",
   "ai_action",
   "aim",

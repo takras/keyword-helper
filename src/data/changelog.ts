@@ -17,7 +17,7 @@ export const log: Log[] = [
       {
         type: "add",
         description:
-          "Many new keywords. Abilities. Army Building. Claiming Objective Token. Climb. Clone Trooper. Courage. Contesting Objectives. Exhaust. Factions. Panic. Ranks. Unit Cards. Unique. Upgrade Card.",
+          "Many new keywords. Agile. Abilities. Army Building. Claiming Objective Token. Climb. Clone Trooper. Courage. Contesting Objectives. Exhaust. Factions. Panic. Ranks. Unit Cards. Unique. Upgrade Card.",
       },
       {
         type: "add",

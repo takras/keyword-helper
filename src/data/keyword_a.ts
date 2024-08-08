@@ -219,6 +219,22 @@ export const KeywordsA: Keyword[] = [
     ],
   },
   {
+    keyword: "agile_x",
+    name: "Agile X",
+    activation: "",
+    parents: ["a", "units"],
+    tag: "Unit Keyword",
+    related_keywords: ["move", "dodge"],
+    summary: "",
+    descriptions: [
+      {
+        type: "text",
+        content:
+          "The Agile X keyword allows a unit to gain a number of dodge tokens equal to X each time it performs a standard move as part of an action or free action.",
+      },
+    ],
+  },
+  {
     keyword: "ai_action",
     name: "AI: Action",
     activation: "",
