@@ -48,29 +48,12 @@ export const KeywordsO: Keyword[] = [
         content:
           "<a href='https://www.printables.com/model/948921-star-wars-legion-poi-tokens'>Download 3D Printable POI tokens</a>",
       },
+      { type: "reference", referenced_keyword: "contesting_objectives" },
       {
-        type: "header",
-        content: "Contesting Objective Tokens",
+        type: "reference",
+        referenced_keyword: "claiming_objective_tokens",
       },
-      {
-        type: "text",
-        content:
-          "A unit is contesting an objective token if its unit leader is at {range_half} of the objective token and the unit is not panicked.",
-      },
-      {
-        type: "header",
-        content: "Claiming Asset Objective Tokens",
-      },
-      {
-        type: "text",
-        content:
-          "Battle Cards describe which units are eligible to claim asset tokens in that mission by granting them a Claim free action. An eligible unit can claim an unclaimed asset token it is contesting by performing that free action. When a unit claims an asset objective token, remove that token from the battlefield and place it on that unit’s Unit Card. That unit is now holding that asset token. When a unit drops an asset token it is holding, the opponent of that unit’s controlling player places that token on the battlefield at {range_half} of that unit’s unit leader. While an asset objective token is on the battlefield, it is unclaimed.",
-      },
-      {
-        type: "text",
-        content:
-          "When a unit panics, it drops all asset tokens it is holding. When a unit is defeated, it drops all asset tokens it is holding before removing its unit leader miniature from the battlefield.",
-      },
+
       {
         type: "header",
         content: "Securing Objective Tokens",

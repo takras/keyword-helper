@@ -185,6 +185,86 @@ export const KeywordsE: Keyword[] = [
     ],
   },
   {
+    keyword: "exhaust",
+    name: "Exhaust and Expend",
+    activation: "",
+    parents: ["e", "concepts"],
+    related_keywords: ["card_action", "upgrade_card", "actions", "recover"],
+    descriptions: [
+      {
+        type: "text",
+        content:
+          "Most Upgrade Cards provide a static game effect, but some cards must be exhausted or expended after being used. A card that must be exhausted or expended after use has the exhaust or expend icon on the card. Cards that exhaust or expend start the game readied, and only readied cards may be exhausted or expended.",
+      },
+      {
+        type: "illustration",
+        content: "examples/exhaust.png",
+        width: "120",
+        align: "center",
+        altText:
+          "Two icons showing an arrow turning right, and the other with an X.",
+      },
+      {
+        type: "text",
+        content:
+          "When a card is exhausted, turn the card 90° to the right so that it is sideways. Exhausted cards may not be used for an effect that would exhaust them until they are readied.",
+      },
+      {
+        type: "text",
+        content:
+          "When a card is expended, turn the card 180° so that it is upside down. Once a card is expended, it cannot be used for the rest of the game. Expended cards cannot be unexpended or readied.",
+      },
+      {
+        type: "text",
+        content:
+          "After a miniature adds a weapon on an exhaust or expend Upgrade Card to an attack pool, exhaust or expend the Upgrade Card. If the weapon is an {upgrade_armament} upgrade that exhausts or expends, then any number of miniatures in the unit may add the weapon to the attack pool.",
+      },
+      {
+        type: "text",
+        content:
+          "The {exhaust_action} and {exhaust_free} icons indicate that an Upgrade Card is exhausted after that action or free action is resolved.",
+      },
+      {
+        type: "text",
+        content:
+          "When a unit recovers, it readies all of its exhausted cards. When a card is readied, turn it 90° to the left so it is in its original orientation. The card is no longer exhausted.",
+      },
+      {
+        type: "example",
+        content: [
+          {
+            type: "header",
+            content: "Example: Exhaust and Expend",
+          },
+          {
+            type: "illustration",
+            content: "examples/exhaust-1.png",
+            align: "center",
+            altText:
+              "A Fleet Trooper unit card and an upgrade card being turned sideways.",
+          },
+          {
+            type: "text",
+            content:
+              "The Fleet Trooper unit adds the MPL-57 Barrage Trooper’s weapon to an attack pool, exhausting the card once the dice are added. It cannot be added to another attack pool until it is readied.",
+          },
+          {
+            type: "illustration",
+            content: "examples/expend.png",
+            align: "center",
+            altText:
+              "Luke Skywalker unit card and an upgrade card being rotated upside down.",
+          },
+          {
+            type: "text",
+            content:
+              "Luke Skywalker expends Burst of Speed to increase his speed. The card is expended and cannot be used for the rest of the game.",
+          },
+        ],
+      },
+    ],
+  },
+  {
     keyword: "expert_climber",
     name: "Expert Climber",
     activation: "",

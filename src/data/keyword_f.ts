@@ -2,6 +2,25 @@ import { Keyword } from "@/types";
 
 export const KeywordsF: Keyword[] = [
   {
+    keyword: "faction",
+    name: "Factions",
+    activation: "",
+    parents: ["f", "concepts"],
+    related_keywords: ["army_building", "command_cards"],
+    descriptions: [
+      {
+        type: "text",
+        content:
+          "Units in <i>Star Wars</i>: Legion are grouped together in factions: the Galactic Empire (Empire), the Rebel Alliance (Rebel), the Separatist Alliance (Separatist), and the Galactic Republic (Republic). A unit’s faction is shown by the faction icon printed in the top left corner of its Unit Card. All units in an army must share the same faction, unless otherwise specified by a special rule.",
+      },
+      {
+        type: "text",
+        content:
+          "Occasionally a rule references the Light Side or the Dark Side. The Rebel Alliance and the Galactic Republic are the Light Side, and the Galactic Empire and the Separatist Alliance are the Dark Side. Armies not built using these factions state whether they are part of the Light Side or the Dark Side in their rules text.",
+      },
+    ],
+  },
+  {
     keyword: "field_commander",
     name: "Field Commander",
     activation: "",

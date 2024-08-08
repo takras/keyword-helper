@@ -1,0 +1,22 @@
+.changelog {
+  background-color: var(--button-background-color);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  border: var(--border-thin);
+  margin-bottom: var(--flex-gap);
+}
+
+.add {
+  color: #448450;
+  list-style: "+  ";
+}
+
+.remove {
+  color: #91302B;
+  list-style: "-  ";
+}
+
+.change {
+  color: var(--button-color);
+  
+}

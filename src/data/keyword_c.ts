@@ -55,7 +55,6 @@ export const KeywordsC: Keyword[] = [
     name: "Charge Token",
     activation: "",
     parents: ["c", "weapons"],
-    tag: "",
     related_keywords: ["tokens", "arm_x", "detonate_x"],
     descriptions: [
       {
@@ -65,10 +64,83 @@ export const KeywordsC: Keyword[] = [
         content: "tokens/charge.png",
         width: "100",
       },
+
       {
         type: "text",
         content:
           "Charge tokens cannot overlap any objective, advantage, or other charge tokens and must be placed on a flat surface completely flush with that surface.",
+      },
+    ],
+  },
+  {
+    keyword: "claiming_objective_tokens",
+    name: "Claiming Objective Tokens",
+    parents: ["c", "concepts"],
+    related_keywords: ["objective", "actions"],
+    descriptions: [
+      {
+        type: "text",
+        content:
+          "Battle Cards describe which units are eligible to claim asset tokens in that mission by granting them a Claim free action. An eligible unit can claim an unclaimed asset token it is contesting by performing that free action. When a unit claims an asset objective token, remove that token from the battlefield and place it on that unit’s Unit Card. That unit is now holding that asset token. When a unit drops an asset token it is holding, the opponent of that unit’s controlling player places that token on the battlefield at {range_half} of that unit’s unit leader. While an asset objective token is on the battlefield, it is unclaimed.",
+      },
+      {
+        type: "text",
+        content:
+          "When a unit panics, it drops all asset tokens it is holding. When a unit is defeated, it drops all asset tokens it is holding before removing its unit leader miniature from the battlefield.",
+      },
+    ],
+  },
+  {
+    keyword: "climb",
+    name: "Climbing",
+    activation: "",
+    parents: ["c", "concepts"],
+    tag: "",
+    related_keywords: ["move", "miniature", "terrain"],
+    descriptions: [
+      {
+        type: "text",
+        content:
+          "Sometimes units maneuver onto or through tall pieces of obstacle terrain. This is accomplished by performing a climb. Miniatures on notched bases may not climb.",
+      },
+      {
+        type: "text",
+        content:
+          "To perform a climb, a unit performs a move as normal, except that it must use the speed-1 tool. A miniature may move a vertical distance up to height 1 when making a climb and may place the movement tool overlapping obstacle terrain that is up to height 1 taller than the height of the moving unit’s silhouette and any terrain the unit may be on.",
+      },
+      {
+        type: "example",
+        content: [
+          {
+            type: "header",
+            content: "Example: Performing a Climb",
+          },
+          {
+            type: "illustration",
+            align: "center",
+            altText: "Clone Troopers standing next to a building.",
+            content: "examples/climb.png",
+          },
+          {
+            type: "text",
+            content:
+              "Sarah wishes to move her Clone Trooper unit on top of the building. She measures the height of the building and determines that it is taller than the Clone Trooper’s silhouette, meaning that the Clone Troopers cannot reach the top by performing a standard move. Instead, Sarah performs a climb with the Clone Troopers. The Clone Troopers move as normal, except they must use the speed-1 movement tool when climbing, and they may move up to a vertical distance of height 1 when making a climb.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    keyword: "clone_trooper",
+    name: "Clone Trooper",
+    parents: ["c"],
+    related_keywords: ["troopers", "miniature", "unit"],
+    descriptions: [
+      {
+        type: "structured_list",
+        content: [
+          "While attacking or defending, a clone trooper unit may spend one aim, dodge, or surge token belonging to another friendly clone trooper unit at {range_2} and in LOS as if the attacking or defending unit had that token.",
+        ],
       },
     ],
   },
@@ -133,6 +205,25 @@ export const KeywordsC: Keyword[] = [
     ],
   },
   {
+    keyword: "courage",
+    name: "Courage",
+    activation: "",
+    parents: ["c", "concepts"],
+    related_keywords: [
+      "panic",
+      "panic_commander",
+      "unit_cards",
+      "droid_trooper",
+    ],
+    summary: "",
+    descriptions: [
+      {
+        type: "reference",
+        referenced_keyword: "panic",
+      },
+    ],
+  },
+  {
     keyword: "compulsory_move",
     name: "Compulsory Move",
     activation: "",
@@ -143,6 +234,21 @@ export const KeywordsC: Keyword[] = [
         type: "text",
         content:
           "A compulsory move is a free move action. To perform a compulsory move, the unit performs a full move at its maximum speed. If it cannot do so, or if a full move would cause any part of the unit leader’s base to be outside the battlefield, it can perform a partial move instead, ending its movement as far along the movement template as possible.",
+      },
+    ],
+  },
+
+  {
+    keyword: "contesting_objectives",
+    name: "Contesting Objective Tokens",
+    activation: "",
+    parents: ["c"],
+    related_keywords: ["objective", "panic"],
+    descriptions: [
+      {
+        type: "text",
+        content:
+          "A unit is contesting an objective token if its unit leader is at {range_half} of the objective token and the unit is not panicked.",
       },
     ],
   },

@@ -21,6 +21,19 @@ export const KeywordsA: Keyword[] = [
     ],
   },
   {
+    keyword: "abilities",
+    name: "Game Overview",
+    related_keywords: ["abilities_provide_move"],
+    parents: ["g"],
+    descriptions: [
+      {
+        type: "text",
+        content:
+          "In <i>Star Wars</i>: Legion, players build, paint, and command entire armies from the various factions of the Star Wars galaxy. Each of these characters is represented on the tabletop by a highly detailed hobby miniature. Before the game, players assemble and paint their miniatures to create an army of Star Wars characters that is truly their own. Each miniature brings with it a host of rules and abilities for players to use in order to complete their mission and achieve victory.",
+      },
+    ],
+  },
+  {
     keyword: "actions",
     name: "Action",
     parents: ["a"],
@@ -440,6 +453,34 @@ export const KeywordsA: Keyword[] = [
         content:
           "During the Modify Attack Dice step of the attack sequence, if the defending unit has the Armor X keyword, the defending player may cancel up to X {hit} results, removing those dice from the attack pool.",
       },
+    ],
+  },
+  {
+    keyword: "army_building",
+    name: "Army Building",
+    related_keywords: ["unit", "upgrade_card", "command_cards"],
+    tag: "",
+    parents: ["a", "weapons"],
+    descriptions: [
+      {
+        type: "header",
+        content: "Build an Army, a Command Hand and a Battle Deck",
+      },
+      {
+        type: "text",
+        content:
+          "Before the game begins, each player builds an army using the Star Wars: Legion miniatures in their collections. In addition to their miniatures, each player prepares a command hand, a Battle Deck, and the Unit and Upgrade Cards containing the rules for their units.",
+      },
+      { type: "reference", referenced_keyword: "faction" },
+      { type: "header", content: "Points" },
+      {
+        type: "text",
+        content:
+          "Each army is made up of a collection of miniatures organized into units. These units may further be equipped and customized with Upgrade Cards. Each unit and upgrade have a point cost printed on the corresponding card. The total point cost of all units and Upgrade Cards in an army cannot exceed 1,000 points. An updated list containing the points for all Unit and Upgrade cards can be found at <a href='https://www.atomicmassgames.com/swlegiondocs/' target='_blank'>atomicmassgames.com</a>.",
+      },
+      { type: "reference", referenced_keyword: "ranks" },
+      { type: "reference", referenced_keyword: "upgrade_card" },
+      { type: "reference", referenced_keyword: "exhaust" },
     ],
   },
   {

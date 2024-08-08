@@ -18,12 +18,19 @@ export const About = () => {
           Legion Quick Guide by The Fifth Trooper
         </a>
         {""}, and I liked the easy access of the keywords, but felt it missed
-        quite a few functions. And with the Legion HQ list builder going down
-        and no updates on the quicklist, it seemed prudent to come up with an
-        alternate solution. I&apos;ve spent hours upon hours on making this site
-        from scratch and converting the rules to a searchable format. Everything
-        is either taken from the rulebook or written myself. I hope it will help
-        your gaming experience.
+        quite a few functions.{" "}
+      </p>
+      <p>
+        I was under the assumption that QG was going down together with Legion
+        HQ, and with no updates on the quicklist, it seemed prudent to come up
+        with an alternate solution. This assumption was proven false, however.
+      </p>
+      <p>
+        {" "}
+        I&apos;ve spent hours upon hours on making this site from scratch and
+        converting the rules to a searchable format. Everything is either taken
+        from the rulebook or written myself. I hope it will help your gaming
+        experience.
       </p>
       <p>
         This is a fan page by <a href="mailto:takras@takras.net">Takras</a> and
@@ -67,6 +74,27 @@ export const About = () => {
         This is a shorthand reference to the range-effectiveness as described by
         the ability keyword, showing its &quot;at&quot;-range.
       </p>
+      <h3>Add to home screen</h3>
+      <img
+        src="/images/examples/homeicon.jpeg"
+        alt="An iphone icon"
+        style={{ float: "right" }}
+        width={80}
+      ></img>
+      <p>
+        Most browsers permit this web page to be added to your mobile phones
+        homescreen as an easily accessible icon.
+      </p>
+      <p>
+        On iPhone in Safari, this is done by hitting the share-button (square
+        with arrow up) below the address bar. From that menu, click the
+        &quot;Add to Home Screen&quot; button and you&apos;re set!
+      </p>
+      <img
+        src="/images/examples/homescreen.png"
+        alt="An iphone popup menu"
+        className={styles.imageLinks}
+      ></img>
       <h3>Printable tokens</h3>
       <p>
         I have designed some tokens that were introduced in the 2024 version

@@ -47,6 +47,8 @@ export const getKey = (key: string) => {
 export const IconList = {
   action: "black/action.png",
   action_free: "black/action-free.png",
+  exhaust_action: "black/exhaust-action.png",
+  exhaust_free: "black/exhaust-free.png",
   hit: "black/hit.png",
   hit_surge: "black/hit-surge.png",
   hit_critical: "black/hit-critical.png",

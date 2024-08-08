@@ -2,7 +2,7 @@
 "use client";
 import Script from "next/script";
 import { ChangeEvent, useCallback, useEffect, useState } from "react";
-import { Keyword } from "@/types";
+import { AVAILABLE_KEYWORDS, Keyword } from "@/types";
 import { rules as rulesDocument } from "@/data/rules";
 import { CatalogCard } from "./catalog-card";
 import { KeywordCard } from "./keyword-card";
@@ -11,12 +11,26 @@ import { RenderContent } from "./render-content";
 import { About } from "./about";
 import { sortKeyword } from "@/utils";
 import styles from "./helper.module.css";
+import classNames from "classnames";
+import { Changelog } from "./changelog";
 
 export default function Helper() {
   const modal = document.querySelector("[data-modal]") as HTMLDialogElement;
 
   const [selectedKeywords, setSelectedKeywords] = useState<Keyword[]>([]);
   const [filter, setFilter] = useState<string>("");
+
+  const print_unused_keywords = () =>
+    AVAILABLE_KEYWORDS.forEach((a_keyword) => {
+      const found = rulesDocument.keywords.find(
+        (keyword) => keyword.keyword === a_keyword
+      );
+      if (!found) {
+        console.log(a_keyword);
+      }
+    });
+
+  //print_unused_keywords();
 
   let counter = 0;
 
@@ -84,24 +98,27 @@ export default function Helper() {
         </div>
 
         {selectedKeyword?.keyword === "about" && <About />}
+        {selectedKeyword?.keyword === "changelog" && <Changelog />}
 
-        {selectedKeyword && selectedKeyword?.keyword !== "about" && (
-          <div className={styles.keywordContainer}>
-            <h2 className={styles.header2}>
-              {selectedKeyword.name}{" "}
-              {selectedKeyword.tag && `(${selectedKeyword.tag})`}
-            </h2>
-            <RenderContent
-              descriptions={selectedKeyword.descriptions}
-              selectKeyword={selectKeyword}
-            />
-            <RelatedKeywords
-              related={selectedKeyword.related_keywords}
-              modal={modal}
-              selectKeyword={selectKeyword}
-            />
-          </div>
-        )}
+        {selectedKeyword &&
+          selectedKeyword.keyword !== "about" &&
+          selectedKeyword.keyword !== "changelog" && (
+            <div className={styles.keywordContainer}>
+              <h2 className={styles.header2}>
+                {selectedKeyword.name}{" "}
+                {selectedKeyword.tag && `(${selectedKeyword.tag})`}
+              </h2>
+              <RenderContent
+                descriptions={selectedKeyword.descriptions}
+                selectKeyword={selectKeyword}
+              />
+              <RelatedKeywords
+                related={selectedKeyword.related_keywords}
+                modal={modal}
+                selectKeyword={selectKeyword}
+              />
+            </div>
+          )}
       </dialog>
     );
   };
@@ -200,6 +217,7 @@ export default function Helper() {
       {modalComponent()}
       <div className={styles.headline}>
         <h1 className={styles.title}>Legion Helper</h1>
+        <span className={styles.subtitle}>&quot;Roger, Roger&quot;</span>
         <img
           src="/images/legionhelper.svg"
           alt="A drawing of a B1 Battle droid."
@@ -248,40 +266,12 @@ export default function Helper() {
           </button>
         </div>
         <div className={styles.infoContainer}>
-          <div id="donate-button-container" className={styles.donate}>
-            <div id="donate-button"></div>
-          </div>
-          <Script id="PayPal">{`PayPal.Donation.Button({
-env:'production',
-hosted_button_id:'PCSQHJMWUZSWN',
-image: {
-src:'https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif',
-alt:'Donate with PayPal button',
-title:'PayPal - The safer, easier way to pay online!',
-}
-}).render('#donate-button');`}</Script>
-
-          <a
-            href="https://twitter.com/intent/tweet?screen_name=takras&ref_src=twsrc%5Etfw"
-            className="twitter-mention-button"
-            data-size="large"
-            data-show-count="false"
-          >
-            Give feedback to @takras
-          </a>
-          <script async src="https://platform.twitter.com/widgets.js"></script>
           <div className={styles.versionInfo}>
             Current version of the rules reference updated:{" "}
             <span className={styles.version}>{rulesDocument.version}</span>{" "}
             valid from{" "}
             <span className={styles.date}>
               {new Date(rulesDocument.validFrom).toLocaleDateString()}.
-            </span>
-          </div>
-          <div className={styles.versionInfo}>
-            Current version of Legion Helper:{" "}
-            <span className={styles.version}>
-              {rulesDocument.helperVersion}.
             </span>
           </div>
         </div>
@@ -299,6 +289,45 @@ title:'PayPal - The safer, easier way to pay online!',
               selectKeyword={selectKeyword}
             />
           ))}
+      </div>
+      <div className={styles.footerContainer}>
+        <div className={styles.versionInfo}>
+          Current version of Legion Helper:{" "}
+          <button
+            className={classNames(styles.version, styles.button)}
+            onClick={() =>
+              selectKeyword(
+                rulesDocument.keywords.find(
+                  (keyword) => keyword.keyword === "changelog"
+                )!
+              )
+            }
+          >
+            {rulesDocument.helperVersion}
+          </button>
+        </div>
+        <div id="donate-button-container" className={styles.donate}>
+          <div id="donate-button"></div>
+        </div>
+        <Script id="PayPal">{`PayPal.Donation.Button({
+env:'production',
+hosted_button_id:'PCSQHJMWUZSWN',
+image: {
+src:'https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif',
+alt:'Donate with PayPal button',
+title:'PayPal - The safer, easier way to pay online!',
+}
+}).render('#donate-button');`}</Script>
+
+        <a
+          href="https://twitter.com/intent/tweet?screen_name=takras&ref_src=twsrc%5Etfw"
+          className="twitter-mention-button"
+          data-size="large"
+          data-show-count="false"
+        >
+          Give feedback to @takras
+        </a>
+        <script async src="https://platform.twitter.com/widgets.js"></script>
       </div>
     </main>
   );

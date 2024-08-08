@@ -9,6 +9,13 @@ export const KeywordsOther: Keyword[] = [
     descriptions: [],
   },
   {
+    keyword: "changelog",
+    parents: [],
+    name: "Changelog",
+    related_keywords: [],
+    descriptions: [],
+  },
+  {
     keyword: "coming_from_pre_2024",
     name: "What's new in Legion 2024 version?",
     related_keywords: [],

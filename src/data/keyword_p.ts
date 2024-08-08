@@ -2,6 +2,30 @@ import { Keyword } from "@/types";
 
 export const KeywordsP: Keyword[] = [
   {
+    keyword: "panic",
+    name: "Panic",
+    parents: ["p", "concepts"],
+    related_keywords: [
+      "objective",
+      "rally",
+      "panic_commander",
+      "droid_trooper",
+      "compel",
+      "dauntless",
+      "field_commander",
+    ],
+    descriptions: [
+      {
+        type: "text",
+        content: "Used to track units that are panicked.",
+      },
+      { type: "reference", referenced_keyword: "panic_commander" },
+      { type: "reference", referenced_keyword: "suppression" },
+      { type: "reference", referenced_keyword: "contesting_objectives" },
+      { type: "reference", referenced_keyword: "rally" },
+    ],
+  },
+  {
     keyword: "panic_commander",
     name: "Panic Check",
     parents: ["p", "c"],

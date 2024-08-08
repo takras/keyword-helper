@@ -23,6 +23,30 @@ export const KeywordsR: Keyword[] = [
     ],
   },
   {
+    keyword: "ranks",
+    name: "Ranks",
+    parents: ["r", "concepts"],
+    related_keywords: ["unit", "army_building"],
+    descriptions: [
+      {
+        type: "text",
+        content:
+          "Each unit in Star Wars: Legion has a rank. When building an army, a player is restricted on the number of units of each rank they may include as follows:",
+      },
+      {
+        type: "structured_list",
+        content: [
+          "{rank_commander} <strong>Commander:</strong> Each army must include one to two commander units.",
+          "  {rank_operative}   <strong>Operative:</strong> Each army may include up to two operative units.",
+          " {rank_corps}  <strong>Corps:</strong> Each army must include three to six corps units.",
+          "{rank_specialist} <strong>Special Forces:</strong> Each army may include up to three special forces units.",
+          "  {rank_support}  <strong>Support:</strong> Each army may include up to three support units.",
+          "{rank_heavy} <strong>Heavy:</strong> Each army may include up to two heavy units.",
+        ],
+      },
+    ],
+  },
+  {
     keyword: "ready",
     name: "Ready X",
     parents: ["r"],
@@ -217,7 +241,7 @@ export const KeywordsR: Keyword[] = [
     keyword: "repair",
     name: "Repair X",
     parents: ["r"],
-    related_keywords: ["card_action", "ion_x", "wounds", "damage_token"],
+    related_keywords: ["card_action", "ion_x", "wounds", "resiliency"],
     range: "range_1",
     descriptions: [
       {
@@ -267,7 +291,6 @@ export const KeywordsR: Keyword[] = [
       "terrain",
       "cover",
       "line_of_sight",
-      "damage_token",
       "resiliency",
       "silhouettes",
       "melee",
@@ -383,7 +406,7 @@ export const KeywordsR: Keyword[] = [
       "vehicles",
       "ground_vehicles",
       "repulsor_vehicle",
-      "damage_token",
+      "resiliency",
       "tokens",
     ],
     descriptions: [

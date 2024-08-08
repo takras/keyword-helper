@@ -26,6 +26,14 @@
   font-family: var(--font-family);
 }
 
+.subtitle {
+  position: relative;
+  rotate: -15deg;
+  margin-left: -5rem;
+  margin-top: 4rem;
+  margin-right: -1rem;
+}
+
 .modal {
   width: 100vw;
   height: 100vh;
@@ -39,6 +47,10 @@
   background-color: white;
   border: var(--border-thin);
   border-radius: var(--border-radius);
+  @media only screen and (max-width: 670px) {
+    margin-left: -15px;
+    margin-right: -15px;
+  }
 }
 
 .aboutContainer,
@@ -104,16 +116,23 @@
   }
 }
 
+
+
 .changelogButton {
   display: flex;
   justify-content: center;
   margin-bottom: var(--flex-gap);
 }
 
-.infoContainer {
+.infoContainer,
+.footerContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.footerContainer {
+  padding-bottom: 60px;
 }
 
 .calloutHeader {
@@ -142,6 +161,9 @@
   position: fixed;
   background-color: var(--background-color);
   border-bottom: var(--border-thin);
+  @media only screen and (max-width: 670px) {
+    width: 99vw;
+  }
 }
 
 .catalogButton {
@@ -152,7 +174,6 @@
   margin-top: 10px;
   font-size: 2em;
   padding: 10px;
-  max-width: 700px;
   border: 2px solid var(--button-border-color);
   box-shadow: var(--box-shadow);
   color: var(--button-color);
@@ -165,6 +186,9 @@
     var(--button-border-color),
     var(--button-border-color),
     var(--button-border-color));
+  @media only screen and (max-width: 670px) {
+    max-width: 100%;
+  }
 }
 
 .searchContainer {
@@ -176,7 +200,6 @@
   box-shadow: 0px 10px 10px rgb(0 0 0 / 0.1);
   color: var(--button-color);
   width: 100%;
-  max-width: var(--max-width);
 
   .button {
     vertical-align: top;
@@ -236,9 +259,9 @@
   flex-wrap: wrap;
   justify-content: center;
   flex-direction: row;
+  padding-left: 5px;
+  padding-right: 5px;
   gap: var(--flex-gap);
-  width: 100%;
-  max-width: calc(var(--max-width) - 4px);
   padding-bottom: var(--flex-gap);
   border-left: 2px solid var(--button-border-color);
   border-right: 2px solid var(--button-border-color);
@@ -251,6 +274,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 20px;
 }
 
 .button,
@@ -262,7 +286,6 @@
   text-align: center;
   cursor: pointer;
   padding: 5px;
-  margin-right: 10px;
   box-shadow: 0px 5px 10px rgb(0 0 0 / 0.1);
   font-size: 1.5em;
   border: 1px solid #26416d;
@@ -280,6 +303,7 @@
 .modalBackButton,
 .closeModalButton {
   color: white;
+  margin-right: 15px;
   background-color: rgb(202, 202, 202);
   border-bottom: 1px solid var(--button-border-color);
   display: flex;
