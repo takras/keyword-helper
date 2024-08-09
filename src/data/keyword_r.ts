@@ -215,7 +215,7 @@ export const KeywordsR: Keyword[] = [
     keyword: "reliable_x",
     name: "Reliable X",
     parents: ["r"],
-    related_keywords: ["surge", "activation_phase"],
+    related_keywords: ["apply_dodge_cover", "activation_phase"],
     descriptions: [
       {
         type: "text",
@@ -228,7 +228,7 @@ export const KeywordsR: Keyword[] = [
     keyword: "relentless",
     name: "Relentless",
     parents: ["r"],
-    related_keywords: ["attack", "free_action"],
+    related_keywords: ["attack", "free_card_action"],
     descriptions: [
       {
         type: "text",
@@ -352,7 +352,7 @@ export const KeywordsR: Keyword[] = [
     keyword: "roll_attack_dice",
     name: "Roll Attack Dice",
     parents: ["r"],
-    related_keywords: ["attack", "dice", "surge", "aim"],
+    related_keywords: ["attack", "dice", "apply_dodge_cover", "aim"],
     summary: "The attacking player rolls the dice in the attack pool.",
     descriptions: [
       {
@@ -494,7 +494,7 @@ export const KeywordsR: Keyword[] = [
     name: "Ruthless",
     parents: ["r"],
     range: "range_2",
-    related_keywords: ["wounds", "free_action"],
+    related_keywords: ["wounds", "free_card_action"],
     descriptions: [
       {
         type: "text",

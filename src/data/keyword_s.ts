@@ -101,6 +101,37 @@ export const KeywordsS: Keyword[] = [
     ],
   },
   {
+    keyword: "secondary_objective_cards",
+    name: "Secondary Objective Cards",
+    activation: "",
+    parents: ["s", "concepts"],
+    related_keywords: ["setup", "card_effects", "objective", "victory_points"],
+    descriptions: [
+      {
+        type: "text",
+        content:
+          "Secondary Objective Cards contain additional rules for scoring Victory Points.",
+      },
+      {
+        type: "illustration",
+        content: "examples/secondary-objective-card.png",
+        align: "center",
+        altText:
+          "Two secondary objective cards: Recon Mission and Bring them to Heel.",
+      },
+      {
+        type: "structured_list_numbered",
+        content: [
+          "<strong>Card Title:</strong> The title of this secondary objective.",
+          "<strong>Setup:</strong> Instructions for setting up secondary objective.",
+          "<strong>Scoring:</strong> Details for scoring Victory Points.",
+          "<strong>Scoring Table:</strong> Some secondary objectives have a scoring table. Scoring tables have a column for blue player and a column for red player. When a space in a player’s column is marked, that player scores the VPs shown there.",
+          "<strong>Special Rules:</strong> Special rules associated with this secondary objective.",
+        ],
+      },
+    ],
+  },
+  {
     keyword: "self_destruct",
     name: "Self-Destruct X",
     parents: ["s", "weapons"],
@@ -110,7 +141,7 @@ export const KeywordsS: Keyword[] = [
       "melee",
       "ranged_weapon",
       "wounds",
-      "free_action",
+      "free_card_action",
       "transport",
     ],
     descriptions: [
@@ -158,6 +189,45 @@ export const KeywordsS: Keyword[] = [
         content:
           "A unit with the Sentinel keyword can spend a standby token after an enemy unit performs an attack, move, or action at {range_3}, rather than at {range_2}.",
       },
+    ],
+  },
+  {
+    keyword: "setup",
+    name: "Setup",
+    parents: ["s", "concepts"],
+    related_keywords: [
+      "terrain",
+      "objective",
+      "army_building",
+      "command_cards",
+    ],
+    descriptions: [
+      {
+        type: "example",
+        initiallyExpanded: true,
+        content: [
+          { type: "header", content: "Setup" },
+          {
+            type: "text",
+            content:
+              "The process of getting ready to play a game of <i>Star Wars</i>: Legion is called Setup. Setup consists of the following steps",
+          },
+          {
+            type: "structured_list_numbered",
+            content: [
+              "Build an Army, a Command Hand, and a Battle Deck",
+              "Establish the Battlefield and Gather Components",
+              "Declare Terrain",
+              "Place Terrain",
+              "Determine Blue Player",
+              "Build a Mission",
+              "Resolve Setup Effects",
+              "Deploy in Prepared Positions",
+            ],
+          },
+        ],
+      },
+      { type: "reference", referenced_keyword: "army_building" },
     ],
   },
   {
@@ -651,7 +721,7 @@ export const KeywordsS: Keyword[] = [
       "actions",
       "attack",
       "at_range",
-      "free_action",
+      "free_card_action",
       "move",
       "suppression",
       "troopers",

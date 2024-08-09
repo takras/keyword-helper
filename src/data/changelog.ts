@@ -12,6 +12,21 @@ type Log = {
 
 export const log: Log[] = [
   {
+    version: "1.0.3",
+    entries: [
+      {
+        type: "add",
+        description:
+          "New keywords: Bases, Battlefield, Cancel, Timing, Card Effects, Game Effects, Difficult Terrain, Dice, Issue Orders, Miniature, Setup, Advantage Cards, Battle Cards, Map Cards, Objective Cards, Secondary Objective Cards ",
+      },
+      {
+        type: "add",
+        description:
+          "Added buttons to filter keyword list by type. This does not include Search.",
+      },
+    ],
+  },
+  {
     version: "1.0.2",
     entries: [
       {

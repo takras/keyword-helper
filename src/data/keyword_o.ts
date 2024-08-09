@@ -89,6 +89,36 @@ export const KeywordsO: Keyword[] = [
   },
 
   {
+    keyword: "objective_cards",
+    name: "Objective Cards",
+    activation: "",
+    parents: ["o", "concepts"],
+    related_keywords: ["setup", "card_effects", "objective", "map_cards"],
+    descriptions: [
+      {
+        type: "text",
+        content:
+          "Objective Cards contain the card title, setup instructions, special rules, and details on how to score Victory Points for that objective. An Objective Card is paired with a Map Card that has the same Card Title.",
+      },
+      {
+        type: "illustration",
+        content: "examples/objective-card.png",
+        align: "center",
+        altText: "One objective card shown: Shifting Priorities.",
+      },
+      {
+        type: "structured_list_numbered",
+        content: [
+          "<strong>Card Title:</strong> The title of this objective.",
+          "<strong>Setup:</strong> Instructions for setting up this objective.",
+          "<strong>Scoring:</strong> Details for scoring Victory Points.",
+          "<strong>Special Rules:</strong> Special rules associated with this objective.",
+        ],
+      },
+    ],
+  },
+
+  {
     keyword: "objects",
     name: "Objects / Battlefield",
     activation: "",

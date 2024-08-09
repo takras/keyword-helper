@@ -166,6 +166,18 @@
   }
 }
 
+.filterHeader {
+  text-align: center;
+  margin-bottom: 0;
+  font-family: var(--font-family);
+  font-size: 1.5rem;
+}
+
+.catalogContainer {
+  display: block;
+  width: 100%;
+}
+
 .catalogButton {
   width: 100%;
   border-radius: var(--border-radius);
@@ -292,6 +304,10 @@
   border-bottom: 2px solid var(--button-border-color);
   color: #26416d;
   background-color: #fff;
+}
+
+.buttonActive {
+  background-color: var(--example-header);
 }
 
 .buttonRange {

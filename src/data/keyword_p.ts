@@ -308,7 +308,7 @@ export const KeywordsP: Keyword[] = [
     name: "Pulling the Strings",
     parents: ["p"],
     range: "range_2",
-    related_keywords: ["free_action", "attack"],
+    related_keywords: ["free_card_action", "attack"],
     descriptions: [
       {
         type: "text",

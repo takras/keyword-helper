@@ -225,7 +225,6 @@ export const KeywordsF: Keyword[] = [
       "activating_units",
       "card_action",
       "exhaust",
-      "free_action",
       "keywords",
       "upgrade_card",
     ],

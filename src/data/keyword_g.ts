@@ -2,6 +2,20 @@ import { Keyword } from "@/types";
 
 export const KeywordsG: Keyword[] = [
   {
+    keyword: "game_effects",
+    name: "Game Effects",
+    activation: "",
+    parents: ["g", "concepts"],
+    related_keywords: ["keywords", "abilities", "card_effects"],
+    descriptions: [
+      {
+        type: "text",
+        content:
+          "Game effect refers to any instance, occurrence, or trigger of any rule, card text or effect, unit ability, keyword, or other special rule.",
+      },
+    ],
+  },
+  {
     keyword: "generator_x",
     name: "Generator X",
     activation: "",
@@ -112,7 +126,7 @@ export const KeywordsG: Keyword[] = [
       "courage",
       "pierce",
       "backup",
-      "surge",
+      "apply_dodge_cover",
     ],
     range: "range_1",
     descriptions: [
@@ -149,7 +163,7 @@ export const KeywordsG: Keyword[] = [
     activation: "",
     parents: ["g", "units"],
     tag: "Unit Keyword",
-    related_keywords: ["free_action", "actions"],
+    related_keywords: ["actions", "free_card_action"],
     range: "range_2",
     descriptions: [
       {

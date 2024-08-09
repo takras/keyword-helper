@@ -231,12 +231,35 @@ export const KeywordsT: Keyword[] = [
     name: "Tempted",
     parents: ["t", "units"],
     range: "range_3",
-    related_keywords: ["attack", "free_action", "move", "terrain"],
+    related_keywords: ["attack", "free_card_action", "move", "terrain"],
     descriptions: [
       {
         type: "text",
         content:
           "If a friendly unit is defeated by an enemy attack and the attacking unit is at {range_3} of a unit with the Tempted keyword, after the attack is resolved, that unit with the Tempted keyword may perform a free attack action or a speed-2 move ignoring difficult terrain. A unit may use the Tempted keyword only once each round.",
+      },
+    ],
+  },
+  {
+    keyword: "timing",
+    name: "Timing",
+    parents: ["t", "concepts"],
+    related_keywords: ["determine_blue_player"],
+    descriptions: [
+      {
+        type: "text",
+        content:
+          "Some rules refer to the active player; the active player is the player whose turn it is.",
+      },
+      {
+        type: "text",
+        content:
+          "Sometimes effects will occur at the same time. The player with priority always resolves their effects first. If neither player has priority, the blue player resolves their effects first. If a player has multiple effects that occur at the same time, they choose the order in which to resolve effects.",
+      },
+      {
+        type: "text",
+        content:
+          "Sometimes an effect happens after something is resolved, which means that the effect happens immediately after that thing has been totally completed.",
       },
     ],
   },

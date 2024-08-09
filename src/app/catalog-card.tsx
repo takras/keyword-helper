@@ -9,9 +9,11 @@ import styles from "./helper.module.css";
 export const CatalogCard = ({
   catalog,
   selectKeyword,
+  activeCatalog,
 }: {
   catalog: CatalogEntry;
   selectKeyword: (keyword: Keyword) => void;
+  activeCatalog: CatalogEntry["catalog"];
 }) => {
   const [expandedCatalogs, setExpandedCatalogs] = useState<string[]>([]);
   const toggleExpandCatalog = (index: string) => {
@@ -22,10 +24,15 @@ export const CatalogCard = ({
     }
     setExpandedCatalogs((current) => [...current, index]);
   };
+  const filterByActiveCatalog = (keyword: Keyword) =>
+    activeCatalog === "alphabet"
+      ? true
+      : keyword.parents.includes(activeCatalog);
 
   if (
-    rules.keywords.filter((keyword) => keyword.parents.includes(catalog.id))
-      .length === 0
+    rules.keywords
+      .filter(filterByActiveCatalog)
+      .filter((keyword) => keyword.parents.includes(catalog.id)).length === 0
   ) {
     return null;
   }
@@ -34,7 +41,7 @@ export const CatalogCard = ({
     return expandedCatalogs.includes(index);
   };
   return (
-    <>
+    <div className={styles.catalogContainer}>
       <button
         className={classNames(
           styles.catalogButton,
@@ -47,6 +54,7 @@ export const CatalogCard = ({
       {isExpanded(catalog.id) && (
         <div className={styles.keywordsContainer}>
           {rules.keywords
+            .filter(filterByActiveCatalog)
             .filter((keyword) => keyword.parents.includes(catalog.id))
             .toSorted(sortKeyword)
             .map((keyword) => (
@@ -58,6 +66,6 @@ export const CatalogCard = ({
             ))}
         </div>
       )}
-    </>
+    </div>
   );
 };

@@ -16,6 +16,41 @@ export const KeywordsM: Keyword[] = [
       },
     ],
   },
+  {
+    keyword: "map_cards",
+    name: "Map Cards",
+    activation: "",
+    parents: ["m", "concepts"],
+    related_keywords: [
+      "setup",
+      "card_effects",
+      "objective",
+      "terrain",
+      "battlefield",
+    ],
+    descriptions: [
+      {
+        type: "text",
+        content:
+          "Map Cards show player territories and objective placement on a gridded map. Each side of each grid square is {range_1}. Each player will be assigned one of the player territories during Setup.",
+      },
+      {
+        type: "illustration",
+        content: "examples/map-card.png",
+        align: "center",
+        altText: "One map card shown: Shifting Priorities.",
+      },
+      {
+        type: "structured_list_numbered",
+        content: [
+          "<strong>Card Title:</strong> The title of the objective that is paired with this Map Card.",
+          "<strong>Player Territory:</strong> Limits where units can deploy.",
+          "<strong>Contested Territory:</strong> The area of the battlefield that is not part of any player’s territory.",
+          "<strong>POI Placement:</strong> Shows where to place a POI on the battlefield during Setup.",
+        ],
+      },
+    ],
+  },
 
   {
     keyword: "marksman",
@@ -56,7 +91,7 @@ export const KeywordsM: Keyword[] = [
     range: "range_2",
     parents: ["m", "units"],
     tag: "Unit Keyword",
-    related_keywords: ["surge", "card_action"],
+    related_keywords: ["apply_dodge_cover", "card_action"],
     descriptions: [
       {
         type: "text",
@@ -92,6 +127,19 @@ export const KeywordsM: Keyword[] = [
         type: "text",
         content:
           "A unit with the Mercenary keyword is a Mercenary unit. The faction(s) specified by the Mercenary keyword can include that unit in an army as a Mercenary unit.",
+      },
+    ],
+  },
+  {
+    keyword: "miniature",
+    name: "Miniatures",
+    activation: "",
+    parents: ["m", "concepts"],
+    related_keywords: [],
+    descriptions: [
+      {
+        type: "reference",
+        referenced_keyword: "objects",
       },
     ],
   },
@@ -261,7 +309,6 @@ export const KeywordsM: Keyword[] = [
       "climb",
       "compulsory_move",
       "difficult_terrain",
-      "displacement",
       "impassable_terrain",
       "notch",
       "open_terrain",

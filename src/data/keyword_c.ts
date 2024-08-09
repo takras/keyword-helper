@@ -34,6 +34,49 @@ export const KeywordsC: Keyword[] = [
       },
     ],
   },
+  {
+    keyword: "card_effects",
+    name: "Card Effects",
+    activation: "",
+    parents: ["c", "concepts"],
+    related_keywords: ["keywords"],
+    descriptions: [
+      {
+        type: "text",
+        content:
+          "As a card action, a unit with the Calculate Odds keyword can choose a friendly trooper unit at {range_2} and in LOS to gain one aim token, one dodge token, and one suppression token.",
+      },
+      {
+        type: "example",
+        initiallyExpanded: true,
+        content: [
+          {
+            type: "header",
+            content: "Reminder Text",
+          },
+          {
+            type: "text",
+            content:
+              "Some cards contain italicized text in parantheses called reminder text. Reminder text is NOT rules text and is only there to remind players how the rule or ability functions.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    keyword: "cancel",
+    name: "Canceling Results",
+    activation: "",
+    parents: ["c", "concepts"],
+    related_keywords: ["dice", "attack"],
+    descriptions: [
+      {
+        type: "text",
+        content:
+          "When a result in an attack pool is canceled, remove that result from the pool.",
+      },
+    ],
+  },
 
   {
     keyword: "charge",
@@ -310,7 +353,7 @@ export const KeywordsC: Keyword[] = [
     name: "Critical X",
     parents: ["c", "weapons"],
     tag: "Weapon Keyword",
-    related_keywords: ["surge", "attack"],
+    related_keywords: ["apply_dodge_cover", "attack"],
     descriptions: [
       {
         type: "text",
@@ -332,7 +375,6 @@ export const KeywordsC: Keyword[] = [
       "abilities",
       "activating_units",
       "exhaust",
-      "free_action",
       "free_card_action",
       "keywords",
       "upgrade_card",
@@ -460,48 +502,7 @@ export const KeywordsC: Keyword[] = [
           },
         ],
       },
-      {
-        type: "header",
-        content: "Nominate Commanders and Issue Orders",
-      },
-      {
-        type: "text",
-        content:
-          "After determining priority, players nominate commanders and issue orders to their units.",
-      },
-      {
-        type: "text",
-        content:
-          "If the played Command Card corresponds to a specific unit, that unit must be nominated as the commander. Otherwise, players may nominate any one {rank_commander} unit to be their commander.",
-      },
-      {
-        type: "text",
-        content:
-          "Once all players have nominated a commander, they issue orders to their units, starting with the player who has priority. The number of orders and the units they can be issued to is listed on each Command Card. For a commander to issue an order to a unit, the following must be true:",
-      },
-      {
-        type: "structured_list",
-        content: [
-          "The unit cannot have already received an order during the current Command Phase.",
-          "The unit must match the type (if any) listed on the Command Card.",
-        ],
-      },
-      {
-        type: "text",
-        content:
-          "When a unit is issued an order, take an order token that corresponds to the unit’s rank and place it faceup next to the unit. A commander must issue all the orders allowed by the Command Card, if able. If a commander cannot issue all the orders allowed by the Command Card, any excess orders are lost. Once both players have issued orders, they then proceed to create the order pool.",
-      },
-      {
-        type: "example",
-        content: [
-          { type: "header", content: "Other Ways to Issue Orders" },
-          {
-            type: "text",
-            content:
-              "Some rules or abilities allow units to be issued orders from sources other than the nominated commander. These units do not have to follow the above criteria when they are issued orders in this way, instead following the rules of the effect granting that order. A unit cannot be issued more than one order each round.",
-          },
-        ],
-      },
+      { type: "reference", referenced_keyword: "issue_order" },
       { type: "header", content: "Create the Order Pool" },
       {
         type: "text",

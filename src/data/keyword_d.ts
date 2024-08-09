@@ -201,6 +201,99 @@ export const KeywordsD: Keyword[] = [
     ],
   },
   {
+    keyword: "difficult_terrain",
+    name: "Difficult Terrain",
+    parents: ["d"],
+    related_keywords: ["terrain"],
+    descriptions: [
+      {
+        type: "reference",
+        referenced_keyword: "terrain_movement",
+      },
+    ],
+  },
+  {
+    keyword: "dice",
+    name: "Dice",
+    activation: "",
+    parents: ["d", "concepts"],
+    related_keywords: ["attack", "defend_x", "apply_dodge_cover"],
+    descriptions: [
+      {
+        type: "text",
+        content:
+          "<i>Star Wars</i>: Legion uses dice rolls to determine the results of the actions the players’ armies perform on the battlefield—most commonly attacking and defending. Star Wars: Legion uses five different kinds of dice: three for attacking and two for defending. For attacking, players roll red, black, or white attack dice; while defending, they roll red or white defense dice.",
+      },
+      {
+        type: "text",
+        content:
+          "Attack dice have the following symbols: Hit ({hit}), Attack Surge ({hit_surge}), Critical ({hit_critical}).",
+      },
+      {
+        type: "text",
+        content:
+          "Defense dice have the following symbols: Block ({block}), Defense Surge ({block_surge}).",
+      },
+      {
+        type: "text",
+        content: "Die faces that are blank are blank results.",
+      },
+      {
+        type: "text",
+        content: "The faces of each die are as follows:",
+      },
+
+      {
+        type: "structured_list",
+        content: [
+          "{hit}: Hit",
+          "{hit_critical}: Critical",
+          "{hit_surge}: Attack Surge",
+          "{block_surge}: Defense Surge",
+          "{block}: Block",
+          "Blank",
+        ],
+      },
+      {
+        type: "illustration",
+        content: "examples/attack-dice.png",
+        align: "right",
+        altText: "Three variants on attack type and dice.",
+        width: "100",
+      },
+      {
+        type: "text",
+        content:
+          "There are three colors of attack dice: red, white, and black. Each attack die is represented on cards by the following icons:",
+      },
+      {
+        type: "structured_list",
+        content: ["Red attack die", "White attack die", "Black attack die"],
+      },
+      {
+        type: "illustration",
+        content: "examples/defense-dice.png",
+        align: "right",
+        altText: "Two variants on defense type and dice.",
+        width: "60",
+      },
+      {
+        type: "text",
+        content:
+          "There are two colors of defense dice: red and white. Each defense die is represented on a unit’s card by the following icons:",
+      },
+      {
+        type: "structured_list",
+        content: ["Red defense die", "White defense die"],
+      },
+      {
+        type: "text",
+        content:
+          "The dice used by a unit to attack and defend are listed on its Unit Card, or occasionally an Upgrade or Command Card.",
+      },
+    ],
+  },
+  {
     keyword: "direct",
     name: "Direct Name/Type",
     activation: "",

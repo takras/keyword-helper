@@ -219,6 +219,34 @@ export const KeywordsA: Keyword[] = [
     ],
   },
   {
+    keyword: "advantage_cards",
+    name: "Advantage Cards",
+    activation: "",
+    parents: ["a", "concepts"],
+    related_keywords: ["setup", "card_effects"],
+    descriptions: [
+      {
+        type: "text",
+        content:
+          "Advantage Cards contain additional special rules a player with that advantage can use during a game.",
+      },
+      {
+        type: "illustration",
+        content: "examples/advantage-card.png",
+        align: "center",
+        altText: "Two advantage cards. Cunning Deployment and Garrison.",
+      },
+      {
+        type: "structured_list_numbered",
+        content: [
+          "<strong>Card Title:</strong> The title of this advantage.",
+          "<strong>Setup:</strong> Instructions for setting up this advantage.",
+          "<strong>Special Rules:</strong> Special rules associated with this advantage.",
+        ],
+      },
+    ],
+  },
+  {
     keyword: "agile_x",
     name: "Agile X",
     activation: "",
@@ -258,7 +286,13 @@ export const KeywordsA: Keyword[] = [
     parents: ["a", "units"],
     tag: "Unit Keyword",
     range: "range_2",
-    related_keywords: ["aim", "dodge", "surge", "line_of_sight", "suppression"],
+    related_keywords: [
+      "aim",
+      "dodge",
+      "apply_dodge_cover",
+      "line_of_sight",
+      "suppression",
+    ],
     summary: "",
     descriptions: [
       {
@@ -619,7 +653,7 @@ export const KeywordsA: Keyword[] = [
       "melee_weapon",
       "range",
       "ranged_weapon",
-      "surge",
+      "apply_dodge_cover",
       "suppression",
       "silhouettes",
       "leader",

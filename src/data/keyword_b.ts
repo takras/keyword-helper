@@ -146,6 +146,64 @@ export const KeywordsB: Keyword[] = [
     ],
   },
   {
+    keyword: "base",
+    name: "Bases and Base Contact",
+    parents: ["b", "concepts"],
+    related_keywords: [
+      "miniature",
+      "troopers",
+      "melee",
+      "terrain",
+      "fitting_on_terrain",
+      "silhouettes",
+    ],
+    descriptions: [
+      {
+        type: "text",
+        content:
+          "Each miniature in <i>Star Wars</i>: Legion is modeled on a base. A unit’s base depends on its unit type: troopers, clone troopers, droid troopers, and Wookiee troopers are on small bases. Everything else is on notched bases of various sizes.",
+      },
+      {
+        type: "illustration",
+        content: "examples/base.png",
+        align: "center",
+        altText: "One Clone trooper and one AT-RT on the battlefield.",
+      },
+      {
+        type: "text",
+        content:
+          "Many rules in <i>Star Wars</i>: Legion use the term “base contact,” which means that the miniature's base must be touching whatever the rule is referencing. This includes another miniature’s base, a piece of terrain, or a token.",
+      },
+      {
+        type: "text",
+        content:
+          "Miniatures cannot move into base contact with miniatures from enemy units unless the unit leader has a melee weapon ({range_melee}). If the unit leader does, the unit leader can perform a move into base contact with an enemy miniature to start a melee.",
+      },
+      {
+        type: "reference",
+        showOnlySummary: true,
+        referenced_keyword: "melee",
+      },
+      {
+        type: "text",
+        content:
+          "Because an object can be placed on top of uneven terrain, there are situations in which another miniature cannot be placed into physical base contact with the object because of a difference in elevation between the two bases. In these situations, if the following two conditions are met, the miniature and object are treated as if they are in base contact: when viewed from above, there is no space between the miniature's base and the object, such that if they were not on differing elevations or were both flat on the battlefield, the miniature's base and the object would be touching, and the vertical distance between the miniature's base and the object is no greater than the height of either object's silhouette.",
+      },
+      {
+        type: "reference",
+        showOnlySummary: true,
+        referenced_keyword: "silhouettes",
+      },
+      {
+        type: "illustration",
+        content: "examples/base-contact.png",
+        align: "center",
+        altText:
+          "One Clone trooper and one Droid trooper with bases physically touhcing.",
+      },
+    ],
+  },
+  {
     keyword: "beam_x",
     name: "Beam X",
     related_keywords: [
@@ -173,6 +231,42 @@ export const KeywordsB: Keyword[] = [
         type: "text",
         content:
           "Units may not use the Beam X and {keyword:Gunslinger} keywords during the same attack.",
+      },
+    ],
+  },
+  {
+    keyword: "battle_cards",
+    name: "Battle Cards",
+    activation: "",
+    parents: ["b", "concepts"],
+    related_keywords: [
+      "setup",
+      "objective_cards",
+      "map_cards",
+      "secondary_objective_cards",
+      "advantage_cards",
+    ],
+    descriptions: [
+      {
+        type: "text",
+        content:
+          "Battle Cards form a Battle Deck and are used in Setup, where players work together to build the mission for that game. Battle Cards are divided into three categories: Objective Cards that have a paired Map Card (Red), Secondary Objective Cards (Yellow), and Advantage Cards (Green).",
+      },
+      { type: "reference", referenced_keyword: "objective_cards" },
+      { type: "reference", referenced_keyword: "map_cards" },
+      { type: "reference", referenced_keyword: "secondary_objective_cards" },
+      { type: "reference", referenced_keyword: "advantage_cards" },
+    ],
+  },
+  {
+    keyword: "battlefield",
+    name: "Battlefield",
+    related_keywords: ["objects"],
+    parents: ["b", "concepts"],
+    descriptions: [
+      {
+        type: "reference",
+        referenced_keyword: "objects",
       },
     ],
   },
@@ -213,7 +307,7 @@ export const KeywordsB: Keyword[] = [
     activation: "",
     parents: ["b", "units"],
     tag: "Unit Keyword",
-    related_keywords: ["actions", "surge"],
+    related_keywords: ["actions", "apply_dodge_cover"],
     range: "range_2",
     summary: "",
     descriptions: [

@@ -174,7 +174,13 @@ export const KeywordsE: Keyword[] = [
     activation: "",
     parents: ["e", "units"],
     tag: "Unit Keyword",
-    related_keywords: ["attack", "line_of_sight", "aim", "dodge", "surge"],
+    related_keywords: [
+      "attack",
+      "line_of_sight",
+      "aim",
+      "dodge",
+      "apply_dodge_cover",
+    ],
     range: "range_2",
     descriptions: [
       {

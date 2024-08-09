@@ -2,7 +2,7 @@
 "use client";
 import Script from "next/script";
 import { ChangeEvent, useCallback, useEffect, useState } from "react";
-import { AVAILABLE_KEYWORDS, Keyword } from "@/types";
+import { AVAILABLE_KEYWORDS, CatalogEntry, Keyword } from "@/types";
 import { rules as rulesDocument } from "@/data/rules";
 import { CatalogCard } from "./catalog-card";
 import { KeywordCard } from "./keyword-card";
@@ -18,7 +18,9 @@ export default function Helper() {
   const modal = document.querySelector("[data-modal]") as HTMLDialogElement;
 
   const [selectedKeywords, setSelectedKeywords] = useState<Keyword[]>([]);
-  const [filter, setFilter] = useState<string>("");
+  const [searchFilter, setSearchFilter] = useState<string>("");
+  const [activeCatalog, setActiveCatalog] =
+    useState<CatalogEntry["catalog"]>("alphabet");
 
   const print_unused_keywords = () =>
     AVAILABLE_KEYWORDS.forEach((a_keyword) => {
@@ -124,11 +126,11 @@ export default function Helper() {
   };
 
   const onSearchChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setFilter(e.currentTarget.value);
+    setSearchFilter(e.currentTarget.value);
   };
 
   const searchContent = useCallback(() => {
-    const search = new RegExp(filter.toLowerCase());
+    const search = new RegExp(searchFilter.toLowerCase());
     const result = rulesDocument.keywords
       .toSorted(sortKeyword)
       .filter((keyword) => {
@@ -162,10 +164,10 @@ export default function Helper() {
         return keys.length > 0;
       });
     return result;
-  }, [filter]);
+  }, [searchFilter]);
 
   const getFilteredItems = useCallback(() => {
-    if (filter.length < 2) {
+    if (searchFilter.length < 2) {
       return [];
     }
     const result = searchContent();
@@ -180,7 +182,7 @@ export default function Helper() {
       return [nothing];
     }
     return searchContent();
-  }, [filter.length, searchContent]);
+  }, [searchFilter.length, searchContent]);
 
   const searchComponent = () => {
     return (
@@ -190,12 +192,12 @@ export default function Helper() {
             placeholder="Search"
             className={styles.searchInput}
             type="text"
-            value={filter}
+            value={searchFilter}
             id="search"
             onChange={onSearchChange}
             autoComplete="new-password"
           ></input>
-          <button className={styles.button} onClick={() => setFilter("")}>
+          <button className={styles.button} onClick={() => setSearchFilter("")}>
             X
           </button>
         </div>
@@ -208,6 +210,39 @@ export default function Helper() {
             />
           ))}
         </div>
+      </div>
+    );
+  };
+
+  const catalogButtons = () => {
+    type ButtonList = { id: CatalogEntry["catalog"]; name: string }[];
+    const catalogs: ButtonList = [
+      { id: "alphabet", name: "All" },
+      { id: "concepts", name: "Game Concepts" },
+      { id: "weapons", name: "Weapon Keywords" },
+      { id: "units", name: "Unit Keywords" },
+    ];
+    return (
+      <div className={styles.catalogFilterContainer}>
+        <h3 className={styles.filterHeader}>Filter keywords by:</h3>
+        {catalogs.map((catalog) => {
+          return (
+            <button
+              className={classNames(
+                styles.button,
+                activeCatalog === catalog.id ? styles.buttonActive : null
+              )}
+              key={catalog.id}
+              onClick={() =>
+                setActiveCatalog((current) =>
+                  current === catalog.id ? "alphabet" : catalog.id
+                )
+              }
+            >
+              {catalog.name}
+            </button>
+          );
+        })}
       </div>
     );
   };
@@ -279,7 +314,7 @@ export default function Helper() {
 
       <div className={styles.content}>
         {searchComponent()}
-
+        {catalogButtons()}
         {rulesDocument.index
           .filter((dictionary) => dictionary.catalog === "alphabet")
           .map((catalog) => (
@@ -287,6 +322,7 @@ export default function Helper() {
               key={getKey(catalog.id)}
               catalog={catalog}
               selectKeyword={selectKeyword}
+              activeCatalog={activeCatalog}
             />
           ))}
       </div>
