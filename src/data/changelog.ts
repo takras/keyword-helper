@@ -12,6 +12,20 @@ type Log = {
 
 export const log: Log[] = [
   {
+    version: "1.0.4",
+    entries: [
+      {
+        type: "add",
+        description:
+          "New keywords: Building a Mission, Declare Terrain, Determine Blue Player, Empty Decks",
+      },
+      {
+        type: "change",
+        description: "Keyword enriched with new steps: Setup.",
+      },
+    ],
+  },
+  {
     version: "1.0.3",
     entries: [
       {

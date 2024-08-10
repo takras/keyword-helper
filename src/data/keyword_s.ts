@@ -228,6 +228,17 @@ export const KeywordsS: Keyword[] = [
         ],
       },
       { type: "reference", referenced_keyword: "army_building" },
+      { type: "reference", referenced_keyword: "battlefield" },
+      { type: "reference", referenced_keyword: "declare_terrain" },
+      { type: "reference", referenced_keyword: "determine_blue_player" },
+      { type: "reference", referenced_keyword: "building_a_mission" },
+      { type: "header", content: "Deploy in Prepared Positions" },
+      {
+        type: "text",
+        content:
+          "Starting with the blue player, players alternate placing units with the Prepared Position keyword on the battlefield.",
+      },
+      { type: "reference", referenced_keyword: "objective" },
     ],
   },
   {

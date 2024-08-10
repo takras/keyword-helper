@@ -57,6 +57,24 @@ export const KeywordsD: Keyword[] = [
     ],
   },
   {
+    keyword: "declare_terrain",
+    name: "Declare and Place Terrain",
+    parents: ["d"],
+    related_keywords: ["setup", "actions"],
+    descriptions: [
+      {
+        type: "text",
+        content:
+          "Players determine what pieces of terrain to use in their game and their rules. Players should be sure to agree with their opponent on the rules for each terrain piece before the game begins.",
+      },
+      {
+        type: "text",
+        content:
+          "Once players have determined what terrain is being used and any applicable rules, they then cooperatively set up terrain on the battlefield.",
+      },
+    ],
+  },
+  {
     keyword: "defend_x",
     name: "Defend X",
     activation: "",
@@ -151,6 +169,20 @@ export const KeywordsD: Keyword[] = [
               "For example, a player wishes to add a DF-90 Mortar Trooper to their army. Because the DF-90 Mortar Trooper has the Detachment: Shoretroopers keyword, the player must first add a unit of Shoretroopers to their army before adding the DF-90 Mortar Trooper. The player does so, and the army now contains a Shoretroopers unit and a DF-90 Mortar Trooper unit. The player then wishes to add a second DF-90 Mortar Trooper unit to their army, and therefore must first select a second unit of Shoretroopers to include in their army.",
           },
         ],
+      },
+    ],
+  },
+  {
+    keyword: "determine_blue_player",
+    name: "Determine Blue Player",
+    activation: "",
+    parents: ["d", "concepts"],
+    related_keywords: ["setup"],
+    descriptions: [
+      {
+        type: "text",
+        content:
+          "In <i>Star Wars</i>: Legion, a player is either the red player or the blue player. Each player rolls five black attack dice to determine who will start building a mission as the blue player. The blue player is the player with the most b results. If there is a tie, the player with the most a results is the blue player. If there is still a tie, the player with the most attack c results is the blue player. If there is still a tie at this point, the players reroll the dice and follow the above rules until the tie is broken.",
       },
     ],
   },

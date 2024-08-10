@@ -24,6 +24,19 @@ export const KeywordsE: Keyword[] = [
     ],
   },
   {
+    keyword: "empty_decks",
+    name: "Empty Decks",
+    parents: ["e", "concepts"],
+    related_keywords: ["setup", "building_a_mission"],
+    descriptions: [
+      {
+        type: "text",
+        content:
+          "When a player would reveal a card from a deck that no longer contains any cards, shuffle all of that player’s previously discarded cards of that type, including the card just discarded, to form a new deck. Then reveal the top card of that deck.",
+      },
+    ],
+  },
+  {
     keyword: "engaged",
     name: "Engaged",
     parents: ["e", "concepts"],

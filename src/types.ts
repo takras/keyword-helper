@@ -77,6 +77,7 @@ export const AVAILABLE_KEYWORDS = [
   "danger_sense",
   "dauntless",
   "death_from_above",
+  "declare_terrain",
   "declare_defender",
   "deflect",
   "defend_x",

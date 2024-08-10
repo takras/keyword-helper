@@ -319,6 +319,63 @@ export const KeywordsB: Keyword[] = [
     ],
   },
   {
+    keyword: "building_a_mission",
+    name: "Building a Mission",
+    activation: "",
+    parents: ["b", "concepts"],
+    related_keywords: ["setup", "determine_blue_player"],
+    summary: "",
+    descriptions: [
+      {
+        type: "text",
+        content:
+          "Now that the blue player is determined, it is time to build the mission. Place the game dashboard with the mission side face up near the table. Then each player separates their Battle Deck by type—Advantage, Objective, and Secondary Objective— and shuffles each of their three decks, placing them near the Mission Dashboard.",
+      },
+      {
+        type: "illustration",
+        content: "examples/building-mission.png",
+        align: "center",
+        altText: "Display of the new Mission Dashboard.",
+      },
+      {
+        type: "text",
+        content:
+          "Place a token on the Mission Dashboard to indicate which player is the blue player. The blue player then chooses to reveal the top card of either their Objective Deck or Secondary Objective Deck, placing the revealed card in the designated space on the Mission Dashboard. Their opponent reveals the top card of either their Objective Deck or Secondary Objective Deck, whichever was not already placed, and places it on the designated space on the Mission Dashboard. Then each player reveals the top card of their Advantage Deck and places it on the designated space on their side of the dashboard.",
+      },
+      {
+        type: "text",
+        content:
+          "Then, starting with the blue player, players alternate modifying the mission. A player can modify the mission in the following ways:",
+      },
+      {
+        type: "structured_list",
+        content: [
+          "Reveal the top card of your Objective Deck, discard the current card on the objective space of the Mission Dashboard, and replace it with the newly revealed Objective Card.",
+          "Reveal the top card of your Secondary Objective Deck, discard the current card on the secondary objective space of the Mission Dashboard, and replace it with the newly revealed Secondary Objective Card.",
+          "Reveal the top card of your Advantage Deck, discard the current card on your advantage space on the Mission Dashboard, and replace it with the newly revealed Advantage Card.",
+          "Your opponent reveals the top card of their Advantage Deck, discards the current card on their advantage space on the Mission Dashboard, and replaces it with the newly revealed Advantage Card.",
+          "Move the token indicating the blue player to your side of the Dashboard. You are now the blue player.",
+          "Pass. There is no effect.",
+        ],
+      },
+      {
+        type: "text",
+        content:
+          "After each player has modified the mission twice, the mission is built. Before the first round, the players set up the mission in the following order:",
+      },
+      {
+        type: "structured_list_numbered",
+        content: [
+          "The blue player chooses one of the long edges of the battlefield as their side. The red player gets the opposite side. The player territory that shares an edge with a player’s side is that player’s friendly territory and the other player's territory is enemy territory.",
+          "Follow any setup instructions on the Objective Card.",
+          "Follow any setup instructions on the Secondary Objective Card.",
+          "Starting with the blue player, each player follows any setup instructions on their Advantage Card.",
+        ],
+      },
+      { type: "callout", callout_keyword: "empty_decks" },
+    ],
+  },
+  {
     keyword: "bounty",
     name: "Bounty",
     activation: "",
