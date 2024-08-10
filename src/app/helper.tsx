@@ -223,27 +223,29 @@ export default function Helper() {
       { id: "units", name: "Unit Keywords" },
     ];
     return (
-      <div className={styles.catalogFilterContainer}>
+      <>
         <h3 className={styles.filterHeader}>Filter keywords by:</h3>
-        {catalogs.map((catalog) => {
-          return (
-            <button
-              className={classNames(
-                styles.button,
-                activeCatalog === catalog.id ? styles.buttonActive : null
-              )}
-              key={catalog.id}
-              onClick={() =>
-                setActiveCatalog((current) =>
-                  current === catalog.id ? "alphabet" : catalog.id
-                )
-              }
-            >
-              {catalog.name}
-            </button>
-          );
-        })}
-      </div>
+        <div className={styles.catalogFilterContainer}>
+          {catalogs.map((catalog) => {
+            return (
+              <button
+                className={classNames(
+                  styles.button,
+                  activeCatalog === catalog.id ? styles.buttonActive : null
+                )}
+                key={catalog.id}
+                onClick={() =>
+                  setActiveCatalog((current) =>
+                    current === catalog.id ? "alphabet" : catalog.id
+                  )
+                }
+              >
+                {catalog.name}
+              </button>
+            );
+          })}
+        </div>
+      </>
     );
   };
 
