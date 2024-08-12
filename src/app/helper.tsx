@@ -13,6 +13,7 @@ import { sortKeyword } from "@/utils";
 import styles from "./helper.module.css";
 import classNames from "classnames";
 import { Changelog } from "./changelog";
+import { Share } from "./share";
 
 export default function Helper() {
   const modal = document.querySelector("[data-modal]") as HTMLDialogElement;
@@ -133,6 +134,7 @@ export default function Helper() {
                 modal={modal}
                 selectKeyword={selectKeyword}
               />
+              <Share />
             </div>
           )}
       </dialog>

@@ -26,6 +26,17 @@
   font-family: var(--font-family);
 }
 
+.shareContainer {
+  display: flex;
+  align-items: center;
+}
+
+.shareIcon {
+  padding-right: var(--flex-gap);
+  padding-left: var(--flex-gap);
+  height: 22px;
+}
+
 .subtitle {
   position: relative;
   rotate: -15deg;
@@ -357,6 +368,7 @@
 
 .relatedContainer {
   padding-top: 20px;
+  padding-bottom: 10px;
 }
 
 .relatedHeader {
