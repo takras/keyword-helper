@@ -6,8 +6,8 @@ import { Keyword } from "@/types";
 export const Share = ({ keyword }: { keyword: Keyword }) => {
   const [copied, setCopied] = useState(false);
   const shareData = {
-    title: `Legion Helper - ${keyword.name}`,
-    text: keyword.summary ?? keyword.name,
+    title: `Legion Helper`,
+    text: `Here's what Legion Helper says about "${keyword.name}"`,
     url: location.href,
   };
 
