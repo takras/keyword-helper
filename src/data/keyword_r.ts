@@ -163,7 +163,7 @@ export const KeywordsR: Keyword[] = [
       },
       {
         type: "callout",
-        callout_keyword: "courage_null",
+        callout_keyword: "null_courage",
       },
     ],
   },

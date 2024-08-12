@@ -12,6 +12,19 @@ type Log = {
 
 export const log: Log[] = [
   {
+    version: "1.0.6",
+    entries: [
+      {
+        type: "add",
+        description: "Add share-button for mobile users.",
+      },
+      {
+        type: "change",
+        description: "Updated font settings for Mac OS Safari.",
+      },
+    ],
+  },
+  {
     version: "1.0.5",
     entries: [
       {
@@ -21,7 +34,8 @@ export const log: Log[] = [
       },
       {
         type: "add",
-        description: "Add key to url path for sharing specific keyword rules.",
+        description:
+          "Add keyword to url path for easy sharing of specific keyword rules.",
       },
     ],
   },

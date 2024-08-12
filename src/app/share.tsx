@@ -1,25 +1,61 @@
+import { useState } from "react";
 import styles from "./helper.module.css";
+import classNames from "classnames";
+import { Keyword } from "@/types";
 
-export const Share = () => {
-  if (!navigator.canShare) {
-    return null;
-  }
-  const getShareIcon = () => {
-    if (/(A|a)ndroid/i.test(navigator.userAgent)) {
-      return "/images/share-android.svg";
+export const Share = ({ keyword }: { keyword: Keyword }) => {
+  const [copied, setCopied] = useState(false);
+  const shareData = {
+    title: `Legion Helper - ${keyword.name}`,
+    text: keyword.summary ?? keyword.name,
+    url: location.href,
+  };
+
+  const getShareImage = () => {
+    if (!navigator.canShare || !navigator.canShare(shareData)) {
+      return null;
     }
-    return "/images/share-ios.svg";
+    if (/(A|a)ndroid/i.test(navigator.userAgent)) {
+      return (
+        <img
+          className={styles.shareIcon}
+          src="/images/share-android.svg"
+          alt="Share"
+        />
+      );
+    }
+    return (
+      <img
+        className={styles.shareIcon}
+        src="/images/share-ios.svg"
+        alt="Share"
+      />
+    );
   };
 
   const sharePopup = () => {
-    navigator.share({ url: location.href });
+    if (!navigator.canShare || !navigator.canShare(shareData)) {
+      navigator.clipboard.writeText(location.href).then(() => setCopied(true));
+    }
+    navigator
+      .share(shareData)
+      .then(() => {})
+      .catch(() => {});
   };
   return (
     <div className={styles.shareContainer}>
-      <button className={styles.button} onClick={sharePopup}>
-        <span>Share</span>
-        <img className={styles.shareIcon} src={getShareIcon()} alt="Share" />
+      <button
+        className={classNames(styles.button, styles.shareButton)}
+        onClick={sharePopup}
+      >
+        <span>
+          {!navigator.canShare
+            ? "Copy sharable link to clipboard"
+            : "Share keyword"}
+        </span>
+        {getShareImage()}
       </button>
+      {copied ? "Link copied" : null}
     </div>
   );
 };

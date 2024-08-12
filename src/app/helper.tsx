@@ -10,10 +10,10 @@ import { RelatedKeywords } from "./related-keyword";
 import { RenderContent } from "./render-content";
 import { About } from "./about";
 import { sortKeyword } from "@/utils";
-import styles from "./helper.module.css";
-import classNames from "classnames";
 import { Changelog } from "./changelog";
 import { Share } from "./share";
+import styles from "./helper.module.css";
+import classNames from "classnames";
 
 export default function Helper() {
   const modal = document.querySelector("[data-modal]") as HTMLDialogElement;
@@ -134,7 +134,7 @@ export default function Helper() {
                 modal={modal}
                 selectKeyword={selectKeyword}
               />
-              <Share />
+              <Share keyword={selectedKeyword} />
             </div>
           )}
       </dialog>
@@ -363,7 +363,7 @@ export default function Helper() {
         <div id="donate-button-container" className={styles.donate}>
           <div id="donate-button"></div>
         </div>
-        <Script id="PayPal">{`PayPal.Donation.Button({
+        <Script id="PayPal">{`if(PayPal) {PayPal.Donation.Button({
 env:'production',
 hosted_button_id:'PCSQHJMWUZSWN',
 image: {
@@ -371,7 +371,7 @@ src:'https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif',
 alt:'Donate with PayPal button',
 title:'PayPal - The safer, easier way to pay online!',
 }
-}).render('#donate-button');`}</Script>
+}).render('#donate-button');}`}</Script>
 
         <a
           href="https://twitter.com/intent/tweet?screen_name=takras&ref_src=twsrc%5Etfw"

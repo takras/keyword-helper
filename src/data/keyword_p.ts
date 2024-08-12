@@ -27,8 +27,8 @@ export const KeywordsP: Keyword[] = [
   },
   {
     keyword: "panic_commander",
-    name: "Panic Check",
-    parents: ["p", "c"],
+    name: "Commander and Panic Check",
+    parents: ["c"],
     related_keywords: [
       "suppression",
       "activating_units",

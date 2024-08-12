@@ -173,4 +173,29 @@ export const KeywordsN: Keyword[] = [
       },
     ],
   },
+  {
+    keyword: "null_courage",
+    name: "Null Courage Value",
+    related_keywords: [
+      "panic",
+      "suppression",
+      "activating_units",
+      "rally",
+      "recover",
+      "courage",
+    ],
+    parents: ["n"],
+    descriptions: [
+      {
+        type: "text",
+        content:
+          "Some units have a null courage value, or “-”. These units can never gain or be assigned suppression tokens and cannot be suppressed or panicked. If a unit gains a null courage value through a special rule, it loses any suppression tokens it has, if any.",
+      },
+      {
+        type: "text",
+        content:
+          "If a {rank_commander} unit has a null courage value, then friendly units at {range_3} may choose to use that {rank_commander} unit’s courage value and, therefore, never panic, regardless of the number of suppression tokens they might have.",
+      },
+    ],
+  },
 ];
