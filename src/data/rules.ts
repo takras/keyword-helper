@@ -10,6 +10,7 @@ import { KeywordsG } from "./keyword_g";
 import { KeywordsH } from "./keyword_h";
 import { KeywordsI } from "./keyword_i";
 import { KeywordsJ } from "./keyword_j";
+import { KeywordsK } from "./keyword_k";
 import { KeywordsL } from "./keyword_l";
 import { KeywordsM } from "./keyword_m";
 import { KeywordsN } from "./keyword_n";
@@ -25,7 +26,7 @@ import { KeywordsW } from "./keyword_w";
 import { KeywordsOther } from "./keyword_other";
 
 export const rules: RulesDocument = {
-  helperVersion: "1.0.4",
+  helperVersion: "1.0.5",
   version: "2.6.0",
   validFrom: "2024-07-24T00:00:00Z",
   downloadUrl:
@@ -47,6 +48,7 @@ export const rules: RulesDocument = {
     ...KeywordsH,
     ...KeywordsI,
     ...KeywordsJ,
+    ...KeywordsK,
     ...KeywordsL,
     ...KeywordsM,
     ...KeywordsN,

@@ -6,7 +6,7 @@ export const KeywordsR: Keyword[] = [
     name: "Ram",
     parents: ["r", "weapons"],
     tag: "Weapon Keyword",
-    related_keywords: ["notched_bases", "attack", "move"],
+    related_keywords: ["notched_bases", "attack", "move", "keywords"],
     descriptions: [
       {
         type: "text",
@@ -19,6 +19,18 @@ export const KeywordsR: Keyword[] = [
           "The unit leader has a notched base and the unit performed at least one full standard move at its maximum speed during the same activation as an attack using Ram X.",
           "The unit leader has a small base and the unit performed at least one move during the same activation as an attack using Ram X.",
         ],
+      },
+    ],
+  },
+  {
+    keyword: "range",
+    name: "Range",
+    parents: ["r", "concepts"],
+    related_keywords: ["measurement"],
+    descriptions: [
+      {
+        type: "reference",
+        referenced_keyword: "measurement",
       },
     ],
   },
@@ -47,10 +59,10 @@ export const KeywordsR: Keyword[] = [
     ],
   },
   {
-    keyword: "ready",
+    keyword: "ready_x",
     name: "Ready X",
     parents: ["r"],
-    related_keywords: ["standby", "aim"],
+    related_keywords: ["standby", "aim", "keywords"],
     descriptions: [
       {
         type: "text",
@@ -60,10 +72,10 @@ export const KeywordsR: Keyword[] = [
     ],
   },
   {
-    keyword: "recharge",
+    keyword: "recharge_x",
     name: "Recharge X",
     parents: ["r"],
-    related_keywords: ["shield"],
+    related_keywords: ["shielded_x", "keywords"],
     descriptions: [
       {
         type: "text",
@@ -92,7 +104,7 @@ export const KeywordsR: Keyword[] = [
   },
   {
     keyword: "reinforcements",
-    name: "Recharge X",
+    name: "Reinforcements",
     parents: ["r"],
     related_keywords: ["move"],
     descriptions: [
@@ -126,11 +138,10 @@ export const KeywordsR: Keyword[] = [
     related_keywords: [
       "actions",
       "exhaust",
-      "recharge",
+      "recharge_x",
       "reconfigure",
       "suppression",
       "upgrade_card",
-      "commander",
       "courage",
     ],
     summary:
@@ -215,7 +226,7 @@ export const KeywordsR: Keyword[] = [
     keyword: "reliable_x",
     name: "Reliable X",
     parents: ["r"],
-    related_keywords: ["apply_dodge_cover", "activation_phase"],
+    related_keywords: ["apply_dodge_cover", "activation_phase", "keywords"],
     descriptions: [
       {
         type: "text",
@@ -238,10 +249,16 @@ export const KeywordsR: Keyword[] = [
     ],
   },
   {
-    keyword: "repair",
+    keyword: "repair_x",
     name: "Repair X",
     parents: ["r"],
-    related_keywords: ["card_action", "ion_x", "wounds", "resiliency"],
+    related_keywords: [
+      "card_action",
+      "ion_x",
+      "wounds",
+      "resiliency",
+      "keywords",
+    ],
     range: "range_1",
     descriptions: [
       {
@@ -318,7 +335,7 @@ export const KeywordsR: Keyword[] = [
     keyword: "restore",
     name: "Restore",
     parents: ["r"],
-    related_keywords: ["repair", "treat_x"],
+    related_keywords: ["repair_x", "treat_x"],
     descriptions: [
       {
         type: "text",

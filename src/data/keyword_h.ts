@@ -43,6 +43,7 @@ export const KeywordsH: Keyword[] = [
       "repulsor_vehicle",
       "terrain",
       "move",
+      "keywords",
     ],
     descriptions: [
       {

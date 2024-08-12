@@ -41,12 +41,27 @@ export const KeywordsOther: Keyword[] = [
       {
         type: "text",
         content:
-          "New setup phase is also added as a result of this. New types of objective tokens. New way to win the game. Pass tokens. More to come here.",
+          "New setup phase is also added as a result of this. New types of objective tokens. New way to win the game. Pass tokens",
+      },
+      {
+        type: "reference",
+        showOnlySummary: true,
+        referenced_keyword: "objective",
       },
       {
         type: "reference",
         showOnlySummary: true,
         referenced_keyword: "objective_cards",
+      },
+      {
+        type: "reference",
+        showOnlySummary: true,
+        referenced_keyword: "winning",
+      },
+      {
+        type: "reference",
+        showOnlySummary: true,
+        referenced_keyword: "pass",
       },
       {
         type: "text",
@@ -175,7 +190,7 @@ export const KeywordsOther: Keyword[] = [
       {
         type: "reference",
         showOnlySummary: true,
-        referenced_keyword: "guardian",
+        referenced_keyword: "guardian_x",
       },
       {
         type: "header",

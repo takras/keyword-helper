@@ -97,6 +97,10 @@
   font-size: xx-large;
 }
 
+.inlineHeader {
+  border-bottom: none;
+}
+
 .modalButtonRow {
   display: flex;
   justify-content: space-between;
@@ -520,4 +524,8 @@
   max-width: 2rem;
   margin-bottom: -2px;
   height: 1rem;
+}
+
+.inlineIconContainer {
+  white-space: pre;
 }

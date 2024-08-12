@@ -7,7 +7,7 @@ export const KeywordsM: Keyword[] = [
     activation: "",
     parents: ["m", "units"],
     tag: "Unit Keyword",
-    related_keywords: ["melee", "pierce"],
+    related_keywords: ["melee", "pierce_x"],
     descriptions: [
       {
         type: "text",
@@ -74,7 +74,7 @@ export const KeywordsM: Keyword[] = [
     activation: "",
     parents: ["m", "units"],
     tag: "Unit Keyword",
-    related_keywords: ["upgrade_card", "ready", "exhaust"],
+    related_keywords: ["upgrade_card", "ready_x", "exhaust"],
     descriptions: [
       {
         type: "text",
@@ -296,6 +296,19 @@ export const KeywordsM: Keyword[] = [
       },
     ],
   },
+  {
+    keyword: "melee_pierce",
+    name: "Melee Pierce",
+    activation: "",
+    parents: ["m", "concepts"],
+    related_keywords: ["melee", "attack"],
+    descriptions: [
+      {
+        type: "reference",
+        referenced_keyword: "immune_melee_pierce",
+      },
+    ],
+  },
 
   {
     keyword: "move",
@@ -314,7 +327,7 @@ export const KeywordsM: Keyword[] = [
       "open_terrain",
       "pivot",
       "reverse",
-      "speeder",
+      "speeder_x",
       "troopers",
       "unit",
       "vehicles",

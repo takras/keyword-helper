@@ -198,7 +198,7 @@ export const KeywordsO: Keyword[] = [
     parents: ["o", "units"],
     tag: "Unit Keyword",
     range: "range_3",
-    related_keywords: ["tokens", "dice"],
+    related_keywords: ["tokens", "dice", "keywords"],
     descriptions: [
       {
         type: "text",
@@ -284,11 +284,11 @@ export const KeywordsO: Keyword[] = [
     ],
   },
   {
-    keyword: "overrun",
+    keyword: "overrun_x",
     name: "Overrun X",
     parents: ["o", "weapons"],
     tag: "Weapon Keyword",
-    related_keywords: ["weapons", "move"],
+    related_keywords: ["weapons", "move", "keywords"],
     descriptions: [
       {
         type: "illustration",

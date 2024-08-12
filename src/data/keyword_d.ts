@@ -80,7 +80,7 @@ export const KeywordsD: Keyword[] = [
     activation: "",
     parents: ["d", "units"],
     tag: "Unit Keyword",
-    related_keywords: ["issue_order", "dodge"],
+    related_keywords: ["issue_order", "dodge", "keywords"],
     descriptions: [
       {
         type: "text",
@@ -96,9 +96,9 @@ export const KeywordsD: Keyword[] = [
     parents: ["d", "units"],
     tag: "Unit Keyword",
     related_keywords: [
-      "ranged_weapon",
+      "weapons",
       "attack",
-      "guardian",
+      "guardian_x",
       "wounds",
       "high_velocity",
     ],
@@ -127,7 +127,7 @@ export const KeywordsD: Keyword[] = [
     parents: ["d", "units"],
     tag: "Unit Keyword",
     range: "range_2",
-    related_keywords: ["rally"],
+    related_keywords: ["rally", "keywords"],
     descriptions: [
       {
         type: "text",
@@ -198,6 +198,7 @@ export const KeywordsD: Keyword[] = [
       "standby",
       "line_of_sight",
       "charge_token",
+      "keywords",
     ],
     descriptions: [
       {
@@ -347,7 +348,7 @@ export const KeywordsD: Keyword[] = [
     activation: "",
     parents: ["d", "units"],
     tag: "Unit Keyword",
-    related_keywords: ["issue_order", "suppression"],
+    related_keywords: ["issue_order", "suppression", "keywords"],
     descriptions: [
       {
         type: "text",
@@ -409,7 +410,7 @@ export const KeywordsD: Keyword[] = [
     activation: "",
     parents: ["d", "units"],
     tag: "Unit Keyword",
-    related_keywords: ["guardian"],
+    related_keywords: ["guardian_x"],
     descriptions: [
       {
         type: "text",
@@ -464,7 +465,7 @@ export const KeywordsD: Keyword[] = [
       "unit",
       "cover",
       "suppression",
-      "poison",
+      "poison_x",
     ],
     descriptions: [
       {
@@ -568,7 +569,7 @@ export const KeywordsD: Keyword[] = [
       "attack",
       "aim",
       "dodge",
-      "pierce",
+      "pierce_x",
       "apply_dodge_cover",
       "immune",
     ],

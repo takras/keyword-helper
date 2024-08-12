@@ -21,7 +21,7 @@ export const KeywordsG: Keyword[] = [
     activation: "",
     parents: ["g", "units"],
     tag: "Unit Keyword",
-    related_keywords: ["pivot", "shield", "end_phase"],
+    related_keywords: ["pivot", "shielded_x", "end_phase", "keywords"],
     descriptions: [
       {
         type: "text",
@@ -112,21 +112,22 @@ export const KeywordsG: Keyword[] = [
     ],
   },
   {
-    keyword: "guardian",
+    keyword: "guardian_x",
     name: "Guardian X",
     activation: "",
     parents: ["g", "units"],
     tag: "Unit Keyword",
     related_keywords: [
       "line_of_sight",
-      "ranged_weapon",
       "attack",
       "wounds",
       "suppression",
       "courage",
-      "pierce",
+      "pierce_x",
       "backup",
+      "weapons",
       "apply_dodge_cover",
+      "keywords",
     ],
     range: "range_1",
     descriptions: [
@@ -179,7 +180,7 @@ export const KeywordsG: Keyword[] = [
     activation: "",
     parents: ["g", "units"],
     tag: "Unit Keyword",
-    related_keywords: ["attack", "ranged_weapon"],
+    related_keywords: ["attack", "weapons"],
     descriptions: [
       {
         type: "text",

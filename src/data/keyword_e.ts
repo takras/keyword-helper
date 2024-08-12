@@ -55,7 +55,13 @@ export const KeywordsE: Keyword[] = [
     activation: "",
     parents: ["e", "units"],
     tag: "Unit Keyword",
-    related_keywords: ["wounds", "charge", "courage", "suppression"],
+    related_keywords: [
+      "wounds",
+      "charge",
+      "courage",
+      "suppression",
+      "keywords",
+    ],
     descriptions: [
       {
         type: "text",
@@ -107,8 +113,7 @@ export const KeywordsE: Keyword[] = [
     parents: ["e"],
     related_keywords: [
       "abilities",
-      "order_pool",
-      "victory_points",
+      "command_phase",
       "command_cards",
       "tokens",
       "promote",

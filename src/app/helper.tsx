@@ -46,6 +46,17 @@ export default function Helper() {
     }
   }, [modal, selectedKeywords]);
 
+  useEffect(() => {
+    const hash = window.location.hash.replace("#", "");
+    const keyword = rulesDocument.keywords.find(
+      (word) => word.keyword === hash
+    );
+
+    if (keyword) {
+      setSelectedKeywords([keyword]);
+    }
+  }, []);
+
   const getKey = (key: string) => {
     counter += 1;
     return `${key}_${counter}`;
@@ -55,10 +66,12 @@ export default function Helper() {
     if (keyword.keyword === "search_result_blank") {
       return null;
     }
+    location.href = `#${keyword.keyword}`;
     setSelectedKeywords((current) => current.concat(keyword));
   };
 
   const goToPreviousKeyword = (keyword: Keyword) => {
+    location.href = `#${keyword.keyword}`;
     setSelectedKeywords((current) => current.slice(0, -1));
   };
 
@@ -85,6 +98,7 @@ export default function Helper() {
             {!previousKeyword && <div />}
             <button
               onClick={() => {
+                location.href = "#";
                 modal.close();
                 setSelectedKeywords([]);
               }}
@@ -293,7 +307,7 @@ export default function Helper() {
             className={styles.button}
             onClick={() => window.open(rulesDocument.documentUrl, "_blank")}
           >
-            Official Document
+            Official Rules Documents
           </button>
           <button
             className={styles.button}

@@ -210,8 +210,9 @@ export const KeywordsB: Keyword[] = [
       "range",
       "attack",
       "line_of_sight",
-      "ranged_weapon",
+      "weapons",
       "gunslinger",
+      "keywords",
     ],
     tag: "Weapon Keyword",
     range: "range_1",
@@ -307,7 +308,7 @@ export const KeywordsB: Keyword[] = [
     activation: "",
     parents: ["b", "units"],
     tag: "Unit Keyword",
-    related_keywords: ["actions", "apply_dodge_cover"],
+    related_keywords: ["actions", "apply_dodge_cover", "keywords"],
     range: "range_2",
     summary: "",
     descriptions: [
@@ -315,6 +316,48 @@ export const KeywordsB: Keyword[] = [
         type: "text",
         content:
           "As a card action, a unit with the Bolster X keyword can choose up to X friendly units at {range_2} to each gain one surge token.",
+      },
+    ],
+  },
+  {
+    keyword: "building_a_command_hand",
+    name: "Building a Command Hand",
+    activation: "",
+    parents: ["b", "concepts"],
+    tag: "",
+    related_keywords: ["setup"],
+    descriptions: [
+      {
+        type: "text",
+        content:
+          "Each player prepares a command hand of exactly seven Command Cards. A player must include two 1 pip cards, two 2 pip cards, and two 3 pip cards, with no duplicates. Additionally, players must always include the 4 pip card “Standing Orders.”",
+      },
+      {
+        type: "text",
+        content:
+          "Some Command Cards require certain units. The required unit must be in a player’s army for these Command Cards to be included in a command hand. Occasionally, a Command Card requires a player to be fielding an army from a certain faction or Battle Force to be included in the command hand. These restrictions are printed on the Command Card.",
+      },
+      {
+        type: "illustration",
+        align: "center",
+        altText: "Command Card: Call me Captain",
+        content: "examples/building-command-deck.png",
+      },
+      { type: "callout", callout_keyword: "secret_information" },
+    ],
+  },
+  {
+    keyword: "building_a_battle_deck",
+    name: "Building a Battle Deck",
+    activation: "",
+    parents: ["b", "concepts"],
+    tag: "",
+    related_keywords: ["setup"],
+    descriptions: [
+      {
+        type: "text",
+        content:
+          "Each player must prepare a Battle Deck of nine cards before the game begins, consisting of exactly three Objective Cards, three Secondary Objective Cards, and three Advantage Cards with no duplicates. A player must also prepare the three Map Cards that pair with the Objective Cards in their Battle Deck.",
       },
     ],
   },

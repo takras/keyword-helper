@@ -141,7 +141,7 @@ export const KeywordsF: Keyword[] = [
     activation: "",
     parents: ["f", "units"],
     tag: "Unit Keyword",
-    related_keywords: ["upgrade_card", "army_building"],
+    related_keywords: ["upgrade_card", "army_building", "keywords"],
     descriptions: [
       {
         type: "text",

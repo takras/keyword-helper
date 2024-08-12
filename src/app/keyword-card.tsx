@@ -18,7 +18,11 @@ export const KeywordCard = ({
       {keyword.name}
       {keyword.range && (
         <span className={styles.buttonRange}>
-          {interpolateString(`[{${keyword.range}}]`, getKey(keyword.range))}
+          {interpolateString(
+            `[{${keyword.range}}]`,
+            getKey(keyword.range),
+            styles.inlineIconContainer
+          )}
         </span>
       )}
     </button>

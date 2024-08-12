@@ -12,6 +12,20 @@ type Log = {
 
 export const log: Log[] = [
   {
+    version: "1.0.5",
+    entries: [
+      {
+        type: "add",
+        description:
+          "New keywords: Building Command Hand, Command Cards, Impassable Terrain, Keywords, Melee Pierce, Range, Secret Information, Tokens, Wounds.",
+      },
+      {
+        type: "add",
+        description: "Add key to url path for sharing specific keyword rules.",
+      },
+    ],
+  },
+  {
     version: "1.0.4",
     entries: [
       {

@@ -248,6 +248,38 @@ export const KeywordsC: Keyword[] = [
     ],
   },
   {
+    keyword: "command_cards",
+    name: "Command Cards",
+    activation: "",
+    parents: ["c", "concepts"],
+    tag: "",
+    related_keywords: ["move", "miniature", "terrain"],
+    descriptions: [
+      {
+        type: "text",
+        content:
+          "Command Cards form a player’s command hand and are used in the Command Phase to determine player priority, issue orders to units, and grant powerful game effects.",
+      },
+      {
+        type: "illustration",
+        align: "center",
+        altText: "Command cards: Hold ay any Cost, and I Make the Rules Now.",
+        content: "examples/command-cards.png",
+      },
+      {
+        type: "structured_list_numbered",
+        content: [
+          "<strong>Card Title:</strong> The title of the Command Card.",
+          "<strong>Pips:</strong> The number of pips this Command Card has. Pips are used in Army Building and when determining player priority.",
+          "<strong>Restriction:</strong> Some Command Cards are restricted to a certain commander, faction, unit, or Battle Force, which is listed here.",
+          "<strong>Orders:</strong> The units the nominated commander can issue orders to with this card.",
+          "<strong>Effect:</strong> The effect of the Command Card.",
+          "<strong>Weapon:</strong> Some Command Cards allow miniatures to use a weapon on the Command Card.",
+        ],
+      },
+    ],
+  },
+  {
     keyword: "courage",
     name: "Courage",
     activation: "",
@@ -271,7 +303,7 @@ export const KeywordsC: Keyword[] = [
     name: "Compulsory Move",
     activation: "",
     parents: ["c"],
-    related_keywords: ["speeder", "move"],
+    related_keywords: ["speeder_x", "move"],
     descriptions: [
       {
         type: "text",
@@ -353,7 +385,7 @@ export const KeywordsC: Keyword[] = [
     name: "Critical X",
     parents: ["c", "weapons"],
     tag: "Weapon Keyword",
-    related_keywords: ["apply_dodge_cover", "attack"],
+    related_keywords: ["apply_dodge_cover", "attack", "keywords"],
     descriptions: [
       {
         type: "text",
@@ -400,7 +432,7 @@ export const KeywordsC: Keyword[] = [
       "activating_units",
       "issue_order",
       "promote",
-      "order_pool",
+      "command_phase",
     ],
     descriptions: [
       {
@@ -550,7 +582,12 @@ export const KeywordsC: Keyword[] = [
     activation: "",
     parents: ["c", "units"],
     tag: "Unit Keyword",
-    related_keywords: ["command_cards", "effects"],
+    related_keywords: [
+      "command_cards",
+      "card_effects",
+      "game_effects",
+      "keywords",
+    ],
     descriptions: [
       {
         type: "text",
@@ -600,7 +637,7 @@ export const KeywordsC: Keyword[] = [
     activation: "",
     parents: ["c", "units"],
     tag: "Unit Keyword",
-    related_keywords: ["issue_order", "order_pool"],
+    related_keywords: ["issue_order", "command_phase"],
     range: "range_1",
     descriptions: [
       {
@@ -645,7 +682,7 @@ export const KeywordsC: Keyword[] = [
     activation: "",
     parents: ["c", "units"],
     tag: "Unit Keyword",
-    related_keywords: ["attack", "ranged_weapon", "apply_dodge_cover"],
+    related_keywords: ["attack", "weapons", "apply_dodge_cover", "keywords"],
     descriptions: [
       {
         type: "text",

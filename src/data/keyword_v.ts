@@ -31,7 +31,7 @@ export const KeywordsV: Keyword[] = [
     name: "Versatile",
     parents: ["v", "weapons"],
     tag: "Weapon Keyword",
-    related_keywords: ["attack", "ranged_weapon", "engaged", "melee"],
+    related_keywords: ["attack", "weapons", "engaged", "melee"],
     descriptions: [
       {
         type: "text",

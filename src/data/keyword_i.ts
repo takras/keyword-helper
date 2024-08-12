@@ -24,12 +24,12 @@ export const KeywordsI: Keyword[] = [
     parents: ["i", "units"],
     tag: "Unit Keyword",
     related_keywords: [
-      "pierce",
+      "pierce_x",
       "blast",
-      "enemy_effects",
+      "card_effects",
+      "game_effects",
       "melee",
-      "pierce",
-      "range_1_weapons",
+      "weapons",
       "melee_pierce",
     ],
     descriptions: [
@@ -84,7 +84,7 @@ export const KeywordsI: Keyword[] = [
     activation: "",
     parents: ["units"],
     tag: "Unit Keyword",
-    related_keywords: ["immune", "enemy_effects"],
+    related_keywords: ["immune", "card_effects", "game_effects"],
     descriptions: [
       {
         type: "text",
@@ -114,7 +114,7 @@ export const KeywordsI: Keyword[] = [
     activation: "",
     parents: ["units"],
     tag: "Unit Keyword",
-    related_keywords: ["immune", "melee", "pierce"],
+    related_keywords: ["immune", "melee", "pierce_x"],
     descriptions: [
       {
         type: "text",
@@ -134,7 +134,7 @@ export const KeywordsI: Keyword[] = [
     activation: "",
     parents: ["units"],
     tag: "Unit Keyword",
-    related_keywords: ["immune", "pierce"],
+    related_keywords: ["immune", "pierce_x"],
     descriptions: [
       {
         type: "text",
@@ -168,7 +168,7 @@ export const KeywordsI: Keyword[] = [
     name: "Immobilize X",
     parents: ["i", "weapons"],
     tag: "Weapon Keyword",
-    related_keywords: ["wounds", "move"],
+    related_keywords: ["wounds", "move", "keywords"],
     descriptions: [
       {
         type: "illustration",
@@ -205,17 +205,17 @@ export const KeywordsI: Keyword[] = [
       {
         type: "text",
         content:
-          "During an attack, if the attack pool contains weapons with the Immune: Deflect keyword, the attacking unit cannot suffer wounds from the Deflect keyword.",
+          "During an attack, if the attack pool contains weapons with the {keyword:Immune: Deflect} keyword, the attacking unit cannot suffer wounds from the {keyword:Deflect} keyword.",
       },
     ],
   },
   {
-    keyword: "impact",
+    keyword: "impact_x",
     name: "Impact X",
     activation: "",
     parents: ["weapons", "i"],
     tag: "Weapon Keyword",
-    related_keywords: ["armor"],
+    related_keywords: ["armor", "keywords"],
     descriptions: [
       {
         type: "text",
@@ -225,12 +225,25 @@ export const KeywordsI: Keyword[] = [
     ],
   },
   {
+    keyword: "impassable_terrain",
+    name: "Impassable Terrain",
+    activation: "",
+    parents: ["i", "concepts"],
+    related_keywords: ["terrain", "move"],
+    descriptions: [
+      {
+        type: "reference",
+        referenced_keyword: "terrain_movement",
+      },
+    ],
+  },
+  {
     keyword: "impervious",
     name: "Impervious",
     activation: "",
     parents: ["i", "units"],
     tag: "Unit Keyword",
-    related_keywords: ["attack", "pierce"],
+    related_keywords: ["attack", "pierce_x"],
     descriptions: [
       {
         type: "text",
@@ -289,12 +302,12 @@ export const KeywordsI: Keyword[] = [
     ],
   },
   {
-    keyword: "independent",
+    keyword: "independent_x",
     name: "Independent: Token X/Action",
     activation: "",
     parents: ["i", "units"],
     tag: "Unit Keyword",
-    related_keywords: ["tokens", "free_card_action"],
+    related_keywords: ["tokens", "free_card_action", "keywords"],
     descriptions: [
       {
         type: "text",
@@ -339,7 +352,7 @@ export const KeywordsI: Keyword[] = [
     activation: "",
     parents: ["i", "units"],
     tag: "Unit Keyword",
-    related_keywords: ["actions"],
+    related_keywords: ["actions", "keywords"],
     range: "range_2",
     descriptions: [
       {
@@ -371,7 +384,7 @@ export const KeywordsI: Keyword[] = [
     activation: "",
     parents: ["weapons", "i"],
     tag: "Weapon Keyword",
-    related_keywords: ["vehicles", "droid_trooper", "shield"],
+    related_keywords: ["vehicles", "droid_trooper", "shielded_x", "keywords"],
     descriptions: [
       {
         type: "illustration",

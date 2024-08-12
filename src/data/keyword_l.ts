@@ -18,12 +18,12 @@ export const KeywordsL: Keyword[] = [
     ],
   },
   {
-    keyword: "lethal",
+    keyword: "lethal_x",
     name: "Lethal X",
     activation: "",
     parents: ["l", "weapons"],
     tag: "Weapon Keyword",
-    related_keywords: ["attack", "aim"],
+    related_keywords: ["attack", "aim", "keywords"],
     descriptions: [
       {
         type: "text",

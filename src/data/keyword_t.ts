@@ -5,7 +5,7 @@ export const KeywordsT: Keyword[] = [
     keyword: "tactical_x",
     name: "Tactical X",
     parents: ["t", "units"],
-    related_keywords: ["aim", "move"],
+    related_keywords: ["aim", "move", "keywords"],
     descriptions: [
       {
         type: "text",
@@ -19,7 +19,7 @@ export const KeywordsT: Keyword[] = [
     name: "Take Cover X",
     parents: ["t", "units"],
     range: "range_2",
-    related_keywords: ["dodge", "card_action"],
+    related_keywords: ["dodge", "card_action", "keywords"],
     descriptions: [
       {
         type: "text",
@@ -217,7 +217,7 @@ export const KeywordsT: Keyword[] = [
     keyword: "target_x",
     name: "Target X",
     parents: ["t", "units"],
-    related_keywords: ["aim", "issue_order"],
+    related_keywords: ["aim", "issue_order", "keywords"],
     descriptions: [
       {
         type: "text",
@@ -264,6 +264,331 @@ export const KeywordsT: Keyword[] = [
     ],
   },
   {
+    keyword: "tokens",
+    name: "Tokens",
+    parents: ["t", "concepts"],
+    related_keywords: [
+      "aim",
+      "dodge",
+      "standby",
+      "smoke_x",
+      "suppression",
+      "panic",
+      "wounds",
+      "resiliency",
+      "issue_order",
+      "field_commander",
+      "ion_x",
+    ],
+    descriptions: [
+      {
+        type: "text",
+        content:
+          "<i>Star Wars</i>: Legion uses a variety of tokens to track game effects and rules. Below is a list of all the different types of tokens and a summary of their effects.",
+      },
+      { type: "header", content: "Aim" },
+      {
+        type: "illustration",
+        content: "tokens/aim.png",
+        align: "center",
+        width: "80",
+        altText: "Green token with Crosshair.",
+      },
+      {
+        type: "text",
+        content:
+          "Used when attacking to reroll up to two attack dice. Aim tokens are green tokens.",
+      },
+
+      { type: "header", content: "Dodge" },
+      {
+        type: "illustration",
+        content: "tokens/dodge.png",
+        align: "center",
+        width: "80",
+        altText: "Green hexagon with white center.",
+      },
+      {
+        type: "text",
+        content:
+          "Used when defending to cancel incoming hit results. Dodge tokens are green tokens.",
+      },
+
+      { type: "header", content: "Surge" },
+      {
+        type: "illustration",
+        content: "tokens/surge.png",
+        align: "center",
+        width: "80",
+        altText: "Diamond shaped green token with line through it.",
+      },
+      {
+        type: "text",
+        content:
+          "Used when attacking or defending to convert surges to hits or blocks. Surge tokens are green tokens.",
+      },
+
+      { type: "header", content: "Standby" },
+      {
+        type: "illustration",
+        content: "tokens/standby.png",
+        align: "center",
+        width: "80",
+        altText: "Hexagon shaped grey token green crosshair inside.",
+      },
+      {
+        type: "text",
+        content: "Used to move or attack after an enemy performs an action.",
+      },
+
+      { type: "header", content: "Observation" },
+      {
+        type: "illustration",
+        content: "tokens/observation.png",
+        align: "center",
+        width: "80",
+        altText: "Circle shaped with three notches.",
+      },
+      {
+        type: "text",
+        content: "Used when attacking to reroll one attack die.",
+      },
+
+      { type: "header", content: "Smoke" },
+      {
+        type: "illustration",
+        content: "tokens/smoke.png",
+        align: "center",
+        width: "80",
+        altText: "White circle with green hexagon inside.",
+      },
+      {
+        type: "text",
+        content: "Improves cover of nearby units.",
+      },
+
+      { type: "header", content: "Vehicle Damage" },
+      {
+        type: "illustration",
+        content: "tokens/damage.png",
+        align: "center",
+        width: "80",
+        altText: "Oblong hexagonal, black token with orange cog inside.",
+      },
+      {
+        type: "text",
+        content:
+          "Used to track the penalties suffered by a vehicle that has sustained significant damage.",
+      },
+
+      { type: "header", content: "Order" },
+      {
+        type: "illustration",
+        content: "tokens/order.png",
+        align: "center",
+        width: "80",
+        altText: "Round tokens with faction on one side and rank on the other.",
+      },
+      {
+        type: "text",
+        content:
+          "Used in the Command Phase to issue orders to units and to form the order pool. Used in the Activation Phase to track which units have activated.",
+      },
+
+      { type: "header", content: "Commander" },
+      {
+        type: "illustration",
+        content: "tokens/commander.png",
+        align: "center",
+        width: "80",
+        altText: "Pentagon shaped with a commander rank icon inside.",
+      },
+      {
+        type: "text",
+        content:
+          "Used to track who is the active commander and when a commander is field promoted.",
+      },
+
+      { type: "header", content: "Ion" },
+      {
+        type: "illustration",
+        content: "tokens/ion.png",
+        align: "center",
+        width: "80",
+        altText: "Triangle shaped, blue with lightning inside.",
+      },
+      {
+        type: "text",
+        content: "Used to track the effects of the {keyword:Ion} keyword.",
+      },
+
+      { type: "header", content: "Poison" },
+      {
+        type: "illustration",
+        content: "tokens/poison.png",
+        align: "center",
+        width: "80",
+        altText: "Triangle shaped, yellow with bio-hazard icon inside.",
+      },
+      {
+        type: "text",
+        content: "Used to track the effects of the {keyword:Poison} keyword.",
+      },
+
+      { type: "header", content: "Immobilize" },
+      {
+        type: "illustration",
+        content: "tokens/immobilize.png",
+        align: "center",
+        width: "80",
+        altText: "Triangle shaped, red with white icon inside.",
+      },
+      {
+        type: "text",
+        content:
+          "Used to track the effects of the {keyword:Immobilize} keyword.",
+      },
+
+      { type: "header", content: "Shield" },
+      {
+        type: "illustration",
+        content: "tokens/shield.png",
+        align: "center",
+        width: "80",
+        altText: "Circle blue, two sided, one with dark center.",
+      },
+      {
+        type: "text",
+        content: "Used to track the effects of the {keyword:Shielded} keyword.",
+      },
+
+      { type: "header", content: "Charge" },
+      {
+        type: "illustration",
+        content: "tokens/charge.png",
+        align: "center",
+        width: "80",
+        altText: "Circle with red or blue border, a bomb illustration inside.",
+      },
+      {
+        type: "text",
+        content:
+          "Used by certain upgrade and Command Cards in conjunction with the {keyword:Arm} keyword.",
+      },
+
+      { type: "header", content: "Wheel" },
+      {
+        type: "illustration",
+        content: "tokens/wheel-mode.png",
+        align: "center",
+        width: "80",
+        altText: "Circle orange cymbols inside.",
+      },
+      {
+        type: "text",
+        content:
+          "Used to track the effects of the {keyword:Wheel Mode} keyword.",
+      },
+
+      { type: "header", content: "Incognito" },
+      {
+        type: "illustration",
+        content: "tokens/incognito.png",
+        align: "center",
+        width: "80",
+        altText:
+          "Circular shaped with an orange illustration inside representing their unit.",
+      },
+      {
+        type: "text",
+        content:
+          "Used to track the effects of the {keyword:Incognito} keyword.",
+      },
+
+      { type: "header", content: "Bane" },
+      {
+        type: "illustration",
+        content: "tokens/cad-here-i-am.png",
+        align: "center",
+        width: "80",
+        altText: "Round with two guns on front side.",
+      },
+      {
+        type: "illustration",
+        content: "tokens/cad-kablamo.png",
+        align: "center",
+        width: "80",
+        altText: "Round with two guns on front side.",
+      },
+      {
+        type: "illustration",
+        content: "tokens/cad-smoke.png",
+        align: "center",
+        width: "80",
+        altText: "Round with two guns on front side.",
+      },
+      {
+        type: "text",
+        content: "Used by Cad Bane and his Command Cards.",
+      },
+
+      { type: "header", content: "Graffiti" },
+      {
+        type: "illustration",
+        content: "tokens/graffiti.png",
+        align: "center",
+        width: "80",
+        altText: "Round with illustration of a bird logo.",
+      },
+      {
+        type: "text",
+        content: "Used by Sabine Wren and her Command Cards.",
+      },
+
+      { type: "header", content: "POI" },
+      {
+        type: "illustration",
+        content: "tokens/poi.png",
+        align: "center",
+        width: "80",
+        altText: "Round and red and looking like a Pokemon ball.",
+      },
+      {
+        type: "text",
+        content:
+          "A 2-inch token used to mark the location of point-of-interest objectives on the battlefield.",
+      },
+
+      { type: "header", content: "Asset" },
+      {
+        type: "illustration",
+        content: "tokens/asset.png",
+        align: "center",
+        width: "80",
+        altText: "Round with a red or black dot in center.",
+      },
+      {
+        type: "text",
+        content: "A 1-inch token used to represent asset objectives.",
+      },
+
+      { type: "header", content: "Advantage" },
+      {
+        type: "illustration",
+        content: "tokens/advantage.png",
+        align: "center",
+        width: "80",
+        altText:
+          "Round with a green border and zero to several red dots inside.",
+      },
+      {
+        type: "text",
+        content:
+          "A 1-inch token used to represent the effects of Advantage Cards. ey are also used to form the pass pool.",
+      },
+    ],
+  },
+  {
     keyword: "tow_cable",
     name: "Tow Cable",
     parents: ["t", "weapons"],
@@ -302,7 +627,13 @@ export const KeywordsT: Keyword[] = [
     parents: ["t", "units"],
     range: "range_1",
     tag: "Upgrade Keyword",
-    related_keywords: ["troopers", "line_of_sight", "wounds", "poison"],
+    related_keywords: [
+      "troopers",
+      "line_of_sight",
+      "wounds",
+      "poison_x",
+      "keywords",
+    ],
     descriptions: [
       {
         type: "text",
@@ -336,7 +667,7 @@ export const KeywordsT: Keyword[] = [
       "creature_trooper",
       "droid_trooper",
       "emplacement_trooper",
-      "woookie_trooper",
+      "wookiee_trooper",
     ],
     descriptions: [
       {
@@ -363,7 +694,7 @@ export const KeywordsT: Keyword[] = [
       { type: "reference", referenced_keyword: "creature_trooper" },
       { type: "reference", referenced_keyword: "droid_trooper" },
       { type: "reference", referenced_keyword: "emplacement_trooper" },
-      { type: "reference", referenced_keyword: "woookie_trooper" },
+      { type: "reference", referenced_keyword: "wookiee_trooper" },
     ],
   },
 ];

@@ -15,8 +15,8 @@ export const KeywordsW: Keyword[] = [
       "aim",
       "dodge",
       "keywords",
-      "impact",
-      "pierce",
+      "impact_x",
+      "pierce_x",
       "upgrade_card",
       "command_cards",
       "melee",
@@ -51,10 +51,10 @@ export const KeywordsW: Keyword[] = [
     ],
   },
   {
-    keyword: "weak_points",
+    keyword: "weak_point_x",
     name: "Weak Point X",
     parents: ["w", "units"],
-    related_keywords: ["attack", "impact"],
+    related_keywords: ["attack", "impact_x", "keywords"],
     descriptions: [
       {
         type: "text",
@@ -128,7 +128,7 @@ export const KeywordsW: Keyword[] = [
     keyword: "winning",
     name: "Winning the Game",
     parents: ["w", "concepts"],
-    related_keywords: ["victory_points"],
+    related_keywords: [],
     descriptions: [
       {
         type: "text",
@@ -159,7 +159,7 @@ export const KeywordsW: Keyword[] = [
     ],
   },
   {
-    keyword: "woookie_trooper",
+    keyword: "wookiee_trooper",
     name: "Wookiee Trooper",
     parents: ["w"],
     related_keywords: ["troopers"],
@@ -169,6 +169,18 @@ export const KeywordsW: Keyword[] = [
         content: [
           "Wookiee troopers have no additional special rules, other than being referenced by their unit type for certain rules and abilities.",
         ],
+      },
+    ],
+  },
+  {
+    keyword: "wounds",
+    name: "Wound Tokens",
+    parents: ["w", "concepts"],
+    related_keywords: ["resiliency", "suffering_wounds"],
+    descriptions: [
+      {
+        type: "reference",
+        referenced_keyword: "suffering_wounds",
       },
     ],
   },

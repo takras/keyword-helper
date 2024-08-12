@@ -55,7 +55,7 @@ export const KeywordsP: Keyword[] = [
     keyword: "pass",
     name: "Pass Pool",
     parents: ["p"],
-    related_keywords: ["order_pool", "activation_phase"],
+    related_keywords: ["command_phase", "activation_phase"],
     descriptions: [
       {
         type: "illustration",
@@ -100,11 +100,11 @@ export const KeywordsP: Keyword[] = [
     ],
   },
   {
-    keyword: "pierce",
+    keyword: "pierce_x",
     name: "Pierce X",
     parents: ["p", "weapons"],
     tag: "Weapon Keyword",
-    related_keywords: ["weapons", "attack", "guardian"],
+    related_keywords: ["weapons", "attack", "guardian_x", "keywords"],
     descriptions: [
       {
         type: "text",
@@ -183,10 +183,10 @@ export const KeywordsP: Keyword[] = [
     ],
   },
   {
-    keyword: "poison",
+    keyword: "poison_x",
     name: "Poison X",
     activation: "",
-    parents: ["weapons", "p"],
+    parents: ["weapons", "p", "keywords"],
     tag: "Weapon Keyword",
     related_keywords: ["wounds", "tokens", "troopers", "droid_trooper"],
     descriptions: [
@@ -214,7 +214,7 @@ export const KeywordsP: Keyword[] = [
     keyword: "precise_x",
     name: "Precise X",
     parents: ["p"],
-    related_keywords: ["aim"],
+    related_keywords: ["aim", "keywords"],
     descriptions: [
       {
         type: "text",
@@ -271,13 +271,7 @@ export const KeywordsP: Keyword[] = [
     keyword: "promote",
     name: "Promote",
     parents: ["p"],
-    related_keywords: [
-      "miniature",
-      "unit",
-      "commander",
-      "field_commander",
-      "order_pool",
-    ],
+    related_keywords: ["miniature", "unit", "field_commander", "command_phase"],
     descriptions: [
       {
         type: "text",

@@ -99,11 +99,12 @@ export const KeywordsA: Keyword[] = [
     name: "Activation Phase",
     parents: ["a", "concepts", "cohesion"],
     related_keywords: [
-      "order_pool",
+      "command_phase",
       "pass",
       "rally",
       "actions",
-      "effects",
+      "card_effects",
+      "game_effects",
       "abilities",
       "cohesion",
     ],
@@ -175,7 +176,7 @@ export const KeywordsA: Keyword[] = [
     keyword: "activating_units",
     name: "Activating a Unit",
     parents: ["a"],
-    related_keywords: ["rally", "actions", "order_pool"],
+    related_keywords: ["rally", "actions", "command_phase"],
     summary:
       "When a unit is chosen to activate, it first attempts to rally, and then the unit may perform actions.",
     descriptions: [
@@ -252,7 +253,7 @@ export const KeywordsA: Keyword[] = [
     activation: "",
     parents: ["a", "units"],
     tag: "Unit Keyword",
-    related_keywords: ["move", "dodge"],
+    related_keywords: ["move", "dodge", "keywords"],
     summary: "",
     descriptions: [
       {
@@ -325,7 +326,7 @@ export const KeywordsA: Keyword[] = [
     parents: ["a"],
     summary:
       "A unit that performs an aim action gains an aim token which it can use to reroll dice during attacks.",
-    related_keywords: ["actions", "attack", "dice", "lethal"],
+    related_keywords: ["actions", "attack", "dice", "lethal_x"],
     descriptions: [
       {
         type: "illustration",
@@ -455,7 +456,7 @@ export const KeywordsA: Keyword[] = [
   {
     keyword: "arm_x",
     name: "Arm X",
-    related_keywords: ["range"],
+    related_keywords: ["range", "keywords"],
     range: "range_1",
     tag: "Weapon Keyword",
     parents: ["a", "weapons"],
@@ -479,7 +480,7 @@ export const KeywordsA: Keyword[] = [
     activation: "",
     parents: ["a", "units"],
     tag: "Unit Keyword",
-    related_keywords: ["attack", "cancel", "impact", "weak_points"],
+    related_keywords: ["attack", "cancel", "impact_x", "weak_point_x"],
     summary: "",
     descriptions: [
       {
@@ -495,7 +496,13 @@ export const KeywordsA: Keyword[] = [
     activation: "",
     parents: ["a", "units"],
     tag: "Unit Keyword",
-    related_keywords: ["attack", "cancel", "impact", "weak_points"],
+    related_keywords: [
+      "attack",
+      "cancel",
+      "impact_x",
+      "weak_point_x",
+      "keywords",
+    ],
     summary: "",
     descriptions: [
       {
@@ -528,9 +535,20 @@ export const KeywordsA: Keyword[] = [
         content:
           "Each army is made up of a collection of miniatures organized into units. These units may further be equipped and customized with Upgrade Cards. Each unit and upgrade have a point cost printed on the corresponding card. The total point cost of all units and Upgrade Cards in an army cannot exceed 1,000 points. An updated list containing the points for all Unit and Upgrade cards can be found at <a href='https://www.atomicmassgames.com/swlegiondocs/' target='_blank'>atomicmassgames.com</a>.",
       },
-      { type: "reference", referenced_keyword: "ranks" },
-      { type: "reference", referenced_keyword: "upgrade_card" },
-      { type: "reference", referenced_keyword: "exhaust" },
+      { type: "reference", showOnlySummary: true, referenced_keyword: "ranks" },
+      {
+        type: "reference",
+        referenced_keyword: "upgrade_card",
+      },
+      {
+        type: "reference",
+        referenced_keyword: "exhaust",
+      },
+      {
+        type: "reference",
+        referenced_keyword: "faction",
+      },
+      { type: "reference", referenced_keyword: "building_a_command_hand" },
     ],
   },
   {
@@ -539,7 +557,7 @@ export const KeywordsA: Keyword[] = [
     activation: "",
     parents: ["a", "units"],
     tag: "Unit Keyword",
-    related_keywords: ["attack", "miniature", "weapons"],
+    related_keywords: ["attack", "miniature", "weapons", "keywords"],
     summary: "",
     descriptions: [
       {
@@ -645,14 +663,13 @@ export const KeywordsA: Keyword[] = [
       "backup",
       "attack",
       "dice",
-      "lethal",
+      "lethal_x",
       "cover",
       "dodge",
-      "firing_arcs",
+      "fixed",
+      "weak_point_x",
       "melee",
-      "melee_weapon",
       "range",
-      "ranged_weapon",
       "apply_dodge_cover",
       "suppression",
       "silhouettes",

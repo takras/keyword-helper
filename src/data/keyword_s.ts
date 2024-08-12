@@ -55,7 +55,7 @@ export const KeywordsS: Keyword[] = [
     keyword: "scout_x",
     name: "Scout X",
     parents: ["s"],
-    related_keywords: ["move", "terrain"],
+    related_keywords: ["move", "terrain", "keywords"],
     descriptions: [
       {
         type: "text",
@@ -83,10 +83,23 @@ export const KeywordsS: Keyword[] = [
     ],
   },
   {
+    keyword: "secret_information",
+    name: "Secret Information",
+    parents: ["s"],
+    related_keywords: ["command_cards"],
+    descriptions: [
+      {
+        type: "text",
+        content:
+          "The contents of a player’s command hand are secret information and are never shared with their opponent. However, the number of cards in a player’s command hand is not secret, nor is the contents of a player’s discard pile. Non-secret information must be freely shared between players at all times.",
+      },
+    ],
+  },
+  {
     keyword: "secret_mission",
     name: "Secret Mission",
     parents: ["s"],
-    related_keywords: ["tokens", "victory_points"],
+    related_keywords: ["tokens"],
     descriptions: [
       {
         type: "text",
@@ -105,7 +118,7 @@ export const KeywordsS: Keyword[] = [
     name: "Secondary Objective Cards",
     activation: "",
     parents: ["s", "concepts"],
-    related_keywords: ["setup", "card_effects", "objective", "victory_points"],
+    related_keywords: ["setup", "card_effects", "objective"],
     descriptions: [
       {
         type: "text",
@@ -132,17 +145,18 @@ export const KeywordsS: Keyword[] = [
     ],
   },
   {
-    keyword: "self_destruct",
+    keyword: "self_destruct_x",
     name: "Self-Destruct X",
     parents: ["s", "weapons"],
     tag: "Weapon Keyword",
     range: "range_1",
     related_keywords: [
       "melee",
-      "ranged_weapon",
+      "weapons",
       "wounds",
       "free_card_action",
       "transport",
+      "keywords",
     ],
     descriptions: [
       {
@@ -227,8 +241,24 @@ export const KeywordsS: Keyword[] = [
           },
         ],
       },
-      { type: "reference", referenced_keyword: "army_building" },
-      { type: "reference", referenced_keyword: "battlefield" },
+      {
+        type: "header",
+        content: "Build an Army, a Command Hand, and a Battle Deck",
+      },
+      {
+        type: "reference",
+        showOnlySummary: true,
+        referenced_keyword: "army_building",
+      },
+      {
+        type: "header",
+        content: "Establish the Battlefield and Gather Components",
+      },
+      {
+        type: "reference",
+        showOnlySummary: true,
+        referenced_keyword: "battlefield",
+      },
       { type: "reference", referenced_keyword: "declare_terrain" },
       { type: "reference", referenced_keyword: "determine_blue_player" },
       { type: "reference", referenced_keyword: "building_a_mission" },
@@ -245,7 +275,7 @@ export const KeywordsS: Keyword[] = [
     keyword: "sharpshooter_x",
     name: "Sharpshooter",
     parents: ["s"],
-    related_keywords: ["cover"],
+    related_keywords: ["cover", "keywords"],
     descriptions: [
       {
         type: "text",
@@ -267,10 +297,10 @@ export const KeywordsS: Keyword[] = [
     ],
   },
   {
-    keyword: "shield",
+    keyword: "shielded_x",
     name: "Shielded X",
     parents: ["s"],
-    related_keywords: ["ranged_weapon", "attack"],
+    related_keywords: ["weapons", "attack", "keywords"],
     descriptions: [
       {
         type: "illustration",
@@ -300,7 +330,7 @@ export const KeywordsS: Keyword[] = [
     keyword: "sidearm",
     name: "Sidearm",
     parents: ["s"],
-    related_keywords: ["weapons", "upgrade_card", "melee", "ranged_weapon"],
+    related_keywords: ["weapons", "upgrade_card", "melee"],
     tag: "Upgrade Keyword",
     descriptions: [
       {
@@ -335,7 +365,7 @@ export const KeywordsS: Keyword[] = [
     name: "Small",
     parents: ["s"],
     related_keywords: [
-      "ranged_weapon",
+      "weapons",
       "attack",
       "area_weapon",
       "line_of_sight",
@@ -355,7 +385,7 @@ export const KeywordsS: Keyword[] = [
     name: "Smoke X",
     parents: ["s"],
     range: "range_1",
-    related_keywords: ["actions", "smoke_tokens"],
+    related_keywords: ["actions", "smoke_tokens", "keywords"],
     descriptions: [
       {
         type: "text",
@@ -424,7 +454,7 @@ export const KeywordsS: Keyword[] = [
     keyword: "soresu_mastery",
     name: "Soresu Mastery",
     parents: ["s"],
-    related_keywords: ["ranged_weapon", "guardian", "dodge"],
+    related_keywords: ["weapons", "guardian_x", "dodge"],
     descriptions: [
       {
         type: "text",
@@ -434,7 +464,7 @@ export const KeywordsS: Keyword[] = [
     ],
   },
   {
-    keyword: "speeder",
+    keyword: "speeder_x",
     name: "Speeder X",
     parents: ["s"],
     related_keywords: [
@@ -443,6 +473,7 @@ export const KeywordsS: Keyword[] = [
       "notched_bases",
       "pivot",
       "compulsory_move",
+      "keywords",
     ],
     descriptions: [
       {
@@ -467,11 +498,11 @@ export const KeywordsS: Keyword[] = [
     ],
   },
   {
-    keyword: "spotter",
+    keyword: "spotter_x",
     name: "Spotter X",
     parents: ["s", "units"],
     range: "range_2",
-    related_keywords: ["aim"],
+    related_keywords: ["aim", "keywords"],
     descriptions: [
       {
         type: "text",
@@ -552,7 +583,7 @@ export const KeywordsS: Keyword[] = [
     keyword: "steady",
     name: "Steady",
     parents: ["s", "units"],
-    related_keywords: ["move", "ranged_weapon", "attack"],
+    related_keywords: ["move", "weapons", "attack"],
     descriptions: [
       {
         type: "text",
@@ -566,7 +597,7 @@ export const KeywordsS: Keyword[] = [
     name: "Strategize X",
     parents: ["s", "units"],
     range: "range_2",
-    related_keywords: ["suppression", "dodge"],
+    related_keywords: ["suppression", "dodge", "keywords"],
     descriptions: [
       {
         type: "text",
@@ -578,8 +609,8 @@ export const KeywordsS: Keyword[] = [
 
   {
     keyword: "suffering_wounds",
-    name: "Wounds",
-    parents: ["w"],
+    name: "Suffering Wounds",
+    parents: ["s"],
     related_keywords: ["attack", "miniature", "line_of_sight"],
     descriptions: [
       {

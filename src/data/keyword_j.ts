@@ -37,7 +37,7 @@ export const KeywordsJ: Keyword[] = [
     activation: "",
     parents: ["j", "units"],
     tag: "Unit Keyword",
-    related_keywords: ["move", "terrain"],
+    related_keywords: ["move", "terrain", "keywords"],
     descriptions: [
       {
         type: "text",

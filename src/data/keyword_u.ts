@@ -5,7 +5,7 @@ export const KeywordsU: Keyword[] = [
     keyword: "uncanny_luck_x",
     name: "Uncanny Luck X",
     parents: ["u", "units"],
-    related_keywords: ["attack", "dice"],
+    related_keywords: ["attack", "dice", "keywords"],
     descriptions: [
       {
         type: "text",
@@ -18,7 +18,7 @@ export const KeywordsU: Keyword[] = [
     keyword: "unconcerned",
     name: "Unconcerned",
     parents: ["u", "units"],
-    related_keywords: ["cover", "repair"],
+    related_keywords: ["cover", "repair_x"],
     descriptions: [
       {
         type: "text",
@@ -63,7 +63,7 @@ export const KeywordsU: Keyword[] = [
       "troopers",
       "droid_trooper",
       "emplacement_trooper",
-      "woookie_trooper",
+      "wookiee_trooper",
       "vehicles",
       "resiliency",
       "repulsor_vehicle",
@@ -197,7 +197,7 @@ export const KeywordsU: Keyword[] = [
     keyword: "unstoppable",
     name: "Unstoppable",
     parents: ["u", "units"],
-    related_keywords: ["activation_phase", "order_pool"],
+    related_keywords: ["activation_phase", "command_phase"],
     descriptions: [
       {
         type: "text",

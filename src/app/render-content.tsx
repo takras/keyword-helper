@@ -6,6 +6,7 @@ import { KeywordList } from "./keyword-list";
 import { StructuredList } from "./structured-list";
 import { CalloutComponent } from "./callout";
 import styles from "./helper.module.css";
+import classNames from "classnames";
 
 export const RenderContent = ({
   descriptions,
@@ -84,6 +85,16 @@ export const RenderContent = ({
           />
         );
       case "header":
+        if (description.inline) {
+          return (
+            <span
+              className={classNames(styles.header4, styles.inlineHeader)}
+              key={getKey(description.type)}
+            >
+              {description.content}
+            </span>
+          );
+        }
         return (
           <h4 className={styles.header4} key={getKey(description.type)}>
             {description.content}
