@@ -29,7 +29,7 @@ export const KeywordsN: Keyword[] = [
   },
 
   {
-    keyword: "notch",
+    keyword: "notch_based_movement",
     name: "Notched Base Movement",
     parents: ["n"],
     related_keywords: [
@@ -141,7 +141,7 @@ export const KeywordsN: Keyword[] = [
       "vehicles",
       "reverse",
       "pivot",
-      "notch",
+      "notch_based_movement",
       "panic_commander",
       "setup",
     ],

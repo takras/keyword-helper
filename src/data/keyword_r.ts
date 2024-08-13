@@ -478,7 +478,7 @@ export const KeywordsR: Keyword[] = [
     name: "Reverse",
     parents: ["r"],
     related_keywords: [
-      "notch",
+      "notch_based_movement",
       "notched_bases",
       "vehicles",
       "ground_vehicles",

@@ -323,7 +323,7 @@ export const KeywordsM: Keyword[] = [
       "compulsory_move",
       "difficult_terrain",
       "impassable_terrain",
-      "notch",
+      "notch_based_movement",
       "open_terrain",
       "pivot",
       "reverse",
@@ -459,7 +459,7 @@ export const KeywordsM: Keyword[] = [
     keyword: "move_through_miniatures",
     name: "Moving Through Miniatures",
     parents: ["m"],
-    related_keywords: ["move", "miniature", "notch"],
+    related_keywords: ["move", "miniature", "notch_based_movement"],
     descriptions: [
       {
         type: "text",

@@ -1,18 +1,20 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import { Variables } from "@/utils";
 import { GoogleTagManager } from "@next/third-parties/google";
+import { ThemeProvider } from "next-themes";
 
 import styles from "./layout.module.css";
 
 const description =
   "Keyword helper for use with the miniatures game Star Wars: Legion";
-const title = "Legion Helper";
+const title = Variables.title;
 const image = "/images/legionhelper.svg";
 
 export const metadata: Metadata = {
   title,
   description,
-  metadataBase: new URL("https://legion.takras.net"),
+  metadataBase: new URL(Variables.url),
   alternates: {
     canonical: "/",
   },
@@ -21,7 +23,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    url: "https://legion.takras.net",
+    url: Variables.url,
     title,
     siteName: title,
     description,
@@ -50,11 +52,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={styles.html}>
+    <html lang="en" className={styles.html} suppressHydrationWarning>
       <Script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" />
       <GoogleTagManager gtmId="GTM-W7J477VD" />
       <GoogleTagManager gtmId="G-148T6XV7YW" />
-      <body className={styles.body}>{children}</body>
+      <body className={styles.body}>
+        <ThemeProvider>{children}</ThemeProvider>
+      </body>
     </html>
   );
 }

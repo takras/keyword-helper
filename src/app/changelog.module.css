@@ -1,5 +1,5 @@
 .changelog {
-  background-color: var(--button-background-color);
+  background-color: var(--changelog-background);
   padding: 20px;
   border-radius: var(--border-radius);
   border: var(--border-thin);
@@ -7,16 +7,16 @@
 }
 
 .add {
-  color: #448450;
+  color: var(--changelog-add-color);
   list-style: "+  ";
 }
 
 .remove {
-  color: #91302B;
+  color: var(--changelog-remove-color);
   list-style: "-  ";
 }
 
 .change {
-  color: var(--button-color);
+  color: var(--changelog-change-color);
   
 }

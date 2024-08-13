@@ -182,7 +182,7 @@ export const AVAILABLE_KEYWORDS = [
   "nimble",
   "non_standard_move",
   "noncombatant",
-  "notch",
+  "notch_based_movement",
   "notched_bases",
   "null_courage",
   "objects",

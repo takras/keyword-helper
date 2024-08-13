@@ -10,7 +10,11 @@ export const KeywordList = ({ keywords }: { keywords: string[] }) => {
     return (
       <li key={getKey(keyword)}>
         <strong className={styles.keywordListName}>{enriched.name}: </strong>
-        {interpolateString(enriched.summary, getKey(enriched.summary))}
+        {interpolateString(
+          enriched.summary,
+          getKey(enriched.summary),
+          styles.keywordItem
+        )}
       </li>
     );
   });

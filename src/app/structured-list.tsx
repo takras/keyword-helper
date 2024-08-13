@@ -35,7 +35,7 @@ export const StructuredList = ({
       key = `${key}sub_${i}`;
       return (
         <li key={getKey(key + "sub")} className={styles.listItem}>
-          {interpolateString(line, key + "line")}
+          {interpolateString(line, key + "line", styles.listItemLine)}
         </li>
       );
     }

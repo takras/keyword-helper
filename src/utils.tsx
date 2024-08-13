@@ -3,6 +3,11 @@ import styles from "../src/app/helper.module.css";
 import { rules } from "./data/rules";
 import { Keyword } from "./types";
 
+export const Variables = {
+  title: "Legion Helper",
+  url: "https://legion.takras.net",
+};
+
 const getIconPath = (fileName: string) => {
   return `<img className="${styles.inlineIcon}" alt="${fileName}" src="/images/${fileName}">`;
 };

@@ -95,7 +95,7 @@ export const KeywordsOther: Keyword[] = [
       {
         type: "text",
         content:
-          "Vehicles all gain free pivot at the first step of their movement.",
+          "Vehicles all gain free pivot-like ability at the first step of their movement.",
       },
       {
         type: "text",
@@ -115,6 +115,11 @@ export const KeywordsOther: Keyword[] = [
         type: "reference",
         showOnlySummary: true,
         referenced_keyword: "vehicles",
+      },
+      {
+        type: "reference",
+        showOnlySummary: true,
+        referenced_keyword: "notch_based_movement",
       },
 
       { type: "header", content: "Cover" },
@@ -160,7 +165,7 @@ export const KeywordsOther: Keyword[] = [
       {
         type: "text",
         content:
-          "<strong>Backup:</strong> If a {rank_commander} is in range to a {rank_corps} unit, they will cancel 2 {hit} almost like the old Cover system did.",
+          "<strong>Backup:</strong> If a {rank_commander} or {rank_operative} is in range to a {rank_corps} unit, they will cancel 2 {hit} almost like the old Cover system did.",
       },
       {
         type: "text",

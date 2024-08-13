@@ -829,7 +829,13 @@ export const KeywordsS: Keyword[] = [
     activation: "",
     parents: ["s", "units"],
     tag: "Unit Keyword",
-    related_keywords: ["hover_x", "notch", "move", "battlefield", "miniature"],
+    related_keywords: [
+      "hover_x",
+      "notch_based_movement",
+      "move",
+      "battlefield",
+      "miniature",
+    ],
     descriptions: [
       {
         type: "text",

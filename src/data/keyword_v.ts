@@ -5,7 +5,13 @@ export const KeywordsV: Keyword[] = [
     keyword: "vehicles",
     name: "Vehicles",
     parents: ["v"],
-    related_keywords: ["ground_vehicles", "repulsor_vehicle", "resiliency"],
+    related_keywords: [
+      "ground_vehicles",
+      "repulsor_vehicle",
+      "resiliency",
+      "notched_bases",
+      "notch_based_movement",
+    ],
     descriptions: [
       {
         type: "text",

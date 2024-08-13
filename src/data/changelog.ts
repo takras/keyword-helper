@@ -12,6 +12,25 @@ type Log = {
 
 export const log: Log[] = [
   {
+    version: "1.0.7",
+    entries: [
+      {
+        type: "add",
+        description: "Dark-mode. Switch between light and dark mode.",
+      },
+      {
+        type: "add",
+        description:
+          "Added keyword reference from Vehicle to Notched Based Movement",
+      },
+      {
+        type: "change",
+        description:
+          "Corrected missing {operative} icon in 'changes in 2024' section.",
+      },
+    ],
+  },
+  {
     version: "1.0.6",
     entries: [
       {

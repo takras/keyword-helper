@@ -9,9 +9,10 @@ import { KeywordCard } from "./keyword-card";
 import { RelatedKeywords } from "./related-keyword";
 import { RenderContent } from "./render-content";
 import { About } from "./about";
-import { sortKeyword } from "@/utils";
+import { sortKeyword, Variables } from "@/utils";
 import { Changelog } from "./changelog";
 import { Share } from "./share";
+import { ToggleDarkMode } from "./toggle-dark-mode";
 import styles from "./helper.module.css";
 import classNames from "classnames";
 
@@ -20,6 +21,7 @@ export default function Helper() {
 
   const [selectedKeywords, setSelectedKeywords] = useState<Keyword[]>([]);
   const [searchFilter, setSearchFilter] = useState<string>("");
+
   const [activeCatalog, setActiveCatalog] =
     useState<CatalogEntry["catalog"]>("alphabet");
 
@@ -32,8 +34,6 @@ export default function Helper() {
         console.log(a_keyword);
       }
     });
-
-  //print_unused_keywords();
 
   let counter = 0;
 
@@ -54,6 +54,7 @@ export default function Helper() {
     );
 
     if (keyword) {
+      updateMeta(keyword);
       setSelectedKeywords([keyword]);
     }
   }, []);
@@ -63,16 +64,26 @@ export default function Helper() {
     return `${key}_${counter}`;
   };
 
+  function updateMeta(keyword?: Keyword) {
+    if (!keyword) {
+      location.href = "#";
+      document.title = Variables.title;
+      return;
+    }
+    location.href = `#${keyword.keyword}`;
+    document.title = `${Variables.title} – ${keyword.name}`;
+  }
+
   const selectKeyword = (keyword: Keyword) => {
     if (keyword.keyword === "search_result_blank") {
       return null;
     }
-    location.href = `#${keyword.keyword}`;
+    updateMeta(keyword);
     setSelectedKeywords((current) => current.concat(keyword));
   };
 
   const goToPreviousKeyword = (keyword: Keyword) => {
-    location.href = `#${keyword.keyword}`;
+    updateMeta(keyword);
     setSelectedKeywords((current) => current.slice(0, -1));
   };
 
@@ -99,7 +110,7 @@ export default function Helper() {
             {!previousKeyword && <div />}
             <button
               onClick={() => {
-                location.href = "#";
+                updateMeta();
                 modal.close();
                 setSelectedKeywords([]);
               }}
@@ -268,6 +279,9 @@ export default function Helper() {
   return (
     <main className={styles.main}>
       {modalComponent()}
+      <div className={styles.darkModeToggle}>
+        <ToggleDarkMode />
+      </div>
       <div className={styles.headline}>
         <h1 className={styles.title}>Legion Helper</h1>
         <span className={styles.subtitle}>&quot;Roger, Roger&quot;</span>

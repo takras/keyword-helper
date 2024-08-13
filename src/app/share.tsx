@@ -1,7 +1,7 @@
 import { useState } from "react";
+import { Keyword } from "@/types";
 import styles from "./helper.module.css";
 import classNames from "classnames";
-import { Keyword } from "@/types";
 
 export const Share = ({ keyword }: { keyword: Keyword }) => {
   const [copied, setCopied] = useState(false);

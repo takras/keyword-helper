@@ -143,7 +143,7 @@ export const KeywordsP: Keyword[] = [
     name: "Pivot",
     parents: ["p"],
     related_keywords: [
-      "notch",
+      "notch_based_movement",
       "notched_bases",
       "vehicles",
       "ground_vehicles",

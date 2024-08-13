@@ -45,6 +45,14 @@
   margin-right: -1rem;
 }
 
+.darkModeToggle {
+  height: 40px;
+  width: 70px;
+  margin-top: 20px;
+  float:right;
+  margin-left: -70px;
+}
+
 .modal {
   width: 100vw;
   height: 100vh;
@@ -55,7 +63,7 @@
 
 .keywordContainer {
   padding: 40px 20px 20px 20px;
-  background-color: white;
+  background-color: var(--background-color);
   border: var(--border-thin);
   border-radius: var(--border-radius);
   @media only screen and (max-width: 670px) {
@@ -66,7 +74,7 @@
 
 .aboutContainer,
 .about {
-  background-color: var(--button-background-color);
+  background-color: var(--background-color);
   padding: 20px;
   border-radius: var(--border-radius);
   border: var(--border-thin);
@@ -94,6 +102,11 @@
 .paragraph {
   padding-bottom: var(--flex-gap);
   display: block;
+  
+  .inlineIcon {
+    filter: invert(var(--invert-icon-color));
+  }
+  
 }
 
 .header2,
@@ -128,11 +141,9 @@
   margin-bottom: var(--flex-gap);
 
   .inlineIcon {
-    filter: invert(1);
+    filter: invert(var(--invert-icon-color-callout));
   }
 }
-
-
 
 .changelogButton {
   display: flex;
@@ -324,10 +335,10 @@
   padding: 5px;
   box-shadow: 0px 5px 10px rgb(0 0 0 / 0.1);
   font-size: 1.5em;
-  border: 1px solid #26416d;
+  border: 1px solid var(--button-color);
   border-bottom: 2px solid var(--button-border-color);
-  color: #26416d;
-  background-color: #fff;
+  color: var(--button-color);
+  background-color: var(--button-background-color);
 }
 
 .buttonActive {
@@ -480,7 +491,15 @@
   }
 }
 
+.listItemLine {
+  .inlineIcon {
+    filter: invert(var(--invert-icon-color));
+  }
+}
+
 .illustrationImage {
+  box-shadow: var(--image-shadow);
+  border: var(--image-border);
   max-width: min(95%, 800px);
 }
 
@@ -492,6 +511,7 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: var(--flex-gap);
 }
 
 .imageRight {
@@ -515,7 +535,7 @@
   margin-bottom: 20px;
 
   .inlineIcon {
-    filter: invert(1);
+    filter: invert(var(--invert-icon-color-callout));
   }
 }
 
@@ -535,17 +555,27 @@
     );
 }
 
+.keywordItem {
+  .inlineIcon {
+    filter: invert(var(--invert-icon-color));
+  }
+}
+
 .inlineIcon {
   max-width: 2rem;
   margin-bottom: -2px;
   height: 1rem;
+  filter: invert(var(0));
 }
 
 .inlineIconContainer {
   white-space: pre;
+  .inlineIcon {
+    filter: invert(var(--invert-icon-button-color));
+  }
 }
 
 .shareButton {
   margin-right: var(--flex-gap);
-  color: var(--example-header);
+  color: var(--sharebutton-color);
 }
