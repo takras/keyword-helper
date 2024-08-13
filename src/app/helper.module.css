@@ -65,6 +65,9 @@
   overflow-y: scroll;
   background-color: var(--background-color);
   border: none;
+  &::backdrop {
+    background-color: #000;
+  }
 }
 
 .keywordContainer {
