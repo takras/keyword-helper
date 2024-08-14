@@ -12,6 +12,33 @@ type Log = {
 
 export const log: Log[] = [
   {
+    version: "1.0.8",
+    entries: [
+      {
+        type: "add",
+        description:
+          "Added a Quick Reference for Attacks, including Keywords and when in the Attack Timing they apply.",
+      },
+      {
+        type: "add",
+        description:
+          "Added keywords reference examples for 'Game Effects' step of the Setup.",
+      },
+      {
+        type: "add",
+        description: "Added link to rules PDF for direct download.",
+      },
+      {
+        type: "change",
+        description: "More fixes for Safari browser and Dark Mode.",
+      },
+      {
+        type: "change",
+        description: "Updated Silhouette images for Dark Mode.",
+      },
+    ],
+  },
+  {
     version: "1.0.7",
     entries: [
       {

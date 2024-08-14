@@ -28,6 +28,7 @@ export const AVAILABLE_KEYWORDS = [
   "ataru_mastery",
   "at_range",
   "attack",
+  "attack_quick_reference",
   "attack_run",
   "backup",
   "bane_tokens",
@@ -235,7 +236,7 @@ export const AVAILABLE_KEYWORDS = [
   "scatter",
   "scatter_terrain",
   "scout_x",
-  "scouting_party",
+  "scouting_party_x",
   "secret_information",
   "secondary_objective_cards",
   "self_destruct_x",
@@ -435,6 +436,7 @@ type Header = {
 export type KeywordList = {
   type: "keyword_list";
   content: AvailableKeywords[];
+  showOnlyKeyname?: boolean;
 };
 
 export type RulesExample = {

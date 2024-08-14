@@ -66,7 +66,7 @@ a {
     html {
       color-scheme: dark; 
     }
-    --background-color: ##282828;
+    --background-color: #282828;
     --changelog-add-color: #6dd780;
     --changelog-remove-color: #91302B;
     --changelog-change-color: #ffffff;

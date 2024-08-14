@@ -92,6 +92,7 @@
 
 .aboutButtonRow {
   display: flex;
+  flex-wrap: wrap;
   gap: var(--flex-gap);
   justify-content: center;
   flex-direction: row;
@@ -132,7 +133,12 @@
 }
 
 .inlineHeader {
+  margin-left: var(--flex-gap);
+  font-size: x-large;
   border-bottom: none;
+  .inlineIcon {
+    filter: invert(var(--invert-icon-color));
+  }
 }
 
 .modalButtonRow {
@@ -512,6 +518,14 @@
   max-width: min(95%, 800px);
 }
 
+.arrowRight {
+  padding-right: var(--flex-gap);
+  .inlineIcon {
+    height: 10px;
+    margin-bottom: 2px;
+  }
+}
+
 .imageLeft {
   float: left;
 }
@@ -532,6 +546,10 @@
   font-size: larger;
   font-synthesis: small-caps;
   font-weight: 700;
+}
+
+.keywordListName {
+  font-size: 1.1rem;
 }
 
 .exampleContainer {

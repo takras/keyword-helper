@@ -8,8 +8,8 @@ export const Variables = {
   url: "https://legion.takras.net",
 };
 
-const getIconPath = (fileName: string) => {
-  return `<img className="${styles.inlineIcon}" alt="${fileName}" src="/images/${fileName}">`;
+const getIconPath = (fileName: string, title?: string) => {
+  return `<img className="${styles.inlineIcon}" alt="${fileName}" src="/images/${fileName}" title="${title}">`;
 };
 export const interpolateString = (
   line: string,
@@ -17,11 +17,11 @@ export const interpolateString = (
   className?: string
 ) => {
   const interpolated = line
-    .replace(/{([^{}:]*)}/g, (_a, b: keyof typeof IconList) => {
-      if (IconList.hasOwnProperty(b)) {
-        return getIconPath(IconList[b]);
+    .replace(/{([^{}:]*)}/g, (_a, iconName: keyof typeof IconList) => {
+      if (IconList.hasOwnProperty(iconName)) {
+        return getIconPath(IconList[iconName], iconName.replace("_", " "));
       }
-      return b;
+      return iconName;
     })
     .replace(/(\{keyword:).+?\}/g, (a: string) => {
       const word = a.split(":")[1].split("}")[0];
@@ -52,6 +52,7 @@ export const getKey = (key: string) => {
 export const IconList = {
   action: "black/action.png",
   action_free: "black/action-free.png",
+  arrow_right: "black/arrow-right.png",
   exhaust_action: "black/exhaust-action.png",
   exhaust_free: "black/exhaust-free.png",
   hit: "black/hit.png",
@@ -75,6 +76,7 @@ export const IconList = {
   rank_support: "black/rank-support.png",
   rank_heavy: "black/rank-heavy.png",
   self_destruct: "black/self-destruct.png",
+  surge_token: "black/surge-token.png",
   upgrade_heavy: "black/upgrade-heavy.png",
   upgrade_personnel: "black/upgrade-personnel.png",
   upgrade_command: "black/upgrade-command.png",

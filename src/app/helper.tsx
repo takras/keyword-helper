@@ -321,18 +321,51 @@ export default function Helper() {
           </button>
           <button
             className={styles.button}
+            onClick={() =>
+              selectKeyword(
+                rulesDocument.keywords.find(
+                  (keyword) => keyword.keyword === "attack_quick_reference"
+                )!
+              )
+            }
+          >
+            Attack Quick Reference
+          </button>
+          <button
+            className={styles.button}
+            onClick={() => window.open(rulesDocument.downloadUrl, "_blank")}
+          >
+            Official Rules PDF
+          </button>
+          <button
+            className={styles.button}
             onClick={() => window.open(rulesDocument.documentUrl, "_blank")}
           >
-            Official Rules Documents
+            Official Documents
           </button>
           <button
             className={styles.button}
             onClick={() => window.open(rulesDocument.discussionUrl, "_blank")}
           >
-            Official Rules Forum
+            Official Forum
           </button>
         </div>
         <div className={styles.infoContainer}>
+          <div className={styles.versionInfo}>
+            Current version of Legion Helper:{" "}
+            <button
+              className={classNames(styles.version, styles.button)}
+              onClick={() =>
+                selectKeyword(
+                  rulesDocument.keywords.find(
+                    (keyword) => keyword.keyword === "changelog"
+                  )!
+                )
+              }
+            >
+              {rulesDocument.helperVersion}
+            </button>
+          </div>
           <div className={styles.versionInfo}>
             Current version of the rules reference updated:{" "}
             <span className={styles.version}>{rulesDocument.version}</span>{" "}
@@ -359,21 +392,6 @@ export default function Helper() {
           ))}
       </div>
       <div className={styles.footerContainer}>
-        <div className={styles.versionInfo}>
-          Current version of Legion Helper:{" "}
-          <button
-            className={classNames(styles.version, styles.button)}
-            onClick={() =>
-              selectKeyword(
-                rulesDocument.keywords.find(
-                  (keyword) => keyword.keyword === "changelog"
-                )!
-              )
-            }
-          >
-            {rulesDocument.helperVersion}
-          </button>
-        </div>
         <div id="donate-button-container" className={styles.donate}>
           <div id="donate-button"></div>
         </div>

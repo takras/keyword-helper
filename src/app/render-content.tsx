@@ -91,7 +91,12 @@ export const RenderContent = ({
               className={classNames(styles.header4, styles.inlineHeader)}
               key={getKey(description.type)}
             >
-              {description.content}
+              {interpolateString(
+                "{arrow_right}",
+                getKey(description.type),
+                styles.arrowRight
+              )}
+              {interpolateString(description.content, getKey(description.type))}
             </span>
           );
         }
@@ -109,6 +114,7 @@ export const RenderContent = ({
           <KeywordList
             key={getKey(description.type)}
             keywords={description.content}
+            showOnlyKeyname={description.showOnlyKeyname}
           />
         );
       case "reference":
