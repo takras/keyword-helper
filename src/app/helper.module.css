@@ -195,7 +195,7 @@
 
 .modalTopMenu {
   display: block;
-  width: 97vw;
+  width: 100vw;
   z-index: 2;
   margin-left: -16px;
   margin-top: -16px;
@@ -546,6 +546,10 @@
   font-size: larger;
   font-synthesis: small-caps;
   font-weight: 700;
+}
+
+.keywordList {
+  margin-top: 0;
 }
 
 .keywordListName {

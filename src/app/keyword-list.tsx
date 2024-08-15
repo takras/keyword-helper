@@ -29,5 +29,9 @@ export const KeywordList = ({
       </li>
     );
   });
-  return content ? <ul key={getKey(keywords[0])}>{content}</ul> : null;
+  return content ? (
+    <ul className={styles.keywordList} key={getKey(keywords[0])}>
+      {content}
+    </ul>
+  ) : null;
 };

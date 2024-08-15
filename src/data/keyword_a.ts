@@ -976,7 +976,6 @@ export const KeywordsA: Keyword[] = [
       },
 
       { type: "header", content: "Modify Defense Dice" },
-      { type: "header", content: "Defender", inline: true },
       { type: "header", content: "Attacker", inline: true },
       {
         type: "keyword_list",
