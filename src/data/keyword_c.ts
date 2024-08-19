@@ -206,20 +206,6 @@ export const KeywordsC: Keyword[] = [
   },
 
   {
-    keyword: "clone_trooper",
-    name: "Clone Trooper",
-    parents: ["c"],
-    related_keywords: ["troopers", "miniature", "unit"],
-    descriptions: [
-      {
-        type: "structured_list",
-        content: [
-          "While attacking or defending, a clone trooper unit may spend one aim, dodge, or surge token belonging to another friendly clone trooper unit at {range_2} and in LOS as if the attacking or defending unit had that token.",
-        ],
-      },
-    ],
-  },
-  {
     keyword: "cohesion",
     name: "Cohesion",
     activation: "",

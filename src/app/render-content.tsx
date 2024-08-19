@@ -1,6 +1,11 @@
 import { DescriptionType, Keyword } from "@/types";
 import { ExampleContent } from "./example";
-import { getEnrichedKeyword, getKey, interpolateString } from "@/utils";
+import {
+  getEnrichedKeyword,
+  getKey,
+  interpolateString,
+  Variables,
+} from "@/utils";
 import { Illustration } from "./illustration";
 import { KeywordList } from "./keyword-list";
 import { StructuredList } from "./structured-list";
@@ -62,6 +67,12 @@ export const RenderContent = ({
         )}
         <div className={styles.referenceLink}>
           <div>See:</div>
+          <a
+            href={`${Variables.url}/#!${enriched.keyword}`}
+            className={styles.hiddenLink}
+          >
+            {enriched.name}
+          </a>
           <button
             className={styles.referenceButton}
             onClick={() => selectKeyword(enriched)}

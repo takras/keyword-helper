@@ -2,7 +2,7 @@ import { CatalogEntry, Keyword } from "@/types";
 import { useState } from "react";
 import { rules } from "@/data/rules";
 import { KeywordCard } from "./keyword-card";
-import { getKey, sortKeyword } from "@/utils";
+import { getKey, sortKeyword, Variables } from "@/utils";
 import classNames from "classnames";
 import styles from "./helper.module.css";
 
@@ -66,6 +66,21 @@ export const CatalogCard = ({
             ))}
         </div>
       )}
+      <div className={styles.hiddenLink}>
+        {rules.keywords
+          .filter(filterByActiveCatalog)
+          .filter((keyword) => keyword.parents.includes(catalog.id))
+          .toSorted(sortKeyword)
+          .map((keyword) => (
+            <a
+              key={`${keyword.keyword}_hidden`}
+              href={`${Variables.url}/#!${keyword.keyword}`}
+              className={styles.hiddenLink}
+            >
+              {keyword.name}
+            </a>
+          ))}
+      </div>
     </div>
   );
 };

@@ -1,6 +1,8 @@
-import { getEnrichedKeyword, getKey } from "@/utils";
+import React from "react";
+import { getEnrichedKeyword, getKey, Variables } from "@/utils";
 import { Keyword } from "@/types";
 import styles from "./helper.module.css";
+
 export const RelatedKeywords = ({
   related,
   modal,
@@ -29,13 +31,20 @@ export const RelatedKeywords = ({
               return null;
             }
             return (
-              <button
-                className={styles.relatedButton}
-                key={getKey(keyword)}
-                onClick={() => selectKeyword(enriched)}
-              >
-                {enriched?.name}
-              </button>
+              <React.Fragment key={getKey(keyword)}>
+                <button
+                  className={styles.relatedButton}
+                  onClick={() => selectKeyword(enriched)}
+                >
+                  {enriched?.name}
+                </button>
+                <a
+                  href={`${Variables.url}/#!${enriched.keyword}`}
+                  className={styles.hiddenLink}
+                >
+                  {enriched.name}
+                </a>
+              </React.Fragment>
             );
           })}
       </div>

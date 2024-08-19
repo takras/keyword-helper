@@ -146,6 +146,12 @@
   justify-content: space-between;
 }
 
+.hiddenLink {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+
 .calloutContainer {
   padding: 20px;
   border: 1px solid white;
@@ -354,6 +360,10 @@
   border-bottom: 2px solid var(--button-border-color);
   color: var(--button-color);
   background-color: var(--button-background-color);
+
+  &:focus-visible {
+    outline-color: var(--outline-color);
+  }
 }
 
 .buttonActive {

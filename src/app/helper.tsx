@@ -48,7 +48,7 @@ export default function Helper() {
   }, [modal, selectedKeywords]);
 
   useEffect(() => {
-    const hash = window.location.hash.replace("#", "");
+    const hash = window.location.hash.replace(/(#!)/, "");
     const keyword = rulesDocument.keywords.find(
       (word) => word.keyword === hash
     );
@@ -66,11 +66,11 @@ export default function Helper() {
 
   function updateMeta(keyword?: Keyword) {
     if (!keyword) {
-      location.href = "#";
+      location.href = "#!";
       document.title = Variables.title;
       return;
     }
-    location.href = `#${keyword.keyword}`;
+    location.href = `#!${keyword.keyword}`;
     document.title = `${Variables.title} – ${keyword.name}`;
   }
 
