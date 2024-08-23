@@ -16,6 +16,19 @@ export const KeywordsG: Keyword[] = [
     ],
   },
   {
+    keyword: "game_overview",
+    name: "Game Overview",
+    related_keywords: ["abilities_provide_move"],
+    parents: ["g"],
+    descriptions: [
+      {
+        type: "text",
+        content:
+          "In <i>Star Wars</i>: Legion, players build, paint, and command entire armies from the various factions of the Star Wars galaxy. Each of these characters is represented on the tabletop by a highly detailed hobby miniature. Before the game, players assemble and paint their miniatures to create an army of Star Wars characters that is truly their own. Each miniature brings with it a host of rules and abilities for players to use in order to complete their mission and achieve victory.",
+      },
+    ],
+  },
+  {
     keyword: "generator_x",
     name: "Generator X",
     activation: "",

@@ -38,6 +38,7 @@ export const AVAILABLE_KEYWORDS = [
   "battle_cards",
   "battlefield",
   "beam_x",
+  "beyond_range",
   "blast",
   "block",
   "bolster_x",
@@ -120,6 +121,7 @@ export const AVAILABLE_KEYWORDS = [
   "free_card_action",
   "full_pivot",
   "game_effects",
+  "game_overview",
   "generator_x",
   "graffiti_tokens",
   "ground_vehicles",
@@ -298,6 +300,7 @@ export const AVAILABLE_KEYWORDS = [
   "wheel_mode",
   "wookiee_trooper",
   "winning",
+  "within_range",
   "withdraw",
   "wounds",
 ] as const;

@@ -12,6 +12,19 @@ type Log = {
 
 export const log: Log[] = [
   {
+    version: "1.0.9",
+    entries: [
+      {
+        type: "add",
+        description: "Add keywords to At, Within and Beyond ranges.",
+      },
+      {
+        type: "change",
+        description: "Update attack quick-guide with numbers.",
+      },
+    ],
+  },
+  {
     version: "1.0.8",
     entries: [
       {

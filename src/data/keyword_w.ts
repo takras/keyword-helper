@@ -173,6 +173,18 @@ export const KeywordsW: Keyword[] = [
     ],
   },
   {
+    keyword: "within_range",
+    name: "Within, At, and Beyond",
+    parents: ["w", "concepts"],
+    related_keywords: [],
+    descriptions: [
+      {
+        type: "reference",
+        referenced_keyword: "at_range",
+      },
+    ],
+  },
+  {
     keyword: "wounds",
     name: "Wound Tokens",
     parents: ["w", "concepts"],

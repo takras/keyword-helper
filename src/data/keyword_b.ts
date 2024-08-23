@@ -272,6 +272,18 @@ export const KeywordsB: Keyword[] = [
     ],
   },
   {
+    keyword: "beyond_range",
+    name: "Beyond, At, and Within",
+    parents: ["b", "concepts"],
+    related_keywords: [],
+    descriptions: [
+      {
+        type: "reference",
+        referenced_keyword: "at_range",
+      },
+    ],
+  },
+  {
     keyword: "blast",
     name: "Blast",
     related_keywords: ["apply_dodge_cover", "cover"],

@@ -21,19 +21,6 @@ export const KeywordsA: Keyword[] = [
     ],
   },
   {
-    keyword: "abilities",
-    name: "Game Overview",
-    related_keywords: ["abilities_provide_move"],
-    parents: ["g"],
-    descriptions: [
-      {
-        type: "text",
-        content:
-          "In <i>Star Wars</i>: Legion, players build, paint, and command entire armies from the various factions of the Star Wars galaxy. Each of these characters is represented on the tabletop by a highly detailed hobby miniature. Before the game, players assemble and paint their miniatures to create an army of Star Wars characters that is truly their own. Each miniature brings with it a host of rules and abilities for players to use in order to complete their mission and achieve victory.",
-      },
-    ],
-  },
-  {
     keyword: "actions",
     name: "Action",
     parents: ["a"],
@@ -587,7 +574,7 @@ export const KeywordsA: Keyword[] = [
     keyword: "at_range",
     name: "At, Within, and Beyond",
     activation: "",
-    parents: ["a", "w", "concepts"],
+    parents: ["a", "concepts"],
     summary:
       "Some abilities require two objects to be at, within, or beyond a certain distance from each other.",
     related_keywords: ["actions"],
@@ -900,12 +887,13 @@ export const KeywordsA: Keyword[] = [
         referenced_keyword: "attack",
         showOnlySummary: true,
       },
-      { type: "header", content: "Roll Attack Dice" },
+      { type: "header", content: "1. Form Attack Pool" },
       {
         type: "keyword_list",
         showOnlyKeyname: true,
         content: ["spray"],
       },
+      { type: "header", content: "2. Roll Attack Dice" },
       { type: "header", content: "Re-roll Attack Dice", inline: true },
       {
         type: "keyword_list",
@@ -923,7 +911,7 @@ export const KeywordsA: Keyword[] = [
         content: "Spend {surge_token} tokens on {hit_surge} results.",
         inline: true,
       },
-      { type: "header", content: "Apply Dodge and Cover" },
+      { type: "header", content: "3. Apply Dodge and Cover" },
       { type: "header", content: "Apply Cover", inline: true },
       {
         type: "keyword_list",
@@ -943,7 +931,7 @@ export const KeywordsA: Keyword[] = [
         content: ["dodge", "outmaneuver"],
       },
 
-      { type: "header", content: "Modify Attack Dice" },
+      { type: "header", content: "4. Modify Attack Dice" },
       { type: "header", content: "Attacker", inline: true },
       {
         type: "keyword_list",
@@ -951,13 +939,12 @@ export const KeywordsA: Keyword[] = [
         content: ["ion_x", "impact_x", "lethal_x", "ram_x"],
       },
       { type: "header", content: "Defender", inline: true },
-      { type: "header", content: "Modify Attack Dice" },
       {
         type: "keyword_list",
         showOnlyKeyname: true,
         content: ["armor_x", "backup", "guardian_x", "shielded_x"],
       },
-      { type: "header", content: "Roll Defense Dice" },
+      { type: "header", content: "5. Roll Defense Dice" },
       {
         type: "keyword_list",
         showOnlyKeyname: true,
@@ -975,7 +962,7 @@ export const KeywordsA: Keyword[] = [
         inline: true,
       },
 
-      { type: "header", content: "Modify Defense Dice" },
+      { type: "header", content: "6. Modify Defense Dice" },
       { type: "header", content: "Attacker", inline: true },
       {
         type: "keyword_list",

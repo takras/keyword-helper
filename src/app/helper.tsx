@@ -13,6 +13,7 @@ import { sortKeyword, Variables } from "@/utils";
 import { Changelog } from "./changelog";
 import { Share } from "./share";
 import { ToggleDarkMode } from "./toggle-dark-mode";
+import { sendGTMEvent } from "@next/third-parties/google";
 import styles from "./helper.module.css";
 import classNames from "classnames";
 
@@ -78,6 +79,9 @@ export default function Helper() {
     if (keyword.keyword === "search_result_blank") {
       return null;
     }
+    sendGTMEvent({
+      value: keyword.name,
+    });
     updateMeta(keyword);
     setSelectedKeywords((current) => current.concat(keyword));
   };
@@ -87,6 +91,12 @@ export default function Helper() {
     setSelectedKeywords((current) => current.slice(0, -1));
   };
 
+  const closeModal = () => {
+    updateMeta();
+    modal.close();
+    setSelectedKeywords([]);
+  };
+
   const modalComponent = () => {
     const selectedKeyword = selectedKeywords.slice(-1).shift();
     const previousKeyword = selectedKeywords[selectedKeywords.length - 2];
@@ -94,9 +104,13 @@ export default function Helper() {
       <dialog data-modal className={styles.modal}>
         <div className={styles.modalTopMenu}>
           <div className={styles.modalButtonRow}>
-            {previousKeyword && (
+            {
               <button
-                onClick={() => goToPreviousKeyword(previousKeyword)}
+                onClick={
+                  previousKeyword
+                    ? () => goToPreviousKeyword(previousKeyword)
+                    : closeModal
+                }
                 className={styles.modalBackButton}
               >
                 <img
@@ -104,18 +118,11 @@ export default function Helper() {
                   alt="Arrow pointing left"
                   width="20"
                 ></img>
-                {previousKeyword.name}
+                {previousKeyword?.name ?? "Back to Legion Helper"}
               </button>
-            )}
+            }
             {!previousKeyword && <div />}
-            <button
-              onClick={() => {
-                updateMeta();
-                modal.close();
-                setSelectedKeywords([]);
-              }}
-              className={styles.closeModalButton}
-            >
+            <button onClick={closeModal} className={styles.closeModalButton}>
               <img
                 src="/images/cross-x.png"
                 alt="A black cross"

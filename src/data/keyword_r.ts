@@ -26,7 +26,7 @@ export const KeywordsR: Keyword[] = [
     keyword: "range",
     name: "Range",
     parents: ["r", "concepts"],
-    related_keywords: ["measurement"],
+    related_keywords: ["measurement", "at_range"],
     descriptions: [
       {
         type: "reference",
