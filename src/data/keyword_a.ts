@@ -709,7 +709,7 @@ export const KeywordsA: Keyword[] = [
               ["Roll Dice", "Reroll Dice", "Convert Defense Surges"],
               "Modify Defense Dice",
               "Compare Results",
-              "Assign Suppresion Token to Defender",
+              "Assign Suppression Token to Defender",
               "Choose Additional Attack Pool",
             ],
           },
@@ -838,6 +838,12 @@ export const KeywordsA: Keyword[] = [
           },
         ],
       },
+      { type: "header", content: "Assign Suppression Token to Defender" },
+      {
+        type: "text",
+        content:
+          "After resolving steps 1-9 of the attack sequence, if there were any {hit} or {hit_critical} results in the attack pool during the Roll Attack Dice step of the attack sequence and the attack was a ranged attack, the defending unit gains one suppression token.",
+      },
       {
         type: "reference",
         referenced_keyword: "suffering_wounds",
@@ -874,6 +880,11 @@ export const KeywordsA: Keyword[] = [
       "uncanny_luck_x",
       "pierce_x",
       "tokens",
+      "jedi_hunter",
+      "immune_pierce",
+      "precise_x",
+      "arsenal_x",
+      "suppressive",
     ],
     summary: "",
     descriptions: [
@@ -887,31 +898,38 @@ export const KeywordsA: Keyword[] = [
         referenced_keyword: "attack",
         showOnlySummary: true,
       },
-      { type: "header", content: "1. Form Attack Pool" },
+      { type: "header", content: "1. Declare Defender" },
       {
         type: "keyword_list",
         showOnlyKeyname: true,
-        content: ["spray"],
+        content: ["immune_melee", "immune_range_1_weapons"],
       },
-      { type: "header", content: "2. Roll Attack Dice" },
+      { type: "header", content: "2. Form Attack Pool" },
+      {
+        type: "keyword_list",
+        showOnlyKeyname: true,
+        content: ["spray", "arsenal_x"],
+      },
+      { type: "header", content: "3. Declare Additional Defender" },
+      { type: "header", content: "4. Roll Attack Dice" },
       { type: "header", content: "Re-roll Attack Dice", inline: true },
       {
         type: "keyword_list",
         showOnlyKeyname: true,
-        content: ["aim", "observe_x"],
+        content: ["aim", "observe_x", "precise_x"],
       },
       { type: "header", content: "Convert Attack and Surge", inline: true },
       {
         type: "keyword_list",
         showOnlyKeyname: true,
-        content: ["critical_x", "marksman", "jarkai_mastery"],
+        content: ["critical_x", "marksman", "jarkai_mastery", "jedi_hunter"],
       },
       {
         type: "header",
         content: "Spend {surge_token} tokens on {hit_surge} results.",
         inline: true,
       },
-      { type: "header", content: "3. Apply Dodge and Cover" },
+      { type: "header", content: "5. Apply Dodge and Cover" },
       { type: "header", content: "Apply Cover", inline: true },
       {
         type: "keyword_list",
@@ -931,7 +949,7 @@ export const KeywordsA: Keyword[] = [
         content: ["dodge", "outmaneuver"],
       },
 
-      { type: "header", content: "4. Modify Attack Dice" },
+      { type: "header", content: "6. Modify Attack Dice" },
       { type: "header", content: "Attacker", inline: true },
       {
         type: "keyword_list",
@@ -944,7 +962,7 @@ export const KeywordsA: Keyword[] = [
         showOnlyKeyname: true,
         content: ["armor_x", "backup", "guardian_x", "shielded_x"],
       },
-      { type: "header", content: "5. Roll Defense Dice" },
+      { type: "header", content: "7. Roll Defense Dice" },
       {
         type: "keyword_list",
         showOnlyKeyname: true,
@@ -954,7 +972,7 @@ export const KeywordsA: Keyword[] = [
       {
         type: "keyword_list",
         showOnlyKeyname: true,
-        content: ["uncanny_luck_x"],
+        content: ["uncanny_luck_x", "soresu_mastery"],
       },
       {
         type: "header",
@@ -962,12 +980,25 @@ export const KeywordsA: Keyword[] = [
         inline: true,
       },
 
-      { type: "header", content: "6. Modify Defense Dice" },
+      { type: "header", content: "8. Modify Defense Dice" },
+      { type: "header", content: "Defender", inline: true },
+      {
+        type: "keyword_list",
+        showOnlyKeyname: true,
+        content: ["immune_pierce"],
+      },
       { type: "header", content: "Attacker", inline: true },
       {
         type: "keyword_list",
         showOnlyKeyname: true,
         content: ["pierce_x"],
+      },
+      { type: "header", content: "9. Compare Results" },
+      { type: "header", content: "10. Assign Suppression Token to Defender" },
+      {
+        type: "keyword_list",
+        showOnlyKeyname: true,
+        content: ["suppressive"],
       },
     ],
   },
