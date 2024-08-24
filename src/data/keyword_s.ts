@@ -270,6 +270,11 @@ export const KeywordsS: Keyword[] = [
       },
       {
         type: "reference",
+        referenced_keyword: "bounty",
+        showOnlySummary: true,
+      },
+      {
+        type: "reference",
         referenced_keyword: "cache",
         showOnlySummary: true,
       },

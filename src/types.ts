@@ -402,7 +402,7 @@ export type DescriptionType = Array<
   | Clarification
 >;
 
-type Illustration = {
+export type Illustration = {
   type: "illustration";
   content: string;
   align: "left" | "center" | "right";
@@ -410,7 +410,7 @@ type Illustration = {
   width?: string;
 };
 
-type StructuredList = {
+export type StructuredList = {
   type: "structured_list" | "structured_list_numbered";
   content: Array<string[] | string>;
 };

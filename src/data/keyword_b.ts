@@ -5,6 +5,7 @@ export const KeywordsB: Keyword[] = [
     keyword: "backup",
     name: "Backup",
     activation: "",
+    range: "range_half",
     parents: ["b"],
     summary:
       "When a unit that is benefiting from backup is attacked by a ranged attack and the attacking unit’s unit leader is beyond {range_2} of it, it may cancel up to two {hit} results during the Modify Attack Dice step of the attack sequence.",
