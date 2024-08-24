@@ -577,7 +577,7 @@ export const KeywordsA: Keyword[] = [
     parents: ["a", "concepts"],
     summary:
       "Some abilities require two objects to be at, within, or beyond a certain distance from each other.",
-    related_keywords: ["actions"],
+    related_keywords: ["actions", "range", "measurement"],
     descriptions: [
       {
         type: "text",
@@ -885,6 +885,7 @@ export const KeywordsA: Keyword[] = [
       "precise_x",
       "arsenal_x",
       "suppressive",
+      "gunslinger",
     ],
     summary: "",
     descriptions: [
@@ -911,6 +912,11 @@ export const KeywordsA: Keyword[] = [
         content: ["spray", "arsenal_x"],
       },
       { type: "header", content: "3. Declare Additional Defender" },
+      {
+        type: "keyword_list",
+        showOnlyKeyname: true,
+        content: ["spray", "arsenal_x", "gunslinger"],
+      },
       { type: "header", content: "4. Roll Attack Dice" },
       { type: "header", content: "Re-roll Attack Dice", inline: true },
       {

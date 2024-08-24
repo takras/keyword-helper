@@ -26,7 +26,7 @@ import { KeywordsW } from "./keyword_w";
 import { KeywordsOther } from "./keyword_other";
 
 export const rules: RulesDocument = {
-  helperVersion: "1.0.9",
+  helperVersion: "1.0.10",
   version: "2.6.0",
   validFrom: "2024-07-24T00:00:00Z",
   downloadUrl:

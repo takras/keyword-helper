@@ -12,6 +12,19 @@ type Log = {
 
 export const log: Log[] = [
   {
+    version: "1.0.10",
+    entries: [
+      {
+        type: "add",
+        description: "Add clarification text. For now it's just for Disengage.",
+      },
+      {
+        type: "change",
+        description: "Update attack quick-guide more keywords.",
+      },
+    ],
+  },
+  {
     version: "1.0.9",
     entries: [
       {

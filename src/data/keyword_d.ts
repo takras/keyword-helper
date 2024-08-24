@@ -370,6 +370,12 @@ export const KeywordsD: Keyword[] = [
         content:
           "While a trooper unit with the Disengage keyword is engaged with a single enemy unit, it can still perform moves as normal.",
       },
+      {
+        type: "clarification",
+        content:
+          "If a unit uses its {keyword:Disengage} keyword, it is not performing a withdraw and is not restricted by the withdraw entry in any capacity.",
+        url: "https://forums.atomicmassgames.com/topic/16164-disengage-and-withdraw-connection/#comment-65876",
+      },
     ],
   },
   {

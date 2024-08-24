@@ -275,7 +275,7 @@ export const KeywordsB: Keyword[] = [
     keyword: "beyond_range",
     name: "Beyond, At, and Within",
     parents: ["b", "concepts"],
-    related_keywords: [],
+    related_keywords: ["actions", "range", "measurement"],
     descriptions: [
       {
         type: "reference",

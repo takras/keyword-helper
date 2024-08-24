@@ -10,6 +10,7 @@ import { Illustration } from "./illustration";
 import { KeywordList } from "./keyword-list";
 import { StructuredList } from "./structured-list";
 import { CalloutComponent } from "./callout";
+import { Clarification } from "./clarification";
 import styles from "./helper.module.css";
 import classNames from "classnames";
 
@@ -142,6 +143,14 @@ export const RenderContent = ({
             index={1}
             list={description.content}
             isNumbered={description.type === "structured_list_numbered"}
+          />
+        );
+      case "clarification":
+        return (
+          <Clarification
+            key={getKey(description.type)}
+            content={description.content}
+            url={description.url}
           />
         );
       case "callout":

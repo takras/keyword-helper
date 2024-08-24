@@ -399,9 +399,10 @@ export type DescriptionType = Array<
   | RulesExample
   | Reference
   | Header
+  | Clarification
 >;
 
-export type Illustration = {
+type Illustration = {
   type: "illustration";
   content: string;
   align: "left" | "center" | "right";
@@ -409,14 +410,20 @@ export type Illustration = {
   width?: string;
 };
 
-export type StructuredList = {
+type StructuredList = {
   type: "structured_list" | "structured_list_numbered";
   content: Array<string[] | string>;
 };
 
-export type Text = {
+type Text = {
   type: "text";
   content: string;
+};
+
+type Clarification = {
+  type: "clarification";
+  content: string;
+  url: string;
 };
 
 type Reference = {
@@ -436,13 +443,13 @@ type Header = {
   inline?: boolean;
 };
 
-export type KeywordList = {
+type KeywordList = {
   type: "keyword_list";
   content: AvailableKeywords[];
   showOnlyKeyname?: boolean;
 };
 
-export type RulesExample = {
+type RulesExample = {
   type: "example";
   content: DescriptionType;
   initiallyExpanded?: true;

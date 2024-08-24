@@ -1,0 +1,14 @@
+.container {
+  padding: var(--flex-gap);
+  background-color: var(--changelog-background);
+}
+
+.header {
+  font-weight: 700;
+  font-size: 1.2rem;
+  font-family: var(--font-family);
+}
+
+.source {
+  display: block;
+}
