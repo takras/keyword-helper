@@ -276,7 +276,7 @@ export const KeywordsP: Keyword[] = [
       {
         type: "text",
         content:
-          "If all of a player’s {rank_commander} units are defeated, and they do not control a unit with the Field Commander keyword with a commander token, starting with the player with priority, players must promote a trooper unit to change its rank and become {rank_commander} p unit. ",
+          "If all of a player’s {rank_commander} units are defeated, and they do not control a unit with the {keyword:Field Commander} keyword with a commander token, starting with the player with priority, players must promote a trooper unit to change its rank and become {rank_commander} unit. ",
       },
       {
         type: "text",

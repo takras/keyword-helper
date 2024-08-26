@@ -32,8 +32,16 @@ export const KeywordsF: Keyword[] = [
       "command_cards",
       "panic",
       "courage",
+      "tokens",
     ],
     descriptions: [
+      {
+        type: "illustration",
+        content: "tokens/commander.png",
+        align: "right",
+        width: "80",
+        altText: "Pentagon shaped with a commander rank icon inside.",
+      },
       {
         type: "text",
         content:
