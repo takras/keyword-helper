@@ -1,0 +1,57 @@
+.container {
+  display: block;
+  width: 100%;
+}
+
+.button {
+  width: 100%;
+  border-radius: var(--border-radius);
+  text-align: center;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 2em;
+  padding: 10px;
+  border: 2px solid var(--button-border-color);
+  box-shadow: var(--box-shadow);
+  color: var(--button-color);
+  background: linear-gradient(
+    to right,
+    var(--button-border-color),
+    var(--button-border-color),
+    var(--button-border-color),
+    var(--button-background-color), 
+    var(--button-border-color),
+    var(--button-border-color),
+    var(--button-border-color));
+  @media only screen and (max-width: 670px) {
+    max-width: 100%;
+  }
+}
+
+.active {
+  background: linear-gradient(
+    to top,
+    var(--button-background-color),
+    var(--button-background-color), 
+    var(--button-border-color));
+  box-shadow: none;
+  border-bottom: none;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.keywordsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: row;
+  padding-left: 5px;
+  padding-right: 5px;
+  gap: var(--flex-gap);
+  padding-bottom: var(--flex-gap);
+  border-left: 2px solid var(--button-border-color);
+  border-right: 2px solid var(--button-border-color);
+  border-bottom: 2px solid var(--button-border-color);
+  border-bottom-left-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+}

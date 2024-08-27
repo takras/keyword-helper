@@ -1,4 +1,4 @@
-import { RenderContent } from "./render-content";
+import { RenderContent } from "../render-content";
 import { getEnrichedKeyword, interpolateString } from "@/utils";
 import { Keyword } from "@/types";
 import classNames from "classnames";

@@ -1,6 +1,8 @@
 import { Keyword } from "@/types";
 import { getKey, interpolateString } from "@/utils";
-import styles from "./helper.module.css";
+import globalStyles from "../helper.module.css";
+import styles from "./keyword-card.module.css";
+import classNames from "classnames";
 
 export const KeywordCard = ({
   keyword,
@@ -11,7 +13,7 @@ export const KeywordCard = ({
 }) => {
   return (
     <button
-      className={styles.keywordButton}
+      className={classNames(globalStyles.button, styles.button)}
       onClick={() => selectKeyword(keyword)}
       key={getKey(keyword.keyword)}
     >

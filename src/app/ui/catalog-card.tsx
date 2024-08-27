@@ -4,7 +4,8 @@ import { rules } from "@/data/rules";
 import { KeywordCard } from "./keyword-card";
 import { getKey, sortKeyword, Variables } from "@/utils";
 import classNames from "classnames";
-import styles from "./helper.module.css";
+import styles from "./catalog-card.module.css";
+import globalStyles from "../helper.module.css";
 
 export const CatalogCard = ({
   catalog,
@@ -41,10 +42,10 @@ export const CatalogCard = ({
     return expandedCatalogs.includes(index);
   };
   return (
-    <div className={styles.catalogContainer}>
+    <div className={styles.container}>
       <button
         className={classNames(
-          styles.catalogButton,
+          styles.button,
           isExpanded(catalog.id) ? styles.active : null
         )}
         onClick={() => toggleExpandCatalog(catalog.id)}
@@ -66,7 +67,7 @@ export const CatalogCard = ({
             ))}
         </div>
       )}
-      <div className={styles.hiddenLink}>
+      <div className={globalStyles.hiddenLink}>
         {rules.keywords
           .filter(filterByActiveCatalog)
           .filter((keyword) => keyword.parents.includes(catalog.id))
@@ -75,7 +76,7 @@ export const CatalogCard = ({
             <a
               key={`${keyword.keyword}_hidden`}
               href={`${Variables.url}/#!${keyword.keyword}`}
-              className={styles.hiddenLink}
+              className={globalStyles.hiddenLink}
             >
               {keyword.name}
             </a>

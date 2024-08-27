@@ -1,0 +1,29 @@
+.exampleList,
+.exampleListNumbered {
+  margin: 0;
+  margin-inline: -20px;
+  font-style: normal;
+  padding-bottom: 20px;
+  max-width: 90%;
+}
+
+.exampleListNumbered {
+  list-style-type: decimal;
+}
+
+.exampleList {
+  list-style-type: disc;
+}
+
+.listItem {
+  &::marker {
+    font-family: var(--font-family);
+    font-size: 1.5rem;
+  }
+}
+
+.listItemLine {
+  &>img {
+    filter: invert(var(--invert-icon-color));
+  }
+}

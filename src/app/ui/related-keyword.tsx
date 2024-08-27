@@ -1,7 +1,9 @@
 import React from "react";
 import { getEnrichedKeyword, getKey, Variables } from "@/utils";
 import { Keyword } from "@/types";
-import styles from "./helper.module.css";
+import globalStyles from "../helper.module.css";
+import styles from "./related-keyword.module.css";
+import classNames from "classnames";
 
 export const RelatedKeywords = ({
   related,
@@ -13,9 +15,9 @@ export const RelatedKeywords = ({
   selectKeyword: (keyword: Keyword) => void;
 }) => {
   return (
-    <div className={styles.relatedContainer}>
-      <h4 className={styles.relatedHeader}>Related keywords:</h4>
-      <div className={styles.relatedButtons}>
+    <div className={styles.container}>
+      <h4 className={styles.header}>Related keywords:</h4>
+      <div className={styles.buttonsContainer}>
         {related
           .toSorted((a, b) =>
             a.toUpperCase() < b.toUpperCase()
@@ -33,14 +35,17 @@ export const RelatedKeywords = ({
             return (
               <React.Fragment key={getKey(keyword)}>
                 <button
-                  className={styles.relatedButton}
+                  className={classNames(
+                    globalStyles.button,
+                    styles.relatedButton
+                  )}
                   onClick={() => selectKeyword(enriched)}
                 >
                   {enriched?.name}
                 </button>
                 <a
                   href={`${Variables.url}/#!${enriched.keyword}`}
-                  className={styles.hiddenLink}
+                  className={globalStyles.hiddenLink}
                 >
                   {enriched.name}
                 </a>

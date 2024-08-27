@@ -1,9 +1,9 @@
 import { DescriptionType, Keyword } from "@/types";
 import { useState } from "react";
 import { getKey } from "@/utils";
-import { RenderContent } from "./render-content";
+import { RenderContent } from "../render-content";
 import classNames from "classnames";
-import styles from "./helper.module.css";
+import styles from "./example.module.css";
 
 export const ExampleContent = ({
   descriptions,
@@ -17,23 +17,24 @@ export const ExampleContent = ({
   const [isActive, setIsActive] = useState(isInitiallyExpanded === true);
   const toggleActive = () => setIsActive((current) => !current);
   return (
-    <div className={styles.exampleModule}>
-      <div className={styles.exampleContainer} key={getKey("header")}>
+    <div className={styles.wrapper}>
+      <div className={styles.container} key={getKey("header")}>
         <button
           onClick={() => toggleActive()}
           className={classNames(
-            styles.exampleHeader,
-            isActive ? styles.exampleHeaderActive : styles.exampleHeaderInactive
+            styles.header,
+            isActive ? styles.headerActive : styles.headerInactive
           )}
         >
           <RenderContent
             descriptions={descriptions.filter(
               (description) => description.type === "header"
             )}
+            overrideWithClassName={styles.header4}
             selectKeyword={selectKeyword}
           />
         </button>
-        <div className={isActive ? styles.helperActive : styles.helperInactive}>
+        <div className={isActive ? styles.active : styles.inactive}>
           <RenderContent
             descriptions={descriptions.filter(
               (description) => description.type !== "header"

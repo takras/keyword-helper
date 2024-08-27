@@ -1,6 +1,6 @@
 import { Illustration as IllustrationType } from "@/types";
 import classNames from "classnames";
-import styles from "./helper.module.css";
+import styles from "./illustration.module.css";
 
 export const Illustration = ({ image }: { image: IllustrationType }) => {
   return (
@@ -10,10 +10,10 @@ export const Illustration = ({ image }: { image: IllustrationType }) => {
       src={`/images/${image.content}`}
       width={image.width}
       className={classNames(
-        styles.illustrationImage,
-        image.align === "center" ? styles.imageCenter : null,
-        image.align === "left" ? styles.imageLeft : null,
-        image.align === "right" ? styles.imageRight : null
+        styles.image,
+        image.align === "center" ? styles.center : null,
+        image.align === "left" ? styles.left : null,
+        image.align === "right" ? styles.right : null
       )}
     />
   );

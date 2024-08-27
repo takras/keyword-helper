@@ -1,0 +1,14 @@
+
+.list {
+  margin-top: 0;
+}
+
+.listName {
+  font-size: 1.1rem;
+}
+
+.item {
+  &>img {
+    filter: invert(var(--invert-icon-color));
+  }
+}

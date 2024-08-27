@@ -1,6 +1,6 @@
 import { StructuredList as StructuredListType } from "@/types";
 import { getKey, interpolateString } from "@/utils";
-import styles from "./helper.module.css";
+import styles from "./structured-list.module.css";
 
 export const StructuredList = ({
   list,

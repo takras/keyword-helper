@@ -1,5 +1,5 @@
 import { getEnrichedKeyword, getKey, interpolateString } from "@/utils";
-import styles from "./helper.module.css";
+import styles from "./keyword-list.module.css";
 
 export const KeywordList = ({
   keywords,
@@ -15,7 +15,7 @@ export const KeywordList = ({
     }
     return (
       <li key={getKey(keyword)}>
-        <strong className={styles.keywordListName}>
+        <strong className={styles.listName}>
           {enriched.name}
           {showOnlyKeyname ? null : ": "}
         </strong>
@@ -24,13 +24,13 @@ export const KeywordList = ({
           interpolateString(
             enriched.summary,
             getKey(enriched.summary),
-            styles.keywordItem
+            styles.item
           )}
       </li>
     );
   });
   return content ? (
-    <ul className={styles.keywordList} key={getKey(keywords[0])}>
+    <ul className={styles.list} key={getKey(keywords[0])}>
       {content}
     </ul>
   ) : null;

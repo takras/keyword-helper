@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  padding-right: var(--flex-gap);
+  padding-left: var(--flex-gap);
+  height: 22px;
+}
+
+.button {
+  margin-right: var(--flex-gap);
+  color: var(--sharebutton-color);
+}

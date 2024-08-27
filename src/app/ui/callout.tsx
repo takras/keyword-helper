@@ -1,8 +1,9 @@
-import { RenderContent } from "./render-content";
+import { RenderContent } from "../render-content";
 import { getEnrichedKeyword } from "@/utils";
 import { Keyword } from "@/types";
 import classNames from "classnames";
-import styles from "./helper.module.css";
+import styles from "./callout.module.css";
+import globalStyles from "../helper.module.css";
 
 export const CalloutComponent = ({
   reference,
@@ -16,8 +17,8 @@ export const CalloutComponent = ({
     return null;
   }
   return (
-    <div className={styles.calloutContainer}>
-      <h3 className={classNames(styles.header3, styles.calloutHeader)}>
+    <div className={styles.container}>
+      <h3 className={classNames(globalStyles.header3, styles.header)}>
         {enriched?.name}
       </h3>
       <RenderContent

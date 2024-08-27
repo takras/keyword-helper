@@ -1,0 +1,17 @@
+.buttonRange {
+  margin-left: 5px;
+  vertical-align: text-bottom;
+  opacity: 0.5;
+}
+
+
+.button {
+  border-radius: var(--border-radius);
+  min-width: 300px;
+  max-width: 300px;
+
+  @media only screen and (max-width: 670px) {
+    width: 100%;
+    max-width: 100%;
+  }
+}

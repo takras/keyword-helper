@@ -1,7 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 import { useState } from "react";
 import { Keyword } from "@/types";
-import styles from "./helper.module.css";
+import globalStyles from "../helper.module.css";
+import styles from "./share.module.css";
 import classNames from "classnames";
 
 export const Share = ({ keyword }: { keyword: Keyword }) => {
@@ -19,24 +20,21 @@ export const Share = ({ keyword }: { keyword: Keyword }) => {
     if (/(A|a)ndroid/i.test(navigator.userAgent)) {
       return (
         <img
-          className={styles.shareIcon}
+          className={styles.icon}
           src="/images/share-android.svg"
           alt="Share"
         />
       );
     }
     return (
-      <img
-        className={styles.shareIcon}
-        src="/images/share-ios.svg"
-        alt="Share"
-      />
+      <img className={styles.icon} src="/images/share-ios.svg" alt="Share" />
     );
   };
 
   const sharePopup = () => {
     if (!navigator.canShare || !navigator.canShare(shareData)) {
       navigator.clipboard.writeText(location.href).then(() => setCopied(true));
+      return;
     }
     navigator
       .share(shareData)
@@ -44,9 +42,9 @@ export const Share = ({ keyword }: { keyword: Keyword }) => {
       .catch(() => {});
   };
   return (
-    <div className={styles.shareContainer}>
+    <div className={styles.container}>
       <button
-        className={classNames(styles.button, styles.shareButton)}
+        className={classNames(globalStyles.button, styles.button)}
         onClick={sharePopup}
       >
         <span>

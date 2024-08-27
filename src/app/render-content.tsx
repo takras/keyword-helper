@@ -1,25 +1,27 @@
 import { DescriptionType, Keyword } from "@/types";
-import { ExampleContent } from "./example";
+import { ExampleContent } from "./ui/example";
 import {
   getEnrichedKeyword,
   getKey,
   interpolateString,
   Variables,
 } from "@/utils";
-import { Illustration } from "./illustration";
-import { KeywordList } from "./keyword-list";
-import { StructuredList } from "./structured-list";
-import { CalloutComponent } from "./callout";
-import { Clarification } from "./clarification";
+import { Illustration } from "./ui/illustration";
+import { KeywordList } from "./ui/keyword-list";
+import { StructuredList } from "./ui/structured-list";
+import { CalloutComponent } from "./ui/callout";
+import { Clarification } from "./ui/clarification";
 import styles from "./helper.module.css";
 import classNames from "classnames";
 
 export const RenderContent = ({
   descriptions,
   selectKeyword,
+  overrideWithClassName,
 }: {
   descriptions: DescriptionType;
   selectKeyword: (keyword: Keyword) => void;
+  overrideWithClassName?: string;
 }) => {
   const renderedKeywords: string[] = [];
   const reference = ({
@@ -100,7 +102,11 @@ export const RenderContent = ({
         if (description.inline) {
           return (
             <span
-              className={classNames(styles.header4, styles.inlineHeader)}
+              className={classNames(
+                styles.header4,
+                styles.inlineHeader,
+                overrideWithClassName
+              )}
               key={getKey(description.type)}
             >
               {interpolateString(
@@ -113,7 +119,10 @@ export const RenderContent = ({
           );
         }
         return (
-          <h4 className={styles.header4} key={getKey(description.type)}>
+          <h4
+            className={classNames(styles.header4, overrideWithClassName)}
+            key={getKey(description.type)}
+          >
             {description.content}
           </h4>
         );
