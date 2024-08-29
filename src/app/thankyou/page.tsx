@@ -1,7 +1,7 @@
-import styles from "./thankyou.module.css";
+import styles from "./page.module.css";
 import Image from "next/image";
 
-export const ThankYou = () => {
+export default function Page() {
   return (
     <div className={styles.thanks}>
       <Image
@@ -18,6 +18,4 @@ export const ThankYou = () => {
       <a href="/">Back to Legion Helper</a>
     </div>
   );
-};
-
-export default ThankYou;
+}

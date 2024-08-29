@@ -1,3 +1,4 @@
+"use client";
 import { CatalogEntry, Keyword } from "@/types";
 import { useState } from "react";
 import { rules } from "@/data/rules";
@@ -5,15 +6,13 @@ import { KeywordCard } from "./keyword-card";
 import { getKey, sortKeyword, Variables } from "@/utils";
 import classNames from "classnames";
 import styles from "./catalog-card.module.css";
-import globalStyles from "../helper.module.css";
+import globalStyles from "./helper.module.css";
 
 export const CatalogCard = ({
   catalog,
-  selectKeyword,
   activeCatalog,
 }: {
   catalog: CatalogEntry;
-  selectKeyword: (keyword: Keyword) => void;
   activeCatalog: CatalogEntry["catalog"];
 }) => {
   const [expandedCatalogs, setExpandedCatalogs] = useState<string[]>([]);
@@ -59,29 +58,10 @@ export const CatalogCard = ({
             .filter((keyword) => keyword.parents.includes(catalog.id))
             .toSorted(sortKeyword)
             .map((keyword) => (
-              <KeywordCard
-                key={getKey(keyword.keyword)}
-                keyword={keyword}
-                selectKeyword={selectKeyword}
-              />
+              <KeywordCard key={getKey(keyword.keyword)} keyword={keyword} />
             ))}
         </div>
       )}
-      <div className={globalStyles.hiddenLink}>
-        {rules.keywords
-          .filter(filterByActiveCatalog)
-          .filter((keyword) => keyword.parents.includes(catalog.id))
-          .toSorted(sortKeyword)
-          .map((keyword) => (
-            <a
-              key={`${keyword.keyword}_hidden`}
-              href={`${Variables.url}/#!${keyword.keyword}`}
-              className={globalStyles.hiddenLink}
-            >
-              {keyword.name}
-            </a>
-          ))}
-      </div>
     </div>
   );
 };

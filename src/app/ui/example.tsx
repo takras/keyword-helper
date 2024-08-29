@@ -1,7 +1,8 @@
+"use client";
 import { DescriptionType, Keyword } from "@/types";
 import { useState } from "react";
 import { getKey } from "@/utils";
-import { RenderContent } from "../render-content";
+import { RenderContent } from "./render-content";
 import classNames from "classnames";
 import styles from "./example.module.css";
 
@@ -30,7 +31,7 @@ export const ExampleContent = ({
             descriptions={descriptions.filter(
               (description) => description.type === "header"
             )}
-            overrideWithClassName={styles.header4}
+            overrideWithClassName={styles.headerOverride}
             selectKeyword={selectKeyword}
           />
         </button>

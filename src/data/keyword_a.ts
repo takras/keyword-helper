@@ -17,6 +17,8 @@ export const KeywordsA: Keyword[] = [
         align: "center",
         altText: "No Time for Sorrows Command Card",
         content: "examples/command-provide-move.png",
+        height: 564,
+        width: 801,
       },
     ],
   },
@@ -59,6 +61,8 @@ export const KeywordsA: Keyword[] = [
             altText:
               "Luke Skywalker unit card with the keyword Jump 1 highlighted.",
             align: "center",
+            height: 755,
+            width: 1072,
           },
           {
             type: "text",
@@ -71,6 +75,8 @@ export const KeywordsA: Keyword[] = [
             altText:
               "Luke Skywalker unit card with Force Reflexes card tucked under.",
             align: "center",
+            height: 995,
+            width: 1216,
           },
           {
             type: "text",
@@ -223,6 +229,8 @@ export const KeywordsA: Keyword[] = [
         content: "examples/advantage-card.png",
         align: "center",
         altText: "Two advantage cards. Cunning Deployment and Garrison.",
+        width: 612,
+        height: 389,
       },
       {
         type: "structured_list_numbered",
@@ -320,7 +328,8 @@ export const KeywordsA: Keyword[] = [
         content: "tokens/aim.png",
         align: "right",
         altText: "A green token shaped like a crosshair.",
-        width: "80",
+        width: 80,
+        height: 74,
       },
       {
         type: "text",
@@ -418,6 +427,8 @@ export const KeywordsA: Keyword[] = [
         content: "examples/area-terrain.png",
         align: "center",
         altText: "A fallen AT-ST terrain piece",
+        width: 737,
+        height: 433,
       },
     ],
   },
@@ -612,6 +623,8 @@ export const KeywordsA: Keyword[] = [
             content: "examples/at-within-beyond.png",
             align: "center",
             altText: "Photo with the measurement tool flat on the ground.",
+            width: 737,
+            height: 408,
           },
           {
             type: "text",
@@ -648,7 +661,6 @@ export const KeywordsA: Keyword[] = [
       "aim",
       "actions",
       "backup",
-      "attack",
       "dice",
       "lethal_x",
       "cover",

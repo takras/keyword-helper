@@ -1,20 +1,30 @@
 /* eslint-disable @next/next/no-img-element */
-import { useState } from "react";
-import { Keyword } from "@/types";
-import globalStyles from "../helper.module.css";
-import styles from "./share.module.css";
+"use client";
 import classNames from "classnames";
+import { useEffect, useState } from "react";
+import { Keyword } from "@/types";
+import globalStyles from "./helper.module.css";
+import styles from "./share.module.css";
 
 export const Share = ({ keyword }: { keyword: Keyword }) => {
   const [copied, setCopied] = useState(false);
-  const shareData = {
-    title: `Legion Helper`,
-    text: `Here's what Legion Helper says about "${keyword.name}"`,
-    url: location.href,
-  };
+  const [shareData, setShareData] = useState({});
+  const [canShare, setCanShare] = useState(false);
+
+  useEffect(() => {
+    setShareData({
+      title: `Legion Helper`,
+      text: `Here's what Legion Helper says about "${keyword.name}"`,
+      url: location.href,
+    });
+  }, [keyword]);
+
+  useEffect(() => {
+    setCanShare(navigator.canShare && navigator.canShare(shareData));
+  }, [shareData]);
 
   const getShareImage = () => {
-    if (!navigator.canShare || !navigator.canShare(shareData)) {
+    if (!canShare) {
       return null;
     }
     if (/(A|a)ndroid/i.test(navigator.userAgent)) {
@@ -32,7 +42,7 @@ export const Share = ({ keyword }: { keyword: Keyword }) => {
   };
 
   const sharePopup = () => {
-    if (!navigator.canShare || !navigator.canShare(shareData)) {
+    if (!canShare) {
       navigator.clipboard.writeText(location.href).then(() => setCopied(true));
       return;
     }
@@ -48,9 +58,7 @@ export const Share = ({ keyword }: { keyword: Keyword }) => {
         onClick={sharePopup}
       >
         <span>
-          {!navigator.canShare
-            ? "Copy sharable link to clipboard"
-            : "Share keyword"}
+          {!canShare ? "Copy sharable link to clipboard" : "Share keyword"}
         </span>
         {getShareImage()}
       </button>

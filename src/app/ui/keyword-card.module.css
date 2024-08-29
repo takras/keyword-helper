@@ -9,6 +9,9 @@
   border-radius: var(--border-radius);
   min-width: 300px;
   max-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   @media only screen and (max-width: 670px) {
     width: 100%;

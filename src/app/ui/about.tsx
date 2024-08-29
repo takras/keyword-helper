@@ -1,8 +1,9 @@
-/* eslint-disable @next/next/no-img-element */
-import styles from "./helper.module.css";
+import globalStyles from "./helper.module.css";
+import styles from "./about.module.css";
+import Image from "next/image";
 export const About = () => {
   return (
-    <div className={styles.about}>
+    <div className={styles.container}>
       <p>
         Legion Helper is intended to make it quick to find keywords and concepts
         from the Star Wars: Legion rulebook and reference, for quick and easy
@@ -11,7 +12,7 @@ export const About = () => {
       <p>
         It is heavily inspired by{" "}
         <a
-          className={styles.externalLink}
+          className={globalStyles.externalLink}
           href="https://legionquickguide.com/"
           target="_blank"
         >
@@ -38,7 +39,7 @@ export const About = () => {
         <a
           href="https://www.atomicmassgames.com/"
           target="_blank"
-          className={styles.externalLink}
+          className={globalStyles.externalLink}
         >
           Atomic Mass Games
         </a>{" "}
@@ -46,7 +47,7 @@ export const About = () => {
         <a
           href="https://thefifthtrooper.com/"
           target="_blank"
-          className={styles.externalLink}
+          className={globalStyles.externalLink}
         >
           The Fifth Trooper.
         </a>
@@ -61,13 +62,15 @@ export const About = () => {
         or look up using the alphabetized list of keywords and concepts.
       </p>
       <p>Some buttons also have a Range-icon such as:</p>
-      <button className={styles.button}>
+      <button className={globalStyles.button}>
         Compel [{""}
-        <img
+        <Image
           src="/images/black/range-2.png"
           alt="A cross-haired circle with a number 2 in it"
-          className={styles.inlineIcon}
-        ></img>
+          className={globalStyles.inlineIcon}
+          width={16}
+          height={16}
+        ></Image>
         {""}]
       </button>
       <p>
@@ -75,12 +78,13 @@ export const About = () => {
         the ability keyword, showing its &quot;at&quot;-range.
       </p>
       <h3>Add to home screen</h3>
-      <img
+      <Image
         src="/images/examples/homeicon.jpeg"
         alt="An iphone icon"
         style={{ float: "right" }}
         width={80}
-      ></img>
+        height={80}
+      ></Image>
       <p>
         Most browsers permit this web page to be added to your mobile phones
         homescreen as an easily accessible icon.
@@ -90,11 +94,13 @@ export const About = () => {
         with arrow up) below the address bar. From that menu, click the
         &quot;Add to Home Screen&quot; button and you&apos;re set!
       </p>
-      <img
+      <Image
         src="/images/examples/homescreen.png"
         alt="An iphone popup menu"
-        className={styles.imageLinks}
-      ></img>
+        className={globalStyles.imageLinks}
+        width={400}
+        height={280}
+      ></Image>
       <h3>Printable tokens</h3>
       <p>
         I have designed some tokens that were introduced in the 2024 version
@@ -102,14 +108,18 @@ export const About = () => {
       </p>
       <p>
         <a href="https://www.printables.com/model/948921-star-wars-legion-poi-tokens">
-          <img
-            className={styles.imageLinks}
+          <Image
+            className={globalStyles.imageLinks}
             src="/images/tokens/0-5range.png"
+            width={400}
+            height={107}
             alt=""
           />
           <br />
-          <img
-            className={styles.imageLinks}
+          <Image
+            width={400}
+            height={34}
+            className={globalStyles.imageLinks}
             src="/images/tokens/1-5range.png"
             alt=""
           />
@@ -119,8 +129,10 @@ export const About = () => {
       </p>
       <p>
         <a href="https://www.printables.com/model/947836-star-wars-legion-half-12-and-15-deployment-range-t">
-          <img
-            className={styles.imageLinks}
+          <Image
+            width={400}
+            height={300}
+            className={globalStyles.imageLinks}
             src="/images/tokens/poi-3d.png"
             alt=""
           />

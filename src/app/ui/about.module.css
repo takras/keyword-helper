@@ -1,0 +1,8 @@
+.container {
+  background-color: var(--background-color);
+  padding: 20px;
+  padding-top: 40px;
+  border-radius: var(--border-radius);
+  border: var(--border-thin);
+  margin-bottom: var(--flex-gap);
+}

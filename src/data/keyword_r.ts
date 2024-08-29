@@ -437,7 +437,7 @@ export const KeywordsR: Keyword[] = [
         content: "tokens/damage.png",
         align: "right",
         altText: "An oblong hexagon shape with an orange cog inside.",
-        width: "80",
+        width: 80,
       },
       {
         type: "text",

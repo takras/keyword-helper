@@ -105,7 +105,7 @@ export const KeywordsW: Keyword[] = [
         altText: "A round token with orange wheel inside",
         align: "right",
         content: "tokens/wheel-mode.png",
-        width: "80",
+        width: 80,
       },
       {
         type: "text",

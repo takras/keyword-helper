@@ -1,11 +1,13 @@
 import HTMLReactParser from "html-react-parser/lib/index";
-import styles from "../src/app/helper.module.css";
+import styles from "../src/app/ui/helper.module.css";
 import { rules } from "./data/rules";
 import { Keyword } from "./types";
 
 export const Variables = {
   title: "Legion Helper",
   url: "https://legion.takras.net",
+  description:
+    "Keyword helper for use with the miniatures game Star Wars: Legion",
 };
 
 const getIconPath = (fileName: string, title?: string) => {

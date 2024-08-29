@@ -1,3 +1,4 @@
+"use client";
 import { Illustration as IllustrationType } from "@/types";
 import classNames from "classnames";
 import styles from "./illustration.module.css";

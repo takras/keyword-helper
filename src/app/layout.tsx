@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import { Variables } from "@/utils";
 import { GoogleTagManager } from "@next/third-parties/google";
-import { ThemeProvider } from "next-themes";
+import { Providers } from "./providers";
 
+import "./globals.css";
 import styles from "./layout.module.css";
 
-const description =
-  "Keyword helper for use with the miniatures game Star Wars: Legion";
+const description = Variables.description;
 const title = Variables.title;
 const image = "/images/legionhelper.svg";
 
@@ -57,7 +57,7 @@ export default function RootLayout({
       <GoogleTagManager gtmId="GTM-W7J477VD" />
       <GoogleTagManager gtmId="G-148T6XV7YW" />
       <body className={styles.body}>
-        <ThemeProvider>{children}</ThemeProvider>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

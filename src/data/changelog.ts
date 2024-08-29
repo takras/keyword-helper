@@ -12,6 +12,16 @@ type Log = {
 
 export const log: Log[] = [
   {
+    version: "1.1.0",
+    entries: [
+      {
+        type: "change",
+        description:
+          "Updated a lot in the routing logic, in the hopes of making loading faster for certain users.",
+      },
+    ],
+  },
+  {
     version: "1.0.10",
     entries: [
       {

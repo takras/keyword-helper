@@ -175,7 +175,7 @@ export const KeywordsI: Keyword[] = [
         align: "right",
         altText: "Immobilize token",
         content: "tokens/immobilize.png",
-        width: "80",
+        width: 80,
       },
       {
         type: "text",
@@ -271,7 +271,7 @@ export const KeywordsI: Keyword[] = [
         align: "right",
         altText: "Round token with picture of a unit inside.",
         content: "tokens/incognito.png",
-        width: "120",
+        width: 120,
       },
       {
         type: "text",
@@ -391,7 +391,7 @@ export const KeywordsI: Keyword[] = [
         align: "right",
         altText: "Ion token",
         content: "tokens/ion.png",
-        width: "80",
+        width: 80,
       },
       {
         type: "text",

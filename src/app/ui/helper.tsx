@@ -1,27 +1,21 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
 import Script from "next/script";
-import { ChangeEvent, useCallback, useEffect, useState } from "react";
+import Image from "next/image";
+import { ChangeEvent, useCallback, useContext, useState } from "react";
 import { AVAILABLE_KEYWORDS, CatalogEntry, Keyword } from "@/types";
 import { rules as rulesDocument } from "@/data/rules";
-import { CatalogCard } from "./ui/catalog-card";
-import { KeywordCard } from "./ui/keyword-card";
-import { RelatedKeywords } from "./ui/related-keyword";
-import { RenderContent } from "./render-content";
-import { About } from "./about";
-import { sortKeyword, Variables } from "@/utils";
-import { Changelog } from "./changelog";
-import { Share } from "./ui/share";
-import { ToggleDarkMode } from "./ui/toggle-dark-mode";
-import { sendGTMEvent } from "@next/third-parties/google";
+import { CatalogCard } from "./catalog-card";
+import { KeywordCard } from "./keyword-card";
+import { sortKeyword } from "@/utils";
+import { ToggleDarkMode } from "./toggle-dark-mode";
+import { KeywordContext } from "../providers";
 import styles from "./helper.module.css";
 import classNames from "classnames";
+import Link from "next/link";
 
 export default function Helper() {
-  const modal = document.querySelector("[data-modal]") as HTMLDialogElement;
-
-  const [selectedKeywords, setSelectedKeywords] = useState<Keyword[]>([]);
   const [searchFilter, setSearchFilter] = useState<string>("");
+  const { selectKeyword, getLink } = useContext(KeywordContext);
 
   const [activeCatalog, setActiveCatalog] =
     useState<CatalogEntry["catalog"]>("alphabet");
@@ -38,125 +32,9 @@ export default function Helper() {
 
   let counter = 0;
 
-  useEffect(() => {
-    if (!modal) {
-      return;
-    }
-    if (selectedKeywords.length > 0) {
-      modal.showModal();
-      modal.scrollTop = 0;
-    }
-  }, [modal, selectedKeywords]);
-
-  useEffect(() => {
-    const hash = window.location.hash.replace(/(#!)/, "");
-    const keyword = rulesDocument.keywords.find(
-      (word) => word.keyword === hash
-    );
-
-    if (keyword) {
-      updateMeta(keyword);
-      setSelectedKeywords([keyword]);
-    }
-  }, []);
-
   const getKey = (key: string) => {
     counter += 1;
     return `${key}_${counter}`;
-  };
-
-  function updateMeta(keyword?: Keyword) {
-    if (!keyword) {
-      location.href = "#!";
-      document.title = Variables.title;
-      return;
-    }
-    location.href = `#!${keyword.keyword}`;
-    document.title = `${Variables.title} – ${keyword.name}`;
-  }
-
-  const selectKeyword = (keyword: Keyword) => {
-    if (keyword.keyword === "search_result_blank") {
-      return null;
-    }
-    sendGTMEvent({
-      value: keyword.name,
-    });
-    updateMeta(keyword);
-    setSelectedKeywords((current) => current.concat(keyword));
-  };
-
-  const goToPreviousKeyword = (keyword: Keyword) => {
-    updateMeta(keyword);
-    setSelectedKeywords((current) => current.slice(0, -1));
-  };
-
-  const closeModal = () => {
-    updateMeta();
-    modal.close();
-    setSelectedKeywords([]);
-  };
-
-  const modalComponent = () => {
-    const selectedKeyword = selectedKeywords.slice(-1).shift();
-    const previousKeyword = selectedKeywords[selectedKeywords.length - 2];
-    return (
-      <dialog data-modal className={styles.modal}>
-        <div className={styles.modalTopMenu}>
-          <div className={styles.modalButtonRow}>
-            {
-              <button
-                onClick={
-                  previousKeyword
-                    ? () => goToPreviousKeyword(previousKeyword)
-                    : closeModal
-                }
-                className={styles.modalBackButton}
-              >
-                <img
-                  src="/images/arrow-left.png"
-                  alt="Arrow pointing left"
-                  width="20"
-                ></img>
-                {previousKeyword?.name ?? "Back to Legion Helper"}
-              </button>
-            }
-            {!previousKeyword && <div />}
-            <button onClick={closeModal} className={styles.closeModalButton}>
-              <img
-                src="/images/cross-x.png"
-                alt="A black cross"
-                width="20"
-              ></img>
-            </button>
-          </div>
-        </div>
-
-        {selectedKeyword?.keyword === "about" && <About />}
-        {selectedKeyword?.keyword === "changelog" && <Changelog />}
-
-        {selectedKeyword &&
-          selectedKeyword.keyword !== "about" &&
-          selectedKeyword.keyword !== "changelog" && (
-            <div className={styles.keywordContainer}>
-              <h2 className={styles.header2}>
-                {selectedKeyword.name}{" "}
-                {selectedKeyword.tag && `(${selectedKeyword.tag})`}
-              </h2>
-              <RenderContent
-                descriptions={selectedKeyword.descriptions}
-                selectKeyword={selectKeyword}
-              />
-              <RelatedKeywords
-                related={selectedKeyword.related_keywords}
-                modal={modal}
-                selectKeyword={selectKeyword}
-              />
-              <Share keyword={selectedKeyword} />
-            </div>
-          )}
-      </dialog>
-    );
   };
 
   const onSearchChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -237,11 +115,7 @@ export default function Helper() {
         </div>
         <div className={styles.searchResult}>
           {getFilteredItems().map((item) => (
-            <KeywordCard
-              keyword={item}
-              key={getKey(item.keyword)}
-              selectKeyword={selectKeyword}
-            />
+            <KeywordCard keyword={item} key={getKey(item.keyword)} />
           ))}
         </div>
       </div>
@@ -285,14 +159,15 @@ export default function Helper() {
 
   return (
     <main className={styles.main}>
-      {modalComponent()}
       <div className={styles.darkModeToggle}>
         <ToggleDarkMode />
       </div>
       <div className={styles.headline}>
         <h1 className={styles.title}>Legion Helper</h1>
         <span className={styles.subtitle}>&quot;Roger, Roger&quot;</span>
-        <img
+        <Image
+          width={56}
+          height={80}
           src="/images/legionhelper.svg"
           alt="A drawing of a B1 Battle droid."
           className={styles.logo}
@@ -300,78 +175,48 @@ export default function Helper() {
       </div>
       <div className={styles.aboutContainer}>
         <div className={styles.changelogButton}>
-          <button
+          <Link
             className={styles.button}
-            onClick={() =>
-              selectKeyword(
-                rulesDocument.keywords.find(
-                  (keyword) => keyword.keyword === "coming_from_pre_2024"
-                )!
-              )
-            }
+            href={getLink("coming_from_pre_2024")}
+            onClick={() => selectKeyword("coming_from_pre_2024")}
+            prefetch={true}
+            scroll={false}
           >
-            Biggest changes from version prior to 2024s 2.6.0 version.
-          </button>
+            Biggest changes from version prior to 2024s 2.6.0 version
+          </Link>
         </div>
         <div className={styles.aboutButtonRow}>
-          <button
+          <Link
             className={styles.button}
-            onClick={() =>
-              selectKeyword(
-                rulesDocument.keywords.find(
-                  (keyword) => keyword.keyword === "about"
-                )!
-              )
-            }
+            href={getLink("about")}
+            onClick={() => selectKeyword("about")}
+            prefetch={true}
+            scroll={false}
           >
             About Legion Helper
-          </button>
-          <button
+          </Link>
+          <Link
             className={styles.button}
-            onClick={() =>
-              selectKeyword(
-                rulesDocument.keywords.find(
-                  (keyword) => keyword.keyword === "attack_quick_reference"
-                )!
-              )
-            }
+            href={getLink("attack_quick_reference")}
+            onClick={() => selectKeyword("attack_quick_reference")}
+            prefetch={true}
+            scroll={false}
           >
             Attack Quick Reference
-          </button>
-          <button
-            className={styles.button}
-            onClick={() => window.open(rulesDocument.downloadUrl, "_blank")}
-          >
-            Official Rules PDF
-          </button>
-          <button
-            className={styles.button}
-            onClick={() => window.open(rulesDocument.documentUrl, "_blank")}
-          >
-            Official Documents
-          </button>
-          <button
-            className={styles.button}
-            onClick={() => window.open(rulesDocument.discussionUrl, "_blank")}
-          >
-            Official Forum
-          </button>
+          </Link>
         </div>
         <div className={styles.infoContainer}>
           <div className={styles.versionInfo}>
             Current version of Legion Helper:{" "}
-            <button
+            <Link
               className={classNames(styles.version, styles.button)}
-              onClick={() =>
-                selectKeyword(
-                  rulesDocument.keywords.find(
-                    (keyword) => keyword.keyword === "changelog"
-                  )!
-                )
-              }
+              href={getLink("changelog")}
+              onClick={() => selectKeyword("changelog")}
+              prefetch={true}
+              scroll={false}
             >
               {rulesDocument.helperVersion}
-            </button>
+            </Link>
           </div>
           <div className={styles.versionInfo}>
             Current version of the rules reference updated:{" "}
@@ -393,12 +238,37 @@ export default function Helper() {
             <CatalogCard
               key={getKey(catalog.id)}
               catalog={catalog}
-              selectKeyword={selectKeyword}
               activeCatalog={activeCatalog}
             />
           ))}
       </div>
       <div className={styles.footerContainer}>
+        <div className={styles.aboutContainer}>
+          <Link
+            className={styles.button}
+            href={rulesDocument.downloadUrl}
+            target="_blank"
+            scroll={false}
+          >
+            Official Rules PDF
+          </Link>
+          <Link
+            className={styles.button}
+            href={rulesDocument.documentUrl}
+            target="_blank"
+            scroll={false}
+          >
+            Official Documents
+          </Link>
+          <Link
+            className={styles.button}
+            href={rulesDocument.discussionUrl}
+            target="_blank"
+            scroll={false}
+          >
+            Official Forum
+          </Link>
+        </div>
         <div id="donate-button-container" className={styles.donate}>
           <div id="donate-button"></div>
         </div>

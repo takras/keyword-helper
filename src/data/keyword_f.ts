@@ -39,7 +39,7 @@ export const KeywordsF: Keyword[] = [
         type: "illustration",
         content: "tokens/commander.png",
         align: "right",
-        width: "80",
+        width: 80,
         altText: "Pentagon shaped with a commander rank icon inside.",
       },
       {

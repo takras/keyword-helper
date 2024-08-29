@@ -292,7 +292,8 @@ export const KeywordsD: Keyword[] = [
         content: "examples/attack-dice.png",
         align: "right",
         altText: "Three variants on attack type and dice.",
-        width: "100",
+        width: 100,
+        height: 125,
       },
       {
         type: "text",
@@ -308,7 +309,8 @@ export const KeywordsD: Keyword[] = [
         content: "examples/defense-dice.png",
         align: "right",
         altText: "Two variants on defense type and dice.",
-        width: "60",
+        width: 60,
+        height: 118,
       },
       {
         type: "text",
@@ -504,7 +506,8 @@ export const KeywordsD: Keyword[] = [
         content: "tokens/dodge.png",
         align: "right",
         altText: "A green 8-sided token.",
-        width: "80",
+        width: 84,
+        height: 92,
       },
       {
         type: "text",
@@ -554,6 +557,8 @@ export const KeywordsD: Keyword[] = [
             content: "examples/declare-defender.png",
             align: "center",
             altText: "A droid unit at range 3 of Obi-Wan and Clone troopers.",
+            height: 747,
+            width: 431,
           },
           {
             type: "text",

@@ -291,7 +291,7 @@ export const KeywordsT: Keyword[] = [
         type: "illustration",
         content: "tokens/aim.png",
         align: "center",
-        width: "80",
+        width: 80,
         altText: "Green token with Crosshair.",
       },
       {
@@ -305,7 +305,7 @@ export const KeywordsT: Keyword[] = [
         type: "illustration",
         content: "tokens/dodge.png",
         align: "center",
-        width: "80",
+        width: 80,
         altText: "Green hexagon with white center.",
       },
       {
@@ -319,7 +319,7 @@ export const KeywordsT: Keyword[] = [
         type: "illustration",
         content: "tokens/surge.png",
         align: "center",
-        width: "80",
+        width: 80,
         altText: "Diamond shaped green token with line through it.",
       },
       {
@@ -333,7 +333,7 @@ export const KeywordsT: Keyword[] = [
         type: "illustration",
         content: "tokens/standby.png",
         align: "center",
-        width: "80",
+        width: 80,
         altText: "Hexagon shaped grey token green crosshair inside.",
       },
       {
@@ -346,7 +346,7 @@ export const KeywordsT: Keyword[] = [
         type: "illustration",
         content: "tokens/observation.png",
         align: "center",
-        width: "80",
+        width: 80,
         altText: "Circle shaped with three notches.",
       },
       {
@@ -359,7 +359,7 @@ export const KeywordsT: Keyword[] = [
         type: "illustration",
         content: "tokens/smoke.png",
         align: "center",
-        width: "80",
+        width: 80,
         altText: "White circle with green hexagon inside.",
       },
       {
@@ -372,7 +372,7 @@ export const KeywordsT: Keyword[] = [
         type: "illustration",
         content: "tokens/damage.png",
         align: "center",
-        width: "80",
+        width: 80,
         altText: "Oblong hexagonal, black token with orange cog inside.",
       },
       {
@@ -386,7 +386,7 @@ export const KeywordsT: Keyword[] = [
         type: "illustration",
         content: "tokens/order.png",
         align: "center",
-        width: "80",
+        width: 80,
         altText: "Round tokens with faction on one side and rank on the other.",
       },
       {
@@ -400,7 +400,7 @@ export const KeywordsT: Keyword[] = [
         type: "illustration",
         content: "tokens/commander.png",
         align: "center",
-        width: "80",
+        width: 80,
         altText: "Pentagon shaped with a commander rank icon inside.",
       },
       {
@@ -414,7 +414,7 @@ export const KeywordsT: Keyword[] = [
         type: "illustration",
         content: "tokens/ion.png",
         align: "center",
-        width: "80",
+        width: 80,
         altText: "Triangle shaped, blue with lightning inside.",
       },
       {
@@ -427,7 +427,7 @@ export const KeywordsT: Keyword[] = [
         type: "illustration",
         content: "tokens/poison.png",
         align: "center",
-        width: "80",
+        width: 80,
         altText: "Triangle shaped, yellow with bio-hazard icon inside.",
       },
       {
@@ -440,7 +440,7 @@ export const KeywordsT: Keyword[] = [
         type: "illustration",
         content: "tokens/immobilize.png",
         align: "center",
-        width: "80",
+        width: 80,
         altText: "Triangle shaped, red with white icon inside.",
       },
       {
@@ -454,7 +454,7 @@ export const KeywordsT: Keyword[] = [
         type: "illustration",
         content: "tokens/shield.png",
         align: "center",
-        width: "80",
+        width: 80,
         altText: "Circle blue, two sided, one with dark center.",
       },
       {
@@ -467,7 +467,7 @@ export const KeywordsT: Keyword[] = [
         type: "illustration",
         content: "tokens/charge.png",
         align: "center",
-        width: "80",
+        width: 80,
         altText: "Circle with red or blue border, a bomb illustration inside.",
       },
       {
@@ -481,7 +481,7 @@ export const KeywordsT: Keyword[] = [
         type: "illustration",
         content: "tokens/wheel-mode.png",
         align: "center",
-        width: "80",
+        width: 80,
         altText: "Circle orange cymbols inside.",
       },
       {
@@ -495,7 +495,7 @@ export const KeywordsT: Keyword[] = [
         type: "illustration",
         content: "tokens/incognito.png",
         align: "center",
-        width: "80",
+        width: 80,
         altText:
           "Circular shaped with an orange illustration inside representing their unit.",
       },
@@ -510,21 +510,21 @@ export const KeywordsT: Keyword[] = [
         type: "illustration",
         content: "tokens/cad-here-i-am.png",
         align: "center",
-        width: "80",
+        width: 80,
         altText: "Round with two guns on front side.",
       },
       {
         type: "illustration",
         content: "tokens/cad-kablamo.png",
         align: "center",
-        width: "80",
+        width: 80,
         altText: "Round with two guns on front side.",
       },
       {
         type: "illustration",
         content: "tokens/cad-smoke.png",
         align: "center",
-        width: "80",
+        width: 80,
         altText: "Round with two guns on front side.",
       },
       {
@@ -537,7 +537,7 @@ export const KeywordsT: Keyword[] = [
         type: "illustration",
         content: "tokens/graffiti.png",
         align: "center",
-        width: "80",
+        width: 80,
         altText: "Round with illustration of a bird logo.",
       },
       {
@@ -550,7 +550,7 @@ export const KeywordsT: Keyword[] = [
         type: "illustration",
         content: "tokens/poi.png",
         align: "center",
-        width: "80",
+        width: 80,
         altText: "Round and red and looking like a Pokemon ball.",
       },
       {
@@ -564,7 +564,7 @@ export const KeywordsT: Keyword[] = [
         type: "illustration",
         content: "tokens/asset.png",
         align: "center",
-        width: "80",
+        width: 80,
         altText: "Round with a red or black dot in center.",
       },
       {
@@ -577,7 +577,7 @@ export const KeywordsT: Keyword[] = [
         type: "illustration",
         content: "tokens/advantage.png",
         align: "center",
-        width: "80",
+        width: 80,
         altText:
           "Round with a green border and zero to several red dots inside.",
       },

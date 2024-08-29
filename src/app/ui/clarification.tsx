@@ -1,7 +1,6 @@
-import { RenderContent } from "../render-content";
-import { getEnrichedKeyword, interpolateString } from "@/utils";
-import { Keyword } from "@/types";
-import classNames from "classnames";
+"use client";
+
+import { interpolateString } from "@/utils";
 import styles from "./clarification.module.css";
 
 export const Clarification = ({

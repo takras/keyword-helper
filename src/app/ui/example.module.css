@@ -1,6 +1,4 @@
-.wrapper {
-  --notchSize: 20px;
-  
+.wrapper {  
   clip-path: 
     polygon(
       0% var(--notchSize), 
@@ -41,11 +39,11 @@
   padding: 0;
   width: 100%;
   text-align: left;
+}
 
-  &> .header4 {
-    margin: 0;
-    border-bottom-color: var(--example-header);
-  }
+.headerOverride {
+  margin: 0 !important;
+  border-bottom-color: var(--example-header);
 }
 
 .headerInactive,

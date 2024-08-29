@@ -1,3 +1,4 @@
+"use client";
 import { getEnrichedKeyword, getKey, interpolateString } from "@/utils";
 import styles from "./keyword-list.module.css";
 

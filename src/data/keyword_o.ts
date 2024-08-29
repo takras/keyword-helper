@@ -41,7 +41,7 @@ export const KeywordsO: Keyword[] = [
         content: "tokens/poi-3d.png",
         altText: "",
         align: "center",
-        width: "200",
+        width: 400,
       },
       {
         type: "text",
@@ -295,7 +295,7 @@ export const KeywordsO: Keyword[] = [
         content: "black/overrun.png",
         align: "right",
         altText: "An arrow pointing inwards to center of a circle.",
-        width: "80",
+        width: 80,
       },
       {
         type: "text",

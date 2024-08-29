@@ -70,8 +70,7 @@
   }
 }
 
-.aboutContainer,
-.about {
+.aboutContainer {
   background-color: var(--background-color);
   padding: 20px;
   border-radius: var(--border-radius);
@@ -101,6 +100,7 @@
 .paragraph {
   padding-bottom: var(--flex-gap);
   display: block;
+  font-family: Arial, Helvetica, sans-serif;
   
   .inlineIcon {
     filter: invert(var(--invert-icon-color));
@@ -133,12 +133,6 @@
 .modalButtonRow {
   display: flex;
   justify-content: space-between;
-}
-
-.hiddenLink {
-  width: 0;
-  height: 0;
-  visibility: hidden;
 }
 
 .changelogButton {
@@ -249,6 +243,7 @@
 .button,
 .modalBackButton,
 .closeModalButton {
+  font-family: Arial, Helvetica, sans-serif;
   border-radius: var(--border-radius);
   text-align: center;
   cursor: pointer;
@@ -295,6 +290,7 @@
   display: flex;
   gap: var(--flex-gap);
   align-items: center;
+  padding-bottom: 10px;
 }
 
 .referenceButton {
@@ -303,38 +299,6 @@
   border: none;
   background-color: unset;
   cursor: pointer;
-}
-
-
-
-.exampleList,
-.exampleListNumbered {
-  margin: 0;
-  margin-inline: -20px;
-  font-style: normal;
-  padding-bottom: 20px;
-  max-width: 90%;
-}
-
-.exampleListNumbered {
-  list-style-type: decimal;
-}
-
-.exampleList {
-  list-style-type: disc;
-}
-
-.listItem {
-  &::marker {
-    font-family: var(--font-family);
-    font-size: 1.5rem;
-  }
-}
-
-.listItemLine {
-  .inlineIcon {
-    filter: invert(var(--invert-icon-color));
-  }
 }
 
 .arrowRight {

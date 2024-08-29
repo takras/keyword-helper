@@ -1,19 +1,14 @@
-import React from "react";
-import { getEnrichedKeyword, getKey, Variables } from "@/utils";
-import { Keyword } from "@/types";
-import globalStyles from "../helper.module.css";
-import styles from "./related-keyword.module.css";
+"use client";
+import React, { useContext } from "react";
+import { getEnrichedKeyword, getKey } from "@/utils";
+import { KeywordContext } from "../providers";
+import Link from "next/link";
 import classNames from "classnames";
+import globalStyles from "./helper.module.css";
+import styles from "./related-keyword.module.css";
 
-export const RelatedKeywords = ({
-  related,
-  modal,
-  selectKeyword,
-}: {
-  related: string[];
-  modal: HTMLDialogElement;
-  selectKeyword: (keyword: Keyword) => void;
-}) => {
+export const RelatedKeywords = ({ related }: { related: string[] }) => {
+  const { selectKeyword, getLink } = useContext(KeywordContext);
   return (
     <div className={styles.container}>
       <h4 className={styles.header}>Related keywords:</h4>
@@ -29,26 +24,24 @@ export const RelatedKeywords = ({
           .map((keyword) => {
             const enriched = getEnrichedKeyword(keyword);
             if (!enriched) {
-              modal.close();
               return null;
             }
             return (
               <React.Fragment key={getKey(keyword)}>
-                <button
+                <Link
+                  href={getLink(keyword)}
                   className={classNames(
                     globalStyles.button,
                     styles.relatedButton
                   )}
-                  onClick={() => selectKeyword(enriched)}
+                  onClick={() => {
+                    selectKeyword(enriched.keyword);
+                  }}
+                  prefetch={true}
+                  scroll={false}
                 >
                   {enriched?.name}
-                </button>
-                <a
-                  href={`${Variables.url}/#!${enriched.keyword}`}
-                  className={globalStyles.hiddenLink}
-                >
-                  {enriched.name}
-                </a>
+                </Link>
               </React.Fragment>
             );
           })}

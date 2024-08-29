@@ -164,7 +164,7 @@ export const KeywordsS: Keyword[] = [
         content: "black/self-destruct.png",
         align: "right",
         altText: "A crosshair in a circle.",
-        width: "80",
+        width: 80,
       },
       {
         type: "text",
@@ -361,7 +361,7 @@ export const KeywordsS: Keyword[] = [
       {
         type: "illustration",
         content: "tokens/shield.png",
-        width: "200",
+        width: 200,
         align: "right",
         altText: "Shield token, front and back",
       },
@@ -465,7 +465,7 @@ export const KeywordsS: Keyword[] = [
       {
         type: "illustration",
         content: "tokens/smoke.png",
-        width: "80",
+        width: 80,
         align: "right",
         altText: "Smoke token",
       },
@@ -676,7 +676,7 @@ export const KeywordsS: Keyword[] = [
       {
         type: "illustration",
         altText: "Jagged red tokens, number 3 or blank inside.",
-        width: "120",
+        width: 120,
         align: "right",
         content: "tokens/wound.png",
       },
@@ -744,14 +744,14 @@ export const KeywordsS: Keyword[] = [
         content: "tokens/suppression.png",
         align: "center",
         altText: "Two triangle-shaped tokens, one with a number 3 in it.",
-        width: "280",
+        width: 280,
       },
       {
         type: "illustration",
         content: "examples/suppression.png",
         align: "center",
         altText: "Luke Skywalker unit card, with courage value highlighted",
-        width: "280",
+        width: 280,
       },
       {
         type: "text",
@@ -791,14 +791,14 @@ export const KeywordsS: Keyword[] = [
         content: "silhouette-notched.png",
         align: "center",
         altText: "A tall, tiled rectangle token",
-        width: "280",
+        width: 280,
       },
       {
         type: "illustration",
         content: "silhouette-small.png",
         align: "center",
         altText: "A small, tiled rectangle token",
-        width: "225",
+        width: 225,
       },
       {
         type: "structured_list",

@@ -1,3 +1,4 @@
+import { DispatchWithoutAction } from "react";
 import { IconList } from "./utils";
 
 export const AVAILABLE_KEYWORDS = [
@@ -407,7 +408,9 @@ export type Illustration = {
   content: string;
   align: "left" | "center" | "right";
   altText: string;
-  width?: string;
+  width?: number;
+  height?: number;
+  notch?: "topLeft" | "topRight";
 };
 
 export type StructuredList = {

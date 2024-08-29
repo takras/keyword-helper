@@ -40,7 +40,7 @@ export const KeywordsP: Keyword[] = [
       {
         type: "illustration",
         altText: "Oblong 6-sided token with an arrowhead inside",
-        width: "80",
+        width: 80,
         align: "right",
         content: "tokens/panic.png",
       },
@@ -60,7 +60,7 @@ export const KeywordsP: Keyword[] = [
       {
         type: "illustration",
         altText: "Circular with dots in the middle.",
-        width: "120",
+        width: 120,
         align: "right",
         content: "tokens/advantage.png",
       },
@@ -195,7 +195,7 @@ export const KeywordsP: Keyword[] = [
         align: "right",
         altText: "Poison token",
         content: "tokens/poison.png",
-        width: "80",
+        width: 80,
       },
       {
         type: "text",

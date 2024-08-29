@@ -105,7 +105,7 @@ export const KeywordsC: Keyword[] = [
         align: "right",
         altText: "Charge token, front and back",
         content: "tokens/charge.png",
-        width: "100",
+        width: 100,
       },
 
       {

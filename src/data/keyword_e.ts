@@ -223,7 +223,7 @@ export const KeywordsE: Keyword[] = [
       {
         type: "illustration",
         content: "examples/exhaust.png",
-        width: "120",
+        width: 120,
         align: "center",
         altText:
           "Two icons showing an arrow turning right, and the other with an X.",

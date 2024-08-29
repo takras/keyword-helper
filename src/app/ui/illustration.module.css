@@ -2,10 +2,12 @@
   box-shadow: var(--image-shadow);
   border: var(--image-border);
   max-width: min(95%, 800px);
+  object-fit: contain;
 }
 
 .left {
   float: left;
+  clear: both;
 }
 
 .center {
@@ -17,4 +19,5 @@
 
 .right {
   float: right;
+  clear: both;
 }

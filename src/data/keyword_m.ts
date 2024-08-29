@@ -135,7 +135,7 @@ export const KeywordsM: Keyword[] = [
     name: "Miniatures",
     activation: "",
     parents: ["m", "concepts"],
-    related_keywords: [],
+    related_keywords: ["miniature", "terrain", "tokens", "melee"],
     descriptions: [
       {
         type: "reference",
@@ -266,7 +266,7 @@ export const KeywordsM: Keyword[] = [
         content: "examples/weaponrange-1-3.png",
         align: "center",
         altText: "A blue square with beyond icon and number range 1 to 3.",
-        width: "80",
+        width: 80,
       },
       {
         type: "text",
@@ -278,7 +278,7 @@ export const KeywordsM: Keyword[] = [
         content: "examples/weaponrange-melee.png",
         align: "center",
         altText: "A red square with melee icon.",
-        width: "80",
+        width: 80,
       },
       {
         type: "text",

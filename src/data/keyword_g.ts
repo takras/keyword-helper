@@ -71,7 +71,7 @@ export const KeywordsG: Keyword[] = [
         content: "tokens/graffiti.png",
         align: "right",
         altText: "Colorful round tokens.",
-        width: "120",
+        width: 120,
       },
       {
         type: "text",

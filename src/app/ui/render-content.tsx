@@ -1,18 +1,17 @@
+"use client";
 import { DescriptionType, Keyword } from "@/types";
-import { ExampleContent } from "./ui/example";
-import {
-  getEnrichedKeyword,
-  getKey,
-  interpolateString,
-  Variables,
-} from "@/utils";
-import { Illustration } from "./ui/illustration";
-import { KeywordList } from "./ui/keyword-list";
-import { StructuredList } from "./ui/structured-list";
-import { CalloutComponent } from "./ui/callout";
-import { Clarification } from "./ui/clarification";
+import { ExampleContent } from "./example";
+import { getEnrichedKeyword, getKey, interpolateString } from "@/utils";
+import { Illustration } from "./illustration";
+import { KeywordList } from "./keyword-list";
+import { StructuredList } from "./structured-list";
+import { CalloutComponent } from "./callout";
+import { Clarification } from "./clarification";
+import { KeywordContext } from "../providers";
+import { useContext } from "react";
 import styles from "./helper.module.css";
 import classNames from "classnames";
+import Link from "next/link";
 
 export const RenderContent = ({
   descriptions,
@@ -24,12 +23,15 @@ export const RenderContent = ({
   overrideWithClassName?: string;
 }) => {
   const renderedKeywords: string[] = [];
+  const { getLink } = useContext(KeywordContext);
   const reference = ({
     reference,
     summaryOnly,
+    hideHeader,
   }: {
     reference: string;
     summaryOnly?: boolean;
+    hideHeader?: boolean;
   }) => {
     const enriched = getEnrichedKeyword(reference);
     if (!enriched) {
@@ -55,7 +57,7 @@ export const RenderContent = ({
       return (
         <RenderContent
           key={getKey(reference)}
-          descriptions={withHeader}
+          descriptions={hideHeader ? filteredDescriptions : withHeader}
           selectKeyword={selectKeyword}
         />
       );
@@ -70,18 +72,15 @@ export const RenderContent = ({
         )}
         <div className={styles.referenceLink}>
           <div>See:</div>
-          <a
-            href={`${Variables.url}/#!${enriched.keyword}`}
-            className={styles.hiddenLink}
-          >
-            {enriched.name}
-          </a>
-          <button
+          <Link
+            href={getLink(enriched.keyword)}
             className={styles.referenceButton}
             onClick={() => selectKeyword(enriched)}
+            prefetch={true}
+            scroll={false}
           >
             {enriched?.name}
-          </button>
+          </Link>
         </div>
       </div>
     );
