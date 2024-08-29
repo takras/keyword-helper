@@ -1,7 +1,13 @@
 "use client";
 import Script from "next/script";
 import Image from "next/image";
-import { ChangeEvent, useCallback, useContext, useState } from "react";
+import {
+  ChangeEvent,
+  useCallback,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 import { AVAILABLE_KEYWORDS, CatalogEntry, Keyword } from "@/types";
 import { rules as rulesDocument } from "@/data/rules";
 import { CatalogCard } from "./catalog-card";
@@ -9,6 +15,7 @@ import { KeywordCard } from "./keyword-card";
 import { sortKeyword } from "@/utils";
 import { ToggleDarkMode } from "./toggle-dark-mode";
 import { KeywordContext } from "../providers";
+import { useRouter } from "next/navigation";
 import styles from "./helper.module.css";
 import classNames from "classnames";
 import Link from "next/link";
@@ -16,6 +23,7 @@ import Link from "next/link";
 export default function Helper() {
   const [searchFilter, setSearchFilter] = useState<string>("");
   const { selectKeyword, getLink } = useContext(KeywordContext);
+  const router = useRouter();
 
   const [activeCatalog, setActiveCatalog] =
     useState<CatalogEntry["catalog"]>("alphabet");
@@ -31,6 +39,17 @@ export default function Helper() {
     });
 
   let counter = 0;
+
+  useEffect(() => {
+    const hash = window.location.hash.replace(/(#!)/, "");
+    const keyword = rulesDocument.keywords.find(
+      (word) => word.keyword === hash
+    );
+
+    if (keyword) {
+      router.push(`/${keyword.keyword}`);
+    }
+  }, []);
 
   const getKey = (key: string) => {
     counter += 1;
