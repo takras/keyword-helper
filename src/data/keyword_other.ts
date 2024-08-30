@@ -17,7 +17,7 @@ export const KeywordsOther: Keyword[] = [
   },
   {
     keyword: "coming_from_pre_2024",
-    name: "What's new in Legion 2024 version?",
+    name: "What's new in 2024?",
     related_keywords: [],
     parents: ["changelog"],
     descriptions: [

@@ -5,6 +5,7 @@ import { createContext, ReactNode, Suspense, useMemo, useReducer } from "react";
 import { AppProgressBar as ProgressBar } from "next-nprogress-bar";
 
 interface Context {
+  previousKeyword: string;
   keywordHistory: string[];
   close: () => void;
   goBack: () => void;
@@ -14,6 +15,7 @@ interface Context {
 }
 
 export const KeywordContext = createContext<Context>({
+  previousKeyword: "",
   keywordHistory: [""],
   close: () => {},
   goBack: () => {},
@@ -29,6 +31,7 @@ export function Providers({ children }: Readonly<{ children: ReactNode }>) {
 
   const value: Context = useMemo<Context>(() => {
     return {
+      previousKeyword,
       keywordHistory: context.keywordHistory,
       getLink: (keyword: string) => {
         if (keyword === "search_result_blank") {

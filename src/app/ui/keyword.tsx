@@ -14,7 +14,7 @@ import styles from "./keyword.module.css";
 import { Share } from "./share";
 
 export const KeywordComponent = ({ keyword }: { keyword: string }) => {
-  const { close, selectKeyword, backButtonKeyword, getLink } =
+  const { close, selectKeyword, backButtonKeyword, getLink, previousKeyword } =
     useContext(KeywordContext);
 
   const selectedKeyword = getEnrichedKeyword(keyword);
@@ -30,7 +30,7 @@ export const KeywordComponent = ({ keyword }: { keyword: string }) => {
         <div className={styles.topMenuButtonRow}>
           <Link
             scroll={false}
-            href={getLink(backButtonKeyword) ?? "/"}
+            href={previousKeyword ? getLink(backButtonKeyword) : "/"}
             className={classNames(
               globalStyles.button,
               styles.topMenuBackButton
