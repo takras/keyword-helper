@@ -1,7 +1,14 @@
 "use client";
 import { sendGTMEvent } from "@next/third-parties/google";
 import { ThemeProvider } from "next-themes";
-import { createContext, ReactNode, Suspense, useMemo, useReducer } from "react";
+import {
+  createContext,
+  ReactNode,
+  Suspense,
+  useMemo,
+  useReducer,
+  useState,
+} from "react";
 import { AppProgressBar as ProgressBar } from "next-nprogress-bar";
 
 interface Context {
@@ -26,6 +33,7 @@ export const KeywordContext = createContext<Context>({
 
 export function Providers({ children }: Readonly<{ children: ReactNode }>) {
   const [context, dispatch] = useReducer(keywordReducer, initialKeywords);
+
   const previousKeyword =
     context.keywordHistory[context.keywordHistory.length - 2];
 

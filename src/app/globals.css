@@ -11,7 +11,22 @@
     
   --flex-gap: 10px;
   --max-width: 700px;
+  
+  --notchBorder: 5px;
   --notchSize: 20px;
+  --notch-max-value: 100%;
+  --notch-min-value: 0%;
+
+  --notched-square: polygon(
+    var(--notch-min-value) var(--notchSize), 
+    0 0, 
+    calc(var(--notch-max-value) - var(--notchSize)) var(--notch-min-value), 
+    var(--notch-max-value) var(--notchSize), 
+    var(--notch-max-value) calc(var(--notch-max-value) - var(--notchSize)), 
+    var(--notch-max-value) var(--notch-max-value),
+    var(--notchSize) var(--notch-max-value), 
+    var(--notch-min-value) calc(var(--notch-max-value) - var(--notchSize))
+  );
 }
 
 [data-theme='light'] {
@@ -27,6 +42,7 @@
 
   --background-color: #E8E6E6;
 
+  --example-border-color: #9797a3;
   --example-background: #535554;
   --example-color: #fff;
   --example-header: #F1A021;
@@ -76,6 +92,7 @@ a {
     --changelog-change-color: #ffffff;
     --changelog-background: #535554;
   
+    --example-border-color: #daba7b;
     --example-background: #535554;
     --example-color: #fff;
     --example-header: #F1A021;

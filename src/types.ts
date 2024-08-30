@@ -205,6 +205,7 @@ export const AVAILABLE_KEYWORDS = [
   "permanent",
   "pierce_x",
   "pivot",
+  "placing_objectives",
   "plodding",
   "poison_x",
   "precise_x",
@@ -251,6 +252,7 @@ export const AVAILABLE_KEYWORDS = [
   "shielded_x",
   "sidearm",
   "silhouettes",
+  "skirmish",
   "small",
   "smoke_x",
   "smoke_tokens",
@@ -433,6 +435,7 @@ type Reference = {
   type: "reference";
   referenced_keyword: AvailableKeywords;
   showOnlySummary?: boolean;
+  hideHeader?: boolean;
 };
 
 type Callout = {

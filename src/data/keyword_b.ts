@@ -290,6 +290,7 @@ export const KeywordsB: Keyword[] = [
       {
         type: "reference",
         referenced_keyword: "at_range",
+        hideHeader: true,
       },
     ],
   },

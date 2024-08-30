@@ -49,7 +49,7 @@ export default function Helper() {
     if (keyword) {
       router.push(`/${keyword.keyword}`);
     }
-  }, []);
+  }, [router]);
 
   const getKey = (key: string) => {
     counter += 1;

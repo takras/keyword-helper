@@ -12,13 +12,14 @@ import { RelatedKeywords } from "./related-keyword";
 import globalStyles from "./helper.module.css";
 import styles from "./keyword.module.css";
 import { Share } from "./share";
+import { useRouter } from "next/navigation";
 
 export const KeywordComponent = ({ keyword }: { keyword: string }) => {
-  const { close, selectKeyword, backButtonKeyword, getLink, previousKeyword } =
+  const { close, backButtonKeyword, getLink, previousKeyword } =
     useContext(KeywordContext);
-
   const selectedKeyword = getEnrichedKeyword(keyword);
   const enrichedBackButton = getEnrichedKeyword(backButtonKeyword);
+  const router = useRouter();
 
   if (!selectedKeyword) {
     return null;
@@ -30,12 +31,13 @@ export const KeywordComponent = ({ keyword }: { keyword: string }) => {
         <div className={styles.topMenuButtonRow}>
           <Link
             scroll={false}
-            href={previousKeyword ? getLink(backButtonKeyword) : "/"}
+            href={previousKeyword ? getLink(backButtonKeyword) : "#"}
             className={classNames(
               globalStyles.button,
               styles.topMenuBackButton
             )}
             prefetch={true}
+            onClick={() => router.back()}
           >
             <Image
               src="/images/arrow-left.png"
@@ -77,10 +79,7 @@ export const KeywordComponent = ({ keyword }: { keyword: string }) => {
               {selectedKeyword.name}{" "}
               {selectedKeyword.tag && `(${selectedKeyword.tag})`}
             </h2>
-            <RenderContent
-              descriptions={selectedKeyword.descriptions}
-              selectKeyword={() => selectKeyword(selectedKeyword.keyword)}
-            />
+            <RenderContent descriptions={selectedKeyword.descriptions} />
             <RelatedKeywords related={selectedKeyword.related_keywords} />
             <Share keyword={selectedKeyword} />
           </div>

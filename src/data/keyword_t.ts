@@ -102,6 +102,7 @@ export const KeywordsT: Keyword[] = [
       "terrain_cover",
       "line_of_sight",
       "battlefield",
+      "measurement",
     ],
     descriptions: [
       {

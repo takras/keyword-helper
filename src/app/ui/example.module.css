@@ -1,29 +1,32 @@
-.wrapper {  
-  clip-path: 
-    polygon(
-      0% var(--notchSize), 
-      0 0, 
-      calc(100% - var(--notchSize)) 0%, 
-      100% var(--notchSize), 
-      100% calc(100% - var(--notchSize)), 
-      100% 100%,
-      var(--notchSize) 100%, 
-      0% calc(100% - var(--notchSize))
-    );
-}
-
 .container {
   padding: 20px 20px 20px 20px;
-  background-color: var(--example-background);
+  background-color: var(--example-border-color);
   color: var(--example-color);
   font-size: 1.2rem;
   line-height: 1.8rem;
   margin-top: 20px;
   margin-bottom: 20px;
+  position: relative;
 
   .inlineIcon {
     filter: invert(var(--invert-icon-color-callout));
   }
+  
+  &::before {
+    content: '';
+    display: block;
+    background-color: var(--example-background);
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    z-index: -1;
+  }
+}
+
+.container, .container::before {
+  clip-path: var(--notched-square);
 }
 
 .header {

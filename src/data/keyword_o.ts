@@ -42,6 +42,7 @@ export const KeywordsO: Keyword[] = [
         altText: "",
         align: "center",
         width: 400,
+        notch: "topRight",
       },
       {
         type: "text",
@@ -63,28 +64,7 @@ export const KeywordsO: Keyword[] = [
         content:
           "Some objective tokens can be secured. If an objective token can be secured, the player with the most units contesting that objective token is securing it.",
       },
-      {
-        type: "header",
-        content: "Placing Objectives",
-      },
-      {
-        type: "text",
-        content:
-          "Objective tokens must meet the following conditions when they are placed:",
-      },
-      {
-        type: "structured_list",
-        content: [
-          "Objective tokens cannot be placed overlapping impassable terrain.",
-          "Objective tokens cannot be placed partially overlapping a non-area terrain feature.",
-          "Objective tokens cannot be placed overlapping obstacle terrain that is height 2 or greater.",
-        ],
-      },
-      {
-        type: "text",
-        content:
-          "During Setup, if an objective token should be placed at a position where the above conditions are not met, players must adjust terrain placement in a mutually agreeable manner so that the conditions are met. After Setup, if an objective token must be placed and there is not a position in range where the above conditions are met, that token is placed in the closest position that meets the above conditions instead.",
-      },
+      { type: "reference", referenced_keyword: "placing_objectives" },
     ],
   },
 

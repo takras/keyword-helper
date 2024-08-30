@@ -40,7 +40,7 @@ export const KeywordsP: Keyword[] = [
       {
         type: "illustration",
         altText: "Oblong 6-sided token with an arrowhead inside",
-        width: 80,
+        width: 120,
         align: "right",
         content: "tokens/panic.png",
       },
@@ -165,6 +165,33 @@ export const KeywordsP: Keyword[] = [
         type: "text",
         content:
           "To pivot, rotate the unit leader’s base up to 90° to the left or right, keeping the center of the base in the same place. If a unit contains multiple miniatures, each miniature in the unit must pivot so that the directional orientation of its base is the same as the unit leader’s.",
+      },
+    ],
+  },
+
+  {
+    keyword: "placing_objectives",
+    name: "Placing Objectives",
+    parents: ["p"],
+    related_keywords: ["setup", "terrain", "impassable_terrain"],
+    descriptions: [
+      {
+        type: "text",
+        content:
+          "Objective tokens must meet the following conditions when they are placed:",
+      },
+      {
+        type: "structured_list",
+        content: [
+          "Objective tokens cannot be placed overlapping impassable terrain.",
+          "Objective tokens cannot be placed partially overlapping a non-area terrain feature.",
+          "Objective tokens cannot be placed overlapping obstacle terrain that is height 2 or greater.",
+        ],
+      },
+      {
+        type: "text",
+        content:
+          "During Setup, if an objective token should be placed at a position where the above conditions are not met, players must adjust terrain placement in a mutually agreeable manner so that the conditions are met. After Setup, if an objective token must be placed and there is not a position in range where the above conditions are met, that token is placed in the closest position that meets the above conditions instead.",
       },
     ],
   },

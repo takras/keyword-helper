@@ -1,5 +1,5 @@
 "use client";
-import { DescriptionType, Keyword } from "@/types";
+import { DescriptionType } from "@/types";
 import { ExampleContent } from "./example";
 import { getEnrichedKeyword, getKey, interpolateString } from "@/utils";
 import { Illustration } from "./illustration";
@@ -9,21 +9,19 @@ import { CalloutComponent } from "./callout";
 import { Clarification } from "./clarification";
 import { KeywordContext } from "../providers";
 import { useContext } from "react";
+import Link from "next/link";
 import styles from "./helper.module.css";
 import classNames from "classnames";
-import Link from "next/link";
 
 export const RenderContent = ({
   descriptions,
-  selectKeyword,
   overrideWithClassName,
 }: {
   descriptions: DescriptionType;
-  selectKeyword: (keyword: Keyword) => void;
   overrideWithClassName?: string;
 }) => {
   const renderedKeywords: string[] = [];
-  const { getLink } = useContext(KeywordContext);
+  const { getLink, selectKeyword } = useContext(KeywordContext);
   const reference = ({
     reference,
     summaryOnly,
@@ -45,7 +43,6 @@ export const RenderContent = ({
           return true;
       }
     });
-
     renderedKeywords.push(reference);
 
     const withHeader: DescriptionType = [
@@ -58,7 +55,6 @@ export const RenderContent = ({
         <RenderContent
           key={getKey(reference)}
           descriptions={hideHeader ? filteredDescriptions : withHeader}
-          selectKeyword={selectKeyword}
         />
       );
     }
@@ -75,7 +71,7 @@ export const RenderContent = ({
           <Link
             href={getLink(enriched.keyword)}
             className={styles.referenceButton}
-            onClick={() => selectKeyword(enriched)}
+            onClick={() => selectKeyword(enriched.keyword)}
             prefetch={true}
             scroll={false}
           >
@@ -94,7 +90,6 @@ export const RenderContent = ({
             key={getKey(description.type)}
             descriptions={description.content}
             isInitiallyExpanded={description.initiallyExpanded}
-            selectKeyword={selectKeyword}
           />
         );
       case "header":
@@ -141,6 +136,7 @@ export const RenderContent = ({
         return reference({
           reference: description.referenced_keyword,
           summaryOnly: description.showOnlySummary,
+          hideHeader: description.hideHeader,
         });
       case "structured_list_numbered":
       case "structured_list":
@@ -166,7 +162,6 @@ export const RenderContent = ({
           <CalloutComponent
             key={getKey(description.type)}
             reference={description.callout_keyword}
-            selectKeyword={selectKeyword}
           />
         );
       case "text":

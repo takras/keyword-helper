@@ -9,11 +9,9 @@ import styles from "./example.module.css";
 export const ExampleContent = ({
   descriptions,
   isInitiallyExpanded,
-  selectKeyword,
 }: {
   descriptions: DescriptionType;
   isInitiallyExpanded?: boolean;
-  selectKeyword: (keyword: Keyword) => void;
 }) => {
   const [isActive, setIsActive] = useState(isInitiallyExpanded === true);
   const toggleActive = () => setIsActive((current) => !current);
@@ -32,7 +30,6 @@ export const ExampleContent = ({
               (description) => description.type === "header"
             )}
             overrideWithClassName={styles.headerOverride}
-            selectKeyword={selectKeyword}
           />
         </button>
         <div className={isActive ? styles.active : styles.inactive}>
@@ -40,7 +37,6 @@ export const ExampleContent = ({
             descriptions={descriptions.filter(
               (description) => description.type !== "header"
             )}
-            selectKeyword={selectKeyword}
           />
         </div>
       </div>

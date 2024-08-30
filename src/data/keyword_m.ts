@@ -39,6 +39,7 @@ export const KeywordsM: Keyword[] = [
         content: "examples/map-card.png",
         align: "center",
         altText: "One map card shown: Shifting Priorities.",
+        notch: "topRight",
       },
       {
         type: "structured_list_numbered",

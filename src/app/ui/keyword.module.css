@@ -4,8 +4,7 @@
   border: var(--border-thin);
   border-radius: var(--border-radius);
   @media only screen and (max-width: 670px) {
-    margin-left: -15px;
-    margin-right: -15px;
+    padding: 40px 5px 5px 5px;
   }
 }
 
