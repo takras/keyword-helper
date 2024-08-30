@@ -226,7 +226,7 @@ export const KeywordsA: Keyword[] = [
       },
       {
         type: "illustration",
-        content: "examples/advantage-card.png",
+        content: "examples/advantage-cards.png",
         align: "center",
         altText: "Two advantage cards. Cunning Deployment and Garrison.",
         width: 612,
