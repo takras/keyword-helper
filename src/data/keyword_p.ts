@@ -49,6 +49,12 @@ export const KeywordsP: Keyword[] = [
         content:
           "When a unit checks to see if it is panicked, instead of using its own courage value, it may use the courage value of a friendly {rank_commander} unit at {range_3}. For example, a unit with 3 suppression tokens and courage value 1 would not be panicked if it chooses to use the courage value of a friendly {rank_commander} at {range_3} that has a courage value of 2 or greater.",
       },
+      {
+        type: "clarification",
+        url: "https://forums.atomicmassgames.com/topic/16074-timing-of-panic/#comment-65600",
+        content:
+          "A unit is panicked if at any time it has suppression tokens equal to or greater than its courage value (or a nearby Commander unit's Courage Value)",
+      },
     ],
   },
   {
