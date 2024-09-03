@@ -16,6 +16,14 @@ export const KeywordsOther: Keyword[] = [
     descriptions: [],
   },
   {
+    keyword: "skirmish",
+    name: "Skirmish Builder - Quickly Generate skirmish mission.",
+    activation: "",
+    parents: [],
+    related_keywords: [],
+    descriptions: [],
+  },
+  {
     keyword: "coming_from_pre_2024",
     name: "What's new in 2024?",
     related_keywords: [],

@@ -13,6 +13,7 @@ import globalStyles from "./helper.module.css";
 import styles from "./keyword.module.css";
 import { Share } from "./share";
 import { useRouter } from "next/navigation";
+import { SkirmishObjectiveCard } from "./skirmish-objective-card";
 
 export const KeywordComponent = ({ keyword }: { keyword: string }) => {
   const { close, backButtonKeyword, getLink, previousKeyword } =
@@ -68,11 +69,13 @@ export const KeywordComponent = ({ keyword }: { keyword: string }) => {
         </div>
       </aside>
 
+      {selectedKeyword?.keyword === "skirmish" && <SkirmishObjectiveCard />}
       {selectedKeyword?.keyword === "about" && <About />}
       {selectedKeyword?.keyword === "changelog" && <Changelog />}
 
       {selectedKeyword &&
         selectedKeyword.keyword !== "about" &&
+        selectedKeyword.keyword !== "skirmish" &&
         selectedKeyword.keyword !== "changelog" && (
           <div className={styles.container}>
             <h2 className={globalStyles.header2}>
@@ -81,9 +84,9 @@ export const KeywordComponent = ({ keyword }: { keyword: string }) => {
             </h2>
             <RenderContent descriptions={selectedKeyword.descriptions} />
             <RelatedKeywords related={selectedKeyword.related_keywords} />
-            <Share keyword={selectedKeyword} />
           </div>
         )}
+      <Share keyword={selectedKeyword} />
     </>
   );
 };

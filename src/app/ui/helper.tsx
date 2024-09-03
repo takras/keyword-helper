@@ -224,6 +224,17 @@ export default function Helper() {
             Attack Quick Reference
           </Link>
         </div>
+        <div className={styles.changelogButton}>
+          <Link
+            className={styles.button}
+            href={getLink("skirmish")}
+            onClick={() => selectKeyword("skirmish")}
+            prefetch={true}
+            scroll={false}
+          >
+            Skirmish Generator
+          </Link>
+        </div>
         <div className={styles.infoContainer}>
           <div className={styles.versionInfo}>
             Current version of Legion Helper:{" "}

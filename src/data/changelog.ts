@@ -12,6 +12,15 @@ type Log = {
 
 export const log: Log[] = [
   {
+    version: "1.1.1",
+    entries: [
+      {
+        type: "add",
+        description: "Added a quick Skirmish Generator tool.",
+      },
+    ],
+  },
+  {
     version: "1.1.0",
     entries: [
       {

@@ -808,6 +808,91 @@ export const KeywordsS: Keyword[] = [
       },
     ],
   },
+  {
+    keyword: "skirmishes",
+    name: "Skirmishes",
+    activation: "",
+    parents: ["s"],
+    related_keywords: [
+      "army_building",
+      "setup",
+      "ranks",
+      "battlefield",
+      "building_a_mission",
+      "terrain",
+    ],
+    descriptions: [
+      {
+        type: "text",
+        content:
+          "In skirmish games, players take control of the forces that are first on the scene for a rapidly developing engagement. They follow all the rules of the standard game, with the following exceptions:",
+      },
+      {
+        type: "reference",
+        referenced_keyword: "skirmish",
+        showOnlySummary: true,
+      },
+      {
+        type: "header",
+        content: "Battlefield",
+      },
+      {
+        type: "text",
+        content: "A skirmish game is played on a 3' by 3'.",
+      },
+      {
+        type: "header",
+        content: "Army Building",
+      },
+      {
+        type: "text",
+        content:
+          "When playing a skirmish game, each player brings their own custom army, using the following rules:",
+      },
+      {
+        type: "header",
+        content: "Points and Ranks",
+      },
+      {
+        type: "text",
+        content:
+          "The total point value of a skirmish army cannot exceed 500. Each army must include the following units:",
+      },
+      {
+        type: "structured_list",
+        content: [
+          "{rank_commander} <strong>Commander:</strong> Each army must include exactly one commander unit.",
+          "  {rank_operative}   <strong>Operative:</strong> Each army may include up to one operative unit.",
+          " {rank_corps}  <strong>Corps:</strong> Each army must include two to four corps units.",
+          "{rank_specialist} <strong>Special Forces:</strong> Each army may include up to two special forces units.",
+          "  {rank_support}  <strong>Support:</strong> Each army may include up to two support units.",
+          "{rank_heavy} <strong>Heavy:</strong> Each army may include up to one heavy unit.",
+        ],
+      },
+      {
+        type: "header",
+        content: "Setup",
+      },
+      {
+        type: "text",
+        content:
+          "To play a skirmish game of <i>Star Wars</i>: Legion, perform the following steps:",
+      },
+      {
+        type: "structured_list_numbered",
+        content: [
+          "<strong>Build an Army and a Command Hand:</strong> Each player builds an army and command hand from their collection.",
+          "<strong>Establish Battlefield and Gather Components:</strong> Establish a 3' x 3' battlefield on a flat surface. The players place their units, cards, order tokens, movement tools, and other game components off the play area.",
+          "<strong>Declare Terrain:</strong> It is important to determine what the terrain effects will be before the game begins. Players should briefly discuss each piece of terrain that is available for the battle and come to a consensus on its cover type and other characteristics.",
+          "<strong>Place Terrain:</strong> Players cooperate to set up terrain in a mutually agreeable fashion.",
+          "<strong>Determine Blue Player:</strong> One player rolls a red defense die. If the result is a {block}, the player that rolled is the blue player. Otherwise, the player that rolled is the red player. Then the blue player chooses one of the table edges and sets their army near that edge. The red player takes the opposite table edge.",
+          "<strong>Build a Mission:</strong> The players shuffle the Objective, Secondary Objective, and Advantage cards decks seperately. Then the blue playe randomly draws one Objective card and one Secondary Objective card that will be used this game. Finally, each player randombly draws their Advantage card from the deck. Resolve any setup instructions on the Objective card, then the Secondary Objective cards, and finally the Advantage cards, starting with the blue player´s Advantage card.",
+          "<strong>Resolve Setup Effects:</strong> Starting with the blue player, players resolve any abilities and effects that occur during Setup.",
+          "<strong>Deploy in Prepared Positions:</strong> Starting with the blue player, players alternate placing units with the Prepared Position keyword on the battlefield.",
+        ],
+      },
+    ],
+  },
 
   {
     keyword: "standby",

@@ -253,6 +253,7 @@ export const AVAILABLE_KEYWORDS = [
   "sidearm",
   "silhouettes",
   "skirmish",
+  "skirmishes",
   "small",
   "smoke_x",
   "smoke_tokens",

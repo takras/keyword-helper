@@ -1,0 +1,53 @@
+.container {
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  max-width: 900px;
+  padding-bottom: 20px;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+
+  &>span > img {
+    filter: invert(var(--invert-icon-color-callout));
+  }
+}
+
+.primaryObjective {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: var(--flex-gap);
+  padding-bottom: var(--flex-gap);
+}
+
+.advantageContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: var(--flex-gap);
+}
+
+.advantageBlue {
+  padding: 10px;
+  background-color: var(--blue-player);
+}
+
+.advantageRed  {
+  padding: 10px;
+  background-color: var(--red-player);
+}
+
+.advantageTitle {
+  color: var(--example-color);
+  font-family: var(--font-family);
+  font-size: 2rem;
+  margin: 0;
+}

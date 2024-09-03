@@ -27,6 +27,9 @@
     var(--notchSize) var(--notch-max-value), 
     var(--notch-min-value) calc(var(--notch-max-value) - var(--notchSize))
   );
+
+  --blue-player: #2b2bfe;
+  --red-player: #c92e2e;
 }
 
 [data-theme='light'] {

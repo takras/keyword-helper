@@ -13,7 +13,7 @@
   justify-content: center;
   width: 100vw;
   z-index: 2;
-  scrollbar-gutter: auto;
+  
   padding-bottom: 5px;
   top: 0;
   position: fixed;
