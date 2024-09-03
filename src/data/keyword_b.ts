@@ -9,7 +9,13 @@ export const KeywordsB: Keyword[] = [
     parents: ["b"],
     summary:
       "When a unit that is benefiting from backup is attacked by a ranged attack and the attacking unit’s unit leader is beyond {range_2} of it, it may cancel up to two {hit} results during the Modify Attack Dice step of the attack sequence.",
-    related_keywords: ["attack", "line_of_sight", "troopers", "suppression"],
+    related_keywords: [
+      "attack",
+      "line_of_sight",
+      "troopers",
+      "suppression",
+      "guardian_x",
+    ],
     descriptions: [
       {
         type: "text",
@@ -28,6 +34,12 @@ export const KeywordsB: Keyword[] = [
         type: "text",
         content:
           "When a unit that is benefiting from backup is attacked by a ranged attack and the attacking unit’s unit leader is beyond {range_2} of it, it may cancel up to two {hit} results during the Modify Attack Dice step of the attack sequence.",
+      },
+      {
+        type: "clarification",
+        content:
+          "A unit with the {keyword:Guardian X} keyword cannot benefit from backup and ignores the {rank_corps} rank requirement to provide backup.",
+        url: "https://forums.atomicmassgames.com/topic/15651-obi-wan-backup-and-guardian/#comment-64457",
       },
     ],
   },

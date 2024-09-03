@@ -5,6 +5,7 @@
   font-style: normal;
   padding-bottom: 20px;
   max-width: 90%;
+  font-family: var(--default-font-family);
 }
 
 .exampleListNumbered {
