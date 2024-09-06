@@ -132,6 +132,68 @@ export const KeywordsM: Keyword[] = [
     ],
   },
   {
+    keyword: "mercenaries",
+    name: "Mercenaries",
+    activation: "",
+    parents: ["m", "appendix"],
+    related_keywords: ["army_building", "affiliations", "faction"],
+    summary:
+      "The Star Wars galaxy is populated with all manner of heroes, villains, rogues, organizations, and even entire forces unaligned with the galaxy’s major power structures. These characters and forces appear in Star Wars: Legion as Mercenary units.",
+    descriptions: [
+      {
+        type: "text",
+        content:
+          "The <i>Star Wars</i> galaxy is populated with all manner of heroes, villains, rogues, organizations, and even entire forces unaligned with the galaxy’s major power structures. These characters and forces appear in <i>Star Wars</i>: Legion as Mercenary units.",
+      },
+      {
+        type: "text",
+        content:
+          "Mercenary units are not loyal to any of the game’s factions. However, factions and some Battle Forces can hire certain Mercenary units and field them in their armies. The Unit Card of a Mercenary unit indicates each faction that can include that Mercenary unit in an army. There is no additional cost to fielding a Mercenary unit in an army.",
+      },
+      {
+        type: "text",
+        content:
+          "Mercenary units do not count toward the minimum number of ranks required in an army, but they do count toward the maximum ranks allowed. An army may include only two Mercenary units of the {rank_corps} rank and only one Mercenary unit of each other rank.",
+      },
+      { type: "reference", referenced_keyword: "ranks", showOnlySummary: true },
+      {
+        type: "example",
+        content: [
+          {
+            type: "header",
+            content: "Example: Mercenaries and Rank Requirements",
+          },
+          {
+            type: "text",
+            content:
+              "For example, a standard Galactic Empire army that includes 1 or more Black Sun Enforcers units must field at least 3 non- Mercenary {rank_corps} units and cannot field a combined number of {rank_corps} units greater than 6.",
+          },
+        ],
+      },
+      {
+        type: "text",
+        content:
+          "A player cannot normally field an army that contains only Mercenary units, but some Battle Forces allow a player to do just that. These Battle Forces have their own unique requirements and rules. Some Mercenary units cannot be used by any faction; these units can only be used when special rules allow them to be included in armies.",
+      },
+      {
+        type: "text",
+        content:
+          "A Mercenary unit is friendly to the other units in its army but is not considered part of that army’s faction. When including Mercenary units in an army, use order tokens with a back that corresponds to the faction of the army. Players fielding an army that includes only Mercenary units use the Mercenary order tokens.",
+      },
+      {
+        type: "example",
+        content: [
+          { type: "header", content: "Example: Mercenaries and Factions" },
+          {
+            type: "text",
+            content:
+              "For example, Black Sun Enforcers in a Galactic Empire army are friendly to other units in the army but are not part of the Galactic Empire faction. Black Sun Enforcers in a Galactic Empire army would use Galactic Empire order tokens.",
+          },
+        ],
+      },
+    ],
+  },
+  {
     keyword: "miniature",
     name: "Miniatures",
     activation: "",
@@ -184,13 +246,7 @@ export const KeywordsM: Keyword[] = [
     keyword: "measurement",
     name: "Measurement",
     parents: ["m", "concepts"],
-    related_keywords: [
-      "move",
-      "range",
-      "terrain_height",
-      "cohesion",
-      "weapons",
-    ],
+    related_keywords: ["move", "terrain_height", "cohesion", "weapons"],
     descriptions: [
       {
         type: "text",

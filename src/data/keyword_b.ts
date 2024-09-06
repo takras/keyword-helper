@@ -15,6 +15,8 @@ export const KeywordsB: Keyword[] = [
       "troopers",
       "suppression",
       "guardian_x",
+      "retinue",
+      "entourage",
     ],
     descriptions: [
       {
@@ -41,6 +43,26 @@ export const KeywordsB: Keyword[] = [
           "A unit with the {keyword:Guardian X} keyword cannot benefit from backup and ignores the {rank_corps} rank requirement to provide backup.",
         url: "https://forums.atomicmassgames.com/topic/15651-obi-wan-backup-and-guardian/#comment-64457",
       },
+      {
+        type: "header",
+        inline: false,
+        content: "Abilities that ignore the corps rank requirement:",
+      },
+      {
+        type: "reference",
+        referenced_keyword: "guardian_x",
+        showOnlySummary: true,
+      },
+      {
+        type: "reference",
+        referenced_keyword: "retinue",
+        showOnlySummary: true,
+      },
+      {
+        type: "reference",
+        referenced_keyword: "entourage",
+        showOnlySummary: true,
+      },
     ],
   },
   {
@@ -50,7 +72,8 @@ export const KeywordsB: Keyword[] = [
     parents: ["b"],
     range: "range_1",
     related_keywords: ["charge", "deploy", "battlefield"],
-    summary: "",
+    summary:
+      "Cad Bane has a set of three unique Bane tokens that he can place on the battlefield. Bane tokens are double-sided, with a uniform back and three different images on the front, each linked to a unique effect.",
     descriptions: [
       {
         type: "text",
@@ -122,7 +145,8 @@ export const KeywordsB: Keyword[] = [
     parents: ["b", "units"],
     tag: "Unit Keyword",
     related_keywords: ["attack", "arsenal_x"],
-    summary: "",
+    summary:
+      "If a unit has the Barrage keyword, it may make two attack actions instead of one if it does not use the Arsenal keyword during its activation.",
     descriptions: [
       {
         type: "text",
@@ -135,12 +159,14 @@ export const KeywordsB: Keyword[] = [
     keyword: "barricades",
     name: "Barricades",
     parents: ["b", "concepts"],
+    summary:
+      "Barricades are a specific type of scatter terrain found in some Star Wars: Legion Core Sets and in their own expansion pack. Barricades are open terrain and provide trooper units that are not creature troopers with heavy cover.",
     related_keywords: [
       "terrain_cover",
       "terrain_height",
-      "terrain_height",
       "terrain",
       "terrain_movement",
+      "open_terrain",
     ],
     descriptions: [
       {
@@ -175,6 +201,8 @@ export const KeywordsB: Keyword[] = [
       "fitting_on_terrain",
       "silhouettes",
     ],
+    summary:
+      "Each miniature in Star Wars: Legion is modeled on a base. A unit’s base depends on its unit type: troopers, clone troopers, droid troopers, and Wookiee troopers are on small bases. Everything else is on notched bases of various sizes.",
     descriptions: [
       {
         type: "text",
@@ -226,6 +254,33 @@ export const KeywordsB: Keyword[] = [
     ],
   },
   {
+    keyword: "battle_forces",
+    name: "Battle Forces",
+    parents: ["b", "appendix"],
+    summary:
+      "In Star Wars: Legion, Battle Forces represent groups of units that fought side by side in the Star Wars galaxy. These forces are themed around unique sub-groups and can range from a ragtag group of Mercenaries to the main invasion force of the Empire.",
+    related_keywords: [
+      "army_building",
+      "affiliations",
+      "mercenary",
+      "mercenaries",
+      "skirmish",
+      "ranks",
+    ],
+    descriptions: [
+      {
+        type: "text",
+        content:
+          "In <i>Star Wars</i>: Legion, Battle Forces represent groups of units that fought side by side in the <i>Star Wars</i> galaxy. These forces are themed around unique sub-groups and can range from a ragtag group of Mercenaries to the main invasion force of the Empire.",
+      },
+      {
+        type: "text",
+        content:
+          "Battle Forces provide players with an alternative way to build and field an army. Each Battle Force has its own list of specific units that it is allowed to field, its own rank requirements for both standard and skirmish armies, and its own special rules, which may affect how that Battle Force is built, set up, or plays.",
+      },
+    ],
+  },
+  {
     keyword: "beam_x",
     name: "Beam X",
     related_keywords: [
@@ -239,6 +294,8 @@ export const KeywordsB: Keyword[] = [
     tag: "Weapon Keyword",
     range: "range_1",
     parents: ["b", "weapons"],
+    summary:
+      "During the Declare Additional Defender step, if a weapon with the Beam X keyword is in a unit’s attack pool, that unit may declare up to X additional attacks forming attack pools using only the weapon with the Beam X keyword, even though the weapon has already been added to an attack pool. These additional attacks do not generate further attacks.",
     descriptions: [
       {
         type: "text",
@@ -269,6 +326,8 @@ export const KeywordsB: Keyword[] = [
       "secondary_objective_cards",
       "advantage_cards",
     ],
+    summary:
+      "Battle Cards form a Battle Deck and are used in Setup, where players work together to build the mission for that game. Battle Cards are divided into three categories: Objective Cards that have a paired Map Card (Red), Secondary Objective Cards (Yellow), and Advantage Cards (Green).",
     descriptions: [
       {
         type: "text",
@@ -286,6 +345,8 @@ export const KeywordsB: Keyword[] = [
     name: "Battlefield",
     related_keywords: ["objects"],
     parents: ["b", "concepts"],
+    summary:
+      "Miniatures, tokens, and terrain are all objects. The table or surface being played on is the battlefield.",
     descriptions: [
       {
         type: "reference",
@@ -298,6 +359,8 @@ export const KeywordsB: Keyword[] = [
     name: "Beyond, At, and Within",
     parents: ["b", "concepts"],
     related_keywords: ["actions", "range", "measurement"],
+    summary:
+      "Some abilities require two objects to be at, within, or beyond a certain distance from each other.",
     descriptions: [
       {
         type: "reference",
@@ -328,7 +391,8 @@ export const KeywordsB: Keyword[] = [
     parents: ["b", "units"],
     tag: "Unit Keyword",
     related_keywords: ["attack", "dodge", "apply_dodge_cover", "dodge"],
-    summary: "",
+    summary:
+      "When a unit with the Block keyword is defending, if it spends any dodge tokens during the Apply Dodge and Cover step, it gains {block_surge}:{block}.",
     descriptions: [
       {
         type: "text",
@@ -345,7 +409,8 @@ export const KeywordsB: Keyword[] = [
     tag: "Unit Keyword",
     related_keywords: ["actions", "apply_dodge_cover", "keywords"],
     range: "range_2",
-    summary: "",
+    summary:
+      "As a card action, a unit with the Bolster X keyword can choose up to X friendly units at {range_2} to each gain one surge token.",
     descriptions: [
       {
         type: "text",
@@ -360,6 +425,8 @@ export const KeywordsB: Keyword[] = [
     activation: "",
     parents: ["b", "concepts"],
     tag: "",
+    summary:
+      "Each player prepares a command hand of exactly seven Command Cards. A player must include two 1 pip cards, two 2 pip cards, and two 3 pip cards, with no duplicates. Additionally, players must always include the 4 pip card “Standing Orders.”",
     related_keywords: ["setup"],
     descriptions: [
       {
@@ -389,6 +456,8 @@ export const KeywordsB: Keyword[] = [
     activation: "",
     parents: ["b", "concepts"],
     tag: "",
+    summary:
+      "Each player must prepare a Battle Deck of nine cards before the game begins, consisting of exactly three Objective Cards, three Secondary Objective Cards, and three Advantage Cards with no duplicates. A player must also prepare the three Map Cards that pair with the Objective Cards in their Battle Deck.",
     related_keywords: ["setup"],
     descriptions: [
       {
@@ -464,7 +533,8 @@ export const KeywordsB: Keyword[] = [
     parents: ["b", "units"],
     tag: "Unit Keyword",
     related_keywords: ["setup", "unit"],
-    summary: "",
+    summary:
+      "During Setup, a unit with the Bounty keyword chooses an enemy {rank_operative} or {rank_commander} unit. The chosen unit gains a bounty token. After a friendly unit with the Bounty keyword defeats an enemy unit that has one or more bounty tokens with an attack or effect, the friendly unit’s controlling player scores 1 VP.",
     descriptions: [
       {
         type: "text",

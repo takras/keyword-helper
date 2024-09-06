@@ -15,7 +15,7 @@ export const KeywordList = ({
       return null;
     }
     return (
-      <li key={getKey(keyword)}>
+      <li className={styles.listItem} key={getKey(keyword)}>
         <strong className={styles.listName}>
           {enriched.name}
           {showOnlyKeyname ? null : ": "}

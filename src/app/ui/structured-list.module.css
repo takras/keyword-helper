@@ -17,6 +17,7 @@
 }
 
 .listItem {
+  padding-bottom: 5px;
   &::marker {
     font-family: var(--font-family);
     font-size: 1.5rem;

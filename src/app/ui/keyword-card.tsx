@@ -17,7 +17,6 @@ export const KeywordCard = ({ keyword }: { keyword: Keyword }) => {
       onClick={() => selectKeyword(keyword.keyword)}
       key={getKey(keyword.keyword)}
       prefetch={true}
-      scroll={false}
     >
       {keyword.name}
       {keyword.range && (

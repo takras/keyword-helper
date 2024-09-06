@@ -38,7 +38,6 @@ export const RelatedKeywords = ({ related }: { related: string[] }) => {
                     selectKeyword(enriched.keyword);
                   }}
                   prefetch={true}
-                  scroll={false}
                 >
                   {enriched?.name}
                 </Link>

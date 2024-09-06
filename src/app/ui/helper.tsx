@@ -199,29 +199,8 @@ export default function Helper() {
             href={getLink("coming_from_pre_2024")}
             onClick={() => selectKeyword("coming_from_pre_2024")}
             prefetch={true}
-            scroll={false}
           >
-            Biggest changes from version prior to 2024s 2.6.0 version
-          </Link>
-        </div>
-        <div className={styles.aboutButtonRow}>
-          <Link
-            className={styles.button}
-            href={getLink("about")}
-            onClick={() => selectKeyword("about")}
-            prefetch={true}
-            scroll={false}
-          >
-            About Legion Helper
-          </Link>
-          <Link
-            className={styles.button}
-            href={getLink("attack_quick_reference")}
-            onClick={() => selectKeyword("attack_quick_reference")}
-            prefetch={true}
-            scroll={false}
-          >
-            Attack Quick Reference
+            What&apos;s new in Legion 2024 v2.6.0?
           </Link>
         </div>
         <div className={styles.changelogButton}>
@@ -230,9 +209,26 @@ export default function Helper() {
             href={getLink("skirmish")}
             onClick={() => selectKeyword("skirmish")}
             prefetch={true}
-            scroll={false}
           >
-            Skirmish Generator
+            Skirmish Mission Generator
+          </Link>
+        </div>
+        <div className={styles.aboutButtonRow}>
+          <Link
+            className={styles.button}
+            href={getLink("about")}
+            onClick={() => selectKeyword("about")}
+            prefetch={true}
+          >
+            About Legion Helper
+          </Link>
+          <Link
+            className={styles.button}
+            href={getLink("attack_quick_reference")}
+            onClick={() => selectKeyword("attack_quick_reference")}
+            prefetch={true}
+          >
+            Attack Quick Reference
           </Link>
         </div>
         <div className={styles.infoContainer}>
@@ -243,7 +239,6 @@ export default function Helper() {
               href={getLink("changelog")}
               onClick={() => selectKeyword("changelog")}
               prefetch={true}
-              scroll={false}
             >
               {rulesDocument.helperVersion}
             </Link>
@@ -278,7 +273,6 @@ export default function Helper() {
             className={styles.button}
             href={rulesDocument.downloadUrl}
             target="_blank"
-            scroll={false}
           >
             Official Rules PDF
           </Link>
@@ -286,7 +280,6 @@ export default function Helper() {
             className={styles.button}
             href={rulesDocument.documentUrl}
             target="_blank"
-            scroll={false}
           >
             Official Documents
           </Link>
@@ -294,7 +287,6 @@ export default function Helper() {
             className={styles.button}
             href={rulesDocument.discussionUrl}
             target="_blank"
-            scroll={false}
           >
             Official Forum
           </Link>

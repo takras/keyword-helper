@@ -6,6 +6,8 @@ export const KeywordsA: Keyword[] = [
     name: "Abilities That Provide Moves",
     related_keywords: ["move", "command_cards"],
     parents: ["a"],
+    summary:
+      "Some abilities provide standard moves, often of certain speeds. A move provided by an ability is not a move action unless specifically stated.",
     descriptions: [
       {
         type: "text",
@@ -27,7 +29,8 @@ export const KeywordsA: Keyword[] = [
     name: "Action",
     parents: ["a"],
     activation: "action",
-    summary: "",
+    summary:
+      "During the Perform Actions step, a unit may perform up to 2 of the actions below. A unit may only perform each action once per activation, except for the Move action.",
     related_keywords: ["aim", "attack"],
     descriptions: [
       {
@@ -101,6 +104,8 @@ export const KeywordsA: Keyword[] = [
       "abilities",
       "cohesion",
     ],
+    summary:
+      "During the Activation Phase, players activate their units and may perform actions with them.",
     descriptions: [
       {
         type: "text",
@@ -218,6 +223,8 @@ export const KeywordsA: Keyword[] = [
     activation: "",
     parents: ["a", "concepts"],
     related_keywords: ["setup", "card_effects"],
+    summary:
+      "Advantage Cards contain additional special rules a player with that advantage can use during a game.",
     descriptions: [
       {
         type: "text",
@@ -243,13 +250,55 @@ export const KeywordsA: Keyword[] = [
     ],
   },
   {
+    keyword: "affiliations",
+    name: "Affiliations",
+    parents: ["appendix", "a"],
+    tag: "",
+    summary:
+      "Every Mercenary unit has an affiliation. Their affiliation is where their true loyalty lies. Affiliations represent criminal organizations, syndicates, guilds, gangs, or even a lone bounty hunter just looking out for themselves. A unit’s affiliation is represented by an icon in the upper left corner of their Unit Card, where a unit’s faction icon would normally be.",
+    related_keywords: ["army_building", "mercenary", "battle_forces"],
+    descriptions: [
+      {
+        type: "text",
+        content:
+          "Every Mercenary unit has an affiliation. Their affiliation is where their true loyalty lies. Affiliations represent criminal organizations, syndicates, guilds, gangs, or even a lone bounty hunter just looking out for themselves. A unit’s affiliation is represented by an icon in the upper left corner of their Unit Card, where a unit’s faction icon would normally be.",
+      },
+      {
+        type: "text",
+        content:
+          "A unit with an affiliation can be issued orders <strong>only by a friendly unit that has the same affiliation.</strong>",
+      },
+      {
+        type: "header",
+        content: "Affiliation Icons",
+      },
+      {
+        type: "text",
+        content:
+          "Each affiliation is represented by an icon. The affiliations found in Star Wars: Legion are as follows:",
+      },
+      {
+        type: "structured_list",
+        content: [
+          "{faction_black_sun}  Black Sun",
+          "{faction_pyke_syndicate} The Pyke Syndicat",
+          "{faction_raiders} Raiders",
+          "{faction_rogue} Rogues",
+          " {faction_maul_loyalists} Maul Loyalists",
+          "{faction_ewoks} Ewoks",
+        ],
+      },
+    ],
+  },
+  {
     keyword: "agile_x",
     name: "Agile X",
     activation: "",
     parents: ["a", "units"],
     tag: "Unit Keyword",
     related_keywords: ["move", "dodge", "keywords"],
-    summary: "",
+    summary:
+      "The Agile X keyword allows a unit to gain a number of dodge tokens equal to X each time it performs a standard move as part of an action or free action.",
     descriptions: [
       {
         type: "text",
@@ -266,7 +315,8 @@ export const KeywordsA: Keyword[] = [
     tag: "Unit Keyword",
     range: "range_3",
     related_keywords: ["move", "aim", "dodge", "actions", "attack"],
-    summary: "",
+    summary:
+      "At the start of a unit with the AI keyword’s Perform Actions step, if it is on the battlefield, does not have a faceup order token, and is not at {range_3} of a friendly {rank_commander} unit, it must perform one of the specified actions as its first action that activation. Free actions do not satisfy the requirements of the AI keyword. If a unit cannot perform any of its listed actions as its first action, it is free to perform other actions as normal.",
     descriptions: [
       {
         type: "text",
@@ -289,7 +339,8 @@ export const KeywordsA: Keyword[] = [
       "line_of_sight",
       "suppression",
     ],
-    summary: "",
+    summary:
+      "When a unit with the Aid keyword would gain an aim, dodge, or surge token, another friendly unit of the affiliation or type listed at {range_2} and in line of sight may gain that token instead. If it does, the unit with the Aid keyword gains one suppression token.",
     descriptions: [
       {
         type: "text",
@@ -305,7 +356,8 @@ export const KeywordsA: Keyword[] = [
     parents: ["a", "units"],
     tag: "Unit Keyword",
     related_keywords: ["issue_order", "mercenary", "army_building"],
-    summary: "",
+    summary:
+      "Units with the Allies of Convenience keyword may issue orders to friendly Mercenary units regardless of affiliation. Additionally, when building an army, players may include one extra Mercenary unit in their army regardless of rank if there is at least one unit with the Allies of Convenience keyword, though they cannot take more units of a particular rank than normally allowed.",
     descriptions: [
       {
         type: "text",
@@ -354,12 +406,13 @@ export const KeywordsA: Keyword[] = [
     activation: "",
     parents: ["a", "d", "c"],
     related_keywords: ["attack", "cover", "dodge", "line_of_sight"],
-    summary: "",
+    summary:
+      "If the attack is not a ranged attack, skip to the Apply Dodge step below. If the attack is a ranged attack, the attacking player checks LOS from the attacking unit leader to each miniature in the defending unit. If LOS to a miniature is completely blocked, the miniature is obscured. If LOS from any part of the attacking unit leader’s silhouette to any part of the defending miniature’s silhouette is blocked by terrain that the attacking unit leader is not in base contact with and that terrain is at {range_half} of the defending miniature, the defending miniature is obscured. Repeat this process for every miniature in the defending unit.",
     descriptions: [
       {
         type: "structured_list_numbered",
         content: [
-          "<strong>Determine Number of Obscured Miniatures:</strong> f the attack is not a ranged attack, skip to the Apply Dodge step below. If the attack is a ranged attack, the attacking player checks LOS from the attacking unit leader to each miniature in the defending unit. If LOS to a miniature is completely blocked, the miniature is obscured. If LOS from any part of the attacking unit leader’s silhouette to any part of the defending miniature’s silhouette is blocked by terrain that the attacking unit leader is not in base contact with and that terrain is at {range_half} of the defending miniature, the defending miniature is obscured. Repeat this process for every miniature in the defending unit.",
+          "<strong>Determine Number of Obscured Miniatures:</strong> If the attack is not a ranged attack, skip to the Apply Dodge step below. If the attack is a ranged attack, the attacking player checks LOS from the attacking unit leader to each miniature in the defending unit. If LOS to a miniature is completely blocked, the miniature is obscured. If LOS from any part of the attacking unit leader’s silhouette to any part of the defending miniature’s silhouette is blocked by terrain that the attacking unit leader is not in base contact with and that terrain is at {range_half} of the defending miniature, the defending miniature is obscured. Repeat this process for every miniature in the defending unit.",
           "<strong>Determine Cover:</strong> If at least half of the miniatures in the defending unit are obscured, the defending unit has cover. The type of cover is determined by whatever is obscuring the defending unit, providing either heavy or light cover based on the players’ discussion of terrain before the game. If a unit has cover and at least one of the miniatures in the defending unit is obscured by terrain that provides heavy cover, the unit has heavy cover. If the defending unit has cover but does not have heavy cover, it has light cover.<p>While a unit is suppressed, it improves its cover by one: a unit with no cover gains light cover, and a unit in light cover gains heavy cover.</p>",
           "<strong>Roll Cover Pool:</strong> If the defending unit has cover, the defending player rolls one white defense die for every {hit} result in the attack pool.",
           "<strong>Apply Cover:</strong> If the defending unit has light cover, it cancels one {hit} result in the attack pool for each {block} result in the cover pool. If the defending unit has heavy cover, it cancels one {hit} result in the attack pool for each {block} and each {block_surge} result in the cover pool instead.",
@@ -411,6 +464,8 @@ export const KeywordsA: Keyword[] = [
       "terrain_movement",
       "obstacle_terrain",
     ],
+    summary:
+      "Some terrain features consist of an area of terrain containing multiple terrain elements inside a boundary or footprint, like a forest, craters, ruined buildings, or piles of rubble. The individual elements and their locations inside the area terrain are not relevant, only the boundary.",
     descriptions: [
       {
         type: "text",
@@ -438,6 +493,8 @@ export const KeywordsA: Keyword[] = [
     related_keywords: ["range"],
     range: "range_1",
     parents: ["a", "weapons"],
+    summary:
+      "A weapon with a yellow range icon {range_1} is an area weapon. When using an area weapon, perform a separate attack against each unit, friendly and enemy, that is in LOS and at the range indicated by the number on the range icon, even if that unit is engaged. Attacks made by area weapons are always ranged attacks.",
     descriptions: [
       {
         type: "text",

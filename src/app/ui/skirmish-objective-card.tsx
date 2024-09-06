@@ -2,9 +2,9 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { getKey, interpolateString } from "@/utils";
 import globalStyles from "./helper.module.css";
 import styles from "./skirmish-objective-card.module.css";
-import { getKey, interpolateString } from "@/utils";
 
 type Card = {
   id: number;
@@ -137,7 +137,7 @@ export const SkirmishObjectiveCard = () => {
         setRedAdvantage(undefined);
       }
     });
-  }, []);
+  }, [searchParams]);
 
   const populateCards = () => {
     const primary = shuffle(
@@ -166,17 +166,19 @@ export const SkirmishObjectiveCard = () => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.about}>
-        {interpolateString(
-          "<strong>Determine Blue Player:</strong> One player rolls a red defense die. If the result is a {block}, the player that rolled is the blue player. Otherwise, the player that rolled is the red player. Then the blue player chooses one of the table edges and sets their army near that edge. The red player takes the opposite table edge.",
-          getKey("about")
-        )}
-        <p>Then, click &quot;Generate Mission&quot; below.</p>
+      {!isLoaded && (
+        <div className={styles.about}>
+          {interpolateString(
+            "<strong>Determine Blue Player:</strong> One player rolls a red defense die. If the result is a {block}, the player that rolled is the blue player. Otherwise, the player that rolled is the red player. Then the blue player chooses one of the table edges and sets their army near that edge. The red player takes the opposite table edge.",
+            getKey("about")
+          )}
+          <p>Then, click &quot;Generate Mission&quot; below.</p>
 
-        <button className={globalStyles.button} onClick={populateCards}>
-          Generate mission.
-        </button>
-      </div>
+          <button className={globalStyles.button} onClick={populateCards}>
+            Generate mission.
+          </button>
+        </div>
+      )}
       {isLoaded && (
         <>
           <div className={styles.primaryObjective}>

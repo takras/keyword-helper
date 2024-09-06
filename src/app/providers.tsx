@@ -1,15 +1,9 @@
 "use client";
 import { sendGTMEvent } from "@next/third-parties/google";
 import { ThemeProvider } from "next-themes";
-import {
-  createContext,
-  ReactNode,
-  Suspense,
-  useMemo,
-  useReducer,
-  useState,
-} from "react";
+import { createContext, ReactNode, Suspense, useMemo, useReducer } from "react";
 import { AppProgressBar as ProgressBar } from "next-nprogress-bar";
+import { useRouter } from "next/navigation";
 
 interface Context {
   previousKeyword: string;
@@ -33,6 +27,7 @@ export const KeywordContext = createContext<Context>({
 
 export function Providers({ children }: Readonly<{ children: ReactNode }>) {
   const [context, dispatch] = useReducer(keywordReducer, initialKeywords);
+  const router = useRouter();
 
   const previousKeyword =
     context.keywordHistory[context.keywordHistory.length - 2];
@@ -52,6 +47,9 @@ export function Providers({ children }: Readonly<{ children: ReactNode }>) {
       },
       goBack: () => {
         dispatch("action_back");
+        if (previousKeyword) {
+          router.back();
+        }
       },
       backButtonKeyword: previousKeyword ?? "",
       selectKeyword: (keyword: string) => {
@@ -61,7 +59,7 @@ export function Providers({ children }: Readonly<{ children: ReactNode }>) {
         dispatch(keyword);
       },
     };
-  }, [context, previousKeyword]);
+  }, [context.keywordHistory, previousKeyword, router]);
 
   return (
     <Suspense>

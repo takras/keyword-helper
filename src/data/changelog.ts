@@ -12,6 +12,28 @@ type Log = {
 
 export const log: Log[] = [
   {
+    version: "1.1.2",
+    entries: [
+      {
+        type: "add",
+        description: "Add clarification and references to Backup.",
+      },
+      {
+        type: "add",
+        description: "Add mercenaries and battle force rules.",
+      },
+      {
+        type: "change",
+        description:
+          "Changed page meta description to include summary of keyword, if present.",
+      },
+      {
+        type: "change",
+        description: "Some page layout changes.",
+      },
+    ],
+  },
+  {
     version: "1.1.1",
     entries: [
       {

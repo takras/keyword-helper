@@ -205,7 +205,7 @@ export const KeywordsI: Keyword[] = [
       {
         type: "text",
         content:
-          "During an attack, if the attack pool contains weapons with the {keyword:Immune: Deflect} keyword, the attacking unit cannot suffer wounds from the {keyword:Deflect} keyword.",
+          "During an attack, if the attack pool contains weapons with the Immune: Deflect keyword, the attacking unit cannot suffer wounds from the {keyword:Deflect} keyword.",
       },
     ],
   },

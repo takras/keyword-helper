@@ -351,6 +351,8 @@ export const KeywordsR: Keyword[] = [
     parents: ["r"],
     range: "range_2",
     related_keywords: ["aim", "dodge", "backup"],
+    summary:
+      "At the start of the Activation Phase, if a unit with the Retinue keyword is at {range_2} of another friendly unit or type of unit specified by the Retinue keyword, it gains either one aim or one dodge token.",
     descriptions: [
       {
         type: "text",
@@ -426,6 +428,8 @@ export const KeywordsR: Keyword[] = [
       "resiliency",
       "tokens",
     ],
+    summary:
+      "Vehicles do not have a courage value. Instead most, but not all, have a resilience value. A vehicle that does not have a resilience value has a “-” on their Unit Card where the resilience value should be.",
     descriptions: [
       {
         type: "text",
@@ -512,6 +516,8 @@ export const KeywordsR: Keyword[] = [
     parents: ["r"],
     range: "range_2",
     related_keywords: ["wounds", "free_card_action"],
+    summary:
+      "When another friendly m trooper unit at {range_2} and in LOS that has a faceup order token activates, it may suffer 1 wound to perform 1 free action.",
     descriptions: [
       {
         type: "text",

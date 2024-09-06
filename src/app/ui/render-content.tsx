@@ -73,7 +73,6 @@ export const RenderContent = ({
             className={styles.referenceButton}
             onClick={() => selectKeyword(enriched.keyword)}
             prefetch={true}
-            scroll={false}
           >
             {enriched?.name}
           </Link>

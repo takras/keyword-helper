@@ -1,4 +1,3 @@
-import { DispatchWithoutAction } from "react";
 import { IconList } from "./utils";
 
 export const AVAILABLE_KEYWORDS = [
@@ -12,6 +11,7 @@ export const AVAILABLE_KEYWORDS = [
   "activating_units",
   "activation_phase",
   "advantage_cards",
+  "affiliations",
   "agile_x",
   "aid",
   "ai_action",
@@ -36,6 +36,7 @@ export const AVAILABLE_KEYWORDS = [
   "barrage",
   "barricades",
   "base",
+  "battle_forces",
   "battle_cards",
   "battlefield",
   "beam_x",
@@ -177,6 +178,7 @@ export const AVAILABLE_KEYWORDS = [
   "measurement",
   "measuring_range",
   "mercenary",
+  "mercenaries",
   "melee",
   "melee_pierce",
   "miniature",
@@ -371,6 +373,7 @@ export interface CatalogEntry {
     | "units"
     | "phases"
     | "concepts"
+    | "appendix"
     | "changelog";
   name: string;
 }

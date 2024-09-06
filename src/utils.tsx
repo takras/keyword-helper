@@ -41,9 +41,9 @@ export const sortKeyword = (keywordA: Keyword, keywordB: Keyword) => {
   return a < b ? -1 : a > b ? 1 : 0;
 };
 
-export const getEnrichedKeyword = (keyword: string) => {
+export function getEnrichedKeyword(keyword: string) {
   return rules.keywords.find((key) => key.keyword === keyword);
-};
+}
 
 let counter = 0;
 export const getKey = (key: string) => {
@@ -62,6 +62,11 @@ export const IconList = {
   hit_critical: "black/hit-critical.png",
   block: "black/block.png",
   block_surge: "black/block-surge.png",
+  faction_black_sun: "black/faction_black_sun.png",
+  faction_maul_loyalists: "black/faction_maul_loyalists.png",
+  faction_pyke_syndicate: "black/faction_pyke_syndicate.png",
+  faction_raiders: "black/faction_raiders.png",
+  faction_rogue: "black/faction_rogue.png",
   faction_ewoks: "black/faction_ewoks.png",
   range_melee: "black/range-melee.png",
   range_half: "black/range-half.png",
