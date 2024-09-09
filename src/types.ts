@@ -5,7 +5,6 @@ export const AVAILABLE_KEYWORDS = [
   "about",
   "changelog",
   "coming_from_pre_2024",
-  "abilities",
   "abilities_provide_move",
   "actions",
   "activating_units",

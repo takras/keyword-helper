@@ -8,7 +8,8 @@ export const KeywordsC: Keyword[] = [
     parents: ["c", "units"],
     tag: "Unit Keyword",
     related_keywords: ["setup", "upgrade_card", "tokens"],
-    summary: "",
+    summary:
+      "During Setup, a unit with an equipped Upgrade Card that has the Cache keyword places the listed token(s) on the card with the Cache keyword. The unit may spend those tokens.",
     descriptions: [
       {
         type: "text",
@@ -24,7 +25,8 @@ export const KeywordsC: Keyword[] = [
     parents: ["c", "units"],
     tag: "Unit Keyword",
     related_keywords: ["actions", "card_action", "aim", "dodge", "suppression"],
-    summary: "",
+    summary:
+      "As a card action, a unit with the Calculate Odds keyword can choose a friendly trooper unit at {range_2} and in LOS to gain one aim token, one dodge token, and one suppression token.",
     range: "range_2",
     descriptions: [
       {
@@ -40,11 +42,18 @@ export const KeywordsC: Keyword[] = [
     activation: "",
     parents: ["c", "concepts"],
     related_keywords: ["keywords"],
+    summary:
+      "Card effect refers to any effect that originates from the text or rule on any card. Keywords are card effects.",
     descriptions: [
       {
         type: "text",
         content:
-          "As a card action, a unit with the Calculate Odds keyword can choose a friendly trooper unit at {range_2} and in LOS to gain one aim token, one dodge token, and one suppression token.",
+          "Card effect refers to any effect that originates from the text or rule on any card. Keywords are card effects.",
+      },
+      {
+        type: "reference",
+        referenced_keyword: "keywords",
+        showOnlySummary: true,
       },
       {
         type: "example",
@@ -85,6 +94,8 @@ export const KeywordsC: Keyword[] = [
     parents: ["c", "units"],
     tag: "Unit Keyword",
     related_keywords: ["move", "melee", "base", "attack"],
+    summary:
+      "After a unit that has the Charge keyword performs a move action that brings it into base contact with an enemy miniature to start a melee, it may perform a free attack action against that unit using only melee weapons.",
     descriptions: [
       {
         type: "text",
@@ -99,6 +110,8 @@ export const KeywordsC: Keyword[] = [
     activation: "",
     parents: ["c", "weapons"],
     related_keywords: ["tokens", "arm_x", "detonate_x"],
+    summary:
+      "Charge tokens cannot overlap any objective, advantage, or other charge tokens and must be placed on a flat surface completely flush with that surface.",
     descriptions: [
       {
         type: "illustration",
@@ -120,6 +133,8 @@ export const KeywordsC: Keyword[] = [
     name: "Claiming Objective Tokens",
     parents: ["c", "concepts"],
     related_keywords: ["objective", "actions"],
+    summary:
+      "Battle Cards describe which units are eligible to claim asset tokens in that mission by granting them a Claim free action. An eligible unit can claim an unclaimed asset token it is contesting by performing that free action. When a unit claims an asset objective token, remove that token from the battlefield and place it on that unit’s Unit Card. That unit is now holding that asset token. When a unit drops an asset token it is holding, the opponent of that unit’s controlling player places that token on the battlefield at {range_half} of that unit’s unit leader. While an asset objective token is on the battlefield, it is unclaimed.",
     descriptions: [
       {
         type: "text",
@@ -140,6 +155,8 @@ export const KeywordsC: Keyword[] = [
     parents: ["c", "concepts"],
     tag: "",
     related_keywords: ["move", "miniature", "terrain"],
+    summary:
+      "Sometimes units maneuver onto or through tall pieces of obstacle terrain. This is accomplished by performing a climb. Miniatures on notched bases may not climb.",
     descriptions: [
       {
         type: "text",
@@ -178,6 +195,8 @@ export const KeywordsC: Keyword[] = [
     name: "Clone Trooper",
     parents: ["c"],
     related_keywords: ["troopers", "miniature", "unit"],
+    summary:
+      "While attacking or defending, a clone trooper unit may spend one aim, dodge, or surge token belonging to another friendly clone trooper unit at {range_2} and in LOS as if the attacking or defending unit had that token.",
     descriptions: [
       {
         type: "structured_list",
@@ -195,6 +214,8 @@ export const KeywordsC: Keyword[] = [
     parents: ["c", "units"],
     tag: "Unit Keyword",
     related_keywords: ["move", "climb", "troopers"],
+    summary:
+      "A unit with the Climbing Vehicle keyword is treated as a trooper unit for the purposes of climbing.",
     descriptions: [
       {
         type: "text",
@@ -211,7 +232,8 @@ export const KeywordsC: Keyword[] = [
     activation: "",
     parents: ["c", "units"],
     related_keywords: ["move", "range", "melee", "line_of_sight"],
-    summary: "",
+    summary:
+      "When a unit leader miniature changes position in any way, all other miniatures in the unit must be put into cohesion.",
     descriptions: [
       {
         type: "text",
@@ -240,6 +262,8 @@ export const KeywordsC: Keyword[] = [
     parents: ["c", "concepts"],
     tag: "",
     related_keywords: ["move", "miniature", "terrain"],
+    summary:
+      "Command Cards form a player’s command hand and are used in the Command Phase to determine player priority, issue orders to units, and grant powerful game effects.",
     descriptions: [
       {
         type: "text",
@@ -276,7 +300,8 @@ export const KeywordsC: Keyword[] = [
       "unit_cards",
       "droid_trooper",
     ],
-    summary: "",
+    summary:
+      "When a unit checks to see if it is panicked, instead of using its own courage value, it may use the courage value of a friendly {rank_commander} unit at {range_3}. For example, a unit with 3 suppression tokens and courage value 1 would not be panicked if it chooses to use the courage value of a friendly {rank_commander} at {range_3} that has a courage value of 2 or greater.",
     descriptions: [
       {
         type: "reference",
@@ -290,6 +315,8 @@ export const KeywordsC: Keyword[] = [
     activation: "",
     parents: ["c"],
     related_keywords: ["speeder_x", "move"],
+    summary:
+      "A compulsory move is a free move action. To perform a compulsory move, the unit performs a full move at its maximum speed. If it cannot do so, or if a full move would cause any part of the unit leader’s base to be outside the battlefield, it can perform a partial move instead, ending its movement as far along the movement template as possible.",
     descriptions: [
       {
         type: "text",
@@ -305,6 +332,8 @@ export const KeywordsC: Keyword[] = [
     activation: "",
     parents: ["c"],
     related_keywords: ["objective", "panic"],
+    summary:
+      "A unit is contesting an objective token if its unit leader is at {range_half} of the objective token and the unit is not panicked.",
     descriptions: [
       {
         type: "text",
@@ -322,6 +351,8 @@ export const KeywordsC: Keyword[] = [
     tag: "Unit Keyword",
     related_keywords: ["setup", "tokens", "critical_x"],
     range: "range_1",
+    summary:
+      "During Setup, for each friendly unit with the Complete the Mission keyword, place a friendly priority mission token on the battlefield within contested territory.",
     descriptions: [
       {
         type: "text",
@@ -371,6 +402,8 @@ export const KeywordsC: Keyword[] = [
     name: "Critical X",
     parents: ["c", "weapons"],
     tag: "Weapon Keyword",
+    summary:
+      "When a unit converts attack surges for an attack pool with the Critical X keyword, during the Convert Surges step it may convert up to X attack surge {hit_surge} results to critical {hit_critical} results.",
     related_keywords: ["apply_dodge_cover", "attack", "keywords"],
     descriptions: [
       {
@@ -390,7 +423,6 @@ export const KeywordsC: Keyword[] = [
       "{action} The unit performs an action listed on its Unit Card or one of its Upgrade Cards. Card actions have this symbol {action}. A unit may perform more than one card action, as long as they are different. A card action with {action}{action} requires two actions to perform.",
     related_keywords: [
       "actions",
-      "abilities",
       "activating_units",
       "exhaust",
       "free_card_action",
@@ -554,6 +586,8 @@ export const KeywordsC: Keyword[] = [
     tag: "Unit Keyword",
     related_keywords: ["rally", "suppression", "move"],
     range: "range_2",
+    summary:
+      "After another trooper unit at {range_2} of a friendly unit with the Compel keyword performs its Rally step and is suppressed but not panicked, at the beginning of its Perform Action step, it may gain one suppression token to perform a free move action.",
     descriptions: [
       {
         type: "text",
@@ -574,6 +608,8 @@ export const KeywordsC: Keyword[] = [
       "game_effects",
       "keywords",
     ],
+    summary:
+      "When building a command hand before the game begins, for each unit with the Contingencies X keyword in a player’s army, that player sets aside up to X additional Command Cards facedown as Contingency Cards, where X is equal to the combined Contingencies X value on all their units. These set-aside cards may have any number of pips but must follow all other rules for constructing a command hand. Set-aside Contingency Cards are not considered to be in a player’s command hand and are kept secret from an opponent. A player may look at their set-aside Contingency Cards at any time.",
     descriptions: [
       {
         type: "text",
@@ -600,6 +636,8 @@ export const KeywordsC: Keyword[] = [
     tag: "Unit Keyword",
     related_keywords: ["issue_order", "command_phase"],
     range: "range_1",
+    summary:
+      "After a unit with the Coordinate keyword is issued an order, it may issue an order to a friendly unit at {range_1} that has the unit name or unit type specified. A unit that has one or more unit names or unit types listed can only choose one of these listed unit names or unit types to issue an order to using the Coordinate keyword. If a unit already has the Coordinate keyword and gains another instance of the keyword, the unit may choose which targets to issue an order to from the two instances of the keyword; it does not issue two orders.",
     descriptions: [
       {
         type: "text",
@@ -614,7 +652,9 @@ export const KeywordsC: Keyword[] = [
     activation: "",
     parents: ["c", "units"],
     tag: "Unit Keyword",
-    related_keywords: ["miniature", "upgrade_card", "wounds", "abilities"],
+    related_keywords: ["miniature", "upgrade_card", "wounds"],
+    summary:
+      "Some units are faithful companions or subservient minions and are almost never seen apart from another unit. A unit like this has the Counterpart keyword and the miniature that represents this unit is always added to another unit. That miniature has a Counterpart Card and their miniature is a counterpart miniature. The combined unit has the rank, unit type, defense die, courage value, surge conversion chart, and speed as shown on the Unit Card.",
     descriptions: [
       {
         type: "text",
@@ -642,6 +682,8 @@ export const KeywordsC: Keyword[] = [
     name: "Cover X",
     activation: "",
     parents: ["c", "units"],
+    summary:
+      "If a unit has the Cover X keyword and is defending against an attack with at least one ranged weapon, during the Apply Dodge and Cover step, it improves the numerical value of its cover by a number equal to X.",
     tag: "Unit Keyword",
     related_keywords: ["attack", "weapons", "apply_dodge_cover", "keywords"],
     descriptions: [
@@ -663,6 +705,8 @@ export const KeywordsC: Keyword[] = [
       "terrain",
       "terrain_cover",
     ],
+    summary:
+      "Cover helps miniatures defend themselves from attacks. Cover is divided into three categories: light, heavy, and no cover, and is determined during the attack sequence. Some rules refer to cover having a numerical value that is improved or reduced— light cover has a value of 1, heavy cover has a value of 2, and no cover has a value of 0. The numerical value of cover cannot be increased above 2 for any reason. Resolve effects that improve cover before effects that reduce cover.",
     descriptions: [
       {
         type: "illustration",
@@ -689,6 +733,8 @@ export const KeywordsC: Keyword[] = [
     parents: ["c", "units"],
     tag: "Unit Keyword",
     related_keywords: ["setup", "infiltrate"],
+    summary:
+      "During Setup, a unit with the Covert Ops keyword may change its rank to {rank_operative} for all rules purposes for the rest of the game. If it does, it gains the Infiltrate keyword that game. A unit cannot change its rank to {rank_operative} if there are no other {rank_commander} units in that player’s army.",
     descriptions: [
       {
         type: "text",
@@ -703,6 +749,8 @@ export const KeywordsC: Keyword[] = [
     parents: ["c", "weapons"],
     tag: "Weapon Keyword",
     related_keywords: ["move", "attack", "pivot"],
+    summary:
+      "A unit that has a weapon with the Cumbersome keyword cannot perform a move prior to performing an attack using that weapon during the same activation unless the move is a pivot.",
     descriptions: [
       {
         type: "text",
@@ -718,6 +766,8 @@ export const KeywordsC: Keyword[] = [
     parents: ["c", "units"],
     tag: "Unit Keyword",
     related_keywords: ["command_phase", "command_cards"],
+    summary:
+      "During the Command Phase, if a player reveals a {rank_commander} or {rank_operative} specific Command Card that belongs to a unit with the Cunning keyword and there would be a tie for priority, treat that Command Card as having one fewer pip. If both players reveal a specific {rank_commander} or {rank_operative} Command Card that belongs to a unit with the Cunning keyword, there is still a tie for priority.",
     descriptions: [
       {
         type: "text",
@@ -733,7 +783,8 @@ export const KeywordsC: Keyword[] = [
     parents: ["c", "units"],
     tag: "Upgrade Keyword",
     related_keywords: ["upgrade_card", "activating_units", "exhaust"],
-    summary: "",
+    summary:
+      "At the end of a unit’s activation, ready each of its exhausted Upgrade Cards with the Cycle keyword that was not used during that activation. Only using the weapon, keywords, or other card text on the card counts as using that Upgrade Card.",
     descriptions: [
       {
         type: "text",

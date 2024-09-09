@@ -6,7 +6,7 @@ export const KeywordsG: Keyword[] = [
     name: "Game Effects",
     activation: "",
     parents: ["g", "concepts"],
-    related_keywords: ["keywords", "abilities", "card_effects"],
+    related_keywords: ["keywords", "card_effects"],
     descriptions: [
       {
         type: "text",

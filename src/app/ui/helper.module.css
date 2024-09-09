@@ -243,9 +243,7 @@
   padding-bottom: 20px;
 }
 
-.button,
-.modalBackButton,
-.closeModalButton {
+.button {
   font-family: var(--default-font-family);
   border-radius: var(--border-radius);
   text-align: center;
@@ -266,17 +264,6 @@
 
 .buttonActive {
   background-color: var(--example-header);
-}
-
-.modalBackButton,
-.closeModalButton {
-  color: white;
-  margin-right: 15px;
-  background-color: rgb(202, 202, 202);
-  border-bottom: 1px solid var(--button-border-color);
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
 }
 
 .referenceHeader {

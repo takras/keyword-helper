@@ -7,6 +7,9 @@
   float: left;
   clear: both;
   padding-right: 10px;
+  @media only screen and (max-width: 500px) {
+    float: none;
+  }
 }
 
 .center {
@@ -20,4 +23,7 @@
   padding-left: 10px;
   float: right;
   clear: both;
+  @media only screen and (max-width: 500px) {
+    float: none;
+  }
 }

@@ -6,7 +6,6 @@ import { KeywordCard } from "./keyword-card";
 import { getKey, sortKeyword, Variables } from "@/utils";
 import classNames from "classnames";
 import styles from "./catalog-card.module.css";
-import globalStyles from "./helper.module.css";
 
 export const CatalogCard = ({
   catalog,

@@ -5,6 +5,8 @@ export const KeywordsOther: Keyword[] = [
     keyword: "about",
     parents: [],
     name: "About Legion Helper",
+    summary:
+      "Legion Helper is intended to make it quick to find keywords and concepts from the Star Wars: Legion rulebook and reference, for quick and easy access during play.",
     related_keywords: [],
     descriptions: [],
   },
@@ -28,6 +30,8 @@ export const KeywordsOther: Keyword[] = [
     name: "What's new in 2024?",
     related_keywords: [],
     parents: ["changelog"],
+    summary:
+      "There are many changes being made from before the 2.6.0 version of the rules released in july 2024. The best way is to read the new rulebook, but that's not for everyone.",
     descriptions: [
       {
         type: "text",
@@ -75,6 +79,31 @@ export const KeywordsOther: Keyword[] = [
         type: "text",
         content:
           "Vital Assets, Priority Supplies and other with objectives are now removed from the game. Replacing them are Point of Interest (POI) tokens of 2 inches in diameter.",
+      },
+      {
+        type: "clarification",
+        content:
+          "You will need to print a copy of the new Battle Cards, including Primary Objective, Secondary Objective, Maps and Advantages, as well as the new POI tokens and Mission Board. Click source for PDF.",
+        url: "https://cdn.svc.asmodee.net/production-amgcom/uploads/2024/07/SWQ_BattleCards-2.pdf",
+      },
+
+      { type: "header", content: "New Unit cards" },
+      {
+        type: "text",
+        content:
+          "Many of the existing units have undergone an update and have had their artwork and information replaced with new content. Unfortunately there is no option to purchase these in 2024, but they are freely available for printing.",
+      },
+      {
+        type: "clarification",
+        content:
+          "You will need to print new cards for many of your units. Click the source for the official PDF.",
+        url: "https://cdn.svc.asmodee.net/production-amgcom/uploads/2024/07/SWQ_BattleCards-2.pdf",
+      },
+      {
+        type: "clarification",
+        content:
+          "Un-official documents are also available and worth a look, such as this collection on the /r/SWlegion subreddit.",
+        url: "https://www.reddit.com/r/SWlegion/comments/1ecexfi/2024_refresh_files_compendium/",
       },
 
       { type: "header", content: "Game Round and Points" },

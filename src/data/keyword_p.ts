@@ -29,6 +29,8 @@ export const KeywordsP: Keyword[] = [
     keyword: "panic_commander",
     name: "Commander and Panic Check",
     parents: ["c"],
+    summary:
+      "When a unit checks to see if it is panicked, instead of using its own courage value, it may use the courage value of a friendly {rank_commander} unit at {range_3}. For example, a unit with 3 suppression tokens and courage value 1 would not be panicked if it chooses to use the courage value of a friendly {rank_commander} at {range_3} that has a courage value of 2 or greater.",
     related_keywords: [
       "suppression",
       "activating_units",

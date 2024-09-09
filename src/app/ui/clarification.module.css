@@ -1,6 +1,7 @@
 .container {
   padding: var(--flex-gap);
   background-color: var(--changelog-background);
+  margin-bottom: var(--flex-gap);
 }
 
 .header {

@@ -1,7 +1,7 @@
 import { AVAILABLE_KEYWORDS } from "@/types";
 import { KeywordComponent } from "../ui/keyword";
 import { Metadata } from "next";
-import { getEnrichedKeyword, interpolateString, Variables } from "@/utils";
+import { getEnrichedKeyword, Variables } from "@/utils";
 
 export function generateStaticParams() {
   return AVAILABLE_KEYWORDS.map((key) => {
@@ -30,6 +30,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: title.join(" – "),
     description: summary,
+    openGraph: {
+      siteName: Variables.title,
+      title: enriched?.name,
+      url: `${Variables.url}/${enriched?.keyword}`,
+      description: summary || undefined,
+    },
+    twitter: {
+      card: "summary",
+      site: "@site",
+      title: title.join(" – "),
+      description: summary || undefined,
+    },
   };
 }
 

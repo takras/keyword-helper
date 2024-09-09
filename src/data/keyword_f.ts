@@ -228,7 +228,6 @@ export const KeywordsF: Keyword[] = [
     summary:
       "{action_free} The unit performs an action listed on its Unit Card or one of its Upgrade Cards. Free card actions do not cost the unit any actions to perform. Free card actions have this symbol {action_free}. A unit may perform more than one free card action, as long as they are different. A unit may only perform free actions during their Perform Actions step and may only perform each instance of a free action once per activation. Free actions do not allow a unit to perform a non-move action more than once during its activation.",
     related_keywords: [
-      "abilities",
       "actions",
       "activating_units",
       "card_action",

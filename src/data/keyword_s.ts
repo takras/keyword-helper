@@ -71,8 +71,9 @@ export const KeywordsS: Keyword[] = [
   },
   {
     keyword: "scouting_party_x",
-    name: "Scouting Party",
-    parents: ["s"],
+    name: "Scouting Party X",
+    parents: ["s", "units"],
+    tag: "Unit Keyword",
     related_keywords: ["troopers", "faction", "setup", "scout_x", "keywords"],
     descriptions: [
       {
@@ -176,12 +177,19 @@ export const KeywordsS: Keyword[] = [
         content:
           "After performing all attacks, the unit performing the Self-Destruct attack is defeated and removed from play.",
       },
+      {
+        type: "clarification",
+        content:
+          "A unit may perform an attack action and perform the Self-Destruct free card action in the same turn.",
+        url: "https://forums.atomicmassgames.com/topic/16317-self-destruct-dsd1-dwarf-spider/",
+      },
     ],
   },
   {
     keyword: "self_preservation",
     name: "Self-Preservation",
-    parents: ["s"],
+    parents: ["s", "units"],
+    tag: "Unit Keyword",
     related_keywords: ["panic", "courage"],
     descriptions: [
       {
@@ -214,6 +222,16 @@ export const KeywordsS: Keyword[] = [
       "objective",
       "army_building",
       "command_cards",
+      "transport",
+      "scouting_party_x",
+      "loadout",
+      "hunted",
+      "field_commander",
+      "flawed",
+      "complete_the_mission",
+      "covert_ops",
+      "cache",
+      "bounty",
     ],
     descriptions: [
       {
@@ -323,6 +341,11 @@ export const KeywordsS: Keyword[] = [
         type: "text",
         content:
           "Starting with the blue player, players alternate placing units with the Prepared Position keyword on the battlefield.",
+      },
+      {
+        type: "reference",
+        referenced_keyword: "prepared_positions",
+        showOnlySummary: true,
       },
       { type: "reference", referenced_keyword: "objective" },
     ],

@@ -375,6 +375,8 @@ export const KeywordsB: Keyword[] = [
     related_keywords: ["apply_dodge_cover", "cover"],
     parents: ["b", "weapons"],
     tag: "Weapon Keyword",
+    summary:
+      "During the Apply Cover step, a defending unit cannot use light or heavy cover to cancel hit {hit} results produced by an attack pool that contains dice added by a weapon with the Blast keyword.",
     descriptions: [
       {
         type: "text",

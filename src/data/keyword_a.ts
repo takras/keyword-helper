@@ -101,7 +101,6 @@ export const KeywordsA: Keyword[] = [
       "actions",
       "card_effects",
       "game_effects",
-      "abilities",
       "cohesion",
     ],
     summary:

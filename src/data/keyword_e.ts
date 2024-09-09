@@ -117,7 +117,6 @@ export const KeywordsE: Keyword[] = [
     name: "End Phase",
     parents: ["e"],
     related_keywords: [
-      "abilities",
       "command_phase",
       "command_cards",
       "tokens",
