@@ -44,16 +44,22 @@ export const KeywordsOther: Keyword[] = [
           "Here you will find a brief summary of most of the changes, and more importantly what has been removed. Contents are due to change as I receive feedback or add... content.",
       },
 
-      { type: "header", content: "Battle Cards / Objectives" },
+      { type: "header", content: "New Battle Cards" },
       {
         type: "text",
         content:
-          "These are the biggest change to the game. All existing Battle Cards, Condition cards and Deployment maps are removed. I haven't added this to Legion Helper yet, but watch this space if interested.",
+          "These are the biggest change to the game. All existing Battle Cards, Condition cards and Deployment maps are removed in favor of these new card types. This means official scenarios like Downed AT-ST and Imperial Bunker are no longer viable under the new rules.",
       },
       {
+        type: "reference",
+        showOnlySummary: true,
+        referenced_keyword: "building_a_mission",
+      },
+      { type: "header", content: "Objectives" },
+      {
         type: "text",
         content:
-          "New setup phase is also added as a result of this. New types of objective tokens. New way to win the game. Pass tokens",
+          "New setup phase is also added as a result of this. New types of objective tokens. New way to win the game. Pass tokens. Advantage cards. Entirely new Setup phase.",
       },
       {
         type: "reference",

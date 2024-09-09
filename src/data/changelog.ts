@@ -12,6 +12,27 @@ type Log = {
 
 export const log: Log[] = [
   {
+    version: "1.1.3",
+    entries: [
+      {
+        type: "add",
+        description: "Add clarification for keyword Self Destruct",
+      },
+      {
+        type: "change",
+        description: "Corrected keyword Card Action.",
+      },
+      {
+        type: "change",
+        description: "Changed OpenGraph metadata.",
+      },
+      {
+        type: "change",
+        description: "Some page layout changes.",
+      },
+    ],
+  },
+  {
     version: "1.1.2",
     entries: [
       {
