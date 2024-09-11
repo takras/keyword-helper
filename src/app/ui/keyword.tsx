@@ -5,7 +5,7 @@ import classNames from "classnames";
 import { getEnrichedKeyword } from "@/utils";
 import { useContext } from "react";
 import { About } from "./about";
-import { Changelog } from "../changelog";
+import { Changelog } from "./changelog";
 import { KeywordContext } from "../providers";
 import { RenderContent } from "./render-content";
 import { RelatedKeywords } from "./related-keyword";
@@ -70,12 +70,10 @@ export const KeywordComponent = ({ keyword }: { keyword: string }) => {
 
       {selectedKeyword?.keyword === "skirmish" && <SkirmishObjectiveCard />}
       {selectedKeyword?.keyword === "about" && <About />}
-      {selectedKeyword?.keyword === "changelog" && <Changelog />}
 
       {selectedKeyword &&
         selectedKeyword.keyword !== "about" &&
-        selectedKeyword.keyword !== "skirmish" &&
-        selectedKeyword.keyword !== "changelog" && (
+        selectedKeyword.keyword !== "skirmish" && (
           <div className={styles.container}>
             <h2 className={globalStyles.header2}>
               {selectedKeyword.name}{" "}

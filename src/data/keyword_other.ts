@@ -5,15 +5,9 @@ export const KeywordsOther: Keyword[] = [
     keyword: "about",
     parents: [],
     name: "About Legion Helper",
+    hideFromsearch: true,
     summary:
       "Legion Helper is intended to make it quick to find keywords and concepts from the Star Wars: Legion rulebook and reference, for quick and easy access during play.",
-    related_keywords: [],
-    descriptions: [],
-  },
-  {
-    keyword: "changelog",
-    parents: [],
-    name: "Changelog",
     related_keywords: [],
     descriptions: [],
   },
@@ -21,9 +15,84 @@ export const KeywordsOther: Keyword[] = [
     keyword: "skirmish",
     name: "Skirmish Builder - Quickly Generate skirmish mission.",
     activation: "",
+    hideFromsearch: true,
     parents: [],
     related_keywords: [],
     descriptions: [],
+  },
+  {
+    keyword: "deprecated",
+    name: "Concepts and Keywords removed from Legion rules.",
+    activation: "",
+    parents: [],
+    related_keywords: [],
+    descriptions: [
+      {
+        type: "text",
+        content:
+          "When I came into the Legion hobby I had a lot of confusion regarding many of the rules. One example was the concept of {keyword:Clambering} which I couldn't find online, it was just on some upgrade cards and my physical rule book. Turned out – that was a concept that had been removed from the rules altogether.",
+      },
+      {
+        type: "text",
+        content:
+          "So to help others to avoid this, coming in to Legion now, after the 2024 rules, I'd make this list of concepts and keywords that are no longer part of the game.",
+      },
+      { type: "header", content: "Clambering" },
+      {
+        type: "text",
+        content: "Removed from the game. No damage when climbing.",
+      },
+      { type: "reference", referenced_keyword: "climb", showOnlySummary: true },
+      { type: "header", content: "Displacement" },
+      {
+        type: "text",
+        content:
+          "Removed from the game. Vehicles can not stop movement if it would be placed on top of other miniatures.",
+      },
+      {
+        type: "reference",
+        referenced_keyword: "notch_based_movement",
+        showOnlySummary: true,
+      },
+      {
+        type: "header",
+        content: "Clone Troopers: Phase I and Clone Troopers: Phase II",
+      },
+      {
+        type: "text",
+        content:
+          "Removed from the game. They are now merged into a single unit type called {keyword:Clone Trooper Infantry}. You can still use your existing Phase I and Phase II miniatures as Infantry units.",
+      },
+      {
+        type: "header",
+        content: "Removed Cards",
+      },
+      {
+        type: "text",
+        content:
+          "Many cards were remove from the game in the July 2024 update, such as the command card {keyword:Hero of the Clone Wars} which was replaced by new 3-pip card: {keyword:General Skywalker}.",
+      },
+      {
+        type: "clarification",
+        content:
+          "For a full list of updated and removed cards from the 2024 changes, please click the source for the official PDF.",
+        url: "https://cdn.svc.asmodee.net/production-amgcom/uploads/2024/07/SWQ_Errata-Reference-2.6.0-1.pdf",
+      },
+      {
+        type: "header",
+        content: "Vehicle Disabled and Weapon Disrupted tokens.",
+      },
+      {
+        type: "text",
+        content:
+          "Removed from the game. Now only one type of damage matters: the Damaged token.",
+      },
+      {
+        type: "reference",
+        referenced_keyword: "resiliency",
+        showOnlySummary: true,
+      },
+    ],
   },
   {
     keyword: "coming_from_pre_2024",
@@ -155,9 +224,19 @@ export const KeywordsOther: Keyword[] = [
           "Vehicles and other Notched base miniature now also use silhouette tool to indicate Line of Sight.",
       },
       {
+        type: "text",
+        content:
+          "Vehicles and other Notched base miniature no longer blocks movement of other miniatures.",
+      },
+      {
         type: "reference",
         showOnlySummary: true,
         referenced_keyword: "vehicles",
+      },
+      {
+        type: "reference",
+        showOnlySummary: true,
+        referenced_keyword: "move_through_miniatures",
       },
       {
         type: "reference",
@@ -170,6 +249,11 @@ export const KeywordsOther: Keyword[] = [
         type: "text",
         content:
           "The cover system has been overhauled greatly. There is no longer automatic removal of {hit} from cover.",
+      },
+      {
+        type: "text",
+        content:
+          "To get cover benefitted by terrain, the miniature has to be at {range_half} of the terrain the attack is traced through. If the miniature is farther away, no cover is gained.",
       },
       {
         type: "text",

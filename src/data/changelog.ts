@@ -1,253 +1,321 @@
-type EntryType = "add" | "remove" | "change";
+import { Keyword } from "@/types";
 
-type Entry = {
-  type: EntryType;
-  description: string;
-};
-
-type Log = {
-  version: string;
-  entries: Entry[];
-};
-
-export const log: Log[] = [
+export const changelog: Keyword[] = [
   {
-    version: "1.1.3",
-    entries: [
+    name: "Changelog for Legion Helper",
+    parents: [],
+    keyword: "changelog",
+    related_keywords: [],
+    descriptions: [
       {
-        type: "add",
-        description: "Add clarification for keyword Self Destruct",
+        type: "version",
+        version: "1.1.4",
+        content: [
+          {
+            type: "changelogentry",
+            update: "add",
+            content:
+              "Added list of deprecated keywords and concepts from older Legion.",
+          },
+          {
+            type: "changelogentry",
+            update: "change",
+            content: "Conformed Changelog to match keywords style.",
+          },
+        ],
       },
       {
-        type: "change",
-        description: "Corrected keyword Card Action.",
+        type: "version",
+        version: "1.1.3",
+        content: [
+          {
+            type: "changelogentry",
+            update: "add",
+            content: "Add clarification for keyword Self Destruct",
+          },
+          {
+            type: "changelogentry",
+            update: "change",
+            content: "Corrected keyword Card Action.",
+          },
+          {
+            type: "changelogentry",
+            update: "change",
+            content: "Changed OpenGraph metadata.",
+          },
+          {
+            type: "changelogentry",
+            update: "change",
+            content: "Some page layout changes.",
+          },
+        ],
       },
       {
-        type: "change",
-        description: "Changed OpenGraph metadata.",
+        type: "version",
+        version: "1.1.2",
+        content: [
+          {
+            type: "changelogentry",
+            update: "add",
+            content: "Add clarification and references to Backup.",
+          },
+          {
+            type: "changelogentry",
+            update: "add",
+            content: "Add mercenaries and battle force rules.",
+          },
+          {
+            type: "changelogentry",
+            update: "change",
+            content:
+              "Changed page meta content to include summary of keyword, if present.",
+          },
+          {
+            type: "changelogentry",
+            update: "change",
+            content: "Some page layout changes.",
+          },
+        ],
       },
       {
-        type: "change",
-        description: "Some page layout changes.",
-      },
-    ],
-  },
-  {
-    version: "1.1.2",
-    entries: [
-      {
-        type: "add",
-        description: "Add clarification and references to Backup.",
+        type: "version",
+        version: "1.1.1",
+        content: [
+          {
+            type: "changelogentry",
+            update: "add",
+            content: "Added a quick Skirmish Generator tool.",
+          },
+        ],
       },
       {
-        type: "add",
-        description: "Add mercenaries and battle force rules.",
+        type: "version",
+        version: "1.1.0",
+        content: [
+          {
+            type: "changelogentry",
+            update: "change",
+            content:
+              "Updated a lot in the routing logic, in the hopes of making loading faster for certain users.",
+          },
+        ],
       },
       {
-        type: "change",
-        description:
-          "Changed page meta description to include summary of keyword, if present.",
+        type: "version",
+        version: "1.0.10",
+        content: [
+          {
+            type: "changelogentry",
+            update: "add",
+            content: "Add clarification text. For now it's just for Disengage.",
+          },
+          {
+            type: "changelogentry",
+            update: "change",
+            content: "Update attack quick-guide more keywords.",
+          },
+        ],
       },
       {
-        type: "change",
-        description: "Some page layout changes.",
-      },
-    ],
-  },
-  {
-    version: "1.1.1",
-    entries: [
-      {
-        type: "add",
-        description: "Added a quick Skirmish Generator tool.",
-      },
-    ],
-  },
-  {
-    version: "1.1.0",
-    entries: [
-      {
-        type: "change",
-        description:
-          "Updated a lot in the routing logic, in the hopes of making loading faster for certain users.",
-      },
-    ],
-  },
-  {
-    version: "1.0.10",
-    entries: [
-      {
-        type: "add",
-        description: "Add clarification text. For now it's just for Disengage.",
+        type: "version",
+        version: "1.0.9",
+        content: [
+          {
+            type: "changelogentry",
+            update: "add",
+            content: "Add keywords to At, Within and Beyond ranges.",
+          },
+          {
+            type: "changelogentry",
+            update: "change",
+            content: "Update attack quick-guide with numbers.",
+          },
+        ],
       },
       {
-        type: "change",
-        description: "Update attack quick-guide more keywords.",
-      },
-    ],
-  },
-  {
-    version: "1.0.9",
-    entries: [
-      {
-        type: "add",
-        description: "Add keywords to At, Within and Beyond ranges.",
-      },
-      {
-        type: "change",
-        description: "Update attack quick-guide with numbers.",
-      },
-    ],
-  },
-  {
-    version: "1.0.8",
-    entries: [
-      {
-        type: "add",
-        description:
-          "Added a Quick Reference for Attacks, including Keywords and when in the Attack Timing they apply.",
-      },
-      {
-        type: "add",
-        description:
-          "Added keywords reference examples for 'Game Effects' step of the Setup.",
-      },
-      {
-        type: "add",
-        description: "Added link to rules PDF for direct download.",
+        type: "version",
+        version: "1.0.8",
+        content: [
+          {
+            type: "changelogentry",
+            update: "add",
+            content:
+              "Added a Quick Reference for Attacks, including Keywords and when in the Attack Timing they apply.",
+          },
+          {
+            type: "changelogentry",
+            update: "add",
+            content:
+              "Added keywords reference examples for 'Game Effects' step of the Setup.",
+          },
+          {
+            type: "changelogentry",
+            update: "add",
+            content: "Added link to rules PDF for direct download.",
+          },
+          {
+            type: "changelogentry",
+            update: "change",
+            content: "More fixes for Safari browser and Dark Mode.",
+          },
+          {
+            type: "changelogentry",
+            update: "change",
+            content: "Updated Silhouette images for Dark Mode.",
+          },
+        ],
       },
       {
-        type: "change",
-        description: "More fixes for Safari browser and Dark Mode.",
+        type: "version",
+        version: "1.0.7",
+        content: [
+          {
+            type: "changelogentry",
+            update: "add",
+            content: "Dark-mode. Switch between light and dark mode.",
+          },
+          {
+            type: "changelogentry",
+            update: "add",
+            content:
+              "Added keyword reference from Vehicle to Notched Based Movement",
+          },
+          {
+            type: "changelogentry",
+            update: "change",
+            content:
+              "Corrected missing {operative} icon in 'changes in 2024' section.",
+          },
+        ],
       },
       {
-        type: "change",
-        description: "Updated Silhouette images for Dark Mode.",
-      },
-    ],
-  },
-  {
-    version: "1.0.7",
-    entries: [
-      {
-        type: "add",
-        description: "Dark-mode. Switch between light and dark mode.",
-      },
-      {
-        type: "add",
-        description:
-          "Added keyword reference from Vehicle to Notched Based Movement",
+        type: "version",
+        version: "1.0.6",
+        content: [
+          {
+            type: "changelogentry",
+            update: "add",
+            content: "Add share-button for mobile users.",
+          },
+          {
+            type: "changelogentry",
+            update: "change",
+            content: "Updated font settings for Mac OS Safari.",
+          },
+        ],
       },
       {
-        type: "change",
-        description:
-          "Corrected missing {operative} icon in 'changes in 2024' section.",
-      },
-    ],
-  },
-  {
-    version: "1.0.6",
-    entries: [
-      {
-        type: "add",
-        description: "Add share-button for mobile users.",
-      },
-      {
-        type: "change",
-        description: "Updated font settings for Mac OS Safari.",
-      },
-    ],
-  },
-  {
-    version: "1.0.5",
-    entries: [
-      {
-        type: "add",
-        description:
-          "New keywords: Building Command Hand, Command Cards, Impassable Terrain, Keywords, Melee Pierce, Range, Secret Information, Tokens, Wounds.",
+        type: "version",
+        version: "1.0.5",
+        content: [
+          {
+            type: "changelogentry",
+            update: "add",
+            content:
+              "New keywords: Building Command Hand, Command Cards, Impassable Terrain, Keywords, Melee Pierce, Range, Secret Information, Tokens, Wounds.",
+          },
+          {
+            type: "changelogentry",
+            update: "add",
+            content:
+              "Add keyword to url path for easy sharing of specific keyword rules.",
+          },
+        ],
       },
       {
-        type: "add",
-        description:
-          "Add keyword to url path for easy sharing of specific keyword rules.",
-      },
-    ],
-  },
-  {
-    version: "1.0.4",
-    entries: [
-      {
-        type: "add",
-        description:
-          "New keywords: Building a Mission, Declare Terrain, Determine Blue Player, Empty Decks",
-      },
-      {
-        type: "change",
-        description: "Keyword enriched with new steps: Setup.",
-      },
-    ],
-  },
-  {
-    version: "1.0.3",
-    entries: [
-      {
-        type: "add",
-        description:
-          "New keywords: Bases, Battlefield, Cancel, Timing, Card Effects, Game Effects, Difficult Terrain, Dice, Issue Orders, Miniature, Setup, Advantage Cards, Battle Cards, Map Cards, Objective Cards, Secondary Objective Cards ",
+        type: "version",
+        version: "1.0.4",
+        content: [
+          {
+            type: "changelogentry",
+            update: "add",
+            content:
+              "New keywords: Building a Mission, Declare Terrain, Determine Blue Player, Empty Decks",
+          },
+          {
+            type: "changelogentry",
+            update: "change",
+            content: "Keyword enriched with new steps: Setup.",
+          },
+        ],
       },
       {
-        type: "add",
-        description:
-          "Added buttons to filter keyword list by type. This does not include Search.",
-      },
-    ],
-  },
-  {
-    version: "1.0.2",
-    entries: [
-      {
-        type: "add",
-        description:
-          "Many new keywords. Agile. Abilities. Army Building. Claiming Objective Token. Climb. Clone Trooper. Courage. Contesting Objectives. Exhaust. Factions. Panic. Ranks. Unit Cards. Unique. Upgrade Card.",
-      },
-      {
-        type: "add",
-        description: "This changelog.",
-      },
-      {
-        type: "change",
-        description: "Updated the About section.",
+        type: "version",
+        version: "1.0.3",
+        content: [
+          {
+            type: "changelogentry",
+            update: "add",
+            content:
+              "New keywords: Bases, Battlefield, Cancel, Timing, Card Effects, Game Effects, Difficult Terrain, Dice, Issue Orders, Miniature, Setup, Advantage Cards, Battle Cards, Map Cards, Objective Cards, Secondary Objective Cards ",
+          },
+          {
+            type: "changelogentry",
+            update: "add",
+            content:
+              "Added buttons to filter keyword list by type. This does not include Search.",
+          },
+        ],
       },
       {
-        type: "change",
-        description:
-          "Optimized for low-resolution screens, as this is the most used screen size according to analytics.",
+        type: "version",
+        version: "1.0.2",
+        content: [
+          {
+            type: "changelogentry",
+            update: "add",
+            content:
+              "Many new keywords. Agile. Abilities. Army Building. Claiming Objective Token. Climb. Clone Trooper. Courage. Contesting Objectives. Exhaust. Factions. Panic. Ranks. Unit Cards. Unique. Upgrade Card.",
+          },
+          {
+            type: "changelogentry",
+            update: "add",
+            content: "This changelog.",
+          },
+          {
+            type: "changelogentry",
+            update: "change",
+            content: "Updated the About section.",
+          },
+          {
+            type: "changelogentry",
+            update: "change",
+            content:
+              "Optimized for low-resolution screens, as this is the most used screen size according to analytics.",
+          },
+          {
+            type: "changelogentry",
+            update: "change",
+            content:
+              "A lot of code changes, hopefully affect positively on performance.",
+          },
+          {
+            type: "changelogentry",
+            update: "change",
+            content: "Fixed key name on Distract.",
+          },
+        ],
       },
       {
-        type: "change",
-        description:
-          "A lot of code changes, hopefully affect positively on performance.",
-      },
-      {
-        type: "change",
-        description: "Fixed key name on Distract.",
-      },
-    ],
-  },
-  {
-    version: "1.0.1",
-    entries: [
-      {
-        type: "add",
-        description: "More keywords.",
-      },
-      {
-        type: "add",
-        description: "You can now add website as desktop or app.",
-      },
-      {
-        type: "change",
-        description: "Some UI color changes.",
+        type: "version",
+        version: "1.0.1",
+        content: [
+          {
+            type: "changelogentry",
+            update: "add",
+            content: "More keywords.",
+          },
+          {
+            type: "changelogentry",
+            update: "add",
+            content: "You can now add website as desktop or app.",
+          },
+          {
+            type: "changelogentry",
+            update: "change",
+            content: "Some UI color changes.",
+          },
+        ],
       },
     ],
   },

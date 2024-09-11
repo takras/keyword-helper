@@ -65,7 +65,7 @@ export default function Helper() {
     const result = rulesDocument.keywords
       .toSorted(sortKeyword)
       .filter((keyword) => {
-        if (keyword.descriptions.length === 0) {
+        if (keyword.descriptions.length === 0 || keyword.hideFromsearch) {
           return false;
         }
         const keywordResult = rulesDocument.keywords.filter(() =>

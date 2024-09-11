@@ -5,4 +5,5 @@
   border-radius: var(--border-radius);
   border: var(--border-thin);
   margin-bottom: var(--flex-gap);
+  max-width: var(--max-width);
 }

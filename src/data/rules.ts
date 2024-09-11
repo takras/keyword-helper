@@ -24,9 +24,10 @@ import { KeywordsU } from "./keyword_u";
 import { KeywordsV } from "./keyword_v";
 import { KeywordsW } from "./keyword_w";
 import { KeywordsOther } from "./keyword_other";
+import { changelog } from "./changelog";
 
 export const rules: RulesDocument = {
-  helperVersion: "1.1.3",
+  helperVersion: "1.1.4",
   version: "2.6.0",
   validFrom: "2024-07-24T00:00:00Z",
   downloadUrl:
@@ -37,6 +38,7 @@ export const rules: RulesDocument = {
   changelog: [],
   index,
   keywords: [
+    ...changelog,
     ...KeywordsOther,
     ...KeywordsA,
     ...KeywordsB,

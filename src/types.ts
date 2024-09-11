@@ -3,6 +3,7 @@ import { IconList } from "./utils";
 export const AVAILABLE_KEYWORDS = [
   "search_result_blank",
   "about",
+  "deprecated",
   "changelog",
   "coming_from_pre_2024",
   "abilities_provide_move",
@@ -387,6 +388,7 @@ export interface Keyword {
   descriptions: DescriptionType;
   range?: Range;
   tag?: string;
+  hideFromsearch?: boolean;
 }
 
 export interface Description {
@@ -406,6 +408,8 @@ export type DescriptionType = Array<
   | Reference
   | Header
   | Clarification
+  | Changelog
+  | ChangelogVersion
 >;
 
 export type Illustration = {
@@ -425,6 +429,23 @@ export type StructuredList = {
 
 type Text = {
   type: "text";
+  content: string;
+};
+
+export type Changelog = {
+  type: "changelog";
+  descriptions: ChangelogVersion[];
+};
+
+export type ChangelogVersion = {
+  type: "version";
+  version: string;
+  content: ChangelogEntry[];
+};
+
+type ChangelogEntry = {
+  type: "changelogentry";
+  update: "add" | "remove" | "change";
   content: string;
 };
 

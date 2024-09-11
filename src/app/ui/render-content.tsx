@@ -1,4 +1,5 @@
 "use client";
+import { useContext } from "react";
 import { DescriptionType } from "@/types";
 import { ExampleContent } from "./example";
 import { getEnrichedKeyword, getKey, interpolateString } from "@/utils";
@@ -8,7 +9,7 @@ import { StructuredList } from "./structured-list";
 import { CalloutComponent } from "./callout";
 import { Clarification } from "./clarification";
 import { KeywordContext } from "../providers";
-import { useContext } from "react";
+import { Changelog, ChangeLogVersion } from "./changelog";
 import Link from "next/link";
 import styles from "./helper.module.css";
 import classNames from "classnames";
@@ -161,6 +162,16 @@ export const RenderContent = ({
           <CalloutComponent
             key={getKey(description.type)}
             reference={description.callout_keyword}
+          />
+        );
+      case "changelog":
+        return <Changelog />;
+      case "version":
+        return (
+          <ChangeLogVersion
+            type="version"
+            version={description.version}
+            content={description.content}
           />
         );
       case "text":
