@@ -10,7 +10,7 @@ import styles from "./related-keyword.module.css";
 export const RelatedKeywords = ({ related }: { related: string[] }) => {
   const { selectKeyword, getLink } = useContext(KeywordContext);
   return (
-    <div className={styles.container}>
+    <div className={styles.container} id="related">
       <h4 className={styles.header}>Related keywords:</h4>
       <div className={styles.buttonsContainer}>
         {related
