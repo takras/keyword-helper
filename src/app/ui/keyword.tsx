@@ -26,7 +26,7 @@ export const KeywordComponent = ({ keyword }: { keyword: string }) => {
 
   return (
     <>
-      <div>
+      <div id="topMenu">
         <aside className={styles.topMenu}>
           <div className={styles.topMenuButtonRow}>
             <Link
@@ -74,7 +74,7 @@ export const KeywordComponent = ({ keyword }: { keyword: string }) => {
       {selectedKeyword &&
         selectedKeyword.keyword !== "about" &&
         selectedKeyword.keyword !== "skirmish" && (
-          <div className={styles.container}>
+          <div className={styles.container} id="keyword">
             <h2 className={globalStyles.header2}>
               {selectedKeyword.name}{" "}
               {selectedKeyword.tag && `(${selectedKeyword.tag})`}

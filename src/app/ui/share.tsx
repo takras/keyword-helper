@@ -52,7 +52,7 @@ export const Share = ({ keyword }: { keyword: Keyword }) => {
       .catch(() => {});
   };
   return (
-    <div className={styles.container}>
+    <div className={styles.container} id="share">
       <button
         className={classNames(globalStyles.button, styles.button)}
         onClick={sharePopup}
