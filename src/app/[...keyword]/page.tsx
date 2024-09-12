@@ -35,7 +35,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       images: [
         enriched?.hideFromsearch
           ? "/images/legionhelper.svg"
-          : `/images/keywords/${enriched?.keyword}`,
+          : `/images/keywords/${enriched?.keyword}.png`,
       ],
       title: enriched?.name,
       url: `${Variables.url}/${enriched?.keyword}`,
@@ -48,7 +48,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       images: [
         enriched?.hideFromsearch
           ? "/images/legionhelper.svg"
-          : `/images/keywords/${enriched?.keyword}`,
+          : `/images/keywords/${enriched?.keyword}.png`,
       ],
       description: summary || undefined,
     },
