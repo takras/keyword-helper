@@ -7,8 +7,9 @@
   color: var(--example-color);
   margin-bottom: var(--flex-gap);
 
-  .inlineIcon {
+  &span> img {
     filter: invert(var(--invert-icon-color-callout));
+    border: 1px solid red;
   }
 }
 

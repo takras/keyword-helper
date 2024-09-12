@@ -11,6 +11,5 @@
 }
 
 .button {
-  margin-right: var(--flex-gap);
   color: var(--sharebutton-color) !important;
 }

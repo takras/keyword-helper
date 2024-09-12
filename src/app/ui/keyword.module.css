@@ -1,9 +1,15 @@
 .container {
-  padding: 40px 20px 20px 20px;
+  margin-top: 60px;
+  padding: 0 20px 20px 20px;
   background-color: var(--background-color);
   border: var(--border-thin);
   border-radius: var(--border-radius);
   max-width: var(--max-width);
+  box-shadow: var(--box-shadow);
+
+  @media only screen and (max-width: 670px) {
+    padding: 0 10px 10px 10px;
+  }
 }
 
 .topMenu {
@@ -24,7 +30,7 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
-  max-width: calc(var(--max-width) + 100px);
+  max-width: calc(var(--max-width) + 40px);
 }
 
 .topMenuBackButton,

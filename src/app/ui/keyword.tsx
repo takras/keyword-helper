@@ -5,7 +5,6 @@ import classNames from "classnames";
 import { getEnrichedKeyword } from "@/utils";
 import { useContext } from "react";
 import { About } from "./about";
-import { Changelog } from "./changelog";
 import { KeywordContext } from "../providers";
 import { RenderContent } from "./render-content";
 import { RelatedKeywords } from "./related-keyword";

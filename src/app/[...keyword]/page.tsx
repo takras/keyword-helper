@@ -32,6 +32,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: summary,
     openGraph: {
       siteName: Variables.title,
+      images: [
+        enriched?.hideFromsearch
+          ? "/images/legionhelper.svg"
+          : `/images/keywords/${enriched?.keyword}`,
+      ],
       title: enriched?.name,
       url: `${Variables.url}/${enriched?.keyword}`,
       description: summary || undefined,
@@ -40,6 +45,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       card: "summary",
       site: "@site",
       title: title.join(" – "),
+      images: [
+        enriched?.hideFromsearch
+          ? "/images/legionhelper.svg"
+          : `/images/keywords/${enriched?.keyword}`,
+      ],
       description: summary || undefined,
     },
   };

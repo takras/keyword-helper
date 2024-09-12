@@ -128,7 +128,7 @@ export const KeywordsS: Keyword[] = [
       },
       {
         type: "illustration",
-        content: "examples/secondary-objective-card.png",
+        content: "examples/secondary-objective-cards.png",
         align: "center",
         altText:
           "Two secondary objective cards: Recon Mission and Bring them to Heel.",

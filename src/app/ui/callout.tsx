@@ -1,9 +1,9 @@
 "use client";
 import { RenderContent } from "./render-content";
 import { getEnrichedKeyword } from "@/utils";
+import globalStyles from "./helper.module.css";
 import classNames from "classnames";
 import styles from "./callout.module.css";
-import globalStyles from "./helper.module.css";
 
 export const CalloutComponent = ({ reference }: { reference: string }) => {
   const enriched = getEnrichedKeyword(reference);
