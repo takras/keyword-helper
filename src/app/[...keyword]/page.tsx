@@ -1,7 +1,11 @@
 import { AVAILABLE_KEYWORDS } from "@/types";
 import { KeywordComponent } from "../ui/keyword";
 import { Metadata } from "next";
-import { getEnrichedKeyword, Variables } from "@/utils";
+import {
+  getEnrichedKeyword,
+  interpolateStringForShare,
+  Variables,
+} from "@/utils";
 
 export function generateStaticParams() {
   return AVAILABLE_KEYWORDS.map((key) => {
@@ -22,9 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
   title.push(Variables.title);
   const summary = enriched?.summary
-    ? enriched.summary.replace(/{([^{}:]*)}/g, (_, group) => {
-        return `[${(group as string).replace("_", " ").toLocaleUpperCase()}]`;
-      })
+    ? interpolateStringForShare(enriched.summary)
     : null;
 
   return {

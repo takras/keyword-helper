@@ -2,6 +2,7 @@
 "use client";
 import classNames from "classnames";
 import { useEffect, useState } from "react";
+import { interpolateStringForShare } from "@/utils";
 import { Keyword } from "@/types";
 import globalStyles from "./helper.module.css";
 import styles from "./share.module.css";
@@ -12,9 +13,12 @@ export const Share = ({ keyword }: { keyword: Keyword }) => {
   const [canShare, setCanShare] = useState(false);
 
   useEffect(() => {
+    const text = keyword.summary
+      ? `: ${interpolateStringForShare(keyword.summary)}`
+      : null;
     setShareData({
       title: `Legion Helper`,
-      text: `Here's what Legion Helper says about "${keyword.name}"`,
+      text: `Here's what Legion Helper says about "${keyword.name}${text}"`,
       url: location.href,
     });
   }, [keyword]);
@@ -55,11 +59,22 @@ export const Share = ({ keyword }: { keyword: Keyword }) => {
     <div className={styles.container} id="share">
       <button
         className={classNames(globalStyles.button, styles.button)}
+        onClick={() =>
+          (window.location.href = `/images/keywords/${keyword.keyword}.png`)
+        }
+      >
+        <span>{"Sharable Image"}</span>
+
+        {getShareImage()}
+      </button>
+      <button
+        className={classNames(globalStyles.button, styles.button)}
         onClick={sharePopup}
       >
         <span>
           {!canShare ? "Copy sharable link to clipboard" : "Share keyword"}
         </span>
+
         {getShareImage()}
       </button>
       {copied ? "Link copied" : null}

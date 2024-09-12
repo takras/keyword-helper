@@ -41,6 +41,12 @@ export const sortKeyword = (keywordA: Keyword, keywordB: Keyword) => {
   return a < b ? -1 : a > b ? 1 : 0;
 };
 
+export function interpolateStringForShare(line: string) {
+  return line.replace(/{([^{}:]*)}/g, (_, group) => {
+    return `[${(group as string).replace("_", " ").toLocaleUpperCase()}]`;
+  });
+}
+
 export function getEnrichedKeyword(keyword: string) {
   return rules.keywords.find((key) => key.keyword === keyword);
 }
