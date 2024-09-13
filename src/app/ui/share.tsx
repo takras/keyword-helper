@@ -6,7 +6,6 @@ import { interpolateStringForShare } from "@/utils";
 import { Keyword } from "@/types";
 import globalStyles from "./helper.module.css";
 import styles from "./share.module.css";
-import Link from "next/link";
 
 export const Share = ({ keyword }: { keyword: Keyword }) => {
   const [copied, setCopied] = useState(false);
@@ -58,13 +57,6 @@ export const Share = ({ keyword }: { keyword: Keyword }) => {
   };
   return (
     <div className={styles.container} id="share">
-      <Link
-        className={classNames(globalStyles.button, styles.button)}
-        href={`/images/keywords/${keyword.keyword}.png`}
-        target="_blank"
-      >
-        <span>{"Sharable Image"}</span>
-      </Link>
       <button
         className={classNames(globalStyles.button, styles.button)}
         onClick={sharePopup}
