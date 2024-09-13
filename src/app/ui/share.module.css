@@ -2,6 +2,7 @@
   padding-top: var(--flex-gap);
   display: flex;
   align-items: center;
+  flex-direction: column-reverse;
 }
 
 .icon {

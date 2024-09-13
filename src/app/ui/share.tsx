@@ -59,13 +59,9 @@ export const Share = ({ keyword }: { keyword: Keyword }) => {
     <div className={styles.container} id="share">
       <button
         className={classNames(globalStyles.button, styles.button)}
-        onClick={() =>
-          (window.location.href = `/images/keywords/${keyword.keyword}.png`)
-        }
+        onClick={() => window.open(`/images/keywords/${keyword.keyword}.png`)}
       >
         <span>{"Sharable Image"}</span>
-
-        {getShareImage()}
       </button>
       <button
         className={classNames(globalStyles.button, styles.button)}
