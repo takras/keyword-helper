@@ -246,6 +246,20 @@ export const KeywordsP: Keyword[] = [
   },
 
   {
+    keyword: "poi",
+    name: "POI (Point of Interest)",
+    activation: "",
+    parents: ["p", "concept"],
+    related_keywords: ["objective", "tokens"],
+    descriptions: [
+      {
+        type: "reference",
+        referenced_keyword: "objective",
+      },
+    ],
+  },
+
+  {
     keyword: "precise_x",
     name: "Precise X",
     parents: ["p"],

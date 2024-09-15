@@ -9,6 +9,27 @@ export const changelog: Keyword[] = [
     descriptions: [
       {
         type: "version",
+        version: "1.1.5",
+        content: [
+          {
+            type: "changelogentry",
+            update: "change",
+            content: "Changed button styles.",
+          },
+          {
+            type: "changelogentry",
+            update: "change",
+            content: "Made POI its own entry.",
+          },
+          {
+            type: "changelogentry",
+            update: "add",
+            content: "New preview images when sharing on social media.",
+          },
+        ],
+      },
+      {
+        type: "version",
         version: "1.1.4",
         content: [
           {

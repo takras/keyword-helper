@@ -209,6 +209,7 @@ export const AVAILABLE_KEYWORDS = [
   "pivot",
   "placing_objectives",
   "plodding",
+  "poi",
   "poison_x",
   "precise_x",
   "prepared_positions",
