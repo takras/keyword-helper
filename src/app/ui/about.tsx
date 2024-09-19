@@ -109,18 +109,10 @@ export const About = () => {
       <p>
         <a href="https://www.printables.com/model/948921-star-wars-legion-poi-tokens">
           <Image
-            className={globalStyles.imageLinks}
-            src="/images/tokens/0-5range.png"
             width={400}
-            height={107}
-            alt=""
-          />
-          <br />
-          <Image
-            width={400}
-            height={34}
+            height={300}
             className={globalStyles.imageLinks}
-            src="/images/tokens/1-5range.png"
+            src="/images/tokens/poi-3d.png"
             alt=""
           />
           <br />
@@ -130,14 +122,35 @@ export const About = () => {
       <p>
         <a href="https://www.printables.com/model/947836-star-wars-legion-half-12-and-15-deployment-range-t">
           <Image
-            width={400}
-            height={300}
             className={globalStyles.imageLinks}
-            src="/images/tokens/poi-3d.png"
+            src="/images/tokens/0-5range.png"
+            width={400}
+            height={107}
+            alt=""
+          />
+          <Image
+            className={globalStyles.imageLinks}
+            src="/images/examples/1-5-range-tool.jpeg"
+            width={400}
+            height={89}
             alt=""
           />
           <br />
-          0.5-range and 1.5-range for use with territory markin.{" "}
+          0.5-range and 1.5-range for use with territory measuring and POI
+          distance.
+        </a>
+      </p>
+      <p>
+        <a href="https://www.printables.com/model/1011163-star-wars-legion-half-12-3-inch-range-tool">
+          <Image
+            width={400}
+            height={120}
+            className={globalStyles.imageLinks}
+            src="/images/examples/half-range-extension.jpeg"
+            alt=""
+          />
+          <br />
+          0.5-range extension for official essentials kit range tools.
         </a>
       </p>
     </div>

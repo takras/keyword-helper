@@ -15,10 +15,10 @@ export const Share = ({ keyword }: { keyword: Keyword }) => {
   useEffect(() => {
     const text = keyword.summary
       ? `: ${interpolateStringForShare(keyword.summary)}`
-      : null;
+      : "";
     setShareData({
       title: `Legion Helper`,
-      text: `Here's what Legion Helper says about "${keyword.name}${text}"`,
+      text: `${keyword.name}${text}`,
       url: location.href,
     });
   }, [keyword]);

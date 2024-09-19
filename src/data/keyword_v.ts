@@ -38,6 +38,8 @@ export const KeywordsV: Keyword[] = [
     parents: ["v", "weapons"],
     tag: "Weapon Keyword",
     related_keywords: ["attack", "weapons", "engaged", "melee"],
+    summary:
+      "Some ranged weapons have the Versatile keyword. Units can perform ranged attacks using a weapon with the Versatile keyword even while engaged. A weapon with the Versatile keyword that is both a ranged weapon and a melee weapon can be used to perform either a ranged attack or a melee attack.",
     descriptions: [
       {
         type: "text",
