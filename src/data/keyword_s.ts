@@ -922,6 +922,7 @@ export const KeywordsS: Keyword[] = [
     name: "Standby",
     activation: "",
     parents: ["s"],
+    range: "range_2",
     tag: "",
     related_keywords: [
       "actions",
