@@ -21,6 +21,15 @@ export const KeywordsOther: Keyword[] = [
     descriptions: [],
   },
   {
+    keyword: "scoreboard",
+    name: "Scoreboard App for Star Wars: Legion",
+    activation: "",
+    hideFromsearch: true,
+    parents: [],
+    related_keywords: [],
+    descriptions: [],
+  },
+  {
     keyword: "deprecated",
     name: "Concepts and Keywords removed from Legion rules.",
     activation: "",

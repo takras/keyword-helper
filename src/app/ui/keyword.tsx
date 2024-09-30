@@ -9,9 +9,10 @@ import { KeywordContext } from "../providers";
 import { RenderContent } from "./render-content";
 import { RelatedKeywords } from "./related-keyword";
 import { Share } from "./share";
-import { SkirmishObjectiveCard } from "./skirmish-objective-card";
+import { SkirmishGenerator } from "./skirmish-generator";
 import globalStyles from "./helper.module.css";
 import styles from "./keyword.module.css";
+import { Scoreboard } from "./scoreboard";
 
 export const KeywordComponent = ({ keyword }: { keyword: string }) => {
   const { close, getLink, previousKeyword, goBack } =
@@ -67,10 +68,12 @@ export const KeywordComponent = ({ keyword }: { keyword: string }) => {
         </aside>
       </div>
 
-      {selectedKeyword?.keyword === "skirmish" && <SkirmishObjectiveCard />}
+      {selectedKeyword?.keyword === "skirmish" && <SkirmishGenerator />}
       {selectedKeyword?.keyword === "about" && <About />}
+      {selectedKeyword?.keyword === "scoreboard" && <Scoreboard />}
 
       {selectedKeyword &&
+        selectedKeyword.keyword !== "scoreboard" &&
         selectedKeyword.keyword !== "about" &&
         selectedKeyword.keyword !== "skirmish" && (
           <div className={styles.container} id="keyword">

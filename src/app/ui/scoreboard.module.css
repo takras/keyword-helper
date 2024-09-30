@@ -1,0 +1,261 @@
+.container {
+  padding: 50px 20px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  min-width: 600px;
+
+  background-color: var(--background-color);
+  border-radius: var(--border-radius);
+  border: var(--border-thin);
+  margin-bottom: var(--flex-gap);
+
+  font-family: var(--default-font-family);
+
+  scrollbar-gutter: auto;
+}
+
+.select {
+  padding: 10px;
+  font-size: large;
+}
+
+.selection {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--flex-gap) * 2)
+}
+
+.secondaryObjectiveContainer {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.objectiveCard {
+  position: relative;
+}
+
+.blueMarked1,
+.blueMarked2,
+.blueMarked3,
+.blueMarked4,
+.redMarked1,
+.redMarked2,
+.redMarked3,
+.redMarked4 {
+  position: absolute;
+  bottom: 15px;
+}
+
+.blueMarked1 {
+  left: 10px
+}
+.blueMarked2 {
+  left: 40px
+}
+.blueMarked3 {
+  left: 70px
+}
+.blueMarked4 {
+  left: 100px
+}
+.redMarked1 {
+  right: 10px
+}
+.redMarked2 {
+  right: 40px
+}
+.redMarked3 {
+  right: 70px
+}
+.redMarked4 {
+  right: 100px
+}
+
+.blueDestroyGoal {
+  position: absolute;
+  bottom: 15px;
+  left: 100px
+}
+.redDestroyGoal {
+  position: absolute;
+  bottom: 15px;
+  left: 140px
+}
+
+.bluePanic {
+  position: absolute;
+  left: 145px;
+  bottom: 118px;  
+}
+
+.blueSuppression {
+  position: absolute;
+  left: 145px;
+  bottom: 70px;
+}
+
+.redPanic {
+  position: absolute;
+  left: 215px;
+  bottom: 118px;  
+}
+
+.redSuppression {
+  position: absolute;
+  left: 215px;
+  bottom: 70px;
+}
+
+.blueButton,
+.redButton,
+.objectiveButton {
+  color: white !important;
+  width: 80px;
+  &:disabled {
+    color: black !important;
+    background-color: grey !important;
+  }
+}
+
+.objectiveButton {
+  padding: 0;
+  height: 60px;
+  width: inherit;
+}
+
+.blueButton {
+  background-color: #233E68 !important;
+}
+
+.redButton {
+  background-color: #661F18 !important;
+  
+}
+
+.secondaryObjectiveButtons {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 280px;
+  margin: var(--flex-gap);
+  justify-content: flex-end;
+}
+
+.roundTrackerContainer {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.objectiveChecked {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.roundProgress::before {
+  content: "";
+  background: var(--round-border-empty);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 4px;
+  width: 100%;
+  z-index: -1;
+}
+
+.roundProgress {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 30px;
+  max-width: 100%;
+  width: 350px;
+}
+
+.progress {
+  background: var(--round-border-fill);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 4px;
+  width: 0%;
+  z-index: -1;
+  transition: 0.4s ease;
+}
+
+.square {
+  background: #fff;
+  color: #999;
+  border-radius: 20%;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid var(--round-border-empty);
+  transition: .4s ease;
+}
+
+.active {
+  border-color: var(--round-border-fill);
+  color: black;
+  background: radial-gradient(closest-side,var(--round-square-background-inner), #ebf8e1, #f69d3c);
+}
+
+.pointTrackerContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.pointTracker {
+  display: flex;
+  flex-direction: row;
+  background-color: #661F18;
+  padding: 4px;
+}
+
+.pointSpace {
+  padding: 10px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  border-radius: var(--border-radius);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.red {
+  background-color: var(--red-player);
+
+}
+
+.blue {
+  background-color: var(--blue-player);
+}
+
+.objectiveCards {
+  display: flex;
+  justify-content: space-around;
+}
+
+.advantageCard {
+  padding: var(--flex-gap);
+}
+
+.advantageCardContainer {
+  display: flex;
+  color: white;
+  justify-content: space-between;
+}
+
+.secondaryPlayerContainer {
+  display: flex;
+  flex-direction: column;
+}

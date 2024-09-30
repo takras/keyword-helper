@@ -77,17 +77,17 @@ export default function Helper() {
 
         const keys = keyword.descriptions.filter((description) => {
           switch (description.type) {
-            case "text":
             case "header":
-            case "structured_list":
+              //case "text":
+              //case "structured_list":
               if (description && typeof description.content === "string") {
                 return search.test(description.content.toLowerCase());
               }
               return false;
-            case "reference":
-              return search.test(description.referenced_keyword.toLowerCase());
-            case "keyword_list":
-              return search.test(description.content.join().toLowerCase());
+            //case "reference":
+            //return search.test(description.referenced_keyword.toLowerCase());
+            //case "keyword_list":
+            //return search.test(description.content.join().toLowerCase());
             default:
               return false;
           }

@@ -18,6 +18,11 @@
   --notch-max-value: 100%;
   --notch-min-value: 0%;
 
+  --round-border-fill: #021d30;
+  --round-border-empty: #e0e0e0;
+  --round-square-background: #F2AA5D;
+  --round-square-background-inner: #ffffb3;
+
   --notched-square: polygon(
     var(--notch-min-value) var(--notchSize), 
     0 0, 

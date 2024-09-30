@@ -257,6 +257,10 @@
   background-color: var(--button-background-color);
   display: block;
 
+  &:disabled {
+    background-color: grey;
+  }
+
   &:focus-visible {
     outline-color: var(--outline-color);
   }

@@ -1,6 +1,8 @@
 import { IconList } from "./utils";
 
 export const AVAILABLE_KEYWORDS = [
+  "scoreboard",
+  "skirmish",
   "search_result_blank",
   "about",
   "deprecated",
@@ -255,7 +257,6 @@ export const AVAILABLE_KEYWORDS = [
   "shielded_x",
   "sidearm",
   "silhouettes",
-  "skirmish",
   "skirmishes",
   "small",
   "smoke_x",

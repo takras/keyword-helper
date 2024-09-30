@@ -1,9 +1,14 @@
 .container {
-  padding-top: 40px;
+  padding: 50px 20px 20px 20px;
   display: flex;
   flex-direction: column;
-  max-width: 900px;
-  padding-bottom: 20px;
+  max-width: 1200px;
+
+  background-color: var(--background-color);
+  border-radius: var(--border-radius);
+  border: var(--border-thin);
+  margin-bottom: var(--flex-gap);
+
 }
 
 .about {
@@ -13,7 +18,7 @@
   padding: 20px;
 
   &>span > img {
-    filter: invert(var(--invert-icon-color-callout));
+    filter: invert(var(--invert-icon-color));
   }
 }
 

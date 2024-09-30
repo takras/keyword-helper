@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { getKey, interpolateString } from "@/utils";
 import globalStyles from "./helper.module.css";
-import styles from "./skirmish-objective-card.module.css";
+import styles from "./skirmish-generator.module.css";
 
 type Card = {
   id: number;
@@ -83,7 +83,7 @@ function shuffle(a: Card[]) {
 const LENGTH = 1008 / 2.52;
 const WIDTH = 705 / 2.52;
 
-export const SkirmishObjectiveCard = () => {
+export const SkirmishGenerator = () => {
   const searchParams = useSearchParams();
   const [primaryObjective, setPrimaryObjective] = useState<Card>();
   const [secondaryObjective, setSecondaryObjective] = useState<Card>();
