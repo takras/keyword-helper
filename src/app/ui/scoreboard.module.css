@@ -83,6 +83,49 @@
   left: 140px
 }
 
+.blueAny {
+  position: absolute;
+  left: 148px;
+  bottom: 175px;  
+}
+
+.blueFriendly {
+  position: absolute;
+  left: 148px;
+  bottom: 140px;  
+}
+.blueContested {
+  position: absolute;
+  left: 148px;
+  bottom: 95px;  
+}
+.blueEnemy {
+  position: absolute;
+  left: 148px;
+  bottom: 45px;  
+}
+
+.redAny {
+  position: absolute;
+  right: 25px;
+  bottom: 175px;  
+}
+.redFriendly {
+  position: absolute;
+  right: 25px;
+  bottom: 140px;  
+}
+.redContested {
+  position: absolute;
+  right: 25px;
+  bottom: 95px;  
+}
+.redEnemy {
+  position: absolute;
+  right: 25px;
+  bottom: 45px;  
+}
+
 .bluePanic {
   position: absolute;
   left: 145px;
@@ -142,6 +185,13 @@
   justify-content: flex-end;
 }
 
+.secondaryObjectiveTiled {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--flex-gap);
+  justify-content: space-around;
+}
+
 .roundTrackerContainer {
   margin-top: 15px;
   text-align: center;
@@ -151,6 +201,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  text-wrap: balance;
 }
 
 .roundProgress::before {
