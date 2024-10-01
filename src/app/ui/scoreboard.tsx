@@ -4,41 +4,25 @@ import Image from "next/image";
 import globalStyles from "./helper.module.css";
 import styles from "./scoreboard.module.css";
 import classNames from "classnames";
-
-type Card = {
-  id: string;
-  image: string;
-  name: string;
-  type: "primary" | "secondary" | "advantage";
-  mapImage?: string;
-  scoring?: number[];
-};
+import {
+  advantageCards,
+  BRING_THEM_TO_HEEL,
+  Card,
+  DESTROY_ENEMY_BASE,
+  MARKED_TARGETS,
+  primaryCards,
+  RECON_MISSION,
+  secondaryCards,
+  SURFACE_SCAN,
+  SWEEP_AND_CLEAR,
+} from "./scoreboard/cards";
+import { BattleCard, BlueToken, RedToken } from "./scoreboard/images";
+import { RoundTracker } from "./scoreboard/common";
 
 type SecondaryPoints = {
   red: number[];
   blue: number[];
 };
-
-const INTERCEPT_SIGNALS = "PRIMAY_INTERCEPT_SIGNALS";
-const BUNKER_ASSAULT = "PRIMARY_BUNKER_ASSAULT";
-const CLOSE_THE_POCKET = "PRIMARY_CLOSE_THE_POCKET";
-const BREAKTHROUGH = "PRIMARY_BREAKTHROUGH";
-const RECOVER_THE_RESEARCH = "PRIMARY_RECOVER_THE_RESEARCH";
-const SHIFTING_PRIORITIES = "PRIMARY_SHIFTING_PRIORITIES";
-
-const BRING_THEM_TO_HEEL = "SECONDARY_BRING_THEM_TO_HEEL";
-const DESTROY_ENEMY_BASE = "SECONDARY_DESTROY_ENEMY_BASE";
-const MARKED_TARGETS = "SECONDARY_MARKED_TARGETS";
-const RECON_MISSION = "SECONDARY_RECON_MISSION";
-const SURFACE_SCAN = "SECONDARY_SURFACE_SCAN";
-const SWEEP_AND_CLEAR = "SECONDARY_SWEEP_AND_CLEAR";
-
-const ADVANCED_INTEL = "ADVANTAGE_ADVANCED_INTEL";
-const CUNNING_DEPLOYMENY = "ADVANTAGE_CUNNING_DEPLOYMENY";
-const FORTIFIED_POSITIONS = "ADVANTAGE_FORTIFIED_POSITIONS";
-const GARRISON = "ADVANTAGE_GARRISON";
-const ORDNANCE = "ADVANTAGE_ORDNANCE";
-const STRAFING_RUN = "ADVANTAGE_STRAFING_RUN";
 
 interface Storage {
   bluePoints: number;
@@ -54,138 +38,6 @@ interface Storage {
   selectedRedAdvantage: string;
   selectedSecondary: string;
 }
-
-const primaryCards: Card[] = [
-  {
-    id: INTERCEPT_SIGNALS,
-    name: "Intercept Signals",
-    image: "primary-intercept-signals.png",
-    mapImage: "map-intercept-signals.png",
-    type: "primary",
-  },
-  {
-    id: BUNKER_ASSAULT,
-    name: "Bunker Assault",
-    image: "primary-bunker-assault.png",
-    mapImage: "map-bunker-assault.png",
-    type: "primary",
-  },
-  {
-    id: CLOSE_THE_POCKET,
-    name: "Close the Pocket",
-    image: "primary-close-the-pocket.png",
-    mapImage: "map-close-the-pocket.png",
-    type: "primary",
-  },
-  {
-    id: BREAKTHROUGH,
-    name: "Breakthrough",
-    image: "primary-breakthrough",
-    mapImage: "map-breakthrough.png",
-    type: "primary",
-  },
-  {
-    id: RECOVER_THE_RESEARCH,
-    name: "Recover the Research",
-    image: "primary-recover-the-research.png",
-    mapImage: "map-recover-the-research.png",
-    type: "primary",
-  },
-  {
-    id: SHIFTING_PRIORITIES,
-    name: "Shifting Priorities",
-    image: "primary-shifting-priorities.png",
-    mapImage: "map-shifting-priorities.png",
-    type: "primary",
-  },
-];
-
-const secondaryCards: Card[] = [
-  {
-    id: BRING_THEM_TO_HEEL,
-    name: "Bring Them to Heel",
-    image: "secondary-bring-them-to-heel.png",
-    type: "secondary",
-    scoring: [1, 1, 1, 1, 2, 2],
-  },
-  {
-    id: DESTROY_ENEMY_BASE,
-    name: "Destroy Enemy Base",
-    image: "secondary-destroy-enemy-base.png",
-    type: "secondary",
-    scoring: [4],
-  },
-  {
-    id: MARKED_TARGETS,
-    name: "Marked Targets",
-    image: "secondary-marked-targets.png",
-    type: "secondary",
-    scoring: [1],
-  },
-  {
-    id: RECON_MISSION,
-    name: "Recon Mission",
-    image: "secondary-recon-mission.png",
-    type: "secondary",
-    scoring: [1, 1, 1, 1],
-  },
-  {
-    id: SURFACE_SCAN,
-    name: "Surface Scan",
-    image: "secondary-surface-scan.png",
-    type: "secondary",
-    scoring: [1, 1, 1, 1, 2],
-  },
-  {
-    id: SWEEP_AND_CLEAR,
-    name: "Sweep and Clear",
-    image: "secondary-sweep-and-clear.png",
-    type: "secondary",
-    scoring: [1, 1, 1, 2],
-  },
-];
-
-const advantageCards: Card[] = [
-  {
-    id: ADVANCED_INTEL,
-    name: "Advanced Intel",
-    image: "advantage-advanced-intel.png",
-    type: "advantage",
-  },
-  {
-    id: CUNNING_DEPLOYMENY,
-    name: "Cunning Deployment",
-    image: "advantage-cunning-deployment.png",
-    type: "advantage",
-  },
-  {
-    id: FORTIFIED_POSITIONS,
-    name: "Fortified Positions",
-    image: "advantage-fortified-positions.png",
-    type: "advantage",
-  },
-  {
-    id: GARRISON,
-    name: "Garrison",
-    image: "advantage-garrison.png",
-    type: "advantage",
-  },
-  {
-    id: ORDNANCE,
-    name: "Ordnance",
-    image: "advantage-ordnance.png",
-    type: "advantage",
-  },
-  {
-    id: STRAFING_RUN,
-    name: "Strafing Run",
-    image: "advantage-strafing-run.png",
-    type: "advantage",
-  },
-];
-
-const LENGTH = 1008 / 2.52;
-const WIDTH = 705 / 2.52;
 
 export const Scoreboard = () => {
   const [primaryObjective, setPrimaryObjective] = useState<Card>();
@@ -306,8 +158,6 @@ export const Scoreboard = () => {
       return;
     }
 
-    // Bring Them To Heel
-    // Destroy Enemy Base
     const scoreIndex = index ?? round - 1;
     const pointValue = secondaryGoals[scoreIndex];
     setSecondaryPoints((current) => {
@@ -449,48 +299,30 @@ export const Scoreboard = () => {
     );
   }
 
-  function blueToken() {
-    return (
-      <Image
-        src={`/images/objectives/blue-token.png`}
-        height={40}
-        width={40}
-        alt="Blue token"
-      />
-    );
-  }
-  function redToken() {
-    return (
-      <Image
-        src={`/images/objectives/red-token.png`}
-        height={40}
-        width={40}
-        alt="Red token"
-      />
-    );
-  }
-
   function bringThemToHeel() {
     return (
       <div className={styles.secondaryObjectiveContainer}>
         <div className={styles.objectiveCard}>
-          <Image
-            src={`/images/objectives/${secondaryObjective!.image}`}
-            height={LENGTH}
-            width={WIDTH}
-            alt={secondaryObjective!.id.toString()}
-          />
+          <BattleCard card={secondaryObjective} />
           {secondaryPoints.blue[4] !== 0 && (
-            <div className={styles.bluePanic}>{blueToken()}</div>
+            <div className={styles.bluePanic}>
+              <BlueToken />
+            </div>
           )}
           {secondaryPoints.blue[5] !== 0 && (
-            <div className={styles.blueSuppression}>{blueToken()}</div>
+            <div className={styles.blueSuppression}>
+              <BlueToken />
+            </div>
           )}
           {secondaryPoints.red[4] !== 0 && (
-            <div className={styles.redPanic}>{redToken()}</div>
+            <div className={styles.redPanic}>
+              <RedToken />
+            </div>
           )}
           {secondaryPoints.red[5] !== 0 && (
-            <div className={styles.redSuppression}>{redToken()}</div>
+            <div className={styles.redSuppression}>
+              <RedToken />
+            </div>
           )}
         </div>
         <div className={styles.secondaryObjectiveButtons}>
@@ -562,17 +394,17 @@ export const Scoreboard = () => {
     return (
       <div className={styles.secondaryObjectiveContainer}>
         <div className={styles.objectiveCard}>
-          <Image
-            src={`/images/objectives/${secondaryObjective!.image}`}
-            height={LENGTH}
-            width={WIDTH}
-            alt={secondaryObjective!.id.toString()}
-          />
+          <BattleCard card={secondaryObjective} />
+
           {secondaryPoints.blue[0] !== 0 && (
-            <div className={styles.blueDestroyGoal}>{blueToken()}</div>
+            <div className={styles.blueDestroyGoal}>
+              <BlueToken />
+            </div>
           )}
           {secondaryPoints.red[0] !== 0 && (
-            <div className={styles.redDestroyGoal}>{redToken()}</div>
+            <div className={styles.redDestroyGoal}>
+              <RedToken />
+            </div>
           )}
         </div>
         <div className={styles.secondaryObjectiveButtons}>
@@ -590,7 +422,7 @@ export const Scoreboard = () => {
               }}
             >
               <div className={styles.objectiveChecked}>
-                {secondaryPoints.blue[0] !== 0 && blueToken()}
+                {secondaryPoints.blue[0] !== 0 && <BlueToken />}
                 Destroyed enemy base
               </div>
             </button>
@@ -607,7 +439,7 @@ export const Scoreboard = () => {
               }}
             >
               <div className={styles.objectiveChecked}>
-                {secondaryPoints.red[0] !== 0 && redToken()}
+                {secondaryPoints.red[0] !== 0 && <RedToken />}
                 Destroyed enemy base
               </div>
             </button>
@@ -622,12 +454,7 @@ export const Scoreboard = () => {
     return (
       <div className={styles.secondaryObjectiveContainer}>
         <div className={styles.objectiveCard}>
-          <Image
-            src={`/images/objectives/${secondaryObjective!.image}`}
-            height={LENGTH}
-            width={WIDTH}
-            alt={secondaryObjective!.id.toString()}
-          />
+          <BattleCard card={secondaryObjective} />
         </div>
         <div className={styles.secondaryObjectiveButtons}>
           <div className={styles.secondaryPlayerContainer}>
@@ -644,9 +471,9 @@ export const Scoreboard = () => {
               }}
             >
               <div className={styles.objectiveChecked}>
-                {round !== 1 &&
-                  secondaryPoints.blue[round - 2] !== 0 &&
-                  blueToken()}
+                {round !== 1 && secondaryPoints.blue[round - 2] !== 0 && (
+                  <BlueToken />
+                )}
                 Score Surface Scan this round
               </div>
             </button>
@@ -662,7 +489,7 @@ export const Scoreboard = () => {
               }}
             >
               <div className={styles.objectiveChecked}>
-                {secondaryPoints.blue[4] !== 0 && blueToken()}
+                {secondaryPoints.blue[4] !== 0 && <BlueToken />}
                 Score contested enemy Scanner
               </div>
             </button>
@@ -679,9 +506,9 @@ export const Scoreboard = () => {
               }}
             >
               <div className={styles.objectiveChecked}>
-                {round !== 1 &&
-                  secondaryPoints.red[round - 2] !== 0 &&
-                  redToken()}
+                {round !== 1 && secondaryPoints.red[round - 2] !== 0 && (
+                  <RedToken />
+                )}
                 Score Surface Scan this round
               </div>
             </button>
@@ -697,7 +524,7 @@ export const Scoreboard = () => {
               }}
             >
               <div className={styles.objectiveChecked}>
-                {secondaryPoints.red[4] !== 0 && redToken()}
+                {secondaryPoints.red[4] !== 0 && <RedToken />}
                 Score contested enemy Scanner
               </div>
             </button>
@@ -711,35 +538,47 @@ export const Scoreboard = () => {
     return (
       <div className={styles.secondaryObjectiveContainer}>
         <div className={styles.objectiveCard}>
-          <Image
-            src={`/images/objectives/${secondaryObjective!.image}`}
-            height={LENGTH}
-            width={WIDTH}
-            alt={secondaryObjective!.id.toString()}
-          />
+          <BattleCard card={secondaryObjective} />
+
           {secondaryPoints.blue[0] !== 0 && (
-            <div className={styles.blueAny}>{blueToken()}</div>
+            <div className={styles.blueAny}>
+              <BlueToken />
+            </div>
           )}
           {secondaryPoints.blue[1] !== 0 && (
-            <div className={styles.blueFriendly}>{blueToken()}</div>
+            <div className={styles.blueFriendly}>
+              <BlueToken />
+            </div>
           )}
           {secondaryPoints.blue[2] !== 0 && (
-            <div className={styles.blueContested}>{blueToken()}</div>
+            <div className={styles.blueContested}>
+              <BlueToken />
+            </div>
           )}
           {secondaryPoints.blue[3] !== 0 && (
-            <div className={styles.blueEnemy}>{blueToken()}</div>
+            <div className={styles.blueEnemy}>
+              <BlueToken />
+            </div>
           )}
           {secondaryPoints.red[0] !== 0 && (
-            <div className={styles.redAny}>{redToken()}</div>
+            <div className={styles.redAny}>
+              <RedToken />
+            </div>
           )}
           {secondaryPoints.red[1] !== 0 && (
-            <div className={styles.redFriendly}>{redToken()}</div>
+            <div className={styles.redFriendly}>
+              <RedToken />
+            </div>
           )}
           {secondaryPoints.red[2] !== 0 && (
-            <div className={styles.redContested}>{redToken()}</div>
+            <div className={styles.redContested}>
+              <RedToken />
+            </div>
           )}
           {secondaryPoints.red[3] !== 0 && (
-            <div className={styles.redEnemy}>{redToken()}</div>
+            <div className={styles.redEnemy}>
+              <RedToken />
+            </div>
           )}
         </div>
         <div
@@ -871,12 +710,7 @@ export const Scoreboard = () => {
     return (
       <div className={styles.secondaryObjectiveContainer}>
         <div className={styles.objectiveCard}>
-          <Image
-            src={`/images/objectives/${secondaryObjective!.image}`}
-            height={LENGTH}
-            width={WIDTH}
-            alt={secondaryObjective!.id.toString()}
-          />
+          <BattleCard card={secondaryObjective} />
         </div>
         <div className={styles.secondaryObjectiveButtons}>
           <div className={styles.secondaryPlayerContainer}>
@@ -893,7 +727,7 @@ export const Scoreboard = () => {
               }}
             >
               <div className={styles.objectiveChecked}>
-                {secondaryPoints.blue[round - 1] !== 0 && blueToken()}
+                {secondaryPoints.blue[round - 1] !== 0 && <BlueToken />}
                 Score Recon Misson this round
               </div>
             </button>
@@ -910,7 +744,7 @@ export const Scoreboard = () => {
               }}
             >
               <div className={styles.objectiveChecked}>
-                {secondaryPoints.red[round - 1] !== 0 && redToken()}
+                {secondaryPoints.red[round - 1] !== 0 && <RedToken />}
                 Score Recon Misson this round
               </div>
             </button>
@@ -927,37 +761,48 @@ export const Scoreboard = () => {
     return (
       <div className={styles.secondaryObjectiveContainer}>
         <div className={styles.objectiveCard}>
-          <Image
-            src={`/images/objectives/${secondaryObjective!.image}`}
-            height={LENGTH}
-            width={WIDTH}
-            alt={secondaryObjective!.id.toString()}
-          />
+          <BattleCard card={secondaryObjective} />
 
           {blueSecondaryPoints >= 1 && (
-            <div className={styles.blueMarked1}>{blueToken()}</div>
+            <div className={styles.blueMarked1}>
+              <BlueToken />
+            </div>
           )}
           {blueSecondaryPoints >= 2 && (
-            <div className={styles.blueMarked2}>{blueToken()}</div>
+            <div className={styles.blueMarked2}>
+              <BlueToken />
+            </div>
           )}
           {blueSecondaryPoints >= 3 && (
-            <div className={styles.blueMarked3}>{blueToken()}</div>
+            <div className={styles.blueMarked3}>
+              <BlueToken />
+            </div>
           )}
           {blueSecondaryPoints >= 4 && (
-            <div className={styles.blueMarked4}>{blueToken()}</div>
+            <div className={styles.blueMarked4}>
+              <BlueToken />
+            </div>
           )}
 
           {redSecondaryPoints >= 1 && (
-            <div className={styles.redMarked1}>{redToken()}</div>
+            <div className={styles.redMarked1}>
+              <RedToken />
+            </div>
           )}
           {redSecondaryPoints >= 2 && (
-            <div className={styles.redMarked2}>{redToken()}</div>
+            <div className={styles.redMarked2}>
+              <RedToken />
+            </div>
           )}
           {redSecondaryPoints >= 3 && (
-            <div className={styles.redMarked3}>{redToken()}</div>
+            <div className={styles.redMarked3}>
+              <RedToken />
+            </div>
           )}
           {redSecondaryPoints >= 4 && (
-            <div className={styles.redMarked4}>{redToken()}</div>
+            <div className={styles.redMarked4}>
+              <RedToken />
+            </div>
           )}
         </div>
         <div className={styles.secondaryObjectiveButtons}>
@@ -996,43 +841,13 @@ export const Scoreboard = () => {
     );
   }
 
-  function roundSquare(roundNumber: number) {
-    return (
-      <div
-        className={classNames(
-          styles.square,
-          round === roundNumber ? styles.active : undefined
-        )}
-      >
-        {roundNumber}
-      </div>
-    );
-  }
-
-  function roundTracker() {
-    return (
-      <div className={styles.roundTrackerContainer}>
-        <div className={styles.roundProgress}>
-          <div className={styles.progress} id="progress">
-            {" "}
-          </div>
-          {roundSquare(1)}
-          {roundSquare(2)}
-          {roundSquare(3)}
-          {roundSquare(4)}
-          {roundSquare(5)}
-        </div>
-      </div>
-    );
-  }
-
   function pointTracker() {
     const rounds = new Array(13).fill(0);
     const players = ["blue", "red"];
     return (
       <div className={styles.pointTrackerContainer}>
         {players.map((player) => {
-          const token = player === "blue" ? blueToken() : redToken();
+          const token = player === "blue" ? <BlueToken /> : <RedToken />;
           const playerPoints = player === "blue" ? bluePoints : redPoints;
           return (
             <div key={player} className={styles.pointTracker}>
@@ -1083,18 +898,6 @@ export const Scoreboard = () => {
     );
   }
 
-  function showPrimaryGoal() {
-    return (
-      <Image
-        src={`/images/objectives/${primaryObjective?.image}`}
-        height={LENGTH}
-        width={WIDTH}
-        alt={primaryObjective?.id.toString() || ""}
-        priority={true}
-      />
-    );
-  }
-
   function showSecondaryGoal() {
     switch (secondaryObjective?.id) {
       case BRING_THEM_TO_HEEL:
@@ -1119,13 +922,7 @@ export const Scoreboard = () => {
     return (
       <div className={classNames(styles.advantageCard, styles[player])}>
         <h3 className={globalStyles.header3}>{player} player</h3>
-        <Image
-          src={`/images/objectives/${card?.image}`}
-          height={LENGTH}
-          width={WIDTH}
-          alt={card?.id.toString() || ""}
-          priority={true}
-        />
+        <BattleCard card={card!} />
       </div>
     );
   }
@@ -1133,7 +930,8 @@ export const Scoreboard = () => {
   function scoreBoard() {
     return (
       <div>
-        <h1 className={globalStyles.header2}>Round:</h1> {roundTracker()}
+        <h1 className={globalStyles.header2}>Round:</h1>{" "}
+        <RoundTracker currentRound={round} />
         <h2
           className={globalStyles.header2}
           onClick={() => {
@@ -1152,7 +950,7 @@ export const Scoreboard = () => {
         {bluePoints > 12 && <h3>Blue points: {bluePoints}</h3>}
         {redPoints > 12 && <h3>Red points: {redPoints}</h3>}
         <div className={styles.objectiveCards}>
-          {showPrimaryGoal()}
+          <BattleCard card={primaryObjective} />
           {showSecondaryGoal()}
         </div>
         <button
