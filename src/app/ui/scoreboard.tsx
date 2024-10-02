@@ -935,7 +935,13 @@ export const Scoreboard = () => {
       <div className={styles.scoreBoard}>
         <h1 className={globalStyles.header2}>Round:</h1>{" "}
         <RoundTracker currentRound={round} />
-        <h1 className={classNames(globalStyles.header2, styles.pointHeader)}>
+        <h1
+          className={classNames(
+            globalStyles.header2,
+            styles.pointHeader,
+            globalStyles.advantageHeader
+          )}
+        >
           Points:
           <span className={styles.pointOverflowContainer}>
             {bluePoints > 12 && <span>Blue: {bluePoints}</span>}

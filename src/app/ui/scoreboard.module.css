@@ -34,7 +34,7 @@
   display: flex;
   
   flex-direction: column;
-  @media screen and (min-width: 860px) {
+  @media screen and (min-width: 800px) {
     flex-direction: row;
   }
 }
@@ -167,6 +167,7 @@
   &:disabled {
     color: black !important;
     background-color: grey !important;
+    transition: 0.2s;
   }
 }
 
@@ -212,6 +213,7 @@
   align-items: center;
   justify-content: center;
   text-wrap: balance;
+  padding: 1px;
 }
 
 .roundProgress::before {
@@ -264,6 +266,8 @@
   border-color: var(--round-border-fill);
   color: black;
   background: radial-gradient(closest-side,var(--round-square-background-inner), #ebf8e1, #f69d3c);
+  transition: 1s;
+  transition-delay: 1s;
 }
 
 .bigPointTrackerContainer {
@@ -291,14 +295,19 @@
 
 .pointSpace,
 .smallScreenPointSpace {
-  width: 30px;
-  height: 30px;
-  padding: 10px;
+  width: 25px;
+  height: 25px;
+  padding: 8px;
   text-align: center;
   color: white;
   justify-content: center;
   align-items: center;
   border-radius: var(--border-radius);
+
+  @media screen and (min-width: 800px) {
+    width: 30px;
+    height: 30px;
+  }
 }
 
 .pointHeader {
@@ -308,7 +317,7 @@
 
 .pointOverflowContainer {
   display: none;
-  @media screen and (min-width: 860px) {
+  @media screen and (min-width: 800px) {
     display: block;
   }
 }
@@ -317,14 +326,14 @@
   display: flex;
   width: 50px;
   font-size: xx-large;
-  @media screen and (min-width: 860px){
+  @media screen and (min-width: 800px){
     display: none;
   }
 }
 
 .pointSpace {
   display: none;
-  @media screen and (min-width: 860px) {
+  @media screen and (min-width: 800px) {
     display: flex;
   }
   
@@ -344,7 +353,7 @@
   justify-content: space-around;
   flex-direction: column;
   align-items: center;
-  @media screen and (min-width: 860px) {
+  @media screen and (min-width: 800px) {
     flex-direction: row;
   }
 }
@@ -358,8 +367,8 @@
   color: white;
   justify-content: space-evenly;
   flex-direction: column;
-  align-items: center;
-  @media screen and (min-width: 860px) {
+  align-items: flex-start;
+  @media screen and (min-width: 800px) {
     flex-direction: row;
   }
 }
@@ -390,7 +399,7 @@
 .minimizeCard {
   object-fit: cover;
   height: var(--minimized-card);
-  @media screen and (min-width: 860px) {
+  @media screen and (min-width: 800px) {
     object-fit: cover;
   }
 
