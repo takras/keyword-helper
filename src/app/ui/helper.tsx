@@ -213,6 +213,16 @@ export default function Helper() {
             Skirmish Mission Generator
           </Link>
         </div>
+        <div className={styles.changelogButton}>
+          <Link
+            className={styles.button}
+            href={getLink("scoreboard")}
+            onClick={() => selectKeyword("scoreboard")}
+            prefetch={true}
+          >
+            Scoreboard App (Beta!)
+          </Link>
+        </div>
         <div className={styles.aboutButtonRow}>
           <Link
             className={styles.button}

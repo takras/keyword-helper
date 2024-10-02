@@ -9,6 +9,22 @@ export const changelog: Keyword[] = [
     descriptions: [
       {
         type: "version",
+        version: "1.1.6",
+        content: [
+          {
+            type: "changelogentry",
+            update: "add",
+            content: "Scoreboard tracker",
+          },
+          {
+            type: "changelogentry",
+            update: "change",
+            content: "Changed favicon to fit new iOS 18.",
+          },
+        ],
+      },
+      {
+        type: "version",
         version: "1.1.5",
         content: [
           {

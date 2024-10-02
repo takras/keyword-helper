@@ -23,6 +23,8 @@
   --round-square-background: #F2AA5D;
   --round-square-background-inner: #ffffb3;
 
+  --minimized-card: 34px;
+
   --notched-square: polygon(
     var(--notch-min-value) var(--notchSize), 
     0 0, 
@@ -33,6 +35,8 @@
     var(--notchSize) var(--notch-max-value), 
     var(--notch-min-value) calc(var(--notch-max-value) - var(--notchSize))
   );
+
+  --tablet-width: 860px;
 
   --blue-player: #2b2bfe;
   --red-player: #c92e2e;

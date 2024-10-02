@@ -1,8 +1,14 @@
 import Image from "next/image";
-import { Card } from "./cards";
+import { Card } from "./types";
+
+import globalStyles from "../helper.module.css";
+import styles from "../scoreboard.module.css";
+import classNames from "classnames";
+import { useState } from "react";
 
 const LENGTH = 1008 / 2.52;
 const WIDTH = 705 / 2.52;
+const MIMIMIZED = 34;
 
 export const BlueToken = () => {
   return (
@@ -27,17 +33,33 @@ export const RedToken = () => {
 };
 
 export const BattleCard = ({ card }: { card?: Card }) => {
+  const [isMinimized, setIsMinimized] = useState(false);
   if (!card) {
     return;
   }
+  let canBeMinimized = true;
+
+  if (card.id.startsWith("SECONDARY")) {
+    canBeMinimized = false;
+  }
+
   return (
-    <Image
-      src={`/images/objectives/${card?.image}`}
-      height={LENGTH}
-      width={WIDTH}
-      alt={card?.id.toString() || ""}
-      priority={true}
-    />
+    <div>
+      <Image
+        className={classNames(
+          styles.card,
+          isMinimized ? styles.minimizeCard : undefined
+        )}
+        src={`/images/objectives/${card?.image}`}
+        height={LENGTH}
+        width={WIDTH}
+        alt={card?.id.toString() || ""}
+        priority={true}
+        onClick={() =>
+          setIsMinimized((current) => (canBeMinimized ? !current : false))
+        }
+      />
+    </div>
   );
 };
 
@@ -52,3 +74,56 @@ function PrimaryGoalCard({ card }: { card: Card }) {
     />
   );
 }
+
+const AdvantageCard = ({
+  card,
+  player,
+}: {
+  card: Card;
+  player: "blue" | "red";
+}) => {
+  return (
+    <div className={classNames(styles.advantageCard, styles[player])}>
+      <h3
+        className={classNames(
+          globalStyles.header3,
+          globalStyles.advantageHeader
+        )}
+      >
+        {player} player
+      </h3>
+      <BattleCard card={card!} />
+    </div>
+  );
+};
+
+export const AdvantageCards = ({
+  redAdvantage,
+  blueAdvantage,
+}: {
+  redAdvantage?: Card;
+  blueAdvantage?: Card;
+}) => {
+  const [isShowAdvantage, setIsShowAdvantage] = useState(true);
+  if (!redAdvantage || !blueAdvantage) {
+    return null;
+  }
+  return (
+    <>
+      <h2
+        className={globalStyles.header2}
+        onClick={() => {
+          setIsShowAdvantage((current) => !current);
+        }}
+      >
+        Advantage Cards:
+      </h2>
+      {isShowAdvantage && (
+        <div className={styles.advantageCardContainer}>
+          <AdvantageCard card={blueAdvantage} player="blue" />
+          <AdvantageCard card={redAdvantage} player="red" />
+        </div>
+      )}
+    </>
+  );
+};

@@ -125,6 +125,11 @@
   font-size: xx-large;
 }
 
+.advantageHeader {
+  margin-top: 0 !important;
+  margin-bottom: 0;
+}
+
 .inlineHeader {
   margin-left: var(--flex-gap);
   font-size: x-large;

@@ -1,23 +1,22 @@
 import { useEffect, useState } from "react";
-import Image from "next/image";
 
 import globalStyles from "./helper.module.css";
 import styles from "./scoreboard.module.css";
 import classNames from "classnames";
 import {
   advantageCards,
-  BRING_THEM_TO_HEEL,
-  Card,
-  DESTROY_ENEMY_BASE,
-  MARKED_TARGETS,
   primaryCards,
-  RECON_MISSION,
   secondaryCards,
-  SURFACE_SCAN,
-  SWEEP_AND_CLEAR,
+  CARDS,
 } from "./scoreboard/cards";
-import { BattleCard, BlueToken, RedToken } from "./scoreboard/images";
+import {
+  AdvantageCards,
+  BattleCard,
+  BlueToken,
+  RedToken,
+} from "./scoreboard/images";
 import { RoundTracker } from "./scoreboard/common";
+import { Card } from "./scoreboard/types";
 
 type SecondaryPoints = {
   red: number[];
@@ -45,6 +44,7 @@ export const Scoreboard = () => {
   const [blueAdvantage, setBlueAdvantage] = useState<Card>();
   const [redAdvantage, setRedAdvantage] = useState<Card>();
   const [round, setRound] = useState(0);
+  const [disableRoundButton, setDisableRoundButton] = useState(false);
 
   const [bluePoints, setBluePoints] = useState(0);
   const [redPoints, setRedPoints] = useState(0);
@@ -53,7 +53,6 @@ export const Scoreboard = () => {
     red: [],
   });
   const [secondaryGoals, setSecondaryGoals] = useState<number[]>([]);
-  const [isShowAdvantage, setIsShowAdvantage] = useState(true);
 
   const [reset, setReset] = useState(false);
   const isReady =
@@ -143,7 +142,7 @@ export const Scoreboard = () => {
   }
 
   function scoreSecondary(player: "red" | "blue", index?: number) {
-    if (secondaryObjective?.id === MARKED_TARGETS && index === 0) {
+    if (secondaryObjective?.id === CARDS.MARKED_TARGETS && index === 0) {
       setSecondaryPoints((current) => {
         const newScore = current[player][0] + 1;
         return { ...current, [player]: [newScore] };
@@ -186,7 +185,11 @@ export const Scoreboard = () => {
 
   function selectScreen() {
     return (
-      <>
+      <div className={styles.instructions}>
+        <h3>
+          Caution! This is a BETA version. Please provide feedback if encounter
+          problems or have suggestions.
+        </h3>
         <p>
           When the mission has been built, use this app to keep track of the
           scores.
@@ -197,14 +200,16 @@ export const Scoreboard = () => {
         </p>
         <p>
           <strong>Note:</strong> This app should save state, unless your browser
-          blocks access to its storage. To find out, just select a couple below,
-          refresh the page, and see if it remembers them.
+          blocks access to its storage. To find out, make all selections below
+          and refresh the page. It should bring up the selected parameters.
         </p>
         <div className={styles.selection}>
           <button
             className={globalStyles.button}
             onClick={() => {
-              setReset(true);
+              if (confirm("Are you sure? This will reset everything!")) {
+                setReset(true);
+              }
             }}
           >
             Start Over
@@ -295,7 +300,7 @@ export const Scoreboard = () => {
             </button>
           )}
         </div>
-      </>
+      </div>
     );
   }
 
@@ -845,7 +850,7 @@ export const Scoreboard = () => {
     const rounds = new Array(13).fill(0);
     const players = ["blue", "red"];
     return (
-      <div className={styles.pointTrackerContainer}>
+      <div className={styles.bigPointTrackerContainer}>
         {players.map((player) => {
           const token = player === "blue" ? <BlueToken /> : <RedToken />;
           const playerPoints = player === "blue" ? bluePoints : redPoints;
@@ -866,7 +871,7 @@ export const Scoreboard = () => {
               >
                 -
               </button>
-              {rounds.map((counter, i) => (
+              {rounds.map((_counter, i) => (
                 <div
                   className={classNames(styles.pointSpace, styles[player])}
                   key={player + i}
@@ -876,6 +881,14 @@ export const Scoreboard = () => {
                     : i}
                 </div>
               ))}
+              <div
+                className={classNames(
+                  styles.smallScreenPointSpace,
+                  styles[player]
+                )}
+              >
+                {playerPoints}
+              </div>
               <button
                 className={classNames(
                   globalStyles.button,
@@ -900,80 +913,78 @@ export const Scoreboard = () => {
 
   function showSecondaryGoal() {
     switch (secondaryObjective?.id) {
-      case BRING_THEM_TO_HEEL:
+      case CARDS.BRING_THEM_TO_HEEL:
         return bringThemToHeel();
-      case DESTROY_ENEMY_BASE:
+      case CARDS.DESTROY_ENEMY_BASE:
         return destroyEnemyBase();
-      case MARKED_TARGETS:
+      case CARDS.MARKED_TARGETS:
         return markedTargets();
-      case RECON_MISSION:
+      case CARDS.RECON_MISSION:
         return reconMission();
-      case SURFACE_SCAN:
+      case CARDS.SURFACE_SCAN:
         return surfaceScan();
-      case SWEEP_AND_CLEAR:
+      case CARDS.SWEEP_AND_CLEAR:
         return sweepAndClear();
       default:
         return null;
     }
   }
 
-  function showAdvantage(player: "blue" | "red") {
-    const card = player === "blue" ? blueAdvantage : redAdvantage;
-    return (
-      <div className={classNames(styles.advantageCard, styles[player])}>
-        <h3 className={globalStyles.header3}>{player} player</h3>
-        <BattleCard card={card!} />
-      </div>
-    );
-  }
-
   function scoreBoard() {
     return (
-      <div>
+      <div className={styles.scoreBoard}>
         <h1 className={globalStyles.header2}>Round:</h1>{" "}
         <RoundTracker currentRound={round} />
-        <h2
-          className={globalStyles.header2}
-          onClick={() => {
-            setIsShowAdvantage((current) => !current);
-          }}
-        >
-          Advantage Cards: (click to hide/show)
-        </h2>
-        {isShowAdvantage && (
-          <div className={styles.advantageCardContainer}>
-            {showAdvantage("blue")}
-            {showAdvantage("red")}
-          </div>
-        )}
-        <h1 className={globalStyles.header2}>Points:</h1> {pointTracker()}
-        {bluePoints > 12 && <h3>Blue points: {bluePoints}</h3>}
-        {redPoints > 12 && <h3>Red points: {redPoints}</h3>}
+        <h1 className={classNames(globalStyles.header2, styles.pointHeader)}>
+          Points:
+          <span className={styles.pointOverflowContainer}>
+            {bluePoints > 12 && <span>Blue: {bluePoints}</span>}
+            {bluePoints > 12 && redPoints > 12 && " – "}
+            {redPoints > 12 && <span>Red: {redPoints}</span>}
+          </span>
+        </h1>{" "}
+        {pointTracker()}
         <div className={styles.objectiveCards}>
           <BattleCard card={primaryObjective} />
           {showSecondaryGoal()}
         </div>
-        <button
-          className={globalStyles.button}
-          onClick={() => {
-            setReset(true);
-          }}
-        >
-          Start Over
-        </button>
-        <button
-          disabled={round >= 5 || redPoints >= 12 || bluePoints >= 12}
-          className={globalStyles.button}
-          onClick={() => {
-            console.log(round);
-            if (round === 1) {
-              setIsShowAdvantage(false);
+        <AdvantageCards
+          blueAdvantage={blueAdvantage}
+          redAdvantage={redAdvantage}
+        />
+        <div className={styles.controlButtons}>
+          <button
+            className={classNames(globalStyles.button, styles.warning)}
+            onClick={() => {
+              if (confirm("Are you sure? This will reset everything!")) {
+                setReset(true);
+              }
+            }}
+          >
+            Start Over
+          </button>
+          <button
+            disabled={
+              disableRoundButton ||
+              round >= 5 ||
+              redPoints >= 12 ||
+              bluePoints >= 12
             }
-            setRound((current) => current + 1);
-          }}
-        >
-          Next round
-        </button>
+            className={globalStyles.button}
+            onClick={() => {
+              setRound((current) => current + 1);
+              setDisableRoundButton(true);
+              window.scrollTo(0, 0);
+              setTimeout(() => {
+                setDisableRoundButton(false);
+              }, 1000);
+            }}
+          >
+            {round >= 5 || redPoints >= 12 || bluePoints >= 12
+              ? "Game Over"
+              : "Next round"}
+          </button>
+        </div>
       </div>
     );
   }
