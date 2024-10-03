@@ -11,3 +11,5 @@ export type SecondaryPoints = {
   red: number[];
   blue: number[];
 };
+
+export type Players = "blue" | "red";

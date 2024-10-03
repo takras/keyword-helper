@@ -17,6 +17,7 @@ import {
 } from "./scoreboard/images";
 import { RoundTracker } from "./scoreboard/common";
 import { Card } from "./scoreboard/types";
+import { BringThemToHeel } from "./scoreboard/secondary-bring-them-to-heel";
 
 type SecondaryPoints = {
   red: number[];
@@ -114,6 +115,7 @@ export const Scoreboard = () => {
       secondaryCards.find((card) => card.id === storage.selectedSecondary)
     );
     setSecondaryPoints(storage.secondaryObjectivesScored);
+    setSecondaryGoals(storage.secondaryObjectiveRewards);
     setBlueAdvantage(
       advantageCards.find((card) => card.id === storage.selectedBlueAdvantage)
     );
@@ -299,97 +301,6 @@ export const Scoreboard = () => {
               Go!
             </button>
           )}
-        </div>
-      </div>
-    );
-  }
-
-  function bringThemToHeel() {
-    return (
-      <div className={styles.secondaryObjectiveContainer}>
-        <div className={styles.objectiveCard}>
-          <BattleCard card={secondaryObjective} />
-          {secondaryPoints.blue[4] !== 0 && (
-            <div className={styles.bluePanic}>
-              <BlueToken />
-            </div>
-          )}
-          {secondaryPoints.blue[5] !== 0 && (
-            <div className={styles.blueSuppression}>
-              <BlueToken />
-            </div>
-          )}
-          {secondaryPoints.red[4] !== 0 && (
-            <div className={styles.redPanic}>
-              <RedToken />
-            </div>
-          )}
-          {secondaryPoints.red[5] !== 0 && (
-            <div className={styles.redSuppression}>
-              <RedToken />
-            </div>
-          )}
-        </div>
-        <div className={styles.secondaryObjectiveButtons}>
-          <div className={styles.secondaryPlayerContainer}>
-            <h3 className={globalStyles.header3}>Blue Player:</h3>
-            <button
-              className={classNames(
-                globalStyles.button,
-                styles.blueButton,
-                styles.objectiveButton
-              )}
-              disabled={secondaryPoints.blue[4] !== 0}
-              onClick={() => {
-                scoreSecondary("blue", 4);
-              }}
-            >
-              Enemy unit panicked
-            </button>
-            <button
-              className={classNames(
-                globalStyles.button,
-                styles.blueButton,
-                styles.objectiveButton
-              )}
-              disabled={secondaryPoints.blue[5] !== 0}
-              onClick={() => {
-                scoreSecondary("blue", 5);
-              }}
-            >
-              All enemy units suppressed
-            </button>
-          </div>
-          <div className={styles.secondaryPlayerContainer}>
-            <h3 className={globalStyles.header3}>Red Player:</h3>
-            <button
-              className={classNames(
-                globalStyles.button,
-                styles.redButton,
-                styles.objectiveButton
-              )}
-              disabled={secondaryPoints.red[4] !== 0}
-              onClick={() => {
-                scoreSecondary("red", 4);
-              }}
-            >
-              Enemy unit panicked
-            </button>
-
-            <button
-              className={classNames(
-                globalStyles.button,
-                styles.redButton,
-                styles.objectiveButton
-              )}
-              disabled={secondaryPoints.red[5] !== 0}
-              onClick={() => {
-                scoreSecondary("red", 5);
-              }}
-            >
-              All enemy units suppressed
-            </button>
-          </div>
         </div>
       </div>
     );
@@ -914,7 +825,13 @@ export const Scoreboard = () => {
   function showSecondaryGoal() {
     switch (secondaryObjective?.id) {
       case CARDS.BRING_THEM_TO_HEEL:
-        return bringThemToHeel();
+        return (
+          <BringThemToHeel
+            scoreSecondary={scoreSecondary}
+            secondaryObjective={secondaryObjective}
+            secondaryPoints={secondaryPoints}
+          />
+        );
       case CARDS.DESTROY_ENEMY_BASE:
         return destroyEnemyBase();
       case CARDS.MARKED_TARGETS:

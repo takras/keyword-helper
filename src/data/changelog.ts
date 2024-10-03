@@ -9,6 +9,17 @@ export const changelog: Keyword[] = [
     descriptions: [
       {
         type: "version",
+        version: "1.1.7",
+        content: [
+          {
+            type: "changelogentry",
+            update: "change",
+            content: "Scoreboard: Fixed missing point storage state",
+          },
+        ],
+      },
+      {
+        type: "version",
         version: "1.1.6",
         content: [
           {

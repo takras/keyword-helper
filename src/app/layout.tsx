@@ -56,6 +56,7 @@ export default function RootLayout({
       <Script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" />
       <GoogleTagManager gtmId="GTM-W7J477VD" />
       <GoogleTagManager gtmId="G-148T6XV7YW" />
+      <meta name="viewport" content="width=device-width" />
       <body className={styles.body}>
         <Providers>{children}</Providers>
       </body>
