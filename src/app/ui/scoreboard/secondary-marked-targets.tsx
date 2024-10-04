@@ -21,7 +21,11 @@ export const MarkedTargets = ({
       const style = styles[`${player}Marked${point}`];
       if (playerPoints >= point) {
         return (
-          <div key={player + point + playerPoints} className={style}>
+          <div
+            key={player + point + playerPoints}
+            className={style}
+            onClick={() => scoreSecondary({ player, index: 0, undo: true })}
+          >
             {player === "blue" ? <BlueToken /> : <RedToken />}
           </div>
         );
@@ -34,37 +38,28 @@ export const MarkedTargets = ({
     <div className={styles.secondaryObjectiveContainer}>
       <div className={styles.objectiveCard}>
         <BattleCard card={secondaryObjective} />
-        <>
-          {tokens("blue")}
-          {tokens("red")}
-        </>
+
+        {tokens("blue")}
+        {tokens("red")}
       </div>
       <div className={styles.secondaryObjectiveButtons}>
         <div className={styles.secondaryPlayerContainer}>
           <h3 className={globalStyles.header3}>Blue Player:</h3>
           <button
-            className={classNames(
-              globalStyles.button,
-              styles.blueButton,
-              styles.objectiveButton
-            )}
+            className={classNames(styles.blueButton, styles.objectiveButton)}
             disabled={blueSecondaryPoints >= 4}
             onClick={() => {
-              scoreSecondary("blue", 0);
+              scoreSecondary({ player: "blue", index: 0 });
             }}
           >
             <div className={styles.bunkerChecked}>Killed marked target</div>
           </button>
           <h3 className={globalStyles.header3}>Red Player:</h3>
           <button
-            className={classNames(
-              globalStyles.button,
-              styles.redButton,
-              styles.objectiveButton
-            )}
+            className={classNames(styles.redButton, styles.objectiveButton)}
             disabled={redSecondaryPoints >= 4}
             onClick={() => {
-              scoreSecondary("red", 0);
+              scoreSecondary({ player: "red", index: 0 });
             }}
           >
             <div className={styles.bunkerChecked}>Killed marked target</div>

@@ -15,6 +15,8 @@ export const SurfaceScan = ({
     return null;
   }
   const disabled = round <= 1;
+  const blueScoredRound = secondaryPoints.blue[round - 2] !== 0;
+  const redScoredRound = secondaryPoints.red[round - 2] !== 0;
   return (
     <div className={styles.secondaryObjectiveContainer}>
       <div className={styles.objectiveCard}>
@@ -25,13 +27,19 @@ export const SurfaceScan = ({
           <h3 className={globalStyles.header3}>Blue Player:</h3>
           <button
             className={classNames(
-              globalStyles.button,
               styles.blueButton,
-              styles.objectiveButton
+              styles.objectiveButton,
+              disabled || blueScoredRound ? styles.disabledButton : undefined
             )}
-            disabled={disabled || secondaryPoints.blue[round - 2] !== 0}
             onClick={() => {
-              scoreSecondary("blue", round - 2);
+              if (disabled) {
+                return;
+              }
+              scoreSecondary({
+                player: "blue",
+                index: round - 2,
+                undo: blueScoredRound,
+              });
             }}
           >
             <div className={styles.objectiveChecked}>
@@ -43,13 +51,16 @@ export const SurfaceScan = ({
           </button>
           <button
             className={classNames(
-              globalStyles.button,
               styles.blueButton,
-              styles.objectiveButton
+              styles.objectiveButton,
+              secondaryPoints.blue[4] !== 0 ? styles.disabledButton : undefined
             )}
-            disabled={secondaryPoints.blue[4] !== 0}
             onClick={() => {
-              scoreSecondary("blue", 4);
+              scoreSecondary({
+                player: "blue",
+                index: 4,
+                undo: secondaryPoints.blue[4] !== 0,
+              });
             }}
           >
             <div className={styles.objectiveChecked}>
@@ -57,16 +68,23 @@ export const SurfaceScan = ({
               Score contested enemy Scanner
             </div>
           </button>
+
           <h3 className={globalStyles.header3}>Red Player:</h3>
           <button
             className={classNames(
-              globalStyles.button,
               styles.redButton,
-              styles.objectiveButton
+              styles.objectiveButton,
+              disabled || redScoredRound ? styles.disabledButton : undefined
             )}
-            disabled={disabled || secondaryPoints.red[round - 2] !== 0}
             onClick={() => {
-              scoreSecondary("red", round - 2);
+              if (disabled) {
+                return;
+              }
+              scoreSecondary({
+                player: "red",
+                index: round - 2,
+                undo: redScoredRound,
+              });
             }}
           >
             <div className={styles.objectiveChecked}>
@@ -78,13 +96,16 @@ export const SurfaceScan = ({
           </button>
           <button
             className={classNames(
-              globalStyles.button,
               styles.redButton,
-              styles.objectiveButton
+              styles.objectiveButton,
+              secondaryPoints.red[4] !== 0 ? styles.disabledButton : undefined
             )}
-            disabled={secondaryPoints.red[4] !== 0}
             onClick={() => {
-              scoreSecondary("red", 4);
+              scoreSecondary({
+                player: "red",
+                index: 4,
+                undo: secondaryPoints.red[4] !== 0,
+              });
             }}
           >
             <div className={styles.objectiveChecked}>

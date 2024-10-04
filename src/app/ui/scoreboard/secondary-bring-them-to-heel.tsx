@@ -14,22 +14,42 @@ export const BringThemToHeel = ({
       <div className={styles.objectiveCard}>
         <BattleCard card={secondaryObjective} />
         {secondaryPoints.blue[4] !== 0 && (
-          <div className={styles.bluePanic}>
+          <div
+            className={styles.bluePanic}
+            onClick={() =>
+              scoreSecondary({ player: "blue", index: 4, undo: true })
+            }
+          >
             <BlueToken />
           </div>
         )}
         {secondaryPoints.blue[5] !== 0 && (
-          <div className={styles.blueSuppression}>
+          <div
+            className={styles.blueSuppression}
+            onClick={() =>
+              scoreSecondary({ player: "blue", index: 5, undo: true })
+            }
+          >
             <BlueToken />
           </div>
         )}
         {secondaryPoints.red[4] !== 0 && (
-          <div className={styles.redPanic}>
+          <div
+            className={styles.redPanic}
+            onClick={() =>
+              scoreSecondary({ player: "red", index: 4, undo: true })
+            }
+          >
             <RedToken />
           </div>
         )}
         {secondaryPoints.red[5] !== 0 && (
-          <div className={styles.redSuppression}>
+          <div
+            className={styles.redSuppression}
+            onClick={() =>
+              scoreSecondary({ player: "red", index: 5, undo: true })
+            }
+          >
             <RedToken />
           </div>
         )}
@@ -38,27 +58,19 @@ export const BringThemToHeel = ({
         <div className={styles.secondaryPlayerContainer}>
           <h3 className={globalStyles.header3}>Blue Player:</h3>
           <button
-            className={classNames(
-              globalStyles.button,
-              styles.blueButton,
-              styles.objectiveButton
-            )}
+            className={classNames(styles.blueButton, styles.objectiveButton)}
             disabled={secondaryPoints.blue[4] !== 0}
             onClick={() => {
-              scoreSecondary("blue", 4);
+              scoreSecondary({ player: "blue", index: 4 });
             }}
           >
             Enemy unit panicked
           </button>
           <button
-            className={classNames(
-              globalStyles.button,
-              styles.blueButton,
-              styles.objectiveButton
-            )}
+            className={classNames(styles.blueButton, styles.objectiveButton)}
             disabled={secondaryPoints.blue[5] !== 0}
             onClick={() => {
-              scoreSecondary("blue", 5);
+              scoreSecondary({ player: "blue", index: 5 });
             }}
           >
             All enemy units suppressed
@@ -67,28 +79,20 @@ export const BringThemToHeel = ({
         <div className={styles.secondaryPlayerContainer}>
           <h3 className={globalStyles.header3}>Red Player:</h3>
           <button
-            className={classNames(
-              globalStyles.button,
-              styles.redButton,
-              styles.objectiveButton
-            )}
+            className={classNames(styles.redButton, styles.objectiveButton)}
             disabled={secondaryPoints.red[4] !== 0}
             onClick={() => {
-              scoreSecondary("red", 4);
+              scoreSecondary({ player: "red", index: 4 });
             }}
           >
             Enemy unit panicked
           </button>
 
           <button
-            className={classNames(
-              globalStyles.button,
-              styles.redButton,
-              styles.objectiveButton
-            )}
+            className={classNames(styles.redButton, styles.objectiveButton)}
             disabled={secondaryPoints.red[5] !== 0}
             onClick={() => {
-              scoreSecondary("red", 5);
+              scoreSecondary({ player: "red", index: 5 });
             }}
           >
             All enemy units suppressed

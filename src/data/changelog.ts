@@ -9,6 +9,42 @@ export const changelog: Keyword[] = [
     descriptions: [
       {
         type: "version",
+        version: "1.1.9",
+        content: [
+          {
+            type: "changelogentry",
+            update: "add",
+            content:
+              "Scoreboard app: Now possible to click scored objectives to undo it.",
+          },
+          {
+            type: "changelogentry",
+            update: "change",
+            content:
+              "Additional styling of the elements in the scoreboard app. Some visual bugs.",
+          },
+        ],
+      },
+      {
+        type: "version",
+        version: "1.1.8",
+        content: [
+          {
+            type: "changelogentry",
+            update: "add",
+            content:
+              "Share image button on the bottom of the page, to easily share rules examples online.",
+          },
+          {
+            type: "changelogentry",
+            update: "change",
+            content:
+              "Update the styling and organization of elements in the scoreboard app.",
+          },
+        ],
+      },
+      {
+        type: "version",
         version: "1.1.7",
         content: [
           {

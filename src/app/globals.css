@@ -45,7 +45,7 @@
 [data-theme='light'] {
 
   html {
-    color-scheme: dark; 
+    color-scheme: light; 
   }
 
   --changelog-add-color: #448450;
@@ -60,6 +60,8 @@
   --example-color: #fff;
   --example-header: #F1A021;
   --sharebutton-color: #aeaeae;
+
+  --playerButtonColor: #000;
 
   --button-color: #26416d;
   --button-border-color: #a78c5c;
@@ -116,6 +118,8 @@ a {
     --button-color: #000;
     --button-border-color: #765e35;
     --button-background-color: #daba7b;
+
+    --playerButtonColor: #fff;
 
     --image-border: 2px solid #daba7b;
     --image-shadow: 0px 0px 6px #daba7b;

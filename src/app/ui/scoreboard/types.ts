@@ -14,9 +14,15 @@ export type SecondaryPoints = {
 
 export type Players = "blue" | "red";
 
+export type ScoreSecondaryObjective = {
+  player: Players;
+  index?: number;
+  undo?: boolean;
+};
+
 export interface SecondaryObjectiveControl {
   secondaryObjective: Card;
   secondaryPoints: SecondaryPoints;
-  scoreSecondary: (player: Players, index?: number) => void;
+  scoreSecondary: (score: ScoreSecondaryObjective) => void;
   round?: number;
 }

@@ -149,27 +149,39 @@ export const Scoreboard = () => {
     });
   }
 
-  function scoreSecondary(player: Players, index?: number) {
+  function scoreSecondary({
+    player,
+    index,
+    undo,
+  }: {
+    player: Players;
+    index?: number;
+    undo?: boolean;
+  }) {
     if (secondaryObjective?.id === CARDS.MARKED_TARGETS && index === 0) {
+      const diff = undo ? -1 : +1;
       setSecondaryPoints((current) => {
-        const newScore = current[player][0] + 1;
+        const newScore = current[player][0] + diff;
         return { ...current, [player]: [newScore] };
       });
 
       if (player === "blue") {
-        setBluePoints((current) => current + 1);
+        setBluePoints((current) => current + diff);
       }
       if (player === "red") {
-        setRedPoints((current) => current + 1);
+        setRedPoints((current) => current + diff);
       }
       return;
     }
 
     const scoreIndex = index ?? round - 1;
-    const pointValue = secondaryGoals[scoreIndex];
+    const pointValue = undo
+      ? -secondaryGoals[scoreIndex]
+      : secondaryGoals[scoreIndex];
+
     setSecondaryPoints((current) => {
       const playerCurrent = current[player];
-      playerCurrent[scoreIndex] = pointValue;
+      playerCurrent[scoreIndex] = undo ? 0 : pointValue;
       const newCurrent = {
         ...current,
         [player]: playerCurrent,
@@ -177,10 +189,14 @@ export const Scoreboard = () => {
       return newCurrent;
     });
     if (player === "blue") {
-      setBluePoints((current) => current + pointValue);
+      setBluePoints((current) =>
+        current + pointValue < 0 ? 0 : current + pointValue
+      );
     }
     if (player === "red") {
-      setRedPoints((current) => current + pointValue);
+      setRedPoints((current) =>
+        current + pointValue < 0 ? 0 : current + pointValue
+      );
     }
   }
 
@@ -324,7 +340,6 @@ export const Scoreboard = () => {
             <div key={player} className={styles.pointTracker}>
               <button
                 className={classNames(
-                  globalStyles.button,
                   player === "blue" ? styles.blueButton : styles.redButton
                 )}
                 onClick={() => {
@@ -357,7 +372,6 @@ export const Scoreboard = () => {
               </div>
               <button
                 className={classNames(
-                  globalStyles.button,
                   player === "blue" ? styles.blueButton : styles.redButton
                 )}
                 onClick={() => {

@@ -14,6 +14,8 @@ export const ReconMission = ({
     console.warn("No Round set for ReconMission");
     return null;
   }
+  const blueScored = secondaryPoints.blue[round - 1] !== 0;
+  const redScored = secondaryPoints.red[round - 1] !== 0;
 
   return (
     <div className={styles.secondaryObjectiveContainer}>
@@ -25,13 +27,16 @@ export const ReconMission = ({
           <h3 className={globalStyles.header3}>Blue Player:</h3>
           <button
             className={classNames(
-              globalStyles.button,
               styles.blueButton,
-              styles.objectiveButton
+              styles.objectiveButton,
+              blueScored ? styles.disabledButton : undefined
             )}
-            disabled={secondaryPoints.blue[round - 1] !== 0}
             onClick={() => {
-              scoreSecondary("blue", round - 1);
+              scoreSecondary({
+                player: "blue",
+                index: round - 1,
+                undo: blueScored,
+              });
             }}
           >
             <div className={styles.objectiveChecked}>
@@ -42,13 +47,16 @@ export const ReconMission = ({
           <h3 className={globalStyles.header3}>Red Player:</h3>
           <button
             className={classNames(
-              globalStyles.button,
               styles.redButton,
-              styles.objectiveButton
+              styles.objectiveButton,
+              redScored ? styles.disabledButton : undefined
             )}
-            disabled={secondaryPoints.red[round - 1] !== 0}
             onClick={() => {
-              scoreSecondary("red", round - 1);
+              scoreSecondary({
+                player: "red",
+                index: round - 1,
+                undo: redScored,
+              });
             }}
           >
             <div className={styles.objectiveChecked}>

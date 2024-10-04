@@ -15,12 +15,22 @@ export const DestroyEnemyBase = ({
         <BattleCard card={secondaryObjective} />
 
         {secondaryPoints.blue[0] !== 0 && (
-          <div className={styles.blueDestroyGoal}>
+          <div
+            className={styles.blueDestroyGoal}
+            onClick={() =>
+              scoreSecondary({ player: "blue", index: 0, undo: true })
+            }
+          >
             <BlueToken />
           </div>
         )}
         {secondaryPoints.red[0] !== 0 && (
-          <div className={styles.redDestroyGoal}>
+          <div
+            className={styles.redDestroyGoal}
+            onClick={() =>
+              scoreSecondary({ player: "red", index: 0, undo: true })
+            }
+          >
             <RedToken />
           </div>
         )}
@@ -29,14 +39,10 @@ export const DestroyEnemyBase = ({
         <div className={styles.secondaryPlayerContainer}>
           <h3 className={globalStyles.header3}>Blue Player:</h3>
           <button
-            className={classNames(
-              globalStyles.button,
-              styles.blueButton,
-              styles.objectiveButton
-            )}
+            className={classNames(styles.blueButton, styles.objectiveButton)}
             disabled={secondaryPoints.blue[0] !== 0}
             onClick={() => {
-              scoreSecondary("blue", 0);
+              scoreSecondary({ player: "blue", index: 0 });
             }}
           >
             <div className={styles.objectiveChecked}>
@@ -46,14 +52,10 @@ export const DestroyEnemyBase = ({
           </button>
           <h3 className={globalStyles.header3}>Red Player:</h3>
           <button
-            className={classNames(
-              globalStyles.button,
-              styles.redButton,
-              styles.objectiveButton
-            )}
+            className={classNames(styles.redButton, styles.objectiveButton)}
             disabled={secondaryPoints.red[0] !== 0}
             onClick={() => {
-              scoreSecondary("red", 0);
+              scoreSecondary({ player: "red", index: 0 });
             }}
           >
             <div className={styles.objectiveChecked}>
