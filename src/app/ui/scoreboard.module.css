@@ -8,10 +8,9 @@
   margin-bottom: var(--flex-gap);
   font-family: var(--default-font-family);
   scrollbar-gutter: auto;
-  max-width: 1200px;
+  max-width: min(1200px, 100vw);
   margin-left: auto;
   margin-right: auto;
-  
 }
 
 .scoreBoard {
@@ -34,7 +33,7 @@
   display: flex;
   
   flex-direction: column;
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: 740px) {
     flex-direction: row;
   }
 }
@@ -166,9 +165,15 @@
   width: 80px;
   &:disabled {
     color: black !important;
-    background-color: grey !important;
+    background-color: grey;
     transition: 0.2s;
   }
+}
+
+.disabledButton {
+  color: black !important;
+  background-color: grey !important;
+  transition: 0.2s;
 }
 
 .objectiveButton {
@@ -178,11 +183,11 @@
 }
 
 .blueButton {
-  background-color: #233E68 !important;
+  background-color: #233E68;
 }
 
 .redButton {
-  background-color: #661F18 !important;
+  background-color: #661F18;
   
 }
 
@@ -234,7 +239,6 @@
   position: relative;
   margin-bottom: 30px;
   max-width: 100%;
-  width: 350px;
 }
 
 .progress {
@@ -296,17 +300,20 @@
 .pointSpace,
 .smallScreenPointSpace {
   width: 25px;
-  height: 25px;
-  padding: 8px;
+  height: 30px;
+  padding: 7px;
   text-align: center;
   color: white;
   justify-content: center;
   align-items: center;
   border-radius: var(--border-radius);
+}
 
-  @media screen and (min-width: 800px) {
-    width: 30px;
-    height: 30px;
+.smallScreenPointSpace {
+  display: flex;
+  font-size: xx-large;
+  @media screen and (min-width: 740px){
+    display: none;
   }
 }
 
@@ -317,23 +324,14 @@
 
 .pointOverflowContainer {
   display: none;
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: 740px) {
     display: block;
-  }
-}
-
-.smallScreenPointSpace {
-  display: flex;
-  width: 50px;
-  font-size: xx-large;
-  @media screen and (min-width: 800px){
-    display: none;
   }
 }
 
 .pointSpace {
   display: none;
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: 740px) {
     display: flex;
   }
   
@@ -353,7 +351,8 @@
   justify-content: space-around;
   flex-direction: column;
   align-items: center;
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: 740px) {
+    align-items: flex-start;
     flex-direction: row;
   }
 }
@@ -368,7 +367,7 @@
   justify-content: space-evenly;
   flex-direction: column;
   align-items: center;
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: 740px) {
     flex-direction: row;
     align-items: flex-start;
   }
@@ -400,7 +399,7 @@
 .minimizeCard {
   object-fit: cover;
   height: var(--minimized-card);
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: 740px) {
     object-fit: cover;
   }
 

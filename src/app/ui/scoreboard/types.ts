@@ -13,3 +13,10 @@ export type SecondaryPoints = {
 };
 
 export type Players = "blue" | "red";
+
+export interface SecondaryObjectiveControl {
+  secondaryObjective: Card;
+  secondaryPoints: SecondaryPoints;
+  scoreSecondary: (player: Players, index?: number) => void;
+  round?: number;
+}

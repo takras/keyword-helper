@@ -4,39 +4,43 @@ import { SecondaryObjectiveControl } from "./types";
 import globalStyles from "../helper.module.css";
 import styles from "../scoreboard.module.css";
 
-export const BringThemToHeel = ({
+export const SurfaceScan = ({
+  scoreSecondary,
   secondaryObjective,
   secondaryPoints,
-  scoreSecondary,
+  round,
 }: SecondaryObjectiveControl) => {
+  if (!round) {
+    console.warn("No Round set for SurfaceScan");
+    return null;
+  }
+  const disabled = round <= 1;
   return (
     <div className={styles.secondaryObjectiveContainer}>
       <div className={styles.objectiveCard}>
         <BattleCard card={secondaryObjective} />
-        {secondaryPoints.blue[4] !== 0 && (
-          <div className={styles.bluePanic}>
-            <BlueToken />
-          </div>
-        )}
-        {secondaryPoints.blue[5] !== 0 && (
-          <div className={styles.blueSuppression}>
-            <BlueToken />
-          </div>
-        )}
-        {secondaryPoints.red[4] !== 0 && (
-          <div className={styles.redPanic}>
-            <RedToken />
-          </div>
-        )}
-        {secondaryPoints.red[5] !== 0 && (
-          <div className={styles.redSuppression}>
-            <RedToken />
-          </div>
-        )}
       </div>
       <div className={styles.secondaryObjectiveButtons}>
         <div className={styles.secondaryPlayerContainer}>
           <h3 className={globalStyles.header3}>Blue Player:</h3>
+          <button
+            className={classNames(
+              globalStyles.button,
+              styles.blueButton,
+              styles.objectiveButton
+            )}
+            disabled={disabled || secondaryPoints.blue[round - 2] !== 0}
+            onClick={() => {
+              scoreSecondary("blue", round - 2);
+            }}
+          >
+            <div className={styles.objectiveChecked}>
+              {round !== 1 && secondaryPoints.blue[round - 2] !== 0 && (
+                <BlueToken />
+              )}
+              Score Surface Scan this round
+            </div>
+          </button>
           <button
             className={classNames(
               globalStyles.button,
@@ -48,24 +52,30 @@ export const BringThemToHeel = ({
               scoreSecondary("blue", 4);
             }}
           >
-            Enemy unit panicked
+            <div className={styles.objectiveChecked}>
+              {secondaryPoints.blue[4] !== 0 && <BlueToken />}
+              Score contested enemy Scanner
+            </div>
           </button>
+          <h3 className={globalStyles.header3}>Red Player:</h3>
           <button
             className={classNames(
               globalStyles.button,
-              styles.blueButton,
+              styles.redButton,
               styles.objectiveButton
             )}
-            disabled={secondaryPoints.blue[5] !== 0}
+            disabled={disabled || secondaryPoints.red[round - 2] !== 0}
             onClick={() => {
-              scoreSecondary("blue", 5);
+              scoreSecondary("red", round - 2);
             }}
           >
-            All enemy units suppressed
+            <div className={styles.objectiveChecked}>
+              {round !== 1 && secondaryPoints.red[round - 2] !== 0 && (
+                <RedToken />
+              )}
+              Score Surface Scan this round
+            </div>
           </button>
-        </div>
-        <div className={styles.secondaryPlayerContainer}>
-          <h3 className={globalStyles.header3}>Red Player:</h3>
           <button
             className={classNames(
               globalStyles.button,
@@ -77,21 +87,10 @@ export const BringThemToHeel = ({
               scoreSecondary("red", 4);
             }}
           >
-            Enemy unit panicked
-          </button>
-
-          <button
-            className={classNames(
-              globalStyles.button,
-              styles.redButton,
-              styles.objectiveButton
-            )}
-            disabled={secondaryPoints.red[5] !== 0}
-            onClick={() => {
-              scoreSecondary("red", 5);
-            }}
-          >
-            All enemy units suppressed
+            <div className={styles.objectiveChecked}>
+              {secondaryPoints.red[4] !== 0 && <RedToken />}
+              Score contested enemy Scanner
+            </div>
           </button>
         </div>
       </div>

@@ -16,8 +16,13 @@ import {
   RedToken,
 } from "./scoreboard/images";
 import { RoundTracker } from "./scoreboard/common";
-import { Card } from "./scoreboard/types";
+import { Card, Players } from "./scoreboard/types";
 import { BringThemToHeel } from "./scoreboard/secondary-bring-them-to-heel";
+import { MarkedTargets } from "./scoreboard/secondary-marked-targets";
+import { ReconMission } from "./scoreboard/secondary-recon-mission";
+import { DestroyEnemyBase } from "./scoreboard/secondary-destroy-base";
+import { SurfaceScan } from "./scoreboard/secondary-surface-scan";
+import { SweepAndClear } from "./scoreboard/secondary-sweep-and-clear";
 
 type SecondaryPoints = {
   red: number[];
@@ -98,6 +103,7 @@ export const Scoreboard = () => {
     round,
     redPoints,
     bluePoints,
+    isReady,
   ]);
 
   useEffect(() => {
@@ -143,7 +149,7 @@ export const Scoreboard = () => {
     });
   }
 
-  function scoreSecondary(player: "red" | "blue", index?: number) {
+  function scoreSecondary(player: Players, index?: number) {
     if (secondaryObjective?.id === CARDS.MARKED_TARGETS && index === 0) {
       setSecondaryPoints((current) => {
         const newScore = current[player][0] + 1;
@@ -306,460 +312,9 @@ export const Scoreboard = () => {
     );
   }
 
-  function destroyEnemyBase() {
-    return (
-      <div className={styles.secondaryObjectiveContainer}>
-        <div className={styles.objectiveCard}>
-          <BattleCard card={secondaryObjective} />
-
-          {secondaryPoints.blue[0] !== 0 && (
-            <div className={styles.blueDestroyGoal}>
-              <BlueToken />
-            </div>
-          )}
-          {secondaryPoints.red[0] !== 0 && (
-            <div className={styles.redDestroyGoal}>
-              <RedToken />
-            </div>
-          )}
-        </div>
-        <div className={styles.secondaryObjectiveButtons}>
-          <div className={styles.secondaryPlayerContainer}>
-            <h3 className={globalStyles.header3}>Blue Player:</h3>
-            <button
-              className={classNames(
-                globalStyles.button,
-                styles.blueButton,
-                styles.objectiveButton
-              )}
-              disabled={secondaryPoints.blue[0] !== 0}
-              onClick={() => {
-                scoreSecondary("blue", 0);
-              }}
-            >
-              <div className={styles.objectiveChecked}>
-                {secondaryPoints.blue[0] !== 0 && <BlueToken />}
-                Destroyed enemy base
-              </div>
-            </button>
-            <h3 className={globalStyles.header3}>Red Player:</h3>
-            <button
-              className={classNames(
-                globalStyles.button,
-                styles.redButton,
-                styles.objectiveButton
-              )}
-              disabled={secondaryPoints.red[0] !== 0}
-              onClick={() => {
-                scoreSecondary("red", 0);
-              }}
-            >
-              <div className={styles.objectiveChecked}>
-                {secondaryPoints.red[0] !== 0 && <RedToken />}
-                Destroyed enemy base
-              </div>
-            </button>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  function surfaceScan() {
-    const disabled = round <= 1;
-    return (
-      <div className={styles.secondaryObjectiveContainer}>
-        <div className={styles.objectiveCard}>
-          <BattleCard card={secondaryObjective} />
-        </div>
-        <div className={styles.secondaryObjectiveButtons}>
-          <div className={styles.secondaryPlayerContainer}>
-            <h3 className={globalStyles.header3}>Blue Player:</h3>
-            <button
-              className={classNames(
-                globalStyles.button,
-                styles.blueButton,
-                styles.objectiveButton
-              )}
-              disabled={disabled || secondaryPoints.blue[round - 2] !== 0}
-              onClick={() => {
-                scoreSecondary("blue", round - 2);
-              }}
-            >
-              <div className={styles.objectiveChecked}>
-                {round !== 1 && secondaryPoints.blue[round - 2] !== 0 && (
-                  <BlueToken />
-                )}
-                Score Surface Scan this round
-              </div>
-            </button>
-            <button
-              className={classNames(
-                globalStyles.button,
-                styles.blueButton,
-                styles.objectiveButton
-              )}
-              disabled={secondaryPoints.blue[4] !== 0}
-              onClick={() => {
-                scoreSecondary("blue", 4);
-              }}
-            >
-              <div className={styles.objectiveChecked}>
-                {secondaryPoints.blue[4] !== 0 && <BlueToken />}
-                Score contested enemy Scanner
-              </div>
-            </button>
-            <h3 className={globalStyles.header3}>Red Player:</h3>
-            <button
-              className={classNames(
-                globalStyles.button,
-                styles.redButton,
-                styles.objectiveButton
-              )}
-              disabled={disabled || secondaryPoints.red[round - 2] !== 0}
-              onClick={() => {
-                scoreSecondary("red", round - 2);
-              }}
-            >
-              <div className={styles.objectiveChecked}>
-                {round !== 1 && secondaryPoints.red[round - 2] !== 0 && (
-                  <RedToken />
-                )}
-                Score Surface Scan this round
-              </div>
-            </button>
-            <button
-              className={classNames(
-                globalStyles.button,
-                styles.redButton,
-                styles.objectiveButton
-              )}
-              disabled={secondaryPoints.red[4] !== 0}
-              onClick={() => {
-                scoreSecondary("red", 4);
-              }}
-            >
-              <div className={styles.objectiveChecked}>
-                {secondaryPoints.red[4] !== 0 && <RedToken />}
-                Score contested enemy Scanner
-              </div>
-            </button>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  function sweepAndClear() {
-    return (
-      <div className={styles.secondaryObjectiveContainer}>
-        <div className={styles.objectiveCard}>
-          <BattleCard card={secondaryObjective} />
-
-          {secondaryPoints.blue[0] !== 0 && (
-            <div className={styles.blueAny}>
-              <BlueToken />
-            </div>
-          )}
-          {secondaryPoints.blue[1] !== 0 && (
-            <div className={styles.blueFriendly}>
-              <BlueToken />
-            </div>
-          )}
-          {secondaryPoints.blue[2] !== 0 && (
-            <div className={styles.blueContested}>
-              <BlueToken />
-            </div>
-          )}
-          {secondaryPoints.blue[3] !== 0 && (
-            <div className={styles.blueEnemy}>
-              <BlueToken />
-            </div>
-          )}
-          {secondaryPoints.red[0] !== 0 && (
-            <div className={styles.redAny}>
-              <RedToken />
-            </div>
-          )}
-          {secondaryPoints.red[1] !== 0 && (
-            <div className={styles.redFriendly}>
-              <RedToken />
-            </div>
-          )}
-          {secondaryPoints.red[2] !== 0 && (
-            <div className={styles.redContested}>
-              <RedToken />
-            </div>
-          )}
-          {secondaryPoints.red[3] !== 0 && (
-            <div className={styles.redEnemy}>
-              <RedToken />
-            </div>
-          )}
-        </div>
-        <div
-          className={classNames(
-            styles.secondaryObjectiveButtons,
-            styles.secondaryObjectiveTiled
-          )}
-        >
-          <div className={styles.secondaryPlayerContainer}>
-            <h3 className={globalStyles.header3}>Blue Player:</h3>
-            <button
-              className={classNames(
-                globalStyles.button,
-                styles.blueButton,
-                styles.objectiveButton,
-                styles.smallerButton
-              )}
-              disabled={secondaryPoints.blue[0] !== 0}
-              onClick={() => {
-                scoreSecondary("blue", 0);
-              }}
-            >
-              Any
-            </button>
-            <button
-              className={classNames(
-                globalStyles.button,
-                styles.blueButton,
-                styles.objectiveButton,
-                styles.smallerButton
-              )}
-              disabled={secondaryPoints.blue[1] !== 0}
-              onClick={() => {
-                scoreSecondary("blue", 1);
-              }}
-            >
-              Friendly
-            </button>
-            <button
-              className={classNames(
-                globalStyles.button,
-                styles.blueButton,
-                styles.objectiveButton,
-                styles.smallerButton
-              )}
-              disabled={secondaryPoints.blue[2] !== 0}
-              onClick={() => {
-                scoreSecondary("blue", 2);
-              }}
-            >
-              Contested
-            </button>
-            <button
-              className={classNames(
-                globalStyles.button,
-                styles.blueButton,
-                styles.objectiveButton,
-                styles.smallerButton
-              )}
-              disabled={secondaryPoints.blue[3] !== 0}
-              onClick={() => {
-                scoreSecondary("blue", 3);
-              }}
-            >
-              Enemy
-            </button>
-          </div>
-          <div className={styles.secondaryPlayerContainer}>
-            <h3 className={globalStyles.header3}>Red Player:</h3>
-            <button
-              className={classNames(
-                globalStyles.button,
-                styles.redButton,
-                styles.objectiveButton
-              )}
-              disabled={secondaryPoints.red[0] !== 0}
-              onClick={() => {
-                scoreSecondary("red", 0);
-              }}
-            >
-              Any
-            </button>
-            <button
-              className={classNames(
-                globalStyles.button,
-                styles.redButton,
-                styles.objectiveButton
-              )}
-              disabled={secondaryPoints.red[1] !== 0}
-              onClick={() => {
-                scoreSecondary("red", 1);
-              }}
-            >
-              Friendly
-            </button>
-            <button
-              className={classNames(
-                globalStyles.button,
-                styles.redButton,
-                styles.objectiveButton
-              )}
-              disabled={secondaryPoints.red[2] !== 0}
-              onClick={() => {
-                scoreSecondary("red", 2);
-              }}
-            >
-              Contested
-            </button>
-            <button
-              className={classNames(
-                globalStyles.button,
-                styles.redButton,
-                styles.objectiveButton
-              )}
-              disabled={secondaryPoints.red[3] !== 0}
-              onClick={() => {
-                scoreSecondary("red", 3);
-              }}
-            >
-              Enemy
-            </button>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  function reconMission() {
-    return (
-      <div className={styles.secondaryObjectiveContainer}>
-        <div className={styles.objectiveCard}>
-          <BattleCard card={secondaryObjective} />
-        </div>
-        <div className={styles.secondaryObjectiveButtons}>
-          <div className={styles.secondaryPlayerContainer}>
-            <h3 className={globalStyles.header3}>Blue Player:</h3>
-            <button
-              className={classNames(
-                globalStyles.button,
-                styles.blueButton,
-                styles.objectiveButton
-              )}
-              disabled={secondaryPoints.blue[round - 1] !== 0}
-              onClick={() => {
-                scoreSecondary("blue", round - 1);
-              }}
-            >
-              <div className={styles.objectiveChecked}>
-                {secondaryPoints.blue[round - 1] !== 0 && <BlueToken />}
-                Score Recon Misson this round
-              </div>
-            </button>
-            <h3 className={globalStyles.header3}>Red Player:</h3>
-            <button
-              className={classNames(
-                globalStyles.button,
-                styles.redButton,
-                styles.objectiveButton
-              )}
-              disabled={secondaryPoints.red[round - 1] !== 0}
-              onClick={() => {
-                scoreSecondary("red", round - 1);
-              }}
-            >
-              <div className={styles.objectiveChecked}>
-                {secondaryPoints.red[round - 1] !== 0 && <RedToken />}
-                Score Recon Misson this round
-              </div>
-            </button>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  function markedTargets() {
-    const blueSecondaryPoints = secondaryPoints.blue[0];
-    const redSecondaryPoints = secondaryPoints.red[0];
-
-    return (
-      <div className={styles.secondaryObjectiveContainer}>
-        <div className={styles.objectiveCard}>
-          <BattleCard card={secondaryObjective} />
-
-          {blueSecondaryPoints >= 1 && (
-            <div className={styles.blueMarked1}>
-              <BlueToken />
-            </div>
-          )}
-          {blueSecondaryPoints >= 2 && (
-            <div className={styles.blueMarked2}>
-              <BlueToken />
-            </div>
-          )}
-          {blueSecondaryPoints >= 3 && (
-            <div className={styles.blueMarked3}>
-              <BlueToken />
-            </div>
-          )}
-          {blueSecondaryPoints >= 4 && (
-            <div className={styles.blueMarked4}>
-              <BlueToken />
-            </div>
-          )}
-
-          {redSecondaryPoints >= 1 && (
-            <div className={styles.redMarked1}>
-              <RedToken />
-            </div>
-          )}
-          {redSecondaryPoints >= 2 && (
-            <div className={styles.redMarked2}>
-              <RedToken />
-            </div>
-          )}
-          {redSecondaryPoints >= 3 && (
-            <div className={styles.redMarked3}>
-              <RedToken />
-            </div>
-          )}
-          {redSecondaryPoints >= 4 && (
-            <div className={styles.redMarked4}>
-              <RedToken />
-            </div>
-          )}
-        </div>
-        <div className={styles.secondaryObjectiveButtons}>
-          <div className={styles.secondaryPlayerContainer}>
-            <h3 className={globalStyles.header3}>Blue Player:</h3>
-            <button
-              className={classNames(
-                globalStyles.button,
-                styles.blueButton,
-                styles.objectiveButton
-              )}
-              disabled={blueSecondaryPoints >= 4}
-              onClick={() => {
-                scoreSecondary("blue", 0);
-              }}
-            >
-              <div className={styles.bunkerChecked}>Killed marked target</div>
-            </button>
-            <h3 className={globalStyles.header3}>Red Player:</h3>
-            <button
-              className={classNames(
-                globalStyles.button,
-                styles.redButton,
-                styles.objectiveButton
-              )}
-              disabled={redSecondaryPoints >= 4}
-              onClick={() => {
-                scoreSecondary("red", 0);
-              }}
-            >
-              <div className={styles.bunkerChecked}>Killed marked target</div>
-            </button>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
   function pointTracker() {
     const rounds = new Array(13).fill(0);
-    const players = ["blue", "red"];
+    const players: Players[] = ["blue", "red"];
     return (
       <div className={styles.bigPointTrackerContainer}>
         {players.map((player) => {
@@ -833,15 +388,48 @@ export const Scoreboard = () => {
           />
         );
       case CARDS.DESTROY_ENEMY_BASE:
-        return destroyEnemyBase();
+        return (
+          <DestroyEnemyBase
+            scoreSecondary={scoreSecondary}
+            secondaryObjective={secondaryObjective}
+            secondaryPoints={secondaryPoints}
+          />
+        );
       case CARDS.MARKED_TARGETS:
-        return markedTargets();
+        return (
+          <MarkedTargets
+            scoreSecondary={scoreSecondary}
+            secondaryObjective={secondaryObjective}
+            secondaryPoints={secondaryPoints}
+            round={round}
+          />
+        );
       case CARDS.RECON_MISSION:
-        return reconMission();
+        return (
+          <ReconMission
+            scoreSecondary={scoreSecondary}
+            secondaryObjective={secondaryObjective}
+            secondaryPoints={secondaryPoints}
+            round={round}
+          />
+        );
       case CARDS.SURFACE_SCAN:
-        return surfaceScan();
+        return (
+          <SurfaceScan
+            scoreSecondary={scoreSecondary}
+            secondaryObjective={secondaryObjective}
+            secondaryPoints={secondaryPoints}
+            round={round}
+          />
+        );
       case CARDS.SWEEP_AND_CLEAR:
-        return sweepAndClear();
+        return (
+          <SweepAndClear
+            scoreSecondary={scoreSecondary}
+            secondaryObjective={secondaryObjective}
+            secondaryPoints={secondaryPoints}
+          />
+        );
       default:
         return null;
     }
@@ -859,7 +447,7 @@ export const Scoreboard = () => {
             globalStyles.advantageHeader
           )}
         >
-          Points:
+          Points:{" "}
           <span className={styles.pointOverflowContainer}>
             {bluePoints > 12 && <span>Blue: {bluePoints}</span>}
             {bluePoints > 12 && redPoints > 12 && " – "}

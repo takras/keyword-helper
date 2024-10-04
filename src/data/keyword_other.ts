@@ -6,6 +6,7 @@ export const KeywordsOther: Keyword[] = [
     parents: [],
     name: "About Legion Helper",
     hideFromsearch: true,
+    hideImageShare: true,
     summary:
       "Legion Helper is intended to make it quick to find keywords and concepts from the Star Wars: Legion rulebook and reference, for quick and easy access during play.",
     related_keywords: [],
@@ -16,6 +17,7 @@ export const KeywordsOther: Keyword[] = [
     name: "Skirmish Builder - Quickly Generate skirmish mission.",
     activation: "",
     hideFromsearch: true,
+    hideImageShare: true,
     parents: [],
     related_keywords: [],
     descriptions: [],
@@ -23,8 +25,11 @@ export const KeywordsOther: Keyword[] = [
   {
     keyword: "scoreboard",
     name: "Scoreboard App for Star Wars: Legion",
+    summary:
+      "The mission sheet take up a lot of table real-estate. Use this app to help minimize the footprint, and also help you remember which secondary mission points are scored.",
     activation: "",
     hideFromsearch: true,
+    hideImageShare: true,
     parents: [],
     related_keywords: [],
     descriptions: [],

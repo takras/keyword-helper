@@ -391,6 +391,7 @@ export interface Keyword {
   range?: Range;
   tag?: string;
   hideFromsearch?: boolean;
+  hideImageShare?: boolean;
 }
 
 export interface Description {

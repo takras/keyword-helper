@@ -27,7 +27,7 @@ export const Share = ({ keyword }: { keyword: Keyword }) => {
     setCanShare(navigator.canShare && navigator.canShare(shareData));
   }, [shareData]);
 
-  const getShareImage = () => {
+  const getShareIcon = () => {
     if (!canShare) {
       return null;
     }
@@ -57,6 +57,15 @@ export const Share = ({ keyword }: { keyword: Keyword }) => {
   };
   return (
     <div className={styles.container} id="share">
+      {!keyword.hideImageShare && (
+        <a
+          className={globalStyles.button}
+          href={`/images/keywords/${keyword}.png`}
+          download={true}
+        >
+          Download sharable image
+        </a>
+      )}
       <button
         className={classNames(globalStyles.button, styles.button)}
         onClick={sharePopup}
@@ -65,7 +74,7 @@ export const Share = ({ keyword }: { keyword: Keyword }) => {
           {!canShare ? "Copy sharable link to clipboard" : "Share keyword"}
         </span>
 
-        {getShareImage()}
+        {getShareIcon()}
       </button>
       {copied ? "Link copied" : null}
     </div>

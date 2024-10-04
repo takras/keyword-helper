@@ -27,7 +27,7 @@ import { KeywordsOther } from "./keyword_other";
 import { changelog } from "./changelog";
 
 export const rules: RulesDocument = {
-  helperVersion: "1.1.7",
+  helperVersion: "1.1.8",
   version: "2.6.0",
   validFrom: "2024-07-24T00:00:00Z",
   downloadUrl:
