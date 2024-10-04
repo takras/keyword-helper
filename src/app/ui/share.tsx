@@ -60,7 +60,7 @@ export const Share = ({ keyword }: { keyword: Keyword }) => {
       {!keyword.hideImageShare && (
         <a
           className={globalStyles.button}
-          href={`/images/keywords/${keyword.name}.png`}
+          href={`/images/keywords/${keyword.keyword}.png`}
           download={true}
         >
           Download sharable image
