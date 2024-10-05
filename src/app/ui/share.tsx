@@ -58,12 +58,8 @@ export const Share = ({ keyword }: { keyword: Keyword }) => {
   return (
     <div className={styles.container} id="share">
       {!keyword.hideImageShare && (
-        <a
-          className={globalStyles.button}
-          href={`/images/keywords/${keyword.keyword}.png`}
-          download={true}
-        >
-          Download sharable image
+        <a className={globalStyles.button} href={`/image/${keyword.keyword}`}>
+          Get sharable image
         </a>
       )}
       <button
