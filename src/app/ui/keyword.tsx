@@ -35,7 +35,6 @@ export const KeywordComponent = ({ keyword }: { keyword: string }) => {
                 globalStyles.button,
                 styles.topMenuBackButton
               )}
-              prefetch={true}
               onClick={goBack}
             >
               <Image
@@ -52,7 +51,6 @@ export const KeywordComponent = ({ keyword }: { keyword: string }) => {
                 globalStyles.button,
                 styles.topMenuCloseButton
               )}
-              prefetch={true}
               onClick={() => {
                 close();
               }}

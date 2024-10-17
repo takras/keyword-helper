@@ -33,13 +33,11 @@ export const RedToken = () => {
 };
 
 export const BattleCard = ({ card }: { card?: Card }) => {
-  const [isMinimized, setIsMinimized] = useState(false);
-  if (!card) {
-    return;
-  }
-  let canBeMinimized = true;
+  const isSecondary = card?.id.startsWith("SECONDARY");
+  const [isMinimized, setIsMinimized] = useState(!isSecondary);
 
-  if (card.id.startsWith("SECONDARY")) {
+  let canBeMinimized = true;
+  if (isSecondary) {
     canBeMinimized = false;
   }
 

@@ -8,7 +8,8 @@
   border-radius: var(--border-radius);
   border: var(--border-thin);
   margin-bottom: var(--flex-gap);
-
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .about {

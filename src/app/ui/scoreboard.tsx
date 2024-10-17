@@ -469,6 +469,7 @@ export const Scoreboard = () => {
           </span>
         </h1>{" "}
         {pointTracker()}
+        <h1 className={globalStyles.header2}>Objectives:</h1>
         <div className={styles.objectiveCards}>
           <BattleCard card={primaryObjective} />
           {showSecondaryGoal()}
