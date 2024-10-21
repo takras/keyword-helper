@@ -9,6 +9,28 @@ export const changelog: Keyword[] = [
     descriptions: [
       {
         type: "version",
+        version: "1.1.10",
+        content: [
+          {
+            type: "changelogentry",
+            update: "add",
+            content: "Added button for setup keywords.",
+          },
+          {
+            type: "changelogentry",
+            update: "change",
+            content:
+              "Changed text in keywords that are my own into quotation boxes.",
+          },
+          {
+            type: "changelogentry",
+            update: "remove",
+            content: "Scoreboard app: Removed the BETA flag.",
+          },
+        ],
+      },
+      {
+        type: "version",
         version: "1.1.9",
         content: [
           {

@@ -237,6 +237,7 @@ export const AVAILABLE_KEYWORDS = [
   "repulsor_vehicle",
   "resiliency",
   "restore",
+  "resolve_setup_effecs",
   "retinue",
   "reverse",
   "roll_attack_dice",
@@ -406,6 +407,7 @@ export type DescriptionType = Array<
   | Callout
   | StructuredList
   | Text
+  | Quotation
   | KeywordList
   | RulesExample
   | Reference
@@ -432,6 +434,11 @@ export type StructuredList = {
 
 type Text = {
   type: "text";
+  content: string;
+};
+
+type Quotation = {
+  type: "quotation";
   content: string;
 };
 

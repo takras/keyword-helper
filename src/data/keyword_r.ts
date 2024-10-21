@@ -346,6 +346,70 @@ export const KeywordsR: Keyword[] = [
   },
 
   {
+    keyword: "resolve_setup_effecs",
+    name: "Resolve Setup Effects",
+    parents: ["r"],
+    related_keywords: [],
+    descriptions: [
+      {
+        type: "text",
+        content:
+          "Starting with the blue player, players resolve any abilities and effects that occur during Setup.",
+      },
+      {
+        type: "reference",
+        referenced_keyword: "bounty",
+        showOnlySummary: true,
+      },
+      {
+        type: "reference",
+        referenced_keyword: "cache",
+        showOnlySummary: true,
+      },
+      {
+        type: "reference",
+        referenced_keyword: "covert_ops",
+        showOnlySummary: true,
+      },
+      {
+        type: "reference",
+        referenced_keyword: "complete_the_mission",
+        showOnlySummary: true,
+      },
+      {
+        type: "reference",
+        referenced_keyword: "flawed",
+        showOnlySummary: true,
+      },
+      {
+        type: "reference",
+        referenced_keyword: "field_commander",
+        showOnlySummary: true,
+      },
+      {
+        type: "reference",
+        referenced_keyword: "hunted",
+        showOnlySummary: true,
+      },
+      {
+        type: "reference",
+        referenced_keyword: "loadout",
+        showOnlySummary: true,
+      },
+      {
+        type: "reference",
+        referenced_keyword: "scouting_party_x",
+        showOnlySummary: true,
+      },
+      {
+        type: "reference",
+        referenced_keyword: "transport",
+        showOnlySummary: true,
+      },
+    ],
+  },
+
+  {
     keyword: "retinue",
     name: "Retinue",
     parents: ["r"],

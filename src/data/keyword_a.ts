@@ -958,7 +958,7 @@ export const KeywordsA: Keyword[] = [
     summary: "",
     descriptions: [
       {
-        type: "text",
+        type: "quotation",
         content:
           "Following is a quick list of the attack timing and what keywords apply and when they apply. This list should <strong>not</strong> be used as reference i.e. rule disputes. For that purpose, please see {keyword:Attack} and/or related keyword at the bottom.",
       },

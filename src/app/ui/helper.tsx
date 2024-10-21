@@ -220,7 +220,7 @@ export default function Helper() {
             onClick={() => selectKeyword("scoreboard")}
             prefetch={true}
           >
-            Scoreboard App (Beta!)
+            Scoreboard Companion App
           </Link>
         </div>
         <div className={styles.aboutButtonRow}>
@@ -239,6 +239,14 @@ export default function Helper() {
             prefetch={true}
           >
             Attack Quick Reference
+          </Link>
+          <Link
+            className={styles.button}
+            href={getLink("resolve_setup_effecs")}
+            onClick={() => selectKeyword("resolve_setup_effecs")}
+            prefetch={true}
+          >
+            Setup Keywords to remember
           </Link>
         </div>
         <div className={styles.infoContainer}>

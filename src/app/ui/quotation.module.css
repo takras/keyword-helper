@@ -1,0 +1,42 @@
+.container {
+  border: 1px solid var(--example-border-color);
+  border-radius: 8px;
+  box-shadow: var(--box-shadow);
+  background-color: var(--example-background);
+  color: var(--example-header);
+  margin-bottom: var(--flex-gap);
+
+}
+
+.figure {
+  margin-left: 0;
+}
+
+.blockquote {
+    border:none;
+    font-family:Georgia, "Times New Roman", Times, serif;
+    quotes: "\201C""\201D""\2018""\2019";
+    margin-right: 0;
+}
+
+.blockquote:before,
+.blockquote:after { 
+  font-weight: bold;
+  position: relative;
+  top: 8px;
+  font-size:2rem;
+  color:var(--example-header);
+  line-height: 0;
+}
+
+.blockquote:before { 
+  content: open-quote;
+} 
+
+.blockquote:after { 
+  content: close-quote;
+}
+
+.caption {
+  text-align: end;
+}

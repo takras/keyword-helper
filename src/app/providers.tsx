@@ -4,6 +4,7 @@ import { ThemeProvider } from "next-themes";
 import { createContext, ReactNode, Suspense, useMemo, useReducer } from "react";
 import { AppProgressBar as ProgressBar } from "next-nprogress-bar";
 import { useRouter } from "next/navigation";
+import { AvailableKeywords } from "@/types";
 
 interface Context {
   previousKeyword: string;
@@ -11,7 +12,7 @@ interface Context {
   close: () => void;
   goBack: () => void;
   backButtonKeyword: string;
-  selectKeyword: (keyword: string) => void;
+  selectKeyword: (keyword: AvailableKeywords) => void;
   getLink: (keyword: string) => string;
 }
 
@@ -52,7 +53,7 @@ export function Providers({ children }: Readonly<{ children: ReactNode }>) {
         }
       },
       backButtonKeyword: previousKeyword ?? "",
-      selectKeyword: (keyword: string) => {
+      selectKeyword: (keyword: AvailableKeywords) => {
         sendGTMEvent({
           value: keyword,
         });

@@ -13,6 +13,7 @@ import { Changelog, ChangeLogVersion } from "./changelog";
 import Link from "next/link";
 import styles from "./helper.module.css";
 import classNames from "classnames";
+import { Quotation } from "./quotation";
 
 export const RenderContent = ({
   descriptions,
@@ -162,6 +163,13 @@ export const RenderContent = ({
           <CalloutComponent
             key={getKey(description.type)}
             reference={description.callout_keyword}
+          />
+        );
+      case "quotation":
+        return (
+          <Quotation
+            key={getKey(description.type)}
+            content={description.content}
           />
         );
       case "changelog":

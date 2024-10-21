@@ -210,10 +210,6 @@ export const Scoreboard = () => {
   function selectScreen() {
     return (
       <div className={styles.instructions}>
-        <h3>
-          Caution! This is a BETA version. Please provide feedback if encounter
-          problems or have suggestions.
-        </h3>
         <p>
           When the mission has been built, use this app to keep track of the
           scores.

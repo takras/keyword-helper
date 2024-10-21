@@ -280,62 +280,8 @@ export const KeywordsS: Keyword[] = [
       { type: "reference", referenced_keyword: "declare_terrain" },
       { type: "reference", referenced_keyword: "determine_blue_player" },
       { type: "reference", referenced_keyword: "building_a_mission" },
-      { type: "header", content: "Resolve Setup Effects" },
-      {
-        type: "text",
-        content:
-          "Starting with the blue player, players resolve any abilities and effects that occur during Setup.",
-      },
-      {
-        type: "reference",
-        referenced_keyword: "bounty",
-        showOnlySummary: true,
-      },
-      {
-        type: "reference",
-        referenced_keyword: "cache",
-        showOnlySummary: true,
-      },
-      {
-        type: "reference",
-        referenced_keyword: "covert_ops",
-        showOnlySummary: true,
-      },
-      {
-        type: "reference",
-        referenced_keyword: "complete_the_mission",
-        showOnlySummary: true,
-      },
-      {
-        type: "reference",
-        referenced_keyword: "flawed",
-        showOnlySummary: true,
-      },
-      {
-        type: "reference",
-        referenced_keyword: "field_commander",
-        showOnlySummary: true,
-      },
-      {
-        type: "reference",
-        referenced_keyword: "hunted",
-        showOnlySummary: true,
-      },
-      {
-        type: "reference",
-        referenced_keyword: "loadout",
-        showOnlySummary: true,
-      },
-      {
-        type: "reference",
-        referenced_keyword: "scouting_party_x",
-        showOnlySummary: true,
-      },
-      {
-        type: "reference",
-        referenced_keyword: "transport",
-        showOnlySummary: true,
-      },
+      { type: "reference", referenced_keyword: "resolve_setup_effecs" },
+
       { type: "header", content: "Deploy in Prepared Positions" },
       {
         type: "text",

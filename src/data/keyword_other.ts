@@ -42,7 +42,7 @@ export const KeywordsOther: Keyword[] = [
     related_keywords: [],
     descriptions: [
       {
-        type: "text",
+        type: "quotation",
         content:
           "When I came into the Legion hobby I had a lot of confusion regarding many of the rules. One example was the concept of {keyword:Clambering} which I couldn't find online, it was just on some upgrade cards and my physical rule book. Turned out – that was a concept that had been removed from the rules altogether.",
       },
