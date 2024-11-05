@@ -24,14 +24,16 @@ export const Share = ({ keyword }: { keyword: Keyword }) => {
   }, [keyword]);
 
   useEffect(() => {
-    setCanShare(navigator.canShare && navigator.canShare(shareData));
+    setCanShare(
+      navigator && navigator.canShare && navigator.canShare(shareData)
+    );
   }, [shareData]);
 
   const getShareIcon = () => {
     if (!canShare) {
       return null;
     }
-    if (/(A|a)ndroid/i.test(navigator.userAgent)) {
+    if (/(A|a)ndroid/i.test(navigator && navigator.userAgent)) {
       return (
         <img
           className={styles.icon}
@@ -46,7 +48,7 @@ export const Share = ({ keyword }: { keyword: Keyword }) => {
   };
 
   const sharePopup = () => {
-    if (!canShare) {
+    if (!canShare && navigator) {
       navigator.clipboard.writeText(location.href).then(() => setCopied(true));
       return;
     }
@@ -55,10 +57,27 @@ export const Share = ({ keyword }: { keyword: Keyword }) => {
       .then(() => {})
       .catch(() => {});
   };
+
+  function isInBrowser() {
+    const mqStandAlone = "(display-mode: standalone)";
+
+    if (
+      typeof window !== "undefined" &&
+      window.matchMedia(mqStandAlone).matches
+    ) {
+      return false;
+    }
+    return true;
+  }
+
+  const sharableImageLink = isInBrowser()
+    ? `/images/keywords/${keyword.keyword}.png`
+    : `/image/${keyword.keyword}`;
+
   return (
     <div className={styles.container} id="share">
       {!keyword.hideImageShare && (
-        <a className={globalStyles.button} href={`/image/${keyword.keyword}`}>
+        <a className={globalStyles.button} href={sharableImageLink}>
           Get sharable image
         </a>
       )}

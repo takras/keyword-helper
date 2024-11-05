@@ -6,7 +6,41 @@ export const changelog: Keyword[] = [
     parents: [],
     keyword: "changelog",
     related_keywords: [],
+    hideImageShare: true,
     descriptions: [
+      {
+        type: "version",
+        version: "1.1.11",
+        content: [
+          {
+            type: "changelogentry",
+            update: "add",
+            content: "Added clarification to Bounty keyword.",
+          },
+          {
+            type: "changelogentry",
+            update: "add",
+            content: "Added all 10 Battle Forces details for easy access.",
+          },
+          {
+            type: "changelogentry",
+            update: "change",
+            content:
+              "Changed Silhouette and Line of Sight content in Attack reference to be referenced instead of fully embedded.",
+          },
+          {
+            type: "changelogentry",
+            update: "change",
+            content:
+              "Changed sharable image to behave different in standalone and browser mode.",
+          },
+          {
+            type: "changelogentry",
+            update: "remove",
+            content: "Removed Paypal scripts.",
+          },
+        ],
+      },
       {
         type: "version",
         version: "1.1.10",

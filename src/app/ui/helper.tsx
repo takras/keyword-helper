@@ -275,6 +275,15 @@ export default function Helper() {
       <div className={styles.content}>
         {searchComponent()}
         {catalogButtons()}
+        <CatalogCard
+          key={getKey("battleforces")}
+          catalog={
+            rulesDocument.index.find(
+              (catalog) => catalog.id === "battle_forces"
+            )!
+          }
+          activeCatalog={activeCatalog}
+        />
         {rulesDocument.index
           .filter((dictionary) => dictionary.catalog === "alphabet")
           .map((catalog) => (
@@ -310,17 +319,19 @@ export default function Helper() {
           </Link>
         </div>
         <div id="donate-button-container" className={styles.donate}>
-          <div id="donate-button"></div>
+          <a
+            href="https://www.paypal.com/donate/?hosted_button_id=PCSQHJMWUZSWN"
+            target="_blank"
+          >
+            <img
+              src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif"
+              id="donate-button"
+              style={{ cursor: "pointer" }}
+              title="PayPal - The safer, easier way to pay online!"
+              alt="Donate with PayPal button"
+            />
+          </a>
         </div>
-        <Script id="PayPal">{`if(PayPal) {PayPal.Donation.Button({
-env:'production',
-hosted_button_id:'PCSQHJMWUZSWN',
-image: {
-src:'https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif',
-alt:'Donate with PayPal button',
-title:'PayPal - The safer, easier way to pay online!',
-}
-}).render('#donate-button');}`}</Script>
 
         <a
           href="https://twitter.com/intent/tweet?screen_name=takras&ref_src=twsrc%5Etfw"

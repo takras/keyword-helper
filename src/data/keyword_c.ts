@@ -765,7 +765,7 @@ export const KeywordsC: Keyword[] = [
     activation: "",
     parents: ["c", "units"],
     tag: "Unit Keyword",
-    related_keywords: ["command_phase", "command_cards"],
+    related_keywords: ["command_phase", "command_cards", "interrogate"],
     summary:
       "During the Command Phase, if a player reveals a {rank_commander} or {rank_operative} specific Command Card that belongs to a unit with the Cunning keyword and there would be a tie for priority, treat that Command Card as having one fewer pip. If both players reveal a specific {rank_commander} or {rank_operative} Command Card that belongs to a unit with the Cunning keyword, there is still a tie for priority.",
     descriptions: [

@@ -786,14 +786,20 @@ export const KeywordsA: Keyword[] = [
       {
         type: "reference",
         referenced_keyword: "line_of_sight",
+        showOnlySummary: true,
       },
       {
         type: "reference",
         referenced_keyword: "silhouettes",
+        showOnlySummary: true,
       },
       {
         type: "reference",
         referenced_keyword: "weapons",
+      },
+      {
+        type: "reference",
+        referenced_keyword: "melee",
       },
       {
         type: "reference",
@@ -915,6 +921,7 @@ export const KeywordsA: Keyword[] = [
       {
         type: "reference",
         referenced_keyword: "suffering_wounds",
+        hideHeader: true,
       },
     ],
   },

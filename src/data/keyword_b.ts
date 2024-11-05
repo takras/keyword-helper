@@ -264,7 +264,7 @@ export const KeywordsB: Keyword[] = [
       "affiliations",
       "mercenary",
       "mercenaries",
-      "skirmish",
+      "skirmishes",
       "ranks",
     ],
     descriptions: [
@@ -277,6 +277,86 @@ export const KeywordsB: Keyword[] = [
         type: "text",
         content:
           "Battle Forces provide players with an alternative way to build and field an army. Each Battle Force has its own list of specific units that it is allowed to field, its own rank requirements for both standard and skirmish armies, and its own special rules, which may affect how that Battle Force is built, set up, or plays.",
+      },
+      {
+        type: "header",
+        content: "Available Battle Forces",
+      },
+
+      {
+        type: "header",
+        content: "Galactic Republic",
+      },
+      {
+        type: "reference",
+        referenced_keyword: "bf_501st_legion",
+        showOnlySummary: true,
+      },
+      {
+        type: "reference",
+        referenced_keyword: "bf_wookiee_defenders",
+        showOnlySummary: true,
+      },
+
+      {
+        type: "header",
+        content: "Galactic Empire",
+      },
+      {
+        type: "reference",
+        referenced_keyword: "bf_blizzard_force",
+        showOnlySummary: true,
+      },
+      {
+        type: "reference",
+        referenced_keyword: "bf_imperial_remnant",
+        showOnlySummary: true,
+      },
+      {
+        type: "reference",
+        referenced_keyword: "bf_tempest_force",
+        showOnlySummary: true,
+      },
+
+      {
+        type: "header",
+        content: "Rebel Alliance",
+      },
+      {
+        type: "reference",
+        referenced_keyword: "bf_bright_tree_village",
+        showOnlySummary: true,
+      },
+      {
+        type: "reference",
+        referenced_keyword: "bf_echo_base_defenders",
+        showOnlySummary: true,
+      },
+
+      {
+        type: "header",
+        content: "Separatist Alliance",
+      },
+      {
+        type: "reference",
+        referenced_keyword: "bf_experimental_droids",
+        showOnlySummary: true,
+      },
+
+      {
+        type: "reference",
+        referenced_keyword: "bf_separatist_invasion",
+        showOnlySummary: true,
+      },
+
+      {
+        type: "header",
+        content: "Mercenaries",
+      },
+      {
+        type: "reference",
+        referenced_keyword: "bf_shadow_collective",
+        showOnlySummary: true,
       },
     ],
   },
@@ -534,7 +614,7 @@ export const KeywordsB: Keyword[] = [
     activation: "",
     parents: ["b", "units"],
     tag: "Unit Keyword",
-    related_keywords: ["setup", "unit"],
+    related_keywords: ["setup", "unit", "attack"],
     summary:
       "During Setup, a unit with the Bounty keyword chooses an enemy {rank_operative} or {rank_commander} unit. The chosen unit gains a bounty token. After a friendly unit with the Bounty keyword defeats an enemy unit that has one or more bounty tokens with an attack or effect, the friendly unit’s controlling player scores 1 VP.",
     descriptions: [
@@ -542,6 +622,12 @@ export const KeywordsB: Keyword[] = [
         type: "text",
         content:
           "During Setup, a unit with the Bounty keyword chooses an enemy {rank_operative} or {rank_commander} unit. The chosen unit gains a bounty token. After a friendly unit with the Bounty keyword defeats an enemy unit that has one or more bounty tokens with an attack or effect, the friendly unit’s controlling player scores 1 VP.",
+      },
+      {
+        type: "clarification",
+        content:
+          "If the unit with the {keyword:Bounty} keyword defeats a unit with a {keyword:Bounty} token but is defeated during that attack as a result of some other effect, such as the {keyword:Deflect} keyword, the player will NOT score a VP, as the attacker is defeated during Convert Defense Surges step, prior to resolving the {keyword:Bounty} keyword.",
+        url: "https://forums.atomicmassgames.com/topic/16273-bounty-and-deflect/",
       },
     ],
   },

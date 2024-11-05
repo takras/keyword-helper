@@ -43,6 +43,16 @@ export const AVAILABLE_KEYWORDS = [
   "battlefield",
   "beam_x",
   "beyond_range",
+  "bf_shadow_collective",
+  "bf_separatist_invasion",
+  "bf_501st_legion",
+  "bf_echo_base_defenders",
+  "bf_blizzard_force",
+  "bf_imperial_remnant",
+  "bf_tempest_force",
+  "bf_bright_tree_village",
+  "bf_wookiee_defenders",
+  "bf_experimental_droids",
   "blast",
   "block",
   "bolster_x",
@@ -377,6 +387,7 @@ export interface CatalogEntry {
     | "phases"
     | "concepts"
     | "appendix"
+    | "battle_forces"
     | "changelog";
   name: string;
 }

@@ -368,7 +368,7 @@ export const KeywordsI: Keyword[] = [
     activation: "",
     parents: ["i", "units"],
     tag: "Unit Keyword",
-    related_keywords: ["command_phase", "command_cards"],
+    related_keywords: ["command_phase", "command_cards", "cunning"],
     range: "range_1",
     descriptions: [
       {

@@ -5,9 +5,10 @@ export const About = () => {
   return (
     <div className={styles.container}>
       <p>
-        Legion Helper is intended to make it quick to find keywords and concepts
-        from the Star Wars: Legion rulebook and reference, for quick and easy
-        access during play.
+        Legion Helper is intended to help you enjoy the game in a more efficient
+        way than looking up the rulebook for keywords, and including rules
+        clarification answered by official source, as well as tools to make the
+        game less cluttered.
       </p>
       <p>
         It is heavily inspired by{" "}

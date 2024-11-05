@@ -141,5 +141,6 @@ export const index: CatalogEntry[] = [
     catalog: "units",
     name: "Unit Keyword",
   },
+  { id: "battle_forces", catalog: "battle_forces", name: "Battle Forces" },
   { id: "phases", catalog: "phases", name: "Game Phases" },
 ];
