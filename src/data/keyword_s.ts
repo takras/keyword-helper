@@ -112,6 +112,12 @@ export const KeywordsS: Keyword[] = [
         content:
           "When scoring VP, if a player controls a unit with one or more secret mission tokens and that unit is within enemy territory, that unit’s controlling player scores 1 VP. Then, remove those secret mission tokens from the game.",
       },
+      {
+        type: "clarification",
+        url: "https://forums.atomicmassgames.com/topic/15585-secret-mission/#comment-64319",
+        content:
+          "Each unit with {keyword:Secret Mission} keyword may gain a secret mission token once per game. For example, if one player has both Padmé Amidala and R2-D2, that player could earn up to 2 VP that game using that keyword.",
+      },
     ],
   },
   {

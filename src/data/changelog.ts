@@ -24,6 +24,11 @@ export const changelog: Keyword[] = [
           },
           {
             type: "changelogentry",
+            update: "add",
+            content: "Added clarification for Secret Mission keyword.",
+          },
+          {
+            type: "changelogentry",
             update: "change",
             content:
               "Changed Silhouette and Line of Sight content in Attack reference to be referenced instead of fully embedded.",
