@@ -3,7 +3,7 @@ import { CatalogEntry, Keyword } from "@/types";
 import { useState } from "react";
 import { rules } from "@/data/rules";
 import { KeywordCard } from "./keyword-card";
-import { getKey, sortKeyword, Variables } from "@/utils";
+import { getKey, sortKeyword } from "@/utils";
 import classNames from "classnames";
 import styles from "./catalog-card.module.css";
 

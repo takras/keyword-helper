@@ -29,7 +29,7 @@ export const KeywordsK: Keyword[] = [
           {
             type: "text",
             content:
-              "Some keywords have a numerical value, presented as 'X' in the Keyword Glossary. These keywords stack with themselves and can be any type of keyword. If a unit gains multiple instances of a keyword with a numerical value, add those values together.",
+              "Some keywords have a numerical value, presented as 'X' in the Keyword Glossary. These keywords stack with themselves and can be any type of keyword. If a unit gains multiple instances of a unit keyword with a numerical value, add those values together. If a unit adds multiple instances of a weapon keyword with a numerical value to an attack pool, add those values together",
           },
           {
             type: "text",

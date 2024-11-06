@@ -166,12 +166,12 @@ export const KeywordsU: Keyword[] = [
       {
         type: "text",
         content:
-          "When a miniature added by an Upgrade Card is defeated, the unit it was added to can no longer use or benefit from any rules on the Upgrade Card, with the exception of additional upgrade icons granted to the unit.",
+          "When all miniatures added by an Upgrade Card is defeated, the unit it was added to can no longer use or benefit from any rules on the Upgrade Card, with the exception of additional upgrade icons granted to the unit.",
       },
       {
         type: "text",
         content:
-          "If an Upgrade Card that adds a miniature to a unit is discarded, but the miniature is not defeated, the miniature is not removed, but the unit can no longer use or benefit from any rules on the discarded Upgrade Card.",
+          "If an Upgrade Card that adds a miniature to a unit is discarded, but the miniatures are not defeated, the miniatures are not removed, but the unit can no longer use or benefit from any rules on the discarded Upgrade Card.",
       },
       { type: "header", content: "Dual-Sided Upgrade Cards" },
       {
@@ -202,7 +202,7 @@ export const KeywordsU: Keyword[] = [
       {
         type: "text",
         content:
-          "A unit with the Unstoppable keyword is eligible to activate during the Activation Phase while it has one or fewer facedown order tokens. This unit may never have more than one faceup order token. While this unit is not defeated, when creating its order pool, its controlling player adds an additional order token corresponding to this unit’s rank to their order pool.",
+          "A unit with the Unstoppable keyword is eligible to activate during the Activation Phase while it has one or fewer order tokens. This unit may never have more than one faceup order token. While this unit is not defeated, when creating its order pool, its controlling player adds an additional order token corresponding to this unit’s rank to their order pool.",
       },
     ],
   },

@@ -6,7 +6,7 @@ export const BattleForces: Keyword[] = [
     name: "Bright Tree Village",
     related_keywords: ["battle_forces", "army_building", "skirmishes", "ranks"],
     tag: "Battle Force",
-    parents: ["battle_forces"],
+    parents: ["battle_forces", "concepts"],
     descriptions: [
       {
         type: "header",
@@ -81,7 +81,7 @@ export const BattleForces: Keyword[] = [
       },
       {
         type: "clarification",
-        url: "https://cdn.svc.asmodee.net/production-amgcom/uploads/2023/07/StarWarsLegionBFRulesSheetBrightTreeVillage1.pdf",
+        url: "/documents/StarWarsLegionBFRulesSheetBrightTreeVillage1.pdf",
         content:
           "Based off of the original version, pre Legion 2.6. Click Source to download the PDF with printable cards.",
       },
@@ -92,7 +92,7 @@ export const BattleForces: Keyword[] = [
     name: "501st Legion",
     related_keywords: ["battle_forces", "army_building", "skirmishes", "ranks"],
     tag: "Battle Force",
-    parents: ["battle_forces"],
+    parents: ["battle_forces", "concepts"],
     descriptions: [
       {
         type: "header",
@@ -168,7 +168,7 @@ export const BattleForces: Keyword[] = [
     name: "Separatist Invasion",
     related_keywords: ["battle_forces", "army_building", "skirmishes", "ranks"],
     tag: "Battle Force",
-    parents: ["battle_forces"],
+    parents: ["battle_forces", "concepts"],
     descriptions: [
       {
         type: "header",
@@ -252,7 +252,7 @@ export const BattleForces: Keyword[] = [
     name: "Tempest Force",
     related_keywords: ["battle_forces", "army_building", "skirmishes"],
     tag: "Battle Force",
-    parents: ["battle_forces"],
+    parents: ["battle_forces", "concepts"],
     descriptions: [
       {
         type: "header",
@@ -342,7 +342,7 @@ export const BattleForces: Keyword[] = [
     name: "Blizzard Force",
     related_keywords: ["battle_forces", "army_building", "skirmishes"],
     tag: "Battle Force",
-    parents: ["battle_forces"],
+    parents: ["battle_forces", "concepts"],
     descriptions: [
       {
         type: "header",
@@ -426,7 +426,7 @@ export const BattleForces: Keyword[] = [
       "affiliations",
     ],
     tag: "Battle Force",
-    parents: ["battle_forces"],
+    parents: ["battle_forces", "concepts"],
     descriptions: [
       {
         type: "reference",
@@ -513,7 +513,7 @@ export const BattleForces: Keyword[] = [
     name: "Echo Base Defenders",
     related_keywords: ["battle_forces", "army_building", "skirmishes"],
     tag: "Battle Force",
-    parents: ["battle_forces"],
+    parents: ["battle_forces", "concepts"],
     descriptions: [
       {
         type: "header",
@@ -581,7 +581,7 @@ export const BattleForces: Keyword[] = [
       },
       {
         type: "clarification",
-        url: "https://cdn.svc.asmodee.net/production-amgcom/uploads/2024/07/SWQ_EchoBaseDefenders.pdf",
+        url: "/documents/SWQ_EchoBaseDefenders.pdf",
         content: "Based off of Version: 1.1. Click Source to download the PDF.",
       },
     ],
@@ -592,7 +592,7 @@ export const BattleForces: Keyword[] = [
     name: "Imperial Remnant",
     related_keywords: ["battle_forces", "army_building", "skirmishes"],
     tag: "Battle Force",
-    parents: ["battle_forces"],
+    parents: ["battle_forces", "concepts"],
     summary:
       "An Imperial Remnant Battle Force is part of the Galactic Empire faction.",
     descriptions: [
@@ -678,7 +678,7 @@ export const BattleForces: Keyword[] = [
     name: "Wookiee Defenders",
     related_keywords: ["battle_forces", "army_building", "skirmishes"],
     tag: "Battle Force",
-    parents: ["battle_forces"],
+    parents: ["battle_forces", "concepts"],
     descriptions: [
       {
         type: "header",
@@ -770,7 +770,7 @@ export const BattleForces: Keyword[] = [
     name: "Experimental Droids",
     related_keywords: ["battle_forces", "army_building", "skirmishes"],
     tag: "Battle Force",
-    parents: ["battle_forces"],
+    parents: ["battle_forces", "concepts"],
     descriptions: [
       {
         type: "header",

@@ -111,6 +111,11 @@ export const KeywordsD: Keyword[] = [
       {
         type: "text",
         content:
+          "When a unit with the Deflect keyword uses {keyword:the Guardian X} keyword, before converting any defense surges using the Soresu Mastery keyword, the attacker suffers one wound if at least one of the dice rolled with Guardian X rolled at least one {block_surge} result.",
+      },
+      {
+        type: "text",
+        content:
           "If the Deflect keyword causes the attacking unit to be defeated, the attack continues, and the defender can still suffer wounds.",
       },
       {

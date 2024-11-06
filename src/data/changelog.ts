@@ -10,6 +10,28 @@ export const changelog: Keyword[] = [
     descriptions: [
       {
         type: "version",
+        version: "1.1.12",
+        content: [
+          {
+            type: "changelogentry",
+            update: "add",
+            content: "Added new category for Update Rules.",
+          },
+          {
+            type: "changelogentry",
+            update: "change",
+            content:
+              "Updated keywords according to rules update 2.6.1 november 6, 2024.",
+          },
+          {
+            type: "changelogentry",
+            update: "remove",
+            content: "Removed clarification for Secret Mission keyword.",
+          },
+        ],
+      },
+      {
+        type: "version",
         version: "1.1.11",
         content: [
           {

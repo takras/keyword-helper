@@ -19,6 +19,7 @@ import { useRouter } from "next/navigation";
 import styles from "./helper.module.css";
 import classNames from "classnames";
 import Link from "next/link";
+import { RuleUpdates } from "./rule-updates";
 
 export default function Helper() {
   const [searchFilter, setSearchFilter] = useState<string>("");
@@ -275,6 +276,8 @@ export default function Helper() {
       <div className={styles.content}>
         {searchComponent()}
         {catalogButtons()}
+
+        <RuleUpdates />
         <CatalogCard
           key={getKey("battleforces")}
           catalog={

@@ -22,7 +22,7 @@ export const KeywordsB: Keyword[] = [
       {
         type: "text",
         content:
-          "A trooper unit with the {rank_commander} or {rank_operative} rank benefits from backup if it is at {range_half} and has LOS to the unit leader of a unit that provides backup. A unit must meet the following requirements to provide backup:",
+          "When a friendly trooper unit with the {rank_commander} or {rank_operative} rank is defending against a ranged attack from an attacking unit whose unit leader is beyond {range_2}, the defending unit benefits from backup if it is at {range_half} and has LOS to the unit leader of a friendly unit that provides backup. A unit must meet the following requirements to provide backup",
       },
       {
         type: "structured_list",
@@ -35,7 +35,7 @@ export const KeywordsB: Keyword[] = [
       {
         type: "text",
         content:
-          "When a unit that is benefiting from backup is attacked by a ranged attack and the attacking unit’s unit leader is beyond {range_2} of it, it may cancel up to two {hit} results during the Modify Attack Dice step of the attack sequence.",
+          "A unit benefitting from backup may cancel up to two {hit} results during the Modify Attack Dice step of the attack sequence.",
       },
       {
         type: "clarification",

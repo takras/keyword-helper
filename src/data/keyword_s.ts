@@ -105,18 +105,12 @@ export const KeywordsS: Keyword[] = [
       {
         type: "text",
         content:
-          "Once per game, at the beginning of the Command Phase, if a unit with the Secret Mission keyword is within enemy territory, it gains a secret mission token.",
+          "At the beginning of each Command Phase, if a unit with the Secret Mission keyword is within enemy territory, it gains a secret mission token. A unit may only ever gain one secret mission token per game.",
       },
       {
         type: "text",
         content:
-          "When scoring VP, if a player controls a unit with one or more secret mission tokens and that unit is within enemy territory, that unit’s controlling player scores 1 VP. Then, remove those secret mission tokens from the game.",
-      },
-      {
-        type: "clarification",
-        url: "https://forums.atomicmassgames.com/topic/15585-secret-mission/#comment-64319",
-        content:
-          "Each unit with {keyword:Secret Mission} keyword may gain a secret mission token once per game. For example, if one player has both Padmé Amidala and R2-D2, that player could earn up to 2 VP that game using that keyword.",
+          "When scoring VP, if a player controls 1 or more units that have a Secret Mission token and are within enemy territory, that player may choose to remove those unit's secret mission tokens from the game. That player scores 1 VP for each secret mission token removed in this way.",
       },
     ],
   },
@@ -176,7 +170,7 @@ export const KeywordsS: Keyword[] = [
       {
         type: "text",
         content:
-          "A weapon with a red {self_destruct} icon is a Self-Destruct weapon and can only be used during Self-Destruct attacks. Self-Destruct attacks are ranged attacks even though Self-Destruct weapons are not ranged weapons. A unit can perform a Self-Destruct attack as a free action during its activation if it has at least X wound tokens. Perform an attack using a unit’s Self-Destruct weapon against each unit at {range_1} and in LOS, even if they are engaged. Self-Destruct attacks may not be made by a unit that is embarked on a transport.",
+          "A weapon with a red {self_destruct} icon is a Self-Destruct weapon and can only be used during Self-Destruct attacks. Self-Destruct attacks are ranged attacks even though Self-Destruct weapons are not ranged weapons. A unit can perform a Self-Destruct attack as a free action during its activation if it has at least X wound tokens. Perform an attack using a unit’s Self-Destruct weapon against each unit at {range_1} and in LOS, even if they are engaged.",
       },
       {
         type: "text",
@@ -619,7 +613,7 @@ export const KeywordsS: Keyword[] = [
       {
         type: "text",
         content:
-          "After a unit that has the Steady keyword performs a move action, it may perform a free attack action. During this attack action it may only add ranged weapons to attack pools.",
+          "After a unit that has the Steady keyword performs a move action during its activation, it may perform a free attack action. During this attack action it may only add ranged weapons to attack pools.",
       },
     ],
   },

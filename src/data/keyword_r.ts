@@ -244,7 +244,7 @@ export const KeywordsR: Keyword[] = [
       {
         type: "text",
         content:
-          "After a unit that has the Relentless keyword performs a move action, it may perform a free attack action.",
+          "After a unit that has the Relentless keyword performs a move action during its activation, it may perform a free attack action.",
       },
     ],
   },
@@ -340,7 +340,7 @@ export const KeywordsR: Keyword[] = [
       {
         type: "text",
         content:
-          "Some abilities, such as the {keyword:Treat} and {keyword:Repair} keywords or certain card effects, allow a player to restore miniatures to friendly units. To restore a miniature to a unit, that unit must have had one or more miniatures defeated that round. Choose a miniature that was defeated during the current round and place that miniature on the battlefield in cohesion with its unit leader. Then, give that miniature a number of wound tokens equal to one less than the wound threshold indicated on its Unit Card.",
+          "Some abilities, such as the {keyword:Treat} and {keyword:Repair} keywords or certain card effects, allow a player to restore miniatures to friendly units. To restore a miniature to a unit, that unit must have had one or more miniatures defeated that round. Choose a miniature that was defeated during the current round and place that miniature on the battlefield in cohesion with its unit leader. Then, give that miniature a number of wound tokens equal to one less than the wound threshold indicated on its Upgrade Card or Unit Card.",
       },
     ],
   },

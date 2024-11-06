@@ -195,7 +195,7 @@ export const KeywordsT: Keyword[] = [
       {
         type: "text",
         content:
-          "Difficult terrain restricts but does not completely prevent movement. Craters, ruins, woods, piles of rubble, and swamps are all examples of difficult terrain. Difficult terrain reduces the maximum speed of a unit moving through or into it by 1 to a minimum of 1.",
+          "Difficult terrain restricts but does not completely prevent movement. Craters, ruins, woods, piles of rubble, and swamps are all examples of difficult terrain. Difficult terrain reduces the speed of a unit moving through or into it by 1 to a minimum of 1.",
       },
       {
         type: "text",
@@ -613,12 +613,13 @@ export const KeywordsT: Keyword[] = [
       "issue_order",
       "command_phase",
       "move",
+      "troopers",
     ],
     descriptions: [
       {
         type: "text",
         content:
-          "During Setup, a unit with the Transport keyword may choose a friendly {rank_corps} or {rank_specialist} unit to transport. During the Issue Orders step of the Command Phase of round 1, a unit with the Transport keyword may issue an order to the chosen unit. If the chosen unit is undeployed when the unit with the Transport keyword deploys, after the effect is resolved, the chosen unit deploys by performing a speed-1 move. Measure the start of this move with both prongs of one side of the movement tool touching the base of the unit with the Transport keyword. When the chosen unit deploys in this way, the unit leader of that unit measures the vertical distance changed during that move starting from the unit with the Transport keyword.",
+          "During Setup, a unit with the Transport keyword may choose a friendly {rank_corps} Trooper or {rank_specialist} Trooper unit to transport. During the Issue Orders step of the Command Phase of round 1, a unit with the Transport keyword may issue an order to the chosen unit. If the chosen unit is undeployed when the unit with the Transport keyword deploys, after the effect is resolved, the chosen unit deploys by performing a speed-1 move. Measure the start of this move with both prongs of one side of the movement tool touching the base of the unit with the Transport keyword. When the chosen unit deploys in this way, the unit leader of that unit measures the vertical distance changed during that move starting from the unit with the Transport keyword.",
       },
     ],
   },

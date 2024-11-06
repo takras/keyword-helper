@@ -26,7 +26,7 @@ export const interpolateString = (
       return iconName;
     })
     .replace(/(\{keyword:).+?\}/g, (a: string) => {
-      const word = a.split(":")[1].split("}")[0];
+      const word = a.replace("{keyword:", "").split("}")[0];
       return `<span className=${styles.inlineKeyword}>${word}</span>`;
     });
 

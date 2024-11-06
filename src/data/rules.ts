@@ -28,11 +28,10 @@ import { changelog } from "./changelog";
 import { BattleForces } from "./battle_forces";
 
 export const rules: RulesDocument = {
-  helperVersion: "1.1.11",
-  version: "2.6.0",
-  validFrom: "2024-07-24T00:00:00Z",
-  downloadUrl:
-    "https://cdn.svc.asmodee.net/production-amgcom/uploads/2024/07/SWQ_Rulebook_2.6.0-1.pdf",
+  helperVersion: "1.1.12",
+  version: "2.6.1",
+  validFrom: "2024-11-14T00:00:00Z",
+  downloadUrl: "/documents/SWQ_Rulebook_2.6.1 11-1.pdf",
   documentUrl: "https://www.atomicmassgames.com/swlegiondocs/",
   discussionUrl:
     "https://forums.atomicmassgames.com/forum/165-star-wars-legion-rules-questions/",

@@ -7,12 +7,12 @@ export const KeywordsM: Keyword[] = [
     activation: "",
     parents: ["m", "units"],
     tag: "Unit Keyword",
-    related_keywords: ["melee", "pierce_x"],
+    related_keywords: ["melee", "pierce_x", "immune"],
     descriptions: [
       {
         type: "text",
         content:
-          "While a unit with the Makashi Mastery keyword performs a melee attack, during the Choose Weapons and Gather Dice step, it can reduce the {keyword:Pierce X} value of a weapon in the attack pool by 1. If it does, the defender cannot use the {keyword:Immune: Pierce} and/or {keyword:Impervious} keywords during this attack.",
+          "While a unit with the Makashi Mastery keyword performs a melee attack, during the Choose Weapons and Gather Dice step, it can reduce the {keyword:Pierce X} value of a weapon in the attack pool by 1. If it does, the defender cannot use the {keyword:Immune: Melee Pierce}, {keyword:Immune: Pierce} and/or {keyword:Impervious} keywords during this attack.",
       },
     ],
   },
