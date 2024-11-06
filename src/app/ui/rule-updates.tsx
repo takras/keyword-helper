@@ -33,7 +33,7 @@ export const RuleUpdates = () => {
         className={classNames(styles.button, isExpanded ? styles.active : null)}
         onClick={() => setIsExpanded((current) => !current)}
       >
-        Updated Rules from 2.6.0 to 2.6.1
+        Updated Rules in 2.6.1
       </button>
       {isExpanded && (
         <div className={styles.keywordsContainer}>

@@ -27,11 +27,13 @@ export const interpolateString = (
     })
     .replace(/(\{keyword:).+?\}/g, (a: string) => {
       const word = a.replace("{keyword:", "").split("}")[0];
-      return `<span className=${styles.inlineKeyword}>${word}</span>`;
+      return `<span className="${styles.inlineKeyword}">${word}</span>`;
     });
 
   return HTMLReactParser(
-    `<span key="${key}" className=${className}>${interpolated}</span>`
+    `<span key="${key}" ${
+      className ? `className="${className}"` : ""
+    }>${interpolated}</span>`
   );
 };
 

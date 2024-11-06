@@ -21,7 +21,7 @@ export const changelog: Keyword[] = [
             type: "changelogentry",
             update: "change",
             content:
-              "Updated keywords according to rules update 2.6.1 november 6, 2024.",
+              "Updated keywords according to rules update 2.6.1 november 6, 2024. There really are no game changing mechanism with exception of Transport being limited to Trooper units. Other than that it's clarification and update to accomodate Riot Troopers multiple-model upgrade card, that's why I added it now already than waiting for the 14th.",
           },
           {
             type: "changelogentry",
