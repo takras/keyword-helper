@@ -31,7 +31,8 @@ export const rules: RulesDocument = {
   helperVersion: "1.1.12",
   version: "2.6.1",
   validFrom: "2024-11-14T00:00:00Z",
-  downloadUrl: "/documents/SWQ_Rulebook_2.6.1 11-1.pdf",
+  downloadUrl:
+    "https://drive.google.com/uc?export=download&id=13e-eKDjn9oeas-cE4qrR59zQvgFGh0th",
   documentUrl: "https://www.atomicmassgames.com/swlegiondocs/",
   discussionUrl:
     "https://forums.atomicmassgames.com/forum/165-star-wars-legion-rules-questions/",
