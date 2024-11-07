@@ -75,6 +75,45 @@
   --image-border: none;
   --image-shadow: none;
 }
+[data-theme='dark'] {
+  html {
+    color-scheme: dark; 
+  }
+  --outline-color: rgb(255, 0, 0);
+
+  --background-color: #282828;
+  --changelog-add-color: #6dd780;
+  --changelog-remove-color: #91302B;
+  --changelog-change-color: #ffffff;
+  --changelog-background: #535554;
+
+  --example-border-color: #daba7b;
+  --example-background: #535554;
+  --example-color: #fff;
+  --example-header: #F1A021;
+  
+  --sharebutton-color: #535554;
+  --button-color: #000;
+  --button-border-color: #765e35;
+  --button-background-color: #daba7b;
+
+  --playerButtonColor: #fff;
+
+  --image-border: 2px solid #daba7b;
+  --image-shadow: 0px 0px 6px #daba7b;
+
+  --invert-icon-color: 1;
+  --invert-icon-color-callout: 1;
+  --invert-icon-button-color: 0;
+
+  --dark-mode-toggle-background: #26416d;
+  --dark-mode-toggle-color: #F1A021;
+
+  --box-shadow: 0 4px 8px 0 rgb(255 188 116 / 17%), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  scrollbar-color: #1e1e1e;
+
+}
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -94,46 +133,4 @@ body {
 a {
   color: var(--example-header);
   text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  [data-theme='dark'] {
-    html {
-      color-scheme: dark; 
-    }
-    --outline-color: rgb(255, 0, 0);
-
-    --background-color: #282828;
-    --changelog-add-color: #6dd780;
-    --changelog-remove-color: #91302B;
-    --changelog-change-color: #ffffff;
-    --changelog-background: #535554;
-  
-    --example-border-color: #daba7b;
-    --example-background: #535554;
-    --example-color: #fff;
-    --example-header: #F1A021;
-    
-    --sharebutton-color: #535554;
-    --button-color: #000;
-    --button-border-color: #765e35;
-    --button-background-color: #daba7b;
-
-    --playerButtonColor: #fff;
-
-    --image-border: 2px solid #daba7b;
-    --image-shadow: 0px 0px 6px #daba7b;
-
-    --invert-icon-color: 1;
-    --invert-icon-color-callout: 1;
-    --invert-icon-button-color: 0;
-
-    --dark-mode-toggle-background: #26416d;
-    --dark-mode-toggle-color: #F1A021;
-
-    --box-shadow: 0 4px 8px 0 rgb(255 188 116 / 17%), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
-    scrollbar-color: #1e1e1e;
-
-  }
 }
