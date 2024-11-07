@@ -7,7 +7,7 @@ export const Variables = {
   title: "Legion Helper",
   url: "https://legion.takras.net",
   description:
-    "Keyword helper for use with the miniatures game Star Wars: Legion",
+    "Legion Helper is a tool for quick lookup on keywords, game concepts and more, including Scoring Companion, Skirmish Generator and quick reference for setup and attacks.",
 };
 
 const getIconPath = (fileName: string, title?: string) => {
