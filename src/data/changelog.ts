@@ -10,6 +10,23 @@ export const changelog: Keyword[] = [
     descriptions: [
       {
         type: "version",
+        version: "1.1.13",
+        content: [
+          {
+            type: "changelogentry",
+            update: "change",
+            content: "Changes to Dark Mode. Should be more compatible now.",
+          },
+          {
+            type: "changelogentry",
+            update: "change",
+            content:
+              "Updated all keyword sharing images to 2.6.1 and dark mode.",
+          },
+        ],
+      },
+      {
+        type: "version",
         version: "1.1.12",
         content: [
           {
