@@ -1,8 +1,17 @@
+import { useSearchParams } from "next/navigation";
 import styles from "./toggle-dark-mode.module.css";
 import { useTheme } from "next-themes";
+import { useEffect } from "react";
 
 export const ToggleDarkMode = () => {
   const { theme, setTheme } = useTheme();
+  const params = useSearchParams();
+
+  useEffect(() => {
+    if (params.get("theme") === "dark") {
+      setTheme("dark");
+    }
+  }, []);
 
   function toggleTheme() {
     if (theme === "light") {
