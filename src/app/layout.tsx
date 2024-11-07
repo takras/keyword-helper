@@ -53,7 +53,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={styles.html} suppressHydrationWarning>
-      <Script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" />
       <GoogleTagManager gtmId="GTM-W7J477VD" />
       <GoogleTagManager gtmId="G-148T6XV7YW" />
       <meta name="viewport" content="width=device-width" />
