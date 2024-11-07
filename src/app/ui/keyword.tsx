@@ -13,6 +13,7 @@ import { SkirmishGenerator } from "./skirmish-generator";
 import globalStyles from "./helper.module.css";
 import styles from "./keyword.module.css";
 import { Scoreboard } from "./scoreboard";
+import { ToggleDarkMode } from "./toggle-dark-mode";
 
 export const KeywordComponent = ({ keyword }: { keyword: string }) => {
   const { close, getLink, previousKeyword, goBack } =
@@ -75,6 +76,9 @@ export const KeywordComponent = ({ keyword }: { keyword: string }) => {
         selectedKeyword.keyword !== "about" &&
         selectedKeyword.keyword !== "skirmish" && (
           <div className={styles.container} id="keyword">
+            <div className={styles.darkModeToggle}>
+              <ToggleDarkMode />
+            </div>
             <h2 className={globalStyles.header2}>
               {selectedKeyword.name}{" "}
               {selectedKeyword.tag && `(${selectedKeyword.tag})`}
