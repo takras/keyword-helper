@@ -76,7 +76,7 @@ export const KeywordComponent = ({ keyword }: { keyword: string }) => {
         selectedKeyword.keyword !== "about" &&
         selectedKeyword.keyword !== "skirmish" && (
           <div className={styles.container} id="keyword">
-            <div className={styles.darkModeToggle}>
+            <div id="darkModeToggle" className={styles.darkModeToggle}>
               <ToggleDarkMode />
             </div>
             <h2 className={globalStyles.header2}>

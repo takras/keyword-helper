@@ -14,6 +14,7 @@
   }
 }
 
+#darkModeToggle,
 .darkModeToggle {
   display: flex;
   justify-content: flex-end;
