@@ -159,6 +159,11 @@ export default function Page() {
             </button>
             <br />
             <p>
+              <strong>NOTE:</strong> This tool uses your browser to generate the
+              PDF. It will download all images and process everything in your
+              browser.
+            </p>
+            <p>
               This may take a LONG time, depending on how many cards you want to
               print. Try limiting the number of cards per time you press
               download, if it does not work.
