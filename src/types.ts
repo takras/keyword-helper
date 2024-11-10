@@ -339,6 +339,7 @@ type Range =
 export interface RulesDocument {
   version: string;
   helperVersion: string;
+  cardsVersion: string;
   validFrom: string;
   downloadUrl: string;
   documentUrl: string;
