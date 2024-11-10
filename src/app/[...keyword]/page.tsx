@@ -41,7 +41,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       ],
       title: enriched?.name,
       url: `${Variables.url}/${enriched?.keyword}`,
-      description: summary || undefined,
+      description: summary ?? undefined,
     },
     twitter: {
       card: "summary",
@@ -52,7 +52,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
           ? "/images/legionhelper.svg"
           : `/images/keywords/${enriched?.keyword}.png`,
       ],
-      description: summary || undefined,
+      description: summary ?? undefined,
     },
   };
 }

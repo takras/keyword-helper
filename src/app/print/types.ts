@@ -1,6 +1,10 @@
-interface Card {
-  faction: "gar" | "cis" | "rebel" | "empire" | "merc";
+interface Card extends BaseCard {
+  amount: number;
+  id: number;
+}
+
+interface BaseCard {
+  faction: "GAR" | "CIS" | "REBEL" | "EMPIRE" | "MERCENARY";
   name: string;
   filename: string;
-  amount: number;
 }

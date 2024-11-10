@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import { Variables } from "@/utils";
 import { GoogleTagManager } from "@next/third-parties/google";
 import { Providers } from "./providers";

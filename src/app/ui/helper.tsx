@@ -1,5 +1,4 @@
 "use client";
-import Script from "next/script";
 import Image from "next/image";
 import {
   ChangeEvent,
@@ -16,10 +15,10 @@ import { sortKeyword } from "@/utils";
 import { ToggleDarkMode } from "./toggle-dark-mode";
 import { KeywordContext } from "../providers";
 import { useRouter } from "next/navigation";
+import { RuleUpdates } from "./rule-updates";
 import styles from "./helper.module.css";
 import classNames from "classnames";
 import Link from "next/link";
-import { RuleUpdates } from "./rule-updates";
 
 export default function Helper() {
   const [searchFilter, setSearchFilter] = useState<string>("");
