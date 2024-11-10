@@ -79,16 +79,7 @@
   margin-bottom: var(--flex-gap);
 }
 
-.aboutButtonRow {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--flex-gap);
-  justify-content: center;
-  flex-direction: row;
-}
-
 .versionInfo {
-  padding-top: 10px;
   display: block;
 }
 
@@ -246,6 +237,17 @@
   flex-direction: column;
   align-items: center;
   padding-bottom: 20px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-inline-start: 0;
+  .button {
+    min-width: min(400px, 100%);
+    max-width: 600px;
+  }
 }
 
 .button {

@@ -2,6 +2,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: var(--background-color);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  border: var(--border-thin);
+  margin-bottom: var(--flex-gap);
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 60px;
 }
 
 .loadingContainer {
@@ -14,9 +23,23 @@
 
 .select {
   display: block;
+  font-size: x-large;
 }
 
 .numberInput {
   width: 30px;
   margin-right: 10px;
+}
+
+.downloadContainer {
+  margin-top: 20px;
+  padding: 20px;
+  border: var(--border-thin);
+  border-radius: var(--border-radius);
+}
+
+.download {
+  margin-top: 20px;
+  font-size: x-large;
+  padding: var(--flex-gap);
 }

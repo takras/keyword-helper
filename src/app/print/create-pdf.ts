@@ -159,7 +159,7 @@ export async function createPdf({ selection, printStyle }: Props) {
 
   pdfDoc.setAuthor("Legion Helper legion.takras.net");
   pdfDoc.setCreationDate(new Date());
-  pdfDoc.setTitle("Legion Helper");
+  pdfDoc.setTitle("PDF by Legion Helper");
   pdfDoc.setProducer("https://legion.takras.net");
   pdfDoc.setSubject(printStyle);
   return pdfDoc.saveAsBase64({ dataUri: true });

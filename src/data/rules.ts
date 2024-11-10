@@ -28,7 +28,7 @@ import { changelog } from "./changelog";
 import { BattleForces } from "./battle_forces";
 
 export const rules: RulesDocument = {
-  helperVersion: "1.1.13",
+  helperVersion: "1.2.0",
   cardsVersion: "1.1",
   version: "2.6.1",
   validFrom: "2024-11-14T00:00:00Z",

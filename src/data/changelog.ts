@@ -10,6 +10,24 @@ export const changelog: Keyword[] = [
     descriptions: [
       {
         type: "version",
+        version: "1.2.0",
+        content: [
+          {
+            type: "changelogentry",
+            update: "add",
+            content:
+              "Added a tool to help with the printing of cards. Check it out and please give feedback!",
+          },
+          {
+            type: "changelogentry",
+            update: "change",
+            content:
+              "Updated Legion Helper to 1.2.0 in light of the new Print feature!",
+          },
+        ],
+      },
+      {
+        type: "version",
         version: "1.1.13",
         content: [
           {

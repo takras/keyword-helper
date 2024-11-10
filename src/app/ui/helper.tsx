@@ -22,6 +22,7 @@ import Link from "next/link";
 
 export default function Helper() {
   const [searchFilter, setSearchFilter] = useState<string>("");
+  const [isShowTools, setIsShowTools] = useState(false);
   const { selectKeyword, getLink } = useContext(KeywordContext);
   const router = useRouter();
 
@@ -78,16 +79,10 @@ export default function Helper() {
         const keys = keyword.descriptions.filter((description) => {
           switch (description.type) {
             case "header":
-              //case "text":
-              //case "structured_list":
               if (description && typeof description.content === "string") {
                 return search.test(description.content.toLowerCase());
               }
               return false;
-            //case "reference":
-            //return search.test(description.referenced_keyword.toLowerCase());
-            //case "keyword_list":
-            //return search.test(description.content.join().toLowerCase());
             default:
               return false;
           }
@@ -193,7 +188,44 @@ export default function Helper() {
         />
       </div>
       <div className={styles.aboutContainer}>
-        <div className={styles.changelogButton}>
+        <div className={styles.infoContainer}>
+          <div className={styles.versionInfo}>
+            Current version of Legion Helper:{" "}
+            <Link
+              className={classNames(styles.version, styles.button)}
+              href={getLink("changelog")}
+              onClick={() => selectKeyword("changelog")}
+              prefetch={true}
+            >
+              {rulesDocument.helperVersion}
+            </Link>
+          </div>
+          <div className={styles.versionInfo}>
+            Current version of the rules reference updated:{" "}
+            <span className={styles.version}>{rulesDocument.version}</span>{" "}
+            valid from{" "}
+            <span className={styles.date}>
+              {new Date(rulesDocument.validFrom).toLocaleDateString()}.
+            </span>
+          </div>
+        </div>
+      </div>
+      <section className={styles.aboutContainer}>
+        {/*<div>Tools</div>
+        <input
+          type="checkbox"
+          id="menu-toggle"
+          checked={isShowTools}
+          onChange={() => setIsShowTools((current) => !current)}
+        />
+        <label
+          className={styles.menuToggle}
+          htmlFor="menu-toggle"
+          aria-label="Toogle tools menu"
+        >
+          <div className={styles.menuButton} />
+        </label>*/}
+        <ul className={styles.menu}>
           <Link
             className={styles.button}
             href={getLink("coming_from_pre_2024")}
@@ -202,8 +234,14 @@ export default function Helper() {
           >
             What&apos;s new in Legion 2024 v2.6.0?
           </Link>
-        </div>
-        <div className={styles.changelogButton}>
+          <Link
+            className={styles.button}
+            href={getLink("print")}
+            onClick={() => selectKeyword("print")}
+            prefetch={true}
+          >
+            Helper Tool to print new unit cards
+          </Link>
           <Link
             className={styles.button}
             href={getLink("skirmish")}
@@ -212,8 +250,6 @@ export default function Helper() {
           >
             Skirmish Mission Generator
           </Link>
-        </div>
-        <div className={styles.changelogButton}>
           <Link
             className={styles.button}
             href={getLink("scoreboard")}
@@ -222,8 +258,6 @@ export default function Helper() {
           >
             Scoreboard Companion App
           </Link>
-        </div>
-        <div className={styles.aboutButtonRow}>
           <Link
             className={styles.button}
             href={getLink("about")}
@@ -248,29 +282,8 @@ export default function Helper() {
           >
             Setup Keywords to remember
           </Link>
-        </div>
-        <div className={styles.infoContainer}>
-          <div className={styles.versionInfo}>
-            Current version of Legion Helper:{" "}
-            <Link
-              className={classNames(styles.version, styles.button)}
-              href={getLink("changelog")}
-              onClick={() => selectKeyword("changelog")}
-              prefetch={true}
-            >
-              {rulesDocument.helperVersion}
-            </Link>
-          </div>
-          <div className={styles.versionInfo}>
-            Current version of the rules reference updated:{" "}
-            <span className={styles.version}>{rulesDocument.version}</span>{" "}
-            valid from{" "}
-            <span className={styles.date}>
-              {new Date(rulesDocument.validFrom).toLocaleDateString()}.
-            </span>
-          </div>
-        </div>
-      </div>
+        </ul>
+      </section>
 
       <div className={styles.content}>
         {searchComponent()}
