@@ -13,17 +13,6 @@ export const KeywordsOther: Keyword[] = [
     descriptions: [],
   },
   {
-    keyword: "print",
-    parents: [],
-    name: "Generate Unit Card PDFs",
-    hideFromsearch: true,
-    hideImageShare: true,
-    summary:
-      "A tool to make it very simple to print exactly those updated unit cards that YOU need.",
-    related_keywords: [],
-    descriptions: [],
-  },
-  {
     keyword: "skirmish",
     name: "Skirmish Builder - Quickly Generate skirmish mission.",
     activation: "",

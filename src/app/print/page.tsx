@@ -2,8 +2,10 @@
 import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { createPdf, PrintStyle, PrintStyles } from "./create-pdf";
 import { cards, Factions } from "./cards";
-import styles from "./page.module.css";
 import { TopMenu } from "../ui/top-menu";
+import { Variables } from "@/utils";
+import { Metadata } from "next";
+import styles from "./page.module.css";
 
 const FILENAME = "legion-helper-unit-cards.pdf";
 

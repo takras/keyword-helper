@@ -237,7 +237,7 @@ export default function Helper() {
           <Link
             className={styles.button}
             href={getLink("print")}
-            onClick={() => selectKeyword("print")}
+            onClick={() => "print"}
             prefetch={true}
           >
             Helper Tool to print new unit cards
