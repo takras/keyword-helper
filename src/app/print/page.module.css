@@ -21,6 +21,12 @@
   flex-direction: column;
 }
 
+.loadingImage {
+  object-fit: cover;
+  height: 60px;
+  filter: invert(1) sepia(1); 
+}
+
 .select {
   display: block;
   font-size: x-large;
@@ -29,6 +35,7 @@
 .numberInput {
   width: 30px;
   margin-right: 10px;
+  margin-left: 10px;
 }
 
 .downloadContainer {

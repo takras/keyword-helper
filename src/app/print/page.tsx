@@ -3,8 +3,8 @@ import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { createPdf, PrintStyle, PrintStyles } from "./create-pdf";
 import { cards, Factions } from "./cards";
 import { TopMenu } from "../ui/top-menu";
-import { Variables } from "@/utils";
-import { Metadata } from "next";
+import { rules } from "@/data/rules";
+import Image from "next/image";
 import styles from "./page.module.css";
 
 const FILENAME = "legion-helper-unit-cards.pdf";
@@ -15,7 +15,7 @@ const PrintStyleFriendlyName = {
   frontOnly: "Only print Front images",
 };
 
-export default function Page() {
+export default function Print() {
   const [loading, setLoading] = useState(false);
   async function download() {
     if (!selection) {
@@ -78,6 +78,7 @@ export default function Page() {
   return (
     <>
       <TopMenu />
+      <link rel="preload" href="/images/loading.gif" as="image" />
       <div className={styles.container}>
         <div>
           <p>
@@ -122,7 +123,7 @@ export default function Page() {
                   .map((card) => {
                     const id = `${card.faction}_${card.filename}`;
                     return (
-                      <div key={id}>
+                      <div key={id} className={styles.unit}>
                         <input
                           className={styles.numberInput}
                           name={id}
@@ -141,7 +142,10 @@ export default function Page() {
           })}
           <hr />
           <div className={styles.downloadContainer}>
+            <p>Current version of cards: {rules.cardsVersion}</p>
+            <label htmlFor="print-type">Choose how to layout the cards:</label>
             <select
+              id="print-type"
               className={styles.select}
               defaultValue={printStyle}
               onChange={(e) =>
@@ -156,9 +160,33 @@ export default function Page() {
                 );
               })}
             </select>
-            <button type="submit" className={styles.download}>
-              Download
-            </button>
+            {loading && (
+              <>
+                <p>
+                  Generating PDF. This occurs in your browser. It might appear
+                  to be frozen, depending how fast computer you have and how
+                  many cards you are trying to generate.
+                </p>
+                <div className={styles.loadingContainer}>
+                  <Image
+                    src="/images/loading.gif"
+                    width={150}
+                    height={150}
+                    alt="Loading"
+                    className={styles.loadingImage}
+                  />
+                </div>
+              </>
+            )}
+            {!loading && (
+              <button
+                type="submit"
+                className={styles.download}
+                disabled={loading}
+              >
+                Download
+              </button>
+            )}
             <br />
             <p>
               <strong>NOTE:</strong> This tool uses your browser to generate the
@@ -172,16 +200,6 @@ export default function Page() {
             </p>
           </div>
         </form>
-        {loading && (
-          <div className={styles.loadingContainer}>
-            <p>
-              Generating PDF. This occurs in your browser. It might appear to be
-              frozen, depending how fast computer you have and how many cards
-              you are trying to generate.
-            </p>
-            <progress />
-          </div>
-        )}
       </div>
     </>
   );

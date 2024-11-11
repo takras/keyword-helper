@@ -240,7 +240,7 @@ export default function Helper() {
             onClick={() => "print"}
             prefetch={true}
           >
-            Helper Tool to print new unit cards
+            Print Unit Cards
           </Link>
           <Link
             className={styles.button}

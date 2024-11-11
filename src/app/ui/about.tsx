@@ -11,16 +11,9 @@ export const About = () => {
         game less cluttered.
       </p>
       <p>
-        It is heavily inspired by{" "}
-        <a
-          className={globalStyles.externalLink}
-          href="https://legionquickguide.com/"
-          target="_blank"
-        >
-          Legion Quick Guide by The Fifth Trooper
-        </a>
-        {""}, and I liked the easy access of the keywords, but felt it missed
-        quite a few functions.{" "}
+        It is heavily inspired by Legion Quick Guide by The Fifth Trooper , and
+        I liked the easy access of the keywords, but felt it missed quite a few
+        functions.
       </p>
       <p>
         I was under the assumption that QG was going down together with Legion
@@ -28,7 +21,6 @@ export const About = () => {
         with an alternate solution. This assumption was proven false, however.
       </p>
       <p>
-        {" "}
         I&apos;ve spent hours upon hours on making this site from scratch and
         converting the rules to a searchable format. Everything is either taken
         from the rulebook or written myself. I hope it will help your gaming
@@ -44,14 +36,7 @@ export const About = () => {
         >
           Atomic Mass Games
         </a>{" "}
-        nor with{" "}
-        <a
-          href="https://thefifthtrooper.com/"
-          target="_blank"
-          className={globalStyles.externalLink}
-        >
-          The Fifth Trooper.
-        </a>
+        nor with The Fifth Trooper.
       </p>
       <h3>How to use</h3>
       <p>
