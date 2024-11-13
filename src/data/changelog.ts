@@ -10,6 +10,22 @@ export const changelog: Keyword[] = [
     descriptions: [
       {
         type: "version",
+        version: "1.2.1",
+        content: [
+          {
+            type: "changelogentry",
+            update: "add",
+            content: "Added experimental feature in Print Cards for bleed edge",
+          },
+          {
+            type: "changelogentry",
+            update: "add",
+            content: "Added crop lines on Print Cards.",
+          },
+        ],
+      },
+      {
+        type: "version",
         version: "1.2.0",
         content: [
           {

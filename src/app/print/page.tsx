@@ -17,6 +17,7 @@ const PrintStyleFriendlyName = {
 
 export default function Print() {
   const [loading, setLoading] = useState(false);
+
   async function download() {
     if (!selection) {
       return null;
@@ -30,6 +31,7 @@ export default function Print() {
     const pdf = await createPdf({
       selection: filteredSelection,
       printStyle,
+      enableBleed,
     })
       .then((data) => {
         return data;
@@ -50,6 +52,7 @@ export default function Print() {
 
   const [selection, setSelection] = useState<Card[]>();
   const [printStyle, setPrintStyle] = useState<PrintStyle>("fullSamePage");
+  const [enableBleed, setEnableBleed] = useState(false);
 
   useEffect(() => {
     // Load here to avoid async IDs with ssr and frontend rendering.
@@ -81,6 +84,11 @@ export default function Print() {
       <link rel="preload" href="/images/loading.gif" as="image" />
       <div className={styles.container}>
         <div>
+          <h2>
+            <strong>NOTE:</strong> There appears to be a limitation in iOS
+            devices to download these files. This tool was intended for a
+            desktop environment and should work there.
+          </h2>
           <p>
             Whenever there is a new release of updated unit cards, it is lovely
             when AMG releases new PDFs for us to print for free.
@@ -143,6 +151,17 @@ export default function Print() {
           <hr />
           <div className={styles.downloadContainer}>
             <p>Current version of cards: {rules.cardsVersion}</p>
+            <div>
+              <label htmlFor="bleedCheckbox">
+                Enable Bleed (Experimental. eg Ewoks not supported)
+              </label>
+              <input
+                id="bleedCheckbox"
+                type="checkbox"
+                checked={enableBleed}
+                onChange={() => setEnableBleed((current) => !current)}
+              />
+            </div>
             <label htmlFor="print-type">Choose how to layout the cards:</label>
             <select
               id="print-type"
@@ -160,6 +179,7 @@ export default function Print() {
                 );
               })}
             </select>
+
             {loading && (
               <>
                 <p>
@@ -187,6 +207,14 @@ export default function Print() {
                 Download
               </button>
             )}
+            <a
+              href="foobar"
+              style={{ display: "none" }}
+              target="_blank"
+              id="downloadAnchor"
+            >
+              &nbsp;
+            </a>
             <br />
             <p>
               <strong>NOTE:</strong> This tool uses your browser to generate the

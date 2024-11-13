@@ -27,7 +27,7 @@ export const About = () => {
         experience.
       </p>
       <p>
-        This is a fan page by <a href="mailto:takras@takras.net">Takras</a> and
+        This is a fan page by <a href="mailto:legion@takras.net">Takras</a> and
         not affiliated with{" "}
         <a
           href="https://www.atomicmassgames.com/"
