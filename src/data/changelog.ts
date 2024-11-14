@@ -10,6 +10,24 @@ export const changelog: Keyword[] = [
     descriptions: [
       {
         type: "version",
+        version: "1.2.2",
+        content: [
+          {
+            type: "changelogentry",
+            update: "add",
+            content:
+              "Added bleed edges to Ewok affiliation in Print Unit cards page.",
+          },
+          {
+            type: "changelogentry",
+            update: "change",
+            content:
+              "Changed Ewok faction to be Mercenary in Print Unit cards page.",
+          },
+        ],
+      },
+      {
+        type: "version",
         version: "1.2.1",
         content: [
           {

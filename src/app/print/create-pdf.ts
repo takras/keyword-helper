@@ -10,6 +10,7 @@ interface List {
   column: number;
   image: string;
   faction: string;
+  affiliation?: Affiliation;
   type: "front" | "back";
 }
 
@@ -54,8 +55,10 @@ export async function createPdf({ selection, printStyle, enableBleed }: Props) {
       let pageIncrement = 1;
       let rowIncrement = 1;
       const faction = card.faction.toLowerCase();
-      const imageFront = `${IMAGE_PATH}/${faction}/${card.filename}_front.png`;
-      const imageBack = `${IMAGE_PATH}/${faction}/${card.filename}_back.png`;
+      const affiliation = card.affiliation;
+      const affiliatePath = affiliation ? `/${affiliation}` : "";
+      const imageFront = `${IMAGE_PATH}/${faction}${affiliatePath}/${card.filename}_front.png`;
+      const imageBack = `${IMAGE_PATH}/${faction}${affiliatePath}/${card.filename}_back.png`;
       switch (printStyle) {
         case "fullSamePage":
           cardList.push({
@@ -64,6 +67,7 @@ export async function createPdf({ selection, printStyle, enableBleed }: Props) {
             image: imageFront,
             page: pageCount,
             faction,
+            affiliation,
             type: "front",
           });
           cardList.push({
@@ -72,6 +76,7 @@ export async function createPdf({ selection, printStyle, enableBleed }: Props) {
             image: imageBack,
             page: pageCount,
             faction,
+            affiliation,
             type: "back",
           });
           break;
@@ -82,6 +87,7 @@ export async function createPdf({ selection, printStyle, enableBleed }: Props) {
             image: imageFront,
             page: pageCount,
             faction,
+            affiliation,
             type: "front",
           });
           cardList.push({
@@ -90,6 +96,7 @@ export async function createPdf({ selection, printStyle, enableBleed }: Props) {
             image: imageBack,
             page: pageCount + 1,
             faction,
+            affiliation,
             type: "back",
           });
           pageIncrement = 2;
@@ -107,6 +114,7 @@ export async function createPdf({ selection, printStyle, enableBleed }: Props) {
             image: imageFront,
             page: pageCount,
             faction,
+            affiliation,
             type: "front",
           });
           if (column === 1) {
@@ -182,7 +190,8 @@ export async function createPdf({ selection, printStyle, enableBleed }: Props) {
         (enableBleed ? BLEED_CARD_Y : scaled.height + MARGIN_Y) * card.row;
 
       if (enableBleed) {
-        const bleedImage = `${IMAGE_PATH}/${card.faction}/bleed_${card.type}.png`;
+        const affiliatePath = card.affiliation ? `/${card.affiliation}` : "";
+        const bleedImage = `${IMAGE_PATH}/${card.faction}${affiliatePath}/bleed_${card.type}.png`;
         const bleedImageBytes = await fetch(bleedImage).then((res) =>
           res.arrayBuffer()
         );

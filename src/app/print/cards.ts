@@ -215,18 +215,6 @@ const cards_rebel: BaseCard[] = [
     name: "AT-RT",
   },
   {
-    filename: "chewbacca",
-    name: "Chewbacca (Let the Wookie Win)",
-  },
-  {
-    filename: "ewok_skirmishers",
-    name: "Ewok Skirmishers",
-  },
-  {
-    filename: "ewok_slingers",
-    name: "Ewok Slingers",
-  },
-  {
     filename: "fleet_troopers",
     name: "Fleet Troopers",
   },
@@ -274,6 +262,22 @@ const cards_mercs: BaseCard[] = [
   {
     filename: "aa5_speeder_truck",
     name: "A-A5 Speeder Truck",
+    affiliation: "raiders" as Affiliation,
+  },
+  {
+    filename: "chewbacca",
+    name: "Chewbacca (Let the Wookie Win)",
+    affiliation: "ewoks" as Affiliation,
+  },
+  {
+    filename: "ewok_skirmishers",
+    name: "Ewok Skirmishers",
+    affiliation: "ewoks" as Affiliation,
+  },
+  {
+    filename: "ewok_slingers",
+    name: "Ewok Slingers",
+    affiliation: "ewoks" as Affiliation,
   },
 ].map((card) => {
   return { ...card, faction: MERCENARY };

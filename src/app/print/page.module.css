@@ -24,12 +24,22 @@
 .loadingImage {
   object-fit: cover;
   height: 60px;
-  filter: invert(1) sepia(1); 
+  filter: invert(var(--invert-icon-color)) sepia(1); 
 }
 
 .select {
   display: block;
   font-size: x-large;
+  
+  @media only screen and (max-width: 670px) {
+    max-width: 100%;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;;
 }
 
 .numberInput {

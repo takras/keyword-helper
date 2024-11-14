@@ -10,7 +10,7 @@ import styles from "./page.module.css";
 const FILENAME = "legion-helper-unit-cards.pdf";
 
 const PrintStyleFriendlyName = {
-  fullSamePage: "Front and Back on same page",
+  fullSamePage: "Front and Back",
   doubleSided: "Double sided printing",
   frontOnly: "Only print Front images",
 };
@@ -102,7 +102,7 @@ export default function Print() {
           <div>
             <p>
               This tool will help you generate PDFs with exactly what you need!
-              And it can be done in three ways:
+              And it can be done in three ways, all supporting bleed / no bleed:
             </p>
             <ul>
               <li>
@@ -120,7 +120,7 @@ export default function Print() {
             </ul>
           </div>
         </div>
-        <form onSubmit={onSubmit}>
+        <form onSubmit={onSubmit} className={styles.form}>
           {Object.entries(Factions).map((faction) => {
             const [factionKey, factionName] = faction;
             return (
@@ -152,9 +152,7 @@ export default function Print() {
           <div className={styles.downloadContainer}>
             <p>Current version of cards: {rules.cardsVersion}</p>
             <div>
-              <label htmlFor="bleedCheckbox">
-                Enable Bleed (Experimental. eg Ewoks not supported)
-              </label>
+              <label htmlFor="bleedCheckbox">Enable Bleed (Experimental)</label>
               <input
                 id="bleedCheckbox"
                 type="checkbox"
@@ -216,6 +214,26 @@ export default function Print() {
               &nbsp;
             </a>
             <br />
+            <div>
+              <p>
+                Please consider donating for all the hard work and time
+                commitment that goes into making this tool.
+              </p>
+              <a
+                href="https://www.paypal.com/donate/?hosted_button_id=PCSQHJMWUZSWN"
+                target="_blank"
+              >
+                <Image
+                  src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif"
+                  id="donate-button"
+                  width={92}
+                  height={26}
+                  style={{ cursor: "pointer" }}
+                  title="PayPal - The safer, easier way to pay online!"
+                  alt="Donate with PayPal button"
+                />
+              </a>
+            </div>
             <p>
               <strong>NOTE:</strong> This tool uses your browser to generate the
               PDF. It will download all images and process everything in your

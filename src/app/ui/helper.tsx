@@ -333,14 +333,16 @@ export default function Helper() {
             Official Forum
           </Link>
         </div>
-        <div id="donate-button-container" className={styles.donate}>
+        <div className={styles.donate}>
           <a
             href="https://www.paypal.com/donate/?hosted_button_id=PCSQHJMWUZSWN"
             target="_blank"
           >
-            <img
+            <Image
               src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif"
               id="donate-button"
+              width={92}
+              height={26}
               style={{ cursor: "pointer" }}
               title="PayPal - The safer, easier way to pay online!"
               alt="Donate with PayPal button"
