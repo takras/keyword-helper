@@ -117,6 +117,12 @@ export const KeywordsL: Keyword[] = [
           "The silhouettes of miniatures in trooper units and all their subtypes <strong>do not</strong> block LOS.",
         ],
       },
+      {
+        type: "clarification",
+        content:
+          "A unit does not block its own line of sight. That includes other miniatures in the unit.",
+        url: "https://forums.atomicmassgames.com/topic/12182-do-vehicle-units-block-each-others-line-of-sight/",
+      },
       { type: "header", content: "Terrain Blocking LOS" },
       {
         type: "text",
