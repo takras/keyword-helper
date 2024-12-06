@@ -284,9 +284,15 @@ export const KeywordsOther: Keyword[] = [
         showOnlySummary: true,
         referenced_keyword: "apply_dodge_cover",
       },
+
       {
         type: "header",
-        content: "Keyword changes: Armor, Scout, Transport, Backup, Guardian",
+        content: "Keyword changes",
+      },
+      {
+        type: "text",
+        content:
+          "<strong>AI: Action:</strong> As long as the unit with the AI keyword is at {range_3} of a {rank_commander}, the AI does not trigger.",
       },
       {
         type: "text",
@@ -296,101 +302,22 @@ export const KeywordsOther: Keyword[] = [
       {
         type: "text",
         content:
-          "<strong>Scout:</strong> Since there is a new deployment phase, Scout allows units to get a free move into the battlefield when they activate.",
-      },
-      {
-        type: "text",
-        content:
-          "<strong>Transport:</strong> Vehicles can only transport units into the battlefield, then the transported unit disengages after the very first movement action. Transport may not be used again by that vehicle the rest of the game.",
-      },
-      {
-        type: "text",
-        content:
           "<strong>Backup:</strong> If a {rank_commander} or {rank_operative} is in range to a {rank_corps} unit, they will cancel 2 {hit} almost like the old Cover system did.",
       },
       {
         type: "text",
         content:
-          "<strong>Guardian:</strong> As above, a unit with Guardian cannot be helped with Backup.",
-      },
-      {
-        type: "reference",
-        showOnlySummary: true,
-        referenced_keyword: "armor",
-      },
-      {
-        type: "reference",
-        showOnlySummary: true,
-        referenced_keyword: "scout_x",
-      },
-      {
-        type: "reference",
-        showOnlySummary: true,
-        referenced_keyword: "transport",
-      },
-      {
-        type: "reference",
-        showOnlySummary: true,
-        referenced_keyword: "backup",
-      },
-      {
-        type: "reference",
-        showOnlySummary: true,
-        referenced_keyword: "guardian_x",
-      },
-      {
-        type: "header",
-        content: "Keyword changes: Standby, Withdraw, Standard Move, Cohesion",
-      },
-      {
-        type: "text",
-        content:
-          "<strong>Standby:</strong> When a unit uses their Standby token, if they attack, they must attack the unit that triggered the Standby.",
-      },
-      {
-        type: "text",
-        content:
-          "<strong>Withdraw:</strong> If a unit is engaged in melee, it can make a speed reduced by 1 to move away. No loss of action. But they cannot attack this activation.",
-      },
-      {
-        type: "text",
-        content:
-          "<strong>Standard Move:</strong> When placing the leader unit, you don't have to put it in the movement notch, but anywhere as long as its base is touching the movement tool.",
-      },
-      {
-        type: "text",
-        content:
-          "<strong>Cohesion:</strong> Cohesion is now a half-range {range_half} tool, almost identical to a straight Speed 1 tool. For Squads, it's a full {range_1} cohesion.",
-      },
-      {
-        type: "reference",
-        showOnlySummary: true,
-        referenced_keyword: "standby",
-      },
-      {
-        type: "reference",
-        showOnlySummary: true,
-        referenced_keyword: "withdraw",
-      },
-      {
-        type: "reference",
-        showOnlySummary: true,
-        referenced_keyword: "move",
-      },
-      {
-        type: "reference",
-        showOnlySummary: true,
-        referenced_keyword: "cohesion",
-      },
-      {
-        type: "header",
-        content:
-          "Keyword changes: Clone Trooper, Creature Trooper, Emplacement Trooper, Fire Support",
+          "<strong>Charge:</strong> Can only be used on the units own activation.",
       },
       {
         type: "text",
         content:
           "<strong>Clone Trooper:</strong> Range to spend other units green tokens has increased to {range_2}.",
+      },
+      {
+        type: "text",
+        content:
+          "<strong>Cohesion:</strong> Cohesion is now a half-range {range_half} tool, almost identical to a straight Speed 1 tool. For Squads, it's a full {range_1} cohesion.",
       },
       {
         type: "text",
@@ -408,18 +335,9 @@ export const KeywordsOther: Keyword[] = [
           "<strong>Fire Support:</strong> Can no longer contribute to attacks. Instead, units with Fire Supports get a Standby token when issued order.",
       },
       {
-        type: "reference",
-        showOnlySummary: true,
-        referenced_keyword: "troopers",
-      },
-      {
-        type: "reference",
-        showOnlySummary: true,
-        referenced_keyword: "fire_support",
-      },
-      {
-        type: "header",
-        content: "Keyword changes: Ion X, AI: Actions",
+        type: "text",
+        content:
+          "<strong>Guardian:</strong> As above, a unit with Guardian cannot be helped with Backup.",
       },
       {
         type: "text",
@@ -429,7 +347,94 @@ export const KeywordsOther: Keyword[] = [
       {
         type: "text",
         content:
-          "<strong>AI: Action:</strong> As long as the unit with the AI keyword is at {range_3} of a {rank_commander}, the AI does not trigger.",
+          "<strong>Relentless:</strong> Can only be used on the units own activation.",
+      },
+      {
+        type: "text",
+        content:
+          "<strong>Scout:</strong> Since there is a new deployment phase, Scout allows units to get a free move into the battlefield when they activate.",
+      },
+      {
+        type: "text",
+        content:
+          "<strong>Standard Move:</strong> When placing the leader unit, you don't have to put it in the movement notch, but anywhere as long as its base is touching the movement tool.",
+      },
+      {
+        type: "text",
+        content:
+          "<strong>Standby:</strong> When a unit uses their Standby token, if they attack, they must attack the unit that triggered the Standby.",
+      },
+      {
+        type: "text",
+        content:
+          "<strong>Steady:</strong> Can only be used on the units own activation.",
+      },
+      {
+        type: "text",
+        content:
+          "<strong>Transport:</strong> Vehicles can only transport units of specific types into the battlefield, then the transported unit disengages after the very first movement action. Transport may not be used again by that vehicle the rest of the game.",
+      },
+      {
+        type: "text",
+        content:
+          "<strong>Withdraw:</strong> If a unit is engaged in melee, it can make a speed reduced by 1 to move away. No loss of action. But they cannot attack this activation.",
+      },
+
+      {
+        type: "reference",
+        showOnlySummary: true,
+        referenced_keyword: "ai_action",
+      },
+      {
+        type: "reference",
+        showOnlySummary: true,
+        referenced_keyword: "armor",
+      },
+      {
+        type: "reference",
+        showOnlySummary: true,
+        referenced_keyword: "backup",
+      },
+      {
+        type: "reference",
+        showOnlySummary: true,
+        referenced_keyword: "charge",
+      },
+      {
+        type: "reference",
+        showOnlySummary: true,
+        referenced_keyword: "clone_trooper",
+      },
+      {
+        type: "reference",
+        showOnlySummary: true,
+        referenced_keyword: "cohesion",
+      },
+      {
+        type: "reference",
+        showOnlySummary: true,
+        referenced_keyword: "creature_trooper",
+      },
+      {
+        type: "reference",
+        showOnlySummary: true,
+        referenced_keyword: "deflect",
+      },
+
+      {
+        type: "reference",
+        showOnlySummary: true,
+        referenced_keyword: "emplacement_trooper",
+      },
+      {
+        type: "reference",
+        showOnlySummary: true,
+        referenced_keyword: "fire_support",
+      },
+      {
+        type: "reference",
+        showOnlySummary: true,
+        referenced_keyword: "guardian_x",
       },
       {
         type: "reference",
@@ -439,7 +444,37 @@ export const KeywordsOther: Keyword[] = [
       {
         type: "reference",
         showOnlySummary: true,
-        referenced_keyword: "ai_action",
+        referenced_keyword: "relentless",
+      },
+      {
+        type: "reference",
+        showOnlySummary: true,
+        referenced_keyword: "scout_x",
+      },
+      {
+        type: "reference",
+        showOnlySummary: true,
+        referenced_keyword: "move",
+      },
+      {
+        type: "reference",
+        showOnlySummary: true,
+        referenced_keyword: "standby",
+      },
+      {
+        type: "reference",
+        showOnlySummary: true,
+        referenced_keyword: "steady",
+      },
+      {
+        type: "reference",
+        showOnlySummary: true,
+        referenced_keyword: "transport",
+      },
+      {
+        type: "reference",
+        showOnlySummary: true,
+        referenced_keyword: "withdraw",
       },
       {
         type: "header",
