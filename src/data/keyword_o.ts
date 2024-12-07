@@ -292,6 +292,12 @@ export const KeywordsO: Keyword[] = [
         content:
           "If a unit can perform multiple overrun attacks during its activation, it must perform a separate move through an enemy unit for each overrun attack.",
       },
+      {
+        type: "clarification",
+        content:
+          "Can I move and overrun attack, and then make a normal attack action? Yes. A unit is limited to a single attack action during its activation; an Overrun attack is not an attack action.",
+        url: "https://forums.atomicmassgames.com/topic/9343-overrun-attack-action/#comment-43656",
+      },
     ],
   },
   {
