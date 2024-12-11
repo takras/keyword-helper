@@ -587,12 +587,12 @@ export const KeywordsC: Keyword[] = [
     related_keywords: ["rally", "suppression", "move"],
     range: "range_2",
     summary:
-      "After another trooper unit of the matching rank or unit type at {range_2} of a friendly unit with the Compel keyword performs its Rally step and is suppressed but not panicked, at the beginning of its Perform Action step, it may gain one suppression token to perform a free move action.",
+      "After another trooper unit of the matching rank or unit type, if specified at {range_2} of a friendly unit with the Compel keyword performs its Rally step and is suppressed but not panicked, at the beginning of its Perform Action step, it may gain one suppression token to perform a free move action.",
     descriptions: [
       {
         type: "text",
         content:
-          "After another trooper unit of the matching rank or unit type at {range_2} of a friendly unit with the Compel keyword performs its Rally step and is suppressed but not panicked, at the beginning of its Perform Action step, it may gain one suppression token to perform a free move action.",
+          "After another trooper unit of the matching rank or unit type, if specified at {range_2} of a friendly unit with the Compel keyword performs its Rally step and is suppressed but not panicked, at the beginning of its Perform Action step, it may gain one suppression token to perform a free move action.",
       },
     ],
   },
