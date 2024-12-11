@@ -251,6 +251,7 @@
   margin-top: 15px;
   text-align: center;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
 }
 
@@ -305,6 +306,14 @@
   justify-content: center;
   border: 3px solid var(--round-border-empty);
   transition: .4s ease;
+}
+
+.nextRound {
+  margin-top: 2px;
+  height: 53px;
+  @media screen and (min-width: 640px){
+    margin-left: 50px;
+  }
 }
 
 .active {
@@ -401,6 +410,11 @@
     flex-direction: row;
     align-items: flex-start;
   }
+}
+
+.mapCardContainer {
+  display: flex;
+  justify-content: center;
 }
 
 .secondaryPlayerContainer {

@@ -178,7 +178,7 @@ export const KeywordsO: Keyword[] = [
     parents: ["o", "units"],
     tag: "Unit Keyword",
     range: "range_3",
-    related_keywords: ["tokens", "dice", "keywords"],
+    related_keywords: ["tokens", "dice", "keywords", "observation_token"],
     descriptions: [
       {
         type: "text",
@@ -189,6 +189,27 @@ export const KeywordsO: Keyword[] = [
         type: "text",
         content:
           "During an attack, a friendly attacking unit can spend any number of observation tokens that belong to the defending unit during the Reroll Attack Dice step. The attacking unit rerolls one attack die for each observation token spent. Observation tokens are spent one at a time, and the same die can be rerolled multiple times by spending subsequent observation tokens or aim tokens. The attacking unit may spend aim tokens and observation tokens in any order.",
+      },
+      { type: "reference", referenced_keyword: "observation_token" },
+    ],
+  },
+  {
+    keyword: "observation_token",
+    name: "Observation Token",
+    parents: [""],
+    tag: "",
+    related_keywords: ["tokens", "attack", "observe_x"],
+    descriptions: [
+      {
+        type: "illustration",
+        content: "tokens/observation.png",
+        align: "center",
+        width: 80,
+        altText: "Circle shaped with three notches.",
+      },
+      {
+        type: "text",
+        content: "Used when attacking to reroll one attack die.",
       },
     ],
   },

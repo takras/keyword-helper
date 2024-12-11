@@ -349,7 +349,7 @@ export const KeywordsR: Keyword[] = [
     keyword: "resolve_setup_effecs",
     name: "Resolve Setup Effects",
     parents: ["r"],
-    related_keywords: [],
+    related_keywords: ["setup", "prepared_positions"],
     descriptions: [
       {
         type: "text",

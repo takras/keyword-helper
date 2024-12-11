@@ -11,18 +11,17 @@ import { AVAILABLE_KEYWORDS, CatalogEntry, Keyword } from "@/types";
 import { rules as rulesDocument } from "@/data/rules";
 import { CatalogCard } from "./catalog-card";
 import { KeywordCard } from "./keyword-card";
-import { sortKeyword } from "@/utils";
+import { sortKeyword, Variables } from "@/utils";
 import { ToggleDarkMode } from "./toggle-dark-mode";
 import { KeywordContext } from "../providers";
 import { useRouter } from "next/navigation";
 import { RuleUpdates } from "./rule-updates";
-import styles from "./helper.module.css";
 import classNames from "classnames";
 import Link from "next/link";
+import styles from "./helper.module.css";
 
 export default function Helper() {
   const [searchFilter, setSearchFilter] = useState<string>("");
-  const [isShowTools, setIsShowTools] = useState(false);
   const { selectKeyword, getLink } = useContext(KeywordContext);
   const router = useRouter();
 
@@ -189,6 +188,17 @@ export default function Helper() {
       </div>
       <div className={styles.aboutContainer}>
         <div className={styles.infoContainer}>
+          <div>
+            <p>
+              {Variables.title} aims to help it easier to look up rules and
+              clarifications for <i>Star Wars: Legion</i> and have digitized the
+              rulebook for easy lookup and reference.
+            </p>
+            <p>
+              Here you will also find tools and resources to assist becoming
+              ready to play sooner and have less downtime during a session.
+            </p>
+          </div>
           <div className={styles.versionInfo}>
             Current version of Legion Helper:{" "}
             <Link
@@ -228,11 +238,28 @@ export default function Helper() {
         <ul className={styles.menu}>
           <Link
             className={styles.button}
+            href={getLink("about")}
+            onClick={() => selectKeyword("about")}
+            prefetch={true}
+          >
+            About Legion Helper
+          </Link>
+          <Link
+            className={styles.button}
             href={getLink("coming_from_pre_2024")}
             onClick={() => selectKeyword("coming_from_pre_2024")}
             prefetch={true}
           >
-            What&apos;s new in Legion 2024 v2.6.0?
+            Cheat Sheet on 2024 changes
+          </Link>
+
+          <Link
+            className={styles.button}
+            href={getLink("attack_quick_reference")}
+            onClick={() => selectKeyword("attack_quick_reference")}
+            prefetch={true}
+          >
+            Attack Quick Reference
           </Link>
           <Link
             className={styles.button}
@@ -241,6 +268,14 @@ export default function Helper() {
             prefetch={true}
           >
             Print Unit Cards
+          </Link>
+          <Link
+            className={styles.button}
+            href={getLink("resolve_setup_effecs")}
+            onClick={() => selectKeyword("resolve_setup_effecs")}
+            prefetch={true}
+          >
+            Setup Keywords to remember
           </Link>
           <Link
             className={styles.button}
@@ -257,30 +292,6 @@ export default function Helper() {
             prefetch={true}
           >
             Scoreboard Companion App
-          </Link>
-          <Link
-            className={styles.button}
-            href={getLink("about")}
-            onClick={() => selectKeyword("about")}
-            prefetch={true}
-          >
-            About Legion Helper
-          </Link>
-          <Link
-            className={styles.button}
-            href={getLink("attack_quick_reference")}
-            onClick={() => selectKeyword("attack_quick_reference")}
-            prefetch={true}
-          >
-            Attack Quick Reference
-          </Link>
-          <Link
-            className={styles.button}
-            href={getLink("resolve_setup_effecs")}
-            onClick={() => selectKeyword("resolve_setup_effecs")}
-            prefetch={true}
-          >
-            Setup Keywords to remember
           </Link>
         </ul>
       </section>

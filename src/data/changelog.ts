@@ -10,6 +10,39 @@ export const changelog: Keyword[] = [
     descriptions: [
       {
         type: "version",
+        version: "1.2.3",
+        content: [
+          {
+            type: "changelogentry",
+            update: "add",
+            content: "Clarifications added: Overrun, LOS.",
+          },
+          {
+            type: "changelogentry",
+            update: "add",
+            content:
+              "Added separate pages for certain token types: aim, advantage, dodge, observation, surge, standby, vehicle damage and wheel mode.",
+          },
+          {
+            type: "changelogentry",
+            update: "change",
+            content: "Reorganized keywords on 2024 changes quick-list.",
+          },
+          {
+            type: "changelogentry",
+            update: "change",
+            content: "Reorganized Scoreboard app and added Map.",
+          },
+          {
+            type: "changelogentry",
+            update: "change",
+            content:
+              "Update Compel keyword. An unannounced update to the keyword, clarifying unspecified unit type.",
+          },
+        ],
+      },
+      {
+        type: "version",
         version: "1.2.2",
         content: [
           {

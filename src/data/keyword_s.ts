@@ -778,6 +778,26 @@ export const KeywordsS: Keyword[] = [
     ],
   },
   {
+    keyword: "surge_token",
+    name: "Surge Token",
+    parents: ["s"],
+    related_keywords: ["attack", "tokens"],
+    descriptions: [
+      {
+        type: "illustration",
+        content: "tokens/surge.png",
+        align: "center",
+        width: 80,
+        altText: "Diamond shaped green token with line through it.",
+      },
+      {
+        type: "text",
+        content:
+          "Used when attacking or defending to convert surges to hits or blocks. Surge tokens are green tokens.",
+      },
+    ],
+  },
+  {
     keyword: "skirmishes",
     name: "Skirmishes",
     activation: "",
@@ -877,6 +897,7 @@ export const KeywordsS: Keyword[] = [
       "free_card_action",
       "move",
       "suppression",
+      "standby_token",
       "troopers",
       "vehicles",
       "withdraw",
@@ -930,6 +951,27 @@ export const KeywordsS: Keyword[] = [
               "Melissa’s Battle Droid unit performs the standby action and gains a standby token. Later in the round, the enemy Clone Trooper unit activates and performs an action. Because the Clone Trooper unit is at {range_2} of the Battle Droids and in LOS, after the action is complete the Battle Droids may spend their standby token to perform a free move or attack action after the Clone Trooper’s action is resolved.",
           },
         ],
+      },
+    ],
+  },
+  {
+    keyword: "standby_token",
+    name: "Standby Token",
+    activation: "",
+    parents: [""],
+    tag: "",
+    related_keywords: ["actions", "attack", "standby", "tokens"],
+    descriptions: [
+      {
+        type: "illustration",
+        content: "tokens/standby.png",
+        align: "center",
+        width: 80,
+        altText: "Hexagon shaped grey token green crosshair inside.",
+      },
+      {
+        type: "text",
+        content: "Used to move or attack after an enemy performs an action.",
       },
     ],
   },

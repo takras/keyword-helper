@@ -450,6 +450,12 @@ export const KeywordsD: Keyword[] = [
         content:
           "A card that is revealed in this way is not played and is returned to that player’s command hand at the end of the step in which it was divulged. Players can divulge as many Command Cards as they wish. If both players have Command Cards that are divulged at the same time, the blue player can reveal their Command Card first. If this opportunity is declined, that card can no longer be divulged.",
       },
+      {
+        type: "clarification",
+        content:
+          "A player may not divulge cards if they cannot follow the listed instructions when doing so. For example: only one command card can be played each round, and if <i>Darkness Descends</i> and <i>I Make the Rules Now</i> would be divulged, both would require cards to be played in round 1. This is not possible, so only one of the Divulge effects may be chosen.",
+        url: "https://forums.atomicmassgames.com/topic/16155-vader-and-cad-bane-both-want-to-divulge/#comment-65838",
+      },
     ],
   },
   {
@@ -507,17 +513,9 @@ export const KeywordsD: Keyword[] = [
     ],
     descriptions: [
       {
-        type: "illustration",
-        content: "tokens/dodge.png",
-        align: "right",
-        altText: "A green 8-sided token.",
-        width: 84,
-        height: 92,
-      },
-      {
         type: "text",
         content:
-          "A unit that performs a dodge action gains a dodge token. Units may spend dodge tokens to cancel a results during attacks.",
+          "A unit that performs a dodge action gains a dodge token. Units may spend dodge tokens to cancel {hit} results during attacks.",
       },
       {
         type: "header",
@@ -527,6 +525,28 @@ export const KeywordsD: Keyword[] = [
         type: "text",
         content:
           "<strong>Apply Dodge:</strong> If the defending unit has one or more dodge tokens, the defending player may spend any number of them. For each dodge token spent, cancel one a result in the attack pool. Units may spend dodge tokens even if there are no a results in the attack pool.",
+      },
+      { type: "reference", referenced_keyword: "dodge_token" },
+    ],
+  },
+  {
+    keyword: "dodge_token",
+    name: "Dodge token",
+    activation: "",
+    parents: ["d"],
+    related_keywords: ["attack", "actions", "tokens"],
+    descriptions: [
+      {
+        type: "illustration",
+        content: "tokens/dodge.png",
+        align: "center",
+        width: 80,
+        altText: "Green hexagon with white center.",
+      },
+      {
+        type: "text",
+        content:
+          "Used when defending to cancel incoming hit results. Dodge tokens are green tokens.",
       },
     ],
   },

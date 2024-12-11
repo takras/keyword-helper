@@ -287,75 +287,13 @@ export const KeywordsT: Keyword[] = [
         content:
           "<i>Star Wars</i>: Legion uses a variety of tokens to track game effects and rules. Below is a list of all the different types of tokens and a summary of their effects.",
       },
-      { type: "header", content: "Aim" },
-      {
-        type: "illustration",
-        content: "tokens/aim.png",
-        align: "center",
-        width: 80,
-        altText: "Green token with Crosshair.",
-      },
-      {
-        type: "text",
-        content:
-          "Used when attacking to reroll up to two attack dice. Aim tokens are green tokens.",
-      },
+      { type: "reference", referenced_keyword: "aim_token" },
+      { type: "reference", referenced_keyword: "dodge_token" },
+      { type: "reference", referenced_keyword: "surge_token" },
+      { type: "reference", referenced_keyword: "standby_token" },
+      { type: "reference", referenced_keyword: "observation_token" },
 
-      { type: "header", content: "Dodge" },
-      {
-        type: "illustration",
-        content: "tokens/dodge.png",
-        align: "center",
-        width: 80,
-        altText: "Green hexagon with white center.",
-      },
-      {
-        type: "text",
-        content:
-          "Used when defending to cancel incoming hit results. Dodge tokens are green tokens.",
-      },
-
-      { type: "header", content: "Surge" },
-      {
-        type: "illustration",
-        content: "tokens/surge.png",
-        align: "center",
-        width: 80,
-        altText: "Diamond shaped green token with line through it.",
-      },
-      {
-        type: "text",
-        content:
-          "Used when attacking or defending to convert surges to hits or blocks. Surge tokens are green tokens.",
-      },
-
-      { type: "header", content: "Standby" },
-      {
-        type: "illustration",
-        content: "tokens/standby.png",
-        align: "center",
-        width: 80,
-        altText: "Hexagon shaped grey token green crosshair inside.",
-      },
-      {
-        type: "text",
-        content: "Used to move or attack after an enemy performs an action.",
-      },
-
-      { type: "header", content: "Observation" },
-      {
-        type: "illustration",
-        content: "tokens/observation.png",
-        align: "center",
-        width: 80,
-        altText: "Circle shaped with three notches.",
-      },
-      {
-        type: "text",
-        content: "Used when attacking to reroll one attack die.",
-      },
-
-      { type: "header", content: "Smoke" },
+      { type: "header", content: "Smoke Token" },
       {
         type: "illustration",
         content: "tokens/smoke.png",
@@ -367,22 +305,14 @@ export const KeywordsT: Keyword[] = [
         type: "text",
         content: "Improves cover of nearby units.",
       },
-
-      { type: "header", content: "Vehicle Damage" },
       {
-        type: "illustration",
-        content: "tokens/damage.png",
-        align: "center",
-        width: 80,
-        altText: "Oblong hexagonal, black token with orange cog inside.",
+        type: "reference",
+        referenced_keyword: "smoke_tokens",
+        showOnlySummary: true,
       },
-      {
-        type: "text",
-        content:
-          "Used to track the penalties suffered by a vehicle that has sustained significant damage.",
-      },
+      { type: "reference", referenced_keyword: "vehicle_damage_token" },
 
-      { type: "header", content: "Order" },
+      { type: "header", content: "Order Token" },
       {
         type: "illustration",
         content: "tokens/order.png",
@@ -396,7 +326,7 @@ export const KeywordsT: Keyword[] = [
           "Used in the Command Phase to issue orders to units and to form the order pool. Used in the Activation Phase to track which units have activated.",
       },
 
-      { type: "header", content: "Commander" },
+      { type: "header", content: "Commander Token" },
       {
         type: "illustration",
         content: "tokens/commander.png",
@@ -410,7 +340,7 @@ export const KeywordsT: Keyword[] = [
           "Used to track who is the active commander and when a commander is field promoted.",
       },
 
-      { type: "header", content: "Ion" },
+      { type: "header", content: "Ion Token" },
       {
         type: "illustration",
         content: "tokens/ion.png",
@@ -423,7 +353,7 @@ export const KeywordsT: Keyword[] = [
         content: "Used to track the effects of the {keyword:Ion} keyword.",
       },
 
-      { type: "header", content: "Poison" },
+      { type: "header", content: "Poison Token" },
       {
         type: "illustration",
         content: "tokens/poison.png",
@@ -436,7 +366,7 @@ export const KeywordsT: Keyword[] = [
         content: "Used to track the effects of the {keyword:Poison} keyword.",
       },
 
-      { type: "header", content: "Immobilize" },
+      { type: "header", content: "Immobilize Token" },
       {
         type: "illustration",
         content: "tokens/immobilize.png",
@@ -450,7 +380,7 @@ export const KeywordsT: Keyword[] = [
           "Used to track the effects of the {keyword:Immobilize} keyword.",
       },
 
-      { type: "header", content: "Shield" },
+      { type: "header", content: "Shield Token" },
       {
         type: "illustration",
         content: "tokens/shield.png",
@@ -463,7 +393,7 @@ export const KeywordsT: Keyword[] = [
         content: "Used to track the effects of the {keyword:Shielded} keyword.",
       },
 
-      { type: "header", content: "Charge" },
+      { type: "header", content: "Charge Token" },
       {
         type: "illustration",
         content: "tokens/charge.png",
@@ -477,21 +407,14 @@ export const KeywordsT: Keyword[] = [
           "Used by certain upgrade and Command Cards in conjunction with the {keyword:Arm} keyword.",
       },
 
-      { type: "header", content: "Wheel" },
+      { type: "reference", referenced_keyword: "wheel_mode_token" },
       {
-        type: "illustration",
-        content: "tokens/wheel-mode.png",
-        align: "center",
-        width: 80,
-        altText: "Circle orange cymbols inside.",
-      },
-      {
-        type: "text",
-        content:
-          "Used to track the effects of the {keyword:Wheel Mode} keyword.",
+        type: "reference",
+        referenced_keyword: "wheel_mode",
+        showOnlySummary: true,
       },
 
-      { type: "header", content: "Incognito" },
+      { type: "header", content: "Incognito Token" },
       {
         type: "illustration",
         content: "tokens/incognito.png",
@@ -506,7 +429,7 @@ export const KeywordsT: Keyword[] = [
           "Used to track the effects of the {keyword:Incognito} keyword.",
       },
 
-      { type: "header", content: "Bane" },
+      { type: "header", content: "Bane Token" },
       {
         type: "illustration",
         content: "tokens/cad-here-i-am.png",
@@ -532,8 +455,13 @@ export const KeywordsT: Keyword[] = [
         type: "text",
         content: "Used by Cad Bane and his Command Cards.",
       },
+      {
+        type: "reference",
+        referenced_keyword: "bane_tokens",
+        showOnlySummary: true,
+      },
 
-      { type: "header", content: "Graffiti" },
+      { type: "header", content: "Graffiti Token" },
       {
         type: "illustration",
         content: "tokens/graffiti.png",
@@ -545,8 +473,13 @@ export const KeywordsT: Keyword[] = [
         type: "text",
         content: "Used by Sabine Wren and her Command Cards.",
       },
+      {
+        type: "reference",
+        referenced_keyword: "graffiti_tokens",
+        showOnlySummary: true,
+      },
 
-      { type: "header", content: "POI" },
+      { type: "header", content: "POI Token" },
       {
         type: "illustration",
         content: "tokens/poi.png",
@@ -559,8 +492,13 @@ export const KeywordsT: Keyword[] = [
         content:
           "A 2-inch token used to mark the location of point-of-interest objectives on the battlefield.",
       },
+      {
+        type: "reference",
+        referenced_keyword: "objective",
+        showOnlySummary: true,
+      },
 
-      { type: "header", content: "Asset" },
+      { type: "header", content: "Asset Token" },
       {
         type: "illustration",
         content: "tokens/asset.png",
@@ -572,20 +510,9 @@ export const KeywordsT: Keyword[] = [
         type: "text",
         content: "A 1-inch token used to represent asset objectives.",
       },
-
-      { type: "header", content: "Advantage" },
       {
-        type: "illustration",
-        content: "tokens/advantage.png",
-        align: "center",
-        width: 80,
-        altText:
-          "Round with a green border and zero to several red dots inside.",
-      },
-      {
-        type: "text",
-        content:
-          "A 1-inch token used to represent the effects of Advantage Cards. ey are also used to form the pass pool.",
+        type: "reference",
+        referenced_keyword: "advantage_token",
       },
     ],
   },

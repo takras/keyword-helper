@@ -71,7 +71,7 @@ export const KeywordsB: Keyword[] = [
     activation: "",
     parents: ["b"],
     range: "range_1",
-    related_keywords: ["charge", "deploy", "battlefield"],
+    related_keywords: ["charge", "deploy", "battlefield", "tokens"],
     summary:
       "Cad Bane has a set of three unique Bane tokens that he can place on the battlefield. Bane tokens are double-sided, with a uniform back and three different images on the front, each linked to a unique effect.",
     descriptions: [

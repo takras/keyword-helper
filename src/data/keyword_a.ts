@@ -221,7 +221,7 @@ export const KeywordsA: Keyword[] = [
     name: "Advantage Cards",
     activation: "",
     parents: ["a", "concepts"],
-    related_keywords: ["setup", "card_effects"],
+    related_keywords: ["setup", "card_effects", "advantage_token"],
     summary:
       "Advantage Cards contain additional special rules a player with that advantage can use during a game.",
     descriptions: [
@@ -245,6 +245,28 @@ export const KeywordsA: Keyword[] = [
           "<strong>Setup:</strong> Instructions for setting up this advantage.",
           "<strong>Special Rules:</strong> Special rules associated with this advantage.",
         ],
+      },
+    ],
+  },
+  {
+    keyword: "advantage_token",
+    name: "Advantage Token",
+    activation: "",
+    parents: ["a"],
+    related_keywords: ["advantage_cards", "tokens"],
+    descriptions: [
+      {
+        type: "illustration",
+        content: "tokens/advantage.png",
+        align: "center",
+        width: 80,
+        altText:
+          "Round with a green border and zero to several red dots inside.",
+      },
+      {
+        type: "text",
+        content:
+          "A 1-inch token used to represent the effects of Advantage Cards.  They are also used to form the pass pool.",
       },
     ],
   },
@@ -372,16 +394,8 @@ export const KeywordsA: Keyword[] = [
     parents: ["a"],
     summary:
       "A unit that performs an aim action gains an aim token which it can use to reroll dice during attacks.",
-    related_keywords: ["actions", "attack", "dice", "lethal_x"],
+    related_keywords: ["actions", "attack", "dice", "lethal_x", "aim_token"],
     descriptions: [
-      {
-        type: "illustration",
-        content: "tokens/aim.png",
-        align: "right",
-        altText: "A green token shaped like a crosshair.",
-        width: 80,
-        height: 74,
-      },
       {
         type: "text",
         content:
@@ -396,6 +410,30 @@ export const KeywordsA: Keyword[] = [
         type: "text",
         content:
           "A unit may reroll the same die multiple times by spending multiple aim tokens, but each die may only be rerolled once per aim token.",
+      },
+      { type: "reference", referenced_keyword: "aim_token" },
+    ],
+  },
+  {
+    keyword: "aim_token",
+    name: "Aim Token",
+    activation: "action",
+    parents: [""],
+    summary:
+      "A unit that performs an aim action gains an aim token which it can use to reroll dice during attacks.",
+    related_keywords: ["attack", "tokens"],
+    descriptions: [
+      {
+        type: "illustration",
+        content: "tokens/aim.png",
+        align: "center",
+        width: 80,
+        altText: "Green token with Crosshair.",
+      },
+      {
+        type: "text",
+        content:
+          "Used when attacking to reroll up to two attack dice. Aim tokens are green tokens.",
       },
     ],
   },

@@ -13,6 +13,7 @@ import {
   AdvantageCards,
   BattleCard,
   BlueToken,
+  MapCard,
   RedToken,
 } from "./scoreboard/images";
 import { RoundTracker } from "./scoreboard/common";
@@ -50,7 +51,6 @@ export const Scoreboard = () => {
   const [blueAdvantage, setBlueAdvantage] = useState<Card>();
   const [redAdvantage, setRedAdvantage] = useState<Card>();
   const [round, setRound] = useState(0);
-  const [disableRoundButton, setDisableRoundButton] = useState(false);
 
   const [bluePoints, setBluePoints] = useState(0);
   const [redPoints, setRedPoints] = useState(0);
@@ -59,6 +59,10 @@ export const Scoreboard = () => {
     red: [],
   });
   const [secondaryGoals, setSecondaryGoals] = useState<number[]>([]);
+
+  function nextRound() {
+    setRound((current) => current + 1);
+  }
 
   const [reset, setReset] = useState(false);
   const isReady =
@@ -449,7 +453,11 @@ export const Scoreboard = () => {
     return (
       <div className={styles.scoreBoard}>
         <h1 className={globalStyles.header2}>Round:</h1>{" "}
-        <RoundTracker currentRound={round} />
+        <RoundTracker
+          currentRound={round}
+          nextRound={nextRound}
+          gameOver={round >= 5 || redPoints >= 12 || bluePoints >= 12}
+        />
         <h1
           className={classNames(
             globalStyles.header2,
@@ -470,6 +478,7 @@ export const Scoreboard = () => {
           <BattleCard card={primaryObjective} />
           {showSecondaryGoal()}
         </div>
+        <MapCard card={primaryObjective} className={styles.mapCardContainer} />
         <AdvantageCards
           blueAdvantage={blueAdvantage}
           redAdvantage={redAdvantage}
@@ -484,27 +493,6 @@ export const Scoreboard = () => {
             }}
           >
             Start Over
-          </button>
-          <button
-            disabled={
-              disableRoundButton ||
-              round >= 5 ||
-              redPoints >= 12 ||
-              bluePoints >= 12
-            }
-            className={globalStyles.button}
-            onClick={() => {
-              setRound((current) => current + 1);
-              setDisableRoundButton(true);
-              window.scrollTo(0, 0);
-              setTimeout(() => {
-                setDisableRoundButton(false);
-              }, 1000);
-            }}
-          >
-            {round >= 5 || redPoints >= 12 || bluePoints >= 12
-              ? "Game Over"
-              : "Next round"}
           </button>
         </div>
       </div>

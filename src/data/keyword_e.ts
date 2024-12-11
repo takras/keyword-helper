@@ -11,6 +11,7 @@ export const KeywordsE: Keyword[] = [
       "reverse",
       "pivot",
       "engaged",
+      "climb",
     ],
     descriptions: [
       {

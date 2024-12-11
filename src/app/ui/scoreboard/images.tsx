@@ -34,7 +34,7 @@ export const RedToken = () => {
 
 export const BattleCard = ({ card }: { card?: Card }) => {
   const isSecondary = card?.id.startsWith("SECONDARY");
-  const [isMinimized, setIsMinimized] = useState(!isSecondary);
+  const [isMinimized, setIsMinimized] = useState(false);
 
   let canBeMinimized = true;
   if (isSecondary) {
@@ -51,7 +51,7 @@ export const BattleCard = ({ card }: { card?: Card }) => {
         src={`/images/objectives/${card?.image}`}
         height={LENGTH}
         width={WIDTH}
-        alt={card?.id.toString() || ""}
+        alt={card?.id.toString() ?? ""}
         priority={true}
         onClick={() =>
           setIsMinimized((current) => (canBeMinimized ? !current : false))
@@ -61,17 +61,27 @@ export const BattleCard = ({ card }: { card?: Card }) => {
   );
 };
 
-function PrimaryGoalCard({ card }: { card: Card }) {
+export const MapCard = ({
+  card,
+  className,
+}: {
+  className?: string;
+  card?: Card;
+}) => {
+  if (!card) {
+    return null;
+  }
   return (
-    <Image
-      src={`/images/objectives/${card?.image}`}
-      height={LENGTH}
-      width={WIDTH}
-      alt={card?.id.toString() || ""}
-      priority={true}
-    />
+    <div className={className}>
+      <Image
+        src={`/images/objectives/${card.mapImage}`}
+        height={WIDTH}
+        width={LENGTH}
+        alt={card?.id.toString() || ""}
+      />
+    </div>
   );
-}
+};
 
 const AdvantageCard = ({
   card,

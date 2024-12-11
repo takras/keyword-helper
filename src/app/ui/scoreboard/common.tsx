@@ -1,5 +1,7 @@
 import classNames from "classnames";
+import globalStyles from "../helper.module.css";
 import styles from "../scoreboard.module.css";
+import { useState } from "react";
 
 export const RoundSquare = ({
   activeRound,
@@ -20,7 +22,19 @@ export const RoundSquare = ({
   );
 };
 
-export const RoundTracker = ({ currentRound }: { currentRound: number }) => {
+interface TrackerProps {
+  currentRound: number;
+  nextRound: () => void;
+  gameOver: boolean;
+}
+
+export const RoundTracker = ({
+  currentRound,
+  nextRound,
+  gameOver,
+}: TrackerProps) => {
+  const [disableRoundButton, setDisableRoundButton] = useState(false);
+
   return (
     <div className={styles.roundTrackerContainer}>
       <div className={styles.roundProgress}>
@@ -33,6 +47,20 @@ export const RoundTracker = ({ currentRound }: { currentRound: number }) => {
         <RoundSquare round={currentRound} activeRound={4} />
         <RoundSquare round={currentRound} activeRound={5} />
       </div>
+      <button
+        disabled={disableRoundButton}
+        className={classNames(globalStyles.button, styles.nextRound)}
+        onClick={() => {
+          nextRound();
+          setDisableRoundButton(true);
+          window.scrollTo(0, 0);
+          setTimeout(() => {
+            setDisableRoundButton(false);
+          }, 1000);
+        }}
+      >
+        {gameOver ? "Game Over" : "Next round"}
+      </button>
     </div>
   );
 };

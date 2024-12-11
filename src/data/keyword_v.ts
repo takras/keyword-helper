@@ -11,6 +11,7 @@ export const KeywordsV: Keyword[] = [
       "resiliency",
       "notched_bases",
       "notch_based_movement",
+      "vehicle_damage_token",
     ],
     descriptions: [
       {
@@ -28,8 +29,34 @@ export const KeywordsV: Keyword[] = [
           "Rules that affect a vehicle unit affect all its subtypes unless otherwise stated. Regardless of subtype, all vehicles have the resiliency rules listed below.",
       },
       { type: "reference", referenced_keyword: "resiliency" },
+      {
+        type: "reference",
+        referenced_keyword: "vehicle_damage_token",
+        showOnlySummary: true,
+      },
       { type: "reference", referenced_keyword: "ground_vehicles" },
       { type: "reference", referenced_keyword: "repulsor_vehicle" },
+    ],
+  },
+  {
+    keyword: "vehicle_damage_token",
+    name: "Vehicle Damage Token",
+    parents: [""],
+    related_keywords: ["vehicles", "tokens", "resiliency"],
+    descriptions: [
+      {
+        type: "illustration",
+        content: "tokens/damage.png",
+        align: "center",
+        width: 80,
+        altText: "Oblong hexagonal, black token with orange cog inside.",
+      },
+
+      {
+        type: "text",
+        content:
+          "Used to track the penalties suffered by a vehicle that has sustained significant damage.",
+      },
     ],
   },
   {

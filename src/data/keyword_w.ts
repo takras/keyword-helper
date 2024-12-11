@@ -98,15 +98,14 @@ export const KeywordsW: Keyword[] = [
     keyword: "wheel_mode",
     name: "Wheel Mode",
     parents: ["w", "units"],
-    related_keywords: ["activating_units", "move", "cover", "miniature"],
+    related_keywords: [
+      "activating_units",
+      "move",
+      "cover",
+      "miniature",
+      "tokens",
+    ],
     descriptions: [
-      {
-        type: "illustration",
-        altText: "A round token with orange wheel inside",
-        align: "right",
-        content: "tokens/wheel-mode.png",
-        width: 80,
-      },
       {
         type: "text",
         content:
@@ -121,6 +120,27 @@ export const KeywordsW: Keyword[] = [
         type: "text",
         content:
           "Players should use the ball-form Droideka miniatures only when the unit uses the Wheel Mode keyword and only for the duration of that round. At the end of the round, any ball- form Droideka miniatures should be replaced with standing Droideka miniatures.",
+      },
+      { type: "reference", referenced_keyword: "wheel_mode_token" },
+    ],
+  },
+  {
+    keyword: "wheel_mode_token",
+    name: "Wheel Mode token",
+    parents: [],
+    related_keywords: ["tokens", "wheel_mode"],
+    descriptions: [
+      {
+        type: "illustration",
+        content: "tokens/wheel-mode.png",
+        align: "center",
+        width: 80,
+        altText: "Circle orange cymbols inside.",
+      },
+      {
+        type: "text",
+        content:
+          "Used to track the effects of the {keyword:Wheel Mode} keyword.",
       },
     ],
   },
