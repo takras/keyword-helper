@@ -121,6 +121,12 @@ export const KeywordsW: Keyword[] = [
         content:
           "Players should use the ball-form Droideka miniatures only when the unit uses the Wheel Mode keyword and only for the duration of that round. At the end of the round, any ball- form Droideka miniatures should be replaced with standing Droideka miniatures.",
       },
+      {
+        type: "clarification",
+        content:
+          "It it not permissible to use a wheel mode miniature of a Droideka when not in wheel mode.",
+        url: "https://forums.atomicmassgames.com/topic/17314-droideka-minis/",
+      },
       { type: "reference", referenced_keyword: "wheel_mode_token" },
     ],
   },
@@ -214,6 +220,19 @@ export const KeywordsW: Keyword[] = [
       {
         type: "reference",
         referenced_keyword: "suffering_wounds",
+      },
+    ],
+  },
+  {
+    keyword: "wound_x",
+    name: "Wound X",
+    parents: ["w", "units"],
+    related_keywords: ["resiliency", "suffering_wounds"],
+    descriptions: [
+      {
+        type: "text",
+        content:
+          "The first time a unit with the Wound X keyword enters play, that unit suffers X wounds.",
       },
     ],
   },

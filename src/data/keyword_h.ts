@@ -31,6 +31,20 @@ export const KeywordsH: Keyword[] = [
     ],
   },
   {
+    keyword: "hold_the_line",
+    name: "Hold the Line",
+    tag: "Unit Keyword",
+    parents: ["h", "units"],
+    related_keywords: ["attack", "engaged", "melee"],
+    descriptions: [
+      {
+        type: "text",
+        content:
+          "While a unit with Hold the Line keyword is engaged, it gains {hit_surge}:{hit} and {block_surge}:{block}.",
+      },
+    ],
+  },
+  {
     keyword: "hover_x",
     name: "Hover: Ground/Air X",
     activation: "",

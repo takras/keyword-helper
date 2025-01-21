@@ -12,6 +12,7 @@ export const AVAILABLE_KEYWORDS = [
   "actions",
   "activating_units",
   "activation_phase",
+  "advanced_targeting_x",
   "advantage_cards",
   "advantage_token",
   "affiliations",
@@ -147,6 +148,7 @@ export const AVAILABLE_KEYWORDS = [
   "gunslinger",
   "golden_rule_terrain",
   "heavy_weapon_team",
+  "hold_the_line",
   "high_velocity",
   "hover_x",
   "hunted",
@@ -330,6 +332,7 @@ export const AVAILABLE_KEYWORDS = [
   "within_range",
   "withdraw",
   "wounds",
+  "wound_x",
 ] as const;
 
 export type AvailableKeywords = (typeof AVAILABLE_KEYWORDS)[number];

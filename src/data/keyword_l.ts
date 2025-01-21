@@ -13,7 +13,7 @@ export const KeywordsL: Keyword[] = [
       {
         type: "text",
         content:
-          "At the end of a unit with the Latent Power keyword’s activation, it may gain 1 suppression token to roll 1 red defense die. If it does, on {block_surge} e result, choose an enemy unit at {range_1} of this miniature. The chosen unit gains 2 suppression tokens and 2 immobilize tokens. On a blank result, remove 1 wound or 1 poison token from a friendly non-droid trooper unit at {range_1} of this miniature.",
+          "At the end of a unit with the Latent Power keyword’s activation, it may gain 1 suppression token to roll 1 red defense die. If it does, on {block_surge} result, choose an enemy unit at {range_1} of this miniature. The chosen unit gains 2 suppression tokens and 2 immobilize tokens. On a blank result, remove 1 wound or 1 poison token from a friendly non-droid trooper unit at {range_1} of this miniature.",
       },
     ],
   },

@@ -6,6 +6,7 @@ import { TopMenu } from "../ui/top-menu";
 import { rules } from "@/data/rules";
 import Image from "next/image";
 import styles from "./page.module.css";
+import { Card } from "./types";
 
 const FILENAME = "legion-helper-unit-cards.pdf";
 
@@ -127,7 +128,11 @@ export default function Print() {
               <div key={faction[1]}>
                 <h2>{factionName}</h2>
                 {selection
-                  ?.filter((card) => card.faction === factionKey)
+                  ?.filter(
+                    (card) =>
+                      card.hiddenFromPrint !== true &&
+                      card.faction === factionKey
+                  )
                   .map((card) => {
                     const id = `${card.faction}_${card.filename}`;
                     return (

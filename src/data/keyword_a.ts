@@ -217,6 +217,22 @@ export const KeywordsA: Keyword[] = [
     ],
   },
   {
+    keyword: "advanced_targeting_x",
+    name: "Advanced Targeting: Unit Type X",
+    activation: "",
+    parents: ["a", "units"],
+    related_keywords: ["troopers", "attack", "aim_token"],
+    summary:
+      "When a unit with the Advanced Targeting X keyword performs an attack against an enemy unit with the unit type listed, during the Form Attack Pool step, it may gain X aim tokens. ",
+    descriptions: [
+      {
+        type: "text",
+        content:
+          "When a unit with the Advanced Targeting X keyword performs an attack against an enemy unit with the unit type listed, during the Form Attack Pool step, it may gain X aim tokens. A unit that uses the Advanced Targeting X keyword may only form one attack pool and skips the Declare Additional Defender step of the attack sequence.",
+      },
+    ],
+  },
+  {
     keyword: "advantage_cards",
     name: "Advantage Cards",
     activation: "",

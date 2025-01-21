@@ -98,7 +98,7 @@ export const KeywordsR: Keyword[] = [
       {
         type: "text",
         content:
-          "f an Upgrade Card has the exhaust icon, using the Reconfigure ability does not cause that Upgrade Card to be exhausted.",
+          "If an Upgrade Card has the exhaust icon, using the Reconfigure ability does not cause that Upgrade Card to be exhausted.",
       },
     ],
   },

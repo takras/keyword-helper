@@ -1,9 +1,11 @@
-interface Card extends BaseCard {
+import { AvailableKeywords } from "@/types";
+
+export interface Card extends BaseCard {
   amount: number;
   id: number;
 }
 
-type Affiliation =
+export type Affiliation =
   | "black_sun"
   | "ewoks"
   | "maul_loyalists"
@@ -11,9 +13,17 @@ type Affiliation =
   | "raiders"
   | "rogue";
 
-interface BaseCard {
+export interface BaseCard {
   faction: "GAR" | "CIS" | "REBEL" | "EMPIRE" | "MERCENARY";
   name: string;
   filename: string;
   affiliation?: Affiliation;
+  hiddenFromPrint: boolean;
+  keywords: AvailableKeywords[];
 }
+
+export const GAR = "GAR";
+export const CIS = "CIS";
+export const REBEL = "REBEL";
+export const EMPIRE = "EMPIRE";
+export const MERCENARY = "MERCENARY";

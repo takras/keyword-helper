@@ -10,6 +10,27 @@ export const changelog: Keyword[] = [
     descriptions: [
       {
         type: "version",
+        version: "1.2.4",
+        content: [
+          {
+            type: "changelogentry",
+            update: "add",
+            content: "Add clarification to Wheel Mode.",
+          },
+          {
+            type: "changelogentry",
+            update: "add",
+            content: "Add Advanced Targeting, Hold the Line, Wound X keywords.",
+          },
+          {
+            type: "changelogentry",
+            update: "change",
+            content: "A couple of typos.",
+          },
+        ],
+      },
+      {
+        type: "version",
         version: "1.2.3",
         content: [
           {
