@@ -14,6 +14,7 @@ const PrintStyleFriendlyName = {
   fullSamePage: "Front and Back",
   doubleSided: "Double sided printing",
   frontOnly: "Only print Front images",
+  keywordsOnBack: "Double sided keywords on back.",
 };
 
 export default function Print() {
@@ -27,6 +28,7 @@ export default function Print() {
     if (filteredSelection.length === 0) {
       return;
     }
+
     const element = document.createElement("a");
     setLoading(true);
     const pdf = await createPdf({

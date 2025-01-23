@@ -1,5 +1,6 @@
 import { PDFDocument, PageSizes, StandardFonts, rgb } from "pdf-lib";
 import { rules as rulesDocument } from "@/data/rules";
+import { Affiliation, Card } from "./types";
 
 const IMAGE_PATH = "/unitcards";
 const PAGE_MARGIN = 30;
@@ -18,6 +19,7 @@ export const PrintStyles = [
   "fullSamePage",
   "frontOnly",
   "doubleSided",
+  "keywordsOnBack",
 ] as const;
 
 export type PrintStyle = (typeof PrintStyles)[number];
