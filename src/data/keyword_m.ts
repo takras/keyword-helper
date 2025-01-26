@@ -123,6 +123,8 @@ export const KeywordsM: Keyword[] = [
     parents: ["m", "units"],
     tag: "Unit Keyword",
     related_keywords: ["army_building"],
+    printedDescription:
+      "A unit with the Mercenary keyword is a Mercenary unit, for the purpose of Army Building.",
     descriptions: [
       {
         type: "text",

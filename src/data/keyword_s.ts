@@ -205,6 +205,8 @@ export const KeywordsS: Keyword[] = [
     parents: ["s"],
     range: "range_3",
     related_keywords: ["standby"],
+    printedDescription:
+      "You can spend a standby token at {range_3} instead of {range_2}.",
     descriptions: [
       {
         type: "text",
@@ -301,6 +303,8 @@ export const KeywordsS: Keyword[] = [
     name: "Sharpshooter",
     parents: ["s"],
     related_keywords: ["cover", "keywords"],
+    printedDescription:
+      "Substract X from the numerical value of the defender’s cover during this units attack.",
     descriptions: [
       {
         type: "text",
@@ -528,6 +532,8 @@ export const KeywordsS: Keyword[] = [
     parents: ["s", "units"],
     range: "range_2",
     related_keywords: ["aim", "keywords"],
+    printedDescription:
+      "Choose up to X friendly units at {range_2}. Each chosen unit gains an aim token.",
     descriptions: [
       {
         type: "text",
@@ -596,6 +602,7 @@ export const KeywordsS: Keyword[] = [
     name: "Stationary",
     parents: ["s", "units"],
     related_keywords: ["move", "pivot", "prepared_positions", "deploy"],
+    printedDescription: "You cannot move unless the move is a pivot.",
     descriptions: [
       {
         type: "text",

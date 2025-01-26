@@ -473,6 +473,8 @@ export const KeywordsB: Keyword[] = [
     parents: ["b", "units"],
     tag: "Unit Keyword",
     related_keywords: ["attack", "dodge", "apply_dodge_cover", "dodge"],
+    printedDescription:
+      "If this unit spends any dodge tokens during the Apply Dodge and Cover step, it gains {block_surge}:{block}.",
     summary:
       "When a unit with the Block keyword is defending, if it spends any dodge tokens during the Apply Dodge and Cover step, it gains {block_surge}:{block}.",
     descriptions: [

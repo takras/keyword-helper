@@ -102,6 +102,8 @@ export const KeywordsD: Keyword[] = [
       "wounds",
       "high_velocity",
     ],
+    printedDescription:
+      "While defending against a ranged attack, gain {block_surge}:{block}. The attacker suffers 1 wound if at least one {block_surge} result on defense roll.",
     descriptions: [
       {
         type: "text",

@@ -11,9 +11,10 @@ import { Card } from "./types";
 const FILENAME = "legion-helper-unit-cards.pdf";
 
 const PrintStyleFriendlyName = {
-  fullSamePage: "Front and Back",
+  fullSamePage: "Front and Back same page",
+  keywordsSamePage: "Front and Keywords Back same page",
+  frontOnly: "Only Front images",
   doubleSided: "Double sided printing",
-  frontOnly: "Only print Front images",
   keywordsOnBack: "Double sided keywords on back.",
 };
 

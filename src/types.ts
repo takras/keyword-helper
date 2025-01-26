@@ -412,6 +412,7 @@ export interface Keyword {
   summary?: string;
   related_keywords: AvailableKeywords[];
   descriptions: DescriptionType;
+  printedDescription?: string;
   range?: Range;
   tag?: string;
   hideFromsearch?: boolean;

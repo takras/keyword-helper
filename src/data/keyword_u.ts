@@ -45,6 +45,8 @@ export const KeywordsU: Keyword[] = [
     name: "Unhindered",
     parents: ["u", "units"],
     related_keywords: ["move", "terrain"],
+    printedDescription:
+      "When this unit performs a move, it does not reduce its maximum speed for moving out of, into, or through difficult terrain.",
     descriptions: [
       {
         type: "text",

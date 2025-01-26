@@ -135,6 +135,7 @@ export const KeywordsI: Keyword[] = [
     parents: ["units"],
     tag: "Unit Keyword",
     related_keywords: ["immune", "pierce_x"],
+    printedDescription: "Pierce cannot be used against you.",
     descriptions: [
       {
         type: "text",
@@ -216,6 +217,8 @@ export const KeywordsI: Keyword[] = [
     parents: ["weapons", "i"],
     tag: "Weapon Keyword",
     related_keywords: ["armor", "keywords"],
+    printedDescription:
+      "During attack, if the defender has Armor keyword, you can modify up to X {hit} results to {hit_crit} results during Modify Attack dice step.",
     descriptions: [
       {
         type: "text",
@@ -354,6 +357,8 @@ export const KeywordsI: Keyword[] = [
     tag: "Unit Keyword",
     related_keywords: ["actions", "keywords"],
     range: "range_2",
+    printedDescription:
+      "At the end of this units activation, remove up to X suppression tokens from other friendly units at {range_2}.",
     descriptions: [
       {
         type: "text",

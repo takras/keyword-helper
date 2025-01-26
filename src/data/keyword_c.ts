@@ -94,6 +94,8 @@ export const KeywordsC: Keyword[] = [
     parents: ["c", "units"],
     tag: "Unit Keyword",
     related_keywords: ["move", "melee", "base", "attack"],
+    printedDescription:
+      "After this unit perform a move action during its activation, it may perform a free melee attack action.",
     summary:
       "After a unit that has the Charge keyword performs a move action during its activation that brings it into base contact with an enemy miniature to start a melee, it may perform a free attack action against that unit using only melee weapons.",
     descriptions: [
@@ -586,6 +588,8 @@ export const KeywordsC: Keyword[] = [
     tag: "Unit Keyword",
     related_keywords: ["rally", "suppression", "move"],
     range: "range_2",
+    printedDescription:
+      "After a friendly unit at {range_2} rallies, if it is suppressed but not panicked, it may gain one suppression token to perform a free move action.",
     summary:
       "After another trooper unit of the matching rank or unit type, if specified at {range_2} of a friendly unit with the Compel keyword performs its Rally step and is suppressed but not panicked, at the beginning of its Perform Action step, it may gain one suppression token to perform a free move action.",
     descriptions: [
@@ -766,6 +770,8 @@ export const KeywordsC: Keyword[] = [
     parents: ["c", "units"],
     tag: "Unit Keyword",
     related_keywords: ["command_phase", "command_cards", "interrogate"],
+    printedDescription:
+      "When your command-specific command cards are played, if there would be a tie for priority, treat your command card as though it had 1 fewer pip.",
     summary:
       "During the Command Phase, if a player reveals a {rank_commander} or {rank_operative} specific Command Card that belongs to a unit with the Cunning keyword and there would be a tie for priority, treat that Command Card as having one fewer pip. If both players reveal a specific {rank_commander} or {rank_operative} Command Card that belongs to a unit with the Cunning keyword, there is still a tie for priority.",
     descriptions: [

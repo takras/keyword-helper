@@ -1,0 +1,88 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "legionhelper";
+  src:url("fonts/legionhelper.eot");
+  src:url("fonts/legionhelper.eot?#iefix") format("embedded-opentype"),
+    url("fonts/legionhelper.woff") format("woff"),
+    url("fonts/legionhelper.ttf") format("truetype"),
+    url("fonts/legionhelper.svg#legionhelper") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+[data-icon]:before {
+  font-family: "legionhelper" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="lh-"]:before,
+[class*=" lh-"]:before {
+  font-family: "legionhelper" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.lh-commander:before {
+  content: "\61";
+}
+.lh-corps:before {
+  content: "\62";
+}
+.lh-heavy:before {
+  content: "\63";
+}
+.lh-special-forces:before {
+  content: "\64";
+}
+.lh-special-ops:before {
+  content: "\65";
+}
+.lh-support:before {
+  content: "\66";
+}
+.lh-block:before {
+  content: "\67";
+}
+.lh-block-surge:before {
+  content: "\68";
+}
+.lh-crit:before {
+  content: "\69";
+}
+.lh-hit:before {
+  content: "\6a";
+}
+.lh-range-1:before {
+  content: "\31";
+}
+.lh-range-2:before {
+  content: "\32";
+}
+.lh-range-3:before {
+  content: "\33";
+}
+.lh-range-4:before {
+  content: "\34";
+}
+.lh-range-5:before {
+  content: "\35";
+}
+.lh-range-infinite:before {
+  content: "\30";
+}

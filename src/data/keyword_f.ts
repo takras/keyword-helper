@@ -115,6 +115,8 @@ export const KeywordsF: Keyword[] = [
     parents: ["f", "weapons"],
     tag: "Weapon Keyword",
     related_keywords: ["attack", "miniature"],
+    printedDescription:
+      "To add a weapon to an attack, the defending unit must have at least 1 miniatures base partially inside the specified firing arc.",
     descriptions: [
       {
         type: "text",
@@ -251,6 +253,7 @@ export const KeywordsF: Keyword[] = [
     parents: ["f", "units"],
     tag: "Unit Keyword",
     related_keywords: ["pivot"],
+    printedDescription: "When you perform a pivot, you may pivot up to 360°.",
     descriptions: [
       {
         type: "text",

@@ -38,6 +38,8 @@ export const KeywordsJ: Keyword[] = [
     parents: ["j", "units"],
     tag: "Unit Keyword",
     related_keywords: ["move", "terrain", "keywords"],
+    printedDescription:
+      "Perform a move during which you ignore terrain that is height X or lower. This is treated as a move action.",
     descriptions: [
       {
         type: "text",

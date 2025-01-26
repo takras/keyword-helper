@@ -77,6 +77,8 @@ export const KeywordsE: Keyword[] = [
     activation: "",
     parents: ["e", "units"],
     tag: "Unit Keyword",
+    printedDescription:
+      "When issuing orders, the unit name specified at {range_2} may be issued an order, and it ignores the {rank_corps} requirement for backup.",
     related_keywords: [
       "army_building",
       "command_phase",
@@ -197,6 +199,8 @@ export const KeywordsE: Keyword[] = [
     activation: "",
     parents: ["e", "units"],
     tag: "Unit Keyword",
+    printedDescription:
+      "While attacking or defending, friendly units at {range_2} and in LOS to this unit may spend one aim, dodge, or surge token belonging to one unit with Exemplar.",
     related_keywords: [
       "attack",
       "line_of_sight",

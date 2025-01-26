@@ -194,6 +194,8 @@ export const KeywordsL: Keyword[] = [
     parents: ["l", "weapons"],
     tag: "Weapon Keyword",
     related_keywords: ["attack", "aim", "range"],
+    printedDescription:
+      "When attacking, spend an aim token to increase the maximum range of that weapon by one for that attack. Only one aim token may be spent in this way per attack.",
     descriptions: [
       {
         type: "text",
@@ -209,6 +211,8 @@ export const KeywordsL: Keyword[] = [
     activation: "",
     parents: ["l", "units"],
     tag: "Unit Keyword",
+    printedDescription:
+      "While defending against a ranged attack, if this unit would roll one or more defense dice during the Roll Cover Pool, add one {block} result and roll 1 less dice.",
     related_keywords: ["cover"],
     descriptions: [
       {

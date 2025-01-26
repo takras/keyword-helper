@@ -113,6 +113,8 @@ export const KeywordsP: Keyword[] = [
     parents: ["p", "weapons"],
     tag: "Weapon Keyword",
     related_keywords: ["weapons", "attack", "guardian_x", "keywords"],
+    printedDescription:
+      "Cancel up to X {block} results during the Modify Defense Dice step.",
     descriptions: [
       {
         type: "text",
@@ -293,6 +295,8 @@ export const KeywordsP: Keyword[] = [
     name: "Prepared Positions",
     parents: ["p"],
     related_keywords: ["deploy", "setup", "dodge"],
+    printedDescription:
+      "You may deploy within friendly territory during Prepared Positions of setup. If you do, you get 1 dodge token.",
     descriptions: [
       {
         type: "text",
