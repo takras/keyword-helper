@@ -6,6 +6,8 @@ export const KeywordsS: Keyword[] = [
     name: "Scale",
     parents: ["s"],
     related_keywords: ["climb", "move"],
+    printedDescription:
+      "You may move vertical distance up to height 2 when you perform a climb.",
     descriptions: [
       {
         type: "text",
@@ -56,6 +58,8 @@ export const KeywordsS: Keyword[] = [
     name: "Scout X",
     parents: ["s"],
     related_keywords: ["move", "terrain", "keywords"],
+    printedDescription:
+      "If you are undeployed, you may deploy performing a free speed X move action.",
     descriptions: [
       {
         type: "text",

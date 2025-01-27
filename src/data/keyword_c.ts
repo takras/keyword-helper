@@ -216,6 +216,8 @@ export const KeywordsC: Keyword[] = [
     parents: ["c", "units"],
     tag: "Unit Keyword",
     related_keywords: ["move", "climb", "troopers"],
+    printedDescription:
+      "You are treated as a trooper for the purposes of climbing.",
     summary:
       "A unit with the Climbing Vehicle keyword is treated as a trooper unit for the purposes of climbing.",
     descriptions: [
@@ -404,6 +406,8 @@ export const KeywordsC: Keyword[] = [
     name: "Critical X",
     parents: ["c", "weapons"],
     tag: "Weapon Keyword",
+    printedDescription:
+      "You may convert up to X surges to {hit_crit} result during Convert Surges step of attack.",
     summary:
       "When a unit converts attack surges for an attack pool with the Critical X keyword, during the Convert Surges step it may convert up to X attack surge {hit_surge} results to critical {hit_critical} results.",
     related_keywords: ["apply_dodge_cover", "attack", "keywords"],

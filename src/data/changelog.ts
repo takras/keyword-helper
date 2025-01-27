@@ -10,6 +10,18 @@ export const changelog: Keyword[] = [
     descriptions: [
       {
         type: "version",
+        version: "1.2.5",
+        content: [
+          {
+            type: "changelogentry",
+            update: "add",
+            content:
+              "Add keyword description to Print Cards! Keywords will be updated over time. Suggestions on the short form are welcome.",
+          },
+        ],
+      },
+      {
+        type: "version",
         version: "1.2.4",
         content: [
           {

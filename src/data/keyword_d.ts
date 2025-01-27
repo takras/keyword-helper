@@ -155,6 +155,8 @@ export const KeywordsD: Keyword[] = [
       "infiltrate",
       "prepared_positions",
     ],
+    printedDescription:
+      "During deployment, if the matching unit name/type has the Prepared Positions or Infiltrate keyword, you also gain that keyword.",
     descriptions: [
       {
         type: "text",
@@ -467,6 +469,8 @@ export const KeywordsD: Keyword[] = [
     parents: ["d", "units"],
     tag: "Unit Keyword",
     related_keywords: ["melee", "attack"],
+    printedDescription:
+      "When you defend against melee attack, the attacking unit suffers 1 wound if at least one defend result is blank.",
     descriptions: [
       {
         type: "text",

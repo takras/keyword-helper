@@ -247,6 +247,8 @@ export const KeywordsI: Keyword[] = [
     parents: ["i", "units"],
     tag: "Unit Keyword",
     related_keywords: ["attack", "pierce_x"],
+    printedDescription:
+      "While defending, if attacker is using Pierce X keyword, you roll X extra defend dice.",
     descriptions: [
       {
         type: "text",

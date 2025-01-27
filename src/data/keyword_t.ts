@@ -6,6 +6,8 @@ export const KeywordsT: Keyword[] = [
     name: "Tactical X",
     parents: ["t", "units"],
     related_keywords: ["aim", "move", "keywords"],
+    printedDescription:
+      "You gain X aim token(s) each time you perform a move action.",
     descriptions: [
       {
         type: "text",
@@ -233,6 +235,8 @@ export const KeywordsT: Keyword[] = [
     parents: ["t", "units"],
     range: "range_3",
     related_keywords: ["attack", "free_card_action", "move", "terrain"],
+    printedDescription:
+      "If a friendly unit is defeated and at {range_3} of you, you may perform a free speed-2 move action or attack action. Maximum once per round.",
     descriptions: [
       {
         type: "text",

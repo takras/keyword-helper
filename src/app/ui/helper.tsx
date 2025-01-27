@@ -199,6 +199,22 @@ export default function Helper() {
               ready to play sooner and have less downtime during a session.
             </p>
           </div>
+          <div className={styles.donate}>
+            <a
+              href="https://www.paypal.com/donate/?hosted_button_id=PCSQHJMWUZSWN"
+              target="_blank"
+            >
+              <Image
+                src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif"
+                id="donate-button"
+                width={92}
+                height={26}
+                style={{ cursor: "pointer" }}
+                title="PayPal - The safer, easier way to pay online!"
+                alt="Donate with PayPal button"
+              />
+            </a>
+          </div>
           <div className={styles.versionInfo}>
             Current version of Legion Helper:{" "}
             <Link
@@ -221,21 +237,24 @@ export default function Helper() {
         </div>
       </div>
       <section className={styles.aboutContainer}>
-        {/*<div>Tools</div>
-        <input
-          type="checkbox"
-          id="menu-toggle"
-          checked={isShowTools}
-          onChange={() => setIsShowTools((current) => !current)}
-        />
-        <label
-          className={styles.menuToggle}
-          htmlFor="menu-toggle"
-          aria-label="Toogle tools menu"
-        >
-          <div className={styles.menuButton} />
-        </label>*/}
         <ul className={styles.menu}>
+          <Link
+            className={styles.button}
+            href={getLink("attack_quick_reference")}
+            onClick={() => selectKeyword("attack_quick_reference")}
+            prefetch={true}
+          >
+            Attack Quick Reference
+          </Link>
+          <Link
+            className={styles.button}
+            href={getLink("resolve_setup_effecs")}
+            onClick={() => selectKeyword("resolve_setup_effecs")}
+            prefetch={true}
+          >
+            Setup Keywords to remember
+          </Link>
+          <hr />
           <Link
             className={styles.button}
             href={getLink("about")}
@@ -255,28 +274,13 @@ export default function Helper() {
 
           <Link
             className={styles.button}
-            href={getLink("attack_quick_reference")}
-            onClick={() => selectKeyword("attack_quick_reference")}
-            prefetch={true}
-          >
-            Attack Quick Reference
-          </Link>
-          <Link
-            className={styles.button}
             href={getLink("print")}
             onClick={() => "print"}
             prefetch={true}
           >
-            Print Unit Cards
+            Print Unit Cards (w/keyword-help)
           </Link>
-          <Link
-            className={styles.button}
-            href={getLink("resolve_setup_effecs")}
-            onClick={() => selectKeyword("resolve_setup_effecs")}
-            prefetch={true}
-          >
-            Setup Keywords to remember
-          </Link>
+          <hr />
           <Link
             className={styles.button}
             href={getLink("skirmish")}
@@ -343,22 +347,6 @@ export default function Helper() {
           >
             Official Forum
           </Link>
-        </div>
-        <div className={styles.donate}>
-          <a
-            href="https://www.paypal.com/donate/?hosted_button_id=PCSQHJMWUZSWN"
-            target="_blank"
-          >
-            <Image
-              src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif"
-              id="donate-button"
-              width={92}
-              height={26}
-              style={{ cursor: "pointer" }}
-              title="PayPal - The safer, easier way to pay online!"
-              alt="Donate with PayPal button"
-            />
-          </a>
         </div>
 
         <a

@@ -76,6 +76,8 @@ export const KeywordsM: Keyword[] = [
     parents: ["m", "units"],
     tag: "Unit Keyword",
     related_keywords: ["upgrade_card", "ready_x", "exhaust"],
+    printedDescription:
+      "At end of activation, you may ready up to X of your exhausted Force Upgrade Cards.",
     descriptions: [
       {
         type: "text",

@@ -590,6 +590,8 @@ export const KeywordsA: Keyword[] = [
     tag: "Unit Keyword",
     related_keywords: ["attack", "cancel", "impact_x", "weak_point_x"],
     summary: "",
+    printedDescription:
+      "Remove X {hit} results from attacker during Modify Attack Dice step.",
     descriptions: [
       {
         type: "text",

@@ -304,6 +304,8 @@ export const KeywordsE: Keyword[] = [
     parents: ["e", "units"],
     tag: "Unit Keyword",
     related_keywords: ["climb"],
+    printedDescription:
+      "You may move a vertical distance up to height 2 while performing a climb.",
     descriptions: [
       {
         type: "text",
