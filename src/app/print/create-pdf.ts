@@ -46,6 +46,7 @@ export const PrintStyles = [
   "doubleSided",
   "keywordsOnBack",
   "keywordsSamePage",
+  "keywordsOnly",
 ] as const;
 
 export type PrintStyle = (typeof PrintStyles)[number];
@@ -468,16 +469,19 @@ export async function createPdf({ selection, printStyle, enableBleed }: Props) {
           }
           break;
         }
+        case "keywordsOnly":
         case "frontOnly": {
           cardList.push({
             column,
             row: rowCount,
             name: card.name,
-            image: imageFront,
+            image: printStyle === "keywordsOnly" ? keywordBack : imageFront,
             page: pageCount,
             faction,
-            affiliation,
+            affiliation:
+              printStyle === "keywordsOnly" ? "keywords" : affiliation,
             type: "front",
+            keywords: card.keywords,
           });
           if (column === 1) {
             column = 2;
@@ -584,7 +588,8 @@ export async function createPdf({ selection, printStyle, enableBleed }: Props) {
       // Keywords
       if (card.affiliation === "keywords") {
         const [title, subTitle] = card.name.replace(")", "").split("(");
-        const titleX = xColumn2 + MARGIN_X + 40;
+        const titleX =
+          (card.column === 1 ? xColumn1 : xColumn2) + MARGIN_X + 40;
         const titleY = y + UNIT_CARD_Y;
         keywordOnCardYOffset = 0;
 
@@ -650,7 +655,7 @@ export async function createPdf({ selection, printStyle, enableBleed }: Props) {
             keyword: word,
             keywordFont: aireFont,
             descriptionFont: timesRomanFont,
-            x: xColumn2 + MARGIN_X,
+            x: (card.column === 2 ? xColumn2 : xColumn1) + MARGIN_X,
             y: y - MARGIN_Y + scaled.height - KEYWORD_TOP_MARGIN,
             accumulatedYOffset: keywordOnCardYOffset,
             fontSize: FONT_SIZE,

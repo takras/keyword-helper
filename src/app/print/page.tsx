@@ -16,6 +16,7 @@ const PrintStyleFriendlyName = {
   frontOnly: "Only Front images",
   doubleSided: "Double sided printing",
   keywordsOnBack: "Double sided keywords on back.",
+  keywordsOnly: "Keywords cards only",
 };
 
 export default function Print() {
