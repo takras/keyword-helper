@@ -278,6 +278,8 @@ export const KeywordsI: Keyword[] = [
     tag: "Unit Keyword",
     range: "range_1",
     related_keywords: ["attack", "objective", "backup"],
+    printedDescription:
+      "You cannot be attacked by enemy units that are beyond {range_1} of you, cannot contest objectives and cannot provide backup. If you perform an attack action or defend against an attack, you lose all Incognito effects.",
     descriptions: [
       {
         type: "illustration",
@@ -323,6 +325,8 @@ export const KeywordsI: Keyword[] = [
     parents: ["i", "units"],
     tag: "Unit Keyword",
     related_keywords: ["tokens", "free_card_action", "keywords"],
+    printedDescription:
+      "At the start of the Activation Phase, if you do not have an order token, gain X of the listed token(s) or performt the listed action as a free action.",
     descriptions: [
       {
         type: "text",

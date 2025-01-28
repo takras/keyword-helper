@@ -22,6 +22,8 @@ export const KeywordsT: Keyword[] = [
     parents: ["t", "units"],
     range: "range_2",
     related_keywords: ["dodge", "card_action", "keywords"],
+    printedDescription:
+      "Choose up to X friendly unit at {range_2}. Each chosen unit gains one dodge token.",
     descriptions: [
       {
         type: "text",
@@ -221,6 +223,7 @@ export const KeywordsT: Keyword[] = [
     name: "Target X",
     parents: ["t", "units"],
     related_keywords: ["aim", "issue_order", "keywords"],
+    printedDescription: "After you are issued an order, you gain X aim tokens.",
     descriptions: [
       {
         type: "text",

@@ -287,6 +287,9 @@ const drawKeyword = ({
   const enrichedKeyword = getEnrichedKeyword(keyword);
   const description =
     enrichedKeyword?.printedDescription ?? "Missing description!";
+  if (!enrichedKeyword?.printedDescription) {
+    console.log(`Missing print-version of keyword: ${enrichedKeyword?.name}`);
+  }
   const marginLeft = 12;
 
   const maxWidth = UNIT_CARD_X - marginLeft - 5;
@@ -621,42 +624,19 @@ export async function createPdf({ selection, printStyle, enableBleed }: Props) {
           }
         );
 
-        /*let length = 0;
-        [
-          "range_infinite",
-          "range_1",
-          "range_2",
-          "range_3",
-          "range_4",
-          "range_5",
-          "rank_commander",
-          "rank_corps",
-          "rank_specialist",
-          "rank_operative",
-          "rank_support",
-          "rank_heavy",
-          "hit",
-          "hit_crit",
-          "block",
-          "block_surge",
-        ].forEach((word) => {
-          const foo = ICON_MAPPING[word as keyof typeof ICON_MAPPING];
-          const glyphWidth = legionHelperFont.widthOfTextAtSize(
-            foo.value,
-            foo.sizeMultiplier * FONT_SIZE + (foo.yOffset ?? 0)
-          );
-          page.drawText(foo.value, {
-            x: titleX + length,
-            y: titleY - 170 + (foo.yOffset ?? 0),
-            size: foo.sizeMultiplier * FONT_SIZE,
-            font: legionHelperFont,
-            color: rgb(0, 0, 1),
-            lineHeight: foo.sizeMultiplier * FONT_SIZE,
-          });
-          length += glyphWidth - (foo.yOffset ?? 0);
-        });
-        */
+        // Version of the card and the Keyword
+        page.drawText(
+          `Cards: v${rulesDocument.cardsVersion}. Rules: v${rulesDocument.version}`,
+          {
+            x: titleX + 140,
+            y: titleY - 25,
+            size: TITLE_FONT_SIZE - 8,
+            font: timesRomanFont,
+            color: rgb(0.5, 0.5, 0.5),
+          }
+        );
 
+        // Draw all the keywords with glyphs and formatting.
         card.keywords?.forEach((word) => {
           const yOffset = drawKeyword({
             page,

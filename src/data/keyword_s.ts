@@ -27,6 +27,8 @@ export const KeywordsS: Keyword[] = [
     parents: ["s", "weapons"],
     tag: "Weapon Keyword",
     related_keywords: ["troopers", "attack", "miniature", "cohesion"],
+    printedDescription:
+      "After you perform an attack against a small-base unit, you may place any non-leader miniatures in that unit following rules of cohesion.",
     descriptions: [
       {
         type: "text",
@@ -627,6 +629,8 @@ export const KeywordsS: Keyword[] = [
     name: "Steady",
     parents: ["s", "units"],
     related_keywords: ["move", "weapons", "attack"],
+    printedDescription:
+      "After you perform a move action during your activation, you may perform a free attack action, using only ranged weapons.",
     descriptions: [
       {
         type: "text",
@@ -707,6 +711,8 @@ export const KeywordsS: Keyword[] = [
     parents: ["s", "weapons"],
     tag: "Weapon Keyword",
     related_keywords: ["attack", "suppression"],
+    printedDescription:
+      "After defending against an attack pool, the defending unit gains one suppression token during the Assign Suppression Token step.",
     descriptions: [
       {
         type: "text",

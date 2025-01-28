@@ -71,8 +71,8 @@ export default function Print() {
 
   const updateSelection = (e: ChangeEvent<HTMLInputElement>, id: number) => {
     const amount = parseInt(e.currentTarget.value);
-    if (!selection || amount < 0) {
-      return null;
+    if (!selection || isNaN(amount) || amount < 0) {
+      return e.currentTarget.value;
     }
     const index = selection.findIndex((card) => card.id === id);
     setSelection((currentSelection) => {

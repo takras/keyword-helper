@@ -5,6 +5,8 @@ export const KeywordsE: Keyword[] = [
     keyword: "emplacement_trooper",
     name: "Emplacement Trooper",
     parents: ["e"],
+    printedDescription:
+      "You have a notched base. You can reverse. You can pivot, even while engaged.",
     related_keywords: [
       "troopers",
       "notched_bases",

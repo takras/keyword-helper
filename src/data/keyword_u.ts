@@ -19,6 +19,8 @@ export const KeywordsU: Keyword[] = [
     name: "Unconcerned",
     parents: ["u", "units"],
     related_keywords: ["cover", "repair_x"],
+    printedDescription:
+      "You cannot benefit from cover, and your miniatures cannot be repaired or restored.",
     descriptions: [
       {
         type: "text",
@@ -200,6 +202,8 @@ export const KeywordsU: Keyword[] = [
     name: "Unstoppable",
     parents: ["u", "units"],
     related_keywords: ["activation_phase", "command_phase"],
+    printedDescription:
+      "You may activate if you already have one ore fewer order tokens. Your order pool will have two order tokens in it for this unit.",
     descriptions: [
       {
         type: "text",

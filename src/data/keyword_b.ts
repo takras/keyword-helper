@@ -145,6 +145,8 @@ export const KeywordsB: Keyword[] = [
     parents: ["b", "units"],
     tag: "Unit Keyword",
     related_keywords: ["attack", "arsenal_x"],
+    printedDescription:
+      "You may make two attack actions instead of one if you do not use the Arsenal keyword during your activation.",
     summary:
       "If a unit has the Barrage keyword, it may make two attack actions instead of one if it does not use the Arsenal keyword during its activation.",
     descriptions: [
@@ -455,6 +457,8 @@ export const KeywordsB: Keyword[] = [
     related_keywords: ["apply_dodge_cover", "cover"],
     parents: ["b", "weapons"],
     tag: "Weapon Keyword",
+    printedDescription:
+      "Defending unit you attack does not benefit from light or heavy cover.",
     summary:
       "During the Apply Cover step, a defending unit cannot use light or heavy cover to cancel hit {hit} results produced by an attack pool that contains dice added by a weapon with the Blast keyword.",
     descriptions: [

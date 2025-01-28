@@ -211,6 +211,8 @@ export const KeywordsP: Keyword[] = [
     name: "Plodding",
     parents: ["p"],
     related_keywords: ["move"],
+    printedDescription:
+      "You can only perform one move action during your activation.",
     descriptions: [
       {
         type: "text",
@@ -266,6 +268,8 @@ export const KeywordsP: Keyword[] = [
     name: "Precise X",
     parents: ["p"],
     related_keywords: ["aim", "keywords"],
+    printedDescription:
+      "When you spend an aim token during the Reroll Attack dice step of an attack, you can reroll X additional attack dice per aim token spent.",
     descriptions: [
       {
         type: "text",
@@ -281,6 +285,8 @@ export const KeywordsP: Keyword[] = [
     parents: ["p", "weapons"],
     tag: "Weapon Keyword",
     related_keywords: ["armor"],
+    printedDescription:
+      "During Modify Attack Dice step, after resolving Impact X keywords, if the defending unit has the Armor or Armor X keywor, you must modify all {hit_crit} results to {hit} results for that attack.",
     descriptions: [
       {
         type: "text",

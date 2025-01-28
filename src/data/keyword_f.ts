@@ -34,6 +34,8 @@ export const KeywordsF: Keyword[] = [
       "courage",
       "tokens",
     ],
+    printedDescription:
+      "You are considered a {rank_commander} for order and card purposes, but do not use a {rank_commander} token. Other friendly units at {range_3} may treat their courage value as 2 when checking for panic.",
     descriptions: [
       {
         type: "illustration",
@@ -152,6 +154,7 @@ export const KeywordsF: Keyword[] = [
     parents: ["f", "units"],
     tag: "Unit Keyword",
     related_keywords: ["upgrade_card", "army_building", "keywords"],
+    printedDescription: "Must equip X Heavy Upgrade cards.",
     descriptions: [
       {
         type: "text",

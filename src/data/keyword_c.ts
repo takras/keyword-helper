@@ -761,6 +761,8 @@ export const KeywordsC: Keyword[] = [
     parents: ["c", "weapons"],
     tag: "Weapon Keyword",
     related_keywords: ["move", "attack", "pivot"],
+    printedDescription:
+      "You cannot move before attacking with a weapon with Cumbersome keyword.",
     summary:
       "A unit that has a weapon with the Cumbersome keyword cannot perform a move prior to performing an attack using that weapon during the same activation unless the move is a pivot.",
     descriptions: [
