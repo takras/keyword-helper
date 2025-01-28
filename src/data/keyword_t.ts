@@ -546,6 +546,8 @@ export const KeywordsT: Keyword[] = [
       "move",
       "troopers",
     ],
+    printedDescription:
+      "During setup, choose a {rank_corps} or {rank_specialist} Trooper to transport. After your first move during deploy, the chosen unit must perform a speed-1 move, get a faceup order token, then you can perform your second action.",
     descriptions: [
       {
         type: "text",

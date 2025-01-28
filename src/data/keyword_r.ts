@@ -227,6 +227,8 @@ export const KeywordsR: Keyword[] = [
     name: "Reliable X",
     parents: ["r"],
     related_keywords: ["apply_dodge_cover", "activation_phase", "keywords"],
+    printedDescription:
+      "At the start of the Activation phase, you gain X surge tokens. ",
     descriptions: [
       {
         type: "text",
@@ -250,7 +252,7 @@ export const KeywordsR: Keyword[] = [
   },
   {
     keyword: "repair_x",
-    name: "Repair X",
+    name: "Repair X: Capacity Y",
     parents: ["r"],
     related_keywords: [
       "card_action",
@@ -260,6 +262,8 @@ export const KeywordsR: Keyword[] = [
       "keywords",
     ],
     range: "range_1",
+    printedDescription:
+      "If wound tokens on this card is less than Y: Choose a friendly unit at {range_1} in LOS and remove up to X wound, ion or and/or vehicle damage or restore 1 miniature with 1 health left from that unit. Then place a wound on this card.",
     descriptions: [
       {
         type: "text",
@@ -288,6 +292,8 @@ export const KeywordsR: Keyword[] = [
     name: "Reposition",
     parents: ["r"],
     related_keywords: ["move", "pivot"],
+    printedDescription:
+      "When you perform a standard move, you may perform a pivot either before of after performing that standard move.",
     descriptions: [
       {
         type: "text",

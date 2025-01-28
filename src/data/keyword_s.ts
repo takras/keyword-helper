@@ -105,6 +105,8 @@ export const KeywordsS: Keyword[] = [
     name: "Secret Mission",
     parents: ["s"],
     related_keywords: ["tokens"],
+    printedDescription:
+      "In beginning of Command Phase, if you are within enemy territory, you gain a secret mission token.  When scoring VP, if you have a Secret Mission token and are within Enemey Territory, remove the token and score 1 VP. Only once per unit per game.",
     descriptions: [
       {
         type: "text",
@@ -475,6 +477,7 @@ export const KeywordsS: Keyword[] = [
     name: "Special Issue: Battle Force",
     parents: ["s"],
     related_keywords: ["army_building"],
+    printedDescription: "Only for use in the specified Battle Force.",
     descriptions: [
       {
         type: "text",
@@ -488,6 +491,8 @@ export const KeywordsS: Keyword[] = [
     name: "Soresu Mastery",
     parents: ["s"],
     related_keywords: ["weapons", "guardian_x", "dodge"],
+    printedDescription:
+      "When you defend against a ranged attack, you may reroll all defense dice once. Additionally, ff you use Guardian, you may spend 1 dodge token before converting any {block_surge} results.",
     descriptions: [
       {
         type: "text",
@@ -508,6 +513,8 @@ export const KeywordsS: Keyword[] = [
       "compulsory_move",
       "keywords",
     ],
+    printedDescription:
+      "When you move, skip step 1 of notched based movement. You perform a free compulsoru move action at the start or end of your Perform Action step. If you perform more than one non-compulsory move actions, you cannot pick up asset tokens. If you carry an asset token, you cannot perform more than 1 non-compulsory move.",
     descriptions: [
       {
         type: "text",

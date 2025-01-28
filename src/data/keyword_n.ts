@@ -2,6 +2,23 @@ import { Keyword } from "@/types";
 
 export const KeywordsN: Keyword[] = [
   {
+    keyword: "nimble",
+    name: "Nimble",
+    activation: "",
+    parents: ["n", "units"],
+    tag: "Unit Keyword",
+    related_keywords: ["dodge", "attack"],
+    printedDescription:
+      "When you defend, if you spent at least one dodge token during the attack, gain one dodge token.",
+    descriptions: [
+      {
+        type: "text",
+        content:
+          "After a unit that has the Nimble keyword defends against an attack, if it spent at least one dodge token during any point of the attack sequence, it gains one dodge token.",
+      },
+    ],
+  },
+  {
     keyword: "non_standard_move",
     name: "Non-Standard Moves",
     parents: [],

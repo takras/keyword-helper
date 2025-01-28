@@ -8,11 +8,12 @@ export const KeywordsH: Keyword[] = [
     parents: ["h", "units"],
     tag: "Unit Keyword",
     related_keywords: ["upgrade_card"],
+    printedDescription: "You must equip a Heave Upgrade Card in army building.",
     descriptions: [
       {
         type: "text",
         content:
-          "A unit with the Heavy Weapon Team keyword must equip a {upgrade_heavy}Upgrade Card. The miniature added to the unit with this Upgrade Card becomes the unit leader.",
+          "A unit with the Heavy Weapon Team keyword must equip a {upgrade_heavy} Upgrade Card. The miniature added to the unit with this Upgrade Card becomes the unit leader.",
       },
     ],
   },
@@ -59,6 +60,8 @@ export const KeywordsH: Keyword[] = [
       "move",
       "keywords",
     ],
+    printedDescription:
+      "You can perform the standby action and reverse. Hover: Ground blocks LOS. Hover: Air ignores height X terrain while moving.",
     descriptions: [
       {
         type: "text",

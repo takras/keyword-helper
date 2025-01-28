@@ -55,6 +55,8 @@ export const KeywordsW: Keyword[] = [
     name: "Weak Point X",
     parents: ["w", "units"],
     related_keywords: ["attack", "impact_x", "keywords"],
+    printedDescription:
+      "If you are defending and the attacking unit leader or token is at least partially inside the specified firing arc, the attack gains Impact X.",
     descriptions: [
       {
         type: "text",

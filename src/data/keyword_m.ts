@@ -210,21 +210,6 @@ export const KeywordsM: Keyword[] = [
       },
     ],
   },
-  {
-    keyword: "nimble",
-    name: "Nimble",
-    activation: "",
-    parents: ["n", "units"],
-    tag: "Unit Keyword",
-    related_keywords: ["dodge", "attack"],
-    descriptions: [
-      {
-        type: "text",
-        content:
-          "After a unit that has the Nimble keyword defends against an attack, if it spent at least one dodge token during any point of the attack sequence, it gains one dodge token.",
-      },
-    ],
-  },
 
   {
     keyword: "measuring_range",

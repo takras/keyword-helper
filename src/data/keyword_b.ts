@@ -493,6 +493,8 @@ export const KeywordsB: Keyword[] = [
     tag: "Unit Keyword",
     related_keywords: ["actions", "apply_dodge_cover", "keywords"],
     range: "range_2",
+    printedDescription:
+      "Choose X friendly units at {range_2} to each gain one surge token.",
     summary:
       "As a card action, a unit with the Bolster X keyword can choose up to X friendly units at {range_2} to each gain one surge token.",
     descriptions: [

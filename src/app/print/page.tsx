@@ -104,26 +104,6 @@ export default function Print() {
             of those unit on that one page, and maybe 6 of another? That&apos;s
             a problem.
           </p>
-          <div>
-            <p>
-              This tool will help you generate PDFs with exactly what you need!
-              And it can be done in three ways, all supporting bleed / no bleed:
-            </p>
-            <ul>
-              <li>
-                <strong>Fronts only</strong>: Don&apos;t need the backside at
-                all? No problem, use this option.
-              </li>
-              <li>
-                <strong>Double sided</strong>: Want to print front to back on
-                the same sheet? This should do the trick.
-              </li>
-              <li>
-                <strong>Front and back</strong>: This follows the standard AMG
-                has set, and prints front to the left and backs to the right.
-              </li>
-            </ul>
-          </div>
         </div>
         <form onSubmit={onSubmit} className={styles.form}>
           {Object.entries(Factions).map((faction) => {
@@ -168,6 +148,40 @@ export default function Print() {
                 checked={enableBleed}
                 onChange={() => setEnableBleed((current) => !current)}
               />
+            </div>
+            <div>
+              <p>
+                This tool will help you generate PDFs with exactly what you
+                need! And it can be done in three ways, all supporting bleed /
+                no bleed:
+              </p>
+              <ul>
+                <li>
+                  <strong>Fronts only</strong>: Don&apos;t need the backside at
+                  all? No problem, use this option.
+                </li>
+                <li>
+                  <strong>Double sided</strong>: Want to print front to back on
+                  the same sheet? This should do the trick.
+                </li>
+                <li>
+                  <strong>Front and back</strong>: This follows the standard AMG
+                  has set, and prints front to the left and backs to the right.
+                </li>
+                <li>
+                  <strong>Double sided keywords on back</strong>: To print on
+                  both sides of the sheets, with frontside on one side, and
+                  keyword help on the other.
+                </li>
+                <li>
+                  <strong>Front and keyword on same page</strong>: Front image
+                  on the left side of the sheet, and keyword help on the right.
+                </li>
+                <li>
+                  <strong>Keyword cards only</strong>: Only print keyword cards
+                  on the entire sheet.
+                </li>
+              </ul>
             </div>
             <label htmlFor="print-type">Choose how to layout the cards:</label>
             <select

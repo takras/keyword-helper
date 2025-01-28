@@ -334,6 +334,7 @@ export const KeywordsA: Keyword[] = [
     parents: ["a", "units"],
     tag: "Unit Keyword",
     related_keywords: ["move", "dodge", "keywords"],
+    printedDescription: "When you perform a move action, gain X dodge tokens.",
     summary:
       "The Agile X keyword allows a unit to gain a number of dodge tokens equal to X each time it performs a standard move as part of an action or free action.",
     descriptions: [
@@ -591,7 +592,7 @@ export const KeywordsA: Keyword[] = [
     related_keywords: ["attack", "cancel", "impact_x", "weak_point_x"],
     summary: "",
     printedDescription:
-      "Remove X {hit} results from attacker during Modify Attack Dice step.",
+      "Remove all {hit} results from attacker during Modify Attack Dice step.",
     descriptions: [
       {
         type: "text",
@@ -606,6 +607,8 @@ export const KeywordsA: Keyword[] = [
     activation: "",
     parents: ["a", "units"],
     tag: "Unit Keyword",
+    printedDescription:
+      "Remove X {hit} results from attacker during Modify Attack Dice step.",
     related_keywords: [
       "attack",
       "cancel",
@@ -669,6 +672,8 @@ export const KeywordsA: Keyword[] = [
     tag: "Unit Keyword",
     related_keywords: ["attack", "miniature", "weapons", "keywords"],
     summary: "",
+    printedDescription:
+      "When choosing weapon, each miniature in the unit can contribute with X weapons to the attack pool.",
     descriptions: [
       {
         type: "text",
@@ -755,6 +760,8 @@ export const KeywordsA: Keyword[] = [
     tag: "Unit Keyword",
     related_keywords: ["attack", "actions", "dodge", "aim"],
     summary: "",
+    printedDescription:
+      "You can perform up to two attack actions during your activation. When you attack, gain one dodge token after the attack is resolved. When you defend, gain one aim token after the attack is resolved.",
     descriptions: [
       {
         type: "text",
@@ -1147,6 +1154,8 @@ export const KeywordsA: Keyword[] = [
     tag: "Unit Keyword",
     related_keywords: ["activating_units", "move"],
     summary: "",
+    printedDescription:
+      "At the start of your activation, you may increase or decrease your maximum speed by 1 until the end of that activation.",
     descriptions: [
       {
         type: "text",

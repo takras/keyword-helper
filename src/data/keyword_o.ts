@@ -260,6 +260,8 @@ export const KeywordsO: Keyword[] = [
     parents: ["o", "units"],
     tag: "Unit Keyword",
     related_keywords: ["dodge", "apply_dodge_cover"],
+    printedDescription:
+      "You can spend dodge tokens to cancel {hit_crit} results.",
     descriptions: [
       {
         type: "text",

@@ -70,6 +70,8 @@ export const KeywordsI: Keyword[] = [
     parents: ["units"],
     tag: "Unit Keyword",
     related_keywords: ["immune", "blast"],
+    printedDescription:
+      "You ignore the Blast keyword effects from attacking units.",
     descriptions: [
       {
         type: "text",
@@ -85,6 +87,8 @@ export const KeywordsI: Keyword[] = [
     parents: ["units"],
     tag: "Unit Keyword",
     related_keywords: ["immune", "card_effects", "game_effects"],
+    printedDescription:
+      "You ignore the Enemy Effect keywords and cannot be targeted by an enemy card effect.",
     descriptions: [
       {
         type: "text",
@@ -100,6 +104,7 @@ export const KeywordsI: Keyword[] = [
     parents: ["units"],
     tag: "Unit Keyword",
     related_keywords: ["immune", "melee"],
+    printedDescription: "You cannot be engaged in melee.",
     descriptions: [
       {
         type: "text",
@@ -115,6 +120,7 @@ export const KeywordsI: Keyword[] = [
     parents: ["units"],
     tag: "Unit Keyword",
     related_keywords: ["immune", "melee", "pierce_x"],
+    printedDescription: "You ignore the effect of Melee Pierce.",
     descriptions: [
       {
         type: "text",
@@ -135,7 +141,7 @@ export const KeywordsI: Keyword[] = [
     parents: ["units"],
     tag: "Unit Keyword",
     related_keywords: ["immune", "pierce_x"],
-    printedDescription: "Pierce cannot be used against you.",
+    printedDescription: "You ignore the effect of Pierce X.",
     descriptions: [
       {
         type: "text",
@@ -156,6 +162,8 @@ export const KeywordsI: Keyword[] = [
     parents: ["units"],
     tag: "Unit Keyword",
     related_keywords: ["immune", "weapons"],
+    printedDescription:
+      "Weapons with only {range_1} cannot be used to attack you.",
     descriptions: [
       {
         type: "text",
@@ -298,6 +306,8 @@ export const KeywordsI: Keyword[] = [
     tag: "Unit Keyword",
     range: "range_1",
     related_keywords: ["attack", "suppression", "rally"],
+    printedDescription:
+      "If you have at least one suppression token and an enemy unit performs an attack, it must target another unit, if able. When you rally, you may choose not to remove some suppression tokens.",
     descriptions: [
       {
         type: "text",
@@ -343,6 +353,8 @@ export const KeywordsI: Keyword[] = [
     parents: ["i", "units"],
     tag: "Unit Keyword",
     related_keywords: ["deploy"],
+    printedDescription:
+      "When you deploy, place your leader within friendly territory and place other miniatures in cohesion and within friendly territory.",
     descriptions: [
       {
         type: "text",

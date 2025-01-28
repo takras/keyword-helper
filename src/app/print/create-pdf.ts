@@ -218,6 +218,9 @@ const replaceReferenceWithSpaces = (
   const regex = /{([^{}:]*)}/;
 
   const spacesProxy = (icon: Icon) => {
+    if (!icon) {
+      console.log(text);
+    }
     return fillWithSpaces({
       wordToBeReplaced: icon.value,
       fontTypeToBeReplaced: iconFont,

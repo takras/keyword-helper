@@ -694,6 +694,8 @@ export const KeywordsC: Keyword[] = [
       "If a unit has the Cover X keyword and is defending against an attack with at least one ranged weapon, during the Apply Dodge and Cover step, it improves the numerical value of its cover by a number equal to X.",
     tag: "Unit Keyword",
     related_keywords: ["attack", "weapons", "apply_dodge_cover", "keywords"],
+    printedDescription:
+      "While defending against ranged weapons, you improve cover by X.",
     descriptions: [
       {
         type: "text",

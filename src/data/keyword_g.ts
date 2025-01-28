@@ -143,6 +143,8 @@ export const KeywordsG: Keyword[] = [
       "keywords",
     ],
     range: "range_1",
+    printedDescription:
+      "While a friendly trooper at {range_1} and in LOS is defending against a ranged attack, you may cancel up to X {hit} results. For each result cancelled, roll your defense dice, convert any surges, then suffer 1 wound for each blank result.",
     descriptions: [
       {
         type: "text",
@@ -179,6 +181,8 @@ export const KeywordsG: Keyword[] = [
     tag: "Unit Keyword",
     related_keywords: ["actions", "free_card_action"],
     range: "range_2",
+    printedDescription:
+      "Choose another friendly specified unit at {range_2}. The unit performs a free non-attack action.",
     descriptions: [
       {
         type: "text",
