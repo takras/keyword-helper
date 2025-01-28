@@ -644,6 +644,8 @@ export const KeywordsC: Keyword[] = [
     tag: "Unit Keyword",
     related_keywords: ["issue_order", "command_phase"],
     range: "range_1",
+    printedDescription:
+      "After you are issued an order, you may issue an order to a friendly unit at {range_1} of the specified unit name or type.",
     summary:
       "After a unit with the Coordinate keyword is issued an order, it may issue an order to a friendly unit at {range_1} that has the unit name or unit type specified. A unit that has one or more unit names or unit types listed can only choose one of these listed unit names or unit types to issue an order to using the Coordinate keyword. If a unit already has the Coordinate keyword and gains another instance of the keyword, the unit may choose which targets to issue an order to from the two instances of the keyword; it does not issue two orders.",
     descriptions: [

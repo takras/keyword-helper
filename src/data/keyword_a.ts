@@ -353,6 +353,8 @@ export const KeywordsA: Keyword[] = [
     tag: "Unit Keyword",
     range: "range_3",
     related_keywords: ["move", "aim", "dodge", "actions", "attack"],
+    printedDescription:
+      "At the start of your activation, if you are on the battlefield and do not have a faceup order token, and not at {range_3} of a friendly {rank_commander} unit, you must perform one of the specified actions as your first action, if able.",
     summary:
       "At the start of a unit with the AI keyword’s Perform Actions step, if it is on the battlefield, does not have a faceup order token, and is not at {range_3} of a friendly {rank_commander} unit, it must perform one of the specified actions as its first action that activation. Free actions do not satisfy the requirements of the AI keyword. If a unit cannot perform any of its listed actions as its first action, it is free to perform other actions as normal.",
     descriptions: [

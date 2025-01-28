@@ -8,6 +8,8 @@ export const KeywordsM: Keyword[] = [
     parents: ["m", "units"],
     tag: "Unit Keyword",
     related_keywords: ["melee", "pierce_x", "immune"],
+    printedDescription:
+      "While you perform a melee attack, you can reduce the Pierce X value by 1. If you do, the defending unit cannot use Immune: Pierce or Immune: Melee Pierce during this attack.",
     descriptions: [
       {
         type: "text",

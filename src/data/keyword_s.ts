@@ -641,11 +641,13 @@ export const KeywordsS: Keyword[] = [
     parents: ["s", "units"],
     range: "range_2",
     related_keywords: ["suppression", "dodge", "keywords"],
+    printedDescription:
+      "Gain one suppression token, then choose X friendly units at {range_2}. Each chosen unit gains one aim and one dodge token.",
     descriptions: [
       {
         type: "text",
         content:
-          "When a unit uses the Strategize X action, it gains one suppression token, then chooses X friendly units at 2. Each chosen unit gains one aim and one dodge token.",
+          "When a unit uses the Strategize X action, it gains one suppression token, then chooses X friendly units at {range_2}. Each chosen unit gains one aim and one dodge token.",
       },
     ],
   },

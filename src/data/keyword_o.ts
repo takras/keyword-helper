@@ -278,6 +278,8 @@ export const KeywordsO: Keyword[] = [
     tag: "Unit Keyword",
     range: "range_5",
     related_keywords: ["suppression", "ai_action"],
+    printedDescription:
+      "When a friendly unit activates at {range_5} of you, they may gain one suppression token. If they do, it ignores the AI keyword for that activation.",
     descriptions: [
       {
         type: "text",

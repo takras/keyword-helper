@@ -107,6 +107,8 @@ export const KeywordsR: Keyword[] = [
     name: "Reinforcements",
     parents: ["r"],
     related_keywords: ["move"],
+    printedDescription:
+      "At the start of the End Phase of the first round of the game, you may perform a speed-1 move.",
     descriptions: [
       {
         type: "text",
@@ -242,6 +244,8 @@ export const KeywordsR: Keyword[] = [
     name: "Relentless",
     parents: ["r"],
     related_keywords: ["attack", "free_card_action"],
+    printedDescription:
+      "After you perform a move action during your activation, you may perform a free attack action.",
     descriptions: [
       {
         type: "text",

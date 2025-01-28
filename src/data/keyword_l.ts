@@ -24,6 +24,8 @@ export const KeywordsL: Keyword[] = [
     parents: ["l", "weapons"],
     tag: "Weapon Keyword",
     related_keywords: ["attack", "aim", "keywords"],
+    printedDescription:
+      "When you attack you may spend X Aim tokens during the Modify Attack Dice step. If you do, the attack gains Pierce 1 for each aim token spent. You may not use those tokens to reroll dice.",
     descriptions: [
       {
         type: "text",

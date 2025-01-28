@@ -75,6 +75,8 @@ export const KeywordsW: Keyword[] = [
     name: "Weighed Down",
     parents: ["w", "units"],
     related_keywords: ["jump_x"],
+    printedDescription:
+      "If you are holding 1 or more objective tokens, you cannot use the Jump keyword.",
     descriptions: [
       {
         type: "text",

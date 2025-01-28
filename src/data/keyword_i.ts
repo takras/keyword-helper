@@ -404,6 +404,8 @@ export const KeywordsI: Keyword[] = [
     parents: ["weapons", "i"],
     tag: "Weapon Keyword",
     related_keywords: ["vehicles", "droid_trooper", "shielded_x", "keywords"],
+    printedDescription:
+      "A vehicle or droid trooper unit that suffers a wound after defending against an attack with Ion, gains X ion tokens. At the start of that units activation, for each Ion token, roll 1 white defense dice and performs one fewer action for each blank result rolled. After its activation it removes any Ion tokens.",
     descriptions: [
       {
         type: "illustration",

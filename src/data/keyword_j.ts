@@ -23,6 +23,8 @@ export const KeywordsJ: Keyword[] = [
     parents: ["j", "units"],
     tag: "Unit Keyword",
     related_keywords: ["keywords", "upgrade_card", "attack"],
+    printedDescription:
+      "When you attack a unit with a Force Upgrade icon on its upgrade bar, you gain {hit_surge}:{hit_crit}.",
     descriptions: [
       {
         type: "text",

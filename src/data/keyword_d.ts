@@ -345,6 +345,8 @@ export const KeywordsD: Keyword[] = [
     tag: "Unit Keyword",
     range: "range_2",
     related_keywords: ["issue_order", "command_phase"],
+    printedDescription:
+      "During the Issue Order step, you may issue an order to a friendly unit specified at {range_2}.",
     descriptions: [
       {
         type: "text",

@@ -23,6 +23,8 @@ export const KeywordsH: Keyword[] = [
     tag: "Weapon Keyword",
     parents: ["h", "weapons"],
     related_keywords: ["attack", "dodge", "apply_dodge_cover"],
+    printedDescription:
+      "While defending against an attack where all weapons have High Velocity, the defending unit cannot spend dodge tokens during the Apply Dodge and Cover step of that attack.",
     descriptions: [
       {
         type: "text",

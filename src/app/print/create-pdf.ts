@@ -198,6 +198,11 @@ const ICON_MAPPING: IconMap = {
     sizeMultiplier: 1.1,
     yOffset: -1.6,
   },
+  hit_surge: {
+    value: "k",
+    sizeMultiplier: 1,
+    yOffset: -1,
+  },
   hit: {
     value: "j",
     sizeMultiplier: 1,

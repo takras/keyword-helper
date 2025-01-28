@@ -311,6 +311,7 @@ export const KeywordsP: Keyword[] = [
     name: "Programmed",
     parents: ["p"],
     related_keywords: ["army_building", "upgrade_card"],
+    printedDescription: "You must equip at least one Programming Upgrade Card.",
     descriptions: [
       {
         type: "text",
