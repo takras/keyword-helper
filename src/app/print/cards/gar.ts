@@ -41,6 +41,14 @@ export const GarCards: BaseCard[] = [
   },
   {
     faction: GAR,
+    name: "ARF Troopers",
+    filename: "",
+    keywords: ["observe_x", "scout_x", "low_profile", "unhindered"],
+    hiddenFromPrint: true,
+    keywordsOnly: true,
+  },
+  {
+    faction: GAR,
     name: "ARC Troopers (Strike Team)",
     filename: "arc_troopers_strike",
     keywords: [

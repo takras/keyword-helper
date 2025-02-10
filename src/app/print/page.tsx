@@ -58,6 +58,7 @@ export default function Print() {
   const [selection, setSelection] = useState<Card[]>();
   const [printStyle, setPrintStyle] = useState<PrintStyle>("fullSamePage");
   const [enableBleed, setEnableBleed] = useState(false);
+  const [keywordsOnly, setKeywordsOnly] = useState(false);
 
   useEffect(() => {
     // Load here to avoid async IDs with ssr and frontend rendering.
@@ -76,10 +77,22 @@ export default function Print() {
     }
     const index = selection.findIndex((card) => card.id === id);
     setSelection((currentSelection) => {
-      return currentSelection?.with(index, {
+      const newSelection = currentSelection?.with(index, {
         ...currentSelection[index],
         amount,
       });
+      if (!newSelection) {
+        return;
+      }
+      const anySelectedKeywordsOnly = newSelection.some(
+        (card) => card.amount > 0 && card.keywordsOnly
+      );
+      setKeywordsOnly(anySelectedKeywordsOnly);
+      if (anySelectedKeywordsOnly) {
+        setPrintStyle("keywordsOnly");
+      }
+
+      return newSelection;
     });
   };
 
@@ -104,6 +117,10 @@ export default function Print() {
             of those unit on that one page, and maybe 6 of another? That&apos;s
             a problem.
           </p>
+          <p>
+            <strong>*:</strong> Only keyword backsides possible. Front has not
+            been released by AMG as PNP.
+          </p>
         </div>
         <form onSubmit={onSubmit} className={styles.form}>
           {Object.entries(Factions).map((faction) => {
@@ -114,11 +131,12 @@ export default function Print() {
                 {selection
                   ?.filter(
                     (card) =>
-                      card.hiddenFromPrint !== true &&
+                      (card.hiddenFromPrint !== true ||
+                        card.keywordsOnly === true) &&
                       card.faction === factionKey
                   )
                   .map((card) => {
-                    const id = `${card.faction}_${card.filename}`;
+                    const id = `${card.faction}_${card.name}`;
                     return (
                       <div key={id} className={styles.unit}>
                         <input
@@ -131,6 +149,7 @@ export default function Print() {
                           onChange={(e) => updateSelection(e, card.id)}
                         />
                         <label htmlFor={id}>{card.name}</label>
+                        {card.keywordsOnly && "*"}
                       </div>
                     );
                   })}
@@ -192,7 +211,9 @@ export default function Print() {
                 setPrintStyle(e.currentTarget.value as PrintStyle)
               }
             >
-              {PrintStyles.map((style) => {
+              {PrintStyles.filter((option) =>
+                keywordsOnly ? option === "keywordsOnly" : true
+              ).map((style) => {
                 return (
                   <option key={style} value={style}>
                     {PrintStyleFriendlyName[style]}
@@ -200,6 +221,12 @@ export default function Print() {
                 );
               })}
             </select>
+            {keywordsOnly && (
+              <p>
+                Keywords Only selected since at least one card selected has an
+                asterisk (*).
+              </p>
+            )}
 
             {loading && (
               <>

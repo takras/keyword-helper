@@ -300,6 +300,7 @@ const cards_cis_base: Omit<BaseCard, "faction">[] = [
       "pierce_x",
     ],
     hiddenFromPrint: true,
+    keywordsOnly: true,
   },
   {
     name: "STAP Riders",
@@ -320,6 +321,7 @@ const cards_cis_base: Omit<BaseCard, "faction">[] = [
     filename: "",
     keywords: ["ai_action", "armor_x", "infiltrate", "impact_x"],
     hiddenFromPrint: true,
+    keywordsOnly: true,
   },
 ];
 

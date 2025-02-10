@@ -81,6 +81,8 @@ export const KeywordsS: Keyword[] = [
     parents: ["s", "units"],
     tag: "Unit Keyword",
     related_keywords: ["troopers", "faction", "setup", "scout_x", "keywords"],
+    printedDescription:
+      "During Setup, choose up to X friendly trooper units with same faction or affiliation without Scout X keyword. That unit gains Scout X.",
     descriptions: [
       {
         type: "text",

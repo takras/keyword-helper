@@ -20,6 +20,7 @@ export interface BaseCard {
   affiliation?: Affiliation;
   hiddenFromPrint: boolean;
   keywords: AvailableKeywords[];
+  keywordsOnly?: boolean;
 }
 
 export const GAR = "GAR";
