@@ -33,7 +33,7 @@ export const rules: RulesDocument = {
   version: "2.6.1",
   validFrom: "2024-11-14T00:00:00Z",
   downloadUrl:
-    "https://drive.google.com/uc?export=download&id=13e-eKDjn9oeas-cE4qrR59zQvgFGh0th",
+    "https://drive.google.com/uc?export=download&id=15PINOOxshfQ7TX-SDgxu2KLkJq8Crcqi",
   documentUrl: "https://www.atomicmassgames.com/swlegiondocs/",
   discussionUrl:
     "https://forums.atomicmassgames.com/forum/165-star-wars-legion-rules-questions/",
