@@ -102,9 +102,8 @@ export default function Print() {
       <div className={styles.container}>
         <div>
           <h2>
-            <strong>NOTE:</strong> There appears to be a limitation in iOS
-            devices to download these files. This tool was intended for a
-            desktop environment and should work there.
+            <strong>NOTE:</strong> To generate the PDF on iOS devices, you must
+            use Safari.
           </h2>
           <p>
             Whenever there is a new release of updated unit cards, it is lovely
