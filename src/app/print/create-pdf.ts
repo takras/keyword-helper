@@ -769,5 +769,5 @@ export async function createPdf({ selection, printStyle, enableBleed }: Props) {
   pdfDoc.setTitle(`PDF by ${Variables.title}`);
   pdfDoc.setProducer(Variables.url);
   pdfDoc.setSubject(printStyle);
-  return pdfDoc.saveAsBase64({ dataUri: true, useObjectStreams: true });
+  return pdfDoc.save();
 }

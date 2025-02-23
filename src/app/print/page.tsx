@@ -31,28 +31,27 @@ export default function Print() {
       return;
     }
 
-    const element = document.createElement("a");
     setLoading(true);
-    const pdf = await createPdf({
+
+    await createPdf({
       selection: filteredSelection,
       printStyle,
       enableBleed,
     })
       .then((data) => {
-        return data;
+        const element = document.createElement("a");
+
+        element.href = window.URL.createObjectURL(new Blob([data]));
+        element.setAttribute("download", FILENAME);
+        element.style.display = "none";
+
+        document.body.appendChild(element);
+        element.click();
+        document.body.removeChild(element);
       })
       .finally(() => {
         setLoading(false);
       });
-    element.setAttribute("href", pdf);
-    element.setAttribute("download", FILENAME);
-
-    element.style.display = "none";
-    document.body.appendChild(element);
-
-    element.click();
-
-    document.body.removeChild(element);
   }
 
   const [selection, setSelection] = useState<Card[]>();
