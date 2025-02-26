@@ -75,12 +75,12 @@ const cards_mercs_base: Omit<BaseCard, "faction">[] = [
     hiddenFromPrint: true,
     affiliation: "rogue",
     keywords: [
-      "equip",
+      "we_are_not_regs",
       "impervious",
+      "equip",
       "scale",
       "steady",
       "sharpshooter_x",
-      "we_are_not_regs",
     ],
   },
   {
@@ -217,12 +217,12 @@ const cards_mercs_base: Omit<BaseCard, "faction">[] = [
     hiddenFromPrint: true,
     affiliation: "maul_loyalists",
     keywords: [
+      "wound_x",
       "jump_x",
       "allies_of_convenience",
       "deflect",
       "immune_pierce",
       "juyo_mastery",
-      "wound_x",
       "impact_x",
       "pierce_x",
     ],
@@ -232,7 +232,7 @@ const cards_mercs_base: Omit<BaseCard, "faction">[] = [
     name: "Black Sun Enforcers",
     hiddenFromPrint: true,
     affiliation: "black_sun",
-    keywords: ["dauntless", "independent_x", "precise_x", "self_preservation"],
+    keywords: ["self_preservation", "independent_x", "precise_x", "dauntless"],
   },
   {
     filename: "",
@@ -240,9 +240,9 @@ const cards_mercs_base: Omit<BaseCard, "faction">[] = [
     hiddenFromPrint: true,
     affiliation: "pyke_syndicate",
     keywords: [
+      "self_preservation",
       "danger_sense",
       "outmaneuver",
-      "self_preservation",
       "independent_x",
     ],
   },

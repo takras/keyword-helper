@@ -71,10 +71,10 @@ const cards_rebel_base: Omit<BaseCard, "faction">[] = [
     name: "R2-D2 (Hero of a Thousand Devices)",
     hiddenFromPrint: false,
     keywords: [
-      "repair_x",
+      "secret_mission",
       "inconspicious",
       "infiltrate",
-      "secret_mission",
+      "repair_x",
       "suppressive",
     ],
   },
