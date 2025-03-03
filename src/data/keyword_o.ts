@@ -240,7 +240,6 @@ export const KeywordsO: Keyword[] = [
     related_keywords: [
       "terrain_cover",
       "terrain_height",
-      "terrain_height",
       "terrain",
       "terrain_movement",
       "obstacle_terrain",

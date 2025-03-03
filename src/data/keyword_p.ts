@@ -300,7 +300,7 @@ export const KeywordsP: Keyword[] = [
     keyword: "prepared_positions",
     name: "Prepared Positions",
     parents: ["p"],
-    related_keywords: ["deploy", "setup", "dodge"],
+    related_keywords: ["deploy", "setup", "dodge", "stationary"],
     printedDescription:
       "You may deploy within friendly territory during Prepared Positions of setup. If you do, you get 1 dodge token.",
     descriptions: [
@@ -308,6 +308,11 @@ export const KeywordsP: Keyword[] = [
         type: "text",
         content:
           "During the Deploy in Prepared Positions step of setup, a unit with the Prepared Position keyword may deploy by placing the unit leader of that unit within friendly territory. Then the remaining miniatures in that unit are placed in cohesion with their unit leader and within friendly territory. That unit then gains 1 dodge token. Miniatures cannot overlap impassable terrain when they are placed using Prepared Position.",
+      },
+      {
+        type: "reference",
+        referenced_keyword: "stationary",
+        showOnlySummary: true,
       },
     ],
   },

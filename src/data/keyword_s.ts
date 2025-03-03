@@ -624,6 +624,11 @@ export const KeywordsS: Keyword[] = [
         content:
           "A unit with the Stationary keyword cannot perform moves unless the move is a pivot. A unit with the Prepared Position and Stationary keywords must deploy during the Deploy in Prepared Positions step of setup.",
       },
+      {
+        type: "reference",
+        referenced_keyword: "prepared_positions",
+        showOnlySummary: true,
+      },
     ],
   },
   {
@@ -662,7 +667,7 @@ export const KeywordsS: Keyword[] = [
     keyword: "suffering_wounds",
     name: "Suffering Wounds",
     parents: ["s"],
-    related_keywords: ["attack", "miniature", "line_of_sight"],
+    related_keywords: ["attack", "miniature", "line_of_sight", "noncombatant"],
     descriptions: [
       {
         type: "header",
