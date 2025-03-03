@@ -14,6 +14,7 @@ export const RuleUpdates = () => {
     "charge",
     "compel",
     "deflect",
+    "hold_the_line",
     "keywords",
     "makashi_mastery",
     "notch_based_movement",

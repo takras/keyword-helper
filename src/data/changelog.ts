@@ -10,6 +10,24 @@ export const changelog: Keyword[] = [
     descriptions: [
       {
         type: "version",
+        version: "1.2.6",
+        content: [
+          {
+            type: "changelogentry",
+            update: "add",
+            content:
+              "Add support to generated PDF in iOS devices. Safari browser might be required.",
+          },
+          {
+            type: "changelogentry",
+            update: "change",
+            content:
+              "Changed some related keywords and added a references between keywords. Added Hold the Line to list of new keywords in 2.6.1.",
+          },
+        ],
+      },
+      {
+        type: "version",
         version: "1.2.5",
         content: [
           {
