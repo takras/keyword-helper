@@ -93,15 +93,36 @@ export const About = () => {
       <ToggleDarkMode />
       <div className={styles.container}>
         <h3>Attribution:</h3>
-        BB-8 darkmode toggle by{" "}
-        <a href="https://uiverse.io/Galahhad/silent-robin-40" target="_blank">
-          Galahhad at uiverse
-        </a>{" "}
-        under{" "}
-        <a href="https://opensource.org/license/mit" target="_blank">
-          MIT License
-        </a>
-        .
+        <ul>
+          <li>
+            BB-8 darkmode toggle by{" "}
+            <a
+              href="https://uiverse.io/Galahhad/silent-robin-40"
+              target="_blank"
+            >
+              Galahhad
+            </a>{" "}
+            under{" "}
+            <a href="https://opensource.org/license/mit" target="_blank">
+              MIT License
+            </a>
+            {}.
+          </li>
+          <li>
+            Button by{" "}
+            <a
+              href="https://uiverse.io/Smit-Prajapati/lazy-cow-47"
+              target="_blank"
+            >
+              Smit Prajapati
+            </a>{" "}
+            under{" "}
+            <a href="https://opensource.org/license/mit" target="_blank">
+              MIT License
+            </a>
+            {}.
+          </li>
+        </ul>
       </div>
     </>
   );

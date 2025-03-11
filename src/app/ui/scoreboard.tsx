@@ -320,7 +320,7 @@ export const Scoreboard = () => {
             })}
           </select>
           {isReady && (
-            <button className={globalStyles.button} onClick={startRound}>
+            <button className={styles.goButton} onClick={startRound}>
               Go!
             </button>
           )}
