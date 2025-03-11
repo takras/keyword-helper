@@ -1,3 +1,10 @@
+.darkModeToggle {
+  width: 150px;
+  scale: 0.8;
+  margin-top: 20px;
+  place-self: center;
+}
+
 .switch {
   position: relative;
   width: 70px;

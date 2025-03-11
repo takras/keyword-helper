@@ -13,6 +13,16 @@ export const KeywordsOther: Keyword[] = [
     descriptions: [],
   },
   {
+    keyword: "resources",
+    parents: [],
+    name: "3D Printable resources",
+    hideFromsearch: true,
+    hideImageShare: true,
+    summary: "Useful 3D printable stl files for use with Star Wars: Legion.",
+    related_keywords: [],
+    descriptions: [],
+  },
+  {
     keyword: "skirmish",
     name: "Skirmish Builder - Quickly Generate skirmish mission.",
     activation: "",

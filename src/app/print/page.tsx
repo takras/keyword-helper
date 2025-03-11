@@ -7,6 +7,7 @@ import { rules } from "@/data/rules";
 import Image from "next/image";
 import styles from "./page.module.css";
 import { Card } from "./types";
+import { ToggleDarkMode } from "../ui/toggle-dark-mode";
 
 const FILENAME = "legion-helper-unit-cards.pdf";
 
@@ -294,6 +295,7 @@ export default function Print() {
             </p>
           </div>
         </form>
+        <ToggleDarkMode />
       </div>
     </>
   );

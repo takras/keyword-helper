@@ -24,6 +24,7 @@ import { ReconMission } from "./scoreboard/secondary-recon-mission";
 import { DestroyEnemyBase } from "./scoreboard/secondary-destroy-base";
 import { SurfaceScan } from "./scoreboard/secondary-surface-scan";
 import { SweepAndClear } from "./scoreboard/secondary-sweep-and-clear";
+import { ToggleDarkMode } from "./toggle-dark-mode";
 
 type SecondaryPoints = {
   red: number[];
@@ -495,6 +496,7 @@ export const Scoreboard = () => {
             Start Over
           </button>
         </div>
+        <ToggleDarkMode />
       </div>
     );
   }

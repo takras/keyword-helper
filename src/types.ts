@@ -1,6 +1,7 @@
 import { IconList } from "./utils";
 
 export const AVAILABLE_KEYWORDS = [
+  "resources",
   "scoreboard",
   "skirmish",
   "search_result_blank",

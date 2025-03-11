@@ -5,6 +5,7 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { getKey, interpolateString } from "@/utils";
 import globalStyles from "./helper.module.css";
 import styles from "./skirmish-generator.module.css";
+import { ToggleDarkMode } from "./toggle-dark-mode";
 
 type Card = {
   id: number;
@@ -226,6 +227,7 @@ export const SkirmishGenerator = () => {
           </div>
         </>
       )}
+      <ToggleDarkMode />
     </div>
   );
 };

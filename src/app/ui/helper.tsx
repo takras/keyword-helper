@@ -172,9 +172,6 @@ export default function Helper() {
 
   return (
     <main className={styles.main}>
-      <div className={styles.darkModeToggle}>
-        <ToggleDarkMode />
-      </div>
       <div className={styles.headline}>
         <h1 className={styles.title}>Legion Helper</h1>
         <span className={styles.subtitle}>&quot;Roger, Roger&quot;</span>
@@ -280,6 +277,14 @@ export default function Helper() {
           >
             Print Unit Cards (w/keyword-help)
           </Link>
+          <Link
+            className={styles.button}
+            href={getLink("resources")}
+            onClick={() => selectKeyword("resources")}
+            prefetch={true}
+          >
+            3D Printable resources
+          </Link>
           <hr />
           <Link
             className={styles.button}
@@ -298,6 +303,7 @@ export default function Helper() {
             Scoreboard Companion App
           </Link>
         </ul>
+        <ToggleDarkMode />
       </section>
 
       <div className={styles.content}>

@@ -10,6 +10,23 @@ export const changelog: Keyword[] = [
     descriptions: [
       {
         type: "version",
+        version: "1.2.7",
+        content: [
+          {
+            type: "changelogentry",
+            update: "change",
+            content: "Changed the dark mode/light mode toggle into BB-8.",
+          },
+          {
+            type: "changelogentry",
+            update: "change",
+            content:
+              "Changed the top menu navigation code to be more consistent.",
+          },
+        ],
+      },
+      {
+        type: "version",
         version: "1.2.6",
         content: [
           {

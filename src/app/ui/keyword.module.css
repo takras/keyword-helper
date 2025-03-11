@@ -1,5 +1,5 @@
 .container {
-  margin-top: 60px;
+  
   padding: 0 20px 20px 20px;
   background-color: var(--background-color);
   border: var(--border-thin);
@@ -9,7 +9,7 @@
   margin-left: auto;
   margin-right: auto;
 
-  @media only screen and (max-width: 670px) {
+  @media only screen and (min-width: 670px) {
     padding: 0 10px 10px 10px;
   }
 }
@@ -19,45 +19,4 @@
   display: flex;
   justify-content: flex-end;
   margin-top: var(--flex-gap)
-}
-
-.topMenu {
-  display: flex;
-  justify-content: center;
-  z-index: 2;
-  
-  padding-bottom: 5px;
-  top: 0;
-  left: 0;
-  position: fixed;
-  background-color: var(--background-color);
-  border-bottom: var(--border-thin);
-  width: 100%;
-}
-
-.topMenuButtonRow {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  max-width: calc(var(--max-width) + 40px);
-}
-
-.topMenuBackButton,
-.topMenuCloseButton {
-  font-family: var(--default-font-family);
-  border-radius: var(--border-radius);
-  text-align: center;
-  cursor: pointer;
-  padding: 5px;
-  box-shadow: 0px 5px 10px rgb(0 0 0 / 0.1);
-  font-size: 1.5em;
-  border: 1px solid var(--button-color);
-  border-bottom: 2px solid var(--button-border-color);
-  color: var(--button-color);
-  background-color: var(--button-background-color);
-  display: block;
-
-  &:focus-visible {
-    outline-color: var(--outline-color);
-  }
 }

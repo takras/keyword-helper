@@ -426,7 +426,7 @@
 .controlButtons {
   display: flex;
   padding-top: 50px;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .warning {

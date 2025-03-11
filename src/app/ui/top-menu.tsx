@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import classNames from "classnames";
 import globalStyles from "./helper.module.css";
-import styles from "./keyword.module.css";
+import styles from "./top-menu.module.css";
 import { useContext } from "react";
 import { KeywordContext } from "../providers";
 import { getEnrichedKeyword } from "@/utils";
@@ -13,7 +13,7 @@ export const TopMenu = () => {
 
   const enrichedPrevious = getEnrichedKeyword(previousKeyword);
   return (
-    <div id="topMenu">
+    <div id="topMenu" className={styles.container}>
       <aside className={styles.topMenu}>
         <div className={styles.topMenuButtonRow}>
           <Link

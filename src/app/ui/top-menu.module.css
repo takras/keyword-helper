@@ -1,0 +1,54 @@
+
+
+.topMenuToggleDarkMode {
+  scale: 0.2;
+}
+
+.container {
+  min-height: 70px;
+  @media screen and (min-width: 320px) {
+    min-height: 50px;
+  }
+}
+
+.topMenu {
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background-color: var(--background-color);
+  border-bottom: var(--border-thin);
+  width: 100%;
+  @media screen and (min-width: 320px) {
+    padding-bottom: 5px;
+  }
+}
+
+.topMenuButtonRow {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: calc(var(--max-width) + 20px);
+}
+
+.topMenuBackButton,
+.topMenuCloseButton {
+  font-family: var(--default-font-family);
+  border-radius: var(--border-radius);
+  text-align: center;
+  cursor: pointer;
+  padding: 5px;
+  box-shadow: 0px 5px 10px rgb(0 0 0 / 0.1);
+  font-size: 1.5em;
+  border: 1px solid var(--button-color);
+  border-bottom: 2px solid var(--button-border-color);
+  color: var(--button-color);
+  background-color: var(--button-background-color);
+  display: block;
+
+  &:focus-visible {
+    outline-color: var(--outline-color);
+  }
+}
