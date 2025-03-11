@@ -19,6 +19,7 @@ import { RuleUpdates } from "./rule-updates";
 import classNames from "classnames";
 import Link from "next/link";
 import styles from "./helper.module.css";
+import { SearchIcon } from "../../../public/images/search";
 
 export default function Helper() {
   const [searchFilter, setSearchFilter] = useState<string>("");
@@ -111,27 +112,33 @@ export default function Helper() {
 
   const searchComponent = () => {
     return (
-      <div className={styles.searchContainer}>
-        <div className={styles.searchInputContainer}>
-          <input
-            placeholder="Search"
-            className={styles.searchInput}
-            type="text"
-            value={searchFilter}
-            id="search"
-            onChange={onSearchChange}
-            autoComplete="new-password"
-          ></input>
-          <button className={styles.button} onClick={() => setSearchFilter("")}>
-            X
-          </button>
+      <>
+        <div className={styles.searchContainer}>
+          <div className={styles.searchInputContainer}>
+            <SearchIcon className={styles.searchIcon} />
+            <input
+              placeholder="Search"
+              className={styles.searchInput}
+              type="text"
+              value={searchFilter}
+              id="search"
+              onChange={onSearchChange}
+              autoComplete="new-password"
+            ></input>
+            <button
+              className={styles.button}
+              onClick={() => setSearchFilter("")}
+            >
+              X
+            </button>
+          </div>
         </div>
         <div className={styles.searchResult}>
           {getFilteredItems().map((item) => (
             <KeywordCard keyword={item} key={getKey(item.keyword)} />
           ))}
         </div>
-      </div>
+      </>
     );
   };
 
