@@ -19,10 +19,9 @@
   left: 0;
   position: fixed;
   background-color: var(--background-color);
-  border-bottom: var(--border-thin);
   width: 100%;
   @media screen and (min-width: 320px) {
-    padding-bottom: 5px;
+    padding-bottom: 9px;
   }
 }
 

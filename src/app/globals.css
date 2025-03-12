@@ -4,6 +4,8 @@
   --border-radius: 10px;
   --font-family: 'Aire Exterior', sans-serif;
   --default-font-family: Arial, Helvetica, sans-serif;
+  --font-family-droid: TFGunray;
+  --font-droid-color: #788596;
 
   --border-thin: 1px solid var(--button-border-color);
   --invert-icon-color: 0;
@@ -12,11 +14,6 @@
     
   --flex-gap: 10px;
   --max-width: 700px;
-  
-  --notchBorder: 5px;
-  --notchSize: 20px;
-  --notch-max-value: 100%;
-  --notch-min-value: 0%;
 
   --round-border-fill: #021d30;
   --round-border-empty: #e0e0e0;
@@ -25,6 +22,10 @@
 
   --minimized-card: 34px;
 
+  --notchBorder: 5px;
+  --notchSize: 20px;
+  --notch-max-value: 100%;
+  --notch-min-value: 0%;
   --notched-square: polygon(
     var(--notch-min-value) var(--notchSize), 
     0 0, 
@@ -35,6 +36,24 @@
     var(--notchSize) var(--notch-max-value), 
     var(--notch-min-value) calc(var(--notch-max-value) - var(--notchSize))
   );
+
+  --frame-thick-width: 25px;
+  --frame-thick: 7px;
+  --frame-thin: 2px;
+  --frame-clip: polygon(
+      0 var(--frame-thick), /* Top left */
+      var(--frame-thick-width) var(--frame-thick),
+      var(--frame-thick-width) var(--frame-thin), 
+      calc(100% - var(--frame-thick-width)) var(--frame-thin), /* Top right */
+      calc(100% - var(--frame-thick-width)) var(--frame-thick), 
+      101% var(--frame-thick),
+      101% calc(100% - var(--frame-thick)), /* Bottom right */
+      calc(100% - var(--frame-thick-width)) calc(100% - var(--frame-thick)),
+      calc(100% - var(--frame-thick-width)) calc(100% - var(--frame-thin)),
+      var(--frame-thick-width) calc(100% - var(--frame-thin)),
+      var(--frame-thick-width) calc(100% - var(--frame-thick)),
+      0 calc(100% - var(--frame-thick))
+      );
 
   --tablet-width: 860px;
 
@@ -60,6 +79,10 @@
   --example-color: #fff;
   --example-header: #F1A021;
   --sharebutton-color: #aeaeae;
+
+  --frame-border-color: rgb(136,136,136);
+  --frame-background-color: #fff;
+  --frame-header-text-color: #000;
 
   --playerButtonColor: #000;
 
@@ -91,6 +114,10 @@
   --example-background: #535554;
   --example-color: #fff;
   --example-header: #F1A021;
+
+  --frame-border-color: rgb(136,136,136);
+  --frame-background-color: #293B4B;
+  --frame-header-text-color: #fff;
   
   --sharebutton-color: #535554;
   --button-color: #000;

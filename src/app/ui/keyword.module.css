@@ -1,22 +1,11 @@
 .container {
-  
-  padding: 0 20px 20px 20px;
+  padding: 30px 20px 20px 20px;
   background-color: var(--background-color);
-  border: var(--border-thin);
-  border-radius: var(--border-radius);
   max-width: var(--max-width);
-  box-shadow: var(--box-shadow);
   margin-left: auto;
   margin-right: auto;
 
-  @media only screen and (min-width: 670px) {
+  @media only screen and (min-width: 320px) {
     padding: 0 10px 10px 10px;
   }
-}
-
-#darkModeToggle,
-.darkModeToggle {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: var(--flex-gap)
 }

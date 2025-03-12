@@ -25,6 +25,8 @@ import { DestroyEnemyBase } from "./scoreboard/secondary-destroy-base";
 import { SurfaceScan } from "./scoreboard/secondary-surface-scan";
 import { SweepAndClear } from "./scoreboard/secondary-sweep-and-clear";
 import { ToggleDarkMode } from "./toggle-dark-mode";
+import { FramedHeader } from "./framed-header";
+import { getEnrichedKeyword } from "@/utils";
 
 type SecondaryPoints = {
   red: number[];
@@ -212,9 +214,14 @@ export const Scoreboard = () => {
     setRedPoints((current) => (current - 1 < 0 ? 0 : current - 1));
   }
 
+  const keyword = getEnrichedKeyword("scoreboard")!;
+
   function selectScreen() {
     return (
       <div className={styles.instructions}>
+        <div className={styles.headerContainer}>
+          <FramedHeader keyword={keyword} overrideText="Scoreboard tracker" />
+        </div>
         <p>
           When the mission has been built, use this app to keep track of the
           scores.
@@ -320,9 +327,11 @@ export const Scoreboard = () => {
             })}
           </select>
           {isReady && (
-            <button className={styles.goButton} onClick={startRound}>
-              Go!
-            </button>
+            <div className={styles.goButtonContainer}>
+              <button className={globalStyles.goButton} onClick={startRound}>
+                Go!
+              </button>
+            </div>
           )}
         </div>
       </div>

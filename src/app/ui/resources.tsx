@@ -2,10 +2,13 @@ import globalStyles from "./helper.module.css";
 import styles from "./resources.module.css";
 import Image from "next/image";
 import { ToggleDarkMode } from "./toggle-dark-mode";
+import { FramedHeader } from "./framed-header";
+import { getEnrichedKeyword } from "@/utils";
 export const Resources = () => {
+  const keyword = getEnrichedKeyword("resources")!;
   return (
     <div className={styles.container}>
-      <h3>Printable resources</h3>
+      <FramedHeader keyword={keyword} overrideText="3D Printable Resources" />
       <p>
         I have designed some Point of Interest (POI) tokens that were introduced
         in the 2024 version. They are free to 3D print, and available on

@@ -1,0 +1,29 @@
+.headerFrame {
+  background-color: var(--frame-border-color);
+  max-width: 700px;
+  width: 100%;
+}
+
+.headerContainer {
+  clip-path: var(--frame-clip);
+  background-color: var(--frame-background-color);
+  margin-bottom: 20px;
+  padding: 10px;
+
+  &> h2 {
+    margin-bottom: 0;
+    margin-top: 0;
+    border-bottom: none;
+  }
+}
+
+.header {
+  font-size: 2.5rem;
+  color: var(--frame-header-text-color);
+}
+
+.subHeader {
+  font-family: var(--font-family-droid);
+  color: var(--font-droid-color);
+  padding-top: 5px;
+}

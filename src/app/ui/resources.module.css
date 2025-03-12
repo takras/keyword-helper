@@ -1,8 +1,6 @@
 .container {
   background-color: var(--background-color);
   padding: 0 20px 20px 20px;
-  border-radius: var(--border-radius);
-  border: var(--border-thin);
   margin-bottom: var(--flex-gap);
   max-width: var(--max-width);
   margin-left: auto;

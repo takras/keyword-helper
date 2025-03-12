@@ -4,10 +4,12 @@ import { createPdf, PrintStyle, PrintStyles } from "./create-pdf";
 import { cards, Factions } from "./cards";
 import { TopMenu } from "../ui/top-menu";
 import { rules } from "@/data/rules";
-import Image from "next/image";
-import styles from "./page.module.css";
 import { Card } from "./types";
 import { ToggleDarkMode } from "../ui/toggle-dark-mode";
+import { FramedHeader } from "../ui/framed-header";
+import Image from "next/image";
+import styles from "./page.module.css";
+import { getEnrichedKeyword } from "@/utils";
 
 const FILENAME = "legion-helper-unit-cards.pdf";
 
@@ -22,6 +24,7 @@ const PrintStyleFriendlyName = {
 
 export default function Print() {
   const [loading, setLoading] = useState(false);
+  const enrichedKeyword = getEnrichedKeyword("print");
 
   async function download() {
     if (!selection) {
@@ -102,6 +105,10 @@ export default function Print() {
       <link rel="preload" href="/images/loading.gif" as="image" />
       <div className={styles.container}>
         <div>
+          <FramedHeader
+            keyword={enrichedKeyword!}
+            overrideText="Print unit cards YOUR way"
+          />
           <h2>
             <strong>NOTE:</strong> To generate the PDF on iOS devices, you must
             use Safari.

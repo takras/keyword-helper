@@ -9,7 +9,13 @@
     url("fonts/legionhelper.svg#legionhelper") format("svg");
   font-weight: normal;
   font-style: normal;
+}
 
+@font-face {
+  font-family: TFGunray;
+  src:url("fonts/TFGunray-Bold.otf") format("opentype");
+  font-weight: bold;
+  font-style: normal;
 }
 
 [data-icon]:before {

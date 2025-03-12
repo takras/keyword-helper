@@ -9,7 +9,7 @@ import { Scoreboard } from "./scoreboard";
 import { ToggleDarkMode } from "./toggle-dark-mode";
 import { TopMenu } from "./top-menu";
 import { Resources } from "./resources";
-import globalStyles from "./helper.module.css";
+import { FramedHeader } from "./framed-header";
 import styles from "./keyword.module.css";
 
 export const KeywordComponent = ({ keyword }: { keyword: string }) => {
@@ -32,10 +32,7 @@ export const KeywordComponent = ({ keyword }: { keyword: string }) => {
         selectedKeyword.keyword !== "about" &&
         selectedKeyword.keyword !== "skirmish" && (
           <div className={styles.container} id="keyword">
-            <h2 className={globalStyles.header2}>
-              {selectedKeyword.name}{" "}
-              {selectedKeyword.tag && `(${selectedKeyword.tag})`}
-            </h2>
+            <FramedHeader keyword={selectedKeyword} />
             <RenderContent descriptions={selectedKeyword.descriptions} />
             <RelatedKeywords related={selectedKeyword.related_keywords} />
             <ToggleDarkMode />

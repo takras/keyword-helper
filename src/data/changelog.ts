@@ -10,6 +10,27 @@ export const changelog: Keyword[] = [
     descriptions: [
       {
         type: "version",
+        version: "1.2.8",
+        content: [
+          {
+            type: "changelogentry",
+            update: "add",
+            content: "Added new font Gunray from AurekFonts.",
+          },
+          {
+            type: "changelogentry",
+            update: "change",
+            content: "Changed header styling for each page.",
+          },
+          {
+            type: "changelogentry",
+            update: "change",
+            content: "Changed search input styling.",
+          },
+        ],
+      },
+      {
+        type: "version",
         version: "1.2.7",
         content: [
           {
@@ -22,6 +43,16 @@ export const changelog: Keyword[] = [
             update: "change",
             content:
               "Changed the top menu navigation code to be more consistent.",
+          },
+          {
+            type: "changelogentry",
+            update: "change",
+            content: "Moved 3d printable resources to separate page.",
+          },
+          {
+            type: "changelogentry",
+            update: "add",
+            content: "Added attribution section to About page.",
           },
         ],
       },

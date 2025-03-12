@@ -258,7 +258,7 @@ export default function Helper() {
           >
             Setup Keywords to remember
           </Link>
-          <hr />
+          <hr className={styles.ruler} />
           <Link
             className={styles.button}
             href={getLink("about")}
@@ -292,7 +292,7 @@ export default function Helper() {
           >
             3D Printable resources
           </Link>
-          <hr />
+          <hr className={styles.ruler} />
           <Link
             className={styles.button}
             href={getLink("skirmish")}

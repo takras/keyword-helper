@@ -5,8 +5,6 @@
   max-width: 1200px;
 
   background-color: var(--background-color);
-  border-radius: var(--border-radius);
-  border: var(--border-thin);
   margin-bottom: var(--flex-gap);
   margin-left: auto;
   margin-right: auto;
@@ -17,10 +15,12 @@
   flex-direction: column;
   align-items: center;
   padding: 20px;
+  gap: 20px;
 
   &>span > img {
     filter: invert(var(--invert-icon-color));
   }
+
 }
 
 .primaryObjective {
@@ -56,4 +56,8 @@
   font-family: var(--font-family);
   font-size: 2rem;
   margin: 0;
+}
+
+.buttonContainer {
+  background-color: #000;
 }

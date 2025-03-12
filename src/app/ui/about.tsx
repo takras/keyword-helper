@@ -122,6 +122,22 @@ export const About = () => {
             </a>
             {}.
           </li>
+          <li>
+            <a
+              href="https://www.figma.com/design/dAkDomXQWGmCOXjMDHSnrk/Star-Wars-UI-Library-(Community)?node-id=22-6"
+              target="_blank"
+            >
+              Star Wars UI Library (Community)
+            </a>
+            {}.
+          </li>
+          <li>
+            TF Gunray font from{" "}
+            <a href="https://aurekfonts.github.io/" target="_blank">
+              AurekFonts
+            </a>
+            {}.
+          </li>
         </ul>
       </div>
     </>

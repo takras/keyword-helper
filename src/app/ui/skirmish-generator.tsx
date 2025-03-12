@@ -2,10 +2,11 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { getKey, interpolateString } from "@/utils";
+import { getEnrichedKeyword, getKey, interpolateString } from "@/utils";
 import globalStyles from "./helper.module.css";
 import styles from "./skirmish-generator.module.css";
 import { ToggleDarkMode } from "./toggle-dark-mode";
+import { FramedHeader } from "./framed-header";
 
 type Card = {
   id: number;
@@ -92,6 +93,7 @@ export const SkirmishGenerator = () => {
   const [redAdvantage, setRedAdvantage] = useState<Card>();
   const pathname = usePathname();
   const { replace } = useRouter();
+  const keyword = getEnrichedKeyword("skirmish")!;
 
   useEffect(() => {
     const list = searchParams.get("mission")?.split("-");
@@ -169,15 +171,18 @@ export const SkirmishGenerator = () => {
     <div className={styles.container}>
       {!isLoaded && (
         <div className={styles.about}>
+          <FramedHeader keyword={keyword} overrideText="Skirmish Generator" />
           {interpolateString(
             "<strong>Determine Blue Player:</strong> One player rolls a red defense die. If the result is a {block}, the player that rolled is the blue player. Otherwise, the player that rolled is the red player. Then the blue player chooses one of the table edges and sets their army near that edge. The red player takes the opposite table edge.",
             getKey("about")
           )}
           <p>Then, click &quot;Generate Mission&quot; below.</p>
 
-          <button className={globalStyles.button} onClick={populateCards}>
-            Generate mission.
-          </button>
+          <div className={styles.buttonContainer}>
+            <button className={globalStyles.goButton} onClick={populateCards}>
+              Generate mission
+            </button>
+          </div>
         </div>
       )}
       {isLoaded && (

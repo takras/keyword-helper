@@ -3,8 +3,6 @@
   display: flex;
   flex-direction: column;
   background-color: var(--background-color);
-  border-radius: var(--border-radius);
-  border: var(--border-thin);
   margin-bottom: var(--flex-gap);
   font-family: var(--default-font-family);
   scrollbar-gutter: auto;
@@ -217,6 +215,10 @@
   &:focus-visible {
     outline-color: var(--outline-color);
   }
+}
+
+.headerContainer {
+  justify-items: center;
 }
 
 .blueButton {
@@ -457,54 +459,7 @@
   padding-right: 20px;
 }
 
-.goButton {
-  /* in scss with just one variable i can change opacity with rgba(variable, opacity) but in css it's not possible so i have used three seperate variables */
-  /* with hue-rotate color can be changed */
-  --main-color: rgb(46, 213, 115);
-  --main-bg-color: rgba(46, 213, 116, 0.36);
-  --pattern-color: rgba(46, 213, 116, 0.073);
-
-  /* change this rotation value */
-  filter: hue-rotate(0deg);
-
-  cursor: pointer;
-  text-transform: uppercase;
-  letter-spacing: 0.5rem;
-  background: radial-gradient(
-      circle,
-      var(--main-bg-color) 0%,
-      rgba(0, 0, 0, 0) 95%
-    ),
-    linear-gradient(var(--pattern-color) 1px, transparent 1px),
-    linear-gradient(to right, var(--pattern-color) 1px, transparent 1px);
-  background-size:
-    cover,
-    15px 15px,
-    15px 15px;
-  background-position:
-    center center,
-    center center,
-    center center;
-  border-image: radial-gradient(
-      circle,
-      var(--main-color) 0%,
-      rgba(0, 0, 0, 0) 100%
-    )
-    1;
-  border-width: 1px 0 1px 0;
-  color: var(--main-color);
-  padding: 1rem 3rem;
-  font-weight: 700;
-  font-size: 1.5rem;
-  transition: background-size 0.2s ease-in-out;
-
-  &:hover {
-    background-size:
-      cover,
-      10px 10px,
-      10px 10px;
-  }
-  &:active {
-    filter: hue-rotate(250deg);
-  }
+.goButtonContainer {
+  background-color: #000;
+  display: contents;
 }
