@@ -103,6 +103,12 @@ export default function Print() {
     <>
       <TopMenu />
       <link rel="preload" href="/images/loading.gif" as="image" />
+      <link
+        rel="preload"
+        href="/fonts/TFGunray-Bold.woff2"
+        as="font"
+        type="font/woff2"
+      ></link>
       <div className={styles.container}>
         <div>
           <FramedHeader

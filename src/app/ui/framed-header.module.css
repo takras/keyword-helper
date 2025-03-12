@@ -24,6 +24,8 @@
 
 .subHeader {
   font-family: var(--font-family-droid);
+  font-weight: bold;
+  font-style: normal;
   color: var(--font-droid-color);
   padding-top: 5px;
 }
