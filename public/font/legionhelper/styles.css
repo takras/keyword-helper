@@ -13,7 +13,8 @@
 
 @font-face {
   font-family: TFGunray;
-  src:url("fonts/TFGunray-Bold.otf") format("opentype");
+  src:url("fonts/TFGunray-Bold.otf") format("opentype"),
+    url("fonts/TFGunray-Bolf.svg") format("svg");
   font-weight: bold;
   font-style: normal;
 }
@@ -25,7 +26,6 @@
   font-weight: normal !important;
   font-variant: normal !important;
   text-transform: none !important;
-  speak: none;
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -38,7 +38,6 @@
   font-weight: normal !important;
   font-variant: normal !important;
   text-transform: none !important;
-  speak: none;
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
