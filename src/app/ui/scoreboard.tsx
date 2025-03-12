@@ -220,7 +220,10 @@ export const Scoreboard = () => {
     return (
       <div className={styles.instructions}>
         <div className={styles.headerContainer}>
-          <FramedHeader keyword={keyword} overrideText="Scoreboard tracker" />
+          <FramedHeader
+            keyword={keyword}
+            overrideText="Scoreboard Companion App"
+          />
         </div>
         <p>
           When the mission has been built, use this app to keep track of the

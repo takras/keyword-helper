@@ -90,6 +90,9 @@
   --button-border-color: #a78c5c;
   --button-background-color: #fff;
 
+  --back-button-background-color: #fff;
+  --back-button-background-color-darker: #a8a8a8;
+
   --dark-mode-toggle-background: #F1A021;
   --dark-mode-toggle-color: #26416d;
 
@@ -123,6 +126,9 @@
   --button-color: #000;
   --button-border-color: #765e35;
   --button-background-color: #daba7b;
+
+  --back-button-background-color: var(--button-background-color);
+  --back-button-background-color-darker: #796745;
 
   --playerButtonColor: #fff;
 

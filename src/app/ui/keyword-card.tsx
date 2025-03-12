@@ -18,7 +18,7 @@ export const KeywordCard = ({ keyword }: { keyword: Keyword }) => {
       key={getKey(keyword.keyword)}
       prefetch={true}
     >
-      {keyword.name}
+      <span className={styles.text}>{keyword.name}</span>
       {keyword.range && (
         <span className={styles.buttonRange}>
           {interpolateString(

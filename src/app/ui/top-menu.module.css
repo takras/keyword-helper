@@ -35,19 +35,68 @@
 .topMenuBackButton,
 .topMenuCloseButton {
   font-family: var(--default-font-family);
-  border-radius: var(--border-radius);
+  
   text-align: center;
   cursor: pointer;
   padding: 5px;
-  box-shadow: 0px 5px 10px rgb(0 0 0 / 0.1);
+  
+  border-radius: 4px;
   font-size: 1.5em;
-  border: 1px solid var(--button-color);
-  border-bottom: 2px solid var(--button-border-color);
+  min-width: 30px;
+  border: var(--border-thin);
+  box-shadow: none;
+  
   color: var(--button-color);
   background-color: var(--button-background-color);
   display: block;
+  transition: all 0.5s;
 
   &:focus-visible {
     outline-color: var(--outline-color);
+  }
+}
+
+.topMenuCloseButton:hover {
+  background-color: var(--back-button-background-color-darker);
+  transition: all 0.5s;
+
+  & > img {
+    filter: invert(0.1);
+  }
+}
+
+.topMenuBackButton {
+  display: inline-block;
+  transition: all .3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--back-button-background-color);
+    z-index: -2;
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -10px;
+    width: 0%;
+    height: 100%;
+    background-color: var(--back-button-background-color-darker);
+    transform: skewX(21deg);
+    transition: all .5s;
+    z-index: -1;
+  }
+  &:hover {
+    &:before {
+      width: 110%;
+    }
   }
 }
