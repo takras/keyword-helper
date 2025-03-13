@@ -1,27 +1,5 @@
 @charset "UTF-8";
 
-@font-face {
-  font-family: "legionhelper";
-  src:url("fonts/legionhelper.eot");
-  src:url("fonts/legionhelper.eot?#iefix") format("embedded-opentype"),
-    url("fonts/legionhelper.woff") format("woff"),
-    url("fonts/legionhelper.ttf") format("truetype"),
-    url("fonts/legionhelper.svg#legionhelper") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'TFGunray';
-  src: url('fonts/TFGunray-Bold.woff2') format('woff2'),
-      url('fonts/TFGunray-Bold.woff') format('woff'),
-      url('fonts/TFGunray-Bold.ttf') format('truetype'),
-      url('fonts/TFGunray-Bold.svg#TFGunray-Bold') format('svg');
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
-
 [data-icon]:before {
   font-family: "legionhelper" !important;
   content: attr(data-icon);

@@ -1,5 +1,27 @@
 @import url('https://fonts.cdnfonts.com/css/aire-exterior');
 
+@font-face {
+  font-family: "legionhelper";
+  src:url("/font/legionhelper/fonts/legionhelper.eot");
+  src:url("/font/legionhelper/fonts/legionhelper.eot?#iefix") format("embedded-opentype"),
+    url("/font/legionhelper/fonts/legionhelper.woff") format("woff"),
+    url("/font/legionhelper/fonts/legionhelper.ttf") format("truetype"),
+    url("/font/legionhelper/fonts/legionhelper.svg#legionhelper") format("svg");
+  font-weight: 1 1000;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TFGunray';
+  src: url('/font/TFGunray-Bold.woff2') format('woff2'),
+      url('/font/TFGunray-Bold.woff') format('woff'),
+      url('/font/TFGunray-Bold.ttf') format('truetype'),
+      url('/font/TFGunray-Bold.svg#TFGunray-Bold') format('svg');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --border-radius: 10px;
   --font-family: 'Aire Exterior', sans-serif;
