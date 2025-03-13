@@ -2,13 +2,16 @@
 "use client";
 import dynamic from "next/dynamic";
 import Loading from "./ui/loading";
-import { Suspense } from "react";
-
-const loading = () => {
-  return <Loading />;
-};
+import { Suspense, useState } from "react";
 
 export default function Home() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  const loading = () => {
+    setIsLoading(false);
+    return null;
+  };
+
   const DynamicComponentWithNoSSR = dynamic(
     () => import("./ui/helper"),
 
@@ -17,6 +20,7 @@ export default function Home() {
 
   return (
     <Suspense>
+      {isLoading && <Loading />}
       <DynamicComponentWithNoSSR />
     </Suspense>
   );

@@ -7,7 +7,7 @@ export const Variables = {
   title: "Legion Helper",
   url: "https://legion.takras.net",
   description:
-    "Legion Helper is a tool for quick lookup on keywords, game concepts and more, including Scoring Companion, Skirmish Generator and quick reference for setup and attacks.",
+    "Legion Helper provides quick lookup of rules, game concepts and more tools to help increase your enjoyment and focus on the game.",
 };
 
 const getIconPath = (fileName: string, title?: string) => {

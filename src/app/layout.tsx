@@ -7,7 +7,7 @@ import "./globals.css";
 import styles from "./layout.module.css";
 
 const description = Variables.description;
-const title = Variables.title;
+const title = `${Variables.title} – Quick Rules Lookup for Star Wars: Legion`;
 const image = "/images/legionhelper.svg";
 
 export const metadata: Metadata = {

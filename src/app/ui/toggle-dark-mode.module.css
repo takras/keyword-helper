@@ -1,13 +1,12 @@
 .darkModeToggle {
-  width: 150px;
+  width: 100%;
   scale: 0.8;
   margin-top: 20px;
-  place-self: center;
+  place-items: center;
 }
 
 .switch {
   position: relative;
-  width: 70px;
 }
 
 .slider {
